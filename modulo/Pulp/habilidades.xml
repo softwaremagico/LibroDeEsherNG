@@ -1,0 +1,795 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<habilidades>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Armadura·Ligera</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Armadura Tipo I</id>
+    <name>Armadura Tipo I</name>
+    <rare>true</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Armadura·Ligera</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Armadura Tipo II</id>
+    <name>Armadura Tipo II</name>
+    <rare>true</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Armadura·Media</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Armadura Tipo III</id>
+    <name>Armadura Tipo III</name>
+    <rare>true</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Armadura·Media</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Armadura Tipo IV</id>
+    <name>Armadura Tipo IV</name>
+    <rare>true</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ataques Especiales</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Francotirador</id>
+    <name>Francotirador</name>
+    <rare>true</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ataques Especiales</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Apuntar</id>
+    <name>Apuntar</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ataques Especiales</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Dejar Inconsciente</id>
+    <name>Dejar Inconsciente</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Atletismo·Gimnasia</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Braquiación</id>
+    <name>Braquiación</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Atletismo·Gimnasia</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Paracaidismo</id>
+    <name>Paracaidismo</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Atletismo·Resistencia</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Ciclismo</id>
+    <name>Ciclismo</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Autocontrol</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Recarga Adrenal</id>
+    <name>Recarga Adrenal</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ciencia/Analítica·Especializada</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Física</id>
+    <name>Física</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ciencia/Analítica·Especializada</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Criminología</id>
+    <name>Criminología</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ciencia/Analítica·Médica</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Autópsia</id>
+    <name>Autópsia</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ciencia/Analítica·Médica</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Práctica Médica</id>
+    <name>Práctica Médica</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ciencia/Analítica·Médica</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Ciencia Médica</id>
+    <name>Ciencia Médica</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ciencia/Analítica·Médica</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Fármacos</id>
+    <name>Fármacos</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ciencia/Analítica·Médica</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Terapia con Drogas</id>
+    <name>Terapia con Drogas</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ciencia/Analítica·Técnica</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Tecnología Criminal</id>
+    <name>Tecnología Criminal</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ciencia/Analítica·Técnica</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Tecnología Electrónica</id>
+    <name>Tecnología Electrónica</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ciencia/Analítica·Técnica</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Tecnología Genética</id>
+    <name>Tecnología Genética</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ciencia/Analítica·Técnica</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Tecnología Mecánica</id>
+    <name>Tecnología Mecánica</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ciencia/Analítica·Técnica</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Tecnología Armamentística</id>
+    <name>Tecnología Armamentística</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Ciencia/Analítica·Técnica</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Creación de Artilugios</id>
+    <name>Creación de Artilugios</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Lectura Rápida</id>
+    <name>Lectura Rápida</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Inglés</id>
+    <name>Hablar Inglés</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Inglés</id>
+    <name>Escribir Inglés</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Francés</id>
+    <name>Hablar Francés</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Francés</id>
+    <name>Escribir Francés</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Español</id>
+    <name>Hablar Español</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Español</id>
+    <name>Escribir Español</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Ruso</id>
+    <name>Hablar Ruso</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Ruso</id>
+    <name>Escribir Ruso</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Catalán</id>
+    <name>Hablar Catalán</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Catalán</id>
+    <name>Escribir Catalán</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Portugués</id>
+    <name>Hablar Portugués</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Portugués</id>
+    <name>Escribir Portugués</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Italiano</id>
+    <name>Hablar Italiano</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Italiano</id>
+    <name>Escribir Italiano</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Rumano</id>
+    <name>Hablar Rumano</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Rumano</id>
+    <name>Escribir Rumano</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Lituano</id>
+    <name>Hablar Lituano</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Lituano</id>
+    <name>Escribir Lituano</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Alemán</id>
+    <name>Hablar Alemán</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Alemán</id>
+    <name>Escribir Alemán</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Holandés</id>
+    <name>Hablar Holandés</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Holandés</id>
+    <name>Escribir Holandés</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Mandarín</id>
+    <name>Hablar Mandarín</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Mandarín</id>
+    <name>Escribir Mandarín</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Catonés</id>
+    <name>Hablar Catonés</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Cantonés</id>
+    <name>Escribir Cantonés</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Tibetano</id>
+    <name>Hablar Tibetano</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Tibetano</id>
+    <name>Escribir Tibetano</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Thai</id>
+    <name>Hablar Thai</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Thai</id>
+    <name>Escribir Thai</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Japonés</id>
+    <name>Hablar Japonés</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Japonés</id>
+    <name>Escribir Japonés</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Hablar Lengua Nigerocongolesa</id>
+    <name>Hablar Lengua Nigerocongolesa</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Lengua Nigerocongolesa</id>
+    <name>Escribir Lengua Nigerocongolesa</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Comunicación</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Escribir Latín</id>
+    <name>Escribir Latín</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Conocimiento·Académico</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Historia del Arte</id>
+    <name>Historia del Arte</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Conocimiento·Académico</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Filosofía</id>
+    <name>Filosofía</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Conocimiento·Académico</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Periodismo</id>
+    <name>Periodismo</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Conocimiento·Académico</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Ciencias Políticas</id>
+    <name>Ciencias Políticas</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Conocimiento·Académico</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Derecho</id>
+    <name>Derecho</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Conocimiento·Académico</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Historia de la Religión</id>
+    <name>Historia de la Religión</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Conocimiento·Académico</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Artes Gráficas</id>
+    <name>Artes Gráficas</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Conocimiento·Académico</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Canon</id>
+    <name>Canon</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Conocimiento·Académico</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Comparación de Religiones</id>
+    <name>Comparación de Religiones</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Conocimiento·Académico</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Doctrina Filosófica/Religiosa</id>
+    <name>Doctrina Filosófica/Religiosa</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Conocimiento·Académico</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Sociología</id>
+    <name>Sociología</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Conocimiento·Académico</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Arqueología</id>
+    <name>Arqueología</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Conocimiento·Académico</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Teología</id>
+    <name>Teología</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Conocimiento·Académico</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Geografía</id>
+    <name>Geografía</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Influencia</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Lavado de Cerebro</id>
+    <name>Lavado de Cerebro</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Influencia</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Saber Hacer</id>
+    <name>Saber Hacer</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Maniobras de Combate</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Piloto de Combate</id>
+    <name>Piloto de Combate</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Maniobras de Combate</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Piloto de Tanque</id>
+    <name>Piloto de Tanque</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Maniobras de Combate</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Demoliciones</id>
+    <name>Demoliciones</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Maniobras de Combate</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Emboscada con Armas Estacionarias</id>
+    <name>Emboscada con Armas Estacionarias</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Subterfugio·Mecánica</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Abrir Cajas Fuertes</id>
+    <name>Abrir Cajas Fuertes</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Subterfugio·Mecánica</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Operaciones de Seguridad</id>
+    <name>Operaciones de Seguridad</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Subterfugio·Mecánica</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Evasión de Impuestos</id>
+    <name>Evasión de Impuestos</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Técnica/Comercio·General</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Jugar al Billar</id>
+    <name>Jugar al Billar</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Técnica/Comercio·General</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Conducir (Vehículo Mecánico)</id>
+    <name>Conducir (Vehículo Mecánico)</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Técnica/Comercio·General</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Piloto de Aeronaves</id>
+    <name>Piloto de Aeronaves</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Técnica/Comercio·General</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Capitán de Barco</id>
+    <name>Capitán de Barco</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Técnica/Comercio·General</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Ingeniero de Trenes</id>
+    <name>Ingeniero de Trenes</name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+</habilidades>

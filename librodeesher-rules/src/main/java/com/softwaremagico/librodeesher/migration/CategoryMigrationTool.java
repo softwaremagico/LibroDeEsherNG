@@ -41,7 +41,6 @@ import java.util.Map;
  */
 public final class CategoryMigrationTool {
 
-    private static final String CATEGORIES_FILE = "categorias.txt";
     private static final String OUTPUT_FILE = "categorias.xml";
 
     private CategoryMigrationTool() {
@@ -72,7 +71,7 @@ public final class CategoryMigrationTool {
         final Map<String, List<Category>> categoriesByModule = new LinkedHashMap<>();
 
         for (final String module : ModuleManager.getAllModules()) {
-            for (final Path file : sourceFilesForModule(module, rolemasterDir, modulosDir)) {
+            for (final Path file : LegacyCategoriesFiles.forModule(module, rolemasterDir, modulosDir)) {
                 readCategoriesFile(file, module, categoriesById, categoriesByModule);
             }
         }
@@ -87,25 +86,8 @@ public final class CategoryMigrationTool {
     }
 
     /**
-     * Returns the {@code categorias.txt} files that contribute to the given module, in read order.
-     * "Basico" is special-cased to also include the base file living directly under {@code
-     * rolemaster/} (outside any module folder), which the legacy application always loaded first.
+     * One parsed data line of a {@code categorias.txt} file.
      */
-    private static List<Path> sourceFilesForModule(String module, Path rolemasterDir, Path modulosDir) {
-        final List<Path> files = new ArrayList<>();
-        if (ModuleManager.BASICO.equals(module)) {
-            addIfExists(files, rolemasterDir.resolve(CATEGORIES_FILE));
-        }
-        addIfExists(files, modulosDir.resolve(module).resolve(CATEGORIES_FILE));
-        return files;
-    }
-
-    private static void addIfExists(List<Path> files, Path candidate) {
-        if (Files.isRegularFile(candidate)) {
-            files.add(candidate);
-        }
-    }
-
     private static void readCategoriesFile(Path file, String module, Map<String, Category> categoriesById,
                                             Map<String, List<Category>> categoriesByModule) throws IOException {
         for (final String line : Files.readAllLines(file, StandardCharsets.UTF_8)) {
