@@ -1,70 +1,70 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<profesiones>
-  <profesion>
+<professions>
+  <profession>
     <bonuses>
       <bonus>
         <bonus>10</bonus>
-        <name>Conocimiento·Mágico</name>
+        <name>loreArcane</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Desarrollo de Puntos de Poder</name>
+        <name>powerPointDevelopment</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas de la Tríada</name>
+        <name>listsBásicasOfTheTríada</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas Elementales Complementarias</name>
+        <name>listsBásicasElementalesComplementarias</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas de Hechizos</name>
+        <name>listsBásicasOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Abiertas de Hechizos</name>
+        <name>listsAbiertasOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Cerradas de Hechizos</name>
+        <name>listsCerradasOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas de Otras Profesiones</name>
+        <name>listsBásicasOfOtrasProfesiones</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Abiertas de Otros Reinos</name>
+        <name>listsAbiertasOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Cerradas de Otros Reinos</name>
+        <name>listsCerradasOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas de Otros Reinos</name>
+        <name>listsBásicasOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Abiertas Arcanas</name>
+        <name>listsAbiertasArcanas</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas de Otras Profesiones</name>
+        <name>listsBásicasOfOtrasProfesiones</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Hechizos Dirigidos</name>
+        <name>directedSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Percepción de Poder</name>
+        <name>powerAwareness</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Manipulación del Poder</name>
+        <name>powerManipulation</name>
       </bonus>
     </bonuses>
     <categoryCostsRaw>Armadura·Ligera	9
@@ -128,7 +128,7 @@ Urbana	2/5</categoryCostsRaw>
       <characteristic>Co</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Sentido del Tiempo, Conocimiento de los Planos</commonSkillsRaw>
-    <id>Elementalista</id>
+    <id>elementalist</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
 Lista Básica (6-10)	3/3/3
@@ -191,12 +191,12 @@ Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	8/8
 Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	8/8
 Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     <name>
-      <en>Elementalista</en>
+      <en>Elementalist</en>
       <es>Elementalista</es>
     </name>
     <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
-      <realm>Esencia</realm>
+      <realm>ESSENCE</realm>
     </magicRealms>
     <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -204,51 +204,51 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>Artesano Elemental</trainingName>
+        <trainingName>artisanElemental</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>25</cost>
         <costNotMagic>25</costNotMagic>
-        <trainingName>Erudito Elemental</trainingName>
+        <trainingName>scholarElemental</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>29</cost>
         <costNotMagic>29</costNotMagic>
-        <trainingName>Mago de la Luz</trainingName>
+        <trainingName>lightWizard</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>29</cost>
         <costNotMagic>29</costNotMagic>
-        <trainingName>Mago de la Tierra</trainingName>
+        <trainingName>earthWizard</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>Mago del Agua</trainingName>
+        <trainingName>waterWizard</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>29</cost>
         <costNotMagic>29</costNotMagic>
-        <trainingName>Mago del Aire</trainingName>
+        <trainingName>wizardOfTheAire</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>29</cost>
         <costNotMagic>29</costNotMagic>
-        <trainingName>Mago del Fuego</trainingName>
+        <trainingName>fireWizard</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>Mago de Hielo</trainingName>
+        <trainingName>wizardOfHielo</trainingName>
         <type>STANDARD</type>
       </trainingCost>
     </trainingCosts>
-  </profesion>
-</profesiones>
+  </profession>
+</professions>

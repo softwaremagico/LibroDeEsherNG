@@ -23,7 +23,7 @@ public class MagicSpellListFactoryTest {
                 .getElement(MagicSpellList.buildId(RealmOfMagic.ESSENCE, "Ley del Fuego"));
 
         Assert.assertEquals(fireLaw.getRealm(), RealmOfMagic.ESSENCE);
-        Assert.assertTrue(fireLaw.getOwners().contains("Mago"));
+        Assert.assertTrue(fireLaw.getOwners().contains("Wizard"));
     }
 
     @Test

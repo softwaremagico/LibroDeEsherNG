@@ -1,507 +1,549 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<habilidades>
-  <habilidad>
+<skills>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Lengua Negra</id>
+    <id>hablarLenguaNegra</id>
     <name>
       <en>Hablar Lengua Negra</en>
       <es>Hablar Lengua Negra</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Lengua Negra</id>
+    <id>escribirLenguaNegra</id>
     <name>
       <en>Escribir Lengua Negra</en>
       <es>Escribir Lengua Negra</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Élfico</id>
+    <id>hablarÉlfico</id>
     <name>
       <en>Hablar Élfico</en>
       <es>Hablar Élfico</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Élfico</id>
+    <id>escribirÉlfico</id>
     <name>
       <en>Escribir Élfico</en>
       <es>Escribir Élfico</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Élfico Alto</id>
+    <id>hablarÉlficoAlto</id>
     <name>
       <en>Hablar Élfico Alto</en>
       <es>Hablar Élfico Alto</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Élfico Alto</id>
+    <id>escribirÉlficoAlto</id>
     <name>
       <en>Escribir Élfico Alto</en>
       <es>Escribir Élfico Alto</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Élfico Gris</id>
+    <id>hablarÉlficoGris</id>
     <name>
       <en>Hablar Élfico Gris</en>
       <es>Hablar Élfico Gris</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Élfico Gris</id>
+    <id>escribirÉlficoGris</id>
     <name>
       <en>Escribir Élfico Gris</en>
       <es>Escribir Élfico Gris</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Élfico de los Bosques</id>
+    <id>hablarÉlficoOfTheBosques</id>
     <name>
       <en>Hablar Élfico of the Bosques</en>
       <es>Hablar Élfico de los Bosques</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Élfico de los Bosques</id>
+    <id>escribirÉlficoOfTheBosques</id>
     <name>
       <en>Escribir Élfico of the Bosques</en>
       <es>Escribir Élfico de los Bosques</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Faérico</id>
+    <id>hablarFaérico</id>
     <name>
       <en>Hablar Faérico</en>
       <es>Hablar Faérico</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Faérico</id>
+    <id>escribirFaérico</id>
     <name>
       <en>Escribir Faérico</en>
       <es>Escribir Faérico</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Gnómico</id>
+    <id>hablarGnómico</id>
     <name>
       <en>Hablar Gnómico</en>
       <es>Hablar Gnómico</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Gnómico</id>
+    <id>escribirGnómico</id>
     <name>
       <en>Escribir Gnómico</en>
       <es>Escribir Gnómico</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Enano</id>
+    <id>hablarEnano</id>
     <name>
       <en>Hablar Enano</en>
       <es>Hablar Enano</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Enano</id>
+    <id>escribirEnano</id>
     <name>
       <en>Escribir Enano</en>
       <es>Escribir Enano</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Centauro</id>
+    <id>hablarCentauro</id>
     <name>
       <en>Hablar Centauro</en>
       <es>Hablar Centauro</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Centauro</id>
+    <id>escribirCentauro</id>
     <name>
       <en>Escribir Centauro</en>
       <es>Escribir Centauro</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Hirazi</id>
+    <id>hablarHirazi</id>
     <name>
       <en>Hablar Hirazi</en>
       <es>Hablar Hirazi</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Hirazi</id>
+    <id>escribirHirazi</id>
     <name>
       <en>Escribir Hirazi</en>
       <es>Escribir Hirazi</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Lennai</id>
+    <id>hablarLennai</id>
     <name>
       <en>Hablar Lennai</en>
       <es>Hablar Lennai</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Lennai</id>
+    <id>escribirLennai</id>
     <name>
       <en>Escribir Lennai</en>
       <es>Escribir Lennai</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Dríade</id>
+    <id>hablarDríade</id>
     <name>
       <en>Hablar Dríade</en>
       <es>Hablar Dríade</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Dríade</id>
+    <id>escribirDríade</id>
     <name>
       <en>Escribir Dríade</en>
       <es>Escribir Dríade</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Orco</id>
+    <id>hablarOrco</id>
     <name>
       <en>Hablar Orco</en>
       <es>Hablar Orco</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Orco</id>
+    <id>escribirOrco</id>
     <name>
       <en>Escribir Orco</en>
       <es>Escribir Orco</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Ky'taari</id>
+    <id>hablarKyTaari</id>
     <name>
       <en>Hablar Ky'taari</en>
       <es>Hablar Ky'taari</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Ky'taari</id>
+    <id>escribirKyTaari</id>
     <name>
       <en>Escribir Ky'taari</en>
       <es>Escribir Ky'taari</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Jameri</id>
+    <id>hablarJameri</id>
     <name>
       <en>Hablar Jameri</en>
       <es>Hablar Jameri</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Jameri</id>
+    <id>escribirJameri</id>
     <name>
       <en>Escribir Jameri</en>
       <es>Escribir Jameri</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Lydiano</id>
+    <id>hablarLydiano</id>
     <name>
       <en>Hablar Lydiano</en>
       <es>Hablar Lydiano</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Lydiano</id>
+    <id>escribirLydiano</id>
     <name>
       <en>Escribir Lydiano</en>
       <es>Escribir Lydiano</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Dyari</id>
+    <id>hablarDyari</id>
     <name>
       <en>Hablar Dyari</en>
       <es>Hablar Dyari</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Dyari</id>
+    <id>escribirDyari</id>
     <name>
       <en>Escribir Dyari</en>
       <es>Escribir Dyari</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Habla Troll</id>
+    <id>hablarHablaTroll</id>
     <name>
       <en>Hablar Habla Troll</en>
       <es>Hablar Habla Troll</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Habla Troll</id>
+    <id>escribirHablaTroll</id>
     <name>
       <en>Escribir Habla Troll</en>
       <es>Escribir Habla Troll</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Erlini</id>
+    <id>hablarErlini</id>
     <name>
       <en>Hablar Erlini</en>
       <es>Hablar Erlini</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Erlini</id>
+    <id>escribirErlini</id>
     <name>
       <en>Escribir Erlini</en>
       <es>Escribir Erlini</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Arte·Pasivo</categoryId>
+    <categoryId>artCreative</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Pintura: Corporal</id>
+    <id>paintingCorporal</id>
     <name>
       <en>Painting: Corporal</en>
       <es>Pintura: Corporal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Tatuar</id>
+    <id>tatuar</id>
     <name>
       <en>Tatuar</en>
       <es>Tatuar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Bordar</id>
+    <id>bordar</id>
     <name>
       <en>Bordar</en>
       <es>Bordar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Tallar el Hueso</id>
+    <id>tallarTheHueso</id>
     <name>
       <en>Tallar the Hueso</en>
       <es>Tallar el Hueso</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-</habilidades>
+    <skillType>STANDARD</skillType>
+  </skill>
+</skills>

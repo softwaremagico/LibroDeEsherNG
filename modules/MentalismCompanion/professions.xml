@@ -1,82 +1,82 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<profesiones>
-  <profesion>
+<professions>
+  <profession>
     <bonuses>
       <bonus>
         <bonus>5</bonus>
-        <name>Autocontrol</name>
+        <name>selfControl</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Conocimiento General</name>
+        <name>loreGeneral</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Exteriores·Animales</name>
+        <name>outdoorAnimals</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Exteriores·Entorno</name>
+        <name>outdoorEnvironment</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Percepción·Búsqueda</name>
+        <name>perceptionSearching</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Percepción·Perspicacia</name>
+        <name>perceptionInsight</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Percepción·Sentidos</name>
+        <name>perceptionSenses</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Percepción de Poder</name>
+        <name>powerAwareness</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Desarrollo de Puntos de Poder</name>
+        <name>powerPointDevelopment</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Conocimiento Mágico</name>
+        <name>loreArcane</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas de Hechizos</name>
+        <name>listsBásicasOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Abiertas de Hechizos</name>
+        <name>listsAbiertasOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Cerradas de Hechizos</name>
+        <name>listsCerradasOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas de Otras Profesiones</name>
+        <name>listsBásicasOfOtrasProfesiones</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Abiertas de Otros Reinos</name>
+        <name>listsAbiertasOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Cerradas de Otros Reinos</name>
+        <name>listsCerradasOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas de Otros Reinos</name>
+        <name>listsBásicasOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Abiertas Arcanas</name>
+        <name>listsAbiertasArcanas</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Manipulación del Poder</name>
+        <name>powerManipulation</name>
       </bonus>
     </bonuses>
     <categoryCostsRaw>Armadura·Ligera	4/4/4
@@ -140,7 +140,7 @@ Urbana	3</categoryCostsRaw>
       <characteristic>Ra</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>MNatemáticas Basícas, Canalización, Sentido de la Dirección, Adivinación, Conocimiento de la Advinación, Meditación, Sentido del Tiempo</commonSkillsRaw>
-    <id>Astrólogo</id>
+    <id>astrólogo</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
 Lista Básica (6-10)	3/3/3
@@ -198,7 +198,8 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Astronomía, Orientación Celeste, Predicción del Clima</professionalSkillsRaw>
     <magicRealms>
-      <realm>Esencia/Mentalismo</realm>
+      <realm>ESSENCE</realm>
+      <realm>MENTALISM</realm>
     </magicRealms>
     <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -206,306 +207,306 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <trainingCost>
         <cost>37</cost>
         <costNotMagic>37</costNotMagic>
-        <trainingName>Amigo de las Bestias</trainingName>
+        <trainingName>friendOfTheBeasts</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>24</cost>
         <costNotMagic>24</costNotMagic>
-        <trainingName>Artesano</trainingName>
+        <trainingName>artisan</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>52</cost>
         <costNotMagic>52</costNotMagic>
-        <trainingName>Artista Marcial</trainingName>
+        <trainingName>martialArtist</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>22</cost>
         <costNotMagic>22</costNotMagic>
-        <trainingName>Artista</trainingName>
+        <trainingName>artist</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>66</cost>
         <costNotMagic>66</costNotMagic>
-        <trainingName>Asesino</trainingName>
+        <trainingName>assassin</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>37</cost>
         <costNotMagic>37</costNotMagic>
-        <trainingName>Aventurero</trainingName>
+        <trainingName>adventurer</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>76</cost>
         <costNotMagic>76</costNotMagic>
-        <trainingName>Berserker</trainingName>
+        <trainingName>berserker</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>76</cost>
         <costNotMagic>76</costNotMagic>
-        <trainingName>Caballero</trainingName>
+        <trainingName>knight</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>44</cost>
         <costNotMagic>44</costNotMagic>
-        <trainingName>Cazador</trainingName>
+        <trainingName>hunter</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>37</cost>
         <costNotMagic>37</costNotMagic>
-        <trainingName>Cortabolsas</trainingName>
+        <trainingName>cutpurse</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>36</cost>
         <costNotMagic>36</costNotMagic>
-        <trainingName>Desvalijador</trainingName>
+        <trainingName>burglar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>25</cost>
         <costNotMagic>25</costNotMagic>
-        <trainingName>Detective</trainingName>
+        <trainingName>detective</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>20</cost>
         <costNotMagic>20</costNotMagic>
-        <trainingName>Diplomático</trainingName>
+        <trainingName>diplomat</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Doctor</trainingName>
+        <trainingName>doctor</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>20</cost>
         <costNotMagic>20</costNotMagic>
-        <trainingName>Erudito</trainingName>
+        <trainingName>scholar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>Erudito Aventurero</trainingName>
+        <trainingName>adventurousScholar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>20</cost>
         <costNotMagic>20</costNotMagic>
-        <trainingName>Erudito Enclaustrado</trainingName>
+        <trainingName>cloisteredScholar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>38</cost>
         <costNotMagic>38</costNotMagic>
-        <trainingName>Espía</trainingName>
+        <trainingName>spy</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>38</cost>
         <costNotMagic>38</costNotMagic>
-        <trainingName>Expedicionario</trainingName>
+        <trainingName>expeditionary</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>192</cost>
         <costNotMagic>192</costNotMagic>
-        <trainingName>Experto en Armas</trainingName>
+        <trainingName>weaponsExpert</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>32</cost>
         <costNotMagic>32</costNotMagic>
-        <trainingName>Explorador</trainingName>
+        <trainingName>scout</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>30</cost>
         <costNotMagic>30</costNotMagic>
-        <trainingName>Fanático Religioso</trainingName>
+        <trainingName>religiousFanatic</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Filósofo</trainingName>
+        <trainingName>philosopher</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>40</cost>
         <costNotMagic>40</costNotMagic>
-        <trainingName>Guardia</trainingName>
+        <trainingName>guard</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>55</cost>
         <costNotMagic>55</costNotMagic>
-        <trainingName>Guardián</trainingName>
+        <trainingName>guardian</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>23</cost>
         <costNotMagic>23</costNotMagic>
-        <trainingName>Herbolario</trainingName>
+        <trainingName>herbalist</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>Mago Principiante</trainingName>
+        <trainingName>noviceWizard</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>22</cost>
         <costNotMagic>22</costNotMagic>
-        <trainingName>Marino</trainingName>
+        <trainingName>sailor</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>18</cost>
         <costNotMagic>18</costNotMagic>
-        <trainingName>Mercader</trainingName>
+        <trainingName>merchant</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>73</cost>
         <costNotMagic>73</costNotMagic>
-        <trainingName>Mercenario</trainingName>
+        <trainingName>mercenary</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>30</cost>
         <costNotMagic>30</costNotMagic>
-        <trainingName>Sacerdote Chamánico</trainingName>
+        <trainingName>shamanicPriest</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>33</cost>
         <costNotMagic>33</costNotMagic>
-        <trainingName>Salteador</trainingName>
+        <trainingName>bandit</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>49</cost>
         <costNotMagic>49</costNotMagic>
-        <trainingName>Soldado</trainingName>
+        <trainingName>soldier</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>Timador</trainingName>
+        <trainingName>swindler</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>29</cost>
         <costNotMagic>29</costNotMagic>
-        <trainingName>Trotamundos</trainingName>
+        <trainingName>globetrotter</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Viajero</trainingName>
+        <trainingName>traveler</trainingName>
         <type>STANDARD</type>
       </trainingCost>
     </trainingCosts>
-  </profesion>
-  <profesion>
+  </profession>
+  <profession>
     <bonuses>
       <bonus>
         <bonus>5</bonus>
-        <name>Autocontrol</name>
+        <name>selfControl</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Desarrollo de Puntos de Poder</name>
+        <name>powerPointDevelopment</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Percepción·Búsqueda</name>
+        <name>perceptionSearching</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Percepción·Perspicacia</name>
+        <name>perceptionInsight</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Percepción·Sentidos</name>
+        <name>perceptionSenses</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Percepción de Poder</name>
+        <name>powerAwareness</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Influencia</name>
+        <name>influence</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Percepción de Poder</name>
+        <name>powerAwareness</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Comunicación</name>
+        <name>communication</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas de Hechizos</name>
+        <name>listsBásicasOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Abiertas de Hechizos</name>
+        <name>listsAbiertasOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Cerradas de Hechizos</name>
+        <name>listsCerradasOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas de Otras Profesiones</name>
+        <name>listsBásicasOfOtrasProfesiones</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Abiertas de Otros Reinos</name>
+        <name>listsAbiertasOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Cerradas de Otros Reinos</name>
+        <name>listsCerradasOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas de Otros Reinos</name>
+        <name>listsBásicasOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Abiertas Arcanas</name>
+        <name>listsAbiertasArcanas</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Subterfugio·Ataque</name>
+        <name>subterfugeAttack</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Subterfugio·Mecánica</name>
+        <name>subterfugeMechanics</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Subterfugio·Sigilo</name>
+        <name>subterfugeStealth</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Manipulación del Poder</name>
+        <name>powerManipulation</name>
       </bonus>
     </bonuses>
     <categoryCostsRaw>Armadura·Ligera	4/4/4
@@ -569,7 +570,7 @@ Urbana	2/4</categoryCostsRaw>
       <characteristic>In</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Meditación, Sentido del Tiempo, Detectar Mentiras, Maestría de los Hechizos, Hipnosi</commonSkillsRaw>
-    <id>Encantador</id>
+    <id>encantador</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
 Lista Básica (6-10)	3/3/3
@@ -627,7 +628,8 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
-      <realm>Mentalismo/Esencia</realm>
+      <realm>MENTALISM</realm>
+      <realm>ESSENCE</realm>
     </magicRealms>
     <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -635,286 +637,286 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <trainingCost>
         <cost>34</cost>
         <costNotMagic>34</costNotMagic>
-        <trainingName>Amigo de las Bestias</trainingName>
+        <trainingName>friendOfTheBeasts</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>24</cost>
         <costNotMagic>24</costNotMagic>
-        <trainingName>Artesano</trainingName>
+        <trainingName>artisan</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>52</cost>
         <costNotMagic>52</costNotMagic>
-        <trainingName>Artista Marcial</trainingName>
+        <trainingName>martialArtist</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>18</cost>
         <costNotMagic>18</costNotMagic>
-        <trainingName>Artista</trainingName>
+        <trainingName>artist</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>62</cost>
         <costNotMagic>62</costNotMagic>
-        <trainingName>Asesino</trainingName>
+        <trainingName>assassin</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>37</cost>
         <costNotMagic>37</costNotMagic>
-        <trainingName>Aventurero</trainingName>
+        <trainingName>adventurer</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>76</cost>
         <costNotMagic>76</costNotMagic>
-        <trainingName>Berserker</trainingName>
+        <trainingName>berserker</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>76</cost>
         <costNotMagic>76</costNotMagic>
-        <trainingName>Caballero</trainingName>
+        <trainingName>knight</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>43</cost>
         <costNotMagic>43</costNotMagic>
-        <trainingName>Cazador</trainingName>
+        <trainingName>hunter</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>Cortabolsas</trainingName>
+        <trainingName>cutpurse</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>37</cost>
         <costNotMagic>37</costNotMagic>
-        <trainingName>Desvalijador</trainingName>
+        <trainingName>burglar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>23</cost>
         <costNotMagic>23</costNotMagic>
-        <trainingName>Detective</trainingName>
+        <trainingName>detective</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>19</cost>
         <costNotMagic>19</costNotMagic>
-        <trainingName>Diplomático</trainingName>
+        <trainingName>diplomat</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Doctor</trainingName>
+        <trainingName>doctor</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>22</cost>
         <costNotMagic>22</costNotMagic>
-        <trainingName>Erudito</trainingName>
+        <trainingName>scholar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>Erudito Aventurero</trainingName>
+        <trainingName>adventurousScholar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>22</cost>
         <costNotMagic>22</costNotMagic>
-        <trainingName>Erudito Enclaustrado</trainingName>
+        <trainingName>cloisteredScholar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>30</cost>
         <costNotMagic>30</costNotMagic>
-        <trainingName>Espía</trainingName>
+        <trainingName>spy</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>38</cost>
         <costNotMagic>38</costNotMagic>
-        <trainingName>Expedicionario</trainingName>
+        <trainingName>expeditionary</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>192</cost>
         <costNotMagic>192</costNotMagic>
-        <trainingName>Experto en Armas</trainingName>
+        <trainingName>weaponsExpert</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>34</cost>
         <costNotMagic>34</costNotMagic>
-        <trainingName>Explorador</trainingName>
+        <trainingName>scout</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>25</cost>
         <costNotMagic>25</costNotMagic>
-        <trainingName>Fanático Religioso</trainingName>
+        <trainingName>religiousFanatic</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Filósofo</trainingName>
+        <trainingName>philosopher</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>39</cost>
         <costNotMagic>39</costNotMagic>
-        <trainingName>Guardia</trainingName>
+        <trainingName>guard</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>60</cost>
         <costNotMagic>60</costNotMagic>
-        <trainingName>Guardián</trainingName>
+        <trainingName>guardian</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Herbolario</trainingName>
+        <trainingName>herbalist</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>Mago Principiante</trainingName>
+        <trainingName>noviceWizard</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>22</cost>
         <costNotMagic>22</costNotMagic>
-        <trainingName>Marino</trainingName>
+        <trainingName>sailor</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>18</cost>
         <costNotMagic>18</costNotMagic>
-        <trainingName>Mercader</trainingName>
+        <trainingName>merchant</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>73</cost>
         <costNotMagic>73</costNotMagic>
-        <trainingName>Mercenario</trainingName>
+        <trainingName>mercenary</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>29</cost>
         <costNotMagic>29</costNotMagic>
-        <trainingName>Sacerdote Chamánico</trainingName>
+        <trainingName>shamanicPriest</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>36</cost>
         <costNotMagic>36</costNotMagic>
-        <trainingName>Salteador</trainingName>
+        <trainingName>bandit</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>49</cost>
         <costNotMagic>49</costNotMagic>
-        <trainingName>Soldado</trainingName>
+        <trainingName>soldier</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>20</cost>
         <costNotMagic>20</costNotMagic>
-        <trainingName>Timador</trainingName>
+        <trainingName>swindler</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>31</cost>
         <costNotMagic>31</costNotMagic>
-        <trainingName>Trotamundos</trainingName>
+        <trainingName>globetrotter</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Viajero</trainingName>
+        <trainingName>traveler</trainingName>
         <type>STANDARD</type>
       </trainingCost>
     </trainingCosts>
-  </profesion>
-  <profesion>
+  </profession>
+  <profession>
     <bonuses>
       <bonus>
         <bonus>10</bonus>
-        <name>Desarrollo Físico</name>
+        <name>physicalDevelopment</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Atletismo·Gimnasia</name>
+        <name>athleticsGymnastics</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Atletismo·Potencia</name>
+        <name>athleticsPower</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Atletismo·Resistencia</name>
+        <name>athleticsEndurance</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Armadura·Ligera</name>
+        <name>armorLight</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Armadura·Media</name>
+        <name>armorMedium</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Armadura·Pesada</name>
+        <name>armorHeavy</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Armas·2manos</name>
+        <name>weaponsTwoHanded</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Armas·Arrojadizas</name>
+        <name>weaponsThrown</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Armas·Artillería</name>
+        <name>weaponsSiege</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Armas·Contundentes</name>
+        <name>weaponsBlunt</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Armas·Asta</name>
+        <name>weaponsPolearm</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Armas·Filo</name>
+        <name>weaponsEdged</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Armas·Proyectiles</name>
+        <name>weaponsMissile</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Influencia</name>
+        <name>influence</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Maniobras de Combate</name>
+        <name>combatManeuvers</name>
       </bonus>
     </bonuses>
     <categoryCostsRaw>Armadura·Ligera	1/1/1
@@ -978,7 +980,7 @@ Urbana	4</categoryCostsRaw>
       <characteristic>In</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Táctica, Ingeniería de Asedio</commonSkillsRaw>
-    <id>Maestro de Armas</id>
+    <id>maestroOfWeapons</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
 Lista Básica (6-10)	6/6/6
@@ -1036,7 +1038,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Organización Militar</professionalSkillsRaw>
     <magicRealms>
-      <realm>Mentalismo</realm>
+      <realm>MENTALISM</realm>
     </magicRealms>
     <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -1044,298 +1046,298 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       <trainingCost>
         <cost>32</cost>
         <costNotMagic>32</costNotMagic>
-        <trainingName>Amigo de las Bestias</trainingName>
+        <trainingName>friendOfTheBeasts</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>24</cost>
         <costNotMagic>24</costNotMagic>
-        <trainingName>Artesano</trainingName>
+        <trainingName>artisan</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>38</cost>
         <costNotMagic>38</costNotMagic>
-        <trainingName>Artista Marcial</trainingName>
+        <trainingName>martialArtist</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>Artista</trainingName>
+        <trainingName>artist</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>38</cost>
         <costNotMagic>38</costNotMagic>
-        <trainingName>Asesino</trainingName>
+        <trainingName>assassin</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>31</cost>
         <costNotMagic>31</costNotMagic>
-        <trainingName>Aventurero</trainingName>
+        <trainingName>adventurer</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>31</cost>
         <costNotMagic>31</costNotMagic>
-        <trainingName>Berserker</trainingName>
+        <trainingName>berserker</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>38</cost>
         <costNotMagic>38</costNotMagic>
-        <trainingName>Caballero</trainingName>
+        <trainingName>knight</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>36</cost>
         <costNotMagic>36</costNotMagic>
-        <trainingName>Cazador</trainingName>
+        <trainingName>hunter</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>35</cost>
         <costNotMagic>35</costNotMagic>
-        <trainingName>Cortabolsas</trainingName>
+        <trainingName>cutpurse</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>30</cost>
         <costNotMagic>30</costNotMagic>
-        <trainingName>Desvalijador</trainingName>
+        <trainingName>burglar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>Detective</trainingName>
+        <trainingName>detective</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>Diplomático</trainingName>
+        <trainingName>diplomat</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Doctor</trainingName>
+        <trainingName>doctor</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>24</cost>
         <costNotMagic>24</costNotMagic>
-        <trainingName>Erudito</trainingName>
+        <trainingName>scholar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>24</cost>
         <costNotMagic>24</costNotMagic>
-        <trainingName>Erudito Aventurero</trainingName>
+        <trainingName>adventurousScholar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>Erudito Enclaustrado</trainingName>
+        <trainingName>cloisteredScholar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>34</cost>
         <costNotMagic>34</costNotMagic>
-        <trainingName>Espía</trainingName>
+        <trainingName>spy</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>32</cost>
         <costNotMagic>32</costNotMagic>
-        <trainingName>Expedicionario</trainingName>
+        <trainingName>expeditionary</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>52</cost>
         <costNotMagic>52</costNotMagic>
-        <trainingName>Experto en Armas</trainingName>
+        <trainingName>weaponsExpert</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Explorador</trainingName>
+        <trainingName>scout</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Fanático Religioso</trainingName>
+        <trainingName>religiousFanatic</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>25</cost>
         <costNotMagic>25</costNotMagic>
-        <trainingName>Filósofo</trainingName>
+        <trainingName>philosopher</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>40</cost>
         <costNotMagic>40</costNotMagic>
-        <trainingName>Guardia</trainingName>
+        <trainingName>guard</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>40</cost>
         <costNotMagic>40</costNotMagic>
-        <trainingName>Guardián</trainingName>
+        <trainingName>guardian</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>23</cost>
         <costNotMagic>23</costNotMagic>
-        <trainingName>Herbolario</trainingName>
+        <trainingName>herbalist</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>35</cost>
         <costNotMagic>35</costNotMagic>
-        <trainingName>Mago Principiante</trainingName>
+        <trainingName>noviceWizard</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>20</cost>
         <costNotMagic>20</costNotMagic>
-        <trainingName>Marino</trainingName>
+        <trainingName>sailor</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>24</cost>
         <costNotMagic>24</costNotMagic>
-        <trainingName>Mercader</trainingName>
+        <trainingName>merchant</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>38</cost>
         <costNotMagic>38</costNotMagic>
-        <trainingName>Mercenario</trainingName>
+        <trainingName>mercenary</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>32</cost>
         <costNotMagic>32</costNotMagic>
-        <trainingName>Sacerdote Chamánico</trainingName>
+        <trainingName>shamanicPriest</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>25</cost>
         <costNotMagic>25</costNotMagic>
-        <trainingName>Salteador</trainingName>
+        <trainingName>bandit</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>24</cost>
         <costNotMagic>24</costNotMagic>
-        <trainingName>Soldado</trainingName>
+        <trainingName>soldier</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>24</cost>
         <costNotMagic>24</costNotMagic>
-        <trainingName>Timador</trainingName>
+        <trainingName>swindler</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>31</cost>
         <costNotMagic>31</costNotMagic>
-        <trainingName>Trotamundos</trainingName>
+        <trainingName>globetrotter</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>25</cost>
         <costNotMagic>25</costNotMagic>
-        <trainingName>Viajero</trainingName>
+        <trainingName>traveler</trainingName>
         <type>STANDARD</type>
       </trainingCost>
     </trainingCosts>
-  </profesion>
-  <profesion>
+  </profession>
+  <profession>
     <bonuses>
       <bonus>
         <bonus>5</bonus>
-        <name>Autocontrol</name>
+        <name>selfControl</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Desarrollo de Puntos de Poder</name>
+        <name>powerPointDevelopment</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Conocimiento·General</name>
+        <name>loreGeneral</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Conocimiento·Mágico</name>
+        <name>loreArcane</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Conocimiento·Oscuro</name>
+        <name>loreDark</name>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>Conocimiento·Técnico</name>
+        <name>loreTechnical</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas de Hechizos</name>
+        <name>listsBásicasOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Abiertas de Hechizos</name>
+        <name>listsAbiertasOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Cerradas de Hechizos</name>
+        <name>listsCerradasOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas de Otras Profesiones</name>
+        <name>listsBásicasOfOtrasProfesiones</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Abiertas de Otros Reinos</name>
+        <name>listsAbiertasOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Cerradas de Otros Reinos</name>
+        <name>listsCerradasOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Básicas de Otros Reinos</name>
+        <name>listsBásicasOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Listas Abiertas Arcanas</name>
+        <name>listsAbiertasArcanas</name>
       </bonus>
       <bonus>
         <bonus>15</bonus>
-        <name>Percepción·Búsqueda</name>
+        <name>perceptionSearching</name>
       </bonus>
       <bonus>
         <bonus>15</bonus>
-        <name>Percepción·Perspicacia</name>
+        <name>perceptionInsight</name>
       </bonus>
       <bonus>
         <bonus>15</bonus>
-        <name>Percepción·Sentidos</name>
+        <name>perceptionSenses</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Manupulación del Poder</name>
+        <name>manupulaciónOfThePower</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>Percepción de Poder</name>
+        <name>powerAwareness</name>
       </bonus>
     </bonuses>
     <categoryCostsRaw>Armadura·Ligera	4/4/4
@@ -1399,7 +1401,7 @@ Urbana	3/5</categoryCostsRaw>
       <characteristic>Fu</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Conocimiento de los Artefactos, Historia, Conocimiento de las Advincaciones, Detectar Mentiras, Orientación Celeste, Sentido del Tiempo</commonSkillsRaw>
-    <id>Vidente</id>
+    <id>vidente</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
 Lista Básica (6-10)	3/3/3
@@ -1457,7 +1459,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Advinación, Meditación</professionalSkillsRaw>
     <magicRealms>
-      <realm>Mentalismo</realm>
+      <realm>MENTALISM</realm>
     </magicRealms>
     <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -1465,219 +1467,219 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <trainingCost>
         <cost>37</cost>
         <costNotMagic>37</costNotMagic>
-        <trainingName>Amigo de las Bestias</trainingName>
+        <trainingName>friendOfTheBeasts</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>24</cost>
         <costNotMagic>24</costNotMagic>
-        <trainingName>Artesano</trainingName>
+        <trainingName>artisan</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>38</cost>
         <costNotMagic>38</costNotMagic>
-        <trainingName>Artista Marcial</trainingName>
+        <trainingName>martialArtist</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>22</cost>
         <costNotMagic>22</costNotMagic>
-        <trainingName>Artista</trainingName>
+        <trainingName>artist</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>63</cost>
         <costNotMagic>63</costNotMagic>
-        <trainingName>Asesino</trainingName>
+        <trainingName>assassin</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>33</cost>
         <costNotMagic>33</costNotMagic>
-        <trainingName>Aventurero</trainingName>
+        <trainingName>adventurer</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>57</cost>
         <costNotMagic>57</costNotMagic>
-        <trainingName>Berserker</trainingName>
+        <trainingName>berserker</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>67</cost>
         <costNotMagic>67</costNotMagic>
-        <trainingName>Caballero</trainingName>
+        <trainingName>knight</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>42</cost>
         <costNotMagic>42</costNotMagic>
-        <trainingName>Cazador</trainingName>
+        <trainingName>hunter</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>36</cost>
         <costNotMagic>36</costNotMagic>
-        <trainingName>Cortabolsas</trainingName>
+        <trainingName>cutpurse</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>34</cost>
         <costNotMagic>34</costNotMagic>
-        <trainingName>Desvalijador</trainingName>
+        <trainingName>burglar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>22</cost>
         <costNotMagic>22</costNotMagic>
-        <trainingName>Detective</trainingName>
+        <trainingName>detective</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>20</cost>
         <costNotMagic>20</costNotMagic>
-        <trainingName>Diplomático</trainingName>
+        <trainingName>diplomat</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Doctor</trainingName>
+        <trainingName>doctor</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>18</cost>
         <costNotMagic>18</costNotMagic>
-        <trainingName>Erudito</trainingName>
+        <trainingName>scholar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>27</cost>
         <costNotMagic>27</costNotMagic>
-        <trainingName>Erudito Aventurero</trainingName>
+        <trainingName>adventurousScholar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>20</cost>
         <costNotMagic>20</costNotMagic>
-        <trainingName>Erudito Enclaustrado</trainingName>
+        <trainingName>cloisteredScholar</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>36</cost>
         <costNotMagic>36</costNotMagic>
-        <trainingName>Espía</trainingName>
+        <trainingName>spy</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>35</cost>
         <costNotMagic>35</costNotMagic>
-        <trainingName>Expedicionario</trainingName>
+        <trainingName>expeditionary</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>164</cost>
         <costNotMagic>164</costNotMagic>
-        <trainingName>Experto en Armas</trainingName>
+        <trainingName>weaponsExpert</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>29</cost>
         <costNotMagic>29</costNotMagic>
-        <trainingName>Explorador</trainingName>
+        <trainingName>scout</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>Fanático Religioso</trainingName>
+        <trainingName>religiousFanatic</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Filósofo</trainingName>
+        <trainingName>philosopher</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>33</cost>
         <costNotMagic>33</costNotMagic>
-        <trainingName>Guardia</trainingName>
+        <trainingName>guard</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>54</cost>
         <costNotMagic>54</costNotMagic>
-        <trainingName>Guardián</trainingName>
+        <trainingName>guardian</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Herbolario</trainingName>
+        <trainingName>herbalist</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Mago Principiante</trainingName>
+        <trainingName>noviceWizard</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>22</cost>
         <costNotMagic>22</costNotMagic>
-        <trainingName>Marino</trainingName>
+        <trainingName>sailor</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>18</cost>
         <costNotMagic>18</costNotMagic>
-        <trainingName>Mercader</trainingName>
+        <trainingName>merchant</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>62</cost>
         <costNotMagic>62</costNotMagic>
-        <trainingName>Mercenario</trainingName>
+        <trainingName>mercenary</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>30</cost>
         <costNotMagic>30</costNotMagic>
-        <trainingName>Sacerdote Chamánico</trainingName>
+        <trainingName>shamanicPriest</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>32</cost>
         <costNotMagic>32</costNotMagic>
-        <trainingName>Salteador</trainingName>
+        <trainingName>bandit</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>42</cost>
         <costNotMagic>42</costNotMagic>
-        <trainingName>Soldado</trainingName>
+        <trainingName>soldier</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>27</cost>
         <costNotMagic>27</costNotMagic>
-        <trainingName>Timador</trainingName>
+        <trainingName>swindler</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>30</cost>
         <costNotMagic>30</costNotMagic>
-        <trainingName>Trotamundos</trainingName>
+        <trainingName>globetrotter</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>Viajero</trainingName>
+        <trainingName>traveler</trainingName>
         <type>STANDARD</type>
       </trainingCost>
     </trainingCosts>
-  </profesion>
-</profesiones>
+  </profession>
+</professions>

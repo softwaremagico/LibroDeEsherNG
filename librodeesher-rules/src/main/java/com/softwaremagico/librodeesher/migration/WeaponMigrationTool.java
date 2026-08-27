@@ -43,8 +43,9 @@ public final class WeaponMigrationTool {
     public static int migrate(Path sourceRoot, Path modulesTarget) throws IOException {
         final Path modulosDir = sourceRoot.resolve("rolemaster").resolve("modulos");
 
-        final Map<String, Weapon> weaponsById = new LinkedHashMap<>();
+        final Map<String, Weapon> weaponsBySpanishName = new LinkedHashMap<>();
         final Map<String, List<Weapon>> weaponsByModule = new LinkedHashMap<>();
+        final IdAllocator idAllocator = new IdAllocator();
 
         for (final String module : ModuleManager.getAllModules()) {
             final Path weaponsDir = modulosDir.resolve(LegacyModules.sourceFolderFor(module)).resolve(WEAPONS_FOLDER);
@@ -54,7 +55,7 @@ public final class WeaponMigrationTool {
             try (Stream<Path> files = Files.list(weaponsDir)) {
                 for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
                         .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
-                    readWeaponsFile(file, module, weaponsById, weaponsByModule);
+                    readWeaponsFile(file, module, weaponsBySpanishName, weaponsByModule, idAllocator);
                 }
             }
         }
@@ -62,14 +63,14 @@ public final class WeaponMigrationTool {
         int written = 0;
         for (final Map.Entry<String, List<Weapon>> entry : weaponsByModule.entrySet()) {
             XmlMigrationWriter.write(modulesTarget.resolve(entry.getKey()).resolve(OUTPUT_FILE),
-                    "armas", "arma", entry.getValue());
+                    "weapons", "weapon", entry.getValue());
             written++;
         }
         return written;
     }
 
-    private static void readWeaponsFile(Path file, String module, Map<String, Weapon> weaponsById,
-                                         Map<String, List<Weapon>> weaponsByModule) throws IOException {
+    private static void readWeaponsFile(Path file, String module, Map<String, Weapon> weaponsBySpanishName,
+                                         Map<String, List<Weapon>> weaponsByModule, IdAllocator idAllocator) throws IOException {
         final String fileName = file.getFileName().toString();
         final WeaponType type = WeaponType.fromTag(fileName.substring(0, fileName.length() - ".txt".length()));
 
@@ -82,18 +83,18 @@ public final class WeaponMigrationTool {
                 continue;
             }
             final boolean rare = columns[0].contains("*");
-            final String name = columns[0].replace("*", "").trim();
-            if (weaponsById.containsKey(name)) {
+            final String spanishName = columns[0].replace("*", "").trim();
+            if (weaponsBySpanishName.containsKey(spanishName)) {
                 continue;
             }
 
-            final Weapon weapon = new Weapon(name);
-            weapon.setName(name, Translations.toEnglish(name));
+            final Weapon weapon = new Weapon(idAllocator.idFor(spanishName));
+            weapon.setName(spanishName, Translations.toEnglish(spanishName));
             weapon.setType(type);
             weapon.setAbbreviation(columns[1].trim());
             weapon.setRare(rare);
 
-            weaponsById.put(name, weapon);
+            weaponsBySpanishName.put(spanishName, weapon);
             weaponsByModule.computeIfAbsent(module, key -> new ArrayList<>()).add(weapon);
         }
     }

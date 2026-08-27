@@ -20,7 +20,7 @@ public class PerkFactoryTest {
 
     @Test
     public void weaknessHasANegativeCost() throws InvalidXmlElementException {
-        final Perk addiction = PerkFactory.getInstance().getElement("Adicción Ligera");
+        final Perk addiction = PerkFactory.getInstance().getElement("minorAddiction");
 
         Assert.assertTrue(addiction.isWeakness());
         Assert.assertEquals(addiction.getCost(), Integer.valueOf(-20));
@@ -32,7 +32,7 @@ public class PerkFactoryTest {
         // Real data typo in "ManualPersonajes": the "Grado" column contains "Mental" (a PerkType tag)
         // and the "Tipo" column contains "Máximo" (a PerkGrade tag). The legacy parser silently
         // defaulted both to MAXIMUM/OTHER instead of failing; this is reproduced on purpose.
-        final Perk promise = PerkFactory.getInstance().getElement("Promesa (Máximo)");
+        final Perk promise = PerkFactory.getInstance().getElement("vowMaximum");
 
         Assert.assertEquals(promise.getGrade(), PerkGrade.MAXIMUM);
         Assert.assertEquals(promise.getType(), PerkType.OTHER);
@@ -40,10 +40,10 @@ public class PerkFactoryTest {
 
     @Test
     public void raceRestrictedPerkIsNotAvailableToEveryone() throws InvalidXmlElementException {
-        final Perk ansioso = PerkFactory.getInstance().getElement("Ansioso");
+        final Perk ansioso = PerkFactory.getInstance().getElement("anxious");
 
         Assert.assertFalse(ansioso.isAvailableToEveryone());
-        Assert.assertEquals(ansioso.getAvailableTo(), java.util.List.of("Orco Gris"));
+        Assert.assertEquals(ansioso.getAvailableTo(), java.util.List.of("Gray Orc"));
     }
 
     @Test(expectedExceptions = InvalidXmlElementException.class)

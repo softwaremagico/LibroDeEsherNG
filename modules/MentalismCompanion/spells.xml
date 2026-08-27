@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<hechizos>
-  <listaDeHechizos>
+<spells>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Conocimiento de las Estrellas</id>
+    <id>mentalismLoreOfTheEstrellas</id>
     <name>
       <en>Lore of the Estrellas</en>
       <es>Conocimiento de las Estrellas</es>
@@ -12,11 +12,11 @@
       <owner>Astrólogo</owner>
       <owner>Oráculo</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Luces de las Estrellas</id>
+    <id>mentalismLucesOfTheEstrellas</id>
     <name>
       <en>Luces of the Estrellas</en>
       <es>Luces de las Estrellas</es>
@@ -25,11 +25,11 @@
     <owners>
       <owner>Astrólogo</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Sendas de la Voz</id>
+    <id>mentalismSendasOfTheVoz</id>
     <name>
       <en>Sendas of the Voz</en>
       <es>Sendas de la Voz</es>
@@ -38,11 +38,11 @@
     <owners>
       <owner>Astrólogo</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Sentido de las Estrellas</id>
+    <id>mentalismSentidoOfTheEstrellas</id>
     <name>
       <en>Sentido of the Estrellas</en>
       <es>Sentido de las Estrellas</es>
@@ -51,11 +51,11 @@
     <owners>
       <owner>Astrólogo</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Visiones Sagradas</id>
+    <id>mentalismVisionesSagradas</id>
     <name>
       <en>Visiones Sagradas</en>
       <es>Visiones Sagradas</es>
@@ -64,11 +64,11 @@
     <owners>
       <owner>Astrólogo</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Voz Lejana</id>
+    <id>mentalismVozLejana</id>
     <name>
       <en>Voz Lejana</en>
       <es>Voz Lejana</es>
@@ -77,11 +77,11 @@
     <owners>
       <owner>Astrólogo</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Espejismo de Defensa</id>
+    <id>mentalismEspejismoOfDefense</id>
     <name>
       <en>Espejismo of Defense</en>
       <es>Espejismo de Defensa</es>
@@ -90,11 +90,11 @@
     <owners>
       <owner>Encantador</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Espejismo de Recuerdos</id>
+    <id>mentalismEspejismoOfRecuerdos</id>
     <name>
       <en>Espejismo of Recuerdos</en>
       <es>Espejismo de Recuerdos</es>
@@ -103,24 +103,24 @@
     <owners>
       <owner>Encantador</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Ley de los Espejismos</id>
+    <id>mentalismLawOfTheEspejismos</id>
     <name>
-      <en>Ley of the Espejismos</en>
+      <en>Law of the Espejismos</en>
       <es>Ley de los Espejismos</es>
     </name>
     <openList>false</openList>
     <owners>
       <owner>Encantador</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Maestría de los Espejismos</id>
+    <id>mentalismMaestríaOfTheEspejismos</id>
     <name>
       <en>Maestría of the Espejismos</en>
       <es>Maestría de los Espejismos</es>
@@ -129,11 +129,11 @@
     <owners>
       <owner>Encantador</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Mejora de los Espejismos</id>
+    <id>mentalismMejoraOfTheEspejismos</id>
     <name>
       <en>Mejora of the Espejismos</en>
       <es>Mejora de los Espejismos</es>
@@ -142,11 +142,11 @@
     <owners>
       <owner>Encantador</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Proyección de los Espejismos</id>
+    <id>mentalismProyecciónOfTheEspejismos</id>
     <name>
       <en>Proyección of the Espejismos</en>
       <es>Proyección de los Espejismos</es>
@@ -155,89 +155,89 @@
     <owners>
       <owner>Encantador</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Ley de la Batalla</id>
+    <id>mentalismLawOfTheBatalla</id>
     <name>
-      <en>Ley of the Batalla</en>
+      <en>Law of the Batalla</en>
       <es>Ley de la Batalla</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Maestro de Armas</owner>
+      <owner>Maestro of Weapons</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Ley de la Fortaleza</id>
+    <id>mentalismLawOfTheFortaleza</id>
     <name>
-      <en>Ley of the Fortaleza</en>
+      <en>Law of the Fortaleza</en>
       <es>Ley de la Fortaleza</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Maestro de Armas</owner>
+      <owner>Maestro of Weapons</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Ley del Guerrero</id>
+    <id>mentalismLawOfTheWarrior</id>
     <name>
-      <en>Ley of the Guerrero</en>
+      <en>Law of the Warrior</en>
       <es>Ley del Guerrero</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Maestro de Armas</owner>
+      <owner>Maestro of Weapons</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Ley Marcial</id>
+    <id>mentalismLawMarcial</id>
     <name>
-      <en>Ley Marcial</en>
+      <en>Law Marcial</en>
       <es>Ley Marcial</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Maestro de Armas</owner>
+      <owner>Maestro of Weapons</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Maestría de las Armaduras</id>
+    <id>mentalismMaestríaOfTheArmaduras</id>
     <name>
       <en>Maestría of the Armaduras</en>
       <es>Maestría de las Armaduras</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Maestro de Armas</owner>
+      <owner>Maestro of Weapons</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Maestría de las Armas</id>
+    <id>mentalismMaestríaOfTheWeapons</id>
     <name>
       <en>Maestría of the Weapons</en>
       <es>Maestría de las Armas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Maestro de Armas</owner>
+      <owner>Maestro of Weapons</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Apropiación de la Visión</id>
+    <id>mentalismApropiaciónOfTheVisión</id>
     <name>
       <en>Apropiación of the Visión</en>
       <es>Apropiación de la Visión</es>
@@ -246,11 +246,11 @@
     <owners>
       <owner>Vidente</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Protección de las Visiones</id>
+    <id>mentalismProtecciónOfTheVisiones</id>
     <name>
       <en>Protección of the Visiones</en>
       <es>Protección de las Visiones</es>
@@ -259,11 +259,11 @@
     <owners>
       <owner>Vidente</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Visiones Lejanas</id>
+    <id>mentalismVisionesLejanas</id>
     <name>
       <en>Visiones Lejanas</en>
       <es>Visiones Lejanas</es>
@@ -272,11 +272,11 @@
     <owners>
       <owner>Vidente</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Visiones del Futuro</id>
+    <id>mentalismVisionesOfTheFuturo</id>
     <name>
       <en>Visiones of the Futuro</en>
       <es>Visiones del Futuro</es>
@@ -286,11 +286,11 @@
       <owner>Vidente</owner>
       <owner>Oráculo</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Visiones del Pasado</id>
+    <id>mentalismVisionesOfThePasado</id>
     <name>
       <en>Visiones of the Pasado</en>
       <es>Visiones del Pasado</es>
@@ -299,11 +299,11 @@
     <owners>
       <owner>Vidente</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Visiones Mentales</id>
+    <id>mentalismVisionesMentales</id>
     <name>
       <en>Visiones Mentales</en>
       <es>Visiones Mentales</es>
@@ -312,11 +312,11 @@
     <owners>
       <owner>Vidente</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Charadas</id>
+    <id>mentalismCharadas</id>
     <name>
       <en>Charadas</en>
       <es>Charadas</es>
@@ -325,24 +325,24 @@
     <owners>
       <owner>Charlatán</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Ley de la Medicina</id>
+    <id>mentalismLawOfTheMedicina</id>
     <name>
-      <en>Ley of the Medicina</en>
+      <en>Law of the Medicina</en>
       <es>Ley de la Medicina</es>
     </name>
     <openList>false</openList>
     <owners>
       <owner>Médico Especialista</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Medicina</id>
+    <id>mentalismMedicina</id>
     <name>
       <en>Medicina</en>
       <es>Medicina</es>
@@ -351,11 +351,11 @@
     <owners>
       <owner>Médico Especialista</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Maestría de la Navegación</id>
+    <id>mentalismMaestríaOfTheNavegación</id>
     <name>
       <en>Maestría of the Navegación</en>
       <es>Maestría de la Navegación</es>
@@ -364,11 +364,11 @@
     <owners>
       <owner>Marinero</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Maestría del Mar</id>
+    <id>mentalismMaestríaOfTheMar</id>
     <name>
       <en>Maestría of the Mar</en>
       <es>Maestría del Mar</es>
@@ -377,11 +377,11 @@
     <owners>
       <owner>Marinero</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Maestría del Conocimiento</id>
+    <id>mentalismMaestríaOfTheLore</id>
     <name>
       <en>Maestría of the Lore</en>
       <es>Maestría del Conocimiento</es>
@@ -390,11 +390,11 @@
     <owners>
       <owner>Sabio</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Besos del Houri</id>
+    <id>mentalismKissesOfTheHouri</id>
     <name>
       <en>Kisses of the Houri</en>
       <es>Besos del Houri</es>
@@ -403,11 +403,11 @@
     <owners>
       <owner>Houri</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Engaños del Houri</id>
+    <id>mentalismDeceptionsOfTheHouri</id>
     <name>
       <en>Deceptions of the Houri</en>
       <es>Engaños del Houri</es>
@@ -416,37 +416,37 @@
     <owners>
       <owner>Houri</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Viaje Onírico</id>
+    <id>mentalismViajeOnírico</id>
     <name>
       <en>Viaje Onírico</en>
       <es>Viaje Onírico</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Viajero Onírico</owner>
+      <owner>Traveler Onírico</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Ley de los Sueños</id>
+    <id>mentalismLawOfTheSueños</id>
     <name>
-      <en>Ley of the Sueños</en>
+      <en>Law of the Sueños</en>
       <es>Ley de los Sueños</es>
     </name>
     <openList>false</openList>
     <owners>
       <owner>Tejesueños</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Conocimiento de los Sueños</id>
+    <id>mentalismLoreOfTheSueños</id>
     <name>
       <en>Lore of the Sueños</en>
       <es>Conocimiento de los Sueños</es>
@@ -455,24 +455,24 @@
     <owners>
       <owner>Tejesueños</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Atar Animales</id>
+    <id>mentalismAtarAnimals</id>
     <name>
       <en>Atar Animals</en>
       <es>Atar Animales</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Señor de las Bestias</owner>
+      <owner>Señor of the Bestias</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Cambio de Mente</id>
+    <id>mentalismCambioOfMente</id>
     <name>
       <en>Cambio of Mente</en>
       <es>Cambio de Mente</es>
@@ -481,11 +481,11 @@
     <owners>
       <owner>NiIdea</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Cambio de Cuerpo</id>
+    <id>mentalismCambioOfBody</id>
     <name>
       <en>Cambio of Body</en>
       <es>Cambio de Cuerpo</es>
@@ -494,6 +494,6 @@
     <owners>
       <owner>NiIdea</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-</hechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+</spells>

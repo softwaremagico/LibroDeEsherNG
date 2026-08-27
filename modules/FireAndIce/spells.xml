@@ -1,296 +1,296 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<hechizos>
-  <listaDeHechizos>
+<spells>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Defensas Elementales</id>
+    <id>essenceDefensesElementales</id>
     <name>
       <en>Defenses Elementales</en>
       <es>Defensas Elementales</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago de Luz</owner>
-      <owner>Mago de la Tierra</owner>
-      <owner>Mago del Agua</owner>
-      <owner>Mago del Fuego</owner>
-      <owner>Mago del Hielo</owner>
-      <owner>Mago del Aire</owner>
+      <owner>Wizard of Light</owner>
+      <owner>Earth Wizard</owner>
+      <owner>Water Wizard</owner>
+      <owner>Fire Wizard</owner>
+      <owner>Wizard of the Hielo</owner>
+      <owner>Wizard of the Aire</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Desvíos Elementales</id>
+    <id>essenceDesvíosElementales</id>
     <name>
       <en>Desvíos Elementales</en>
       <es>Desvíos Elementales</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago de Luz</owner>
-      <owner>Mago de la Tierra</owner>
-      <owner>Mago del Agua</owner>
-      <owner>Mago del Fuego</owner>
-      <owner>Mago del Hielo</owner>
-      <owner>Mago del Aire</owner>
+      <owner>Wizard of Light</owner>
+      <owner>Earth Wizard</owner>
+      <owner>Water Wizard</owner>
+      <owner>Fire Wizard</owner>
+      <owner>Wizard of the Hielo</owner>
+      <owner>Wizard of the Aire</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Invocaciones Elementales</id>
+    <id>essenceInvocacionesElementales</id>
     <name>
       <en>Invocaciones Elementales</en>
       <es>Invocaciones Elementales</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago de la Luz</owner>
-      <owner>Mago de la Tierra</owner>
-      <owner>Mago del Agua</owner>
-      <owner>Mago del Fuego</owner>
-      <owner>Mago del Hielo</owner>
-      <owner>Mago del Aire</owner>
+      <owner>Light Wizard</owner>
+      <owner>Earth Wizard</owner>
+      <owner>Water Wizard</owner>
+      <owner>Fire Wizard</owner>
+      <owner>Wizard of the Hielo</owner>
+      <owner>Wizard of the Aire</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Control del Aire</id>
+    <id>essenceControlOfTheAire</id>
     <name>
       <en>Control of the Aire</en>
       <es>Control del Aire</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago del Aire</owner>
+      <owner>Wizard of the Aire</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Maestría del Viento</id>
+    <id>essenceMaestríaOfTheViento</id>
     <name>
       <en>Maestría of the Viento</en>
       <es>Maestría del Viento</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago del Aire</owner>
+      <owner>Wizard of the Aire</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Campos Terrestres</id>
+    <id>essenceCamposTerrestres</id>
     <name>
       <en>Campos Terrestres</en>
       <es>Campos Terrestres</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago de la Tierra</owner>
+      <owner>Earth Wizard</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Maestría de la Tierra</id>
+    <id>essenceMaestríaOfTheEarth</id>
     <name>
-      <en>Maestría of the Tierra</en>
+      <en>Maestría of the Earth</en>
       <es>Maestría de la Tierra</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago de la Tierra</owner>
+      <owner>Earth Wizard</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Camino de las Llamas</id>
+    <id>essenceCaminoOfTheLlamas</id>
     <name>
       <en>Camino of the Llamas</en>
       <es>Camino de las Llamas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago del Fuego</owner>
+      <owner>Fire Wizard</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Sendas del Fuego</id>
+    <id>essenceSendasOfTheFire</id>
     <name>
-      <en>Sendas of the Fuego</en>
+      <en>Sendas of the Fire</en>
       <es>Sendas del Fuego</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago del Fuego</owner>
+      <owner>Fire Wizard</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Maestría del Frío</id>
+    <id>essenceMaestríaOfTheCold</id>
     <name>
       <en>Maestría of the Cold</en>
       <es>Maestría del Frío</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago del Hielo</owner>
+      <owner>Wizard of the Hielo</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Maestría del Hielo</id>
+    <id>essenceMaestríaOfTheHielo</id>
     <name>
       <en>Maestría of the Hielo</en>
       <es>Maestría del Hielo</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago del Hielo</owner>
+      <owner>Wizard of the Hielo</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Maestría de la Luz</id>
+    <id>essenceMaestríaOfTheLight</id>
     <name>
-      <en>Maestría of the Luz</en>
+      <en>Maestría of the Light</en>
       <es>Maestría de la Luz</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago de la Luz</owner>
+      <owner>Light Wizard</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Maestría de la Oscuridad</id>
+    <id>essenceMaestríaOfTheOscuridad</id>
     <name>
       <en>Maestría of the Oscuridad</en>
       <es>Maestría de la Oscuridad</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago de la Luz</owner>
+      <owner>Light Wizard</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Maestría del Agua</id>
+    <id>essenceMaestríaOfTheWater</id>
     <name>
-      <en>Maestría of the Agua</en>
+      <en>Maestría of the Water</en>
       <es>Maestría del Agua</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago del Agua</owner>
+      <owner>Water Wizard</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Sendas Acuosas</id>
+    <id>essenceSendasAcuosas</id>
     <name>
       <en>Sendas Acuosas</en>
       <es>Sendas Acuosas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago del Agua</owner>
+      <owner>Water Wizard</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Canalizaciones Elementales</id>
+    <id>essenceCanalizacionesElementales</id>
     <name>
       <en>Canalizaciones Elementales</en>
       <es>Canalizaciones Elementales</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Sacerdote Elemental</owner>
+      <owner>Priest Elemental</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Curación Elemental</id>
+    <id>essenceCuraciónElemental</id>
     <name>
       <en>Curación Elemental</en>
       <es>Curación Elemental</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Sacerdote Elemental</owner>
+      <owner>Priest Elemental</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Maestría de los Portales Elementales</id>
+    <id>essenceMaestríaOfThePortalesElementales</id>
     <name>
       <en>Maestría of the Portales Elementales</en>
       <es>Maestría de los Portales Elementales</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Sacerdote Elemental</owner>
+      <owner>Priest Elemental</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Mejora en Combate Elemental</id>
+    <id>essenceMejoraInCombatElemental</id>
     <name>
       <en>Mejora in Combat Elemental</en>
       <es>Mejora en Combate Elemental</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Sacerdote Elemental</owner>
+      <owner>Priest Elemental</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Restauración Elemental</id>
+    <id>essenceRestauraciónElemental</id>
     <name>
       <en>Restauración Elemental</en>
       <es>Restauración Elemental</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Sacerdote Elemental</owner>
+      <owner>Priest Elemental</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Transformaciones Elemental</id>
+    <id>essenceTransformacionesElemental</id>
     <name>
       <en>Transformaciones Elemental</en>
       <es>Transformaciones Elemental</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Sacerdote Elemental</owner>
+      <owner>Priest Elemental</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Arma Elemental</id>
+    <id>essenceArmaElemental</id>
     <name>
       <en>Arma Elemental</en>
       <es>Arma Elemental</es>
@@ -299,11 +299,11 @@
     <owners>
       <owner>Campeón Elemental</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Armadura Elemental</id>
+    <id>essenceArmorElemental</id>
     <name>
       <en>Armor Elemental</en>
       <es>Armadura Elemental</es>
@@ -312,24 +312,24 @@
     <owners>
       <owner>Campeón Elemental</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Cambio Elemental Menor</id>
+    <id>essenceCambioElementalMinor</id>
     <name>
-      <en>Cambio Elemental Menor</en>
+      <en>Cambio Elemental Minor</en>
       <es>Cambio Elemental Menor</es>
     </name>
     <openList>false</openList>
     <owners>
       <owner>Campeón Elemental</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Compañeros Elementales</id>
+    <id>essenceCompañerosElementales</id>
     <name>
       <en>Compañeros Elementales</en>
       <es>Compañeros Elementales</es>
@@ -338,11 +338,11 @@
     <owners>
       <owner>Campeón Elemental</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Protecciones Elementales Menores</id>
+    <id>essenceProtectionsElementalesMenores</id>
     <name>
       <en>Protections Elementales Menores</en>
       <es>Protecciones Elementales Menores</es>
@@ -351,11 +351,11 @@
     <owners>
       <owner>Campeón Elemental</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Vínculos de Combate</id>
+    <id>essenceVínculosOfCombat</id>
     <name>
       <en>Vínculos of Combat</en>
       <es>Vínculos de Combate</es>
@@ -364,89 +364,89 @@
     <owners>
       <owner>Campeón Elemental</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Energía Elemental Verdadera</id>
+    <id>essenceEnergíaElementalVerdadera</id>
     <name>
       <en>Energía Elemental Verdadera</en>
       <es>Energía Elemental Verdadera</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago Arcano</owner>
+      <owner>Wizard Arcane</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Fluídos Elementales Verdaderos</id>
+    <id>essenceFluídosElementalesVerdaderos</id>
     <name>
       <en>Fluídos Elementales Verdaderos</en>
       <es>Fluídos Elementales Verdaderos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mago Arcano</owner>
+      <owner>Wizard Arcane</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Maestría del Eter</id>
+    <id>essenceMaestríaOfTheEter</id>
     <name>
       <en>Maestría of the Eter</en>
       <es>Maestría del Eter</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Elementalista Arcano</owner>
+      <owner>Elementalist Arcane</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Maestría del Vacío</id>
+    <id>essenceMaestríaOfTheVacío</id>
     <name>
       <en>Maestría of the Vacío</en>
       <es>Maestría del Vacío</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Elementalista Arcano</owner>
+      <owner>Elementalist Arcane</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Maestría Elemental Verdadera</id>
+    <id>essenceMaestríaElementalVerdadera</id>
     <name>
       <en>Maestría Elemental Verdadera</en>
       <es>Maestría Elemental Verdadera</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Elementalista Arcano</owner>
+      <owner>Elementalist Arcane</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Material Elemental Verdadero</id>
+    <id>essenceMaterialElementalVerdadero</id>
     <name>
       <en>Material Elemental Verdadero</en>
       <es>Material Elemental Verdadero</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Elementalista Arcano</owner>
+      <owner>Elementalist Arcane</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Artesanía Elemental</id>
+    <id>essenceArtesaníaElemental</id>
     <name>
       <en>Artesanía Elemental</en>
       <es>Artesanía Elemental</es>
@@ -455,11 +455,11 @@
     <owners>
       <owner>OA</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Forja Elemental</id>
+    <id>essenceForjaElemental</id>
     <name>
       <en>Forja Elemental</en>
       <es>Forja Elemental</es>
@@ -468,6 +468,6 @@
     <owners>
       <owner>OA</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-</hechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+</spells>

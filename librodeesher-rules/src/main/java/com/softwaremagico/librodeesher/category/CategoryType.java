@@ -1,13 +1,13 @@
 package com.softwaremagico.librodeesher.category;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * Progression rule used to compute how much a category costs to develop, as printed in the
  * "Progresión" column of {@code categorias.txt}. The actual numeric progression values are a fixed
  * game rule (not data), so they are not read from XML; they will be attached to this enum once the
  * character point-development logic is ported.
+ *
+ * <p>Serialized to XML using the plain (English) enum constant name; {@link #fromTag(String)} is
+ * only used by {@code CategoryMigrationTool} to parse the original Spanish column value.</p>
  */
 public enum CategoryType {
 
@@ -26,13 +26,6 @@ public enum CategoryType {
         this.tag = tag;
     }
 
-    /** Original Spanish tag as printed in the legacy text files, kept for round-tripping the XML. */
-    @JsonValue
-    public String getTag() {
-        return tag;
-    }
-
-    @JsonCreator
     public static CategoryType fromTag(String tag) {
         for (final CategoryType type : values()) {
             if (type.tag.equalsIgnoreCase(tag)) {

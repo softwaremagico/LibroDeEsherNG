@@ -1,6 +1,7 @@
 package com.softwaremagico.librodeesher.profession;
 
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
+import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -22,10 +23,10 @@ public class ProfessionFactoryTest {
 
     @Test
     public void wizardHasSpellCastingRealmsAndBonuses() throws InvalidXmlElementException {
-        final Profession mago = ProfessionFactory.getInstance().getElement("Mago");
+        final Profession mago = ProfessionFactory.getInstance().getElement("wizard");
 
         Assert.assertTrue(mago.isSpellCaster());
-        Assert.assertEquals(mago.getMagicRealms(), java.util.List.of("Esencia"));
+        Assert.assertEquals(mago.getMagicRealms(), java.util.List.of(RealmOfMagic.ESSENCE));
         Assert.assertFalse(mago.isIndifferentToCharacteristics());
         Assert.assertFalse(mago.getBonuses().isEmpty());
         Assert.assertFalse(mago.getMagicCostsRaw().isBlank());

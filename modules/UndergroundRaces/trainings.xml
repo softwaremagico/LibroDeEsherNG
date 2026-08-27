@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<adiestramientos>
-  <adiestramiento>
+<trainings>
+  <training>
     <availableToEveryRace>false</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -91,13 +91,13 @@
         <ranksToDistribute>2</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Rukleftak-sher</id>
+    <id>rukleftakSher</id>
     <name>
       <en>Rukleftak-sher</en>
       <es>Rukleftak-sher</es>
     </name>
     <limitedRaces>
-      <race>Orco Gris</race>
+      <race>Gray Orc</race>
     </limitedRaces>
     <specialItems>
       <specialItem>
@@ -161,8 +161,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>false</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -303,13 +303,13 @@
         <ranksToDistribute>1</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Shaguk Kun-Toramim</id>
+    <id>shagukKunToramim</id>
     <name>
       <en>Shaguk Kun-Toramim</en>
       <es>Shaguk Kun-Toramim</es>
     </name>
     <limitedRaces>
-      <race>Orco Gris</race>
+      <race>Gray Orc</race>
     </limitedRaces>
     <specialItems>
       <specialItem>
@@ -354,5 +354,5 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-</adiestramientos>
+  </training>
+</trainings>

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<adiestramientos>
-  <adiestramiento>
+<trainings>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -116,7 +116,7 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Houri</id>
+    <id>houri</id>
     <name>
       <en>Houri</en>
       <es>Houri</es>
@@ -164,5 +164,5 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-</adiestramientos>
+  </training>
+</trainings>

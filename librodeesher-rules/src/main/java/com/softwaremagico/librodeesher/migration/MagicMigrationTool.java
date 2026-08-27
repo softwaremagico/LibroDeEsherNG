@@ -52,6 +52,7 @@ public final class MagicMigrationTool {
 
         final Map<String, MagicSpellList> spellListsById = new LinkedHashMap<>();
         final Map<String, List<MagicSpellList>> spellListsByModule = new LinkedHashMap<>();
+        final IdAllocator idAllocator = new IdAllocator();
 
         for (final String module : ModuleManager.getAllModules()) {
             for (final RealmOfMagic realm : RealmOfMagic.values()) {
@@ -59,14 +60,14 @@ public final class MagicMigrationTool {
                 if (!Files.isRegularFile(file) || !LegacyFileFilters.isRealDataFile(file)) {
                     continue;
                 }
-                readSpellListsFile(file, realm, module, spellListsById, spellListsByModule);
+                readSpellListsFile(file, realm, module, spellListsById, spellListsByModule, idAllocator);
             }
         }
 
         int written = 0;
         for (final Map.Entry<String, List<MagicSpellList>> entry : spellListsByModule.entrySet()) {
             XmlMigrationWriter.write(modulesTarget.resolve(entry.getKey()).resolve(OUTPUT_FILE),
-                    "hechizos", "listaDeHechizos", entry.getValue());
+                    "spells", "spellList", entry.getValue());
             written++;
         }
         return written;
@@ -74,15 +75,17 @@ public final class MagicMigrationTool {
 
     private static void readSpellListsFile(Path file, RealmOfMagic realm, String module,
                                             Map<String, MagicSpellList> spellListsById,
-                                            Map<String, List<MagicSpellList>> spellListsByModule) throws IOException {
+                                            Map<String, List<MagicSpellList>> spellListsByModule,
+                                            IdAllocator idAllocator) throws IOException {
         for (final String line : Files.readAllLines(file, StandardCharsets.UTF_8)) {
             if (line.isBlank() || line.startsWith("#")) {
                 continue;
             }
             final String[] columns = line.split("\t");
             final String name = columns[0].trim();
-            final List<String> owners = List.of(columns[1].trim().split("/"));
-            final String id = MagicSpellList.buildId(realm, name);
+            final List<String> owners = translateOwners(columns[1].trim().split("/"));
+            // Realm-scoped key: the same list name is (rarely) reused across different realms.
+            final String id = idAllocator.idFor(realm.name() + "|" + name, MagicSpellList.buildId(realm, name));
 
             final MagicSpellList existing = spellListsById.get(id);
             if (existing == null) {
@@ -99,5 +102,26 @@ public final class MagicMigrationTool {
                 existing.setOwners(new ArrayList<>(mergedOwners));
             }
         }
+    }
+
+    /**
+     * Translates each owner token to English: the "Lista Abierta"/"Lista Cerrada" pseudo-owner tags
+     * become {@link MagicSpellList#OPEN_LIST_TAG}/{@link MagicSpellList#CLOSED_LIST_TAG}; real
+     * profession/training names are translated for readability (not yet resolved to their id, see
+     * {@link MagicSpellList}'s javadoc).
+     */
+    private static List<String> translateOwners(String[] rawOwners) {
+        final List<String> owners = new ArrayList<>();
+        for (final String rawOwner : rawOwners) {
+            final String trimmed = rawOwner.trim();
+            if (trimmed.equalsIgnoreCase("Lista Abierta")) {
+                owners.add(MagicSpellList.OPEN_LIST_TAG);
+            } else if (trimmed.equalsIgnoreCase("Lista Cerrada")) {
+                owners.add(MagicSpellList.CLOSED_LIST_TAG);
+            } else {
+                owners.add(Translations.toEnglish(trimmed));
+            }
+        }
+        return owners;
     }
 }

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<adiestramientos>
-  <adiestramiento>
+<trainings>
+  <training>
     <availableToEveryRace>false</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -98,7 +98,7 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Clero</id>
+    <id>clero</id>
     <name>
       <en>Clero</en>
       <es>Clero</es>
@@ -141,8 +141,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>false</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -232,7 +232,7 @@
         <ranksToDistribute>2</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Emprendedor</id>
+    <id>emprendedor</id>
     <name>
       <en>Emprendedor</en>
       <es>Emprendedor</es>
@@ -271,8 +271,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>85</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>false</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -355,7 +355,7 @@
         <ranksToDistribute>2</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Femme Fatale</id>
+    <id>femmeFatale</id>
     <name>
       <en>Femme Fatale</en>
       <es>Femme Fatale</es>
@@ -390,8 +390,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>49</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>false</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -491,7 +491,7 @@
         <ranksToDistribute>2</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Gangster</id>
+    <id>gangster</id>
     <name>
       <en>Gangster</en>
       <es>Gangster</es>
@@ -530,8 +530,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>42</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>false</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -737,7 +737,7 @@
         <ranksToDistribute>2</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Hombre del Gobierno</id>
+    <id>hombreOfTheGobierno</id>
     <name>
       <en>Hombre of the Gobierno</en>
       <es>Hombre del Gobierno</es>
@@ -784,5 +784,5 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-</adiestramientos>
+  </training>
+</trainings>

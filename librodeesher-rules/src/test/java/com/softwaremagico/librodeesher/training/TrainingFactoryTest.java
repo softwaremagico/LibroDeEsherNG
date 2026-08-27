@@ -20,7 +20,7 @@ public class TrainingFactoryTest {
 
     @Test
     public void soldierTrainingHasExpectedFields() throws InvalidXmlElementException {
-        final Training soldier = TrainingFactory.getInstance().getElement("Soldado");
+        final Training soldier = TrainingFactory.getInstance().getElement("soldier");
 
         Assert.assertEquals(soldier.getTrainingTimeInMonths(), Integer.valueOf(26));
         Assert.assertTrue(soldier.isAvailableToEveryRace());
@@ -32,7 +32,7 @@ public class TrainingFactoryTest {
 
     @Test
     public void soldierTrainingGrantsLightArmorCategoryRanks() throws InvalidXmlElementException {
-        final Training soldier = TrainingFactory.getInstance().getElement("Soldado");
+        final Training soldier = TrainingFactory.getInstance().getElement("soldier");
 
         final TrainingCategoryGrant lightArmor = soldier.getCategories().stream()
                 .filter(grant -> grant.getCategoryOptions().contains("Armadura·Ligera"))
@@ -47,7 +47,7 @@ public class TrainingFactoryTest {
 
     @Test
     public void soldierTrainingOffersAChoiceOfWeaponCategories() throws InvalidXmlElementException {
-        final Training soldier = TrainingFactory.getInstance().getElement("Soldado");
+        final Training soldier = TrainingFactory.getInstance().getElement("soldier");
 
         final TrainingCategoryGrant weaponChoice = soldier.getCategories().stream()
                 .filter(TrainingCategoryGrant::isChoice)

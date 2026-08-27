@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<adiestramientos>
-  <adiestramiento>
+<trainings>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -155,7 +155,7 @@
         </options>
       </commonSkillChoice>
     </commonSkills>
-    <id>Mago de la Luz</id>
+    <id>lightWizard</id>
     <lifeSkills>
       <lifeSkillChoice>
         <fixed>true</fixed>
@@ -165,7 +165,7 @@
       </lifeSkillChoice>
     </lifeSkills>
     <name>
-      <en>Mago of the Luz</en>
+      <en>Light Wizard</en>
       <es>Mago de la Luz</es>
     </name>
     <specialItems>
@@ -205,8 +205,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -357,7 +357,7 @@
         </options>
       </commonSkillChoice>
     </commonSkills>
-    <id>Mago del Aire</id>
+    <id>wizardOfTheAire</id>
     <lifeSkills>
       <lifeSkillChoice>
         <fixed>true</fixed>
@@ -373,7 +373,7 @@
       </lifeSkillChoice>
     </lifeSkills>
     <name>
-      <en>Mago of the Aire</en>
+      <en>Wizard of the Aire</en>
       <es>Mago del Aire</es>
     </name>
     <restrictedSkills>
@@ -427,8 +427,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -554,7 +554,7 @@
         </options>
       </commonSkillChoice>
     </commonSkills>
-    <id>Mago del Fuego</id>
+    <id>fireWizard</id>
     <lifeSkills>
       <lifeSkillChoice>
         <fixed>true</fixed>
@@ -564,7 +564,7 @@
       </lifeSkillChoice>
     </lifeSkills>
     <name>
-      <en>Mago of the Fuego</en>
+      <en>Fire Wizard</en>
       <es>Mago del Fuego</es>
     </name>
     <restrictedSkills>
@@ -606,5 +606,5 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-</adiestramientos>
+  </training>
+</trainings>

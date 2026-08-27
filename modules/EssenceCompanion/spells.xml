@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<hechizos>
-  <listaDeHechizos>
+<spells>
+  <spellList>
     <closedList>true</closedList>
-    <id>Esencia|Bastón Mágico</id>
+    <id>essenceBastónArcane</id>
     <name>
       <en>Bastón Arcane</en>
       <es>Bastón Mágico</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Lista Cerrada</owner>
+      <owner>ClosedList</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-</hechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+</spells>

@@ -1,3555 +1,3834 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<habilidades>
-  <habilidad>
+<skills>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Armadura·Ligera</categoryId>
+    <categoryId>armorLight</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Cuero Endurecido</id>
+    <id>hardenedLeather</id>
     <name>
       <en>Hardened Leather</en>
       <es>Cuero Endurecido</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
     <specialities>
       <speciality>TA9</speciality>
       <speciality>TA10</speciality>
       <speciality>TA11</speciality>
     </specialities>
-  </habilidad>
-  <habilidad>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Armadura·Ligera</categoryId>
+    <categoryId>armorLight</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Cuero Blando</id>
+    <id>softLeather</id>
     <name>
       <en>Soft Leather</en>
       <es>Cuero Blando</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
     <specialities>
       <speciality>TA5</speciality>
       <speciality>TA6</speciality>
       <speciality>TA7</speciality>
     </specialities>
-  </habilidad>
-  <habilidad>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Armadura·Media</categoryId>
+    <categoryId>armorMedium</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Cota de Mallas</id>
+    <id>chainMail</id>
     <name>
       <en>Chain Mail</en>
       <es>Cota de Mallas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
     <specialities>
       <speciality>TA13</speciality>
       <speciality>TA14</speciality>
       <speciality>TA15</speciality>
       <speciality>TA16</speciality>
     </specialities>
-  </habilidad>
-  <habilidad>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Armadura·Pesada</categoryId>
+    <categoryId>armorHeavy</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Coraza</id>
+    <id>breastplate</id>
     <name>
       <en>Breastplate</en>
       <es>Coraza</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
     <specialities>
       <speciality>TA17</speciality>
       <speciality>TA18</speciality>
       <speciality>TA19</speciality>
       <speciality>TA20</speciality>
     </specialities>
-  </habilidad>
-  <habilidad>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Arte·Activo</categoryId>
+    <categoryId>artPerforming</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Actuar</id>
+    <id>acting</id>
     <name>
       <en>Acting</en>
       <es>Actuar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Arte·Activo</categoryId>
+    <categoryId>artPerforming</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Bailar</id>
+    <id>dancing</id>
     <name>
       <en>Dancing</en>
       <es>Bailar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Arte·Activo</categoryId>
+    <categoryId>artPerforming</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Cantar</id>
+    <id>singing</id>
     <name>
       <en>Singing</en>
       <es>Cantar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Arte·Activo</categoryId>
+    <categoryId>artPerforming</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Imitar Sonidos</id>
+    <id>imitatingSounds</id>
     <name>
       <en>Imitating Sounds</en>
       <es>Imitar Sonidos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Arte·Activo</categoryId>
+    <categoryId>artPerforming</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Improvisación Poética</id>
+    <id>poeticImprovisation</id>
     <name>
       <en>Poetic Improvisation</en>
       <es>Improvisación Poética</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Arte·Activo</categoryId>
+    <categoryId>artPerforming</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Mímica</id>
+    <id>mime</id>
     <name>
       <en>Mime</en>
       <es>Mímica</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Arte·Activo</categoryId>
+    <categoryId>artPerforming</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Narrar Historias</id>
+    <id>storytellingStories</id>
     <name>
       <en>Storytelling Stories</en>
       <es>Narrar Historias</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Arte·Activo</categoryId>
+    <categoryId>artPerforming</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Tocar Instrumento</id>
+    <id>playingInstrument</id>
     <name>
       <en>Playing Instrument</en>
       <es>Tocar Instrumento</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Arte·Activo</categoryId>
+    <categoryId>artPerforming</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Ventriloquia</id>
+    <id>ventriloquism</id>
     <name>
       <en>Ventriloquism</en>
       <es>Ventriloquia</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Arte·Pasivo</categoryId>
+    <categoryId>artCreative</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escultura</id>
+    <id>sculpture</id>
     <name>
       <en>Sculpture</en>
       <es>Escultura</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Arte·Pasivo</categoryId>
+    <categoryId>artCreative</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Música</id>
+    <id>music</id>
     <name>
       <en>Music</en>
       <es>Música</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Arte·Pasivo</categoryId>
+    <categoryId>artCreative</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Pintura</id>
+    <id>painting</id>
     <name>
       <en>Painting</en>
       <es>Pintura</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Arte·Pasivo</categoryId>
+    <categoryId>artCreative</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Poesía</id>
+    <id>poetry</id>
     <name>
       <en>Poetry</en>
       <es>Poesía</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Barridos</categoryId>
+    <categoryId>martialArtsSweeps</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Barridos de Artes Marciales</id>
+    <id>sweepsOfArtesMarciales</id>
     <name>
       <en>Sweeps of Artes Marciales</en>
       <es>Barridos de Artes Marciales</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Barridos</categoryId>
+    <categoryId>martialArtsSweeps</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Blocar</id>
+    <id>blocar</id>
     <name>
       <en>Blocar</en>
       <es>Blocar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Barridos</categoryId>
+    <categoryId>martialArtsSweeps</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Lucha Libre</id>
+    <id>luchaLibre</id>
     <name>
       <en>Lucha Libre</en>
       <es>Lucha Libre</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Barridos</categoryId>
+    <categoryId>martialArtsSweeps</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Inmovilizar</id>
+    <id>inmovilizar</id>
     <name>
       <en>Inmovilizar</en>
       <es>Inmovilizar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Golpes</categoryId>
+    <categoryId>martialArtsStrikes</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Boxeo</id>
+    <id>boxeo</id>
     <name>
       <en>Boxeo</en>
       <es>Boxeo</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Golpes</categoryId>
+    <categoryId>martialArtsStrikes</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Placaje</id>
+    <id>placaje</id>
     <name>
       <en>Placaje</en>
       <es>Placaje</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Golpes</categoryId>
+    <categoryId>martialArtsStrikes</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Golpes de Artes Marciales</id>
+    <id>strikesOfArtesMarciales</id>
     <name>
       <en>Strikes of Artes Marciales</en>
       <es>Golpes de Artes Marciales</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Esquiva Adrenal</id>
+    <id>esquivaAdrenal</id>
     <name>
       <en>Esquiva Adrenal</en>
       <es>Esquiva Adrenal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Evasión Adrenal</id>
+    <id>evasiónAdrenal</id>
     <name>
       <en>Evasión Adrenal</en>
       <es>Evasión Adrenal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Desarmar Enemigo (Armado)</id>
+    <id>desarmarEnemigoArmado</id>
     <name>
       <en>Desarmar Enemigo (Armado)</en>
       <es>Desarmar Enemigo (Armado)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Desarmar Enemigo (Desarmado)</id>
+    <id>desarmarEnemigoDesarmado</id>
     <name>
       <en>Desarmar Enemigo (Desarmado)</en>
       <es>Desarmar Enemigo (Desarmado)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Fintar (Armado)</id>
+    <id>fintarArmado</id>
     <name>
       <en>Fintar (Armado)</en>
       <es>Fintar (Armado)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Fintar (Desarmado)</id>
+    <id>fintarDesarmado</id>
     <name>
       <en>Fintar (Desarmado)</en>
       <es>Fintar (Desarmado)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Justar</id>
+    <id>justar</id>
     <name>
       <en>Justar</en>
       <es>Justar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Pelea</id>
+    <id>pelea</id>
     <name>
       <en>Pelea</en>
       <es>Pelea</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Juegos Atléticos (Gimnasia)</id>
+    <id>gamesAthleticGymnastics</id>
     <name>
       <en>Games Athletic (Gymnastics)</en>
       <es>Juegos Atléticos (Gimnasia)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Acrobacias</id>
+    <id>acrobatics</id>
     <name>
       <en>Acrobatics</en>
       <es>Acrobacias</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Caer</id>
+    <id>falling</id>
     <name>
       <en>Falling</en>
       <es>Caer</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Contorsionismo</id>
+    <id>contortion</id>
     <name>
       <en>Contortion</en>
       <es>Contorsionismo</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Malabarismos</id>
+    <id>juggling</id>
     <name>
       <en>Juggling</en>
       <es>Malabarismos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Trepar</id>
+    <id>climbing</id>
     <name>
       <en>Climbing</en>
       <es>Trepar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Volar/Planear</id>
+    <id>flyingGliding</id>
     <name>
       <en>Flying/Gliding</en>
       <es>Volar/Planear</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Volteretas</id>
+    <id>tumbling</id>
     <name>
       <en>Tumbling</en>
       <es>Volteretas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Caminar con Zancos</id>
+    <id>walkingWithStilts</id>
     <name>
       <en>Walking with Stilts</en>
       <es>Caminar con Zancos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Caminar por la Cuerda Floja</id>
+    <id>walkingByTheRopeSlack</id>
     <name>
       <en>Walking by the Rope Slack</en>
       <es>Caminar por la Cuerda Floja</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Esquiar</id>
+    <id>skiing</id>
     <name>
       <en>Skiing</en>
       <es>Esquiar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hacer Surf</id>
+    <id>hacerSurfing</id>
     <name>
       <en>Hacer Surfing</en>
       <es>Hacer Surf</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Patinar</id>
+    <id>skating</id>
     <name>
       <en>Skating</en>
       <es>Patinar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Rappelling</id>
+    <id>rappelling</id>
     <name>
       <en>Rappelling</en>
       <es>Rappelling</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Gimnasia</categoryId>
+    <categoryId>athleticsGymnastics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Salto con Pértiga</id>
+    <id>jumpWithPole</id>
     <name>
       <en>Jump with Pole</en>
       <es>Salto con Pértiga</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Potencia</categoryId>
+    <categoryId>athleticsPower</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Juegos Atléticos (Potencia)</id>
+    <id>gamesAthleticPower</id>
     <name>
       <en>Games Athletic (Power)</en>
       <es>Juegos Atléticos (Potencia)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Potencia</categoryId>
+    <categoryId>athleticsPower</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Levantar Pesos</id>
+    <id>liftingWeights</id>
     <name>
       <en>Lifting Weights</en>
       <es>Levantar Pesos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Potencia</categoryId>
+    <categoryId>athleticsPower</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Saltar</id>
+    <id>jumping</id>
     <name>
       <en>Jumping</en>
       <es>Saltar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Potencia</categoryId>
+    <categoryId>athleticsPower</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Golpe Poderoso</id>
+    <id>strikePowerful</id>
     <name>
       <en>Strike Powerful</en>
       <es>Golpe Poderoso</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Potencia</categoryId>
+    <categoryId>athleticsPower</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Lanzamiento Poderoso</id>
+    <id>throwPowerful</id>
     <name>
       <en>Throw Powerful</en>
       <es>Lanzamiento Poderoso</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Resistencia</categoryId>
+    <categoryId>athleticsEndurance</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Juegos Atléticos (Resistencia)</id>
+    <id>gamesAthleticEndurance</id>
     <name>
       <en>Games Athletic (Endurance)</en>
       <es>Juegos Atléticos (Resistencia)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Resistencia</categoryId>
+    <categoryId>athleticsEndurance</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Carrera de Fondo</id>
+    <id>carreraOfDistance</id>
     <name>
       <en>Carrera of Distance</en>
       <es>Carrera de Fondo</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Resistencia</categoryId>
+    <categoryId>athleticsEndurance</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escalar</id>
+    <id>climbing2</id>
     <name>
       <en>Climbing</en>
       <es>Escalar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Resistencia</categoryId>
+    <categoryId>athleticsEndurance</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Esprintar</id>
+    <id>sprinting</id>
     <name>
       <en>Sprinting</en>
       <es>Esprintar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Resistencia</categoryId>
+    <categoryId>athleticsEndurance</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Nadar</id>
+    <id>swimming</id>
     <name>
       <en>Swimming</en>
       <es>Nadar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Atletismo·Resistencia</categoryId>
+    <categoryId>athleticsEndurance</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Remar</id>
+    <id>rowing</id>
     <name>
       <en>Rowing</en>
       <es>Remar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Frenesí</id>
+    <id>frenzy</id>
     <name>
       <en>Frenzy</en>
       <es>Frenesí</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Meditación</id>
+    <id>meditation</id>
     <name>
       <en>Meditation</en>
       <es>Meditación</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Mnemotecnia</id>
+    <id>mnemonics</id>
     <name>
       <en>Mnemonics</en>
       <es>Mnemotecnia</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Superar Aturdimiento</id>
+    <id>overcomingStun</id>
     <name>
       <en>Overcoming Stun</en>
       <es>Superar Aturdimiento</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Caída Adrenal</id>
+    <id>caídaAdrenal</id>
     <name>
       <en>Caída Adrenal</en>
       <es>Caída Adrenal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Concentración Adrenal</id>
+    <id>concentraciónAdrenal</id>
     <name>
       <en>Concentración Adrenal</en>
       <es>Concentración Adrenal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Control de la Licantropía</id>
+    <id>controlOfTheLycanthropy</id>
     <name>
       <en>Control of the Lycanthropy</en>
       <es>Control de la Licantropía</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Desenvainar Adrenal</id>
+    <id>drawingWeaponAdrenal</id>
     <name>
       <en>Drawing Weapon Adrenal</en>
       <es>Desenvainar Adrenal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Equilibrio Adrenal</id>
+    <id>balanceAdrenal</id>
     <name>
       <en>Balance Adrenal</en>
       <es>Equilibrio Adrenal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estabilización Adrenal</id>
+    <id>stabilizationAdrenal</id>
     <name>
       <en>Stabilization Adrenal</en>
       <es>Estabilización Adrenal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Fuerza Adrenal</id>
+    <id>strengthAdrenal</id>
     <name>
       <en>Strength Adrenal</en>
       <es>Fuerza Adrenal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Maniobrar Aturdido</id>
+    <id>maneuveringStunned</id>
     <name>
       <en>Maneuvering Stunned</en>
       <es>Maniobrar Aturdido</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Salto Adrenal</id>
+    <id>jumpAdrenal</id>
     <name>
       <en>Jump Adrenal</en>
       <es>Salto Adrenal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Trance Adormecedor</id>
+    <id>tranceNumbing</id>
     <name>
       <en>Trance Numbing</en>
       <es>Trance Adormecedor</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Trance de la Muerte</id>
+    <id>tranceOfTheDeath</id>
     <name>
       <en>Trance of the Death</en>
       <es>Trance de la Muerte</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Trance Purificador</id>
+    <id>trancePurifying</id>
     <name>
       <en>Trance Purifying</en>
       <es>Trance Purificador</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Trance Sanador</id>
+    <id>tranceHealing</id>
     <name>
       <en>Trance Healing</en>
       <es>Trance Sanador</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Velocidad Adrenal</id>
+    <id>speedAdrenal</id>
     <name>
       <en>Speed Adrenal</en>
       <es>Velocidad Adrenal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ciencia/Analítica·Básica</categoryId>
+    <categoryId>scienceAnalyticBasic</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Documentación</id>
+    <id>documentation</id>
     <name>
       <en>Documentation</en>
       <es>Documentación</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ciencia/Analítica·Básica</categoryId>
+    <categoryId>scienceAnalyticBasic</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Matemáticas Básicas</id>
+    <id>mathematicsBásicas</id>
     <name>
       <en>Mathematics Básicas</en>
       <es>Matemáticas Básicas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ciencia/Analítica·Especializada</categoryId>
+    <categoryId>scienceAnalyticSpecialized</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Alquimia</id>
+    <id>alchemy</id>
     <name>
       <en>Alchemy</en>
       <es>Alquimia</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ciencia/Analítica·Especializada</categoryId>
+    <categoryId>scienceAnalyticSpecialized</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Antropología</id>
+    <id>anthropology</id>
     <name>
       <en>Anthropology</en>
       <es>Antropología</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ciencia/Analítica·Especializada</categoryId>
+    <categoryId>scienceAnalyticSpecialized</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Matemáticas Avanzadas</id>
+    <id>mathematicsAdvanced</id>
     <name>
       <en>Mathematics Advanced</en>
       <es>Matemáticas Avanzadas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ciencia/Analítica·Especializada</categoryId>
+    <categoryId>scienceAnalyticSpecialized</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Astronomía</id>
+    <id>astronomy</id>
     <name>
       <en>Astronomy</en>
       <es>Astronomía</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ciencia/Analítica·Especializada</categoryId>
+    <categoryId>scienceAnalyticSpecialized</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Bioquímica</id>
+    <id>biochemistry</id>
     <name>
       <en>Biochemistry</en>
       <es>Bioquímica</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ciencia/Analítica·Especializada</categoryId>
+    <categoryId>scienceAnalyticSpecialized</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Psicología</id>
+    <id>psychology</id>
     <name>
       <en>Psychology</en>
       <es>Psicología</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ciencia/Analítica·Especializada</categoryId>
+    <categoryId>scienceAnalyticSpecialized</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Anatomía</id>
+    <id>anatomy</id>
     <name>
       <en>Anatomy</en>
       <es>Anatomía</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Leer los Labios</id>
+    <id>readingTheLips</id>
     <name>
       <en>Reading the Lips</en>
       <es>Leer los Labios</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Señales</id>
+    <id>signals</id>
     <name>
       <en>Signals</en>
       <es>Señales</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·General</categoryId>
+    <categoryId>loreGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de la Fauna</id>
+    <id>loreOfTheFauna</id>
     <name>
       <en>Lore of the Fauna</en>
       <es>Conocimiento de la Fauna</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·General</categoryId>
+    <categoryId>loreGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de la Flora</id>
+    <id>loreOfTheFlora</id>
     <name>
       <en>Lore of the Flora</en>
       <es>Conocimiento de la Flora</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·General</categoryId>
+    <categoryId>loreGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento Cultural</id>
+    <id>loreCultural</id>
     <name>
       <en>Lore Cultural</en>
       <es>Conocimiento Cultural</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·General</categoryId>
+    <categoryId>loreGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento Regional</id>
+    <id>loreRegional</id>
     <name>
       <en>Lore Regional</en>
       <es>Conocimiento Regional</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·General</categoryId>
+    <categoryId>loreGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Heráldica</id>
+    <id>heraldry</id>
     <name>
       <en>Heraldry</en>
       <es>Heráldica</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·General</categoryId>
+    <categoryId>loreGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Historia</id>
+    <id>history</id>
     <name>
       <en>History</en>
       <es>Historia</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·General</categoryId>
+    <categoryId>loreGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Religión</id>
+    <id>religion</id>
     <name>
       <en>Religion</en>
       <es>Religión</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·General</categoryId>
+    <categoryId>loreGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de Estilos Marciales</id>
+    <id>loreOfStylesMarciales</id>
     <name>
       <en>Lore of Styles Marciales</en>
       <es>Conocimiento de Estilos Marciales</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·General</categoryId>
+    <categoryId>loreGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de Estilos de Armas</id>
+    <id>loreOfStylesOfWeapons</id>
     <name>
       <en>Lore of Styles of Weapons</en>
       <es>Conocimiento de Estilos de Armas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Mágico</categoryId>
+    <categoryId>loreArcane</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de los Artefactos</id>
+    <id>loreOfTheArtifacts</id>
     <name>
       <en>Lore of the Artifacts</en>
       <es>Conocimiento de los Artefactos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Mágico</categoryId>
+    <categoryId>loreArcane</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de los Hechizos</id>
+    <id>loreOfTheSpells</id>
     <name>
       <en>Lore of the Spells</en>
       <es>Conocimiento de los Hechizos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Mágico</categoryId>
+    <categoryId>loreArcane</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de los No-Muertos</id>
+    <id>loreOfTheUndead</id>
     <name>
       <en>Lore of the Undead</en>
       <es>Conocimiento de los No-Muertos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Mágico</categoryId>
+    <categoryId>loreArcane</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de las Protecciones</id>
+    <id>loreOfTheProtections</id>
     <name>
       <en>Lore of the Protections</en>
       <es>Conocimiento de las Protecciones</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Mágico</categoryId>
+    <categoryId>loreArcane</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de los Planos</id>
+    <id>loreOfThePlanes</id>
     <name>
       <en>Lore of the Planes</en>
       <es>Conocimiento de los Planos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Mágico</categoryId>
+    <categoryId>loreArcane</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de los Símbolos</id>
+    <id>loreOfTheSymbols</id>
     <name>
       <en>Lore of the Symbols</en>
       <es>Conocimiento de los Símbolos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Oscuro</categoryId>
+    <categoryId>loreDark</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de las Hadas</id>
+    <id>loreOfTheFey</id>
     <name>
       <en>Lore of the Fey</en>
       <es>Conocimiento de las Hadas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Oscuro</categoryId>
+    <categoryId>loreDark</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de los Dragones</id>
+    <id>loreOfTheDragons</id>
     <name>
       <en>Lore of the Dragons</en>
       <es>Conocimiento de los Dragones</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Oscuro</categoryId>
+    <categoryId>loreDark</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Demonología</id>
+    <id>demonology</id>
     <name>
       <en>Demonology</en>
       <es>Demonología</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Oscuro</categoryId>
+    <categoryId>loreDark</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Xeno-Conocimientos</id>
+    <id>xenoLore</id>
     <name>
       <en>Xeno-Lore</en>
       <es>Xeno-Conocimientos</es>
     </name>
     <rare>true</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Técnico</categoryId>
+    <categoryId>loreTechnical</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de la Piedra</id>
+    <id>loreOfTheStone</id>
     <name>
       <en>Lore of the Stone</en>
       <es>Conocimiento de la Piedra</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Técnico</categoryId>
+    <categoryId>loreTechnical</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de las Cerraduras</id>
+    <id>loreOfTheLocks</id>
     <name>
       <en>Lore of the Locks</en>
       <es>Conocimiento de las Cerraduras</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Técnico</categoryId>
+    <categoryId>loreTechnical</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de las Hierbas</id>
+    <id>loreOfTheHerbs</id>
     <name>
       <en>Lore of the Herbs</en>
       <es>Conocimiento de las Hierbas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Técnico</categoryId>
+    <categoryId>loreTechnical</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de los Metales</id>
+    <id>loreOfTheMetals</id>
     <name>
       <en>Lore of the Metals</en>
       <es>Conocimiento de los Metales</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Técnico</categoryId>
+    <categoryId>loreTechnical</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de los Venenos</id>
+    <id>loreOfThePoisons</id>
     <name>
       <en>Lore of the Poisons</en>
       <es>Conocimiento de los Venenos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Técnico</categoryId>
+    <categoryId>loreTechnical</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento del Comercio</id>
+    <id>loreOfTheTrade</id>
     <name>
       <en>Lore of the Trade</en>
       <es>Conocimiento del Comercio</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Defensas Especiales</categoryId>
+    <categoryId>specialDefenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Aguante Adrenal</id>
+    <id>aguanteAdrenal</id>
     <name>
       <en>Aguante Adrenal</en>
       <es>Aguante Adrenal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Defensas Especiales</categoryId>
+    <categoryId>specialDefenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Defensa Adrenal</id>
+    <id>defenseAdrenal</id>
     <name>
       <en>Defense Adrenal</en>
       <es>Defensa Adrenal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Defensas Especiales</categoryId>
+    <categoryId>specialDefenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Resistencia Adrenal</id>
+    <id>enduranceAdrenal</id>
     <name>
       <en>Endurance Adrenal</en>
       <es>Resistencia Adrenal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Desarrollo de Puntos de Poder</categoryId>
+    <categoryId>powerPointDevelopment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Desarrollo de Puntos de Poder</id>
+    <id>powerPointDevelopment</id>
     <name>
       <en>Power Point Development</en>
       <es>Desarrollo de Puntos de Poder</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Desarrollo Físico</categoryId>
+    <categoryId>physicalDevelopment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Desarrollo Físico</id>
+    <id>physicalDevelopment</id>
     <name>
       <en>Physical Development</en>
       <es>Desarrollo Físico</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Animales</categoryId>
+    <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conducir</id>
+    <id>conducir</id>
     <name>
       <en>Conducir</en>
       <es>Conducir</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Animales</categoryId>
+    <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Domar</id>
+    <id>domar</id>
     <name>
       <en>Domar</en>
       <es>Domar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Animales</categoryId>
+    <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Maestría de Animales</id>
+    <id>maestríaOfAnimals</id>
     <name>
       <en>Maestría of Animals</en>
       <es>Maestría de Animales</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Animales</categoryId>
+    <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Manejo de los Animales</id>
+    <id>manejoOfTheAnimals</id>
     <name>
       <en>Manejo of the Animals</en>
       <es>Manejo de los Animales</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Animales</categoryId>
+    <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Montar</id>
+    <id>montar</id>
     <name>
       <en>Montar</en>
       <es>Montar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Animales</categoryId>
+    <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Montar: Lobos</id>
+    <id>montarLobos</id>
     <name>
       <en>Montar: Lobos</en>
       <es>Montar: Lobos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Animales</categoryId>
+    <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Montar: Caballos</id>
+    <id>montarCaballos</id>
     <name>
       <en>Montar: Caballos</en>
       <es>Montar: Caballos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Animales</categoryId>
+    <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Montar: Osos</id>
+    <id>montarOsos</id>
     <name>
       <en>Montar: Osos</en>
       <es>Montar: Osos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Animales</categoryId>
+    <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Montar: Camellos</id>
+    <id>montarCamellos</id>
     <name>
       <en>Montar: Camellos</en>
       <es>Montar: Camellos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Animales</categoryId>
+    <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Montar: Elefantes</id>
+    <id>montarElefantes</id>
     <name>
       <en>Montar: Elefantes</en>
       <es>Montar: Elefantes</es>
     </name>
     <rare>true</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Animales</categoryId>
+    <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Curación de Animales</id>
+    <id>curaciónOfAnimals</id>
     <name>
       <en>Curación of Animals</en>
       <es>Curación de Animales</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Animales</categoryId>
+    <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Pastoreo</id>
+    <id>pastoreo</id>
     <name>
       <en>Pastoreo</en>
       <es>Pastoreo</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Entorno</categoryId>
+    <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Cazar</id>
+    <id>cazar</id>
     <name>
       <en>Cazar</en>
       <es>Cazar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Entorno</categoryId>
+    <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Espeleología</id>
+    <id>espeleología</id>
     <name>
       <en>Espeleología</en>
       <es>Espeleología</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Entorno</categoryId>
+    <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Forrajear</id>
+    <id>forrajear</id>
     <name>
       <en>Forrajear</en>
       <es>Forrajear</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Entorno</categoryId>
+    <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Orientación Celeste</id>
+    <id>orientaciónCeleste</id>
     <name>
       <en>Orientación Celeste</en>
       <es>Orientación Celeste</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Entorno</categoryId>
+    <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Predicción del Clima</id>
+    <id>predicciónOfTheClima</id>
     <name>
       <en>Predicción of the Clima</en>
       <es>Predicción del Clima</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Entorno</categoryId>
+    <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Supervivencia</id>
+    <id>supervivencia</id>
     <name>
       <en>Supervivencia</en>
       <es>Supervivencia</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Entorno</categoryId>
+    <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Supervivencia (Montañas)</id>
+    <id>supervivenciaMontañas</id>
     <name>
       <en>Supervivencia (Montañas)</en>
       <es>Supervivencia (Montañas)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Entorno</categoryId>
+    <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Supervivencia (Bosques)</id>
+    <id>supervivenciaBosques</id>
     <name>
       <en>Supervivencia (Bosques)</en>
       <es>Supervivencia (Bosques)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Entorno</categoryId>
+    <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Supervivencia (Desiertos)</id>
+    <id>supervivenciaDesiertos</id>
     <name>
       <en>Supervivencia (Desiertos)</en>
       <es>Supervivencia (Desiertos)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Entorno</categoryId>
+    <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Supervivencia (Llanuras)</id>
+    <id>supervivenciaLlanuras</id>
     <name>
       <en>Supervivencia (Llanuras)</en>
       <es>Supervivencia (Llanuras)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Entorno</categoryId>
+    <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Supervivencia (Subterráneos)</id>
+    <id>supervivenciaSubterráneos</id>
     <name>
       <en>Supervivencia (Subterráneos)</en>
       <es>Supervivencia (Subterráneos)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Entorno</categoryId>
+    <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Supervivencia (Ártico)</id>
+    <id>supervivenciaÁrtico</id>
     <name>
       <en>Supervivencia (Ártico)</en>
       <es>Supervivencia (Ártico)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Hechizos Dirigidos</categoryId>
+    <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Relámpago</id>
+    <id>relámpago</id>
     <name>
       <en>Relámpago</en>
       <es>Relámpago</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Listas Básicas de Hechizos</categoryId>
+    <categoryId>listsBásicasOfSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hechizos</id>
+    <id>spells</id>
     <name>
       <en>Spells</en>
       <es>Hechizos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Influencia</categoryId>
+    <categoryId>influence</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Comerciar</id>
+    <id>comerciar</id>
     <name>
       <en>Comerciar</en>
       <es>Comerciar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Influencia</categoryId>
+    <categoryId>influence</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Diplomacia</id>
+    <id>diplomacia</id>
     <name>
       <en>Diplomacia</en>
       <es>Diplomacia</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Influencia</categoryId>
+    <categoryId>influence</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Embaucar</id>
+    <id>embaucar</id>
     <name>
       <en>Embaucar</en>
       <es>Embaucar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Influencia</categoryId>
+    <categoryId>influence</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Interrogar</id>
+    <id>interrogar</id>
     <name>
       <en>Interrogar</en>
       <es>Interrogar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Influencia</categoryId>
+    <categoryId>influence</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Liderazgo</id>
+    <id>liderazgo</id>
     <name>
       <en>Liderazgo</en>
       <es>Liderazgo</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Influencia</categoryId>
+    <categoryId>influence</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Oratoria</id>
+    <id>oratoria</id>
     <name>
       <en>Oratoria</en>
       <es>Oratoria</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Influencia</categoryId>
+    <categoryId>influence</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Seducción</id>
+    <id>seduction</id>
     <name>
       <en>Seduction</en>
       <es>Seducción</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Influencia</categoryId>
+    <categoryId>influence</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Sobornar</id>
+    <id>sobornar</id>
     <name>
       <en>Sobornar</en>
       <es>Sobornar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Influencia</categoryId>
+    <categoryId>influence</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Rumorear</id>
+    <id>rumorear</id>
     <name>
       <en>Rumorear</en>
       <es>Rumorear</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Maniobras de Combate</categoryId>
+    <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Combate con 2 Armas</id>
+    <id>combatWith2Weapons</id>
     <name>
       <en>Combat with 2 Weapons</en>
       <es>Combate con 2 Armas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Maniobras de Combate</categoryId>
+    <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Combate Montado</id>
+    <id>combatMontado</id>
     <name>
       <en>Combat Montado</en>
       <es>Combate Montado</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Maniobras de Combate</categoryId>
+    <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Desenvainar</id>
+    <id>drawingWeapon</id>
     <name>
       <en>Drawing Weapon</en>
       <es>Desenvainar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Maniobras de Combate</categoryId>
+    <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Florituras</id>
+    <id>florituras</id>
     <name>
       <en>Florituras</en>
       <es>Florituras</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Maniobras de Combate</categoryId>
+    <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Ataque de Revés</id>
+    <id>attackOfRevés</id>
     <name>
       <en>Attack of Revés</en>
       <es>Ataque de Revés</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Maniobras de Combate</categoryId>
+    <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Esquiva Acrobática</id>
+    <id>esquivaAcrobática</id>
     <name>
       <en>Esquiva Acrobática</en>
       <es>Esquiva Acrobática</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Maniobras de Combate</categoryId>
+    <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo de Arma (Básico)</id>
+    <id>styleOfArmaBásico</id>
     <name>
       <en>Style of Arma (Básico)</en>
       <es>Estilo de Arma (Básico)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Maniobras de Combate</categoryId>
+    <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo de Arma (Avanzado)</id>
+    <id>styleOfArmaAdvanced</id>
     <name>
       <en>Style of Arma (Advanced)</en>
       <es>Estilo de Arma (Avanzado)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Maniobras de Combate</categoryId>
+    <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Subyugar</id>
+    <id>subyugar</id>
     <name>
       <en>Subyugar</en>
       <es>Subyugar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Manipulación del Poder</categoryId>
+    <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Canalización</id>
+    <id>channeling</id>
     <name>
       <en>Channeling</en>
       <es>Canalización</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Manipulación del Poder</categoryId>
+    <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Maestría de los Hechizos</id>
+    <id>maestríaOfTheSpells</id>
     <name>
       <en>Maestría of the Spells</en>
       <es>Maestría de los Hechizos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Manipulación del Poder</categoryId>
+    <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Maestría de los Hechizos: Control del Aire</id>
+    <id>maestríaOfTheSpellsControlOfTheAire</id>
     <name>
-      <en>Maestría of the Spells: Control del Aire</en>
+      <en>Maestría of the Spells: Control of the Aire</en>
       <es>Maestría de los Hechizos: Control del Aire</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Manipulación del Poder</categoryId>
+    <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Maestría de los Hechizos: Ley de la Luz</id>
+    <id>maestríaOfTheSpellsLawOfTheLight</id>
     <name>
-      <en>Maestría of the Spells: Ley de la Luz</en>
+      <en>Maestría of the Spells: Law of the Light</en>
       <es>Maestría de los Hechizos: Ley de la Luz</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Manipulación del Poder</categoryId>
+    <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Maestría de los Hechizos: Maestría de los Espiritus</id>
+    <id>maestríaOfTheSpellsMaestríaOfTheEspiritus</id>
     <name>
-      <en>Maestría of the Spells: Maestría de los Espiritus</en>
+      <en>Maestría of the Spells: Maestría of the Espiritus</en>
       <es>Maestría de los Hechizos: Maestría de los Espiritus</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Manipulación del Poder</categoryId>
+    <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Ritual Mágico</id>
+    <id>ritualArcane</id>
     <name>
       <en>Ritual Arcane</en>
       <es>Ritual Mágico</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Manipulación del Poder</categoryId>
+    <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Ocultación de Hechizos</id>
+    <id>ocultaciónOfSpells</id>
     <name>
       <en>Ocultación of Spells</en>
       <es>Ocultación de Hechizos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Cocinar</id>
+    <id>cocinar</id>
     <name>
       <en>Cocinar</en>
       <es>Cocinar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Manejo de Cuerdas</id>
+    <id>manejoOfCuerdas</id>
     <name>
       <en>Manejo of Cuerdas</en>
       <es>Manejo de Cuerdas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Trabajar el Cuero</id>
+    <id>trabajarTheLeather</id>
     <name>
       <en>Trabajar the Leather</en>
       <es>Trabajar el Cuero</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Trabajar el Metal</id>
+    <id>trabajarTheMetal</id>
     <name>
       <en>Trabajar the Metal</en>
       <es>Trabajar el Metal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Trabajar la Madera</id>
+    <id>trabajarTheMadera</id>
     <name>
       <en>Trabajar the Madera</en>
       <es>Trabajar la Madera</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Trabajar la Piedra</id>
+    <id>trabajarTheStone</id>
     <name>
       <en>Trabajar the Stone</en>
       <es>Trabajar la Piedra</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Coser/Tejer</id>
+    <id>coserTejer</id>
     <name>
       <en>Coser/Tejer</en>
       <es>Coser/Tejer</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Dibujar</id>
+    <id>dibujar</id>
     <name>
       <en>Dibujar</en>
       <es>Dibujar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir</id>
+    <id>escribir</id>
     <name>
       <en>Escribir</en>
       <es>Escribir</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hacer Flechas</id>
+    <id>hacerFlechas</id>
     <name>
       <en>Hacer Flechas</en>
       <es>Hacer Flechas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Horticultura</id>
+    <id>horticultura</id>
     <name>
       <en>Horticultura</en>
       <es>Horticultura</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Peletería</id>
+    <id>peletería</id>
     <name>
       <en>Peletería</en>
       <es>Peletería</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Servicio</id>
+    <id>servicio</id>
     <name>
       <en>Servicio</en>
       <es>Servicio</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Trampero</id>
+    <id>trampero</id>
     <name>
       <en>Trampero</en>
       <es>Trampero</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Búsqueda</categoryId>
+    <categoryId>perceptionSearching</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Buscar</id>
+    <id>buscar</id>
     <name>
       <en>Buscar</en>
       <es>Buscar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Búsqueda</categoryId>
+    <categoryId>perceptionSearching</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Detectar Mentiras</id>
+    <id>detectingLies</id>
     <name>
       <en>Detecting Lies</en>
       <es>Detectar Mentiras</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Búsqueda</categoryId>
+    <categoryId>perceptionSearching</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Detectar Trampas</id>
+    <id>detectingTrampas</id>
     <name>
       <en>Detecting Trampas</en>
       <es>Detectar Trampas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Búsqueda</categoryId>
+    <categoryId>perceptionSearching</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Detectar Venenos</id>
+    <id>detectingPoisons</id>
     <name>
       <en>Detecting Poisons</en>
       <es>Detectar Venenos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Búsqueda</categoryId>
+    <categoryId>perceptionSearching</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Leer Huellas</id>
+    <id>readingHuellas</id>
     <name>
       <en>Reading Huellas</en>
       <es>Leer Huellas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Búsqueda</categoryId>
+    <categoryId>perceptionSearching</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Observación</id>
+    <id>observación</id>
     <name>
       <en>Observación</en>
       <es>Observación</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Búsqueda</categoryId>
+    <categoryId>perceptionSearching</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Rastrear</id>
+    <id>tracking</id>
     <name>
       <en>Tracking</en>
       <es>Rastrear</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Perspicacia</categoryId>
+    <categoryId>perceptionInsight</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Alerta</id>
+    <id>alerta</id>
     <name>
       <en>Alerta</en>
       <es>Alerta</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Perspicacia</categoryId>
+    <categoryId>perceptionInsight</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Detectar Emboscadas</id>
+    <id>detectingEmboscadas</id>
     <name>
       <en>Detecting Emboscadas</en>
       <es>Detectar Emboscadas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Percepción del Entorno: Ciudades</id>
+    <id>perceptionOfTheEnvironmentCiudades</id>
     <name>
       <en>Perception of the Environment: Ciudades</en>
       <es>Percepción del Entorno: Ciudades</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Percepción del Entorno: Combate</id>
+    <id>perceptionOfTheEnvironmentCombat</id>
     <name>
-      <en>Perception of the Environment: Combate</en>
+      <en>Perception of the Environment: Combat</en>
       <es>Percepción del Entorno: Combate</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Percepción del Entorno: Durmiendo</id>
+    <id>perceptionOfTheEnvironmentDurmiendo</id>
     <name>
       <en>Perception of the Environment: Durmiendo</en>
       <es>Percepción del Entorno: Durmiendo</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Percepción del Entorno: Exploración</id>
+    <id>perceptionOfTheEnvironmentExploración</id>
     <name>
       <en>Perception of the Environment: Exploración</en>
       <es>Percepción del Entorno: Exploración</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Sentido de la Dirección</id>
+    <id>sentidoOfTheDirección</id>
     <name>
       <en>Sentido of the Dirección</en>
       <es>Sentido de la Dirección</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Sentido del Espacio</id>
+    <id>sentidoOfTheEspacio</id>
     <name>
       <en>Sentido of the Espacio</en>
       <es>Sentido del Espacio</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Sentido del Tiempo</id>
+    <id>sentidoOfTheTiempo</id>
     <name>
       <en>Sentido of the Tiempo</en>
       <es>Sentido del Tiempo</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Vista</id>
+    <id>vista</id>
     <name>
       <en>Vista</en>
       <es>Vista</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Olfato</id>
+    <id>olfato</id>
     <name>
       <en>Olfato</en>
       <es>Olfato</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Gusto</id>
+    <id>gusto</id>
     <name>
       <en>Gusto</en>
       <es>Gusto</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Oído</id>
+    <id>oído</id>
     <name>
       <en>Oído</en>
       <es>Oído</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Tacto</id>
+    <id>tacto</id>
     <name>
       <en>Tacto</en>
       <es>Tacto</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Sentido de la Realidad</id>
+    <id>sentidoOfTheRealidad</id>
     <name>
       <en>Sentido of the Realidad</en>
       <es>Sentido de la Realidad</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Vigilancia</id>
+    <id>vigilancia</id>
     <name>
       <en>Vigilancia</en>
       <es>Vigilancia</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción de Poder</categoryId>
+    <categoryId>powerAwareness</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Leer Runas</id>
+    <id>readingRunas</id>
     <name>
       <en>Reading Runas</en>
       <es>Leer Runas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción de Poder</categoryId>
+    <categoryId>powerAwareness</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Sintonización</id>
+    <id>sintonización</id>
     <name>
       <en>Sintonización</en>
       <es>Sintonización</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción de Poder</categoryId>
+    <categoryId>powerAwareness</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Adivinación</id>
+    <id>adivinación</id>
     <name>
       <en>Adivinación</en>
       <es>Adivinación</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción de Poder</categoryId>
+    <categoryId>powerAwareness</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Percepción del Poder</id>
+    <id>perceptionOfThePower</id>
     <name>
       <en>Perception of the Power</en>
       <es>Percepción del Poder</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Ataque</categoryId>
+    <categoryId>subterfugeAttack</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Ataque Silencioso</id>
+    <id>attackSilencioso</id>
     <name>
       <en>Attack Silencioso</en>
       <es>Ataque Silencioso</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Ataque</categoryId>
+    <categoryId>subterfugeAttack</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Emboscar</id>
+    <id>ambushing</id>
     <name>
       <en>Ambushing</en>
       <es>Emboscar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Mecánica</categoryId>
+    <categoryId>subterfugeMechanics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Abrir Cerraduras</id>
+    <id>abrirLocks</id>
     <name>
       <en>Abrir Locks</en>
       <es>Abrir Cerraduras</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Mecánica</categoryId>
+    <categoryId>subterfugeMechanics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Camuflaje</id>
+    <id>camuflaje</id>
     <name>
       <en>Camuflaje</en>
       <es>Camuflaje</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Mecánica</categoryId>
+    <categoryId>subterfugeMechanics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Desactivar Trampas</id>
+    <id>desactivarTrampas</id>
     <name>
       <en>Desactivar Trampas</en>
       <es>Desactivar Trampas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Mecánica</categoryId>
+    <categoryId>subterfugeMechanics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Disfrazarse</id>
+    <id>disguising</id>
     <name>
       <en>Disguising</en>
       <es>Disfrazarse</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Mecánica</categoryId>
+    <categoryId>subterfugeMechanics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Construir Trampas</id>
+    <id>construirTrampas</id>
     <name>
       <en>Construir Trampas</en>
       <es>Construir Trampas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Mecánica</categoryId>
+    <categoryId>subterfugeMechanics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Preparar Trampas</id>
+    <id>prepararTrampas</id>
     <name>
       <en>Preparar Trampas</en>
       <es>Preparar Trampas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Mecánica</categoryId>
+    <categoryId>subterfugeMechanics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Usa/Curar Venenos</id>
+    <id>usaCurarPoisons</id>
     <name>
       <en>Usa/Curar Poisons</en>
       <es>Usa/Curar Venenos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Mecánica</categoryId>
+    <categoryId>subterfugeMechanics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Falsificación</id>
+    <id>falsificación</id>
     <name>
       <en>Falsificación</en>
       <es>Falsificación</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Mecánica</categoryId>
+    <categoryId>subterfugeMechanics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Imitación</id>
+    <id>imitación</id>
     <name>
       <en>Imitación</en>
       <es>Imitación</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Mecánica</categoryId>
+    <categoryId>subterfugeMechanics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Ocultar Objetos</id>
+    <id>ocultarObjetos</id>
     <name>
       <en>Ocultar Objetos</en>
       <es>Ocultar Objetos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Sigilo</categoryId>
+    <categoryId>subterfugeStealth</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Acechar</id>
+    <id>stalking</id>
     <name>
       <en>Stalking</en>
       <es>Acechar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Sigilo</categoryId>
+    <categoryId>subterfugeStealth</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Esconderse</id>
+    <id>hiding</id>
     <name>
       <en>Hiding</en>
       <es>Esconderse</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Sigilo</categoryId>
+    <categoryId>subterfugeStealth</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Juegos de Manos</id>
+    <id>gamesOfHands</id>
     <name>
       <en>Games of Hands</en>
       <es>Juegos de Manos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Subterfugio·Sigilo</categoryId>
+    <categoryId>subterfugeStealth</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Robar Bolsillos</id>
+    <id>robarBolsillos</id>
     <name>
       <en>Robar Bolsillos</en>
       <es>Robar Bolsillos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·General</categoryId>
+    <categoryId>technicalTradeGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Dibujar Mapas</id>
+    <id>dibujarMapas</id>
     <name>
       <en>Dibujar Mapas</en>
       <es>Dibujar Mapas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·General</categoryId>
+    <categoryId>technicalTradeGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Juego</id>
+    <id>juego</id>
     <name>
       <en>Juego</en>
       <es>Juego</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·General</categoryId>
+    <categoryId>technicalTradeGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Juegos de Estrategia</id>
+    <id>gamesOfEstrategia</id>
     <name>
       <en>Games of Estrategia</en>
       <es>Juegos de Estrategia</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·General</categoryId>
+    <categoryId>technicalTradeGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Maquinaria</id>
+    <id>maquinaria</id>
     <name>
       <en>Maquinaria</en>
       <es>Maquinaria</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·General</categoryId>
+    <categoryId>technicalTradeGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Mendigar</id>
+    <id>mendigar</id>
     <name>
       <en>Mendigar</en>
       <es>Mendigar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·General</categoryId>
+    <categoryId>technicalTradeGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Navegar</id>
+    <id>navegar</id>
     <name>
       <en>Navegar</en>
       <es>Navegar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·General</categoryId>
+    <categoryId>technicalTradeGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Orientación</id>
+    <id>orientación</id>
     <name>
       <en>Orientación</en>
       <es>Orientación</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·General</categoryId>
+    <categoryId>technicalTradeGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Primeros Auxilios</id>
+    <id>primerosAuxilios</id>
     <name>
       <en>Primeros Auxilios</en>
       <es>Primeros Auxilios</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·General</categoryId>
+    <categoryId>technicalTradeGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Usar Hierbas</id>
+    <id>usarHerbs</id>
     <name>
       <en>Usar Herbs</en>
       <es>Usar Hierbas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Profesional</categoryId>
+    <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Cuidados Médicos</id>
+    <id>cuidadosMédicos</id>
     <name>
       <en>Cuidados Médicos</en>
       <es>Cuidados Médicos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Profesional</categoryId>
+    <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Diagnosis</id>
+    <id>diagnosis</id>
     <name>
       <en>Diagnosis</en>
       <es>Diagnosis</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Profesional</categoryId>
+    <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Ingeniería</id>
+    <id>ingeniería</id>
     <name>
       <en>Ingeniería</en>
       <es>Ingeniería</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Profesional</categoryId>
+    <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Mecánica</id>
+    <id>mechanics</id>
     <name>
       <en>Mechanics</en>
       <es>Mecánica</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Profesional</categoryId>
+    <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Minería</id>
+    <id>minería</id>
     <name>
       <en>Minería</en>
       <es>Minería</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Profesional</categoryId>
+    <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Adormecerse</id>
+    <id>adormecerse</id>
     <name>
       <en>Adormecerse</en>
       <es>Adormecerse</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Profesional</categoryId>
+    <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Arquitectura</id>
+    <id>arquitectura</id>
     <name>
       <en>Arquitectura</en>
       <es>Arquitectura</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Profesional</categoryId>
+    <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Cirugía</id>
+    <id>cirugía</id>
     <name>
       <en>Cirugía</en>
       <es>Cirugía</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Profesional</categoryId>
+    <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Organización Militar</id>
+    <id>organizaciónMilitar</id>
     <name>
       <en>Organización Militar</en>
       <es>Organización Militar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Profesional</categoryId>
+    <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Propaganda</id>
+    <id>propaganda</id>
     <name>
       <en>Propaganda</en>
       <es>Propaganda</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Profesional</categoryId>
+    <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Zahorí</id>
+    <id>zahorí</id>
     <name>
       <en>Zahorí</en>
       <es>Zahorí</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Profesional</categoryId>
+    <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Investigación</id>
+    <id>investigación</id>
     <name>
       <en>Investigación</en>
       <es>Investigación</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Administración</id>
+    <id>administración</id>
     <name>
       <en>Administración</en>
       <es>Administración</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Manejo de Botes</id>
+    <id>manejoOfBotes</id>
     <name>
       <en>Manejo of Botes</en>
       <es>Manejo de Botes</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Evaluar Arma</id>
+    <id>evaluarArma</id>
     <name>
       <en>Evaluar Arma</en>
       <es>Evaluar Arma</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Evaluar Armadura</id>
+    <id>evaluarArmor</id>
     <name>
       <en>Evaluar Armor</en>
       <es>Evaluar Armadura</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Evaluar Metal</id>
+    <id>evaluarMetal</id>
     <name>
       <en>Evaluar Metal</en>
       <es>Evaluar Metal</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Evaluar Piedra</id>
+    <id>evaluarStone</id>
     <name>
       <en>Evaluar Stone</en>
       <es>Evaluar Piedra</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Navegación</id>
+    <id>navegación</id>
     <name>
       <en>Navegación</en>
       <es>Navegación</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Táctica</id>
+    <id>táctica</id>
     <name>
       <en>Táctica</en>
       <es>Táctica</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Tasar</id>
+    <id>tasar</id>
     <name>
       <en>Tasar</en>
       <es>Tasar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Artimañas</id>
+    <id>artimañas</id>
     <name>
       <en>Artimañas</en>
       <es>Artimañas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Cartografía</id>
+    <id>cartografía</id>
     <name>
       <en>Cartografía</en>
       <es>Cartografía</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Ingeniería de Asedio</id>
+    <id>ingenieríaOfAsedio</id>
     <name>
       <en>Ingeniería of Asedio</en>
       <es>Ingeniería de Asedio</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Partería</id>
+    <id>partería</id>
     <name>
       <en>Partería</en>
       <es>Partería</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Preparar Hierbas</id>
+    <id>prepararHerbs</id>
     <name>
       <en>Preparar Herbs</en>
       <es>Preparar Hierbas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Técnica/Comercio·Vocacional</categoryId>
+    <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Preparar Venenos</id>
+    <id>prepararPoisons</id>
     <name>
       <en>Preparar Poisons</en>
       <es>Preparar Venenos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Urbana</categoryId>
+    <categoryId>urban</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Agenciar</id>
+    <id>agenciar</id>
     <name>
       <en>Agenciar</en>
       <es>Agenciar</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Urbana</categoryId>
+    <categoryId>urban</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Callejeo</id>
+    <id>streetSmarts</id>
     <name>
       <en>Street Smarts</en>
       <es>Callejeo</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Urbana</categoryId>
+    <categoryId>urban</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Disimulo</id>
+    <id>disimulo</id>
     <name>
       <en>Disimulo</en>
       <es>Disimulo</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Urbana</categoryId>
+    <categoryId>urban</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Instinto Urbano</id>
+    <id>instintoUrbano</id>
     <name>
       <en>Instinto Urbano</en>
       <es>Instinto Urbano</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Ataque Racial: Extremidades</id>
+    <id>attackRacialExtremidades</id>
     <name>
       <en>Attack Racial: Extremidades</en>
       <es>Ataque Racial: Extremidades</es>
     </name>
     <rare>true</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Ataque Racial: Boca</id>
+    <id>attackRacialBoca</id>
     <name>
       <en>Attack Racial: Boca</en>
       <es>Ataque Racial: Boca</es>
     </name>
     <rare>true</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Ataque Racial: Aliento</id>
+    <id>attackRacialAliento</id>
     <name>
       <en>Attack Racial: Aliento</en>
       <es>Ataque Racial: Aliento</es>
     </name>
     <rare>true</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Ataque Racial: Otro</id>
+    <id>attackRacialOtro</id>
     <name>
       <en>Attack Racial: Otro</en>
       <es>Ataque Racial: Otro</es>
     </name>
     <rare>true</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Ataque Racial: Vómito</id>
+    <id>attackRacialVómito</id>
     <name>
       <en>Attack Racial: Vómito</en>
       <es>Ataque Racial: Vómito</es>
     </name>
     <rare>true</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Habla Común</id>
+    <id>hablarHablaComún</id>
     <name>
       <en>Hablar Habla Común</en>
       <es>Hablar Habla Común</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Habla Común</id>
+    <id>escribirHablaComún</id>
     <name>
       <en>Escribir Habla Común</en>
       <es>Escribir Habla Común</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Habla de las Llanuras</id>
+    <id>hablarHablaOfTheLlanuras</id>
     <name>
       <en>Hablar Habla of the Llanuras</en>
       <es>Hablar Habla de las Llanuras</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Habla de las Llanuras</id>
+    <id>escribirHablaOfTheLlanuras</id>
     <name>
       <en>Escribir Habla of the Llanuras</en>
       <es>Escribir Habla de las Llanuras</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Habla Alta</id>
+    <id>hablarHablaAlta</id>
     <name>
       <en>Hablar Habla Alta</en>
       <es>Hablar Habla Alta</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Habla Alta</id>
+    <id>escribirHablaAlta</id>
     <name>
       <en>Escribir Habla Alta</en>
       <es>Escribir Habla Alta</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Habla del Desierto</id>
+    <id>hablarHablaOfTheDesierto</id>
     <name>
       <en>Hablar Habla of the Desierto</en>
       <es>Hablar Habla del Desierto</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Habla del Desierto</id>
+    <id>escribirHablaOfTheDesierto</id>
     <name>
       <en>Escribir Habla of the Desierto</en>
       <es>Escribir Habla del Desierto</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Habla del Norte</id>
+    <id>hablarHablaOfTheNorte</id>
     <name>
       <en>Hablar Habla of the Norte</en>
       <es>Hablar Habla del Norte</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Habla del Norte</id>
+    <id>escribirHablaOfTheNorte</id>
     <name>
       <en>Escribir Habla of the Norte</en>
       <es>Escribir Habla del Norte</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Habla del Sur</id>
+    <id>hablarHablaOfTheSur</id>
     <name>
       <en>Hablar Habla of the Sur</en>
       <es>Hablar Habla del Sur</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Habla del Sur</id>
+    <id>escribirHablaOfTheSur</id>
     <name>
       <en>Escribir Habla of the Sur</en>
       <es>Escribir Habla del Sur</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Habla de los Mares</id>
+    <id>hablarHablaOfTheMares</id>
     <name>
       <en>Hablar Habla of the Mares</en>
       <es>Hablar Habla de los Mares</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Habla de los Mares</id>
+    <id>escribirHablaOfTheMares</id>
     <name>
       <en>Escribir Habla of the Mares</en>
       <es>Escribir Habla de los Mares</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Habla de las Colinas</id>
+    <id>hablarHablaOfTheColinas</id>
     <name>
       <en>Hablar Habla of the Colinas</en>
       <es>Hablar Habla de las Colinas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Habla de las Colinas</id>
+    <id>escribirHablaOfTheColinas</id>
     <name>
       <en>Escribir Habla of the Colinas</en>
       <es>Escribir Habla de las Colinas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Habla de los Bosques</id>
+    <id>hablarHablaOfTheBosques</id>
     <name>
       <en>Hablar Habla of the Bosques</en>
       <es>Hablar Habla de los Bosques</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Habla de los Bosques</id>
+    <id>escribirHablaOfTheBosques</id>
     <name>
       <en>Escribir Habla of the Bosques</en>
       <es>Escribir Habla de los Bosques</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Idiomas Mágicos</id>
+    <id>idiomasMagical</id>
     <name>
       <en>Idiomas Magical</en>
       <es>Idiomas Mágicos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Idiomas Mágicos: Hechizos Elementales</id>
+    <id>idiomasMagicalSpellsElementales</id>
     <name>
-      <en>Idiomas Magical: Hechizos Elementales</en>
+      <en>Idiomas Magical: Spells Elementales</en>
       <es>Idiomas Mágicos: Hechizos Elementales</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Idiomas Mágicos: Espiritus</id>
+    <id>idiomasMagicalEspiritus</id>
     <name>
       <en>Idiomas Magical: Espiritus</en>
       <es>Idiomas Mágicos: Espiritus</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Exteriores·Animales</categoryId>
+    <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Montar: Montura Elemental</id>
+    <id>montarMonturaElemental</id>
     <name>
       <en>Montar: Montura Elemental</en>
       <es>Montar: Montura Elemental</es>
     </name>
     <rare>true</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Manipulación del Poder</categoryId>
+    <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Trascender Armadura</id>
+    <id>trascenderArmor</id>
     <name>
       <en>Trascender Armor</en>
       <es>Trascender Armadura</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-</habilidades>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+</skills>

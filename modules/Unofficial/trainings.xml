@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<adiestramientos>
-  <adiestramiento>
+<trainings>
+  <training>
     <availableToEveryRace>false</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -128,7 +128,7 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Amazona</id>
+    <id>amazona</id>
     <name>
       <en>Amazona</en>
       <es>Amazona</es>
@@ -185,8 +185,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -209,7 +209,7 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Barrendero</id>
+    <id>barrendero</id>
     <name>
       <en>Barrendero</en>
       <es>Barrendero</es>
@@ -234,5 +234,5 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>3</trainingTimeInMonths>
-  </adiestramiento>
-</adiestramientos>
+  </training>
+</trainings>

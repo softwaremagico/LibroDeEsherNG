@@ -1,852 +1,891 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<habilidades>
-  <habilidad>
+<skills>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Golpes</categoryId>
+    <categoryId>martialArtsStrikes</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Golpe Nervioso</id>
+    <id>nerveStrike</id>
     <name>
       <en>Nerve Strike</en>
       <es>Golpe Nervioso</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo de Arte Marcial (Básico)</id>
+    <id>styleOfArtMarcialBásico</id>
     <name>
       <en>Style of Art Marcial (Básico)</en>
       <es>Estilo de Arte Marcial (Básico)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo de Arte Marcial (Avanzado)</id>
+    <id>styleOfArtMarcialAdvanced</id>
     <name>
       <en>Style of Art Marcial (Advanced)</en>
       <es>Estilo de Arte Marcial (Avanzado)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Lucha a Ciegas</id>
+    <id>blindFighting</id>
     <name>
       <en>Blind Fighting</en>
       <es>Lucha a Ciegas</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo de la Grulla</id>
+    <id>styleOfTheCrane</id>
     <name>
       <en>Style of the Crane</en>
       <es>Estilo de la Grulla</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Ataque Sin Sombra</skill>
-      <skill>Poderes Chi: Golpes Contínuos</skill>
+      <skill>chiPowerShadowlessAttack</skill>
+      <skill>chiPowerStrikesContinuous</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo de las Ocho Hadas Borrachas</id>
+    <id>styleOfTheOchoFeyBorrachas</id>
     <name>
       <en>Style of the Ocho Fey Borrachas</en>
       <es>Estilo de las Ocho Hadas Borrachas</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Resurgir del Fénix</skill>
-      <skill>Poderes Chi: Puños de Hierro</skill>
-      <skill>Poderes Chi: Resistir el Dolor</skill>
+      <skill>chiPowerRebirthOfThePhoenix</skill>
+      <skill>chiPowerFistsOfIron</skill>
+      <skill>chiPowerResistPain</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo de la Serpiente</id>
+    <id>styleOfTheSnake</id>
     <name>
       <en>Style of the Snake</en>
       <es>Estilo de la Serpiente</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Puño Envenenado</skill>
+      <skill>chiPowerPoisonedFist</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Lanza de Tela</id>
+    <id>chiPowerClothLance</id>
     <name>
-      <en>Chi Power: Lanza de Tela</en>
+      <en>Chi Power: Cloth Lance</en>
       <es>Poderes Chi: Lanza de Tela</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Golpe en Salto</id>
+    <id>chiPowerJumpingStrike</id>
     <name>
-      <en>Chi Power: Golpe en Salto</en>
+      <en>Chi Power: Jumping Strike</en>
       <es>Poderes Chi: Golpe en Salto</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Contacto Contínuo</id>
+    <id>chiPowerContinuousContact</id>
     <name>
-      <en>Chi Power: Contacto Contínuo</en>
+      <en>Chi Power: Continuous Contact</en>
       <es>Poderes Chi: Contacto Contínuo</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo Dragón</id>
+    <id>styleDragon</id>
     <name>
       <en>Style Dragon</en>
       <es>Estilo Dragón</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Lanza de Tela</skill>
-      <skill>Poderes Chi: Puños de Hierro</skill>
-      <skill>Poderes Chi: Resistir el Dolor</skill>
+      <skill>chiPowerClothLance</skill>
+      <skill>chiPowerFistsOfIron</skill>
+      <skill>chiPowerResistPain</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo Simio</id>
+    <id>styleApe</id>
     <name>
       <en>Style Ape</en>
       <es>Estilo Simio</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Salto Fantástico</skill>
-      <skill>Poderes Chi: Golpe en Salto</skill>
-      <skill>Poderes Chi: Trepar de la Lagartija</skill>
+      <skill>chiPowerFantasticLeap</skill>
+      <skill>chiPowerJumpingStrike</skill>
+      <skill>chiPowerGeckoClimb</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo Cobra</id>
+    <id>styleCobra</id>
     <name>
       <en>Style Cobra</en>
       <es>Estilo Cobra</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Ataque a Distancia</skill>
+      <skill>chiPowerRangedAttack</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo Cobra Real</id>
+    <id>styleCobraReal</id>
     <name>
       <en>Style Cobra Real</en>
       <es>Estilo Cobra Real</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Puño Envenenado</skill>
+      <skill>chiPowerPoisonedFist</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo Dos Instrumentos</id>
+    <id>styleDosInstrumentos</id>
     <name>
       <en>Style Dos Instrumentos</en>
       <es>Estilo Dos Instrumentos</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo Hsing-I</id>
+    <id>styleHsingI</id>
     <name>
       <en>Style Hsing-I</en>
       <es>Estilo Hsing-I</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Pies Ligeros</skill>
-      <skill>Poderes Chi: Sentir Debilidad</skill>
-      <skill>Poderes Chi: Salto Fantástico</skill>
+      <skill>chiPowerLightFeet</skill>
+      <skill>chiPowerSenseWeakness</skill>
+      <skill>chiPowerFantasticLeap</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo Mantis Religiosa</id>
+    <id>styleMantisReligiosa</id>
     <name>
       <en>Style Mantis Religiosa</en>
       <es>Estilo Mantis Religiosa</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Contacto Contínuo</skill>
-      <skill>Poderes Chi: Ataque Sin Sombra</skill>
+      <skill>chiPowerContinuousContact</skill>
+      <skill>chiPowerShadowlessAttack</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo Pa Kua Chu'an</id>
+    <id>stylePaKuaChuAn</id>
     <name>
       <en>Style Pa Kua Chu'an</en>
       <es>Estilo Pa Kua Chu'an</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Mano de Buda</skill>
-      <skill>Poderes Chi: Ataque a Distancia</skill>
+      <skill>chiPowerHandOfBuddha</skill>
+      <skill>chiPowerRangedAttack</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo Puño de Algodón</id>
+    <id>styleFistOfAlgodón</id>
     <name>
       <en>Style Fist of Algodón</en>
       <es>Estilo Puño de Algodón</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Caer de la Hoja</skill>
-      <skill>Poderes Chi: Contacto Contínuo</skill>
+      <skill>chiPowerFallingOfTheHoja</skill>
+      <skill>chiPowerContinuousContact</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>true</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo Tigre</id>
+    <id>styleTiger</id>
     <name>
       <en>Style Tiger</en>
       <es>Estilo Tigre</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Golpe en Salto</skill>
-      <skill>Poderes Chi: Golpes Contínuos</skill>
+      <skill>chiPowerJumpingStrike</skill>
+      <skill>chiPowerStrikesContinuous</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo Túnica de Hierro</id>
+    <id>styleTúnicaOfIron</id>
     <name>
       <en>Style Túnica of Iron</en>
       <es>Estilo Túnica de Hierro</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Postura Invencible</skill>
-      <skill>Poderes Chi: Invulnerabilidad - Filo</skill>
-      <skill>Poderes Chi: Invulnerabilidad - Contundentes</skill>
-      <skill>Poderes Chi: Invulnerabilidad - Ataques sin Armas</skill>
-      <skill>Poderes Chi: Invulnerabilidad - Proyectiles</skill>
-      <skill>Poderes Chi: Invulnerabilidad - Arrojadizas</skill>
-      <skill>Poderes Chi: Invulnerabilidad - Dos Manos</skill>
-      <skill>Poderes Chi: Invulnerabilidad - Asta</skill>
-      <skill>Poderes Chi: Resurgir del Fénix</skill>
+      <skill>chiPowerInvincibleStance</skill>
+      <skill>chiPowerInvulnerabilityEdged</skill>
+      <skill>chiPowerInvulnerabilityBlunt</skill>
+      <skill>chiPowerInvulnerabilityAttacksWithoutWeapons</skill>
+      <skill>chiPowerInvulnerabilityMissile</skill>
+      <skill>chiPowerInvulnerabilityThrown</skill>
+      <skill>chiPowerInvulnerabilityDosHands</skill>
+      <skill>chiPowerInvulnerabilityPolearm</skill>
+      <skill>chiPowerRebirthOfThePhoenix</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estilo Wing Chun</id>
+    <id>styleWingChun</id>
     <name>
       <en>Style Wing Chun</en>
       <es>Estilo Wing Chun</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Baru Pentjak-Silat</id>
+    <id>baruPentjakSilat</id>
     <name>
       <en>Baru Pentjak-Silat</en>
       <es>Baru Pentjak-Silat</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Ataque Sin Sombra</skill>
+      <skill>chiPowerShadowlessAttack</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Harimau Pentjat-Silat</id>
+    <id>harimauPentjatSilat</id>
     <name>
       <en>Harimau Pentjat-Silat</en>
       <es>Harimau Pentjat-Silat</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Golpe en Salto</skill>
-      <skill>Poderes Chi: Pies Ligeros</skill>
+      <skill>chiPowerJumpingStrike</skill>
+      <skill>chiPowerLightFeet</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Kumango</id>
+    <id>kumango</id>
     <name>
       <en>Kumango</en>
       <es>Kumango</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Pies Ligeros</skill>
+      <skill>chiPowerLightFeet</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Ju-jutsu</id>
+    <id>juJutsu</id>
     <name>
       <en>Ju-jutsu</en>
       <es>Ju-jutsu</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>true</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Nin-jutsu</id>
+    <id>ninJutsu</id>
     <name>
       <en>Nin-jutsu</en>
       <es>Nin-jutsu</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Caer de la Hoja</skill>
-      <skill>Poderes Chi: Mantener la Respiración</skill>
-      <skill>Poderes Chi: Pies Ligeros</skill>
-      <skill>Poderes Chi: Trepar de la Lagartija</skill>
-      <skill>Poderes Chi: Resistir Elementos</skill>
+      <skill>chiPowerFallingOfTheHoja</skill>
+      <skill>chiPowerHoldBreath</skill>
+      <skill>chiPowerLightFeet</skill>
+      <skill>chiPowerGeckoClimb</skill>
+      <skill>chiPowerResistElements</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>true</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Sumai</id>
+    <id>sumai</id>
     <name>
       <en>Sumai</en>
       <es>Sumai</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Resistir el Dolor</skill>
-      <skill>Poderes Chi: Invulnerabilidad - Filo</skill>
-      <skill>Poderes Chi: Invulnerabilidad - Contundentes</skill>
-      <skill>Poderes Chi: Invulnerabilidad - Ataques sin Armas</skill>
-      <skill>Poderes Chi: Invulnerabilidad - Proyectiles</skill>
-      <skill>Poderes Chi: Invulnerabilidad - Arrojadizas</skill>
-      <skill>Poderes Chi: Invulnerabilidad - Dos Manos</skill>
-      <skill>Poderes Chi: Invulnerabilidad - Asta</skill>
+      <skill>chiPowerResistPain</skill>
+      <skill>chiPowerInvulnerabilityEdged</skill>
+      <skill>chiPowerInvulnerabilityBlunt</skill>
+      <skill>chiPowerInvulnerabilityAttacksWithoutWeapons</skill>
+      <skill>chiPowerInvulnerabilityMissile</skill>
+      <skill>chiPowerInvulnerabilityThrown</skill>
+      <skill>chiPowerInvulnerabilityDosHands</skill>
+      <skill>chiPowerInvulnerabilityPolearm</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hwarang-Do</id>
+    <id>hwarangDo</id>
     <name>
       <en>Hwarang-Do</en>
       <es>Hwarang-Do</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Mano de Buda</skill>
-      <skill>Poderes Chi: Sentir Debilidad</skill>
-      <skill>Poderes Chi: Resistir Elementos</skill>
+      <skill>chiPowerHandOfBuddha</skill>
+      <skill>chiPowerSenseWeakness</skill>
+      <skill>chiPowerResistElements</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Taw Kwon Do</id>
+    <id>tawKwonDo</id>
     <name>
       <en>Taw Kwon Do</en>
       <es>Taw Kwon Do</es>
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>Poderes Chi: Golpe en Salto</skill>
+      <skill>chiPowerJumpingStrike</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Karate</id>
+    <id>karate</id>
     <name>
       <en>Karate</en>
       <es>Karate</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Artes Marciales·Maniobras de Combate</categoryId>
+    <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Savate</id>
+    <id>savate</id>
     <name>
       <en>Savate</en>
       <es>Savate</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Golpes Contínuos</id>
+    <id>chiPowerStrikesContinuous</id>
     <name>
-      <en>Chi Power: Golpes Contínuos</en>
+      <en>Chi Power: Strikes Continuous</en>
       <es>Poderes Chi: Golpes Contínuos</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Mano de Buda</id>
+    <id>chiPowerHandOfBuddha</id>
     <name>
-      <en>Chi Power: Mano de Buda</en>
+      <en>Chi Power: Hand of Buddha</en>
       <es>Poderes Chi: Mano de Buda</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Ataque a Distancia</id>
+    <id>chiPowerRangedAttack</id>
     <name>
-      <en>Chi Power: Ataque a Distancia</en>
+      <en>Chi Power: Ranged Attack</en>
       <es>Poderes Chi: Ataque a Distancia</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Puños de Hierro</id>
+    <id>chiPowerFistsOfIron</id>
     <name>
-      <en>Chi Power: Puños de Hierro</en>
+      <en>Chi Power: Fists of Iron</en>
       <es>Poderes Chi: Puños de Hierro</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Poderes Chi: Puño Elemental - Frío</id>
+    <id>chiPowerFistElementalCold</id>
     <name>
-      <en>Chi Power: Puño Elemental - Frío</en>
+      <en>Chi Power: Fist Elemental - Cold</en>
       <es>Poderes Chi: Puño Elemental - Frío</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Poderes Chi: Puño Elemental - Calor</id>
+    <id>chiPowerFistElementalHeat</id>
     <name>
-      <en>Chi Power: Puño Elemental - Calor</en>
+      <en>Chi Power: Fist Elemental - Heat</en>
       <es>Poderes Chi: Puño Elemental - Calor</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Poderes Chi: Puño Elemental - Electricidad</id>
+    <id>chiPowerFistElementalElectricity</id>
     <name>
-      <en>Chi Power: Puño Elemental - Electricidad</en>
+      <en>Chi Power: Fist Elemental - Electricity</en>
       <es>Poderes Chi: Puño Elemental - Electricidad</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Poderes Chi: Puño Elemental - Impacto</id>
+    <id>chiPowerFistElementalImpact</id>
     <name>
-      <en>Chi Power: Puño Elemental - Impacto</en>
+      <en>Chi Power: Fist Elemental - Impact</en>
       <es>Poderes Chi: Puño Elemental - Impacto</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Ataques Especiales</categoryId>
+    <categoryId>specialAttacks</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Puño Envenenado</id>
+    <id>chiPowerPoisonedFist</id>
     <name>
-      <en>Chi Power: Puño Envenenado</en>
+      <en>Chi Power: Poisoned Fist</en>
       <es>Poderes Chi: Puño Envenenado</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Mantener la Respiración</id>
+    <id>chiPowerHoldBreath</id>
     <name>
-      <en>Chi Power: Mantener la Respiración</en>
+      <en>Chi Power: Hold Breath</en>
       <es>Poderes Chi: Mantener la Respiración</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Ataque Sin Sombra</id>
+    <id>chiPowerShadowlessAttack</id>
     <name>
-      <en>Chi Power: Ataque Sin Sombra</en>
+      <en>Chi Power: Shadowless Attack</en>
       <es>Poderes Chi: Ataque Sin Sombra</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Resistir Elementos</id>
+    <id>chiPowerResistElements</id>
     <name>
-      <en>Chi Power: Resistir Elementos</en>
+      <en>Chi Power: Resist Elements</en>
       <es>Poderes Chi: Resistir Elementos</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Resistir el Dolor</id>
+    <id>chiPowerResistPain</id>
     <name>
-      <en>Chi Power: Resistir el Dolor</en>
+      <en>Chi Power: Resist Pain</en>
       <es>Poderes Chi: Resistir el Dolor</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Caer de la Hoja</id>
+    <id>chiPowerFallingOfTheHoja</id>
     <name>
-      <en>Chi Power: Caer de la Hoja</en>
+      <en>Chi Power: Falling of the Hoja</en>
       <es>Poderes Chi: Caer de la Hoja</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Salto Fantástico</id>
+    <id>chiPowerFantasticLeap</id>
     <name>
-      <en>Chi Power: Salto Fantástico</en>
+      <en>Chi Power: Fantastic Leap</en>
       <es>Poderes Chi: Salto Fantástico</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Pies Ligeros</id>
+    <id>chiPowerLightFeet</id>
     <name>
-      <en>Chi Power: Pies Ligeros</en>
+      <en>Chi Power: Light Feet</en>
       <es>Poderes Chi: Pies Ligeros</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Trepar de la Lagartija</id>
+    <id>chiPowerGeckoClimb</id>
     <name>
-      <en>Chi Power: Trepar de la Lagartija</en>
+      <en>Chi Power: Gecko Climb</en>
       <es>Poderes Chi: Trepar de la Lagartija</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Autocontrol</categoryId>
+    <categoryId>selfControl</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Sentir Debilidad</id>
+    <id>chiPowerSenseWeakness</id>
     <name>
-      <en>Chi Power: Sentir Debilidad</en>
+      <en>Chi Power: Sense Weakness</en>
       <es>Poderes Chi: Sentir Debilidad</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Oscuro</categoryId>
+    <categoryId>loreDark</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de los Puntos Vitales</id>
+    <id>loreOfThePointsVitales</id>
     <name>
       <en>Lore of the Points Vitales</en>
       <es>Conocimiento de los Puntos Vitales</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Conocimiento·Oscuro</categoryId>
+    <categoryId>loreDark</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Conocimiento de los Poderes Chi</id>
+    <id>loreOfThePowersChi</id>
     <name>
       <en>Lore of the Powers Chi</en>
       <es>Conocimiento de los Poderes Chi</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Defensas Especiales</categoryId>
+    <categoryId>specialDefenses</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Postura Invencible</id>
+    <id>chiPowerInvincibleStance</id>
     <name>
-      <en>Chi Power: Postura Invencible</en>
+      <en>Chi Power: Invincible Stance</en>
       <es>Poderes Chi: Postura Invencible</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Defensas Especiales</categoryId>
+    <categoryId>specialDefenses</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Invulnerabilidad - Filo</id>
+    <id>chiPowerInvulnerabilityEdged</id>
     <name>
-      <en>Chi Power: Invulnerabilidad - Filo</en>
+      <en>Chi Power: Invulnerability - Edged</en>
       <es>Poderes Chi: Invulnerabilidad - Filo</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Defensas Especiales</categoryId>
+    <categoryId>specialDefenses</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Invulnerabilidad - Contundentes</id>
+    <id>chiPowerInvulnerabilityBlunt</id>
     <name>
-      <en>Chi Power: Invulnerabilidad - Contundentes</en>
+      <en>Chi Power: Invulnerability - Blunt</en>
       <es>Poderes Chi: Invulnerabilidad - Contundentes</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Defensas Especiales</categoryId>
+    <categoryId>specialDefenses</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Invulnerabilidad - Ataques sin Armas</id>
+    <id>chiPowerInvulnerabilityAttacksWithoutWeapons</id>
     <name>
-      <en>Chi Power: Invulnerabilidad - Ataques sin Armas</en>
+      <en>Chi Power: Invulnerability - Attacks without Weapons</en>
       <es>Poderes Chi: Invulnerabilidad - Ataques sin Armas</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Defensas Especiales</categoryId>
+    <categoryId>specialDefenses</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Invulnerabilidad - Proyectiles</id>
+    <id>chiPowerInvulnerabilityMissile</id>
     <name>
-      <en>Chi Power: Invulnerabilidad - Proyectiles</en>
+      <en>Chi Power: Invulnerability - Missile</en>
       <es>Poderes Chi: Invulnerabilidad - Proyectiles</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Defensas Especiales</categoryId>
+    <categoryId>specialDefenses</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Invulnerabilidad - Arrojadizas</id>
+    <id>chiPowerInvulnerabilityThrown</id>
     <name>
-      <en>Chi Power: Invulnerabilidad - Arrojadizas</en>
+      <en>Chi Power: Invulnerability - Thrown</en>
       <es>Poderes Chi: Invulnerabilidad - Arrojadizas</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Defensas Especiales</categoryId>
+    <categoryId>specialDefenses</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Invulnerabilidad - Dos Manos</id>
+    <id>chiPowerInvulnerabilityDosHands</id>
     <name>
-      <en>Chi Power: Invulnerabilidad - Dos Manos</en>
+      <en>Chi Power: Invulnerability - Dos Hands</en>
       <es>Poderes Chi: Invulnerabilidad - Dos Manos</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Defensas Especiales</categoryId>
+    <categoryId>specialDefenses</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Invulnerabilidad - Asta</id>
+    <id>chiPowerInvulnerabilityPolearm</id>
     <name>
-      <en>Chi Power: Invulnerabilidad - Asta</en>
+      <en>Chi Power: Invulnerability - Polearm</en>
       <es>Poderes Chi: Invulnerabilidad - Asta</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-  <habilidad>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Defensas Especiales</categoryId>
+    <categoryId>specialDefenses</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>Poderes Chi: Resurgir del Fénix</id>
+    <id>chiPowerRebirthOfThePhoenix</id>
     <name>
-      <en>Chi Power: Resurgir del Fénix</en>
+      <en>Chi Power: Rebirth of the Phoenix</en>
       <es>Poderes Chi: Resurgir del Fénix</es>
     </name>
     <rare>false</rare>
     <skillGroup>CHI</skillGroup>
-    <skillType>(r)</skillType>
-  </habilidad>
-</habilidades>
+    <skillType>RESTRICTED</skillType>
+  </skill>
+</skills>

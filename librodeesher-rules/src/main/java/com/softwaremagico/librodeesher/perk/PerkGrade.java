@@ -1,10 +1,10 @@
 package com.softwaremagico.librodeesher.perk;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * How impactful a perk (or weakness) is, as printed in the "Grado" column of {@code talentos.txt}.
+ *
+ * <p>Serialized to XML using the plain (English) enum constant name; {@link #fromTag(String)} is
+ * only used by {@code PerkMigrationTool} to parse the original Spanish column value.</p>
  *
  * <p>The legacy {@code PerkGrade#getPerkCategory(String)} silently defaulted to {@code MAXIMUM} for
  * any unrecognized tag instead of failing. A handful of rows in the real "ManualPersonajes" data have
@@ -29,17 +29,11 @@ public enum PerkGrade {
         this.level = level;
     }
 
-    @JsonValue
-    public String getTag() {
-        return tag;
-    }
-
     /** Ordinal weight, lowest to highest impact; used to compare grades (e.g. perk vs. its weakness). */
     public int getLevel() {
         return level;
     }
 
-    @JsonCreator
     public static PerkGrade fromTag(String tag) {
         for (final PerkGrade grade : values()) {
             if (grade.tag.equalsIgnoreCase(tag)) {

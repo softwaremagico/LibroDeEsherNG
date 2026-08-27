@@ -26,7 +26,7 @@ public class CategoryFactoryTest {
 
     @Test
     public void lightArmorCategoryHasExpectedFields() throws InvalidXmlElementException {
-        final Category lightArmor = CategoryFactory.getInstance().getElement("Armadura·Ligera");
+        final Category lightArmor = CategoryFactory.getInstance().getElement("armorLight");
 
         Assert.assertEquals(lightArmor.getAbbreviation(), "ArdL");
         Assert.assertEquals(lightArmor.getCharacteristics(), List.of("Ag", "Fu", "Ag"));
@@ -37,7 +37,7 @@ public class CategoryFactoryTest {
 
     @Test
     public void weaponCategoriesHaveDynamicSkills() throws InvalidXmlElementException {
-        final Category twoHandedWeapons = CategoryFactory.getInstance().getElement("Armas·2manos");
+        final Category twoHandedWeapons = CategoryFactory.getInstance().getElement("weaponsTwoHanded");
 
         Assert.assertTrue(twoHandedWeapons.hasDynamicSkills(),
                 "weapon categories list their skills in the weapon files, not in categorias.txt");

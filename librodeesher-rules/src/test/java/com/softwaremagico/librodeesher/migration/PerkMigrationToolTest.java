@@ -45,24 +45,24 @@ public class PerkMigrationToolTest {
             final List<Perk> perks = readGeneratedFile(targetRoot.resolve("CharacterLaw/perks.xml"));
             Assert.assertEquals(perks.size(), 4);
 
-            final Perk suerte = findById(perks, "Suerte");
+            final Perk suerte = findById(perks, "luck");
             Assert.assertEquals(suerte.getCost(), Integer.valueOf(30));
             Assert.assertFalse(suerte.isWeakness());
             Assert.assertTrue(suerte.isAvailableToEveryone());
             Assert.assertEquals(suerte.getGrade(), PerkGrade.MAXIMUM);
             Assert.assertEquals(suerte.getType(), PerkType.SPECIAL);
 
-            final Perk addiction = findById(perks, "Adicción Ligera");
+            final Perk addiction = findById(perks, "minorAddiction");
             Assert.assertTrue(addiction.isWeakness());
             Assert.assertEquals(addiction.getType(), PerkType.MENTAL);
 
             // Legacy behaviour preserved: an unrecognized grade tag ("Mental") falls back to MAXIMUM,
             // and an unrecognized type tag ("Máximo") falls back to OTHER.
-            final Perk swappedColumns = findById(perks, "Promesa (Máximo)");
+            final Perk swappedColumns = findById(perks, "vowMaximum");
             Assert.assertEquals(swappedColumns.getGrade(), PerkGrade.MAXIMUM);
             Assert.assertEquals(swappedColumns.getType(), PerkType.OTHER);
 
-            final Perk duplication = findById(perks, "Duplicación");
+            final Perk duplication = findById(perks, "duplication");
             Assert.assertEquals(duplication.getDescription().getSpanish(), "Genera una copia. Consulta la página 70.");
             Assert.assertFalse(duplication.getDescription().getEnglish().isBlank());
         } finally {

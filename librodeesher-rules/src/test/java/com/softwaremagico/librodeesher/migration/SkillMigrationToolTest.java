@@ -40,18 +40,18 @@ public class SkillMigrationToolTest {
             final List<Skill> skills = readGeneratedFile(targetRoot.resolve("Core/skills.xml"));
             Assert.assertEquals(skills.size(), 3);
 
-            final Skill style = findById(skills, "Estilo de la Grulla");
-            Assert.assertEquals(style.getCategoryId(), "Artes Marciales·Maniobras");
-            Assert.assertEquals(style.getEnableSkills(), List.of("Poderes Chi: Ataque Sin Sombra"));
+            final Skill style = findById(skills, "styleOfTheCrane");
+            Assert.assertEquals(style.getCategoryId(), "martialArtsManeuvers");
+            Assert.assertEquals(style.getEnableSkills(), List.of("chiPowerShadowlessAttack"));
             Assert.assertTrue(style.isEnabledByDefault());
 
-            final Skill chiPower = findById(skills, "Poderes Chi: Ataque Sin Sombra");
-            Assert.assertEquals(chiPower.getCategoryId(), "Autocontrol", "the skill's own definition line wins the "
+            final Skill chiPower = findById(skills, "chiPowerShadowlessAttack");
+            Assert.assertEquals(chiPower.getCategoryId(), "selfControl", "the skill's own definition line wins the "
                     + "category, not the earlier line that only referenced it as an unlock target");
             Assert.assertFalse(chiPower.isEnabledByDefault(), "referenced as an enableSkills target, so it must "
                     + "start disabled until unlocked");
 
-            final Skill rareSkill = findById(skills, "Xeno-Conocimientos");
+            final Skill rareSkill = findById(skills, "xenoLore");
             Assert.assertTrue(rareSkill.isRare());
         } finally {
             deleteRecursively(sourceRoot);

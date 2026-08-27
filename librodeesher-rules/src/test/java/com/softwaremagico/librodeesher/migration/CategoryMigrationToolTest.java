@@ -33,13 +33,13 @@ public class CategoryMigrationToolTest {
             final List<Category> basicoCategories = readGeneratedFile(targetRoot.resolve("Core/categories.xml"));
             Assert.assertEquals(basicoCategories.size(), 2);
 
-            final Category armaduraLigera = findById(basicoCategories, "ArmaduraLigera");
+            final Category armaduraLigera = findById(basicoCategories, "armorLight");
             Assert.assertEquals(armaduraLigera.getAbbreviation(), "ArdL");
             Assert.assertEquals(armaduraLigera.getCharacteristics(), List.of("Ag", "Fu", "Ag"));
             Assert.assertEquals(armaduraLigera.getType(), CategoryType.STANDARD);
             Assert.assertEquals(armaduraLigera.getSkills(), List.of("Cuero Endurecido", "Cuero Blando"));
 
-            final Category ataquesEspeciales = findById(basicoCategories, "AtaquesEspeciales");
+            final Category ataquesEspeciales = findById(basicoCategories, "specialAttacks");
             Assert.assertEquals(ataquesEspeciales.getType(), CategoryType.COMBINED);
             // The base "AtaquesEspeciales" skill plus the one contributed later by the "Esencia" module.
             Assert.assertEquals(ataquesEspeciales.getSkills(), List.of("Pelea", "Ataque Mágico"));
@@ -47,7 +47,7 @@ public class CategoryMigrationToolTest {
             final List<Category> esenciaCategories = readGeneratedFile(targetRoot.resolve("Essence/categories.xml"));
             Assert.assertEquals(esenciaCategories.size(), 1, "'AtaquesEspeciales' was merged into Basico, "
                     + "only the category first defined by Esencia should remain here");
-            Assert.assertEquals(esenciaCategories.get(0).getId(), "ConocimientoMagico");
+            Assert.assertEquals(esenciaCategories.get(0).getId(), "loreArcane");
         } finally {
             deleteRecursively(sourceRoot);
             deleteRecursively(targetRoot);
@@ -60,8 +60,8 @@ public class CategoryMigrationToolTest {
         Files.writeString(rolemasterDir.resolve("categorias.txt"), String.join("\n",
                 "#Nombre\tCaracterísticas\tProgresión\tHabilidades",
                 "####################",
-                "ArmaduraLigera(ArdL)\tAg/Fu/Ag\tEstándar\tCuero Endurecido, Cuero Blando",
-                "AtaquesEspeciales(AtaEsp)\tFu/Ag/Ad\tCombinada\tPelea",
+                "Armadura·Ligera(ArdL)\tAg/Fu/Ag\tEstándar\tCuero Endurecido, Cuero Blando",
+                "Ataques Especiales(AtaEsp)\tFu/Ag/Ad\tCombinada\tPelea",
                 ""), StandardCharsets.UTF_8);
 
         final Path esenciaDir = rolemasterDir.resolve("modulos").resolve("Esencia");
@@ -71,8 +71,8 @@ public class CategoryMigrationToolTest {
                 "####################",
                 // Adds a skill to a category already defined in the base file: must be merged into
                 // Basico's category, not duplicated as a new "Esencia" category.
-                "AtaquesEspeciales(AtaEsp)\tFu/Ag/Ad\tCombinada\tAtaque Mágico",
-                "ConocimientoMagico(ConMag)\tMe/Ra/Me\tEstándar\tConocimiento de los Hechizos",
+                "Ataques Especiales(AtaEsp)\tFu/Ag/Ad\tCombinada\tAtaque Mágico",
+                "Conocimiento·Mágico(ConMag)\tMe/Ra/Me\tEstándar\tConocimiento de los Hechizos",
                 ""), StandardCharsets.UTF_8);
     }
 

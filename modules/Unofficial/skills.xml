@@ -1,39 +1,42 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<habilidades>
-  <habilidad>
+<skills>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Hablar Centauro Escorpión</id>
+    <id>hablarCentauroEscorpión</id>
     <name>
       <en>Hablar Centauro Escorpión</en>
       <es>Hablar Centauro Escorpión</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Comunicación</categoryId>
+    <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Escribir Centauro Escorpión</id>
+    <id>escribirCentauroEscorpión</id>
     <name>
       <en>Escribir Centauro Escorpión</en>
       <es>Escribir Centauro Escorpión</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Oficios</categoryId>
+    <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Barrer</id>
+    <id>barrer</id>
     <name>
       <en>Barrer</en>
       <es>Barrer</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-</habilidades>
+    <skillType>STANDARD</skillType>
+  </skill>
+</skills>

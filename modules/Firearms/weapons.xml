@@ -1,58 +1,58 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<armas>
-  <arma>
+<weapons>
+  <weapon>
     <abbreviation>pstSc</abbreviation>
-    <categoryId>Armas·Fuego 1mano</categoryId>
-    <id>Pistola Automática: Samuel Coutty</id>
+    <categoryId>weaponsFirearmOneHanded</categoryId>
+    <id>automaticPistolSamuelCoutty</id>
     <name>
       <en>Automatic Pistol: Samuel Coutty</en>
       <es>Pistola Automática: Samuel Coutty</es>
     </name>
     <rare>false</rare>
-    <type>Fuego 1mano</type>
-  </arma>
-  <arma>
+    <type>FIREARM_ONE_HAND</type>
+  </weapon>
+  <weapon>
     <abbreviation>pstTfcp</abbreviation>
-    <categoryId>Armas·Fuego 1mano</categoryId>
-    <id>Pistola Avancarga: Thomas French Contract Pistol</id>
+    <categoryId>weaponsFirearmOneHanded</categoryId>
+    <id>muzzleloaderPistolThomasFrenchContractPistol</id>
     <name>
       <en>Muzzleloader Pistol: Thomas French Contract Pistol</en>
       <es>Pistola Avancarga: Thomas French Contract Pistol</es>
     </name>
     <rare>false</rare>
-    <type>Fuego 1mano</type>
-  </arma>
-  <arma>
+    <type>FIREARM_ONE_HAND</type>
+  </weapon>
+  <weapon>
     <abbreviation>pstCt</abbreviation>
-    <categoryId>Armas·Fuego 1mano</categoryId>
-    <id>Revolver: Colt Trooper</id>
+    <categoryId>weaponsFirearmOneHanded</categoryId>
+    <id>revolverColtTrooper</id>
     <name>
       <en>Revolver: Colt Trooper</en>
       <es>Revolver: Colt Trooper</es>
     </name>
     <rare>false</rare>
-    <type>Fuego 1mano</type>
-  </arma>
-  <arma>
+    <type>FIREARM_ONE_HAND</type>
+  </weapon>
+  <weapon>
     <abbreviation>rflMf</abbreviation>
-    <categoryId>Armas·Fuego 2manos</categoryId>
-    <id>Rifle de Avancarga: Mosquete Francés de 1600</id>
+    <categoryId>weaponsFirearmTwoHanded</categoryId>
+    <id>muzzleloaderRifleMosqueteFrancésOf1600</id>
     <name>
-      <en>Muzzleloader Rifle: Mosquete Francés de 1600</en>
+      <en>Muzzleloader Rifle: Mosquete Francés of 1600</en>
       <es>Rifle de Avancarga: Mosquete Francés de 1600</es>
     </name>
     <rare>false</rare>
-    <type>Fuego 2manos</type>
-  </arma>
-  <arma>
+    <type>FIREARM_TWO_HANDS</type>
+  </weapon>
+  <weapon>
     <abbreviation>rflMs</abbreviation>
-    <categoryId>Armas·Fuego 2manos</categoryId>
-    <id>Rifle de Avancarga: Moroccan Snaphance</id>
+    <categoryId>weaponsFirearmTwoHanded</categoryId>
+    <id>muzzleloaderRifleMoroccanSnaphance</id>
     <name>
       <en>Muzzleloader Rifle: Moroccan Snaphance</en>
       <es>Rifle de Avancarga: Moroccan Snaphance</es>
     </name>
     <rare>false</rare>
-    <type>Fuego 2manos</type>
-  </arma>
-</armas>
+    <type>FIREARM_TWO_HANDS</type>
+  </weapon>
+</weapons>

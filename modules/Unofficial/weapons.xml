@@ -1,47 +1,47 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<armas>
-  <arma>
+<weapons>
+  <weapon>
     <abbreviation>ro</abbreviation>
-    <categoryId>Armas·Arrojadizas</categoryId>
-    <id>Roca</id>
+    <categoryId>weaponsThrown</categoryId>
+    <id>rock</id>
     <name>
       <en>Rock</en>
       <es>Roca</es>
     </name>
     <rare>true</rare>
-    <type>Arrojadizas</type>
-  </arma>
-  <arma>
+    <type>THROWING</type>
+  </weapon>
+  <weapon>
     <abbreviation>cñ</abbreviation>
-    <categoryId>Armas·Artillería</categoryId>
-    <id>Cañon</id>
+    <categoryId>weaponsSiege</categoryId>
+    <id>cannon</id>
     <name>
       <en>Cannon</en>
       <es>Cañon</es>
     </name>
     <rare>true</rare>
-    <type>Artillería</type>
-  </arma>
-  <arma>
+    <type>SIEGE</type>
+  </weapon>
+  <weapon>
     <abbreviation>pstSa</abbreviation>
-    <categoryId>Armas·Fuego 1mano</categoryId>
-    <id>Pistola Energética: Saukur</id>
+    <categoryId>weaponsFirearmOneHanded</categoryId>
+    <id>energyPistolSaukur</id>
     <name>
       <en>Energy Pistol: Saukur</en>
       <es>Pistola Energética: Saukur</es>
     </name>
     <rare>false</rare>
-    <type>Fuego 1mano</type>
-  </arma>
-  <arma>
+    <type>FIREARM_ONE_HAND</type>
+  </weapon>
+  <weapon>
     <abbreviation>rflSa</abbreviation>
-    <categoryId>Armas·Fuego 2manos</categoryId>
-    <id>Rifle Energético: Saukur</id>
+    <categoryId>weaponsFirearmTwoHanded</categoryId>
+    <id>energyRifleSaukur</id>
     <name>
       <en>Energy Rifle: Saukur</en>
       <es>Rifle Energético: Saukur</es>
     </name>
     <rare>false</rare>
-    <type>Fuego 2manos</type>
-  </arma>
-</armas>
+    <type>FIREARM_TWO_HANDS</type>
+  </weapon>
+</weapons>

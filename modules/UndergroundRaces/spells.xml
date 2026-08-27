@@ -1,29 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<hechizos>
-  <listaDeHechizos>
+<spells>
+  <spellList>
     <closedList>false</closedList>
-    <id>Racial|Crear Ulogat-Toram</id>
+    <id>raceCrearUlogatToram</id>
     <name>
       <en>Crear Ulogat-Toram</en>
       <es>Crear Ulogat-Toram</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Orco Gris</owner>
+      <owner>Gray Orc</owner>
     </owners>
-    <realm>Racial</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>RACE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Racial|Maldición del Perro Pálido</id>
+    <id>raceMaldiciónOfThePerroPálido</id>
     <name>
       <en>Maldición of the Perro Pálido</en>
       <es>Maldición del Perro Pálido</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Orco Gris</owner>
+      <owner>Gray Orc</owner>
     </owners>
-    <realm>Racial</realm>
-  </listaDeHechizos>
-</hechizos>
+    <realm>RACE</realm>
+  </spellList>
+</spells>

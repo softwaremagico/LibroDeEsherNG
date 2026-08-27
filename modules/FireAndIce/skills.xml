@@ -1,123 +1,133 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<habilidades>
-  <habilidad>
+<skills>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Hechizos Dirigidos</categoryId>
+    <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Bola de Éter</id>
+    <id>bolaOfÉter</id>
     <name>
       <en>Bola of Éter</en>
       <es>Bola de Éter</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Hechizos Dirigidos</categoryId>
+    <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Rayo de Éter</id>
+    <id>rayoOfÉter</id>
     <name>
       <en>Rayo of Éter</en>
       <es>Rayo de Éter</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Hechizos Dirigidos</categoryId>
+    <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Rayo de Aire</id>
+    <id>rayoOfAire</id>
     <name>
       <en>Rayo of Aire</en>
       <es>Rayo de Aire</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Hechizos Dirigidos</categoryId>
+    <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Piedra</id>
+    <id>stone</id>
     <name>
       <en>Stone</en>
       <es>Piedra</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Hechizos Dirigidos</categoryId>
+    <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Rayo de Frío</id>
+    <id>rayoOfCold</id>
     <name>
       <en>Rayo of Cold</en>
       <es>Rayo de Frío</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Hechizos Dirigidos</categoryId>
+    <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Rayo de Fuerza</id>
+    <id>rayoOfStrength</id>
     <name>
       <en>Rayo of Strength</en>
       <es>Rayo de Fuerza</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Hechizos Dirigidos</categoryId>
+    <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Bola de Vacío</id>
+    <id>bolaOfVacío</id>
     <name>
       <en>Bola of Vacío</en>
       <es>Bola de Vacío</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Hechizos Dirigidos</categoryId>
+    <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Rayo de Vacío</id>
+    <id>rayoOfVacío</id>
     <name>
       <en>Rayo of Vacío</en>
       <es>Rayo de Vacío</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Hechizos Dirigidos</categoryId>
+    <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Rayo de Vapor</id>
+    <id>rayoOfVapor</id>
     <name>
       <en>Rayo of Vapor</en>
       <es>Rayo de Vapor</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Hechizos Dirigidos</categoryId>
+    <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Estallido Ciclónico</id>
+    <id>estallidoCiclónico</id>
     <name>
       <en>Estallido Ciclónico</en>
       <es>Estallido Ciclónico</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
-  </habilidad>
-</habilidades>
+    <skillType>STANDARD</skillType>
+  </skill>
+</skills>

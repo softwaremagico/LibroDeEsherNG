@@ -2,6 +2,7 @@ package com.softwaremagico.librodeesher.migration;
 
 import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.file.ModuleManager;
+import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.ProfessionBonus;
 import com.softwaremagico.librodeesher.profession.ProfessionTrainingCost;
@@ -55,6 +56,7 @@ public final class ProfessionMigrationTool {
 
     public static int migrate(Path sourceRoot, Path modulesTarget) throws IOException {
         final Path modulosDir = sourceRoot.resolve("rolemaster").resolve("modulos");
+        final IdAllocator idAllocator = new IdAllocator();
 
         int written = 0;
         for (final String module : ModuleManager.getAllModules()) {
@@ -66,28 +68,28 @@ public final class ProfessionMigrationTool {
             try (Stream<Path> files = Files.list(professionsDir)) {
                 for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
                         .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
-                    professions.add(readProfessionFile(file));
+                    professions.add(readProfessionFile(file, idAllocator));
                 }
             }
             if (professions.isEmpty()) {
                 continue;
             }
             XmlMigrationWriter.write(modulesTarget.resolve(module).resolve(OUTPUT_FILE),
-                    "profesiones", "profesion", professions);
+                    "professions", "profession", professions);
             written++;
         }
         return written;
     }
 
-    private static Profession readProfessionFile(Path file) throws IOException {
+    private static Profession readProfessionFile(Path file, IdAllocator idAllocator) throws IOException {
         final String fileName = file.getFileName().toString();
         final String professionName = fileName.substring(0, fileName.length() - ".txt".length());
         final SectionCursor cursor = new SectionCursor(Files.readAllLines(file, StandardCharsets.UTF_8));
 
-        final Profession profession = new Profession(professionName);
+        final Profession profession = new Profession(idAllocator.idFor(professionName));
         profession.setName(professionName, Translations.toEnglish(professionName));
         profession.setCharacteristicPreferences(parseCharacteristicPreferences(cursor.nextSection()));
-        profession.setMagicRealms(parseCommaList(cursor.nextSection()));
+        profession.setMagicRealms(parseMagicRealms(cursor.nextSection()));
         profession.setBonuses(parseBonuses(cursor.nextSection()));
         profession.setCategoryCostsRaw(String.join("\n", cursor.nextSection()));
         profession.setCommonSkillsRaw(String.join("\n", cursor.nextSection()));
@@ -111,23 +113,31 @@ public final class ProfessionMigrationTool {
         return preferences;
     }
 
-    private static List<String> parseCommaList(List<String> sectionLines) {
-        final List<String> values = new ArrayList<>();
+    /**
+     * Parses the "REINOS DE MAGIA" section. A token may itself be a "/"-separated hybrid (e.g. a
+     * profession choosing between two realms); this is flattened into a plain list of every realm
+     * involved, losing the original "choose one of" semantics of that hybrid, which is not modeled
+     * yet (left as future work alongside {@code Profession}'s other simplifications).
+     */
+    private static List<RealmOfMagic> parseMagicRealms(List<String> sectionLines) {
+        final List<RealmOfMagic> realms = new ArrayList<>();
         for (final String line : sectionLines) {
             for (final String token : line.split(",\\s*")) {
-                if (!token.isBlank()) {
-                    values.add(token.trim());
+                for (final String realmTag : token.split("/")) {
+                    if (!realmTag.isBlank()) {
+                        realms.add(RealmOfMagic.fromTag(realmTag.trim()));
+                    }
                 }
             }
         }
-        return values;
+        return realms;
     }
 
     private static List<ProfessionBonus> parseBonuses(List<String> sectionLines) {
         final List<ProfessionBonus> bonuses = new ArrayList<>();
         for (final String line : sectionLines) {
             final String[] columns = line.split("\t");
-            bonuses.add(new ProfessionBonus(columns[0].trim(), Integer.valueOf(columns[1].trim())));
+            bonuses.add(new ProfessionBonus(Translations.toEnglishId(columns[0].trim()), Integer.valueOf(columns[1].trim())));
         }
         return bonuses;
     }
@@ -149,7 +159,7 @@ public final class ProfessionMigrationTool {
             final Integer costNotMagic = columns.length > 2
                     ? Integer.valueOf(columns[2].replace("+", "").replace("-", "").trim())
                     : null;
-            costs.add(new ProfessionTrainingCost(trainingName, cost, costNotMagic, type));
+            costs.add(new ProfessionTrainingCost(Translations.toEnglishId(trainingName), cost, costNotMagic, type));
         }
         return costs;
     }

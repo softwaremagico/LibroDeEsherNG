@@ -50,13 +50,13 @@ public class MagicMigrationToolTest {
             Assert.assertTrue(openList.isOpenList());
             Assert.assertFalse(openList.isClosedList());
             Assert.assertEquals(openList.getRealm(), RealmOfMagic.ESSENCE);
-            Assert.assertEquals(openList.getId(), "Esencia|Barrera Contra Hechizos");
+            Assert.assertEquals(openList.getId(), "essenceBarrierAgainstSpells");
 
             final MagicSpellList closedList = findByName(lists, "Bridas de los Hechizos");
             Assert.assertTrue(closedList.isClosedList());
 
             final MagicSpellList fireLaw = findByName(lists, "Ley del Fuego");
-            Assert.assertEquals(fireLaw.getOwners(), List.of("Mago", "Mago del Fuego", "Hechicero de Fuego"));
+            Assert.assertEquals(fireLaw.getOwners(), List.of("Wizard", "Fire Wizard", "Fire Sorcerer"));
         } finally {
             deleteRecursively(sourceRoot);
             deleteRecursively(targetRoot);

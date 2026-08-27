@@ -1,12 +1,14 @@
 package com.softwaremagico.librodeesher.weapon;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.softwaremagico.librodeesher.language.Translations;
 
 /**
  * Broad weapon category, matching both the legacy {@code armas/<Tipo>.txt} file names and the
- * "Armas·&lt;Tipo&gt;" {@link com.softwaremagico.librodeesher.category.Category} ids (see
+ * "Armas·&lt;Tipo&gt;" {@link com.softwaremagico.librodeesher.category.Category} (see
  * {@link #getCategoryId()}).
+ *
+ * <p>Serialized to XML using the plain (English) enum constant name; {@link #fromTag(String)} is
+ * only used by {@code WeaponMigrationTool} to resolve the original Spanish file name.</p>
  */
 public enum WeaponType {
 
@@ -26,17 +28,15 @@ public enum WeaponType {
         this.tag = tag;
     }
 
-    @JsonValue
-    public String getTag() {
-        return tag;
-    }
-
-    /** Id of the skill category that groups every weapon of this type (see CategoryMigrationTool). */
+    /**
+     * Id of the skill category that groups every weapon of this type (see CategoryMigrationTool),
+     * computed the same way {@code CategoryMigrationTool} derives every other category id: an
+     * English-derived abbreviation of the original Spanish "Armas·&lt;Tipo&gt;" category name.
+     */
     public String getCategoryId() {
-        return "Armas·" + tag;
+        return Translations.toEnglishId("Armas·" + tag);
     }
 
-    @JsonCreator
     public static WeaponType fromTag(String tag) {
         final String normalized = tag.trim();
         for (final WeaponType type : values()) {

@@ -1,11 +1,11 @@
 package com.softwaremagico.librodeesher.skill;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * Rank-cost variant of a skill, as encoded by a trailing tag in its legacy name, e.g.
  * {@code "Percepción (r)"}.
+ *
+ * <p>Serialized to XML using the plain (English) enum constant name; {@link #detectFromRawName(String)}
+ * is the one used by {@code SkillNameParser} to detect the tag in the original Spanish skill name.</p>
  *
  * <p>{@code GENERALIZED} is kept only for parity with the legacy enum: the original
  * {@code SkillType.getSkillType(String)} never actually detected it (its "(g)" tag was never
@@ -24,21 +24,6 @@ public enum SkillType {
 
     SkillType(String tag) {
         this.tag = tag;
-    }
-
-    @JsonValue
-    public String getTag() {
-        return tag;
-    }
-
-    @JsonCreator
-    public static SkillType fromTag(String tag) {
-        for (final SkillType type : values()) {
-            if (type.tag.equals(tag)) {
-                return type;
-            }
-        }
-        return STANDARD;
     }
 
     /**

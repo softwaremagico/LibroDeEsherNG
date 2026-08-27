@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.migration;
 
+import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.ProfessionBonus;
 import com.softwaremagico.librodeesher.profession.ProfessionTrainingCost;
@@ -77,15 +78,15 @@ public class ProfessionMigrationToolTest {
             Assert.assertEquals(professions.size(), 1);
             final Profession mago = professions.get(0);
 
-            Assert.assertEquals(mago.getId(), "Mago");
+            Assert.assertEquals(mago.getId(), "wizard");
             Assert.assertEquals(mago.getCharacteristicPreferences(), List.of("Em", "Ra", "Ad"));
             Assert.assertFalse(mago.isIndifferentToCharacteristics());
-            Assert.assertEquals(mago.getMagicRealms(), List.of("Esencia"));
+            Assert.assertEquals(mago.getMagicRealms(), List.of(RealmOfMagic.ESSENCE));
             Assert.assertTrue(mago.isSpellCaster());
 
             Assert.assertEquals(mago.getBonuses().size(), 2);
             final ProfessionBonus knowledgeBonus = mago.getBonuses().get(0);
-            Assert.assertEquals(knowledgeBonus.getName(), "Conocimiento·Mágico");
+            Assert.assertEquals(knowledgeBonus.getName(), "loreArcane");
             Assert.assertEquals(knowledgeBonus.getBonus(), Integer.valueOf(10));
 
             Assert.assertTrue(mago.getCategoryCostsRaw().contains("Armadura·Ligera"));
@@ -95,7 +96,7 @@ public class ProfessionMigrationToolTest {
 
             Assert.assertEquals(mago.getTrainingCosts().size(), 2);
             final ProfessionTrainingCost favouredTraining = mago.getTrainingCosts().get(0);
-            Assert.assertEquals(favouredTraining.getTrainingName(), "Erudito");
+            Assert.assertEquals(favouredTraining.getTrainingName(), "scholar");
             Assert.assertEquals(favouredTraining.getCost(), Integer.valueOf(19));
             Assert.assertEquals(favouredTraining.getType(), TrainingType.FAVOURITE);
 

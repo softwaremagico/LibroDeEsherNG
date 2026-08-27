@@ -4,28 +4,31 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.softwaremagico.librodeesher.Element;
+import com.softwaremagico.librodeesher.language.Translations;
 
 import java.util.Collections;
 import java.util.List;
 
 /**
- * A spell list belonging to a {@link RealmOfMagic} (e.g. "Ley del Fuego" in "Esencia"), as defined in
- * a rulebook's {@code hechizos.xml}.
+ * A spell list belonging to a {@link RealmOfMagic} (e.g. "Law of Fire" in "Essence"), as defined in
+ * a rulebook's {@code spells.xml}.
  *
  * <p>{@link #getOwners()} lists which professions and/or trainings grant access to this list; two
- * special pseudo-owner tags are used by the legacy data instead of a real profession/training name:
- * {@value #OPEN_LIST_TAG} (any spell-casting profession of this realm may pick from it freely) and
- * {@value #CLOSED_LIST_TAG} (restricted, must be specifically granted). {@link #isOpenList()} and
- * {@link #isClosedList()} recognize them.</p>
+ * special pseudo-owner tags are used instead of a real profession/training name: {@value #OPEN_LIST_TAG}
+ * (any spell-casting profession of this realm may pick from it freely) and {@value #CLOSED_LIST_TAG}
+ * (restricted, must be specifically granted). {@link #isOpenList()} and {@link #isClosedList()}
+ * recognize them. Real owner names are translated to English for readability but, unlike
+ * {@link #getId()}, are not yet resolved to a {@code Profession}/{@code Training} id (future work).</p>
  *
  * <p>Because {@link Element#getId()} must be unique across every enabled module for a given factory,
  * and the same list name is (rarely, but validly) reused across different realms, {@link #getId()}
- * here is {@code "<realm>|<name>"} rather than the bare list name; use {@link #getName()} for display.</p>
+ * is realm-prefixed (e.g. {@code "essenceLawOfFire"}) rather than just the list name's id; use
+ * {@link #getName()} for display.</p>
  */
 public class MagicSpellList extends Element {
 
-    public static final String OPEN_LIST_TAG = "Lista Abierta";
-    public static final String CLOSED_LIST_TAG = "Lista Cerrada";
+    public static final String OPEN_LIST_TAG = "OpenList";
+    public static final String CLOSED_LIST_TAG = "ClosedList";
 
     @JsonProperty("realm")
     private RealmOfMagic realm;
@@ -66,8 +69,16 @@ public class MagicSpellList extends Element {
         return getOwners().contains(CLOSED_LIST_TAG);
     }
 
-    /** Builds the realm-qualified id used to keep this list unique across every enabled module. */
-    public static String buildId(RealmOfMagic realm, String name) {
-        return realm.getTag() + "|" + name;
+    /**
+     * Builds the realm-prefixed, English-derived id for a spell list, e.g.
+     * {@code buildId(ESSENCE, "Ley del Fuego")} -&gt; {@code "essenceLawOfFire"}.
+     *
+     * <p>Used both by {@code MagicMigrationTool} (through {@link com.softwaremagico.librodeesher.migration.IdAllocator}
+     * for collision disambiguation) and directly by tests that need to know a list's id.</p>
+     */
+    public static String buildId(RealmOfMagic realm, String spanishName) {
+        final String base = Translations.toEnglishId(spanishName);
+        final String capitalized = base.isEmpty() ? base : Character.toUpperCase(base.charAt(0)) + base.substring(1);
+        return realm.name().toLowerCase() + capitalized;
     }
 }

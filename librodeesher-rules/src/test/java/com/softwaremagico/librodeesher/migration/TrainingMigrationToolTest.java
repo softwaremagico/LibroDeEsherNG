@@ -85,7 +85,7 @@ public class TrainingMigrationToolTest {
             Assert.assertEquals(trainings.size(), 1);
             final Training explorador = trainings.get(0);
 
-            Assert.assertEquals(explorador.getId(), "Explorador");
+            Assert.assertEquals(explorador.getId(), "scout");
             Assert.assertEquals(explorador.getTrainingTimeInMonths(), Integer.valueOf(12));
             Assert.assertTrue(explorador.isAvailableToEveryRace());
 

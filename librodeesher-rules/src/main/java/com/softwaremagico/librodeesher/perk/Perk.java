@@ -31,13 +31,13 @@ public class Perk extends Element {
     private Integer cost;
 
     /**
-     * Raw "Permitido" column: either the literal {@code "Todos"} (available to every race/profession)
-     * or a semicolon/comma-separated list of race and/or profession names. Not resolved against
-     * {@link com.softwaremagico.librodeesher.category.CategoryFactory}-style factories at migration
+     * "Permitido" column, translated: either the literal {@code "Everyone"} (the legacy "Todos"
+     * marker, available to every race/profession) or a list of race and/or profession names,
+     * translated to English but not resolved to a {@code Race}/{@code Profession} id at migration
      * time, since races/professions/perks are migrated independently of each other.
      */
     @JacksonXmlElementWrapper(localName = "availableTo")
-    @JacksonXmlProperty(localName = "name")
+    @JacksonXmlProperty(localName = "entry")
     private List<String> availableTo;
 
     @JsonProperty("grade")
@@ -82,9 +82,9 @@ public class Perk extends Element {
         this.availableTo = availableTo;
     }
 
-    /** Whether every race and profession can take this perk (the legacy "Todos" marker). */
+    /** Whether every race and profession can take this perk (the legacy "Todos" marker, translated to "Everyone"). */
     public boolean isAvailableToEveryone() {
-        return getAvailableTo().size() == 1 && "Todos".equalsIgnoreCase(getAvailableTo().get(0));
+        return getAvailableTo().size() == 1 && "Everyone".equalsIgnoreCase(getAvailableTo().get(0));
     }
 
     public PerkGrade getGrade() {

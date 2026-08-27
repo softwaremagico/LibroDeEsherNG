@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<adiestramientos>
-  <adiestramiento>
+<trainings>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -109,9 +109,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Amigo de las Bestias</id>
+    <id>friendOfTheBeasts</id>
     <name>
-      <en>Amigo of the Bestias</en>
+      <en>Friend of the Beasts</en>
       <es>Amigo de las Bestias</es>
     </name>
     <specialItems>
@@ -157,8 +157,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -202,9 +202,9 @@
         <ranksToDistribute>2</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Artista</id>
+    <id>artist</id>
     <name>
-      <en>Artista</en>
+      <en>Artist</en>
       <es>Artista</es>
     </name>
     <specialItems>
@@ -240,8 +240,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>40</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -394,9 +394,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Aventurero</id>
+    <id>adventurer</id>
     <name>
-      <en>Aventurero</en>
+      <en>Adventurer</en>
       <es>Aventurero</es>
     </name>
     <specialItems>
@@ -462,8 +462,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -556,9 +556,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Caballero</id>
+    <id>knight</id>
     <name>
-      <en>Caballero</en>
+      <en>Knight</en>
       <es>Caballero</es>
     </name>
     <specialItems>
@@ -630,8 +630,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -761,9 +761,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Cazador</id>
+    <id>hunter</id>
     <name>
-      <en>Cazador</en>
+      <en>Hunter</en>
       <es>Cazador</es>
     </name>
     <specialItems>
@@ -805,8 +805,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -900,9 +900,9 @@
         <ranksToDistribute>2</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Desvalijador</id>
+    <id>burglar</id>
     <name>
-      <en>Desvalijador</en>
+      <en>Burglar</en>
       <es>Desvalijador</es>
     </name>
     <specialItems>
@@ -942,8 +942,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>33</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -999,7 +999,7 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Doctor</id>
+    <id>doctor</id>
     <name>
       <en>Doctor</en>
       <es>Doctor</es>
@@ -1039,8 +1039,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>18</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1084,9 +1084,9 @@
         <ranksToDistribute>1</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Erudito</id>
+    <id>scholar</id>
     <name>
-      <en>Erudito</en>
+      <en>Scholar</en>
       <es>Erudito</es>
     </name>
     <specialItems>
@@ -1117,8 +1117,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>40</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1191,9 +1191,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Explorador</id>
+    <id>scout</id>
     <name>
-      <en>Explorador</en>
+      <en>Scout</en>
       <es>Explorador</es>
     </name>
     <specialItems>
@@ -1221,8 +1221,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>33</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1337,9 +1337,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Guardia</id>
+    <id>guard</id>
     <name>
-      <en>Guardia</en>
+      <en>Guard</en>
       <es>Guardia</es>
     </name>
     <specialItems>
@@ -1377,8 +1377,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>25</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1458,9 +1458,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Herbolario</id>
+    <id>herbalist</id>
     <name>
-      <en>Herbolario</en>
+      <en>Herbalist</en>
       <es>Herbolario</es>
     </name>
     <specialItems>
@@ -1518,8 +1518,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>33</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1579,9 +1579,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Mago Principiante</id>
+    <id>noviceWizard</id>
     <name>
-      <en>Mago Principiante</en>
+      <en>Novice Wizard</en>
       <es>Mago Principiante</es>
     </name>
     <specialItems>
@@ -1615,8 +1615,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1668,9 +1668,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Mercader</id>
+    <id>merchant</id>
     <name>
-      <en>Mercader</en>
+      <en>Merchant</en>
       <es>Mercader</es>
     </name>
     <specialItems>
@@ -1704,8 +1704,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>23</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1789,9 +1789,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Soldado</id>
+    <id>soldier</id>
     <name>
-      <en>Soldado</en>
+      <en>Soldier</en>
       <es>Soldado</es>
     </name>
     <specialItems>
@@ -1857,8 +1857,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>26</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1950,9 +1950,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Viajero</id>
+    <id>traveler</id>
     <name>
-      <en>Viajero</en>
+      <en>Traveler</en>
       <es>Viajero</es>
     </name>
     <specialItems>
@@ -1970,5 +1970,5 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>18</trainingTimeInMonths>
-  </adiestramiento>
-</adiestramientos>
+  </training>
+</trainings>

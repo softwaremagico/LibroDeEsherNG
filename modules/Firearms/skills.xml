@@ -1,39 +1,42 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<habilidades>
-  <habilidad>
+<skills>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Maniobras de Combate</categoryId>
+    <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Fuego de Supresión</id>
+    <id>suppressionFire</id>
     <name>
       <en>Suppression Fire</en>
       <es>Fuego de Supresión</es>
     </name>
     <rare>false</rare>
     <skillGroup>FIREARM</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Maniobras de Combate</categoryId>
+    <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Fuego Rápido</id>
+    <id>rapidFire</id>
     <name>
       <en>Rapid Fire</en>
       <es>Fuego Rápido</es>
     </name>
     <rare>false</rare>
     <skillGroup>FIREARM</skillGroup>
-  </habilidad>
-  <habilidad>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>Percepción·Sentidos</categoryId>
+    <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>Percepción del Entorno: Munición</id>
+    <id>environmentPerceptionAmmunition</id>
     <name>
       <en>Environment Perception: Ammunition</en>
       <es>Percepción del Entorno: Munición</es>
     </name>
     <rare>false</rare>
     <skillGroup>FIREARM</skillGroup>
-  </habilidad>
-</habilidades>
+    <skillType>STANDARD</skillType>
+  </skill>
+</skills>

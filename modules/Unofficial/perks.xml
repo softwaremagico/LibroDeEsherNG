@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<talentos>
-  <talento>
+<perks>
+  <perk>
     <availableToEveryone>true</availableToEveryone>
     <bonusesRaw>Ataque Racial: Boca (Común)</bonusesRaw>
     <cost>30</cost>
@@ -8,12 +8,16 @@
       <en>Eres a Vampire. Consulta the reglas especiales al respecto.</en>
       <es>Eres un vampiro. Consulta las reglas especiales al respecto.</es>
     </description>
-    <grade>máximo</grade>
-    <id>Vampiro</id>
     <availableTo>
-      <name>Todos</name>
+      <entry>Everyone</entry>
     </availableTo>
-    <type>Capacidad Especial</type>
+    <grade>MAXIMUM</grade>
+    <id>vampire</id>
+    <name>
+      <en>Vampire</en>
+      <es>Vampiro</es>
+    </name>
+    <type>SPECIAL</type>
     <weakness>false</weakness>
-  </talento>
-</talentos>
+  </perk>
+</perks>

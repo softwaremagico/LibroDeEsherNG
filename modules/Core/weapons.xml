@@ -1,355 +1,355 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<armas>
-  <arma>
+<weapons>
+  <weapon>
     <abbreviation>ca</abbreviation>
-    <categoryId>Armas·2manos</categoryId>
-    <id>Cayado</id>
+    <categoryId>weaponsTwoHanded</categoryId>
+    <id>staff</id>
     <name>
       <en>Staff</en>
       <es>Cayado</es>
     </name>
     <rare>false</rare>
-    <type>2manos</type>
-  </arma>
-  <arma>
+    <type>TWO_HANDS</type>
+  </weapon>
+  <weapon>
     <abbreviation>e2</abbreviation>
-    <categoryId>Armas·2manos</categoryId>
-    <id>Espadón</id>
+    <categoryId>weaponsTwoHanded</categoryId>
+    <id>greatsword</id>
     <name>
       <en>Greatsword</en>
       <es>Espadón</es>
     </name>
     <rare>false</rare>
-    <type>2manos</type>
-  </arma>
-  <arma>
+    <type>TWO_HANDS</type>
+  </weapon>
+  <weapon>
     <abbreviation>hb</abbreviation>
-    <categoryId>Armas·2manos</categoryId>
-    <id>Hacha de Batalla</id>
+    <categoryId>weaponsTwoHanded</categoryId>
+    <id>battleAxe</id>
     <name>
       <en>Battle Axe</en>
       <es>Hacha de Batalla</es>
     </name>
     <rare>false</rare>
-    <type>2manos</type>
-  </arma>
-  <arma>
+    <type>TWO_HANDS</type>
+  </weapon>
+  <weapon>
     <abbreviation>mg</abbreviation>
-    <categoryId>Armas·2manos</categoryId>
-    <id>Mangual</id>
+    <categoryId>weaponsTwoHanded</categoryId>
+    <id>flail</id>
     <name>
       <en>Flail</en>
       <es>Mangual</es>
     </name>
     <rare>false</rare>
-    <type>2manos</type>
-  </arma>
-  <arma>
+    <type>TWO_HANDS</type>
+  </weapon>
+  <weapon>
     <abbreviation>pc</abbreviation>
-    <categoryId>Armas·2manos</categoryId>
-    <id>Pica de Guerra</id>
+    <categoryId>weaponsTwoHanded</categoryId>
+    <id>warPike</id>
     <name>
       <en>War Pike</en>
       <es>Pica de Guerra</es>
     </name>
     <rare>false</rare>
-    <type>2manos</type>
-  </arma>
-  <arma>
+    <type>TWO_HANDS</type>
+  </weapon>
+  <weapon>
     <abbreviation>bo</abbreviation>
-    <categoryId>Armas·Arrojadizas</categoryId>
-    <id>Boleadoras</id>
+    <categoryId>weaponsThrown</categoryId>
+    <id>bolas</id>
     <name>
       <en>Bolas</en>
       <es>Boleadoras</es>
     </name>
     <rare>false</rare>
-    <type>Arrojadizas</type>
-  </arma>
-  <arma>
+    <type>THROWING</type>
+  </weapon>
+  <weapon>
     <abbreviation>daA</abbreviation>
-    <categoryId>Armas·Arrojadizas</categoryId>
-    <id>Daga Arrojadiza</id>
+    <categoryId>weaponsThrown</categoryId>
+    <id>throwingDagger</id>
     <name>
       <en>Throwing Dagger</en>
       <es>Daga Arrojadiza</es>
     </name>
     <rare>false</rare>
-    <type>Arrojadizas</type>
-  </arma>
-  <arma>
+    <type>THROWING</type>
+  </weapon>
+  <weapon>
     <abbreviation>cp</abbreviation>
-    <categoryId>Armas·Artillería</categoryId>
-    <id>Catapulta</id>
+    <categoryId>weaponsSiege</categoryId>
+    <id>catapult</id>
     <name>
       <en>Catapult</en>
       <es>Catapulta</es>
     </name>
     <rare>false</rare>
-    <type>Artillería</type>
-  </arma>
-  <arma>
+    <type>SIEGE</type>
+  </weapon>
+  <weapon>
     <abbreviation>ar</abbreviation>
-    <categoryId>Armas·Artillería</categoryId>
-    <id>Ariete</id>
+    <categoryId>weaponsSiege</categoryId>
+    <id>batteringRam</id>
     <name>
       <en>Battering Ram</en>
       <es>Ariete</es>
     </name>
     <rare>false</rare>
-    <type>Artillería</type>
-  </arma>
-  <arma>
+    <type>SIEGE</type>
+  </weapon>
+  <weapon>
     <abbreviation>aa</abbreviation>
-    <categoryId>Armas·Asta</categoryId>
-    <id>Arma de Asta</id>
+    <categoryId>weaponsPolearm</categoryId>
+    <id>polearmWeapon</id>
     <name>
       <en>Polearm Weapon</en>
       <es>Arma de Asta</es>
     </name>
     <rare>false</rare>
-    <type>Asta</type>
-  </arma>
-  <arma>
+    <type>HANDLE</type>
+  </weapon>
+  <weapon>
     <abbreviation>ja</abbreviation>
-    <categoryId>Armas·Asta</categoryId>
-    <id>Jabalina</id>
+    <categoryId>weaponsPolearm</categoryId>
+    <id>javelin</id>
     <name>
       <en>Javelin</en>
       <es>Jabalina</es>
     </name>
     <rare>false</rare>
-    <type>Asta</type>
-  </arma>
-  <arma>
+    <type>HANDLE</type>
+  </weapon>
+  <weapon>
     <abbreviation>la</abbreviation>
-    <categoryId>Armas·Asta</categoryId>
-    <id>Lanza</id>
+    <categoryId>weaponsPolearm</categoryId>
+    <id>spear</id>
     <name>
       <en>Spear</en>
       <es>Lanza</es>
     </name>
     <rare>false</rare>
-    <type>Asta</type>
-  </arma>
-  <arma>
+    <type>HANDLE</type>
+  </weapon>
+  <weapon>
     <abbreviation>lc</abbreviation>
-    <categoryId>Armas·Asta</categoryId>
-    <id>Lanza de Caballería</id>
+    <categoryId>weaponsPolearm</categoryId>
+    <id>cavalryLance</id>
     <name>
       <en>Cavalry Lance</en>
       <es>Lanza de Caballería</es>
     </name>
     <rare>false</rare>
-    <type>Asta</type>
-  </arma>
-  <arma>
+    <type>HANDLE</type>
+  </weapon>
+  <weapon>
     <abbreviation>em</abbreviation>
-    <categoryId>Armas·Contundentes</categoryId>
-    <id>Estrella de la Mañana</id>
+    <categoryId>weaponsBlunt</categoryId>
+    <id>morningStar</id>
     <name>
       <en>Morning Star</en>
       <es>Estrella de la Mañana</es>
     </name>
     <rare>false</rare>
-    <type>Contundentes</type>
-  </arma>
-  <arma>
+    <type>BLUNT</type>
+  </weapon>
+  <weapon>
     <abbreviation>ga</abbreviation>
-    <categoryId>Armas·Contundentes</categoryId>
-    <id>Garrote</id>
+    <categoryId>weaponsBlunt</categoryId>
+    <id>club</id>
     <name>
       <en>Club</en>
       <es>Garrote</es>
     </name>
     <rare>false</rare>
-    <type>Contundentes</type>
-  </arma>
-  <arma>
+    <type>BLUNT</type>
+  </weapon>
+  <weapon>
     <abbreviation>lg</abbreviation>
-    <categoryId>Armas·Contundentes</categoryId>
-    <id>Látigo</id>
+    <categoryId>weaponsBlunt</categoryId>
+    <id>whip</id>
     <name>
       <en>Whip</en>
       <es>Látigo</es>
     </name>
     <rare>false</rare>
-    <type>Contundentes</type>
-  </arma>
-  <arma>
+    <type>BLUNT</type>
+  </weapon>
+  <weapon>
     <abbreviation>mr</abbreviation>
-    <categoryId>Armas·Contundentes</categoryId>
-    <id>Martillo de Guerra</id>
+    <categoryId>weaponsBlunt</categoryId>
+    <id>warHammer</id>
     <name>
       <en>War Hammer</en>
       <es>Martillo de Guerra</es>
     </name>
     <rare>false</rare>
-    <type>Contundentes</type>
-  </arma>
-  <arma>
+    <type>BLUNT</type>
+  </weapon>
+  <weapon>
     <abbreviation>ma</abbreviation>
-    <categoryId>Armas·Contundentes</categoryId>
-    <id>Maza</id>
+    <categoryId>weaponsBlunt</categoryId>
+    <id>mace</id>
     <name>
       <en>Mace</en>
       <es>Maza</es>
     </name>
     <rare>false</rare>
-    <type>Contundentes</type>
-  </arma>
-  <arma>
+    <type>BLUNT</type>
+  </weapon>
+  <weapon>
     <abbreviation>af</abbreviation>
-    <categoryId>Armas·Filo</categoryId>
-    <id>Alfanje</id>
+    <categoryId>weaponsEdged</categoryId>
+    <id>scimitar</id>
     <name>
       <en>Scimitar</en>
       <es>Alfanje</es>
     </name>
     <rare>false</rare>
-    <type>Filo</type>
-  </arma>
-  <arma>
+    <type>EDGE</type>
+  </weapon>
+  <weapon>
     <abbreviation>ci</abbreviation>
-    <categoryId>Armas·Filo</categoryId>
-    <id>Cimitarra</id>
+    <categoryId>weaponsEdged</categoryId>
+    <id>scimitar2</id>
     <name>
       <en>Scimitar</en>
       <es>Cimitarra</es>
     </name>
     <rare>false</rare>
-    <type>Filo</type>
-  </arma>
-  <arma>
+    <type>EDGE</type>
+  </weapon>
+  <weapon>
     <abbreviation>da</abbreviation>
-    <categoryId>Armas·Filo</categoryId>
-    <id>Daga</id>
+    <categoryId>weaponsEdged</categoryId>
+    <id>dagger</id>
     <name>
       <en>Dagger</en>
       <es>Daga</es>
     </name>
     <rare>false</rare>
-    <type>Filo</type>
-  </arma>
-  <arma>
+    <type>EDGE</type>
+  </weapon>
+  <weapon>
     <abbreviation>ea</abbreviation>
-    <categoryId>Armas·Filo</categoryId>
-    <id>Espada</id>
+    <categoryId>weaponsEdged</categoryId>
+    <id>sword</id>
     <name>
       <en>Sword</en>
       <es>Espada</es>
     </name>
     <rare>false</rare>
-    <type>Filo</type>
-  </arma>
-  <arma>
+    <type>EDGE</type>
+  </weapon>
+  <weapon>
     <abbreviation>ec</abbreviation>
-    <categoryId>Armas·Filo</categoryId>
-    <id>Espada Corta</id>
+    <categoryId>weaponsEdged</categoryId>
+    <id>shortSword</id>
     <name>
       <en>Short Sword</en>
       <es>Espada Corta</es>
     </name>
     <rare>false</rare>
-    <type>Filo</type>
-  </arma>
-  <arma>
+    <type>EDGE</type>
+  </weapon>
+  <weapon>
     <abbreviation>et</abbreviation>
-    <categoryId>Armas·Filo</categoryId>
-    <id>Estoque</id>
+    <categoryId>weaponsEdged</categoryId>
+    <id>rapier</id>
     <name>
       <en>Rapier</en>
       <es>Estoque</es>
     </name>
     <rare>false</rare>
-    <type>Filo</type>
-  </arma>
-  <arma>
+    <type>EDGE</type>
+  </weapon>
+  <weapon>
     <abbreviation>hm</abbreviation>
-    <categoryId>Armas·Filo</categoryId>
-    <id>Hacha de Mano</id>
+    <categoryId>weaponsEdged</categoryId>
+    <id>handAxe</id>
     <name>
       <en>Hand Axe</en>
       <es>Hacha de Mano</es>
     </name>
     <rare>false</rare>
-    <type>Filo</type>
-  </arma>
-  <arma>
+    <type>EDGE</type>
+  </weapon>
+  <weapon>
     <abbreviation>mg</abbreviation>
-    <categoryId>Armas·Filo</categoryId>
-    <id>Main Gauche</id>
+    <categoryId>weaponsEdged</categoryId>
+    <id>mainGauche</id>
     <name>
       <en>Main Gauche</en>
       <es>Main Gauche</es>
     </name>
     <rare>false</rare>
-    <type>Filo</type>
-  </arma>
-  <arma>
+    <type>EDGE</type>
+  </weapon>
+  <weapon>
     <abbreviation>am</abbreviation>
-    <categoryId>Armas·Proyectiles</categoryId>
-    <id>Arco Compuesto</id>
+    <categoryId>weaponsMissile</categoryId>
+    <id>compositeBow</id>
     <name>
       <en>Composite Bow</en>
       <es>Arco Compuesto</es>
     </name>
     <rare>false</rare>
-    <type>Proyectiles</type>
-  </arma>
-  <arma>
+    <type>PROJECTILE</type>
+  </weapon>
+  <weapon>
     <abbreviation>ac</abbreviation>
-    <categoryId>Armas·Proyectiles</categoryId>
-    <id>Arco Corto</id>
+    <categoryId>weaponsMissile</categoryId>
+    <id>shortBow</id>
     <name>
       <en>Short Bow</en>
       <es>Arco Corto</es>
     </name>
     <rare>false</rare>
-    <type>Proyectiles</type>
-  </arma>
-  <arma>
+    <type>PROJECTILE</type>
+  </weapon>
+  <weapon>
     <abbreviation>al</abbreviation>
-    <categoryId>Armas·Proyectiles</categoryId>
-    <id>Arco Largo</id>
+    <categoryId>weaponsMissile</categoryId>
+    <id>longBow</id>
     <name>
       <en>Long Bow</en>
       <es>Arco Largo</es>
     </name>
     <rare>false</rare>
-    <type>Proyectiles</type>
-  </arma>
-  <arma>
+    <type>PROJECTILE</type>
+  </weapon>
+  <weapon>
     <abbreviation>bl</abbreviation>
-    <categoryId>Armas·Proyectiles</categoryId>
-    <id>Ballesta Ligera</id>
+    <categoryId>weaponsMissile</categoryId>
+    <id>lightCrossbow</id>
     <name>
       <en>Light Crossbow</en>
       <es>Ballesta Ligera</es>
     </name>
     <rare>false</rare>
-    <type>Proyectiles</type>
-  </arma>
-  <arma>
+    <type>PROJECTILE</type>
+  </weapon>
+  <weapon>
     <abbreviation>bp</abbreviation>
-    <categoryId>Armas·Proyectiles</categoryId>
-    <id>Ballesta Pesada</id>
+    <categoryId>weaponsMissile</categoryId>
+    <id>heavyCrossbow</id>
     <name>
       <en>Heavy Crossbow</en>
       <es>Ballesta Pesada</es>
     </name>
     <rare>false</rare>
-    <type>Proyectiles</type>
-  </arma>
-  <arma>
+    <type>PROJECTILE</type>
+  </weapon>
+  <weapon>
     <abbreviation>ho</abbreviation>
-    <categoryId>Armas·Proyectiles</categoryId>
-    <id>Honda</id>
+    <categoryId>weaponsMissile</categoryId>
+    <id>sling</id>
     <name>
       <en>Sling</en>
       <es>Honda</es>
     </name>
     <rare>false</rare>
-    <type>Proyectiles</type>
-  </arma>
-</armas>
+    <type>PROJECTILE</type>
+  </weapon>
+</weapons>

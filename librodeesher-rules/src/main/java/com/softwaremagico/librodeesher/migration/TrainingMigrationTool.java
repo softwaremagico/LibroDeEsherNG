@@ -61,6 +61,7 @@ public final class TrainingMigrationTool {
 
     public static int migrate(Path sourceRoot, Path modulesTarget) throws IOException {
         final Path modulosDir = sourceRoot.resolve("rolemaster").resolve("modulos");
+        final IdAllocator idAllocator = new IdAllocator();
 
         int written = 0;
         for (final String module : ModuleManager.getAllModules()) {
@@ -72,25 +73,25 @@ public final class TrainingMigrationTool {
             try (Stream<Path> files = Files.list(trainingsDir)) {
                 for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
                         .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
-                    trainings.add(readTrainingFile(file));
+                    trainings.add(readTrainingFile(file, idAllocator));
                 }
             }
             if (trainings.isEmpty()) {
                 continue;
             }
             XmlMigrationWriter.write(modulesTarget.resolve(module).resolve(OUTPUT_FILE),
-                    "adiestramientos", "adiestramiento", trainings);
+                    "trainings", "training", trainings);
             written++;
         }
         return written;
     }
 
-    private static Training readTrainingFile(Path file) throws IOException {
+    private static Training readTrainingFile(Path file, IdAllocator idAllocator) throws IOException {
         final String fileName = file.getFileName().toString();
         final String trainingName = fileName.substring(0, fileName.length() - ".txt".length());
         final SectionCursor cursor = new SectionCursor(Files.readAllLines(file, StandardCharsets.UTF_8));
 
-        final Training training = new Training(trainingName);
+        final Training training = new Training(idAllocator.idFor(trainingName));
         training.setName(trainingName, Translations.toEnglish(trainingName));
         training.setTrainingTimeInMonths(Integer.valueOf(cursor.nextSection().get(0).trim()));
         training.setLimitedRaces(parseCommaList(cursor.nextSection()));
@@ -200,7 +201,7 @@ public final class TrainingMigrationTool {
             }
             for (final String token : line.split(",\\s*")) {
                 if (!token.isBlank()) {
-                    values.add(token.trim());
+                    values.add(Translations.toEnglish(token.trim()));
                 }
             }
         }

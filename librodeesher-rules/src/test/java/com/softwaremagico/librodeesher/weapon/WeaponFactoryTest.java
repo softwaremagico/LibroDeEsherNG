@@ -19,10 +19,10 @@ public class WeaponFactoryTest {
 
     @Test
     public void daggerBelongsToTheEdgeCategory() throws InvalidXmlElementException {
-        final Weapon dagger = WeaponFactory.getInstance().getElement("Daga");
+        final Weapon dagger = WeaponFactory.getInstance().getElement("dagger");
 
         Assert.assertEquals(dagger.getType(), WeaponType.EDGE);
-        Assert.assertEquals(dagger.getCategoryId(), "Armas·Filo");
+        Assert.assertEquals(dagger.getCategoryId(), "weaponsEdged");
         Assert.assertFalse(dagger.isRare());
     }
 

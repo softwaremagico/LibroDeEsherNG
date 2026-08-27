@@ -21,11 +21,11 @@ public class SkillFactoryTest {
 
     @Test
     public void martialArtsStyleCarriesItsChiPowerEnableSkills() throws InvalidXmlElementException {
-        final Skill estiloDeLaGrulla = SkillFactory.getInstance().getElement("Estilo de la Grulla");
+        final Skill estiloDeLaGrulla = SkillFactory.getInstance().getElement("styleOfTheCrane");
 
-        Assert.assertEquals(estiloDeLaGrulla.getCategoryId(), "Artes Marciales·Maniobras de Combate");
+        Assert.assertEquals(estiloDeLaGrulla.getCategoryId(), "martialArtsCombatManeuvers");
         Assert.assertEquals(estiloDeLaGrulla.getEnableSkills(),
-                java.util.List.of("Poderes Chi: Ataque Sin Sombra", "Poderes Chi: Golpes Contínuos"));
+                java.util.List.of("chiPowerShadowlessAttack", "chiPowerStrikesContinuous"));
         Assert.assertFalse(estiloDeLaGrulla.isAllEnabled(), "'|' separated enable-skills are OR, not AND");
     }
 
@@ -33,7 +33,7 @@ public class SkillFactoryTest {
     public void chiPowerGrantedByAStyleStartsDisabled() throws InvalidXmlElementException {
         // "Poderes Chi: Ataque Sin Sombra" is only usable once a martial arts style that grants it
         // (e.g. "Estilo de la Grulla") has been learned.
-        final Skill chiPower = SkillFactory.getInstance().getElement("Poderes Chi: Ataque Sin Sombra");
+        final Skill chiPower = SkillFactory.getInstance().getElement("chiPowerShadowlessAttack");
 
         Assert.assertFalse(chiPower.isEnabledByDefault());
         Assert.assertEquals(chiPower.getSkillGroup(), SkillGroup.CHI);
@@ -41,7 +41,7 @@ public class SkillFactoryTest {
 
     @Test
     public void rareSkillIsFlagged() throws InvalidXmlElementException {
-        final Skill xenoKnowledge = SkillFactory.getInstance().getElement("Xeno-Conocimientos");
+        final Skill xenoKnowledge = SkillFactory.getInstance().getElement("xenoLore");
 
         Assert.assertTrue(xenoKnowledge.isRare());
     }

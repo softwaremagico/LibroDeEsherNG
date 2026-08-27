@@ -63,12 +63,48 @@ public final class Translations {
             return toEnglish(parts[0].trim()) + ": " + toEnglish(parts[1].trim());
         }
         if (spanish.contains(": ")) {
-            // "Revolver: Colt Trooper" -> translate the weapon-type prefix, but keep the specific
-            // model/brand name untouched: those are proper nouns, already the same in English.
+            // "Revolver: Colt Trooper" -> translate the weapon-type prefix; the suffix is translated
+            // too, but a proper noun (e.g. a firearm model) simply has no dictionary entry and comes
+            // back unchanged via the word-by-word fallback.
             final String[] parts = spanish.split(": ", 2);
-            return toEnglish(parts[0].trim()) + ": " + parts[1].trim();
+            return toEnglish(parts[0].trim()) + ": " + toEnglish(parts[1].trim());
         }
         return translateWords(spanish);
+    }
+
+    /**
+     * Converts an already-English phrase into a {@code camelCase} identifier, e.g.
+     * {@code "Light Armor"} -&gt; {@code "lightArmor"}, {@code "Two-Handed"} -&gt; {@code "twoHanded"}.
+     * Any run of non letter/digit characters is treated as a word boundary and dropped.
+     */
+    public static String toId(String english) {
+        if (english == null) {
+            return null;
+        }
+        final StringBuilder id = new StringBuilder();
+        boolean capitalizeNext = false;
+        boolean first = true;
+        for (final char c : english.toCharArray()) {
+            if (Character.isLetterOrDigit(c)) {
+                if (first) {
+                    id.append(Character.toLowerCase(c));
+                    first = false;
+                } else if (capitalizeNext) {
+                    id.append(Character.toUpperCase(c));
+                    capitalizeNext = false;
+                } else {
+                    id.append(Character.toLowerCase(c));
+                }
+            } else {
+                capitalizeNext = true;
+            }
+        }
+        return id.toString();
+    }
+
+    /** Shorthand for {@code toId(toEnglish(spanish))}: the id a Spanish name would be assigned. */
+    public static String toEnglishId(String spanish) {
+        return toId(toEnglish(spanish));
     }
 
     /** Splits {@code text} into words (keeping punctuation attached) and translates each one. */
@@ -121,6 +157,7 @@ public final class Translations {
         registerCommonSkillsAndPerks();
         registerWeaponNames();
         registerMartialArtsTerms();
+        registerProfessionNames();
         registerExactOverrides();
     }
 
@@ -337,6 +374,7 @@ public final class Translations {
         put(m, "Puño de Algodón", "Cotton Fist");
         put(m, "Hierro", "Iron");
         put(m, "Contínuo", "Continuous");
+        put(m, "Contínuos", "Continuous");
         put(m, "Contacto Contínuo", "Continuous Contact");
         put(m, "Sombra", "Shadow");
         put(m, "Ataque Sin Sombra", "Shadowless Attack");
@@ -378,6 +416,67 @@ public final class Translations {
         put(m, "Avanzado", "Advanced");
     }
 
+    /** Character professions (bounded, high-value set: ~40 across every module). */
+    private static void registerProfessionNames() {
+        final Map<String, String> m = PHRASES;
+        put(m, "Mago", "Wizard");
+        put(m, "Mago Principiante", "Novice Wizard");
+        put(m, "Guerrero", "Warrior");
+        put(m, "Luchador", "Fighter");
+        put(m, "Bribón", "Rogue");
+        put(m, "Bardo", "Bard");
+        put(m, "Indagador", "Seeker");
+        put(m, "Clérigo", "Cleric");
+        put(m, "Sacerdote", "Priest");
+        put(m, "Sacerdote Chamánico", "Shamanic Priest");
+        put(m, "Explorador", "Scout");
+        put(m, "Soldado", "Soldier");
+        put(m, "Mercader", "Merchant");
+        put(m, "Viajero", "Traveler");
+        put(m, "Trotamundos", "Globetrotter");
+        put(m, "Artesano", "Artisan");
+        put(m, "Artista", "Artist");
+        put(m, "Artista Marcial", "Martial Artist");
+        put(m, "Asesino", "Assassin");
+        put(m, "Aventurero", "Adventurer");
+        put(m, "Berserker", "Berserker");
+        put(m, "Caballero", "Knight");
+        put(m, "Cazador", "Hunter");
+        put(m, "Cortabolsas", "Cutpurse");
+        put(m, "Desvalijador", "Burglar");
+        put(m, "Detective", "Detective");
+        put(m, "Diplomático", "Diplomat");
+        put(m, "Doctor", "Doctor");
+        put(m, "Erudito", "Scholar");
+        put(m, "Erudito Aventurero", "Adventurous Scholar");
+        put(m, "Erudito Enclaustrado", "Cloistered Scholar");
+        put(m, "Espía", "Spy");
+        put(m, "Expedicionario", "Expeditionary");
+        put(m, "Experto en Armas", "Weapons Expert");
+        put(m, "Fanático Religioso", "Religious Fanatic");
+        put(m, "Filósofo", "Philosopher");
+        put(m, "Guardia", "Guard");
+        put(m, "Guardián", "Guardian");
+        put(m, "Herbolario", "Herbalist");
+        put(m, "Houri", "Houri");
+        put(m, "Marino", "Sailor");
+        put(m, "Mercenario", "Mercenary");
+        put(m, "Ninja", "Ninja");
+        put(m, "Salteador", "Bandit");
+        put(m, "Timador", "Swindler");
+        put(m, "Amigo de las Bestias", "Friend of the Beasts");
+        put(m, "Elementalista", "Elementalist");
+        put(m, "Ilusionista", "Illusionist");
+        put(m, "Monje", "Monk");
+        put(m, "Orco Gris", "Gray Orc");
+        put(m, "Hechicero", "Sorcerer");
+        put(m, "Hechicero de Fuego", "Fire Sorcerer");
+        put(m, "Mago de la Luz", "Light Wizard");
+        put(m, "Mago de la Tierra", "Earth Wizard");
+        put(m, "Mago del Agua", "Water Wizard");
+        put(m, "Mago del Fuego", "Fire Wizard");
+    }
+
     /**
      * Exact-phrase corrections for compounds where a plain word-by-word translation produces the
      * wrong (Spanish) noun-adjective order or an otherwise awkward result.
@@ -389,10 +488,78 @@ public final class Translations {
         put(m, "Cota de Mallas", "Chain Mail");
         put(m, "Improvisación Poética", "Poetic Improvisation");
         put(m, "Percepción del Entorno: Munición", "Environment Perception: Ammunition");
+        put(m, "Adicción Ligera", "Minor Addiction");
+        put(m, "Adicción Mínima", "Slight Addiction");
+        put(m, "Promesa", "Vow");
+        put(m, "Ansioso", "Anxious");
+        put(m, "Regalo Mortal", "Deadly Gift");
+        put(m, "Secreto", "Secret");
+        put(m, "Sentido del Deber", "Sense of Duty");
+        put(m, "Sentido de la Firmeza", "Sense of Firmness");
+        put(m, "Reflejos de Combate", "Combat Reflexes");
+        put(m, "Reserva de Veneno", "Venom Reserve");
+        put(m, "Pulmones Poderosos", "Powerful Lungs");
+        put(m, "Grito de Guerra", "War Cry");
+        put(m, "Instinto de Supervivencia", "Survival Instinct");
+        put(m, "Intolerante", "Intolerant");
+        put(m, "Megalómano", "Megalomaniac");
+        put(m, "Mal Genio", "Bad Temper");
+        put(m, "Miedo a las Armaduras", "Fear of Armor");
+        put(m, "Caballeroso", "Chivalrous");
+        put(m, "Fuerza Incontrolable", "Uncontrollable Strength");
+        put(m, "Falta de Alcance", "Lack of Range");
+        put(m, "Piel Gruesa", "Thick Skin");
+        put(m, "Piel Sensible", "Sensitive Skin");
+        put(m, "Sin Equilibrio", "Off Balance");
+        put(m, "Voz Poderosa", "Powerful Voice");
+        put(m, "Visión Periférica", "Peripheral Vision");
+        put(m, "Zoquete", "Clumsy");
+        put(m, "Afán Nigromántico", "Necromantic Drive");
+        put(m, "Afición Compulsiva", "Compulsive Hobby");
+        put(m, "Ansia de Sangre", "Bloodlust");
+        put(m, "Aspecto Único", "Unique Appearance");
+        put(m, "Aura", "Aura");
+        put(m, "Avaro", "Miser");
+        put(m, "Brazo Poderoso", "Powerful Arm");
+        put(m, "Capacidad Mágica", "Magical Ability");
+        put(m, "Control Mental", "Mind Control");
+        put(m, "Control Sobre el Arma", "Weapon Mastery");
+        put(m, "Desaprovación de las Armas", "Weapon Disapproval");
+        put(m, "Dotes de Mando", "Leadership Skills");
+        put(m, "Duplicación", "Duplication");
+        put(m, "Edad", "Old Age");
+        put(m, "Elástico", "Elastic");
+        put(m, "Escéptico", "Skeptic");
+        put(m, "Experimentado", "Experienced");
+        put(m, "Experto en Hierbas", "Herb Expert");
+        put(m, "Hombre de Campo", "Man of the Field");
+        put(m, "Infravisión", "Infravision");
+        put(m, "Jinete Nato", "Born Rider");
+        put(m, "Juego de Muñecas", "Wrist Play");
+        put(m, "Lazos Etéreos", "Ethereal Bonds");
+        put(m, "Maldición de las Armas", "Weapon Curse");
+        put(m, "Mente sobre Material", "Mind over Matter");
+        put(m, "Prototipo", "Prototype");
+        put(m, "Resistencia al Dolor", "Pain Resistance");
+        put(m, "Vampiro", "Vampire");
+        put(m, "Habilidades de Tiempo", "Time Skills");
     }
 
     private static void registerWords() {
         final Map<String, String> m = WORDS;
+        // Perk/training grade suffixes, e.g. "Piel Gruesa (Máximo)".
+        put(m, "Máximo", "Maximum");
+        put(m, "Mayor", "Major");
+        put(m, "Menor", "Minor");
+        put(m, "Mínimo", "Minimum");
+        put(m, "Ley", "Law");
+        put(m, "Fuego", "Fire");
+        put(m, "Tierra", "Earth");
+        put(m, "Agua", "Water");
+        put(m, "Luz", "Light");
+        put(m, "Barrera", "Barrier");
+        put(m, "Contra", "Against");
+        put(m, "Bridas", "Reins");
         // Articles, prepositions, conjunctions.
         put(m, "el", "the");
         put(m, "la", "the");
@@ -447,6 +614,7 @@ public final class Translations {
         put(m, "Chi", "Chi");
         put(m, "Golpe", "Strike");
         put(m, "Golpes", "Strikes");
+        put(m, "Maniobras", "Maneuvers");
         put(m, "Estilo", "Style");
         put(m, "Adiestramiento", "Training");
         put(m, "Adiestramientos", "Trainings");

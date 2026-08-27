@@ -1,11 +1,11 @@
 package com.softwaremagico.librodeesher.magic;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * A realm of magic (e.g. "Esencia", "Mentalismo"), matching both the legacy
  * {@code hechizos/<Reino>.txt} file names and the tag used throughout the rest of the rulebook data.
+ *
+ * <p>Serialized to XML using the plain (English) enum constant name; {@link #fromTag(String)} is
+ * only used by {@code MagicMigrationTool} to resolve the original Spanish file name.</p>
  */
 public enum RealmOfMagic {
 
@@ -23,12 +23,11 @@ public enum RealmOfMagic {
         this.tag = tag;
     }
 
-    @JsonValue
+    /** Original Spanish tag, e.g. matching the legacy {@code hechizos/<Reino>.txt} file name. */
     public String getTag() {
         return tag;
     }
 
-    @JsonCreator
     public static RealmOfMagic fromTag(String tag) {
         for (final RealmOfMagic realm : values()) {
             if (realm.tag.equalsIgnoreCase(tag)) {

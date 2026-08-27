@@ -65,22 +65,24 @@ public final class CategoryMigrationTool {
         final Path rolemasterDir = sourceRoot.resolve("rolemaster");
         final Path modulosDir = rolemasterDir.resolve("modulos");
 
-        // Category id -> element, in creation order, shared across every source file so that a
-        // module re-declaring an existing category merges into it instead of creating a duplicate.
-        final Map<String, Category> categoriesById = new LinkedHashMap<>();
+        // Spanish category name -> element, in creation order, shared across every source file so
+        // that a module re-declaring an existing category merges into it instead of creating a
+        // duplicate.
+        final Map<String, Category> categoriesBySpanishName = new LinkedHashMap<>();
         // Module name -> categories first defined by that module, in the order that will be written.
         final Map<String, List<Category>> categoriesByModule = new LinkedHashMap<>();
+        final IdAllocator idAllocator = new IdAllocator();
 
         for (final String module : ModuleManager.getAllModules()) {
             for (final Path file : LegacyCategoriesFiles.forModule(module, rolemasterDir, modulosDir)) {
-                readCategoriesFile(file, module, categoriesById, categoriesByModule);
+                readCategoriesFile(file, module, categoriesBySpanishName, categoriesByModule, idAllocator);
             }
         }
 
         int written = 0;
         for (final Map.Entry<String, List<Category>> entry : categoriesByModule.entrySet()) {
             XmlMigrationWriter.write(modulesTarget.resolve(entry.getKey()).resolve(OUTPUT_FILE),
-                    "categorias", "categoria", entry.getValue());
+                    "categories", "category", entry.getValue());
             written++;
         }
         return written;
@@ -89,22 +91,23 @@ public final class CategoryMigrationTool {
     /**
      * One parsed data line of a {@code categorias.txt} file.
      */
-    private static void readCategoriesFile(Path file, String module, Map<String, Category> categoriesById,
-                                            Map<String, List<Category>> categoriesByModule) throws IOException {
+    private static void readCategoriesFile(Path file, String module, Map<String, Category> categoriesBySpanishName,
+                                            Map<String, List<Category>> categoriesByModule,
+                                            IdAllocator idAllocator) throws IOException {
         for (final String line : Files.readAllLines(file, StandardCharsets.UTF_8)) {
             if (line.isBlank() || line.startsWith("#")) {
                 continue;
             }
             final ParsedCategoryLine parsed = ParsedCategoryLine.parse(line, file);
-            final Category existing = categoriesById.get(parsed.name());
+            final Category existing = categoriesBySpanishName.get(parsed.name());
             if (existing == null) {
-                final Category category = new Category(parsed.name());
+                final Category category = new Category(idAllocator.idFor(parsed.name()));
                 category.setName(parsed.name(), Translations.toEnglish(parsed.name()));
                 category.setAbbreviation(parsed.abbreviation());
                 category.setCharacteristicsTag(parsed.characteristicsTag());
                 category.setType(com.softwaremagico.librodeesher.category.CategoryType.fromTag(parsed.typeTag()));
                 category.setSkillsRaw(parsed.skillsRaw());
-                categoriesById.put(parsed.name(), category);
+                categoriesBySpanishName.put(parsed.name(), category);
                 categoriesByModule.computeIfAbsent(module, key -> new ArrayList<>()).add(category);
             } else {
                 // Another module contributes extra skills to an already-known category: merge them.

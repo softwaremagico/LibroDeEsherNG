@@ -1,354 +1,354 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<hechizos>
-  <listaDeHechizos>
+<spells>
+  <spellList>
     <closedList>false</closedList>
-    <id>Canalización|Habilidades Inorgánicas</id>
+    <id>canalizationSkillsInorgánicas</id>
     <name>
       <en>Skills Inorgánicas</en>
       <es>Habilidades Inorgánicas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Canalización</owner>
+      <owner>Alquimista of Channeling</owner>
     </owners>
-    <realm>Canalización</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>CANALIZATION</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Canalización|Habilidades Líquidas/Gaseosas</id>
+    <id>canalizationSkillsLíquidasGaseosas</id>
     <name>
       <en>Skills Líquidas/Gaseosas</en>
       <es>Habilidades Líquidas/Gaseosas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Canalización</owner>
+      <owner>Alquimista of Channeling</owner>
     </owners>
-    <realm>Canalización</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>CANALIZATION</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Canalización|Imbuir Reino</id>
+    <id>canalizationImbuirRealm</id>
     <name>
       <en>Imbuir Realm</en>
       <es>Imbuir Reino</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Canalización</owner>
+      <owner>Alquimista of Channeling</owner>
     </owners>
-    <realm>Canalización</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>CANALIZATION</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Canalización|Imbuir Otro Reino</id>
+    <id>canalizationImbuirOtroRealm</id>
     <name>
       <en>Imbuir Otro Realm</en>
       <es>Imbuir Otro Reino</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Canalización</owner>
+      <owner>Alquimista of Channeling</owner>
     </owners>
-    <realm>Canalización</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>CANALIZATION</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Canalización|Armaduras Sagradas</id>
+    <id>canalizationArmadurasSagradas</id>
     <name>
       <en>Armaduras Sagradas</en>
       <es>Armaduras Sagradas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Canalización</owner>
+      <owner>Alquimista of Channeling</owner>
     </owners>
-    <realm>Canalización</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>CANALIZATION</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Canalización|Armas Sagradas</id>
+    <id>canalizationWeaponsSagradas</id>
     <name>
       <en>Weapons Sagradas</en>
       <es>Armas Sagradas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Canalización</owner>
+      <owner>Alquimista of Channeling</owner>
     </owners>
-    <realm>Canalización</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>CANALIZATION</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Canalización|Oficios Sagrados</id>
+    <id>canalizationCraftsSagrados</id>
     <name>
       <en>Crafts Sagrados</en>
       <es>Oficios Sagrados</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Canalización</owner>
+      <owner>Alquimista of Channeling</owner>
     </owners>
-    <realm>Canalización</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>CANALIZATION</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Canalización|Protecciones Sagradas</id>
+    <id>canalizationProtectionsSagradas</id>
     <name>
       <en>Protections Sagradas</en>
       <es>Protecciones Sagradas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Canalización</owner>
+      <owner>Alquimista of Channeling</owner>
     </owners>
-    <realm>Canalización</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>CANALIZATION</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Canalización|Trabajos Sagrados</id>
+    <id>canalizationTrabajosSagrados</id>
     <name>
       <en>Trabajos Sagrados</en>
       <es>Trabajos Sagrados</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Canalización</owner>
+      <owner>Alquimista of Channeling</owner>
     </owners>
-    <realm>Canalización</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>CANALIZATION</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Habilidades Inorgánicas</id>
+    <id>essenceSkillsInorgánicas</id>
     <name>
       <en>Skills Inorgánicas</en>
       <es>Habilidades Inorgánicas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Esencia</owner>
+      <owner>Alquimista of Essence</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Habilidades Líquidas/Gaseosas</id>
+    <id>essenceSkillsLíquidasGaseosas</id>
     <name>
       <en>Skills Líquidas/Gaseosas</en>
       <es>Habilidades Líquidas/Gaseosas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Esencia</owner>
+      <owner>Alquimista of Essence</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Imbuir Reino</id>
+    <id>essenceImbuirRealm</id>
     <name>
       <en>Imbuir Realm</en>
       <es>Imbuir Reino</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Esencia</owner>
+      <owner>Alquimista of Essence</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Imbuir Otro Reino</id>
+    <id>essenceImbuirOtroRealm</id>
     <name>
       <en>Imbuir Otro Realm</en>
       <es>Imbuir Otro Reino</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Esencia</owner>
+      <owner>Alquimista of Essence</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Análisis de los Objetos</id>
+    <id>essenceAnálisisOfTheObjetos</id>
     <name>
       <en>Análisis of the Objetos</en>
       <es>Análisis de los Objetos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Esencia</owner>
+      <owner>Alquimista of Essence</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Encantamientos de Armaduras</id>
+    <id>essenceEncantamientosOfArmaduras</id>
     <name>
       <en>Encantamientos of Armaduras</en>
       <es>Encantamientos de Armaduras</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Esencia</owner>
+      <owner>Alquimista of Essence</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Encantamientos de Armas</id>
+    <id>essenceEncantamientosOfWeapons</id>
     <name>
       <en>Encantamientos of Weapons</en>
       <es>Encantamientos de Armas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Esencia</owner>
+      <owner>Alquimista of Essence</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Encatamientos Generales</id>
+    <id>essenceEncatamientosGenerales</id>
     <name>
       <en>Encatamientos Generales</en>
       <es>Encatamientos Generales</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Esencia</owner>
+      <owner>Alquimista of Essence</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Habilidades Orgánicas</id>
+    <id>essenceSkillsOrgánicas</id>
     <name>
       <en>Skills Orgánicas</en>
       <es>Habilidades Orgánicas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Esencia</owner>
+      <owner>Alquimista of Essence</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|EsenciaHabilidades Inorgánicas</id>
+    <id>mentalismEsenciahabilidadesInorgánicas</id>
     <name>
       <en>EsenciaHabilidades Inorgánicas</en>
       <es>EsenciaHabilidades Inorgánicas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Mentalismo</owner>
+      <owner>Alquimista of Mentalism</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Habilidades Líquidas/Gaseosas</id>
+    <id>mentalismSkillsLíquidasGaseosas</id>
     <name>
       <en>Skills Líquidas/Gaseosas</en>
       <es>Habilidades Líquidas/Gaseosas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Mentalismo</owner>
+      <owner>Alquimista of Mentalism</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Imbuir Reino</id>
+    <id>mentalismImbuirRealm</id>
     <name>
       <en>Imbuir Realm</en>
       <es>Imbuir Reino</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Mentalismo</owner>
+      <owner>Alquimista of Mentalism</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Imbuir Otro Reino</id>
+    <id>mentalismImbuirOtroRealm</id>
     <name>
       <en>Imbuir Otro Realm</en>
       <es>Imbuir Otro Reino</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Mentalismo</owner>
+      <owner>Alquimista of Mentalism</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Concentraciones Externas</id>
+    <id>mentalismConcentracionesExternas</id>
     <name>
       <en>Concentraciones Externas</en>
       <es>Concentraciones Externas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Mentalismo</owner>
+      <owner>Alquimista of Mentalism</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Maestría de las Defensas</id>
+    <id>mentalismMaestríaOfTheDefenses</id>
     <name>
       <en>Maestría of the Defenses</en>
       <es>Maestría de las Defensas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Mentalismo</owner>
+      <owner>Alquimista of Mentalism</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Maestría de los Ataques</id>
+    <id>mentalismMaestríaOfTheAttacks</id>
     <name>
       <en>Maestría of the Attacks</en>
       <es>Maestría de los Ataques</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Mentalismo</owner>
+      <owner>Alquimista of Mentalism</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Maestría del Entendimiento</id>
+    <id>mentalismMaestríaOfTheEntendimiento</id>
     <name>
       <en>Maestría of the Entendimiento</en>
       <es>Maestría del Entendimiento</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Mentalismo</owner>
+      <owner>Alquimista of Mentalism</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Mentalismo|Meditación Curativa</id>
+    <id>mentalismMeditationCurativa</id>
     <name>
       <en>Meditation Curativa</en>
       <es>Meditación Curativa</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista de Mentalismo</owner>
+      <owner>Alquimista of Mentalism</owner>
     </owners>
-    <realm>Mentalismo</realm>
-  </listaDeHechizos>
-</hechizos>
+    <realm>MENTALISM</realm>
+  </spellList>
+</spells>

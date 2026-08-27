@@ -46,6 +46,7 @@ public final class PerkMigrationTool {
 
     public static int migrate(Path sourceRoot, Path modulesTarget) throws IOException {
         final Path modulosDir = sourceRoot.resolve("rolemaster").resolve("modulos");
+        final IdAllocator idAllocator = new IdAllocator();
 
         int written = 0;
         for (final String module : ModuleManager.getAllModules()) {
@@ -53,14 +54,14 @@ public final class PerkMigrationTool {
             if (!Files.isRegularFile(file)) {
                 continue;
             }
-            final List<Perk> perks = readPerksFile(file);
-            XmlMigrationWriter.write(modulesTarget.resolve(module).resolve(OUTPUT_FILE), "talentos", "talento", perks);
+            final List<Perk> perks = readPerksFile(file, idAllocator);
+            XmlMigrationWriter.write(modulesTarget.resolve(module).resolve(OUTPUT_FILE), "perks", "perk", perks);
             written++;
         }
         return written;
     }
 
-    private static List<Perk> readPerksFile(Path file) throws IOException {
+    private static List<Perk> readPerksFile(Path file, IdAllocator idAllocator) throws IOException {
         final List<Perk> perks = new ArrayList<>();
         for (final String line : Files.readAllLines(file, StandardCharsets.UTF_8)) {
             if (line.isBlank() || line.startsWith("#")) {
@@ -74,8 +75,9 @@ public final class PerkMigrationTool {
                                 + columns.length + ": " + line);
             }
 
-            final Perk perk = new Perk(columns[0].trim());
-            perk.setName(columns[0].trim(), Translations.toEnglish(columns[0].trim()));
+            final String spanishName = columns[0].trim();
+            final Perk perk = new Perk(idAllocator.idFor(spanishName));
+            perk.setName(spanishName, Translations.toEnglish(spanishName));
             perk.setCost(Integer.valueOf(columns[1].trim()));
             perk.setAvailableTo(parseAvailableTo(columns[2]));
             perk.setGrade(PerkGrade.fromTag(columns[3].trim()));
@@ -96,7 +98,7 @@ public final class PerkMigrationTool {
         for (final String token : tokens) {
             final String trimmed = token.trim();
             if (!trimmed.isEmpty()) {
-                names.add(trimmed);
+                names.add(Translations.toEnglish(trimmed));
             }
         }
         return Arrays.asList(names.toArray(new String[0]));

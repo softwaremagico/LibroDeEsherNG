@@ -44,18 +44,18 @@ public class WeaponMigrationToolTest {
             final List<Weapon> basicoWeaponList = readGeneratedFile(targetRoot.resolve("Core/weapons.xml"));
             Assert.assertEquals(basicoWeaponList.size(), 2);
 
-            final Weapon dagger = findById(basicoWeaponList, "Daga");
+            final Weapon dagger = findById(basicoWeaponList, "dagger");
             Assert.assertEquals(dagger.getAbbreviation(), "da");
             Assert.assertEquals(dagger.getType(), WeaponType.EDGE);
-            Assert.assertEquals(dagger.getCategoryId(), "Armas·Filo");
+            Assert.assertEquals(dagger.getCategoryId(), "weaponsEdged");
             Assert.assertFalse(dagger.isRare());
 
-            final Weapon shortSword = findById(basicoWeaponList, "Espada Corta");
+            final Weapon shortSword = findById(basicoWeaponList, "shortSword");
             Assert.assertTrue(shortSword.isRare());
 
             final List<Weapon> laArmeriaWeaponList = readGeneratedFile(targetRoot.resolve("TheArmory/weapons.xml"));
             Assert.assertEquals(laArmeriaWeaponList.size(), 1, "'Daga' was already defined by 'Basico'");
-            Assert.assertEquals(laArmeriaWeaponList.get(0).getId(), "Espada Ropera");
+            Assert.assertEquals(laArmeriaWeaponList.get(0).getId(), "swordRopera");
         } finally {
             deleteRecursively(sourceRoot);
             deleteRecursively(targetRoot);

@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<categorias>
-  <categoria>
+<categories>
+  <category>
     <abbreviation>ArdL</abbreviation>
     <characteristics>
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
       <characteristic>Ag</characteristic>
     </characteristics>
-    <id>Armadura·Ligera</id>
+    <id>armorLight</id>
     <name>
       <en>Armor: Light</en>
       <es>Armadura·Ligera</es>
@@ -19,16 +19,16 @@
       <skill>Armadura Tipo II*</skill>
     </skills>
     <skillsRaw>Cuero Endurecido [TA9; TA10; TA11], Cuero Blando [TA5; TA6; TA7], Armadura Tipo I*, Armadura Tipo II*</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ArdM</abbreviation>
     <characteristics>
       <characteristic>Fu</characteristic>
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
     </characteristics>
-    <id>Armadura·Media</id>
+    <id>armorMedium</id>
     <name>
       <en>Armor: Medium</en>
       <es>Armadura·Media</es>
@@ -39,16 +39,16 @@
       <skill>Armadura Tipo IV*</skill>
     </skills>
     <skillsRaw>Cota de Mallas [TA13; TA14; TA15; TA16], Armadura Tipo III*, Armadura Tipo IV*</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ArdP</abbreviation>
     <characteristics>
       <characteristic>Fu</characteristic>
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
     </characteristics>
-    <id>Armadura·Pesada</id>
+    <id>armorHeavy</id>
     <name>
       <en>Armor: Heavy</en>
       <es>Armadura·Pesada</es>
@@ -57,151 +57,151 @@
       <skill>Coraza</skill>
     </skills>
     <skillsRaw>Coraza [TA17; TA18; TA19; TA20]</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>Arm2M</abbreviation>
     <characteristics>
       <characteristic>Fu</characteristic>
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
     </characteristics>
-    <id>Armas·2manos</id>
+    <id>weaponsTwoHanded</id>
     <name>
       <en>Weapons: Two-Handed</en>
       <es>Armas·2manos</es>
     </name>
     <skillsRaw>noimporta</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ArmAj</abbreviation>
     <characteristics>
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
       <characteristic>Ag</characteristic>
     </characteristics>
-    <id>Armas·Arrojadizas</id>
+    <id>weaponsThrown</id>
     <name>
       <en>Weapons: Thrown</en>
       <es>Armas·Arrojadizas</es>
     </name>
     <skillsRaw>noimporta</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ArmAt</abbreviation>
     <characteristics>
       <characteristic>In</characteristic>
       <characteristic>Ag</characteristic>
       <characteristic>Ra</characteristic>
     </characteristics>
-    <id>Armas·Artillería</id>
+    <id>weaponsSiege</id>
     <name>
       <en>Weapons: Siege</en>
       <es>Armas·Artillería</es>
     </name>
     <skillsRaw>noimporta</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ArmC</abbreviation>
     <characteristics>
       <characteristic>Fu</characteristic>
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
     </characteristics>
-    <id>Armas·Contundentes</id>
+    <id>weaponsBlunt</id>
     <name>
       <en>Weapons: Blunt</en>
       <es>Armas·Contundentes</es>
     </name>
     <skillsRaw>noimporta</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ArmAs</abbreviation>
     <characteristics>
       <characteristic>Fu</characteristic>
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
     </characteristics>
-    <id>Armas·Asta</id>
+    <id>weaponsPolearm</id>
     <name>
       <en>Weapons: Polearm</en>
       <es>Armas·Asta</es>
     </name>
     <skillsRaw>noimporta</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ArmF</abbreviation>
     <characteristics>
       <characteristic>Fu</characteristic>
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
     </characteristics>
-    <id>Armas·Filo</id>
+    <id>weaponsEdged</id>
     <name>
       <en>Weapons: Edged</en>
       <es>Armas·Filo</es>
     </name>
     <skillsRaw>noimporta</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ArmFue1</abbreviation>
     <characteristics>
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
       <characteristic>Ag</characteristic>
     </characteristics>
-    <id>Armas·Fuego 1mano</id>
+    <id>weaponsFirearmOneHanded</id>
     <name>
       <en>Weapons: Firearm (One-Handed)</en>
       <es>Armas·Fuego 1mano</es>
     </name>
     <skillsRaw>noimporta</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ArmFue2</abbreviation>
     <characteristics>
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
       <characteristic>Ag</characteristic>
     </characteristics>
-    <id>Armas·Fuego 2manos</id>
+    <id>weaponsFirearmTwoHanded</id>
     <name>
       <en>Weapons: Firearm (Two-Handed)</en>
       <es>Armas·Fuego 2manos</es>
     </name>
     <skillsRaw>noimporta</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ArmPr</abbreviation>
     <characteristics>
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
       <characteristic>Ag</characteristic>
     </characteristics>
-    <id>Armas·Proyectiles</id>
+    <id>weaponsMissile</id>
     <name>
       <en>Weapons: Missile</en>
       <es>Armas·Proyectiles</es>
     </name>
     <skillsRaw>noimporta</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ArtA</abbreviation>
     <characteristics>
       <characteristic>Pr</characteristic>
       <characteristic>Em</characteristic>
       <characteristic>Ag</characteristic>
     </characteristics>
-    <id>Arte·Activo</id>
+    <id>artPerforming</id>
     <name>
       <en>Art: Performing</en>
       <es>Arte·Activo</es>
@@ -218,16 +218,16 @@
       <skill>Ventriloquia</skill>
     </skills>
     <skillsRaw>Actuar, Bailar, Cantar, Imitar Sonidos, Improvisación Poética, Mímica, Narrar Historias, Tocar Instrumento, Ventriloquia</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ArtP</abbreviation>
     <characteristics>
       <characteristic>Em</characteristic>
       <characteristic>In</characteristic>
       <characteristic>Pr</characteristic>
     </characteristics>
-    <id>Arte·Pasivo</id>
+    <id>artCreative</id>
     <name>
       <en>Art: Creative</en>
       <es>Arte·Pasivo</es>
@@ -240,16 +240,16 @@
       <skill>Pintura: Corporal</skill>
     </skills>
     <skillsRaw>Escultura, Música, Pintura, Poesía, Pintura: Corporal</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>AmB</abbreviation>
     <characteristics>
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
       <characteristic>Fu</characteristic>
     </characteristics>
-    <id>Artes Marciales·Barridos</id>
+    <id>martialArtsSweeps</id>
     <name>
       <en>Martial Arts: Sweeps</en>
       <es>Artes Marciales·Barridos</es>
@@ -261,16 +261,16 @@
       <skill>Inmovilizar</skill>
     </skills>
     <skillsRaw>Barridos de Artes Marciales, Blocar, Lucha Libre, Inmovilizar</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>AmG</abbreviation>
     <characteristics>
       <characteristic>Fu</characteristic>
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
     </characteristics>
-    <id>Artes Marciales·Golpes</id>
+    <id>martialArtsStrikes</id>
     <name>
       <en>Martial Arts: Strikes</en>
       <es>Artes Marciales·Golpes</es>
@@ -282,16 +282,16 @@
       <skill>Golpe Nervioso</skill>
     </skills>
     <skillsRaw>Boxeo, Placaje, Golpes de Artes Marciales, Golpe Nervioso</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>AmMC</abbreviation>
     <characteristics>
       <characteristic>Ag</characteristic>
       <characteristic>Rp</characteristic>
       <characteristic>Ag</characteristic>
     </characteristics>
-    <id>Artes Marciales·Maniobras de Combate</id>
+    <id>martialArtsCombatManeuvers</id>
     <name>
       <en>Martial Arts: Combat Maneuvers</en>
       <es>Artes Marciales·Maniobras de Combate</es>
@@ -332,16 +332,16 @@
       <skill>Savate</skill>
     </skills>
     <skillsRaw>Esquiva Adrenal, Evasión Adrenal, Estilo de Arte Marcial (Básico), Estilo de Arte Marcial (Avanzado), Lucha a Ciegas, Estilo de la Grulla {Poderes Chi: Ataque Sin Sombra | Poderes Chi: Golpes Contínuos}, Estilo de las Ocho Hadas Borrachas {Poderes Chi: Resurgir del Fénix | Poderes Chi: Puños de Hierro | Poderes Chi: Resistir el Dolor}, Estilo de la Serpiente {Poderes Chi: Puño Envenenado}, Poderes Chi: Lanza de Tela, Poderes Chi: Golpe en Salto, Poderes Chi: Contacto Contínuo (R), Estilo Dragón {Poderes Chi: Lanza de Tela | Poderes Chi: Puños de Hierro | Poderes Chi: Resistir el Dolor}, Estilo Simio {Poderes Chi: Salto Fantástico | Poderes Chi: Golpe en Salto | Poderes Chi: Trepar de la Lagartija}, Estilo Cobra {Poderes Chi: Ataque a Distancia}, Estilo Cobra Real {Poderes Chi: Puño Envenenado}, Estilo Dos Instrumentos, Estilo Hsing-I {Poderes Chi: Pies Ligeros | Poderes Chi: Sentir Debilidad | Poderes Chi: Salto Fantástico}, Estilo Mantis Religiosa {Poderes Chi: Contacto Contínuo | Poderes Chi: Ataque Sin Sombra}, Estilo Pa Kua Chu'an {Poderes Chi: Mano de Buda | Poderes Chi: Ataque a Distancia}, Estilo Puño de Algodón {Poderes Chi: Caer de la Hoja | Poderes Chi: Contacto Contínuo}, Estilo Tigre {Poderes Chi: Golpe en Salto &amp; Poderes Chi: Golpes Contínuos}, Estilo Túnica de Hierro {Poderes Chi: Postura Invencible | Poderes Chi: Invulnerabilidad - Filo | Poderes Chi: Invulnerabilidad - Contundentes | Poderes Chi: Invulnerabilidad - Ataques sin Armas | Poderes Chi: Invulnerabilidad - Proyectiles | Poderes Chi: Invulnerabilidad - Arrojadizas | Poderes Chi: Invulnerabilidad - Dos Manos | Poderes Chi: Invulnerabilidad - Asta | Poderes Chi: Resurgir del Fénix}, Estilo Wing Chun, Baru Pentjak-Silat {Poderes Chi: Ataque Sin Sombra}, Harimau Pentjat-Silat {Poderes Chi: Golpe en Salto | Poderes Chi: Pies Ligeros}, Kumango {Poderes Chi: Pies Ligeros}, Ju-jutsu, Nin-jutsu {Poderes Chi: Caer de la Hoja &amp; Poderes Chi: Mantener la Respiración &amp; Poderes Chi: Pies Ligeros &amp; Poderes Chi: Trepar de la Lagartija &amp; Poderes Chi: Resistir Elementos}, Sumai {Poderes Chi: Resistir el Dolor &amp; Poderes Chi: Invulnerabilidad - Filo &amp; Poderes Chi: Invulnerabilidad - Contundentes &amp; Poderes Chi: Invulnerabilidad - Ataques sin Armas &amp; Poderes Chi: Invulnerabilidad - Proyectiles &amp; Poderes Chi: Invulnerabilidad - Arrojadizas &amp; Poderes Chi: Invulnerabilidad - Dos Manos &amp; Poderes Chi: Invulnerabilidad - Asta}, Hwarang-Do {Poderes Chi: Mano de Buda | Poderes Chi: Sentir Debilidad | Poderes Chi: Resistir Elementos}, Taw Kwon Do {Poderes Chi: Golpe en Salto}, Karate, Savate</skillsRaw>
-    <type>Combinada</type>
-  </categoria>
-  <categoria>
+    <type>COMBINED</type>
+  </category>
+  <category>
     <abbreviation>AtaEsp</abbreviation>
     <characteristics>
       <characteristic>Fu</characteristic>
       <characteristic>Ag</characteristic>
       <characteristic>Ad</characteristic>
     </characteristics>
-    <id>Ataques Especiales</id>
+    <id>specialAttacks</id>
     <name>
       <en>Special Attacks</en>
       <es>Ataques Especiales</es>
@@ -372,16 +372,16 @@
       <skill>Dejar Inconsciente</skill>
     </skills>
     <skillsRaw>Desarmar Enemigo (Armado), Desarmar Enemigo (Desarmado), Fintar (Armado), Fintar (Desarmado), Justar, Pelea, Ataque Racial: Extremidades*, Ataque Racial: Boca*, Ataque Racial: Aliento*, Ataque Racial: Otro*, Ataque Racial: Vómito*, Poderes Chi: Golpes Contínuos, Poderes Chi: Mano de Buda (R), Poderes Chi: Ataque a Distancia (R), Poderes Chi: Puños de Hierro (R), Poderes Chi: Puño Elemental - Frío (R), Poderes Chi: Puño Elemental - Calor (R), Poderes Chi: Puño Elemental - Electricidad (R), Poderes Chi: Puño Elemental - Impacto (R), Poderes Chi: Puño Envenenado (R), Francotirador*, Apuntar, Dejar Inconsciente</skillsRaw>
-    <type>Combinada</type>
-  </categoria>
-  <categoria>
+    <type>COMBINED</type>
+  </category>
+  <category>
     <abbreviation>AtlG</abbreviation>
     <characteristics>
       <characteristic>Ag</characteristic>
       <characteristic>Rp</characteristic>
       <characteristic>Ag</characteristic>
     </characteristics>
-    <id>Atletismo·Gimnasia</id>
+    <id>athleticsGymnastics</id>
     <name>
       <en>Athletics: Gymnastics</en>
       <es>Atletismo·Gimnasia</es>
@@ -406,16 +406,16 @@
       <skill>Paracaidismo</skill>
     </skills>
     <skillsRaw>Juegos Atléticos (Gimnasia), Acrobacias, Caer, Contorsionismo, Malabarismos, Trepar, Volar/Planear, Volteretas, Caminar con Zancos, Caminar por la Cuerda Floja, Esquiar, Hacer Surf, Patinar, Rappelling, Salto con Pértiga, Braquiación, Paracaidismo</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>AtlP</abbreviation>
     <characteristics>
       <characteristic>Fu</characteristic>
       <characteristic>Co</characteristic>
       <characteristic>Ag</characteristic>
     </characteristics>
-    <id>Atletismo·Potencia</id>
+    <id>athleticsPower</id>
     <name>
       <en>Athletics: Power</en>
       <es>Atletismo·Potencia</es>
@@ -428,16 +428,16 @@
       <skill>Lanzamiento Poderoso</skill>
     </skills>
     <skillsRaw>Juegos Atléticos (Potencia), Levantar Pesos, Saltar, Golpe Poderoso, Lanzamiento Poderoso</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>AtlR</abbreviation>
     <characteristics>
       <characteristic>Co</characteristic>
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
     </characteristics>
-    <id>Atletismo·Resistencia</id>
+    <id>athleticsEndurance</id>
     <name>
       <en>Athletics: Endurance</en>
       <es>Atletismo·Resistencia</es>
@@ -452,16 +452,16 @@
       <skill>Ciclismo</skill>
     </skills>
     <skillsRaw>Juegos Atléticos (Resistencia), Carrera de Fondo, Escalar, Esprintar, Nadar, Remar, Ciclismo</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>Autoc</abbreviation>
     <characteristics>
       <characteristic>Ad</characteristic>
       <characteristic>Pr</characteristic>
       <characteristic>Ad</characteristic>
     </characteristics>
-    <id>Autocontrol</id>
+    <id>selfControl</id>
     <name>
       <en>Self Control</en>
       <es>Autocontrol</es>
@@ -497,16 +497,16 @@
       <skill>Recarga Adrenal</skill>
     </skills>
     <skillsRaw>Frenesí, Meditación, Mnemotecnia, Superar Aturdimiento, Caída Adrenal, Concentración Adrenal, Control de la Licantropía (R), Desenvainar Adrenal, Equilibrio Adrenal, Estabilización Adrenal (R), Fuerza Adrenal, Maniobrar Aturdido, Salto Adrenal, Trance Adormecedor, Trance de la Muerte  (R), Trance Purificador  (R), Trance Sanador, Velocidad Adrenal, Poderes Chi: Mantener la Respiración, Poderes Chi: Ataque Sin Sombra, Poderes Chi: Resistir Elementos, Poderes Chi: Resistir el Dolor, Poderes Chi: Caer de la Hoja (R), Poderes Chi: Salto Fantástico (R), Poderes Chi: Pies Ligeros (R), Poderes Chi: Trepar de la Lagartija (R), Poderes Chi: Sentir Debilidad (R), Recarga Adrenal</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>CienB</abbreviation>
     <characteristics>
       <characteristic>Ra</characteristic>
       <characteristic>Me</characteristic>
       <characteristic>Ra</characteristic>
     </characteristics>
-    <id>Ciencia/Analítica·Básica</id>
+    <id>scienceAnalyticBasic</id>
     <name>
       <en>Science/Analytic: Basic</en>
       <es>Ciencia/Analítica·Básica</es>
@@ -516,16 +516,16 @@
       <skill>Matemáticas Básicas</skill>
     </skills>
     <skillsRaw>Documentación, Matemáticas Básicas</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>CienE</abbreviation>
     <characteristics>
       <characteristic>Ra</characteristic>
       <characteristic>Me</characteristic>
       <characteristic>Ra</characteristic>
     </characteristics>
-    <id>Ciencia/Analítica·Especializada</id>
+    <id>scienceAnalyticSpecialized</id>
     <name>
       <en>Science/Analytic: Specialized</en>
       <es>Ciencia/Analítica·Especializada</es>
@@ -542,16 +542,16 @@
       <skill>Criminología</skill>
     </skills>
     <skillsRaw>Alquimia, Antropología, Matemáticas Avanzadas, Astronomía, Bioquímica, Psicología, Anatomía, Física, Criminología</skillsRaw>
-    <type>Combinada</type>
-  </categoria>
-  <categoria>
+    <type>COMBINED</type>
+  </category>
+  <category>
     <abbreviation>Comun</abbreviation>
     <characteristics>
       <characteristic>Ra</characteristic>
       <characteristic>Me</characteristic>
       <characteristic>Em</characteristic>
     </characteristics>
-    <id>Comunicación</id>
+    <id>communication</id>
     <name>
       <en>Communication</en>
       <es>Comunicación</es>
@@ -658,16 +658,16 @@
       <skill>Escribir Erlini</skill>
     </skills>
     <skillsRaw>Leer los Labios, Señales, Hablar Habla Común, Escribir Habla Común, Hablar Habla de las Llanuras, Escribir Habla de las Llanuras, Hablar Habla Alta, Escribir Habla Alta, Hablar Habla del Desierto, Escribir Habla del Desierto, Hablar Habla del Norte, Escribir Habla del Norte, Hablar Habla del Sur, Escribir Habla del Sur, Hablar Habla de los Mares, Escribir Habla de los Mares, Hablar Habla de las Colinas, Escribir Habla de las Colinas, Hablar Habla de los Bosques, Escribir Habla de los Bosques, Idiomas Mágicos  (R), Idiomas Mágicos: Hechizos Elementales (R), Idiomas Mágicos: Espiritus (R), Hablar Centauro Escorpión, Escribir Centauro Escorpión,, Lectura Rápida, Hablar Inglés, Escribir Inglés, Hablar Francés, Escribir Francés, Hablar Español, Escribir Español, Hablar Ruso, Escribir Ruso, Hablar Catalán, Escribir Catalán, Hablar Portugués, Escribir Portugués, Hablar Italiano, Escribir Italiano, Hablar Rumano, Escribir Rumano, Hablar Lituano, Escribir Lituano, Hablar Alemán, Escribir Alemán, Hablar Holandés, Escribir Holandés, Hablar Mandarín, Escribir Mandarín, Hablar Catonés, Escribir Cantonés, Hablar Tibetano, Escribir Tibetano, Hablar Thai, Escribir Thai, Hablar Japonés, Escribir Japonés, Hablar Lengua Nigerocongolesa, Escribir Lengua Nigerocongolesa, Escribir Latín, Hablar Lengua Negra, Escribir Lengua Negra, Hablar Élfico, Escribir Élfico, Hablar Élfico Alto, Escribir Élfico Alto, Hablar Élfico Gris, Escribir Élfico Gris, Hablar Élfico de los Bosques, Escribir Élfico de los Bosques, Hablar Faérico, Escribir Faérico, Hablar Gnómico, Escribir Gnómico, Hablar Enano, Escribir Enano, Hablar Centauro, Escribir Centauro, Hablar Hirazi, Escribir Hirazi, Hablar Lennai, Escribir Lennai, Hablar Dríade, Escribir Dríade, Hablar Orco, Escribir Orco, Hablar Ky'taari, Escribir Ky'taari, Hablar Jameri, Escribir Jameri, Hablar Lydiano, Escribir Lydiano, Hablar Dyari, Escribir Dyari, Hablar Habla Troll, Escribir Habla Troll, Hablar Erlini, Escribir Erlini</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ConGen</abbreviation>
     <characteristics>
       <characteristic>Me</characteristic>
       <characteristic>Ra</characteristic>
       <characteristic>Me</characteristic>
     </characteristics>
-    <id>Conocimiento·General</id>
+    <id>loreGeneral</id>
     <name>
       <en>Lore: General</en>
       <es>Conocimiento·General</es>
@@ -684,16 +684,16 @@
       <skill>Conocimiento de Estilos de Armas</skill>
     </skills>
     <skillsRaw>Conocimiento de la Fauna, Conocimiento de la Flora, Conocimiento Cultural, Conocimiento Regional, Heráldica, Historia, Religión, Conocimiento de Estilos Marciales, Conocimiento de Estilos de Armas</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ConMag</abbreviation>
     <characteristics>
       <characteristic>Me</characteristic>
       <characteristic>Ra</characteristic>
       <characteristic>Me</characteristic>
     </characteristics>
-    <id>Conocimiento·Mágico</id>
+    <id>loreArcane</id>
     <name>
       <en>Lore: Arcane</en>
       <es>Conocimiento·Mágico</es>
@@ -707,16 +707,16 @@
       <skill>Conocimiento de los Símbolos</skill>
     </skills>
     <skillsRaw>Conocimiento de los Artefactos, Conocimiento de los Hechizos, Conocimiento de los No-Muertos, Conocimiento de las Protecciones, Conocimiento de los Planos, Conocimiento de los Símbolos</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ConOsc</abbreviation>
     <characteristics>
       <characteristic>Me</characteristic>
       <characteristic>Ra</characteristic>
       <characteristic>Me</characteristic>
     </characteristics>
-    <id>Conocimiento·Oscuro</id>
+    <id>loreDark</id>
     <name>
       <en>Lore: Dark</en>
       <es>Conocimiento·Oscuro</es>
@@ -730,16 +730,16 @@
       <skill>Conocimiento de los Poderes Chi</skill>
     </skills>
     <skillsRaw>Conocimiento de las Hadas, Conocimiento de los Dragones, Demonología, Xeno-Conocimientos*, Conocimiento de los Puntos Vitales, Conocimiento de los Poderes Chi</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ConTec</abbreviation>
     <characteristics>
       <characteristic>Me</characteristic>
       <characteristic>Ra</characteristic>
       <characteristic>Me</characteristic>
     </characteristics>
-    <id>Conocimiento·Técnico</id>
+    <id>loreTechnical</id>
     <name>
       <en>Lore: Technical</en>
       <es>Conocimiento·Técnico</es>
@@ -753,14 +753,14 @@
       <skill>Conocimiento del Comercio</skill>
     </skills>
     <skillsRaw>Conocimiento de la Piedra, Conocimiento de las Cerraduras, Conocimiento de las Hierbas, Conocimiento de los Metales, Conocimiento de los Venenos, Conocimiento del Comercio</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>DefEsp</abbreviation>
     <characteristics>
       <characteristic>Ninguna</characteristic>
     </characteristics>
-    <id>Defensas Especiales</id>
+    <id>specialDefenses</id>
     <name>
       <en>Special Defenses</en>
       <es>Defensas Especiales</es>
@@ -780,14 +780,14 @@
       <skill>Poderes Chi: Resurgir del Fénix (R)</skill>
     </skills>
     <skillsRaw>Aguante Adrenal, Defensa Adrenal, Resistencia Adrenal, Poderes Chi: Postura Invencible, Poderes Chi: Invulnerabilidad - Filo (R), Poderes Chi: Invulnerabilidad - Contundentes (R), Poderes Chi: Invulnerabilidad - Ataques sin Armas (R), Poderes Chi: Invulnerabilidad - Proyectiles (R), Poderes Chi: Invulnerabilidad - Arrojadizas (R), Poderes Chi: Invulnerabilidad - Dos Manos (R), Poderes Chi: Invulnerabilidad - Asta (R), Poderes Chi: Resurgir del Fénix (R)</skillsRaw>
-    <type>Combinada</type>
-  </categoria>
-  <categoria>
+    <type>COMBINED</type>
+  </category>
+  <category>
     <abbreviation>DesPP</abbreviation>
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>Desarrollo de Puntos de Poder</id>
+    <id>powerPointDevelopment</id>
     <name>
       <en>Power Point Development</en>
       <es>Desarrollo de Puntos de Poder</es>
@@ -796,16 +796,16 @@
       <skill>Desarrollo de Puntos de Poder</skill>
     </skills>
     <skillsRaw>Desarrollo de Puntos de Poder</skillsRaw>
-    <type>DPP</type>
-  </categoria>
-  <categoria>
+    <type>PPD</type>
+  </category>
+  <category>
     <abbreviation>DesFis</abbreviation>
     <characteristics>
       <characteristic>Co</characteristic>
       <characteristic>Ad</characteristic>
       <characteristic>Co</characteristic>
     </characteristics>
-    <id>Desarrollo Físico</id>
+    <id>physicalDevelopment</id>
     <name>
       <en>Physical Development</en>
       <es>Desarrollo Físico</es>
@@ -814,16 +814,16 @@
       <skill>Desarrollo Físico</skill>
     </skills>
     <skillsRaw>Desarrollo Físico</skillsRaw>
-    <type>DF</type>
-  </categoria>
-  <categoria>
+    <type>PD</type>
+  </category>
+  <category>
     <abbreviation>ExtAni</abbreviation>
     <characteristics>
       <characteristic>Em</characteristic>
       <characteristic>Ag</characteristic>
       <characteristic>Em</characteristic>
     </characteristics>
-    <id>Exteriores·Animales</id>
+    <id>outdoorAnimals</id>
     <name>
       <en>Outdoor: Animals</en>
       <es>Exteriores·Animales</es>
@@ -844,16 +844,16 @@
       <skill>Montar: Montura Elemental*</skill>
     </skills>
     <skillsRaw>Conducir, Domar, Maestría de Animales (R), Manejo de los Animales, Montar, Montar: Lobos, Montar: Caballos, Montar: Osos, Montar: Camellos, Montar: Elefantes*, Curación de Animales (R), Pastoreo, Montar: Montura Elemental*</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ExtEnt</abbreviation>
     <characteristics>
       <characteristic>Ad</characteristic>
       <characteristic>In</characteristic>
       <characteristic>Me</characteristic>
     </characteristics>
-    <id>Exteriores·Entorno</id>
+    <id>outdoorEnvironment</id>
     <name>
       <en>Outdoor: Environment</en>
       <es>Exteriores·Entorno</es>
@@ -873,16 +873,16 @@
       <skill>Supervivencia (Ártico)</skill>
     </skills>
     <skillsRaw>Cazar, Espeleología, Forrajear, Orientación Celeste, Predicción del Clima, Supervivencia, Supervivencia (Montañas), Supervivencia (Bosques), Supervivencia (Desiertos), Supervivencia (Llanuras), Supervivencia (Subterráneos), Supervivencia (Ártico)</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>HecDir</abbreviation>
     <characteristics>
       <characteristic>Ag</characteristic>
       <characteristic>Ad</characteristic>
       <characteristic>Ag</characteristic>
     </characteristics>
-    <id>Hechizos Dirigidos</id>
+    <id>directedSpells</id>
     <name>
       <en>Directed Spells</en>
       <es>Hechizos Dirigidos</es>
@@ -908,14 +908,14 @@
       <skill>Estallido Ciclónico</skill>
     </skills>
     <skillsRaw>Relámpago, Relámpago, Bola de Frío, Bola de Fuego, Rayo de Fuego, Rayo de Hielo, Rayo de Descarga, Rayo de Agua, Bola de Éter, Rayo de Éter, Rayo de Aire, Piedra, Rayo de Frío, Rayo de Fuerza, Bola de Vacío, Rayo de Vacío, Rayo de Vapor, Estallido Ciclónico</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ListBas</abbreviation>
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>Listas Básicas de Hechizos</id>
+    <id>listsBásicasOfSpells</id>
     <name>
       <en>Lists Básicas of Spells</en>
       <es>Listas Básicas de Hechizos</es>
@@ -924,14 +924,14 @@
       <skill>Hechizos</skill>
     </skills>
     <skillsRaw>Hechizos</skillsRaw>
-    <type>Limitada</type>
-  </categoria>
-  <categoria>
+    <type>LIMITED</type>
+  </category>
+  <category>
     <abbreviation>ListAb</abbreviation>
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>Listas Abiertas de Hechizos</id>
+    <id>listsAbiertasOfSpells</id>
     <name>
       <en>Lists Abiertas of Spells</en>
       <es>Listas Abiertas de Hechizos</es>
@@ -940,14 +940,14 @@
       <skill>Hechizos</skill>
     </skills>
     <skillsRaw>Hechizos</skillsRaw>
-    <type>Limitada</type>
-  </categoria>
-  <categoria>
+    <type>LIMITED</type>
+  </category>
+  <category>
     <abbreviation>ListCerr</abbreviation>
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>Listas Cerradas de Hechizos</id>
+    <id>listsCerradasOfSpells</id>
     <name>
       <en>Lists Cerradas of Spells</en>
       <es>Listas Cerradas de Hechizos</es>
@@ -956,14 +956,14 @@
       <skill>Hechizos</skill>
     </skills>
     <skillsRaw>Hechizos</skillsRaw>
-    <type>Limitada</type>
-  </categoria>
-  <categoria>
+    <type>LIMITED</type>
+  </category>
+  <category>
     <abbreviation>ListBasOt</abbreviation>
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>Listas Básicas de Otras Profesiones</id>
+    <id>listsBásicasOfOtrasProfesiones</id>
     <name>
       <en>Lists Básicas of Otras Profesiones</en>
       <es>Listas Básicas de Otras Profesiones</es>
@@ -972,14 +972,14 @@
       <skill>Hechizos</skill>
     </skills>
     <skillsRaw>Hechizos</skillsRaw>
-    <type>Limitada</type>
-  </categoria>
-  <categoria>
+    <type>LIMITED</type>
+  </category>
+  <category>
     <abbreviation>ListAbOt</abbreviation>
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>Listas Abiertas de Otros Reinos</id>
+    <id>listsAbiertasOfOtrosRealms</id>
     <name>
       <en>Lists Abiertas of Otros Realms</en>
       <es>Listas Abiertas de Otros Reinos</es>
@@ -988,14 +988,14 @@
       <skill>Hechizos</skill>
     </skills>
     <skillsRaw>Hechizos</skillsRaw>
-    <type>Limitada</type>
-  </categoria>
-  <categoria>
+    <type>LIMITED</type>
+  </category>
+  <category>
     <abbreviation>ListCerrOt</abbreviation>
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>Listas Cerradas de Otros Reinos</id>
+    <id>listsCerradasOfOtrosRealms</id>
     <name>
       <en>Lists Cerradas of Otros Realms</en>
       <es>Listas Cerradas de Otros Reinos</es>
@@ -1004,14 +1004,14 @@
       <skill>Hechizos</skill>
     </skills>
     <skillsRaw>Hechizos</skillsRaw>
-    <type>Limitada</type>
-  </categoria>
-  <categoria>
+    <type>LIMITED</type>
+  </category>
+  <category>
     <abbreviation>ListBasOtR</abbreviation>
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>Listas Básicas de Otros Reinos</id>
+    <id>listsBásicasOfOtrosRealms</id>
     <name>
       <en>Lists Básicas of Otros Realms</en>
       <es>Listas Básicas de Otros Reinos</es>
@@ -1020,14 +1020,14 @@
       <skill>Hechizos</skill>
     </skills>
     <skillsRaw>Hechizos</skillsRaw>
-    <type>Limitada</type>
-  </categoria>
-  <categoria>
+    <type>LIMITED</type>
+  </category>
+  <category>
     <abbreviation>ListAbArc</abbreviation>
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>Listas Abiertas Arcanas</id>
+    <id>listsAbiertasArcanas</id>
     <name>
       <en>Lists Abiertas Arcanas</en>
       <es>Listas Abiertas Arcanas</es>
@@ -1036,14 +1036,14 @@
       <skill>Hechizos</skill>
     </skills>
     <skillsRaw>Hechizos</skillsRaw>
-    <type>Limitada</type>
-  </categoria>
-  <categoria>
+    <type>LIMITED</type>
+  </category>
+  <category>
     <abbreviation>ListAd</abbreviation>
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>Listas Hechizos de Adiestramiento</id>
+    <id>listsSpellsOfTraining</id>
     <name>
       <en>Lists Spells of Training</en>
       <es>Listas Hechizos de Adiestramiento</es>
@@ -1052,14 +1052,14 @@
       <skill>Hechizos</skill>
     </skills>
     <skillsRaw>Hechizos</skillsRaw>
-    <type>Limitada</type>
-  </categoria>
-  <categoria>
+    <type>LIMITED</type>
+  </category>
+  <category>
     <abbreviation>ListAdOtR</abbreviation>
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>Listas Hechizos de Adiestramientos de Otros Reinos</id>
+    <id>listsSpellsOfTrainingsOfOtrosRealms</id>
     <name>
       <en>Lists Spells of Trainings of Otros Realms</en>
       <es>Listas Hechizos de Adiestramientos de Otros Reinos</es>
@@ -1068,14 +1068,14 @@
       <skill>Hechizos</skill>
     </skills>
     <skillsRaw>Hechizos</skillsRaw>
-    <type>Limitada</type>
-  </categoria>
-  <categoria>
+    <type>LIMITED</type>
+  </category>
+  <category>
     <abbreviation>ListTri</abbreviation>
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>Listas Básicas de la Tríada</id>
+    <id>listsBásicasOfTheTríada</id>
     <name>
       <en>Lists Básicas of the Tríada</en>
       <es>Listas Básicas de la Tríada</es>
@@ -1084,14 +1084,14 @@
       <skill>Hechizos</skill>
     </skills>
     <skillsRaw>Hechizos</skillsRaw>
-    <type>Limitada</type>
-  </categoria>
-  <categoria>
+    <type>LIMITED</type>
+  </category>
+  <category>
     <abbreviation>ListElCom</abbreviation>
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>Listas Básicas Elementales Complementarias</id>
+    <id>listsBásicasElementalesComplementarias</id>
     <name>
       <en>Lists Básicas Elementales Complementarias</en>
       <es>Listas Básicas Elementales Complementarias</es>
@@ -1100,16 +1100,16 @@
       <skill>Hechizos</skill>
     </skills>
     <skillsRaw>Hechizos</skillsRaw>
-    <type>Limitada</type>
-  </categoria>
-  <categoria>
+    <type>LIMITED</type>
+  </category>
+  <category>
     <abbreviation>Infl</abbreviation>
     <characteristics>
       <characteristic>Pr</characteristic>
       <characteristic>Em</characteristic>
       <characteristic>In</characteristic>
     </characteristics>
-    <id>Influencia</id>
+    <id>influence</id>
     <name>
       <en>Influence</en>
       <es>Influencia</es>
@@ -1128,16 +1128,16 @@
       <skill>Saber Hacer</skill>
     </skills>
     <skillsRaw>Comerciar, Diplomacia, Embaucar, Interrogar, Liderazgo, Oratoria, Seducción, Sobornar, Rumorear, Lavado de Cerebro, Saber Hacer</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>ManCom</abbreviation>
     <characteristics>
       <characteristic>Ag</characteristic>
       <characteristic>Rp</characteristic>
       <characteristic>Ad</characteristic>
     </characteristics>
-    <id>Maniobras de Combate</id>
+    <id>combatManeuvers</id>
     <name>
       <en>Combat Maneuvers</en>
       <es>Maniobras de Combate</es>
@@ -1162,16 +1162,16 @@
       <skill>Emboscada con Armas Estacionarias</skill>
     </skills>
     <skillsRaw>Combate con 2 Armas, Combate Montado, Desenvainar, Florituras, Ataque de Revés, Esquiva Acrobática (R), Estilo de Arma (Básico), Estilo de Arma (Avanzado), Subyugar, Fuego de Supresión, Fuego Rápido, Esquiva Adrenal, Esquiva Acrobática, Piloto de Combate, Piloto de Tanque, Demoliciones, Emboscada con Armas Estacionarias</skillsRaw>
-    <type>Combinada</type>
-  </categoria>
-  <categoria>
+    <type>COMBINED</type>
+  </category>
+  <category>
     <abbreviation>ManPod</abbreviation>
     <characteristics>
       <characteristic>Em</characteristic>
       <characteristic>In</characteristic>
       <characteristic>Ad</characteristic>
     </characteristics>
-    <id>Manipulación del Poder</id>
+    <id>powerManipulation</id>
     <name>
       <en>Power Manipulation</en>
       <es>Manipulación del Poder</es>
@@ -1187,16 +1187,16 @@
       <skill>Trascender Armadura (R)</skill>
     </skills>
     <skillsRaw>Canalización, Maestría de los Hechizos, Maestría de los Hechizos: Control del Aire, Maestría de los Hechizos: Ley de la Luz, Maestría de los Hechizos: Maestría de los Espiritus, Ritual Mágico, Ocultación de Hechizos, Trascender Armadura (R)</skillsRaw>
-    <type>Combinada</type>
-  </categoria>
-  <categoria>
+    <type>COMBINED</type>
+  </category>
+  <category>
     <abbreviation>Ofi</abbreviation>
     <characteristics>
       <characteristic>Ag</characteristic>
       <characteristic>Me</characteristic>
       <characteristic>Ad</characteristic>
     </characteristics>
-    <id>Oficios</id>
+    <id>crafts</id>
     <name>
       <en>Crafts</en>
       <es>Oficios</es>
@@ -1222,16 +1222,16 @@
       <skill>Tallar el Hueso</skill>
     </skills>
     <skillsRaw>Cocinar, Manejo de Cuerdas, Trabajar el Cuero, Trabajar el Metal, Trabajar la Madera, Trabajar la Piedra, Coser/Tejer, Dibujar, Escribir, Hacer Flechas, Horticultura, Peletería, Servicio, Trampero, Barrer, Tatuar, Bordar, Tallar el Hueso</skillsRaw>
-    <type>Combinada</type>
-  </categoria>
-  <categoria>
+    <type>COMBINED</type>
+  </category>
+  <category>
     <abbreviation>PerBus</abbreviation>
     <characteristics>
       <characteristic>In</characteristic>
       <characteristic>Ra</characteristic>
       <characteristic>Ad</characteristic>
     </characteristics>
-    <id>Percepción·Búsqueda</id>
+    <id>perceptionSearching</id>
     <name>
       <en>Perception: Searching</en>
       <es>Percepción·Búsqueda</es>
@@ -1246,16 +1246,16 @@
       <skill>Rastrear</skill>
     </skills>
     <skillsRaw>Buscar, Detectar Mentiras, Detectar Trampas, Detectar Venenos, Leer Huellas, Observación, Rastrear</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>PerPers</abbreviation>
     <characteristics>
       <characteristic>In</characteristic>
       <characteristic>Ad</characteristic>
       <characteristic>In</characteristic>
     </characteristics>
-    <id>Percepción·Perspicacia</id>
+    <id>perceptionInsight</id>
     <name>
       <en>Perception: Insight</en>
       <es>Percepción·Perspicacia</es>
@@ -1265,16 +1265,16 @@
       <skill>Detectar Emboscadas</skill>
     </skills>
     <skillsRaw>Alerta, Detectar Emboscadas</skillsRaw>
-    <type>Limitada</type>
-  </categoria>
-  <categoria>
+    <type>LIMITED</type>
+  </category>
+  <category>
     <abbreviation>PerSen</abbreviation>
     <characteristics>
       <characteristic>In</characteristic>
       <characteristic>Ad</characteristic>
       <characteristic>In</characteristic>
     </characteristics>
-    <id>Percepción·Sentidos</id>
+    <id>perceptionSenses</id>
     <name>
       <en>Perception: Senses</en>
       <es>Percepción·Sentidos</es>
@@ -1297,16 +1297,16 @@
       <skill>Percepción del Entorno: Munición</skill>
     </skills>
     <skillsRaw>Percepción del Entorno: Ciudades, Percepción del Entorno: Combate, Percepción del Entorno: Durmiendo, Percepción del Entorno: Exploración, Sentido de la Dirección, Sentido del Espacio (R), Sentido del Tiempo, Vista, Olfato, Gusto, Oído, Tacto, Sentido de la Realidad (R), Vigilancia, Percepción del Entorno: Munición</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>PerPod</abbreviation>
     <characteristics>
       <characteristic>Em</characteristic>
       <characteristic>In</characteristic>
       <characteristic>Pr</characteristic>
     </characteristics>
-    <id>Percepción de Poder</id>
+    <id>powerAwareness</id>
     <name>
       <en>Power Awareness</en>
       <es>Percepción de Poder</es>
@@ -1318,16 +1318,16 @@
       <skill>Percepción del Poder (R)</skill>
     </skills>
     <skillsRaw>Leer Runas, Sintonización, Adivinación, Percepción del Poder (R)</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>SubAta</abbreviation>
     <characteristics>
       <characteristic>Ag</characteristic>
       <characteristic>Ad</characteristic>
       <characteristic>In</characteristic>
     </characteristics>
-    <id>Subterfugio·Ataque</id>
+    <id>subterfugeAttack</id>
     <name>
       <en>Subterfuge: Attack</en>
       <es>Subterfugio·Ataque</es>
@@ -1337,16 +1337,16 @@
       <skill>Emboscar</skill>
     </skills>
     <skillsRaw>Ataque Silencioso, Emboscar</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>SubMec</abbreviation>
     <characteristics>
       <characteristic>In</characteristic>
       <characteristic>Ag</characteristic>
       <characteristic>Ra</characteristic>
     </characteristics>
-    <id>Subterfugio·Mecánica</id>
+    <id>subterfugeMechanics</id>
     <name>
       <en>Subterfuge: Mechanics</en>
       <es>Subterfugio·Mecánica</es>
@@ -1367,16 +1367,16 @@
       <skill>Evasión de Impuestos</skill>
     </skills>
     <skillsRaw>Abrir Cerraduras, Camuflaje, Desactivar Trampas, Disfrazarse, Construir Trampas, Preparar Trampas, Usa/Curar Venenos, Falsificación, Imitación, Ocultar Objetos, Abrir Cajas Fuertes, Operaciones de Seguridad, Evasión de Impuestos</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>SubSig</abbreviation>
     <characteristics>
       <characteristic>Ag</characteristic>
       <characteristic>Ad</characteristic>
       <characteristic>In</characteristic>
     </characteristics>
-    <id>Subterfugio·Sigilo</id>
+    <id>subterfugeStealth</id>
     <name>
       <en>Subterfuge: Stealth</en>
       <es>Subterfugio·Sigilo</es>
@@ -1388,16 +1388,16 @@
       <skill>Robar Bolsillos</skill>
     </skills>
     <skillsRaw>Acechar, Esconderse, Juegos de Manos, Robar Bolsillos</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>TecGen</abbreviation>
     <characteristics>
       <characteristic>Ra</characteristic>
       <characteristic>Me</characteristic>
       <characteristic>Ad</characteristic>
     </characteristics>
-    <id>Técnica/Comercio·General</id>
+    <id>technicalTradeGeneral</id>
     <name>
       <en>Technical/Trade: General</en>
       <es>Técnica/Comercio·General</es>
@@ -1419,16 +1419,16 @@
       <skill>Ingeniero de Trenes</skill>
     </skills>
     <skillsRaw>Dibujar Mapas, Juego, Juegos de Estrategia, Maquinaria, Mendigar, Navegar, Orientación, Primeros Auxilios, Usar Hierbas, Jugar al Billar, Conducir (Vehículo Mecánico), Piloto de Aeronaves, Capitán de Barco, Ingeniero de Trenes</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-  <categoria>
+    <type>STANDARD</type>
+  </category>
+  <category>
     <abbreviation>TecPro</abbreviation>
     <characteristics>
       <characteristic>Ra</characteristic>
       <characteristic>Me</characteristic>
       <characteristic>In</characteristic>
     </characteristics>
-    <id>Técnica/Comercio·Profesional</id>
+    <id>technicalTradeProfessional</id>
     <name>
       <en>Technical/Trade: Professional</en>
       <es>Técnica/Comercio·Profesional</es>
@@ -1448,16 +1448,16 @@
       <skill>Investigación</skill>
     </skills>
     <skillsRaw>Cuidados Médicos, Diagnosis, Ingeniería, Mecánica, Minería, Adormecerse, Arquitectura, Cirugía, Organización Militar, Propaganda, Zahorí, Investigación</skillsRaw>
-    <type>Combinada</type>
-  </categoria>
-  <categoria>
+    <type>COMBINED</type>
+  </category>
+  <category>
     <abbreviation>TecVoc</abbreviation>
     <characteristics>
       <characteristic>Me</characteristic>
       <characteristic>In</characteristic>
       <characteristic>Ra</characteristic>
     </characteristics>
-    <id>Técnica/Comercio·Vocacional</id>
+    <id>technicalTradeVocational</id>
     <name>
       <en>Technical/Trade: Vocational</en>
       <es>Técnica/Comercio·Vocacional</es>
@@ -1481,16 +1481,16 @@
       <skill>Mecánica</skill>
     </skills>
     <skillsRaw>Administración, Manejo de Botes, Evaluar Arma, Evaluar Armadura, Evaluar Metal, Evaluar Piedra, Navegación, Táctica, Tasar, Artimañas, Cartografía, Ingeniería de Asedio, Partería, Preparar Hierbas, Preparar Venenos, Mecánica</skillsRaw>
-    <type>Combinada</type>
-  </categoria>
-  <categoria>
+    <type>COMBINED</type>
+  </category>
+  <category>
     <abbreviation>Urb</abbreviation>
     <characteristics>
       <characteristic>In</characteristic>
       <characteristic>Pr</characteristic>
       <characteristic>Ra</characteristic>
     </characteristics>
-    <id>Urbana</id>
+    <id>urban</id>
     <name>
       <en>Urban</en>
       <es>Urbana</es>
@@ -1502,6 +1502,6 @@
       <skill>Instinto Urbano</skill>
     </skills>
     <skillsRaw>Agenciar, Callejeo, Disimulo, Instinto Urbano</skillsRaw>
-    <type>Estándar</type>
-  </categoria>
-</categorias>
+    <type>STANDARD</type>
+  </category>
+</categories>

@@ -1,42 +1,42 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<hechizos>
-  <listaDeHechizos>
+<spells>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Armadura del Caos</id>
+    <id>essenceArmorOfTheCaos</id>
     <name>
       <en>Armor of the Caos</en>
       <es>Armadura del Caos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Lord del Caos</owner>
+      <owner>Lord of the Caos</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Arma del Caos</id>
+    <id>essenceArmaOfTheCaos</id>
     <name>
       <en>Arma of the Caos</en>
       <es>Arma del Caos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Lord del Caos</owner>
+      <owner>Lord of the Caos</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-  <listaDeHechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+  <spellList>
     <closedList>false</closedList>
-    <id>Esencia|Maestría del Caos</id>
+    <id>essenceMaestríaOfTheCaos</id>
     <name>
       <en>Maestría of the Caos</en>
       <es>Maestría del Caos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Lord del Caos</owner>
+      <owner>Lord of the Caos</owner>
     </owners>
-    <realm>Esencia</realm>
-  </listaDeHechizos>
-</hechizos>
+    <realm>ESSENCE</realm>
+  </spellList>
+</spells>

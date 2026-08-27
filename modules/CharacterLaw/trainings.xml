@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<adiestramientos>
-  <adiestramiento>
+<trainings>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -34,9 +34,9 @@
         <ranksToDistribute>2</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Artesano</id>
+    <id>artisan</id>
     <name>
-      <en>Artesano</en>
+      <en>Artisan</en>
       <es>Artesano</es>
     </name>
     <specialItems>
@@ -74,8 +74,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>28</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -199,9 +199,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Artista Marcial</id>
+    <id>martialArtist</id>
     <name>
-      <en>Artista Marcial</en>
+      <en>Martial Artist</en>
       <es>Artista Marcial</es>
     </name>
     <specialItems>
@@ -251,8 +251,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -326,9 +326,9 @@
         <ranksToDistribute>2</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Asesino</id>
+    <id>assassin</id>
     <name>
-      <en>Asesino</en>
+      <en>Assassin</en>
       <es>Asesino</es>
     </name>
     <specialItems>
@@ -370,8 +370,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>30</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -433,7 +433,7 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Berserker</id>
+    <id>berserker</id>
     <name>
       <en>Berserker</en>
       <es>Berserker</es>
@@ -465,8 +465,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -547,9 +547,9 @@
         <ranksToDistribute>3</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Cortabolsas</id>
+    <id>cutpurse</id>
     <name>
-      <en>Cortabolsas</en>
+      <en>Cutpurse</en>
       <es>Cortabolsas</es>
     </name>
     <specialItems>
@@ -579,8 +579,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>37</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -643,7 +643,7 @@
         <ranksToDistribute>1</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Detective</id>
+    <id>detective</id>
     <name>
       <en>Detective</en>
       <es>Detective</es>
@@ -675,8 +675,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>33</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -745,9 +745,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Diplomático</id>
+    <id>diplomat</id>
     <name>
-      <en>Diplomático</en>
+      <en>Diplomat</en>
       <es>Diplomático</es>
     </name>
     <specialItems>
@@ -781,8 +781,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>48</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -845,9 +845,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Erudito Aventurero</id>
+    <id>adventurousScholar</id>
     <name>
-      <en>Erudito Aventurero</en>
+      <en>Adventurous Scholar</en>
       <es>Erudito Aventurero</es>
     </name>
     <specialItems>
@@ -873,8 +873,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>110</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -937,7 +937,7 @@
         <ranksToDistribute>3</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Erutido Enclaustrado</id>
+    <id>erutidoEnclaustrado</id>
     <name>
       <en>Erutido Enclaustrado</en>
       <es>Erutido Enclaustrado</es>
@@ -973,8 +973,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>95</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1047,9 +1047,9 @@
         <ranksToDistribute>1</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Espía</id>
+    <id>spy</id>
     <name>
-      <en>Espía</en>
+      <en>Spy</en>
       <es>Espía</es>
     </name>
     <specialItems>
@@ -1085,8 +1085,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>44</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1186,9 +1186,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Expedicionario</id>
+    <id>expeditionary</id>
     <name>
-      <en>Expedicionario</en>
+      <en>Expeditionary</en>
       <es>Expedicionario</es>
     </name>
     <specialItems>
@@ -1238,8 +1238,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1283,9 +1283,9 @@
         <ranksToDistribute>1</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Experto en Armas</id>
+    <id>weaponsExpert</id>
     <name>
-      <en>Experto in Weapons</en>
+      <en>Weapons Expert</en>
       <es>Experto en Armas</es>
     </name>
     <specialItems>
@@ -1335,8 +1335,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1406,9 +1406,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Fanático Religioso</id>
+    <id>religiousFanatic</id>
     <name>
-      <en>Fanático Religioso</en>
+      <en>Religious Fanatic</en>
       <es>Fanático Religioso</es>
     </name>
     <specialItems>
@@ -1436,8 +1436,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1500,9 +1500,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Filósofo</id>
+    <id>philosopher</id>
     <name>
-      <en>Filósofo</en>
+      <en>Philosopher</en>
       <es>Filósofo</es>
     </name>
     <specialItems>
@@ -1540,8 +1540,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1615,9 +1615,9 @@
         <ranksToDistribute>1</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Guardián</id>
+    <id>guardian</id>
     <name>
-      <en>Guardián</en>
+      <en>Guardian</en>
       <es>Guardián</es>
     </name>
     <specialItems>
@@ -1663,8 +1663,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1774,9 +1774,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Marino</id>
+    <id>sailor</id>
     <name>
-      <en>Marino</en>
+      <en>Sailor</en>
       <es>Marino</es>
     </name>
     <specialItems>
@@ -1810,8 +1810,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>28</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -1950,9 +1950,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Mercenario</id>
+    <id>mercenary</id>
     <name>
-      <en>Mercenario</en>
+      <en>Mercenary</en>
       <es>Mercenario</es>
     </name>
     <specialItems>
@@ -2001,8 +2001,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -2056,9 +2056,9 @@
         <ranksToDistribute>1</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Sacerdote Chamánico</id>
+    <id>shamanicPriest</id>
     <name>
-      <en>Sacerdote Chamánico</en>
+      <en>Shamanic Priest</en>
       <es>Sacerdote Chamánico</es>
     </name>
     <specialItems>
@@ -2106,8 +2106,8 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -2179,9 +2179,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Salteador</id>
+    <id>bandit</id>
     <name>
-      <en>Salteador</en>
+      <en>Bandit</en>
       <es>Salteador</es>
     </name>
     <specialItems>
@@ -2209,8 +2209,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>35</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -2272,9 +2272,9 @@
         <ranksToDistribute>1</ranksToDistribute>
       </categoryGrant>
     </categories>
-    <id>Timador</id>
+    <id>swindler</id>
     <name>
-      <en>Timador</en>
+      <en>Swindler</en>
       <es>Timador</es>
     </name>
     <specialItems>
@@ -2304,8 +2304,8 @@
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>32</trainingTimeInMonths>
-  </adiestramiento>
-  <adiestramiento>
+  </training>
+  <training>
     <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
@@ -2415,9 +2415,9 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>Trotamundos</id>
+    <id>globetrotter</id>
     <name>
-      <en>Trotamundos</en>
+      <en>Globetrotter</en>
       <es>Trotamundos</es>
     </name>
     <specialItems>
@@ -2455,5 +2455,5 @@
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
-  </adiestramiento>
-</adiestramientos>
+  </training>
+</trainings>
