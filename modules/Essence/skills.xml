@@ -4,9 +4,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>bolaOfCold</id>
+    <id>ballOfCold</id>
     <name>
-      <en>Bola of Cold</en>
+      <en>Ball of Cold</en>
       <es>Bola de Frío</es>
     </name>
     <rare>false</rare>
@@ -17,9 +17,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>bolaOfFire</id>
+    <id>ballOfFire</id>
     <name>
-      <en>Bola of Fire</en>
+      <en>Ball of Fire</en>
       <es>Bola de Fuego</es>
     </name>
     <rare>false</rare>
@@ -30,9 +30,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>rayoOfFire</id>
+    <id>boltOfFire</id>
     <name>
-      <en>Rayo of Fire</en>
+      <en>Bolt of Fire</en>
       <es>Rayo de Fuego</es>
     </name>
     <rare>false</rare>
@@ -43,9 +43,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>rayoOfHielo</id>
+    <id>boltOfIce</id>
     <name>
-      <en>Rayo of Hielo</en>
+      <en>Bolt of Ice</en>
       <es>Rayo de Hielo</es>
     </name>
     <rare>false</rare>
@@ -56,9 +56,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>rayoOfDescarga</id>
+    <id>boltOfDischarge</id>
     <name>
-      <en>Rayo of Descarga</en>
+      <en>Bolt of Discharge</en>
       <es>Rayo de Descarga</es>
     </name>
     <rare>false</rare>
@@ -69,9 +69,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>rayoOfWater</id>
+    <id>boltOfWater</id>
     <name>
-      <en>Rayo of Water</en>
+      <en>Bolt of Water</en>
       <es>Rayo de Agua</es>
     </name>
     <rare>false</rare>

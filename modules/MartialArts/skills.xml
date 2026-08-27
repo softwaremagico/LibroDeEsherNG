@@ -286,7 +286,7 @@
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>chiPowerFallingOfTheHoja</skill>
+      <skill>chiPowerFallingOfTheLeaf</skill>
       <skill>chiPowerContinuousContact</skill>
     </enableSkills>
     <skillGroup>STANDARD</skillGroup>
@@ -419,7 +419,7 @@
     </name>
     <rare>false</rare>
     <enableSkills>
-      <skill>chiPowerFallingOfTheHoja</skill>
+      <skill>chiPowerFallingOfTheLeaf</skill>
       <skill>chiPowerHoldBreath</skill>
       <skill>chiPowerLightFeet</skill>
       <skill>chiPowerGeckoClimb</skill>
@@ -684,9 +684,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>selfControl</categoryId>
     <enabledByDefault>false</enabledByDefault>
-    <id>chiPowerFallingOfTheHoja</id>
+    <id>chiPowerFallingOfTheLeaf</id>
     <name>
-      <en>Chi Power: Falling of the Hoja</en>
+      <en>Chi Power: Falling of the Leaf</en>
       <es>Poderes Chi: Caer de la Hoja</es>
     </name>
     <rare>false</rare>
@@ -749,9 +749,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreDark</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfThePointsVitales</id>
+    <id>loreOfPointsVitales</id>
     <name>
-      <en>Lore of the Points Vitales</en>
+      <en>Lore of Points Vitales</en>
       <es>Conocimiento de los Puntos Vitales</es>
     </name>
     <rare>false</rare>
@@ -762,9 +762,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreDark</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfThePowersChi</id>
+    <id>loreOfPowersChi</id>
     <name>
-      <en>Lore of the Powers Chi</en>
+      <en>Lore of Powers Chi</en>
       <es>Conocimiento de los Poderes Chi</es>
     </name>
     <rare>false</rare>

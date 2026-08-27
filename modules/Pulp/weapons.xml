@@ -80,9 +80,9 @@
   <weapon>
     <abbreviation>pstJa26</abbreviation>
     <categoryId>weaponsFirearmOneHanded</categoryId>
-    <id>revolverJapaneseType26</id>
+    <id>revolverJapaneisType26</id>
     <name>
-      <en>Revolver: Japanese Type 26</en>
+      <en>Revolver: Japaneis Type 26</en>
       <es>Revolver: Japanese Type 26</es>
     </name>
     <rare>false</rare>
@@ -366,9 +366,9 @@
   <weapon>
     <abbreviation>pstJa94</abbreviation>
     <categoryId>weaponsFirearmOneHanded</categoryId>
-    <id>automaticPistolJapanseModel94</id>
+    <id>automaticPistolJapanisModel94</id>
     <name>
-      <en>Automatic Pistol: Japanse Model 94</en>
+      <en>Automatic Pistol: Japanis Model 94</en>
       <es>Pistola Automática: Japanse Model 94</es>
     </name>
     <rare>false</rare>
@@ -806,9 +806,9 @@
   <weapon>
     <abbreviation>rfJT38</abbreviation>
     <categoryId>weaponsFirearmTwoHanded</categoryId>
-    <id>rifleJapaneseType38</id>
+    <id>rifleJapaneisType38</id>
     <name>
-      <en>Rifle: Japanese Type 38</en>
+      <en>Rifle: Japaneis Type 38</en>
       <es>Rifle: Japanese Type 38</es>
     </name>
     <rare>false</rare>
@@ -1026,9 +1026,9 @@
   <weapon>
     <abbreviation>amJa11</abbreviation>
     <categoryId>weaponsFirearmTwoHanded</categoryId>
-    <id>machineGunJapaneseType11</id>
+    <id>machineGunJapaneisType11</id>
     <name>
-      <en>Machine Gun: Japanese Type 11</en>
+      <en>Machine Gun: Japaneis Type 11</en>
       <es>Ametralladora: Japanese Type 11</es>
     </name>
     <rare>false</rare>
@@ -1037,9 +1037,9 @@
   <weapon>
     <abbreviation>amJa92</abbreviation>
     <categoryId>weaponsFirearmTwoHanded</categoryId>
-    <id>machineGunJapaneseType92</id>
+    <id>machineGunJapaneisType92</id>
     <name>
-      <en>Machine Gun: Japanese Type 92</en>
+      <en>Machine Gun: Japaneis Type 92</en>
       <es>Ametralladora: Japanese Type 92</es>
     </name>
     <rare>false</rare>

@@ -40,9 +40,13 @@ public final class Translations {
     /** Word/particle-level fallback translations, checked case-insensitively. */
     private static final Map<String, String> WORDS = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
 
+    /** Spanish spell-list leading nouns that usually translate as "<lead> of <object>". */
+    private static final Map<String, String> OF_LEADS = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+
     static {
         registerPhrases();
         registerWords();
+        registerOfLeads();
     }
 
     private Translations() {
@@ -69,7 +73,71 @@ public final class Translations {
             final String[] parts = spanish.split(": ", 2);
             return toEnglish(parts[0].trim()) + ": " + toEnglish(parts[1].trim());
         }
-        return translateWords(spanish);
+        final String ofTranslation = translateOfExpression(spanish);
+        if (ofTranslation != null) {
+            return ofTranslation;
+        }
+        return cleanEnglishProse(translateWords(spanish));
+    }
+
+    /** Final pass for recurring sentence fragments in long perk descriptions. */
+    private static String cleanEnglishProse(String text) {
+        if (text == null) {
+            return null;
+        }
+        return text
+                .replaceAll("(?i)Consulta the Page ([0-9]+) of the libro of personajes for More Information\\.",
+                        "See page $1 of Character Law for more information.")
+                .replaceAll("(?i)Pagina ([0-9]+) of the Manual of Personajes\\.",
+                        "See page $1 of Character Law.")
+                .replaceAll("(?i)Consulta the manual of DJ", "see the GM manual")
+                .replace("the Spell", "the spell")
+                .replace("the Spells", "the spells")
+                .replace("of the libro", "of the book")
+                .replace("of personajes", "of characters")
+                .replace("tus ", "your ")
+                .replace("tu ", "your ")
+                .replace("te ", "you ")
+                .replace("se ", "is ")
+                .replace(" al ", " to the ")
+                .replace(" del ", " of the ")
+                .replace(" of the Caos", " of Chaos")
+                .replace(" of the Alma", " of the Soul")
+                .replace(" of the Carne", " of the Flesh")
+                .replace(" of the Perro", " of the Dog")
+                .replace(" of the Hoja", " of the Leaf")
+                .replace(" of the Houri", " of the Houri")
+                .replace(" of the Invocaciones", " of Summonings")
+                .replace(" of the Religiones", " of Religions")
+                .replace(" of the Armaduras", " of Armor")
+                .replace(" of the Objetos", " of Objects")
+                .replace(" of the Visiones", " of Visions")
+                .replace(" of the Espejismos", " of Mirages")
+                .replace(" of the Estrellas", " of Stars")
+                .replace(" of the Futuro", " of the Future")
+                .replace(" of the Pasado", " of the Past");
+    }
+
+    /**
+     * Translates common spell-list style forms such as "Senda del Sonido" -> "Path of Sound" and
+     * "Maestría de los Portales" -> "Mastery of Portals". This avoids the poor literal fallback
+     * "Senda of the Sonido".
+     */
+    private static String translateOfExpression(String spanish) {
+        final Matcher matcher = Pattern.compile("^(.+?)\\s+(de|del|de la|de los|de las)\\s+(.+)$", Pattern.CASE_INSENSITIVE)
+                .matcher(spanish.trim());
+        if (!matcher.matches()) {
+            return null;
+        }
+        final String lead = OF_LEADS.get(matcher.group(1).trim());
+        if (lead == null) {
+            return null;
+        }
+        return lead + " of " + stripInitialArticle(toEnglish(matcher.group(3).trim()));
+    }
+
+    private static String stripInitialArticle(String english) {
+        return english.replaceFirst("^(?i)(the|a|an)\\s+", "");
     }
 
     /**
@@ -159,6 +227,42 @@ public final class Translations {
         registerMartialArtsTerms();
         registerProfessionNames();
         registerExactOverrides();
+    }
+
+    private static void registerOfLeads() {
+        put(OF_LEADS, "Senda", "Path");
+        put(OF_LEADS, "Sendas", "Paths");
+        put(OF_LEADS, "Camino", "Path");
+        put(OF_LEADS, "Caminos", "Paths");
+        put(OF_LEADS, "Ley", "Law");
+        put(OF_LEADS, "Leyes", "Laws");
+        put(OF_LEADS, "Maestría", "Mastery");
+        put(OF_LEADS, "Control", "Control");
+        put(OF_LEADS, "Bola", "Ball");
+        put(OF_LEADS, "Bolas", "Balls");
+        put(OF_LEADS, "Rayo", "Bolt");
+        put(OF_LEADS, "Rayos", "Bolts");
+        put(OF_LEADS, "Cambio", "Change");
+        put(OF_LEADS, "Cambios", "Changes");
+        put(OF_LEADS, "Conocimiento", "Lore");
+        put(OF_LEADS, "Luces", "Lights");
+        put(OF_LEADS, "Sentido", "Sense");
+        put(OF_LEADS, "Sentidos", "Senses");
+        put(OF_LEADS, "Espejismo", "Mirage");
+        put(OF_LEADS, "Espejismos", "Mirages");
+        put(OF_LEADS, "Mejora", "Enhancement");
+        put(OF_LEADS, "Mejoras", "Enhancements");
+        put(OF_LEADS, "Proyección", "Projection");
+        put(OF_LEADS, "Protección", "Protection");
+        put(OF_LEADS, "Protecciones", "Protections");
+        put(OF_LEADS, "Visión", "Vision");
+        put(OF_LEADS, "Visiones", "Visions");
+        put(OF_LEADS, "Encantamiento", "Enchantment");
+        put(OF_LEADS, "Encantamientos", "Enchantments");
+        put(OF_LEADS, "Análisis", "Analysis");
+        put(OF_LEADS, "Apropiación", "Appropriation");
+        put(OF_LEADS, "Besos", "Kisses");
+        put(OF_LEADS, "Engaños", "Deceptions");
     }
 
     private static void registerCharacteristics() {
@@ -255,6 +359,7 @@ public final class Translations {
         put(m, "Psiónico", "Psionic");
         put(m, "Arcano", "Arcane");
         put(m, "Racial", "Racial");
+        put(m, "Runas", "Runes");
 
         // Remaining high-frequency words from generated English names/descriptions. Mostly spell
         // list names, modern/pulp skills, languages, and prose used in perk descriptions.
@@ -339,6 +444,7 @@ public final class Translations {
         put(m, "Ingeniería", "Engineering");
         put(m, "Inorgánicas", "Inorganic");
         put(m, "Invocación", "Summoning");
+        put(m, "Invocaciones", "Summonings");
         put(m, "Navegación", "Navigation");
         put(m, "Ocultación", "Concealment");
         put(m, "Orientación", "Orientation");
@@ -505,6 +611,50 @@ public final class Translations {
         put(m, "área", "area");
         put(m, "él", "him");
         put(m, "órdenes", "orders");
+        put(m, "Caos", "Chaos");
+        put(m, "Alma", "Soul");
+        put(m, "Carne", "Flesh");
+        put(m, "Hoja", "Leaf");
+        put(m, "Perro", "Dog");
+        put(m, "Religiones", "Religions");
+        put(m, "Objetos", "Objects");
+        put(m, "Visiones", "Visions");
+        put(m, "Espejismos", "Mirages");
+        put(m, "Estrellas", "Stars");
+        put(m, "Futuro", "Future");
+        put(m, "Pasado", "Past");
+        put(m, "Barco", "Ship");
+        put(m, "Canciones", "Songs");
+        put(m, "Sangre", "Blood");
+        put(m, "Culpa", "Guilt");
+        put(m, "Descarga", "Discharge");
+        put(m, "Artilugios", "Devices");
+        put(m, "Medio", "Half");
+        put(m, "mitad", "half");
+        put(m, "alcance", "range");
+        put(m, "aumentas", "you increase");
+        put(m, "Aumentas", "You increase");
+        put(m, "arcos", "bows");
+        put(m, "aliados", "allies");
+        put(m, "adversarios", "opponents");
+        put(m, "miedo", "fear");
+        put(m, "hemorragia", "bleeding");
+        put(m, "reduce", "reduced");
+        put(m, "disgusto", "disgust");
+        put(m, "objetivo", "target");
+        put(m, "intolerancia", "intolerance");
+        put(m, "gobernante", "ruler");
+        put(m, "querido", "loved");
+        put(m, "probablemente", "probably");
+        put(m, "Probablemente", "Probably");
+        put(m, "sabio", "wise");
+        put(m, "lento", "slow");
+        put(m, "defecto", "flaw");
+        put(m, "dispuesto", "willing");
+        put(m, "morir", "die");
+        put(m, "ello", "it");
+        put(m, "sigues", "you follow");
+        put(m, "Sigues", "You follow");
         put(m, "Lista Abierta", "Open List");
         put(m, "Lista Cerrada", "Closed List");
     }
@@ -810,6 +960,30 @@ public final class Translations {
         put(m, "Barrera", "Barrier");
         put(m, "Contra", "Against");
         put(m, "Bridas", "Reins");
+        put(m, "Sonido", "Sound");
+        put(m, "Voz", "Voice");
+        put(m, "Voces", "Voices");
+        put(m, "Estrellas", "Stars");
+        put(m, "Recuerdos", "Memories");
+        put(m, "Batalla", "Battle");
+        put(m, "Fortaleza", "Fortitude");
+        put(m, "Armaduras", "Armor");
+        put(m, "Objetos", "Objects");
+        put(m, "Entendimiento", "Understanding");
+        put(m, "Futuro", "Future");
+        put(m, "Pasado", "Past");
+        put(m, "Medicina", "Medicine");
+        put(m, "Mar", "Sea");
+        put(m, "Mente", "Mind");
+        put(m, "Bestias", "Beasts");
+        put(m, "Señor", "Lord");
+        put(m, "Alquimista", "Alchemist");
+        put(m, "Hielo", "Ice");
+        put(m, "Aire", "Air");
+        put(m, "Viento", "Wind");
+        put(m, "Llamas", "Flames");
+        put(m, "Vapor", "Steam");
+        put(m, "Munición", "Ammunition");
         // Articles, prepositions, conjunctions.
         put(m, "el", "the");
         put(m, "la", "the");

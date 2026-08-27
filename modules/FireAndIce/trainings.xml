@@ -357,7 +357,7 @@
         </options>
       </commonSkillChoice>
     </commonSkills>
-    <id>wizardOfTheAire</id>
+    <id>wizardOfTheAir</id>
     <lifeSkills>
       <lifeSkillChoice>
         <fixed>true</fixed>
@@ -373,7 +373,7 @@
       </lifeSkillChoice>
     </lifeSkills>
     <name>
-      <en>Wizard of the Aire</en>
+      <en>Wizard of the Air</en>
       <es>Mago del Aire</es>
     </name>
     <restrictedSkills>

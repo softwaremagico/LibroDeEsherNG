@@ -15,9 +15,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMasteryOfTheRunas</id>
+    <id>essenceMasteryOfRunes</id>
     <name>
-      <en>Mastery of the Runas</en>
+      <en>Mastery of Runes</en>
       <es>Maestría de las Runas</es>
     </name>
     <openList>true</openList>
@@ -41,9 +41,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceSendasOfTheInquiry</id>
+    <id>essencePathsOfInquiry</id>
     <name>
-      <en>Sendas of the Inquiry</en>
+      <en>Paths of Inquiry</en>
       <es>Sendas de la Indagación</es>
     </name>
     <openList>true</openList>
@@ -80,9 +80,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceSendasOfApertura</id>
+    <id>essencePathsOfApertura</id>
     <name>
-      <en>Sendas of Apertura</en>
+      <en>Paths of Apertura</en>
       <es>Sendas de Apertura</es>
     </name>
     <openList>true</openList>
@@ -119,9 +119,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceSendasOfTheDetection</id>
+    <id>essencePathsOfDetection</id>
     <name>
-      <en>Sendas of the Detection</en>
+      <en>Paths of Detection</en>
       <es>Sendas de la Detección</es>
     </name>
     <openList>true</openList>
@@ -134,7 +134,7 @@
     <closedList>true</closedList>
     <id>essenceReinsOfTheSpells</id>
     <name>
-      <en>Reins of the Spells</en>
+      <en>Reins of the spells</en>
       <es>Bridas de los Hechizos</es>
     </name>
     <openList>false</openList>
@@ -145,9 +145,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>essenceMasteryOfTheSpirits</id>
+    <id>essenceMasteryOfSpirits</id>
     <name>
-      <en>Mastery of the Spirits</en>
+      <en>Mastery of Spirits</en>
       <es>Maestría de los Espíritus</es>
     </name>
     <openList>false</openList>
@@ -158,9 +158,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>essenceSendasOfTheQuickness</id>
+    <id>essencePathsOfQuickness</id>
     <name>
-      <en>Sendas of the Quickness</en>
+      <en>Paths of Quickness</en>
       <es>Sendas de la Rapidez</es>
     </name>
     <openList>false</openList>
@@ -184,9 +184,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>essenceMejoraOfTheSpells</id>
+    <id>essenceEnhancementOfSpells</id>
     <name>
-      <en>Mejora of the Spells</en>
+      <en>Enhancement of spells</en>
       <es>Mejora de los Hechizos</es>
     </name>
     <openList>false</openList>
@@ -197,9 +197,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>essenceSendaOfTheNullification</id>
+    <id>essencePathOfNullification</id>
     <name>
-      <en>Senda of the Nullification</en>
+      <en>Path of Nullification</en>
       <es>Senda de la Anulación</es>
     </name>
     <openList>false</openList>
@@ -210,9 +210,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>essenceMasteryOfTheEscudos</id>
+    <id>essenceMasteryOfEscudos</id>
     <name>
-      <en>Mastery of the Escudos</en>
+      <en>Mastery of Escudos</en>
       <es>Maestría de los Escudos</es>
     </name>
     <openList>false</openList>
@@ -223,9 +223,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>essenceMasteryOfThePortales</id>
+    <id>essenceMasteryOfPortales</id>
     <name>
-      <en>Mastery of the Portales</en>
+      <en>Mastery of Portales</en>
       <es>Maestría de los Portales</es>
     </name>
     <openList>false</openList>
@@ -236,9 +236,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>essencePuenteInTheAlturas</id>
+    <id>essencePuenyouInTheAlturas</id>
     <name>
-      <en>Puente in the Alturas</en>
+      <en>Puenyou in the Alturas</en>
       <es>Puente en la Alturas</es>
     </name>
     <openList>false</openList>
@@ -249,9 +249,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>essenceSendaOfTheInvisibilidad</id>
+    <id>essencePathOfInvisibilidad</id>
     <name>
-      <en>Senda of the Invisibilidad</en>
+      <en>Path of Invisibilidad</en>
       <es>Senda de la Invisibilidad</es>
     </name>
     <openList>false</openList>
@@ -275,9 +275,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMasteryOfTheIlusiones</id>
+    <id>essenceMasteryOfIlusiones</id>
     <name>
-      <en>Mastery of the Ilusiones</en>
+      <en>Mastery of Ilusiones</en>
       <es>Maestría de las Ilusiones</es>
     </name>
     <openList>false</openList>
@@ -288,9 +288,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMoldearTheSonido</id>
+    <id>essenceMoldearTheSound</id>
     <name>
-      <en>Moldear the Sonido</en>
+      <en>Moldear the Sound</en>
       <es>Moldear el Sonido</es>
     </name>
     <openList>false</openList>
@@ -340,9 +340,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceLawOfTheLight</id>
+    <id>essenceLawOfLight</id>
     <name>
-      <en>Law of the Light</en>
+      <en>Law of Light</en>
       <es>Ley de la Luz</es>
     </name>
     <openList>false</openList>
@@ -354,9 +354,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceLawOfTheEarth</id>
+    <id>essenceLawOfEarth</id>
     <name>
-      <en>Law of the Earth</en>
+      <en>Law of Earth</en>
       <es>Ley de la Tierra</es>
     </name>
     <openList>false</openList>
@@ -368,9 +368,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceLawOfTheWater</id>
+    <id>essenceLawOfWater</id>
     <name>
-      <en>Law of the Water</en>
+      <en>Law of Water</en>
       <es>Ley del Agua</es>
     </name>
     <openList>false</openList>
@@ -382,9 +382,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceLawOfTheFire</id>
+    <id>essenceLawOfFire</id>
     <name>
-      <en>Law of the Fire</en>
+      <en>Law of Fire</en>
       <es>Ley del Fuego</es>
     </name>
     <openList>false</openList>
@@ -396,29 +396,29 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceLawOfTheHielo</id>
+    <id>essenceLawOfIce</id>
     <name>
-      <en>Law of the Hielo</en>
+      <en>Law of Ice</en>
       <es>Ley del Hielo</es>
     </name>
     <openList>false</openList>
     <owners>
       <owner>Wizard</owner>
-      <owner>Wizard of the Hielo</owner>
+      <owner>Wizard of the Ice</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceLawOfTheViento</id>
+    <id>essenceLawOfWind</id>
     <name>
-      <en>Law of the Viento</en>
+      <en>Law of Wind</en>
       <es>Ley del Viento</es>
     </name>
     <openList>false</openList>
     <owners>
       <owner>Wizard</owner>
-      <owner>Wizard of the Aire</owner>
+      <owner>Wizard of the Air</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -437,9 +437,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceLawOfTheLatrocinio</id>
+    <id>essenceLawOfLatrocinio</id>
     <name>
-      <en>Law of the Latrocinio</en>
+      <en>Law of Latrocinio</en>
       <es>Ley del Latrocinio</es>
     </name>
     <openList>false</openList>
@@ -450,9 +450,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMasteryOfTheMovimiento</id>
+    <id>essenceMasteryOfMovimiento</id>
     <name>
-      <en>Mastery of the Movimiento</en>
+      <en>Mastery of Movimiento</en>
       <es>Maestría del Movimiento</es>
     </name>
     <openList>false</openList>
@@ -463,9 +463,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMasteryOfTheOcultamiento</id>
+    <id>essenceMasteryOfOcultamiento</id>
     <name>
-      <en>Mastery of the Ocultamiento</en>
+      <en>Mastery of Ocultamiento</en>
       <es>Maestría del Ocultamiento</es>
     </name>
     <openList>false</openList>
@@ -515,9 +515,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMenteSobreMateria</id>
+    <id>essenceMindSobreMateria</id>
     <name>
-      <en>Mente sobre Materia</en>
+      <en>Mind sobre Materia</en>
       <es>Mente sobre Materia</es>
     </name>
     <openList>false</openList>
@@ -528,9 +528,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceSensesOfTheMonk</id>
+    <id>essenceSensesOfMonk</id>
     <name>
-      <en>Senses of the Monk</en>
+      <en>Senses of Monk</en>
       <es>Sentidos del Monje</es>
     </name>
     <openList>false</openList>
@@ -606,9 +606,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceSendasOfTheConfusion</id>
+    <id>essencePathsOfConfusion</id>
     <name>
-      <en>Sendas of the Confusion</en>
+      <en>Paths of Confusion</en>
       <es>Sendas de la Confusión</es>
     </name>
     <openList>false</openList>
@@ -619,9 +619,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceDestructionOfTheCarne</id>
+    <id>essenceDestructionOfTheFlesh</id>
     <name>
-      <en>Destruction of the Carne</en>
+      <en>Destruction of the Flesh</en>
       <es>Destrucción de la Carne</es>
     </name>
     <openList>false</openList>
@@ -671,9 +671,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceDestructionOfTheAlma</id>
+    <id>essenceDestructionOfTheSoul</id>
     <name>
-      <en>Destruction of the Alma</en>
+      <en>Destruction of the Soul</en>
       <es>Destrucción del Alma</es>
     </name>
     <openList>false</openList>
@@ -705,7 +705,7 @@
     <openList>false</openList>
     <owners>
       <owner>Essence Maligna</owner>
-      <owner>Lord of the Caos</owner>
+      <owner>Lord of the Chaos</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -737,15 +737,15 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceInvocacionesOscuras</id>
+    <id>essenceSummoningsOscuras</id>
     <name>
-      <en>Invocaciones Oscuras</en>
+      <en>Summonings Oscuras</en>
       <es>Invocaciones Oscuras</es>
     </name>
     <openList>false</openList>
     <owners>
       <owner>Essence Maligna</owner>
-      <owner>Lord of the Caos</owner>
+      <owner>Lord of the Chaos</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -772,7 +772,7 @@
     <openList>false</openList>
     <owners>
       <owner>Essence Maligna</owner>
-      <owner>Lord of the Caos</owner>
+      <owner>Lord of the Chaos</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>

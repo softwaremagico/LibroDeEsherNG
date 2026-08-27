@@ -234,7 +234,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <trainingCost>
         <cost>29</cost>
         <costNotMagic>29</costNotMagic>
-        <trainingName>wizardOfTheAire</trainingName>
+        <trainingName>wizardOfTheAir</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
@@ -246,7 +246,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <trainingCost>
         <cost>28</cost>
         <costNotMagic>28</costNotMagic>
-        <trainingName>wizardOfHielo</trainingName>
+        <trainingName>wizardOfIce</trainingName>
         <type>STANDARD</type>
       </trainingCost>
     </trainingCosts>

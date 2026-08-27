@@ -2,40 +2,40 @@
 <spells>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceArmorOfTheCaos</id>
+    <id>essenceArmorOfTheChaos</id>
     <name>
-      <en>Armor of the Caos</en>
+      <en>Armor of the Chaos</en>
       <es>Armadura del Caos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Lord of the Caos</owner>
+      <owner>Lord of the Chaos</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceArmaOfTheCaos</id>
+    <id>essenceArmaOfTheChaos</id>
     <name>
-      <en>Arma of the Caos</en>
+      <en>Arma of the Chaos</en>
       <es>Arma del Caos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Lord of the Caos</owner>
+      <owner>Lord of the Chaos</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMasteryOfTheCaos</id>
+    <id>essenceMasteryOfChaos</id>
     <name>
-      <en>Mastery of the Caos</en>
+      <en>Mastery of Chaos</en>
       <es>Maestría del Caos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Lord of the Caos</owner>
+      <owner>Lord of the Chaos</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>

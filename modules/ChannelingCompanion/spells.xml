@@ -2,9 +2,9 @@
 <spells>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationAtadurasOfTheInvocaciones</id>
+    <id>canalizationAtadurasOfTheSummonings</id>
     <name>
-      <en>Ataduras of the Invocaciones</en>
+      <en>Ataduras of the Summonings</en>
       <es>Ataduras de las Invocaciones</es>
     </name>
     <openList>false</openList>
@@ -15,9 +15,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationCirclesOfInvocaciones</id>
+    <id>canalizationCirclesOfSummonings</id>
     <name>
-      <en>Circles of Invocaciones</en>
+      <en>Circles of Summonings</en>
       <es>Círculos de Invocaciones</es>
     </name>
     <openList>false</openList>
@@ -28,9 +28,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationInvocacionesOfAnimals</id>
+    <id>canalizationSummoningsOfAnimals</id>
     <name>
-      <en>Invocaciones of Animals</en>
+      <en>Summonings of Animals</en>
       <es>Invocaciones de Animales</es>
     </name>
     <openList>false</openList>
@@ -41,9 +41,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationInvocacionesPlanares</id>
+    <id>canalizationSummoningsPlanares</id>
     <name>
-      <en>Invocaciones Planares</en>
+      <en>Summonings Planares</en>
       <es>Invocaciones Planares</es>
     </name>
     <openList>false</openList>
@@ -54,9 +54,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMasteryOfTheInvocaciones</id>
+    <id>canalizationMasteryOfSummonings</id>
     <name>
-      <en>Mastery of the Invocaciones</en>
+      <en>Mastery of Summonings</en>
       <es>Maestría de las Invocaciones</es>
     </name>
     <openList>false</openList>
@@ -93,9 +93,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationLawOfTheDoom</id>
+    <id>canalizationLawOfDoom</id>
     <name>
-      <en>Law of the Doom</en>
+      <en>Law of Doom</en>
       <es>Ley de la Perdición</es>
     </name>
     <openList>false</openList>
@@ -106,9 +106,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationLawOfTheVenganza</id>
+    <id>canalizationLawOfVenganza</id>
     <name>
-      <en>Law of the Venganza</en>
+      <en>Law of Venganza</en>
       <es>Ley de la Venganza</es>
     </name>
     <openList>false</openList>
@@ -132,9 +132,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationSemblanteOfTheTerror</id>
+    <id>canalizationSemblanyouOfTheTerror</id>
     <name>
-      <en>Semblante of the Terror</en>
+      <en>Semblanyou of the Terror</en>
       <es>Semblante del Terror</es>
     </name>
     <openList>false</openList>
@@ -275,9 +275,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationLoreOfTheTiempo</id>
+    <id>canalizationLoreOfTiempo</id>
     <name>
-      <en>Lore of the Tiempo</en>
+      <en>Lore of Tiempo</en>
       <es>Conocimiento del Tiempo</es>
     </name>
     <openList>false</openList>
@@ -314,9 +314,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationDefenseSagrada</id>
+    <id>canalizationDefenisSagrada</id>
     <name>
-      <en>Defense Sagrada</en>
+      <en>Defenis Sagrada</en>
       <es>Defensa Sagrada</es>
     </name>
     <openList>false</openList>
@@ -470,9 +470,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationLawOfTheSerpientes</id>
+    <id>canalizationLawOfSerpientes</id>
     <name>
-      <en>Law of the Serpientes</en>
+      <en>Law of Serpientes</en>
       <es>Ley de las Serpientes</es>
     </name>
     <openList>false</openList>
@@ -483,9 +483,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationLawOfTheSpirits</id>
+    <id>canalizationLawOfSpirits</id>
     <name>
-      <en>Law of the Spirits</en>
+      <en>Law of Spirits</en>
       <es>Ley de los Espíritus</es>
     </name>
     <openList>false</openList>
@@ -496,9 +496,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMasteryOfTheCaza</id>
+    <id>canalizationMasteryOfCaza</id>
     <name>
-      <en>Mastery of the Caza</en>
+      <en>Mastery of Caza</en>
       <es>Maestría de la Caza</es>
     </name>
     <openList>false</openList>
@@ -509,9 +509,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMasteryOfTheDeath</id>
+    <id>canalizationMasteryOfDeath</id>
     <name>
-      <en>Mastery of the Death</en>
+      <en>Mastery of Death</en>
       <es>Maestría de la Muerte</es>
     </name>
     <openList>false</openList>
@@ -522,9 +522,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMasteryOfThePiedras</id>
+    <id>canalizationMasteryOfPiedras</id>
     <name>
-      <en>Mastery of the Piedras</en>
+      <en>Mastery of Piedras</en>
       <es>Maestría de las Piedras</es>
     </name>
     <openList>false</openList>
@@ -535,9 +535,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMasteryOfTheTrees</id>
+    <id>canalizationMasteryOfTrees</id>
     <name>
-      <en>Mastery of the Trees</en>
+      <en>Mastery of Trees</en>
       <es>Maestría de los Árboles</es>
     </name>
     <openList>false</openList>
@@ -548,9 +548,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMasteryOfTheCaballos</id>
+    <id>canalizationMasteryOfCaballos</id>
     <name>
-      <en>Mastery of the Caballos</en>
+      <en>Mastery of Caballos</en>
       <es>Maestría de los Caballos</es>
     </name>
     <openList>false</openList>
@@ -561,9 +561,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMasteryOfTheInsectos</id>
+    <id>canalizationMasteryOfInsectos</id>
     <name>
-      <en>Mastery of the Insectos</en>
+      <en>Mastery of Insectos</en>
       <es>Maestría de los Insectos</es>
     </name>
     <openList>false</openList>
@@ -652,9 +652,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationVisionesEspirituales</id>
+    <id>canalizationVisionsEspirituales</id>
     <name>
-      <en>Visiones Espirituales</en>
+      <en>Visions Espirituales</en>
       <es>Visiones Espirituales</es>
     </name>
     <openList>false</openList>

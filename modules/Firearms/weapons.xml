@@ -36,9 +36,9 @@
   <weapon>
     <abbreviation>rflMf</abbreviation>
     <categoryId>weaponsFirearmTwoHanded</categoryId>
-    <id>muzzleloaderRifleMosqueteFrenchOf1600</id>
+    <id>muzzleloaderRifleMosqueyouFrenchOf1600</id>
     <name>
-      <en>Muzzleloader Rifle: Mosquete French of 1600</en>
+      <en>Muzzleloader Rifle: Mosqueyou French of 1600</en>
       <es>Rifle de Avancarga: Mosquete Francés de 1600</es>
     </name>
     <rare>false</rare>

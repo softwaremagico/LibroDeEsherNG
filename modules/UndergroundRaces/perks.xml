@@ -5,7 +5,7 @@
     <bonusesRaw>Ninguno</bonusesRaw>
     <cost>20</cost>
     <description>
-      <en>Necesitas a turno menos for lanzar a Spell. Si the Spell es instantaneous, tienes a +5 al Throw of Spells. Consulta the Page 99 of razas underground par More Information.</en>
+      <en>Necesitas a turno menos for lanzar a Spell. Si the spell es instantaneous, tienes a +5 to the Throw of Spells. Consulta the Page 99 of razas underground par More Information.</en>
       <es>Necesitas un turno menos para lanzar un hechizo. Si el hechizo es instantáneo, tienes un +5 al lanzamiento de hechizos. Consulta la página 99 de razas subterráneas par más información.</es>
     </description>
     <availableTo>
@@ -25,7 +25,7 @@
     <bonusesRaw>Conocimiento de los No-Muertos (5)</bonusesRaw>
     <cost>10</cost>
     <description>
-      <en>Also tus Undead son considerados of a nivel superior to efectos of turning. Consulta the Page 99 of razas underground par More Information.</en>
+      <en>Also your Undead son considerados of a nivel superior to efectos of turning. Consulta the Page 99 of razas underground par More Information.</en>
       <es>Además tus no-muertos son considerados de un nivel superior a efectos de dispersión. Consulta la página 99 de razas subterráneas par más información.</es>
     </description>
     <availableTo>

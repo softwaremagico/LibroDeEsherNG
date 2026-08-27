@@ -95,7 +95,7 @@
     <closedList>false</closedList>
     <id>mentalismEnduranceToTheSpells</id>
     <name>
-      <en>Endurance to the Spells</en>
+      <en>Endurance to the spells</en>
       <es>Resistencia a los Hechizos</es>
     </name>
     <openList>true</openList>
@@ -106,9 +106,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismEnduranceAlDamage</id>
+    <id>mentalismEnduranceToTheDamage</id>
     <name>
-      <en>Endurance al Damage</en>
+      <en>Endurance to the Damage</en>
       <es>Resistencia al Daño</es>
     </name>
     <openList>true</openList>
@@ -145,9 +145,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>mentalismMasteryOfTheSenses</id>
+    <id>mentalismMasteryOfSenses</id>
     <name>
-      <en>Mastery of the Senses</en>
+      <en>Mastery of Senses</en>
       <es>Maestría de los Sentidos</es>
     </name>
     <openList>false</openList>
@@ -262,9 +262,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheConcussion</id>
+    <id>mentalismMasteryOfConcussion</id>
     <name>
-      <en>Mastery of the Concussion</en>
+      <en>Mastery of Concussion</en>
       <es>Maestría de la Conmoción</es>
     </name>
     <openList>false</openList>
@@ -275,9 +275,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheSangre</id>
+    <id>mentalismMasteryOfBlood</id>
     <name>
-      <en>Mastery of the Sangre</en>
+      <en>Mastery of Blood</en>
       <es>Maestría de la Sangre</es>
     </name>
     <openList>false</openList>
@@ -288,9 +288,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheHuesos</id>
+    <id>mentalismMasteryOfHuesos</id>
     <name>
-      <en>Mastery of the Huesos</en>
+      <en>Mastery of Huesos</en>
       <es>Maestría de los Huesos</es>
     </name>
     <openList>false</openList>
@@ -301,9 +301,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheMuscles</id>
+    <id>mentalismMasteryOfMuscles</id>
     <name>
-      <en>Mastery of the Muscles</en>
+      <en>Mastery of Muscles</en>
       <es>Maestría de los Músculos</es>
     </name>
     <openList>false</openList>
@@ -314,9 +314,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheOrgansNervios</id>
+    <id>mentalismMasteryOfOrgansNervios</id>
     <name>
-      <en>Mastery of the Organs/Nervios</en>
+      <en>Mastery of Organs/Nervios</en>
       <es>Maestría de los Órganos/Nervios</es>
     </name>
     <openList>false</openList>
@@ -353,9 +353,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismControlOfTheSenses</id>
+    <id>mentalismControlOfSenses</id>
     <name>
-      <en>Control of the Senses</en>
+      <en>Control of Senses</en>
       <es>Control de los Sentidos</es>
     </name>
     <openList>false</openList>
@@ -418,9 +418,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismAmplificationOfTheSonido</id>
+    <id>mentalismAmplificationOfTheSound</id>
     <name>
-      <en>Amplification of the Sonido</en>
+      <en>Amplification of the Sound</en>
       <es>Amplificación del Sonido</es>
     </name>
     <openList>false</openList>
@@ -431,9 +431,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismCancionesOfControl</id>
+    <id>mentalismSongsOfControl</id>
     <name>
-      <en>Canciones of Control</en>
+      <en>Songs of Control</en>
       <es>Canciones de Control</es>
     </name>
     <openList>false</openList>
@@ -444,9 +444,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismLoreOfTheObjetos</id>
+    <id>mentalismLoreOfObjects</id>
     <name>
-      <en>Lore of the Objetos</en>
+      <en>Lore of Objects</en>
       <es>Conocimiento de los Objetos</es>
     </name>
     <openList>false</openList>
@@ -457,9 +457,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismControlOfTheSonido</id>
+    <id>mentalismControlOfSound</id>
     <name>
-      <en>Control of the Sonido</en>
+      <en>Control of Sound</en>
       <es>Control del Sonido</es>
     </name>
     <openList>false</openList>
@@ -483,9 +483,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismSendasOfTheDiversion</id>
+    <id>mentalismPathsOfDiversion</id>
     <name>
-      <en>Sendas of the Diversion</en>
+      <en>Paths of Diversion</en>
       <es>Sendas de la Diversión</es>
     </name>
     <openList>false</openList>
@@ -509,9 +509,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheDisfraces</id>
+    <id>mentalismMasteryOfDisfraces</id>
     <name>
-      <en>Mastery of the Disfraces</en>
+      <en>Mastery of Disfraces</en>
       <es>Maestría de los Disfraces</es>
     </name>
     <openList>false</openList>
@@ -522,9 +522,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfThePoisons</id>
+    <id>mentalismMasteryOfPoisons</id>
     <name>
-      <en>Mastery of the Poisons</en>
+      <en>Mastery of Poisons</en>
       <es>Maestría de los Venenos</es>
     </name>
     <openList>false</openList>
@@ -535,9 +535,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheAsesinato</id>
+    <id>mentalismMasteryOfAsesinato</id>
     <name>
-      <en>Mastery of the Asesinato</en>
+      <en>Mastery of Asesinato</en>
       <es>Maestría del Asesinato</es>
     </name>
     <openList>false</openList>
@@ -574,9 +574,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismSendasOfTheSuperficies</id>
+    <id>mentalismPathsOfSuperficies</id>
     <name>
-      <en>Sendas of the Superficies</en>
+      <en>Paths of Superficies</en>
       <es>Sendas de las Superficies</es>
     </name>
     <openList>false</openList>
@@ -587,9 +587,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismSendasOfTheMuscles</id>
+    <id>mentalismPathsOfMuscles</id>
     <name>
-      <en>Sendas of the Muscles</en>
+      <en>Paths of Muscles</en>
       <es>Sendas de los Músculos</es>
     </name>
     <openList>false</openList>
@@ -600,9 +600,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismSendasOfTheSangre</id>
+    <id>mentalismPathsOfBlood</id>
     <name>
-      <en>Sendas of the Sangre</en>
+      <en>Paths of Blood</en>
       <es>Sendas de la Sangre</es>
     </name>
     <openList>false</openList>
@@ -613,9 +613,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismSendasOfTheHuesos</id>
+    <id>mentalismPathsOfHuesos</id>
     <name>
-      <en>Sendas of the Huesos</en>
+      <en>Paths of Huesos</en>
       <es>Sendas de los Huesos</es>
     </name>
     <openList>false</openList>
@@ -626,9 +626,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismSendaOfTheOrgans</id>
+    <id>mentalismPathOfOrgans</id>
     <name>
-      <en>Senda of the Organs</en>
+      <en>Path of Organs</en>
       <es>Senda de los Órganos</es>
     </name>
     <openList>false</openList>
@@ -704,9 +704,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismSendasOfTheConfusion</id>
+    <id>mentalismPathsOfConfusion</id>
     <name>
-      <en>Sendas of the Confusion</en>
+      <en>Paths of Confusion</en>
       <es>Sendas de la Confusión</es>
     </name>
     <openList>false</openList>
@@ -717,9 +717,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismDominationOfTheMente</id>
+    <id>mentalismDominationOfTheMind</id>
     <name>
-      <en>Domination of the Mente</en>
+      <en>Domination of the Mind</en>
       <es>Dominación de la Mente</es>
     </name>
     <openList>false</openList>
@@ -743,9 +743,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismErosionOfTheMente</id>
+    <id>mentalismErosionOfTheMind</id>
     <name>
-      <en>Erosion of the Mente</en>
+      <en>Erosion of the Mind</en>
       <es>Erosión de la Mente</es>
     </name>
     <openList>false</openList>
@@ -769,9 +769,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismDeathOfTheMente</id>
+    <id>mentalismDeathOfTheMind</id>
     <name>
-      <en>Death of the Mente</en>
+      <en>Death of the Mind</en>
       <es>Muerte de la Mente</es>
     </name>
     <openList>false</openList>
@@ -782,9 +782,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismSubversionOfTheMente</id>
+    <id>mentalismSubversionOfTheMind</id>
     <name>
-      <en>Subversion of the Mente</en>
+      <en>Subversion of the Mind</en>
       <es>Subversión de la Mente</es>
     </name>
     <openList>false</openList>

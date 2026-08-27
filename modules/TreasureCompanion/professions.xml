@@ -148,7 +148,7 @@ Urbana	3</categoryCostsRaw>
       <characteristic>Fu</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Conocimiento de los Artefactos, Meditación, Ritual Mágico, Sentido del Tiempo, Canalización</commonSkillsRaw>
-    <id>alquimistaOfChanneling</id>
+    <id>alchemistOfChanneling</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
 Lista Básica (6-10)	3/3/3
@@ -201,7 +201,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	8/8
 Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	8/8
 Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     <name>
-      <en>Alquimista of Channeling</en>
+      <en>Alchemist of Channeling</en>
       <es>Alquimista de Canalización</es>
     </name>
     <professionalSkillsRaw>Oficios#6, Religión</professionalSkillsRaw>
@@ -559,7 +559,7 @@ Urbana	3</categoryCostsRaw>
       <characteristic>In</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Conocimiento de los Artefactos, Meditación, Ritual Mágico, Sentido del Tiempo</commonSkillsRaw>
-    <id>alquimistaOfEssence</id>
+    <id>alchemistOfEssence</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
 Lista Básica (6-10)	3/3/3
@@ -612,7 +612,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	8/8
 Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	8/8
 Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     <name>
-      <en>Alquimista of Essence</en>
+      <en>Alchemist of Essence</en>
       <es>Alquimista de Esencia</es>
     </name>
     <professionalSkillsRaw>Oficios#6</professionalSkillsRaw>
@@ -970,7 +970,7 @@ Urbana	3</categoryCostsRaw>
       <characteristic>Em</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Conocimiento de los Artefactos, Meditación, Ritual Mágico, Sentido del Tiempo, Detectar Mentiras</commonSkillsRaw>
-    <id>alquimistaOfMentalism</id>
+    <id>alchemistOfMentalism</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
 Lista Básica (6-10)	3/3/3
@@ -1023,7 +1023,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	8/8
 Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	8/8
 Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     <name>
-      <en>Alquimista of Mentalism</en>
+      <en>Alchemist of Mentalism</en>
       <es>Alquimista de Mentalismo</es>
     </name>
     <professionalSkillsRaw>Oficios#6</professionalSkillsRaw>

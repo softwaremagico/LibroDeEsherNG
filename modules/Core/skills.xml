@@ -858,9 +858,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>controlOfTheLycanthropy</id>
+    <id>controlOfLycanthropy</id>
     <name>
-      <en>Control of the Lycanthropy</en>
+      <en>Control of Lycanthropy</en>
       <es>Control de la Licantropía</es>
     </name>
     <rare>false</rare>
@@ -1157,9 +1157,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfTheFauna</id>
+    <id>loreOfFauna</id>
     <name>
-      <en>Lore of the Fauna</en>
+      <en>Lore of Fauna</en>
       <es>Conocimiento de la Fauna</es>
     </name>
     <rare>false</rare>
@@ -1170,9 +1170,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfTheFlora</id>
+    <id>loreOfFlora</id>
     <name>
-      <en>Lore of the Flora</en>
+      <en>Lore of Flora</en>
       <es>Conocimiento de la Flora</es>
     </name>
     <rare>false</rare>
@@ -1274,9 +1274,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreArcane</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfTheArtifacts</id>
+    <id>loreOfArtifacts</id>
     <name>
-      <en>Lore of the Artifacts</en>
+      <en>Lore of Artifacts</en>
       <es>Conocimiento de los Artefactos</es>
     </name>
     <rare>false</rare>
@@ -1287,9 +1287,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreArcane</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfTheSpells</id>
+    <id>loreOfSpells</id>
     <name>
-      <en>Lore of the Spells</en>
+      <en>Lore of spells</en>
       <es>Conocimiento de los Hechizos</es>
     </name>
     <rare>false</rare>
@@ -1300,9 +1300,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreArcane</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfTheUndead</id>
+    <id>loreOfUndead</id>
     <name>
-      <en>Lore of the Undead</en>
+      <en>Lore of Undead</en>
       <es>Conocimiento de los No-Muertos</es>
     </name>
     <rare>false</rare>
@@ -1313,9 +1313,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreArcane</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfTheProtections</id>
+    <id>loreOfProtections</id>
     <name>
-      <en>Lore of the Protections</en>
+      <en>Lore of Protections</en>
       <es>Conocimiento de las Protecciones</es>
     </name>
     <rare>false</rare>
@@ -1326,9 +1326,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreArcane</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfThePlanes</id>
+    <id>loreOfPlanes</id>
     <name>
-      <en>Lore of the Planes</en>
+      <en>Lore of Planes</en>
       <es>Conocimiento de los Planos</es>
     </name>
     <rare>false</rare>
@@ -1339,9 +1339,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreArcane</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfTheSymbols</id>
+    <id>loreOfSymbols</id>
     <name>
-      <en>Lore of the Symbols</en>
+      <en>Lore of Symbols</en>
       <es>Conocimiento de los Símbolos</es>
     </name>
     <rare>false</rare>
@@ -1352,9 +1352,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreDark</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfTheFey</id>
+    <id>loreOfFey</id>
     <name>
-      <en>Lore of the Fey</en>
+      <en>Lore of Fey</en>
       <es>Conocimiento de las Hadas</es>
     </name>
     <rare>false</rare>
@@ -1365,9 +1365,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreDark</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfTheDragons</id>
+    <id>loreOfDragons</id>
     <name>
-      <en>Lore of the Dragons</en>
+      <en>Lore of Dragons</en>
       <es>Conocimiento de los Dragones</es>
     </name>
     <rare>false</rare>
@@ -1404,9 +1404,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreTechnical</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfTheStone</id>
+    <id>loreOfStone</id>
     <name>
-      <en>Lore of the Stone</en>
+      <en>Lore of Stone</en>
       <es>Conocimiento de la Piedra</es>
     </name>
     <rare>false</rare>
@@ -1417,9 +1417,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreTechnical</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfTheLocks</id>
+    <id>loreOfLocks</id>
     <name>
-      <en>Lore of the Locks</en>
+      <en>Lore of Locks</en>
       <es>Conocimiento de las Cerraduras</es>
     </name>
     <rare>false</rare>
@@ -1430,9 +1430,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreTechnical</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfTheHerbs</id>
+    <id>loreOfHerbs</id>
     <name>
-      <en>Lore of the Herbs</en>
+      <en>Lore of Herbs</en>
       <es>Conocimiento de las Hierbas</es>
     </name>
     <rare>false</rare>
@@ -1443,9 +1443,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreTechnical</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfTheMetals</id>
+    <id>loreOfMetals</id>
     <name>
-      <en>Lore of the Metals</en>
+      <en>Lore of Metals</en>
       <es>Conocimiento de los Metales</es>
     </name>
     <rare>false</rare>
@@ -1456,9 +1456,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreTechnical</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfThePoisons</id>
+    <id>loreOfPoisons</id>
     <name>
-      <en>Lore of the Poisons</en>
+      <en>Lore of Poisons</en>
       <es>Conocimiento de los Venenos</es>
     </name>
     <rare>false</rare>
@@ -1469,9 +1469,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreTechnical</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>loreOfTheTrade</id>
+    <id>loreOfTrade</id>
     <name>
-      <en>Lore of the Trade</en>
+      <en>Lore of Trade</en>
       <es>Conocimiento del Comercio</es>
     </name>
     <rare>false</rare>
@@ -1482,9 +1482,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>specialDefenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>aguanteAdrenal</id>
+    <id>aguanyouAdrenal</id>
     <name>
-      <en>Aguante Adrenal</en>
+      <en>Aguanyou Adrenal</en>
       <es>Aguante Adrenal</es>
     </name>
     <rare>false</rare>
@@ -1495,9 +1495,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>specialDefenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>defenseAdrenal</id>
+    <id>defenisAdrenal</id>
     <name>
-      <en>Defense Adrenal</en>
+      <en>Defenis Adrenal</en>
       <es>Defensa Adrenal</es>
     </name>
     <rare>false</rare>
@@ -2132,9 +2132,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>masteryOfTheSpells</id>
+    <id>masteryOfSpells</id>
     <name>
-      <en>Mastery of the Spells</en>
+      <en>Mastery of spells</en>
       <es>Maestría de los Hechizos</es>
     </name>
     <rare>false</rare>
@@ -2145,9 +2145,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>masteryOfTheSpellsControlOfTheAire</id>
+    <id>masteryOfSpellsControlOfAir</id>
     <name>
-      <en>Mastery of the Spells: Control of the Aire</en>
+      <en>Mastery of spells: Control of Air</en>
       <es>Maestría de los Hechizos: Control del Aire</es>
     </name>
     <rare>false</rare>
@@ -2158,9 +2158,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>masteryOfTheSpellsLawOfTheLight</id>
+    <id>masteryOfSpellsLawOfLight</id>
     <name>
-      <en>Mastery of the Spells: Law of the Light</en>
+      <en>Mastery of spells: Law of Light</en>
       <es>Maestría de los Hechizos: Ley de la Luz</es>
     </name>
     <rare>false</rare>
@@ -2171,9 +2171,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>masteryOfTheSpellsMasteryOfTheEspiritus</id>
+    <id>masteryOfSpellsMasteryOfEspiritus</id>
     <name>
-      <en>Mastery of the Spells: Mastery of the Espiritus</en>
+      <en>Mastery of spells: Mastery of Espiritus</en>
       <es>Maestría de los Hechizos: Maestría de los Espiritus</es>
     </name>
     <rare>false</rare>
@@ -2561,9 +2561,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>sentidoOfTheDirection</id>
+    <id>senseOfDirection</id>
     <name>
-      <en>Sentido of the Direction</en>
+      <en>Sense of Direction</en>
       <es>Sentido de la Dirección</es>
     </name>
     <rare>false</rare>
@@ -2574,9 +2574,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>sentidoOfTheEspacio</id>
+    <id>senseOfEspacio</id>
     <name>
-      <en>Sentido of the Espacio</en>
+      <en>Sense of Espacio</en>
       <es>Sentido del Espacio</es>
     </name>
     <rare>false</rare>
@@ -2587,9 +2587,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>sentidoOfTheTiempo</id>
+    <id>senseOfTiempo</id>
     <name>
-      <en>Sentido of the Tiempo</en>
+      <en>Sense of Tiempo</en>
       <es>Sentido del Tiempo</es>
     </name>
     <rare>false</rare>
@@ -2665,9 +2665,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>sentidoOfTheRealidad</id>
+    <id>senseOfRealidad</id>
     <name>
-      <en>Sentido of the Realidad</en>
+      <en>Sense of Realidad</en>
       <es>Sentido de la Realidad</es>
     </name>
     <rare>false</rare>
@@ -2691,9 +2691,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>powerAwareness</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>readingRunas</id>
+    <id>readingRunes</id>
     <name>
-      <en>Reading Runas</en>
+      <en>Reading Runes</en>
       <es>Leer Runas</es>
     </name>
     <rare>false</rare>
@@ -2886,9 +2886,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>subterfugeMechanics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>ocultarObjetos</id>
+    <id>ocultarObjects</id>
     <name>
-      <en>Ocultar Objetos</en>
+      <en>Ocultar Objects</en>
       <es>Ocultar Objetos</es>
     </name>
     <rare>false</rare>

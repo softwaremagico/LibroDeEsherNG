@@ -2,9 +2,9 @@
 <spells>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismLoreOfTheEstrellas</id>
+    <id>mentalismLoreOfStars</id>
     <name>
-      <en>Lore of the Estrellas</en>
+      <en>Lore of Stars</en>
       <es>Conocimiento de las Estrellas</es>
     </name>
     <openList>false</openList>
@@ -16,9 +16,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismLucesOfTheEstrellas</id>
+    <id>mentalismLightsOfStars</id>
     <name>
-      <en>Luces of the Estrellas</en>
+      <en>Lights of Stars</en>
       <es>Luces de las Estrellas</es>
     </name>
     <openList>false</openList>
@@ -29,9 +29,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismSendasOfTheVoz</id>
+    <id>mentalismPathsOfVoice</id>
     <name>
-      <en>Sendas of the Voz</en>
+      <en>Paths of Voice</en>
       <es>Sendas de la Voz</es>
     </name>
     <openList>false</openList>
@@ -42,9 +42,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismSentidoOfTheEstrellas</id>
+    <id>mentalismSenseOfStars</id>
     <name>
-      <en>Sentido of the Estrellas</en>
+      <en>Sense of Stars</en>
       <es>Sentido de las Estrellas</es>
     </name>
     <openList>false</openList>
@@ -55,9 +55,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismVisionesSagradas</id>
+    <id>mentalismVisionsSagradas</id>
     <name>
-      <en>Visiones Sagradas</en>
+      <en>Visions Sagradas</en>
       <es>Visiones Sagradas</es>
     </name>
     <openList>false</openList>
@@ -68,9 +68,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismVozLejana</id>
+    <id>mentalismVoiceLejana</id>
     <name>
-      <en>Voz Lejana</en>
+      <en>Voice Lejana</en>
       <es>Voz Lejana</es>
     </name>
     <openList>false</openList>
@@ -81,9 +81,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismEspejismoOfDefense</id>
+    <id>mentalismMirageOfDefense</id>
     <name>
-      <en>Espejismo of Defense</en>
+      <en>Mirage of Defense</en>
       <es>Espejismo de Defensa</es>
     </name>
     <openList>false</openList>
@@ -94,9 +94,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismEspejismoOfRecuerdos</id>
+    <id>mentalismMirageOfMemories</id>
     <name>
-      <en>Espejismo of Recuerdos</en>
+      <en>Mirage of Memories</en>
       <es>Espejismo de Recuerdos</es>
     </name>
     <openList>false</openList>
@@ -107,9 +107,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismLawOfTheEspejismos</id>
+    <id>mentalismLawOfMirages</id>
     <name>
-      <en>Law of the Espejismos</en>
+      <en>Law of Mirages</en>
       <es>Ley de los Espejismos</es>
     </name>
     <openList>false</openList>
@@ -120,9 +120,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheEspejismos</id>
+    <id>mentalismMasteryOfMirages</id>
     <name>
-      <en>Mastery of the Espejismos</en>
+      <en>Mastery of Mirages</en>
       <es>Maestría de los Espejismos</es>
     </name>
     <openList>false</openList>
@@ -133,9 +133,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMejoraOfTheEspejismos</id>
+    <id>mentalismEnhancementOfMirages</id>
     <name>
-      <en>Mejora of the Espejismos</en>
+      <en>Enhancement of Mirages</en>
       <es>Mejora de los Espejismos</es>
     </name>
     <openList>false</openList>
@@ -146,9 +146,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismProjectionOfTheEspejismos</id>
+    <id>mentalismProjectionOfMirages</id>
     <name>
-      <en>Projection of the Espejismos</en>
+      <en>Projection of Mirages</en>
       <es>Proyección de los Espejismos</es>
     </name>
     <openList>false</openList>
@@ -159,9 +159,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismLawOfTheBatalla</id>
+    <id>mentalismLawOfBattle</id>
     <name>
-      <en>Law of the Batalla</en>
+      <en>Law of Battle</en>
       <es>Ley de la Batalla</es>
     </name>
     <openList>false</openList>
@@ -172,9 +172,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismLawOfTheFortaleza</id>
+    <id>mentalismLawOfFortitude</id>
     <name>
-      <en>Law of the Fortaleza</en>
+      <en>Law of Fortitude</en>
       <es>Ley de la Fortaleza</es>
     </name>
     <openList>false</openList>
@@ -185,9 +185,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismLawOfTheWarrior</id>
+    <id>mentalismLawOfWarrior</id>
     <name>
-      <en>Law of the Warrior</en>
+      <en>Law of Warrior</en>
       <es>Ley del Guerrero</es>
     </name>
     <openList>false</openList>
@@ -211,9 +211,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheArmaduras</id>
+    <id>mentalismMasteryOfArmor</id>
     <name>
-      <en>Mastery of the Armaduras</en>
+      <en>Mastery of Armor</en>
       <es>Maestría de las Armaduras</es>
     </name>
     <openList>false</openList>
@@ -224,9 +224,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheWeapons</id>
+    <id>mentalismMasteryOfWeapons</id>
     <name>
-      <en>Mastery of the Weapons</en>
+      <en>Mastery of Weapons</en>
       <es>Maestría de las Armas</es>
     </name>
     <openList>false</openList>
@@ -237,9 +237,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismAppropriationOfTheVision</id>
+    <id>mentalismAppropriationOfVision</id>
     <name>
-      <en>Appropriation of the Vision</en>
+      <en>Appropriation of Vision</en>
       <es>Apropiación de la Visión</es>
     </name>
     <openList>false</openList>
@@ -250,9 +250,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismProtectionOfTheVisiones</id>
+    <id>mentalismProtectionOfVisions</id>
     <name>
-      <en>Protection of the Visiones</en>
+      <en>Protection of Visions</en>
       <es>Protección de las Visiones</es>
     </name>
     <openList>false</openList>
@@ -263,9 +263,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismVisionesLejanas</id>
+    <id>mentalismVisionsLejanas</id>
     <name>
-      <en>Visiones Lejanas</en>
+      <en>Visions Lejanas</en>
       <es>Visiones Lejanas</es>
     </name>
     <openList>false</openList>
@@ -276,9 +276,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismVisionesOfTheFuturo</id>
+    <id>mentalismVisionsOfFuture</id>
     <name>
-      <en>Visiones of the Futuro</en>
+      <en>Visions of Future</en>
       <es>Visiones del Futuro</es>
     </name>
     <openList>false</openList>
@@ -290,9 +290,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismVisionesOfThePasado</id>
+    <id>mentalismVisionsOfPast</id>
     <name>
-      <en>Visiones of the Pasado</en>
+      <en>Visions of Past</en>
       <es>Visiones del Pasado</es>
     </name>
     <openList>false</openList>
@@ -303,9 +303,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismVisionesMentales</id>
+    <id>mentalismVisionsMentales</id>
     <name>
-      <en>Visiones Mentales</en>
+      <en>Visions Mentales</en>
       <es>Visiones Mentales</es>
     </name>
     <openList>false</openList>
@@ -329,9 +329,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismLawOfTheMedicina</id>
+    <id>mentalismLawOfMedicine</id>
     <name>
-      <en>Law of the Medicina</en>
+      <en>Law of Medicine</en>
       <es>Ley de la Medicina</es>
     </name>
     <openList>false</openList>
@@ -342,9 +342,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMedicina</id>
+    <id>mentalismMedicine</id>
     <name>
-      <en>Medicina</en>
+      <en>Medicine</en>
       <es>Medicina</es>
     </name>
     <openList>false</openList>
@@ -355,9 +355,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheNavigation</id>
+    <id>mentalismMasteryOfNavigation</id>
     <name>
-      <en>Mastery of the Navigation</en>
+      <en>Mastery of Navigation</en>
       <es>Maestría de la Navegación</es>
     </name>
     <openList>false</openList>
@@ -368,9 +368,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheMar</id>
+    <id>mentalismMasteryOfSea</id>
     <name>
-      <en>Mastery of the Mar</en>
+      <en>Mastery of Sea</en>
       <es>Maestría del Mar</es>
     </name>
     <openList>false</openList>
@@ -381,22 +381,22 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheLore</id>
+    <id>mentalismMasteryOfLore</id>
     <name>
-      <en>Mastery of the Lore</en>
+      <en>Mastery of Lore</en>
       <es>Maestría del Conocimiento</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Sabio</owner>
+      <owner>wise</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismKissesOfTheHouri</id>
+    <id>mentalismKissesOfHouri</id>
     <name>
-      <en>Kisses of the Houri</en>
+      <en>Kisses of Houri</en>
       <es>Besos del Houri</es>
     </name>
     <openList>false</openList>
@@ -407,9 +407,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismDeceptionsOfTheHouri</id>
+    <id>mentalismDeceptionsOfHouri</id>
     <name>
-      <en>Deceptions of the Houri</en>
+      <en>Deceptions of Houri</en>
       <es>Engaños del Houri</es>
     </name>
     <openList>false</openList>
@@ -433,9 +433,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismLawOfTheDreams</id>
+    <id>mentalismLawOfDreams</id>
     <name>
-      <en>Law of the Dreams</en>
+      <en>Law of Dreams</en>
       <es>Ley de los Sueños</es>
     </name>
     <openList>false</openList>
@@ -446,9 +446,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismLoreOfTheDreams</id>
+    <id>mentalismLoreOfDreams</id>
     <name>
-      <en>Lore of the Dreams</en>
+      <en>Lore of Dreams</en>
       <es>Conocimiento de los Sueños</es>
     </name>
     <openList>false</openList>
@@ -466,15 +466,15 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Señor of the Bestias</owner>
+      <owner>Lord of the Beasts</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismCambioOfMente</id>
+    <id>mentalismChangeOfMind</id>
     <name>
-      <en>Cambio of Mente</en>
+      <en>Change of Mind</en>
       <es>Cambio de Mente</es>
     </name>
     <openList>false</openList>
@@ -485,9 +485,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismCambioOfBody</id>
+    <id>mentalismChangeOfBody</id>
     <name>
-      <en>Cambio of Body</en>
+      <en>Change of Body</en>
       <es>Cambio de Cuerpo</es>
     </name>
     <openList>false</openList>

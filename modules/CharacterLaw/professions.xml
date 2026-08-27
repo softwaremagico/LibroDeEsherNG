@@ -3562,7 +3562,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <trainingCost>
         <cost>30</cost>
         <costNotMagic>30</costNotMagic>
-        <trainingName>migoOfTheBestias</trainingName>
+        <trainingName>migoOfTheBeasts</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
@@ -4410,7 +4410,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <trainingCost>
         <cost>33</cost>
         <costNotMagic>33</costNotMagic>
-        <trainingName>aamigoOfTheBestias</trainingName>
+        <trainingName>aamigoOfTheBeasts</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>

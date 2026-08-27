@@ -303,9 +303,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>scienceAnalyticTechnique</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>creationOfArtilugios</id>
+    <id>creationOfDevices</id>
     <name>
-      <en>Creation of Artilugios</en>
+      <en>Creation of Devices</en>
       <es>Creación de Artilugios</es>
     </name>
     <rare>false</rare>
@@ -888,9 +888,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreAcademic</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>comparisonOfReligiones</id>
+    <id>comparisonOfReligions</id>
     <name>
-      <en>Comparison of Religiones</en>
+      <en>Comparison of Religions</en>
       <es>Comparación de Religiones</es>
     </name>
     <rare>false</rare>
@@ -1083,9 +1083,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>jugarAlBillar</id>
+    <id>jugarToTheBillar</id>
     <name>
-      <en>Jugar al Billar</en>
+      <en>Jugar to the Billar</en>
       <es>Jugar al Billar</es>
     </name>
     <rare>false</rare>
@@ -1122,9 +1122,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>captainOfBarco</id>
+    <id>captainOfShip</id>
     <name>
-      <en>Captain of Barco</en>
+      <en>Captain of Ship</en>
       <es>Capitán de Barco</es>
     </name>
     <rare>false</rare>

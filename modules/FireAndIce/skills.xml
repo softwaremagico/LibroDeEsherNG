@@ -4,9 +4,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>bolaOfAether</id>
+    <id>ballOfAether</id>
     <name>
-      <en>Bola of Aether</en>
+      <en>Ball of Aether</en>
       <es>Bola de Éter</es>
     </name>
     <rare>false</rare>
@@ -17,9 +17,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>rayoOfAether</id>
+    <id>boltOfAether</id>
     <name>
-      <en>Rayo of Aether</en>
+      <en>Bolt of Aether</en>
       <es>Rayo de Éter</es>
     </name>
     <rare>false</rare>
@@ -30,9 +30,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>rayoOfAire</id>
+    <id>boltOfAir</id>
     <name>
-      <en>Rayo of Aire</en>
+      <en>Bolt of Air</en>
       <es>Rayo de Aire</es>
     </name>
     <rare>false</rare>
@@ -56,9 +56,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>rayoOfCold</id>
+    <id>boltOfCold</id>
     <name>
-      <en>Rayo of Cold</en>
+      <en>Bolt of Cold</en>
       <es>Rayo de Frío</es>
     </name>
     <rare>false</rare>
@@ -69,9 +69,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>rayoOfStrength</id>
+    <id>boltOfStrength</id>
     <name>
-      <en>Rayo of Strength</en>
+      <en>Bolt of Strength</en>
       <es>Rayo de Fuerza</es>
     </name>
     <rare>false</rare>
@@ -82,9 +82,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>bolaOfVoid</id>
+    <id>ballOfVoid</id>
     <name>
-      <en>Bola of Void</en>
+      <en>Ball of Void</en>
       <es>Bola de Vacío</es>
     </name>
     <rare>false</rare>
@@ -95,9 +95,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>rayoOfVoid</id>
+    <id>boltOfVoid</id>
     <name>
-      <en>Rayo of Void</en>
+      <en>Bolt of Void</en>
       <es>Rayo de Vacío</es>
     </name>
     <rare>false</rare>
@@ -108,9 +108,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>rayoOfVapor</id>
+    <id>boltOfSteam</id>
     <name>
-      <en>Rayo of Vapor</en>
+      <en>Bolt of Steam</en>
       <es>Rayo de Vapor</es>
     </name>
     <rare>false</rare>

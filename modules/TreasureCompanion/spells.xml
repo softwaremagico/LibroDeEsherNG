@@ -9,7 +9,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Channeling</owner>
+      <owner>Alchemist of Channeling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -22,7 +22,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Channeling</owner>
+      <owner>Alchemist of Channeling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -35,7 +35,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Channeling</owner>
+      <owner>Alchemist of Channeling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -48,20 +48,20 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Channeling</owner>
+      <owner>Alchemist of Channeling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationArmadurasSagradas</id>
+    <id>canalizationArmorSagradas</id>
     <name>
-      <en>Armaduras Sagradas</en>
+      <en>Armor Sagradas</en>
       <es>Armaduras Sagradas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Channeling</owner>
+      <owner>Alchemist of Channeling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -74,7 +74,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Channeling</owner>
+      <owner>Alchemist of Channeling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -87,7 +87,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Channeling</owner>
+      <owner>Alchemist of Channeling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -100,7 +100,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Channeling</owner>
+      <owner>Alchemist of Channeling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -113,7 +113,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Channeling</owner>
+      <owner>Alchemist of Channeling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -126,7 +126,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Essence</owner>
+      <owner>Alchemist of Essence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -139,7 +139,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Essence</owner>
+      <owner>Alchemist of Essence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -152,7 +152,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Essence</owner>
+      <owner>Alchemist of Essence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -165,46 +165,46 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Essence</owner>
+      <owner>Alchemist of Essence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceAnalysisOfTheObjetos</id>
+    <id>essenceAnalysisOfObjects</id>
     <name>
-      <en>Analysis of the Objetos</en>
+      <en>Analysis of Objects</en>
       <es>Análisis de los Objetos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Essence</owner>
+      <owner>Alchemist of Essence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceEncantamientosOfArmaduras</id>
+    <id>essenceEnchantmentsOfArmor</id>
     <name>
-      <en>Encantamientos of Armaduras</en>
+      <en>Enchantments of Armor</en>
       <es>Encantamientos de Armaduras</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Essence</owner>
+      <owner>Alchemist of Essence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceEncantamientosOfWeapons</id>
+    <id>essenceEnchantmentsOfWeapons</id>
     <name>
-      <en>Encantamientos of Weapons</en>
+      <en>Enchantments of Weapons</en>
       <es>Encantamientos de Armas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Essence</owner>
+      <owner>Alchemist of Essence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -217,7 +217,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Essence</owner>
+      <owner>Alchemist of Essence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -230,7 +230,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Essence</owner>
+      <owner>Alchemist of Essence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -243,7 +243,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Mentalism</owner>
+      <owner>Alchemist of Mentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -256,7 +256,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Mentalism</owner>
+      <owner>Alchemist of Mentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -269,7 +269,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Mentalism</owner>
+      <owner>Alchemist of Mentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -282,7 +282,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Mentalism</owner>
+      <owner>Alchemist of Mentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -295,46 +295,46 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Mentalism</owner>
+      <owner>Alchemist of Mentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheDefenses</id>
+    <id>mentalismMasteryOfDefenses</id>
     <name>
-      <en>Mastery of the Defenses</en>
+      <en>Mastery of Defenses</en>
       <es>Maestría de las Defensas</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Mentalism</owner>
+      <owner>Alchemist of Mentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheAttacks</id>
+    <id>mentalismMasteryOfAttacks</id>
     <name>
-      <en>Mastery of the Attacks</en>
+      <en>Mastery of Attacks</en>
       <es>Maestría de los Ataques</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Mentalism</owner>
+      <owner>Alchemist of Mentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismMasteryOfTheEntendimiento</id>
+    <id>mentalismMasteryOfUnderstanding</id>
     <name>
-      <en>Mastery of the Entendimiento</en>
+      <en>Mastery of Understanding</en>
       <es>Maestría del Entendimiento</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Mentalism</owner>
+      <owner>Alchemist of Mentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -347,7 +347,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Alquimista of Mentalism</owner>
+      <owner>Alchemist of Mentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
