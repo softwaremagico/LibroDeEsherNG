@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adiestramientos>
+  <adiestramiento>
+    <availableToEveryRace>false</availableToEveryRace>
+    <categoriesRaw>Desarrollo Físico	0	1	1	2
+  *  Desarrollo Físico	2
+Manipulación del Poder	0	1	1	2
+  *  Trascender Armadura	2
+Percepción de Poder	1	1	1	1
+{Armadura·Ligera; Armadura·Media; Armadura·Pesada}	2	1	1	2
+{Armas·2manos; Armas·Arrojadizas; Armas·Artillería; Armas·Contundentes; Armas·Asta; Armas·Filo; Armas·Proyectiles}	1	1	1	1
+{Listas Básicas de Hechizos; Listas Abiertas de Hechizos}	0	1	1	2</categoriesRaw>
+    <id>Rukleftak-sher</id>
+    <name>Rukleftak-sher</name>
+    <limitedRaces>
+      <race>Orco Gris</race>
+    </limitedRaces>
+    <specialItems>
+      <specialItem>
+        <bonus>20</bonus>
+        <name>Arma cuerpo a cuerpo (no mágica)</name>
+        <probability>50</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Armadura (no mágica)</name>
+        <probability>50</probability>
+        <skillName>Armadura</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Multiplicador PPs (x2)</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Escudo (no mágico)</name>
+        <probability>40</probability>
+        <skillName>Armadura</skillName>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Arma (no mágica)</name>
+        <probability>30</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Objeto diario II</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Sumando de hechizos (+1)</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>5</bonus>
+        <name>Arma (no magica)</name>
+        <probability>100</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>70</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>false</fixed>
+        <options>
+          <option>Ag</option>
+          <option>Co</option>
+          <option>Ra</option>
+          <option>Me</option>
+          <option>Ad</option>
+          <option>Em</option>
+          <option>Pr</option>
+          <option>In</option>
+          <option>Rp</option>
+          <option>Fu</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>false</availableToEveryRace>
+    <categoriesRaw>Listas Básicas de Hechizos	0	1	1	2
+  *  Nigromancia	2	-	-	-	
+Técnica/Comercio·General	1	1	1	1
+  *  Primeros Auxilios	1	-	-	-
+Técnica/Comercio·Profesional	0	2	2	2
+  *  Cuidados Médicos	1	-	-	-
+  *  Cirugía	1	-	-	-
+Ciencia/Analítica·Especializada	0	1	1	1
+  *  Anatomía	1	-	-	-
+Conocimiento·Mágico	2	1	1	2
+  *  Conocimiento de los No-Muertos	2	-	-	-
+Manipulación del Poder	0	2	3	3
+  *  Canalización	1	-	-	-
+{Armas·2manos; Armas·Arrojadizas; Armas·Artillería; Armas·Contundentes; Armas·Asta; Armas·Filo; Armas·Proyectiles}	1	1	1	1</categoriesRaw>
+    <id>Shaguk Kun-Toramim</id>
+    <name>Shaguk Kun-Toramim</name>
+    <limitedRaces>
+      <race>Orco Gris</race>
+    </limitedRaces>
+    <specialItems>
+      <specialItem>
+        <name>Multiplicador PPs (x2)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Arma cuerpo a cuerpo (no mágica)</name>
+        <probability>40</probability>
+        <skillName>Arma Cuerpo a Cuerpo</skillName>
+      </specialItem>
+      <specialItem>
+        <name>1-2 Ulogat-Toram</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Objeto diario III</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Libro</name>
+        <probability>30</probability>
+        <skillName>Conocimiento de los No-Muertos</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Zombi sin manos</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Sumando de hechizos (+1)</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>69</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>In</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+</adiestramientos>

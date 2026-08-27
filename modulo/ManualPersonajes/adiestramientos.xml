@@ -1,0 +1,988 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adiestramientos>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Oficios	0	1	3	3
+Técnica/Comercio·General	3	1	3	3
+Técnica/Comercio·Vocacional	0	1	2	2</categoriesRaw>
+    <id>Artesano</id>
+    <name>Artesano</name>
+    <specialItems>
+      <specialItem>
+        <name>Trabajo artesano de calidad (10d10 mp)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Trabajo artesano de calidad (8d10 mp)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Trabajo artesano de calidad (6d10 mp)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Trabajo artesano de calidad (4d10 mp)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Trabajo artesano de calidad (2d10 mp)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Herramientas de calidad (+15 a un oficio específico)</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Herramientas de calidad (+10 a un oficio específico)</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Herramientas (+5 a un oficio específico)</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>28</trainingTimeInMonths>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Arte·Pasivo	2	1	2	2
+Artes Marciales·Barridos	3	2	2	3
+  *  Artes Marciales·Barridos	2	-	-	-
+  *  Inmovilizaciones	1	-	-	-
+Artes Marciales·Golpes	3	2	2	3
+  *  Golpes de Artes Marciales	2	-	-	-
+  *  Golpes Nerviosos	1	-	-	-
+Artes Marciales·Maniobras de Combate	0	1	1	2
+Autocontrol	2	1	2	2
+Conocimiento·General	2	2	3	4
+  *  Conocimiento de Estilos Marciales	2	-	-	-
+Desarrollo Físico	0	1	1	2
+  *  Desarrollo Físico	2	-	-	-</categoriesRaw>
+    <id>Artista Marcial</id>
+    <name>Artista Marcial</name>
+    <specialItems>
+      <specialItem>
+        <name>Victoria en un torneo local</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Pergamino (+10 no mágico a un conocimiento concreto)</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Pergamino (+5 no mágico a una categoría de conocimiento)</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Hierbas Comunes (1d5 dosis)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>5</bonus>
+        <name>Muñequeras</name>
+        <probability>30</probability>
+        <skillName>Artes Marciales·Golpes</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Libro (+5 no mágico a un conocimiento concreto)</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Reputación como luchador habilidoso</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>73</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Fu</option>
+        </options>
+      </upgradeChoice>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Ag</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>{Armas·2manos; Armas·Arrojadizas; Armas·Artillería; Armas·Contundentes; Armas·Asta; Armas·Filo; Armas·Fuego 1mano; Armas·Fuego 2manos; Armas·Proyectiles; Artes Marciales·Barridos; Artes Marciales·Golpes}	1	1	1	1
+Ataques Especiales	0	1	1	2
+Percepción·Sentidos	1	1	1	1
+Subterfugio·Ataque	0	1	2	3
+Subterfugio·Mecánica	1	1	1	1
+Subterfugio·Sigilo	2	1	2	2</categoriesRaw>
+    <id>Asesino</id>
+    <name>Asesino</name>
+    <specialItems>
+      <specialItem>
+        <name>Arma de mano (+10 no mágica)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Arma de proyectiles (+10 no mágica)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>2d10 proyectiles (+10 no mágica)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Conctacto en los bajos fondos</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de persona importante</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de persona importante</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de persona importante</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de persona importante</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Casa relativamente segura (lugar para ocultarse)</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>30</trainingTimeInMonths>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Arma	3	1	2	3
+Arma	1	1	1	1
+Autocontrol	4	1	1	4
+  *  Frenesí	4	-	-	-
+Desarrollo Físico	0	1	1	1
+  *  Desarrollo Físico	1	-	-	-</categoriesRaw>
+    <id>Berserker</id>
+    <name>Berserker</name>
+    <specialItems>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Arma de mano (+10 no mágica)</name>
+        <probability>50</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+      <specialItem>
+        <bonus>5</bonus>
+        <name>Arma de mano (+5 no mágica)</name>
+        <probability>50</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Arma a 2 manos</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>64</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Fu</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Atletismo·Gimnasia	1	1	1	1
+Percepción·Búsqueda	1	1	1	1
+  *  Observación	1	-	-	-
+Percepción·Perspicacia	0	1	1	2
+  *  Alerta	2	-	-	-
+Subterfugio·Sigilo	4	2	3	4
+  *  Robar bolsillos	2	-	-	-
+Urbana	3	1	2	3</categoriesRaw>
+    <id>Cortabolsas</id>
+    <name>Cortabolsas</name>
+    <specialItems>
+      <specialItem>
+        <name>Joyas robadas (10d10 mp)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Gemas robadas (10d10 mp)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Documentos robados</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Utensilios de disfraz (+10 no mágico)</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contactos de fiar</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contactos en los bajos fondos</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>37</trainingTimeInMonths>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Influencia	1	1	1	1
+Percepción·Búsqueda	4	1	4	4
+Percepción·Perspicacia	0	1	1	4
+  *  Alerta	4	-	-	-
+Percepción·Sentidos	1	1	1	1
+Urbana	1	1	1	1</categoriesRaw>
+    <id>Detective</id>
+    <name>Detective</name>
+    <specialItems>
+      <specialItem>
+        <name>Contacto en la admistración de una ciudad</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Una joya (recompensa, 10d10 mp)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>d100 gemas (recompensa, 10d10 mp en total)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Objecto de arte (recompensa, d10 mp)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de una persona importante</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contactos en los bajos fondos</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>33</trainingTimeInMonths>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Comunicación	6	2	6	6
+Conocimiento·General	4	4	4	4
+Influencia	2	2	2	2
+  *  Diplomacia	1	-	-	-
+  *  Sobornar	1	-	-	-
+Percepción·Búsqueda	1	1	1	1
+  *  Detectar Mentiras	1	-	-	-</categoriesRaw>
+    <id>Diplomático</id>
+    <name>Diplomático</name>
+    <specialItems>
+      <specialItem>
+        <name>Contacto en la admistración de una ciudad</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contacto en la admistración de una ciudad</name>
+        <probability>60</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de una persona importante</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de una persona importante</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de una persona importante</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Poción (una dosis, hechizo de nivel 1)</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Objecto artesanal (regalo)</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>48</trainingTimeInMonths>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Arma/Ataque	1	1	1	1
+Comunicación	5	1	5	5
+Conocimiento·General	4	2	4	4
+Exteriores·Entorno	1	1	1	1
+Influencia	2	1	1	2
+  *  Oratoria	2	-	-	-</categoriesRaw>
+    <id>Erudito Aventurero</id>
+    <name>Erudito Aventurero</name>
+    <specialItems>
+      <specialItem>
+        <name>Arma (+10 no mágica)</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Libro (+10 no mágico a un conocimiento especifico)</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Libro (+10 no mágico a un conocimiento especifico)</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Un amuleto o señas reconocida por los estudiosos</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Bestia de monta o carga</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>110</trainingTimeInMonths>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Ciencia/Analítica·Básica	2	2	2	2
+  *  Documentación	1	-	-	-
+Comunicación	3	1	1	3
+Conocimiento·General	4	1	4	4
+Conocimiento·Mágico	1	1	1	1
+Conocimiento·Técnico	3	1	3	3</categoriesRaw>
+    <id>Erutido Enclaustrado</id>
+    <name>Erutido Enclaustrado</name>
+    <specialItems>
+      <specialItem>
+        <name>Patrón (proporciona apoyo econonico)</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Libro (+10 no mágico a un conocimiento especifico)</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Libro (+10 no mágico a un conocimiento especifico)</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Libro (+10 no mágico a un conocimiento especifico)</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Libro (+10 no mágico a un conocimiento especifico)</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Libro (+10 no mágico a un conocimiento especifico)</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Animal doméstico (pequeño)</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>95</trainingTimeInMonths>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Comunicación	2	1	2	2
+Influencia	2	1	2	2
+Percepción·Búsqueda	2	1	2	2
+Percepción·Perspicacia	0	1	1	1
+  *  Alerta	1
+Subterfugio·Sigilo	4	1	4	4
+Subterfugio·Mecánica	1	1	1	1</categoriesRaw>
+    <id>Espía</id>
+    <name>Espía</name>
+    <specialItems>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Identificación Falsa (+10 no mágico)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Capa (+10 no mágico)</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contactos con un gobierno amigo</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Ganzúas (+10 no mágicas)</name>
+        <probability>30</probability>
+        <skillName>Abrir Cerraduras</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Papeles Importantes (10D10 mp)</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>5</bonus>
+        <name>Arma (+5 no mágica)</name>
+        <probability>100</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>44</trainingTimeInMonths>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Arma / Ataque	1	1	1	1
+Atletismo·Gimnasia	1	1	1	1
+  *  Trepar	1
+Atletismo·Resistencia	1	1	1	1
+  *  Nadar	1
+Conocimiento·General	2	1	2	2
+Percepción·Búsqueda	1	1	1	1
+  *  Observación	1
+Técnica/Comercio·General	3	2	3	3
+  *  Primeros Auxilios	1</categoriesRaw>
+    <id>Expedicionario</id>
+    <name>Expedicionario</name>
+    <specialItems>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Arma (+10 no mágica)</name>
+        <probability>40</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Animal de monta</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Pasaje sin límite en un barco</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>d10 hierbas</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Mapa del mundo conocido</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>66</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Co</option>
+        </options>
+      </upgradeChoice>
+      <upgradeChoice>
+        <fixed>false</fixed>
+        <options>
+          <option>Ag</option>
+          <option>Me</option>
+          <option>Ra</option>
+          <option>Ad</option>
+          <option>Em</option>
+          <option>In</option>
+          <option>Pr</option>
+          <option>Rp</option>
+          <option>Fu</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Arma	5	3	5	5
+Arma	4	2	4	4
+Arma	3	2	3	3
+Arma	1	1	1	1</categoriesRaw>
+    <id>Experto en Armas</id>
+    <name>Experto en Armas</name>
+    <specialItems>
+      <specialItem>
+        <bonus>15</bonus>
+        <name>Arma (+15 no mágica)</name>
+        <probability>40</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+      <specialItem>
+        <bonus>15</bonus>
+        <name>Arma (+15 no mágica)</name>
+        <probability>40</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Arma (+10 no mágica)</name>
+        <probability>30</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Arma (+10 no mágica)</name>
+        <probability>30</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+      <specialItem>
+        <bonus>5</bonus>
+        <name>Arma (+15 no mágica)</name>
+        <probability>100</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>95</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Fu</option>
+        </options>
+      </upgradeChoice>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Ag</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>{Armas·2manos; Armas·Arrojadizas; Armas·Artillería; Armas·Contundentes; Armas·Asta; Armas·Filo; Armas·Fuego 1mano; Armas·Fuego 2manos; Armas·Proyectiles}	1	1	1	1
+Comunicación	2	1	1	2
+Conocimiento·General	4	2	2	4
+  *  Religión	3	-	-	-
+Influencia	3	1	1	3
+  *  Oratoria	3	-	-	-</categoriesRaw>
+    <id>Fanático Religioso</id>
+    <name>Fanático Religioso</name>
+    <specialItems>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Arma (no mágica)</name>
+        <probability>30</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Objeto Diario I</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Símbolo de orden religiosa</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>73</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>In</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Arte·Pasivo	1	1	1	1
+Ciencia/Analítica·Básica	2	1	2	2
+Comunicación	5	1	5	10
+Conocimiento·General	5	1	4	5
+Percepción·Perspicacia	0	1	1	1
+  *  Alerta	1</categoriesRaw>
+    <id>Filósofo</id>
+    <name>Filósofo</name>
+    <specialItems>
+      <specialItem>
+        <name>1D5 libros (+5 a conocimientos específicos)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>1D5 libros (+5 a habilidades científicas)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Gran libro (+10 a una categoría de conocimiento)</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Gran libro (+10 a una categoría de Ciencia/Analítica)</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Sumando de hechizos +1</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Libro (+5 a una habilidad de conocimiento)</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>130</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Rz</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Arma / Ataque	2	1	1	2
+Armadura·Ligera	2	1	1	2
+Atletismo·Resistencia	2	1	1	2
+Exteriores·Entorno	6	1	3	6
+Percepción·Perspicacia	0	1	1	1
+Percepción·Búsqueda	2	1	1	2
+Percepción·Sentidos	1	1	1	1</categoriesRaw>
+    <id>Guardián</id>
+    <name>Guardián</name>
+    <specialItems>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Arma cuerpo a cuerpo (+10 no mágica)</name>
+        <probability>50</probability>
+        <skillName>arma cuerpo a cuerpo</skillName>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Arma de proyectil (+10 no mágica)</name>
+        <probability>50</probability>
+        <skillName>arma proyectiles</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Animal de compañía</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Capa de camuflaje (+10 a Esconderse)</name>
+        <probability>30</probability>
+        <skillName>esconderse</skillName>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Botas buenas (+10 a Acechar)</name>
+        <probability>30</probability>
+        <skillName>acechar</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Un amuleto o seña reconocida por los habitantes locales</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>116</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Co</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Atletismo·Gimnasia	1	1	1	1
+  *  Trepar	1
+Atletismo·Resistencia	2	1	1	2
+  *  Nadar	2
+Conocimiento·General	2	2	2	2
+Exteriores·Entorno	1	1	1	1
+  *  {Orientación Celeste; Predicción del Clima}	1
+Oficios	0	1	1	1
+  *  Manejo de Cuerdas	1
+Técnica/Comercio·General	1	1	1	1
+  *  Orientación	1</categoriesRaw>
+    <id>Marino</id>
+    <name>Marino</name>
+    <specialItems>
+      <specialItem>
+        <name>Pasaje en un barco</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Mercancía para comerciar (10d10 mp)</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Pasaje en un barco</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Pasaje en un barco</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Amigo del dueño de una taberna</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Amigo del capitán de un barco</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Pasaje en un barco</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>28</trainingTimeInMonths>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>{Armas·2manos; Armas·Arrojadizas; Armas·Artillería; Armas·Contundentes; Armas·Asta; Armas·Filo; Armas·Fuego 1mano; Armas·Fuego 2manos; Armas·Proyectiles}	2	1	1	2
+Armadura·Ligera	1	1	1	1
+Ataques Especiales	0	1	1	1
+Atletismo·Potencia	1	1	1	1
+Comunicación	0	1	1	2
+Desarrollo Físico	0	1	1	2
+  *  Desarrollo Físico	2
+Maniobras de Combate	0	1	1	1
+Técnica/Comercio·General	1	1	1	1
+Técnica/Comercio·Profesional	0	1	1	1
+  *  Organización Militar	1
+Técnica/Comercio·Vocacional	0	1	1	1
+  *  Ingeniería de Asedio	1</categoriesRaw>
+    <id>Mercenario</id>
+    <name>Mercenario</name>
+    <specialItems>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Arma (no mágica)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Armadura (no mágica)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Escudo (no mágico)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Medalla por comportamiento en batalla</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de un militar</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de un militar</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Dinero adicional (D10 abierta)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Dinero adicional (D10 abierta)</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>80</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Co</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Comunicación	2	1	1	2
+Conocimiento·General	2	1	2	2
+Exteriores·Animales	3	1	3	3
+Listas Básicas de Hechizos	0	1	1	2
+Influencia	1	1	1	1</categoriesRaw>
+    <id>Sacerdote Chamánico</id>
+    <name>Sacerdote Chamánico</name>
+    <specialItems>
+      <specialItem>
+        <name>Compañero animal de gran tamaño</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Sumando de Hechizos (+1)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Objeto Diario I (hechizo de nivel 2)</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Arma (no mágica)</name>
+        <probability>40</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Armadura (no mágica)</name>
+        <probability>40</probability>
+        <skillName>Armadura</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Compañero animal pequeño</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>69</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>In</option>
+        </options>
+      </upgradeChoice>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Pr</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Arma	1	1	1	1
+Conocimiento·General	3	1	1	3
+Desarrollo Físico	0	1	1	1
+  *  Desarrollo Físico	1
+Exteriores·Entorno	4	2	2	4
+Percepción·Perspicacia	0	1	1	1
+  *  Alerta	1</categoriesRaw>
+    <id>Salteador</id>
+    <name>Salteador</name>
+    <specialItems>
+      <specialItem>
+        <bonus>5</bonus>
+        <name>Arma (+5 no mágica)</name>
+        <probability>30</probability>
+        <skillName>Arma</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Joyas robadas (5d10mp)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Gemas robadas (5d10mp)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Objeto de arte robado (5d10mp)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Bestia de monta</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>35</trainingTimeInMonths>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Influencia	3	2	2	3
+  *  Embaucar	2
+Percepción·Búsqueda	1	1	1	1
+  *  Detectar Mentiras	1
+Subterfugio·Sigilo	2	1	2	2
+Urbana	1	1	1	1</categoriesRaw>
+    <id>Timador</id>
+    <name>Timador</name>
+    <specialItems>
+      <specialItem>
+        <name>Contacto en los Bajos Fondos</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de un personaje de los Bajos fondos</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>30</bonus>
+        <name>Identidad Falsificada</name>
+        <probability>20</probability>
+        <skillName>Embaucar</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Inversión (2D10 mo/año)</name>
+        <probability>10</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>15</bonus>
+        <name>Identidad Falsificada</name>
+        <probability>100</probability>
+        <skillName>Embaucar</skillName>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>32</trainingTimeInMonths>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Atletismo·Gimnasia	1	1	1	1
+  *  Trepar	1
+Atletismo·Resistencia	1	1	1	1
+  *  Nadar	1
+Comunicación	3	1	1	3
+Conocimiento·General	3	1	1	3
+Exteriores·Animales	1	1	1	1
+  *  Montar	1
+Exteriores·Entorno	1	1	3	3
+Percepción·Búsqueda	1	1	1	1
+  *  Observación	1</categoriesRaw>
+    <id>Trotamundos</id>
+    <name>Trotamundos</name>
+    <specialItems>
+      <specialItem>
+        <name>Ropa resistente al clima</name>
+        <probability>80</probability>
+      </specialItem>
+      <specialItem>
+        <name>Bestia de monta</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>5</bonus>
+        <name>Capa (+5 a Acechar)</name>
+        <probability>30</probability>
+        <skillName>Acechar</skillName>
+      </specialItem>
+      <specialItem>
+        <bonus>5</bonus>
+        <name>Botas (+5 a Esconderse)</name>
+        <probability>30</probability>
+        <skillName>Esconderse</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Mapa sencillo de todo el mundo</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>95</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Co</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+</adiestramientos>

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adiestramientos>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>Arte·Activo	2	1	2	2
+Listas Hechizos de Adiestramiento	0	2	2	4
+  *  Besos del Houri	2
+  *  Engaños del Houri	2
+Influencia	3	2	2	4
+  *  Seducción	3
+Percepción·Búsqueda	1	1	1	1
+  *  Detectar Mentiras	1
+Subterfugio·Mecánica	1	1	1	3
+  *  Disfrazarse	3
+Urbana	1	1	1	1
+  *  Callejeo	1</categoriesRaw>
+    <id>Houri</id>
+    <name>Houri</name>
+    <specialItems>
+      <specialItem>
+        <name>Ropa del alta calidad y muy elegante</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Joyería (valor 10D10mp)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Regalo del amante (valor 5D10mp)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contacto en alta sociedad (una región)</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Amistad con una persona importante</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Rival celoso (de igual o superior estatus)</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Ex-amante despechado (enemigo)</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Símbolo especial del amante</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>108</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Pr</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+</adiestramientos>

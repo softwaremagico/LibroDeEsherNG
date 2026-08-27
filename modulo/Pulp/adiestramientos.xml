@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adiestramientos>
+  <adiestramiento>
+    <availableToEveryRace>false</availableToEveryRace>
+    <categoriesRaw>Comunicación	2	1	2	2
+Influencia	2	2	2	4
+  *  Liderazgo	2
+  *  Oratoria	2
+Conocimiento·General	4	1	1	8
+  *  Religión	8
+Conocimiento·Mágico	1	1	1	1
+Conocimiento·Oscuro	2	1	1	2
+Percepción de Poder	0	1	1	1
+  *  Adivinación	1</categoriesRaw>
+    <id>Clero</id>
+    <name>Clero</name>
+    <limitedRaces>
+      <race>Hombre Moderno</race>
+    </limitedRaces>
+    <specialItems>
+      <specialItem>
+        <name>Símbolo religioso</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Iglesia</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de un personaje importante</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contactos en al administración de la ciudad</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de un personaje de mayor rango</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Símbolo religioso lujoso</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>117</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Me</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>false</availableToEveryRace>
+    <categoriesRaw>Percepción·Sentidos	2	2	2	3
+  *  Percepción del Entorno: Ciudades	2	-	-	-
+  *  Sentido del Tiempo	1	-	-	-
+Comunicación	3	2	2	6
+Oficios	0	1	1	2
+Influencia	4	1	4	4
+Conocimiento·Técnico	2	1	1	2
+Técnica/Comercio·Profesional	0	1	4	4
+Urbana	2	1	2	2</categoriesRaw>
+    <id>Emprendedor</id>
+    <name>Emprendedor</name>
+    <limitedRaces>
+      <race>Hombre Moderno</race>
+    </limitedRaces>
+    <specialItems>
+      <specialItem>
+        <name>Contacto en la administración de empresas en la ciudad</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contacto en la administración de empresas en la ciudad</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contacto en la administración de la ciudad</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Inversión ($1d10x100/año)</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de un personaje importante</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Presidente de una compañía</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de un personaje importante</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>85</trainingTimeInMonths>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>false</availableToEveryRace>
+    <categoriesRaw>Arte·Activo	1	1	1	1
+Arte·Pasivo	1	1	1	1
+Percepción·Búsqueda	2	1	2	2
+Influencia	4	2	3	6
+  *  Seducción	4
+Subterfugio·Mecánica	1	1	1	1
+Subterfugio·Sigilo	2	1	2	2
+Urbana	2	1	2	2</categoriesRaw>
+    <id>Femme Fatale</id>
+    <name>Femme Fatale</name>
+    <limitedRaces>
+      <race>Hombre Moderno</race>
+    </limitedRaces>
+    <specialItems>
+      <specialItem>
+        <name>Joyería cara</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contactos útiles en los bajos fondos</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contactos útiles en la ciudad</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de una persona de alto rango</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Pintalabios envenenado</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Vestidor caro</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>49</trainingTimeInMonths>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>false</availableToEveryRace>
+    <categoriesRaw>{Armas·2manos; Armas·Contundentes; Armas·Asta; Armas·Filo; Armas·Proyectiles; Armas·Artillería; Armas·Arrojadizas}	1	1	1	1
+{Armas·Fuego 1mano; Armas·Fuego 2manos}	1	1	1	1
+Maniobras de Combate	0	1	1	1
+Influencia	3	1	3	3
+Ataques Especiales	0	1	1	1
+  *  Pelea	1	-	-	-
+Subterfugio·Mecánica	1	1	1	1
+Subterfugio·Sigilo	1	1	1	1
+Urbana	2	1	2	2</categoriesRaw>
+    <id>Gangster</id>
+    <name>Gangster</name>
+    <limitedRaces>
+      <race>Hombre Moderno</race>
+    </limitedRaces>
+    <specialItems>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Arma de mano</name>
+        <probability>50</probability>
+        <skillName>No mágica</skillName>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Arma de fuego</name>
+        <probability>40</probability>
+        <skillName>No mágica</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Automóvil</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contactos en los bajos fondos</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor debido de alguien de los bajos fondos</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Objeto de contrabando</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>42</trainingTimeInMonths>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>false</availableToEveryRace>
+    <categoriesRaw>{Armas·Fuego 1mano; Armas·Fuego 2manos}	2	1	1	2
+Armadura·Ligera	1	1	1	1
+  *  {Armadura Tipo I; Armadura Tipo II}	1	-	-	-
+Percepción·Perspicacia	0	1	1	1
+Percepción·Búsqueda	2	1	2	2
+Percepción·Sentidos	1	1	1	1
+  *  Percepción del Entorno: Ciudades	1
+Desarrollo Físico	0	1	1	1
+  *  Desarrollo Físico	1	-	-	-
+Maniobras de Combate	0	1	1	1
+Influencia	0	2	2	2
+  *  Interrogar	1	-	-	-
+  *  Liderazgo	1	-	-	-
+Ciencia/Analítica·Especializada	0	1	1	1
+  *  Criminología	1	-	-	-
+Ataques Especiales	0	1	1	1
+Técnica/Comercio·Profesional	0	1	1	1
+  *  Conducir (Vehículo Mecánico)	1
+Técnica/Comercio·Vocacional	0	1	1	1
+  *  Administración	1	-	-	-
+Urbana	2	1	2	2</categoriesRaw>
+    <id>Hombre del Gobierno</id>
+    <name>Hombre del Gobierno</name>
+    <limitedRaces>
+      <race>Hombre Moderno</race>
+    </limitedRaces>
+    <specialItems>
+      <specialItem>
+        <name>Contactos útiles en la ciudad</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contactos útiles en el gobierno</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Arma de fuego</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Esposas</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Favor de un oficial de alto rango</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Automóvil</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Reputación de éxito</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>135</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>In</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+</adiestramientos>

@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adiestramientos>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>{Armas·2manos; Armas·Contundentes; Armas·Asta; Armas·Filo}	1	1	1	1
+Artes Marciales·Barridos	1	1	1	1
+Artes Marciales·Golpes	1	1	1	1
+Artes Marciales·Maniobras de Combate	0	1	1	2
+Atletismo·Gimnasia	4	1	2	4
+Autocontrol	2	1	2	2
+Desarrollo Físico	0	1	1	1
+  *  Desarrollo Físico	1
+Maniobras de Combate	0	1	2	2
+Subterfugio·Ataque	0	1	2	2
+Subterfugio·Sigilo	5	1	4	5
+Urbana	1	1	1	1</categoriesRaw>
+    <id>Ninja</id>
+    <name>Ninja</name>
+    <specialItems>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Equipo de Disfraz</name>
+        <probability>40</probability>
+        <skillName>Disfrazarse</skillName>
+      </specialItem>
+      <specialItem>
+        <name>Arma Disimulada</name>
+        <probability>60</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contrato en Vigor</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Identidad Secreta (mercader)</name>
+        <probability>50</probability>
+      </specialItem>
+      <specialItem>
+        <name>Veneno Común</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Identidad Secreta (peregrino)</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Identidad Secreta (mendigo)</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <name>Contacto Útil en los bajos fondos</name>
+        <probability>80</probability>
+      </specialItem>
+      <specialItem>
+        <name>Vestimenta tradicional de Espía</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>170</trainingTimeInMonths>
+    <characteristicUpgrades>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Ag</option>
+        </options>
+      </upgradeChoice>
+      <upgradeChoice>
+        <fixed>true</fixed>
+        <options>
+          <option>Co</option>
+        </options>
+      </upgradeChoice>
+    </characteristicUpgrades>
+  </adiestramiento>
+  <adiestramiento>
+    <availableToEveryRace>true</availableToEveryRace>
+    <categoriesRaw>{Armas·2manos; Armas·Contundentes; Armas·Asta; Armas·Filo}	1	1	1	1
+Artes Marciales·Barridos	2	1	1	2
+Artes Marciales·Golpes	2	1	1	2
+Artes Marciales·Maniobras de Combate	0	1	1	2
+Autocontrol	2	1	2	2
+Conocimiento·General	2	1	2	2
+Conocimiento·Técnico	1	1	1	1
+Desarrollo Físico	0	1	1	1
+  *  Desarrollo Físico	1</categoriesRaw>
+    <id>Sacerdote Guerrero</id>
+    <name>Sacerdote Guerrero</name>
+    <specialItems>
+      <specialItem>
+        <name>Avance reciente dentro de la orden</name>
+        <probability>40</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>10</bonus>
+        <name>Rosario para rezar (a meditación)</name>
+        <probability>70</probability>
+      </specialItem>
+      <specialItem>
+        <name>Pergamino de oraciones (a una habilidad)</name>
+        <probability>10</probability>
+      </specialItem>
+      <specialItem>
+        <bonus>5</bonus>
+        <name>Arma (no mágica)</name>
+        <probability>30</probability>
+      </specialItem>
+      <specialItem>
+        <name>Hierbas (D10 curativas comunes)</name>
+        <probability>20</probability>
+      </specialItem>
+      <specialItem>
+        <name>Reputación como guerrero sagrado</name>
+        <probability>100</probability>
+      </specialItem>
+    </specialItems>
+    <trainingTimeInMonths>107</trainingTimeInMonths>
+  </adiestramiento>
+</adiestramientos>

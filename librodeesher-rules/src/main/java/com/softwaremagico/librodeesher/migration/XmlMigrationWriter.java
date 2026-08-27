@@ -18,6 +18,13 @@ import java.util.List;
  * lists without relying on the item tag name at all (see its javadoc), the exact item tag is purely
  * cosmetic; this class renames it after serialization so the generated files are pleasant to read
  * and review by a human, e.g. {@code <categoria>} instead of {@code <item>}.</p>
+ *
+ * <p>The rename only targets <strong>root-level</strong> {@code <item>} tags (indented exactly two
+ * spaces, since {@link ObjectMapperFactory#getXmlObjectMapper()} always indents with two spaces per
+ * level): a domain class may itself contain a nested {@code List<X>} field that Jackson also
+ * serializes with generic {@code <item>} tags (e.g. a list of value objects with no
+ * {@code @JacksonXmlProperty} override), and a global, unanchored replace would incorrectly rename
+ * those too.</p>
  */
 final class XmlMigrationWriter {
 
@@ -34,9 +41,9 @@ final class XmlMigrationWriter {
                 .withRootName(rootTag)
                 .writeValueAsString(elements);
         final String readableXml = rawXml
-                .replace("<item>", "<" + itemTag + ">")
-                .replace("</item>", "</" + itemTag + ">")
-                .replace("<item/>", "<" + itemTag + "/>");
+                .replaceAll("(?m)^  <item>", "  <" + itemTag + ">")
+                .replaceAll("(?m)^  </item>", "  </" + itemTag + ">")
+                .replaceAll("(?m)^  <item/>", "  <" + itemTag + "/>");
 
         Files.createDirectories(targetFile.getParent());
         Files.writeString(targetFile, readableXml, StandardCharsets.UTF_8);

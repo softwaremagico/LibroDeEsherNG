@@ -51,7 +51,8 @@ public final class WeaponMigrationTool {
                 continue;
             }
             try (Stream<Path> files = Files.list(weaponsDir)) {
-                for (final Path file : files.filter(path -> path.toString().endsWith(".txt")).sorted().toList()) {
+                for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
+                        .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
                     readWeaponsFile(file, module, weaponsById, weaponsByModule);
                 }
             }
