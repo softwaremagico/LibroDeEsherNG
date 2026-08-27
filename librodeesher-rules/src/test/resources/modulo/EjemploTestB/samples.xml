@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<samples>
+    <sample>
+        <id>alpha</id>
+        <name>Alpha (overridden by module B)</name>
+        <value>99</value>
+    </sample>
+    <sample>
+        <id>gamma</id>
+        <name>Gamma (module B)</name>
+        <value>3</value>
+    </sample>
+</samples>
