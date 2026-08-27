@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="1" name="LibroDeEsherRules" parallel="false">
+    <listeners>
+        <listener class-name="com.softwaremagico.librodeesher.TestListener"/>
+    </listeners>
+    <!-- Every test class under this package is picked up automatically: new tests must run on
+         "mvn install" without having to be listed here by hand. -->
+    <test name="AllRulesTests" enabled="true" preserve-order="true">
+        <packages>
+            <package name="com.softwaremagico.librodeesher.*"/>
+        </packages>
+    </test>
+</suite>

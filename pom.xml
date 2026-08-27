@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.softwaremagico</groupId>
+    <artifactId>librodeesher</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Libro de Esher NG</name>
+    <description>
+        Libro de Esher - Rolemaster character generator. Modernized backend rewrite: rule data is stored as XML
+        (instead of the legacy tab-separated text files) and read through Jackson XML factories, following the
+        architecture of the sibling project ThinkMachine-4E.
+    </description>
+
+    <organization>
+        <name>Softwaremagico</name>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>GNU GPL v3</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <modules>
+        <module>librodeesher-rules</module>
+        <module>librodeesher-random</module>
+        <module>librodeesher-pdf</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!--
+            Java level kept compatible with Android (no language features requiring heavy desugaring)
+            so that "librodeesher-rules" and "librodeesher-random" can be reused by an Android
+            front-end in the future without modification.
+        -->
+        <java.version>17</java.version>
+
+        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
+        <maven-surefire.version>3.1.0</maven-surefire.version>
+
+        <jackson.version>2.17.2</jackson.version>
+        <slf4j.version>1.7.36</slf4j.version>
+        <logback.version>1.2.11</logback.version>
+        <org.testng.version>7.8.0</org.testng.version>
+        <openpdf.version>1.4.2</openpdf.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <release>${java.version}</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven-resources-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

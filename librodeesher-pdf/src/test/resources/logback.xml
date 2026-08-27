@@ -1,0 +1,19 @@
+<configuration>
+    <!--
+        Console-only logging for automated tests (mirrors ThinkMachine-4E): no file appender, no log
+        rotation. Test output must stay readable in CI logs, so only the console appender is defined.
+    -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%-5p %d{yyyy-MM-dd HH:mm:ss.SSS 'GMT'Z} %c{1} [%t] - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.softwaremagico.librodeesher" additivity="false" level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <root level="ERROR">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

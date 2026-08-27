@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="1" name="LibroDeEsherRandom" parallel="false">
+    <listeners>
+        <listener class-name="com.softwaremagico.librodeesher.TestListener"/>
+    </listeners>
+    <test name="AllRandomTests" enabled="true" preserve-order="true">
+        <packages>
+            <package name="com.softwaremagico.librodeesher.*"/>
+        </packages>
+    </test>
+</suite>
