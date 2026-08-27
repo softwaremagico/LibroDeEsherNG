@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Armonía de la Naturaleza</id>
+    <name>
+      <en>Armonía of the Naturaleza</en>
+      <es>Armonía de la Naturaleza</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje Taoísta</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Evasiones</id>
+    <name>
+      <en>Evasiones</en>
+      <es>Evasiones</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje Taoísta</owner>
+      <owner>Monje</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Formas de la Naturaleza</id>
+    <name>
+      <en>Formas of the Naturaleza</en>
+      <es>Formas de la Naturaleza</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje Taoísta</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Ojo Interior</id>
+    <name>
+      <en>Ojo Interior</en>
+      <es>Ojo Interior</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje Taoísta</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Puente del Monje</id>
+    <name>
+      <en>Puente of the Monje</en>
+      <es>Puente del Monje</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje Taoísta</owner>
+      <owner>Monje</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Renovación del Cuerpo</id>
+    <name>
+      <en>Renovación of the Body</en>
+      <es>Renovación del Cuerpo</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje Taoísta</owner>
+      <owner>Monje</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Concentración Zen</id>
+    <name>
+      <en>Concentración Zen</en>
+      <es>Concentración Zen</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje Zen</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Control Corporal</id>
+    <name>
+      <en>Control Corporal</en>
+      <es>Control Corporal</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje Zen</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Evasiones</id>
+    <name>
+      <en>Evasiones</en>
+      <es>Evasiones</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje Zen</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Percepción Zen</id>
+    <name>
+      <en>Perception Zen</en>
+      <es>Percepción Zen</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje Zen</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Renovación del Cuerpo</id>
+    <name>
+      <en>Renovación of the Body</en>
+      <es>Renovación del Cuerpo</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje Zen</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Sombra Mental</id>
+    <name>
+      <en>Shadow Mental</en>
+      <es>Sombra Mental</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje Zen</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+</hechizos>

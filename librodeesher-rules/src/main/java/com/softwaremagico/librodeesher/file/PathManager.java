@@ -13,9 +13,9 @@ public final class PathManager {
 
     /**
      * Root classpath folder, under which every rulebook module has its own sub-folder. Matches the
-     * {@code modulo/} resource copied into the jar by the Maven build (see the module's pom.xml).
+     * {@code modules/} resource copied into the jar by the Maven build (see the module's pom.xml).
      */
-    public static final String MODULES_FOLDER = "modulo";
+    public static final String MODULES_FOLDER = "modules";
 
     /** Name of the file describing the available modules (id, display name, folder). */
     public static final String MODULES_DEFINITION_FILE = "modules.xml";
@@ -25,9 +25,9 @@ public final class PathManager {
     }
 
     /**
-     * Returns the classpath folder for a given rulebook module, e.g. {@code "modulo/Basico/"}.
+     * Returns the classpath folder for a given rulebook module, e.g. {@code "modules/Core/"}.
      *
-     * @param moduleName folder name of the module (as declared in {@code modulo/modules.xml}), or
+     * @param moduleName folder name of the module (as declared in {@code modules/modules.xml}), or
      *                    {@code null} to get the root modules folder.
      */
     public static String getModulePath(String moduleName) {
@@ -37,7 +37,7 @@ public final class PathManager {
         return MODULES_FOLDER + "/" + moduleName + "/";
     }
 
-    /** Returns the classpath path of the module definition file, e.g. {@code "modulo/modules.xml"}. */
+    /** Returns the classpath path of the module definition file, e.g. {@code "modules/modules.xml"}. */
     public static String getModulesDefinitionPath() {
         return getModulePath(null) + MODULES_DEFINITION_FILE;
     }

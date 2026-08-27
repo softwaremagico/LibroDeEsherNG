@@ -1,0 +1,779 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Barrera Contra Hechizos</id>
+    <name>
+      <en>Barrera Contra Spells</en>
+      <es>Barrera Contra Hechizos</es>
+    </name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Maestría de las Runas</id>
+    <name>
+      <en>Maestría of the Runas</en>
+      <es>Maestría de las Runas</es>
+    </name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Percepción de la Esencia</id>
+    <name>
+      <en>Perception of the Essence</en>
+      <es>Percepción de la Esencia</es>
+    </name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Sendas de la Indagación</id>
+    <name>
+      <en>Sendas of the Indagación</en>
+      <es>Sendas de la Indagación</es>
+    </name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Escudos Elementales</id>
+    <name>
+      <en>Escudos Elementales</en>
+      <es>Escudos Elementales</es>
+    </name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Mano de la Esencia</id>
+    <name>
+      <en>Hand of the Essence</en>
+      <es>Mano de la Esencia</es>
+    </name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Sendas de Apertura</id>
+    <name>
+      <en>Sendas of Apertura</en>
+      <es>Sendas de Apertura</es>
+    </name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Ilusiones Menores</id>
+    <name>
+      <en>Ilusiones Menores</en>
+      <es>Ilusiones Menores</es>
+    </name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Mejora Física</id>
+    <name>
+      <en>Mejora Física</en>
+      <es>Mejora Física</es>
+    </name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Sendas de la Detección</id>
+    <name>
+      <en>Sendas of the Detección</en>
+      <es>Sendas de la Detección</es>
+    </name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Esencia|Bridas de los Hechizos</id>
+    <name>
+      <en>Bridas of the Spells</en>
+      <es>Bridas de los Hechizos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Esencia|Maestría de los Espíritus</id>
+    <name>
+      <en>Maestría of the Espíritus</en>
+      <es>Maestría de los Espíritus</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Esencia|Sendas de la Rapidez</id>
+    <name>
+      <en>Sendas of the Quickness</en>
+      <es>Sendas de la Rapidez</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Esencia|Cambio Viviente</id>
+    <name>
+      <en>Cambio Viviente</en>
+      <es>Cambio Viviente</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Esencia|Mejora de los Hechizos</id>
+    <name>
+      <en>Mejora of the Spells</en>
+      <es>Mejora de los Hechizos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Esencia|Senda de la Anulación</id>
+    <name>
+      <en>Senda of the Anulación</en>
+      <es>Senda de la Anulación</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Esencia|Maestría de los Escudos</id>
+    <name>
+      <en>Maestría of the Escudos</en>
+      <es>Maestría de los Escudos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Esencia|Maestría de los Portales</id>
+    <name>
+      <en>Maestría of the Portales</en>
+      <es>Maestría de los Portales</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Esencia|Puente en la Alturas</id>
+    <name>
+      <en>Puente in the Alturas</en>
+      <es>Puente en la Alturas</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Esencia|Senda de la Invisibilidad</id>
+    <name>
+      <en>Senda of the Invisibilidad</en>
+      <es>Senda de la Invisibilidad</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Disfraces</id>
+    <name>
+      <en>Disfraces</en>
+      <es>Disfraces</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Ilusionista</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Maestría de las Ilusiones</id>
+    <name>
+      <en>Maestría of the Ilusiones</en>
+      <es>Maestría de las Ilusiones</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Ilusionista</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Moldear el Sonido</id>
+    <name>
+      <en>Moldear the Sonido</en>
+      <es>Moldear el Sonido</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Ilusionista</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Moldear la Luz</id>
+    <name>
+      <en>Moldear the Luz</en>
+      <es>Moldear la Luz</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Ilusionista</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Moldear los Sentidos</id>
+    <name>
+      <en>Moldear the Senses</en>
+      <es>Moldear los Sentidos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Ilusionista</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Oler-Saborear-Sentir</id>
+    <name>
+      <en>Oler-Saborear-Sentir</en>
+      <es>Oler-Saborear-Sentir</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Ilusionista</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Ley de la Luz</id>
+    <name>
+      <en>Ley of the Luz</en>
+      <es>Ley de la Luz</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mago</owner>
+      <owner>Mago de la Luz</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Ley de la Tierra</id>
+    <name>
+      <en>Ley of the Tierra</en>
+      <es>Ley de la Tierra</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mago</owner>
+      <owner>Mago de la Tierra</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Ley del Agua</id>
+    <name>
+      <en>Ley of the Agua</en>
+      <es>Ley del Agua</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mago</owner>
+      <owner>Mago del Agua</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Ley del Fuego</id>
+    <name>
+      <en>Ley of the Fuego</en>
+      <es>Ley del Fuego</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mago</owner>
+      <owner>Mago del Fuego</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Ley del Hielo</id>
+    <name>
+      <en>Ley of the Hielo</en>
+      <es>Ley del Hielo</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mago</owner>
+      <owner>Mago del Hielo</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Ley del Viento</id>
+    <name>
+      <en>Ley of the Viento</en>
+      <es>Ley del Viento</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mago</owner>
+      <owner>Mago del Aire</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Influencias</id>
+    <name>
+      <en>Influencias</en>
+      <es>Influencias</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Indagador</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Ley del Latrocinio</id>
+    <name>
+      <en>Ley of the Latrocinio</en>
+      <es>Ley del Latrocinio</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Indagador</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Maestría del Movimiento</id>
+    <name>
+      <en>Maestría of the Movimiento</en>
+      <es>Maestría del Movimiento</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Indagador</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Maestría del Ocultamiento</id>
+    <name>
+      <en>Maestría of the Ocultamiento</en>
+      <es>Maestría del Ocultamiento</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Indagador</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Mecanismos</id>
+    <name>
+      <en>Mecanismos</en>
+      <es>Mecanismos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Indagador</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Sentidos</id>
+    <name>
+      <en>Senses</en>
+      <es>Sentidos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Indagador</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Bridas del Cuerpo</id>
+    <name>
+      <en>Bridas of the Body</en>
+      <es>Bridas del Cuerpo</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Mente sobre Materia</id>
+    <name>
+      <en>Mente sobre Materia</en>
+      <es>Mente sobre Materia</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Sentidos del Monje</id>
+    <name>
+      <en>Senses of the Monje</en>
+      <es>Sentidos del Monje</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Monje</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Alteración de los Gases</id>
+    <name>
+      <en>Alteración of the Gases</en>
+      <es>Alteración de los Gases</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Místico</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Alteración de los Líquidos</id>
+    <name>
+      <en>Alteración of the Líquidos</en>
+      <es>Alteración de los Líquidos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Místico</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Alteración de los Sólidos</id>
+    <name>
+      <en>Alteración of the Sólidos</en>
+      <es>Alteración de los Sólidos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Místico</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Cambio Místico</id>
+    <name>
+      <en>Cambio Místico</en>
+      <es>Cambio Místico</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Místico</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Esconderse (Místico)</id>
+    <name>
+      <en>Hiding (Místico)</en>
+      <es>Esconderse (Místico)</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Místico</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Sendas de la Confusión</id>
+    <name>
+      <en>Sendas of the Confusión</en>
+      <es>Sendas de la Confusión</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Místico</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Destrucción de la Carne</id>
+    <name>
+      <en>Destrucción of the Carne</en>
+      <es>Destrucción de la Carne</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Hechicero</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Destrucción de los Fluidos</id>
+    <name>
+      <en>Destrucción of the Fluidos</en>
+      <es>Destrucción de los Fluidos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Hechicero</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Destrucción de los Gases</id>
+    <name>
+      <en>Destrucción of the Gases</en>
+      <es>Destrucción de los Gases</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Hechicero</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Destrucción de los Sólidos</id>
+    <name>
+      <en>Destrucción of the Sólidos</en>
+      <es>Destrucción de los Sólidos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Hechicero</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Destrucción del Alma</id>
+    <name>
+      <en>Destrucción of the Alma</en>
+      <es>Destrucción del Alma</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Hechicero</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Destrucción Mental</id>
+    <name>
+      <en>Destrucción Mental</en>
+      <es>Destrucción Mental</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Hechicero</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Contactos Oscuros</id>
+    <name>
+      <en>Contactos Oscuros</en>
+      <es>Contactos Oscuros</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Esencia Maligna</owner>
+      <owner>Lord del Caos</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Destrucción de la Materia</id>
+    <name>
+      <en>Destrucción of the Materia</en>
+      <es>Destrucción de la Materia</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Esencia Maligna</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Erosión Física</id>
+    <name>
+      <en>Erosión Física</en>
+      <es>Erosión Física</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Esencia Maligna</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Invocaciones Oscuras</id>
+    <name>
+      <en>Invocaciones Oscuras</en>
+      <es>Invocaciones Oscuras</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Esencia Maligna</owner>
+      <owner>Lord del Caos</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Invocación de Entidades</id>
+    <name>
+      <en>Invocación of Entidades</en>
+      <es>Invocación de Entidades</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Esencia Maligna</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Oscuridad</id>
+    <name>
+      <en>Oscuridad</en>
+      <es>Oscuridad</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Esencia Maligna</owner>
+      <owner>Lord del Caos</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+</hechizos>

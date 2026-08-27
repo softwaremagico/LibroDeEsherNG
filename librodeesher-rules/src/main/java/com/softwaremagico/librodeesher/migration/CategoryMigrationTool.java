@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.migration;
 
+import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.file.ModuleManager;
 
@@ -41,7 +42,7 @@ import java.util.Map;
  */
 public final class CategoryMigrationTool {
 
-    private static final String OUTPUT_FILE = "categorias.xml";
+    private static final String OUTPUT_FILE = "categories.xml";
 
     private CategoryMigrationTool() {
         // Utility class.
@@ -98,7 +99,7 @@ public final class CategoryMigrationTool {
             final Category existing = categoriesById.get(parsed.name());
             if (existing == null) {
                 final Category category = new Category(parsed.name());
-                category.setName(parsed.name());
+                category.setName(parsed.name(), Translations.toEnglish(parsed.name()));
                 category.setAbbreviation(parsed.abbreviation());
                 category.setCharacteristicsTag(parsed.characteristicsTag());
                 category.setType(com.softwaremagico.librodeesher.category.CategoryType.fromTag(parsed.typeTag()));

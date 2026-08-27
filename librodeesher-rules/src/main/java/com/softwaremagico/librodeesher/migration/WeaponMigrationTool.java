@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.migration;
 
+import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.file.ModuleManager;
 import com.softwaremagico.librodeesher.weapon.Weapon;
 import com.softwaremagico.librodeesher.weapon.WeaponType;
@@ -26,7 +27,7 @@ import java.util.stream.Stream;
 public final class WeaponMigrationTool {
 
     private static final String WEAPONS_FOLDER = "armas";
-    private static final String OUTPUT_FILE = "armas.xml";
+    private static final String OUTPUT_FILE = "weapons.xml";
 
     private WeaponMigrationTool() {
         // Utility class.
@@ -46,7 +47,7 @@ public final class WeaponMigrationTool {
         final Map<String, List<Weapon>> weaponsByModule = new LinkedHashMap<>();
 
         for (final String module : ModuleManager.getAllModules()) {
-            final Path weaponsDir = modulosDir.resolve(module).resolve(WEAPONS_FOLDER);
+            final Path weaponsDir = modulosDir.resolve(LegacyModules.sourceFolderFor(module)).resolve(WEAPONS_FOLDER);
             if (!Files.isDirectory(weaponsDir)) {
                 continue;
             }
@@ -87,7 +88,7 @@ public final class WeaponMigrationTool {
             }
 
             final Weapon weapon = new Weapon(name);
-            weapon.setName(name);
+            weapon.setName(name, Translations.toEnglish(name));
             weapon.setType(type);
             weapon.setAbbreviation(columns[1].trim());
             weapon.setRare(rare);

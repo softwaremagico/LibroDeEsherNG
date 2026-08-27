@@ -42,7 +42,7 @@ public class PerkMigrationToolTest {
             final int written = PerkMigrationTool.migrate(sourceRoot, targetRoot);
             Assert.assertEquals(written, 1);
 
-            final List<Perk> perks = readGeneratedFile(targetRoot.resolve("ManualPersonajes/talentos.xml"));
+            final List<Perk> perks = readGeneratedFile(targetRoot.resolve("CharacterLaw/perks.xml"));
             Assert.assertEquals(perks.size(), 4);
 
             final Perk suerte = findById(perks, "Suerte");
@@ -63,7 +63,8 @@ public class PerkMigrationToolTest {
             Assert.assertEquals(swappedColumns.getType(), PerkType.OTHER);
 
             final Perk duplication = findById(perks, "Duplicación");
-            Assert.assertEquals(duplication.getDescription(), "Genera una copia. Consulta la página 70.");
+            Assert.assertEquals(duplication.getDescription().getSpanish(), "Genera una copia. Consulta la página 70.");
+            Assert.assertFalse(duplication.getDescription().getEnglish().isBlank());
         } finally {
             deleteRecursively(sourceRoot);
             deleteRecursively(targetRoot);

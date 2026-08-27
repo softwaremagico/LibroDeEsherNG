@@ -30,7 +30,7 @@ public class CategoryMigrationToolTest {
             final int written = CategoryMigrationTool.migrate(sourceRoot, targetRoot);
             Assert.assertEquals(written, 2, "expected one categorias.xml for 'Basico' and one for 'Esencia'");
 
-            final List<Category> basicoCategories = readGeneratedFile(targetRoot.resolve("Basico/categorias.xml"));
+            final List<Category> basicoCategories = readGeneratedFile(targetRoot.resolve("Core/categories.xml"));
             Assert.assertEquals(basicoCategories.size(), 2);
 
             final Category armaduraLigera = findById(basicoCategories, "ArmaduraLigera");
@@ -44,7 +44,7 @@ public class CategoryMigrationToolTest {
             // The base "AtaquesEspeciales" skill plus the one contributed later by the "Esencia" module.
             Assert.assertEquals(ataquesEspeciales.getSkills(), List.of("Pelea", "Ataque Mágico"));
 
-            final List<Category> esenciaCategories = readGeneratedFile(targetRoot.resolve("Esencia/categorias.xml"));
+            final List<Category> esenciaCategories = readGeneratedFile(targetRoot.resolve("Essence/categories.xml"));
             Assert.assertEquals(esenciaCategories.size(), 1, "'AtaquesEspeciales' was merged into Basico, "
                     + "only the category first defined by Esencia should remain here");
             Assert.assertEquals(esenciaCategories.get(0).getId(), "ConocimientoMagico");

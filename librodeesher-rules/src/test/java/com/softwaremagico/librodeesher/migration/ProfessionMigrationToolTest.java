@@ -73,7 +73,7 @@ public class ProfessionMigrationToolTest {
             final int written = ProfessionMigrationTool.migrate(sourceRoot, targetRoot);
             Assert.assertEquals(written, 1);
 
-            final List<Profession> professions = readGeneratedFile(targetRoot.resolve("Basico/profesiones.xml"));
+            final List<Profession> professions = readGeneratedFile(targetRoot.resolve("Core/professions.xml"));
             Assert.assertEquals(professions.size(), 1);
             final Profession mago = professions.get(0);
 

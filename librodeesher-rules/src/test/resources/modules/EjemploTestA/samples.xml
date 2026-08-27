@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<samples>
+    <sample>
+        <id>alpha</id>
+        <name><es>Alpha (módulo A)</es><en>Alpha (module A)</en></name>
+        <value>1</value>
+    </sample>
+    <sample>
+        <id>beta</id>
+        <name><es>Beta (módulo A)</es><en>Beta (module A)</en></name>
+        <value>2</value>
+    </sample>
+</samples>

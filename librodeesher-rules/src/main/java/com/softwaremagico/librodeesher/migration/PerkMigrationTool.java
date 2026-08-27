@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.migration;
 
+import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.file.ModuleManager;
 import com.softwaremagico.librodeesher.perk.Perk;
 import com.softwaremagico.librodeesher.perk.PerkGrade;
@@ -30,7 +31,7 @@ public final class PerkMigrationTool {
 
     private static final String PERKS_FOLDER = "talentos";
     private static final String PERKS_FILE = "talentos.txt";
-    private static final String OUTPUT_FILE = "talentos.xml";
+    private static final String OUTPUT_FILE = "perks.xml";
 
     private PerkMigrationTool() {
         // Utility class.
@@ -48,7 +49,7 @@ public final class PerkMigrationTool {
 
         int written = 0;
         for (final String module : ModuleManager.getAllModules()) {
-            final Path file = modulosDir.resolve(module).resolve(PERKS_FOLDER).resolve(PERKS_FILE);
+            final Path file = modulosDir.resolve(LegacyModules.sourceFolderFor(module)).resolve(PERKS_FOLDER).resolve(PERKS_FILE);
             if (!Files.isRegularFile(file)) {
                 continue;
             }
@@ -74,7 +75,7 @@ public final class PerkMigrationTool {
             }
 
             final Perk perk = new Perk(columns[0].trim());
-            perk.setName(columns[0].trim());
+            perk.setName(columns[0].trim(), Translations.toEnglish(columns[0].trim()));
             perk.setCost(Integer.valueOf(columns[1].trim()));
             perk.setAvailableTo(parseAvailableTo(columns[2]));
             perk.setGrade(PerkGrade.fromTag(columns[3].trim()));
@@ -83,7 +84,7 @@ public final class PerkMigrationTool {
             // A handful of rows have a stray tab splitting the description in two (a data typo in the
             // legacy files); join everything from column 6 onwards instead of silently dropping it.
             final String description = String.join(" ", Arrays.copyOfRange(columns, 6, columns.length)).trim();
-            perk.setDescription(description);
+            perk.setDescription(description, Translations.toEnglish(description));
             perks.add(perk);
         }
         return perks;

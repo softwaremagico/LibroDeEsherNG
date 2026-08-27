@@ -1,0 +1,1114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<armas>
+  <arma>
+    <abbreviation>Gnd</abbreviation>
+    <categoryId>Armas·Arrojadizas</categoryId>
+    <id>Granada</id>
+    <name>
+      <en>Grenade</en>
+      <es>Granada</es>
+    </name>
+    <rare>false</rare>
+    <type>Arrojadizas</type>
+  </arma>
+  <arma>
+    <abbreviation>mc</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Machete</id>
+    <name>
+      <en>Machete</en>
+      <es>Machete</es>
+    </name>
+    <rare>false</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>pstPM</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Revolver: Colt Army (Peacemaker)</id>
+    <name>
+      <en>Revolver: Colt Army (Peacemaker)</en>
+      <es>Revolver: Colt Army (Peacemaker)</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstDA</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Revolver: Colt DA Army</id>
+    <name>
+      <en>Revolver: Colt DA Army</en>
+      <es>Revolver: Colt DA Army</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstDS</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Revolver: Colt Detective Special</id>
+    <name>
+      <en>Revolver: Colt Detective Special</en>
+      <es>Revolver: Colt Detective Special</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstNv</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Revolver: Colt Navy</id>
+    <name>
+      <en>Revolver: Colt Navy</en>
+      <es>Revolver: Colt Navy</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstPP</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Revolver: Colt Police Positive</id>
+    <name>
+      <en>Revolver: Colt Police Positive</en>
+      <es>Revolver: Colt Police Positive</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstJa26</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Revolver: Japanese Type 26</id>
+    <name>
+      <en>Revolver: Japanese Type 26</en>
+      <es>Revolver: Japanese Type 26</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstNa1895</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Revolver: Nagant M1895</id>
+    <name>
+      <en>Revolver: Nagant M1895</en>
+      <es>Revolver: Nagant M1895</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstDe</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Revolver: Remington .41 Derringer</id>
+    <name>
+      <en>Revolver: Remington .41 Derringer</en>
+      <es>Revolver: Remington .41 Derringer</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstM27</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Revolver: S&amp;W M27</id>
+    <name>
+      <en>Revolver: S&amp;W M27</en>
+      <es>Revolver: S&amp;W M27</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstM&amp;P</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Revolver: S&amp;W Military &amp; Police</id>
+    <name>
+      <en>Revolver: S&amp;W Military &amp; Police</en>
+      <es>Revolver: S&amp;W Military &amp; Police</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstW3</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Revolver: Webley Mk3</id>
+    <name>
+      <en>Revolver: Webley Mk3</en>
+      <es>Revolver: Webley Mk3</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstW4</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Revolver: Webley Mk4</id>
+    <name>
+      <en>Revolver: Webley Mk4</en>
+      <es>Revolver: Webley Mk4</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstA400</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Astra 400</id>
+    <name>
+      <en>Automatic Pistol: Astra 400</en>
+      <es>Pistola Automática: Astra 400</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstA900</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Astra 900</id>
+    <name>
+      <en>Automatic Pistol: Astra 900</en>
+      <es>Pistola Automática: Astra 900</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstA902</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Astra 902</id>
+    <name>
+      <en>Automatic Pistol: Astra 902</en>
+      <es>Pistola Automática: Astra 902</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstAM1921</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Astra M1921</id>
+    <name>
+      <en>Automatic Pistol: Astra M1921</en>
+      <es>Pistola Automática: Astra M1921</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstB1923</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Bayard 1923</id>
+    <name>
+      <en>Automatic Pistol: Bayard 1923</en>
+      <es>Pistola Automática: Bayard 1923</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstB1915</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Beretta 1915</id>
+    <name>
+      <en>Automatic Pistol: Beretta 1915</en>
+      <es>Pistola Automática: Beretta 1915</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstB1934</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Beretta 1934</id>
+    <name>
+      <en>Automatic Pistol: Beretta 1934</en>
+      <es>Pistola Automática: Beretta 1934</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstB1910</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Browning 1910</id>
+    <name>
+      <en>Automatic Pistol: Browning 1910</en>
+      <es>Pistola Automática: Browning 1910</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstB1922</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Browning 1922</id>
+    <name>
+      <en>Automatic Pistol: Browning 1922</en>
+      <es>Pistola Automática: Browning 1922</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstBBy</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Browning Baby</id>
+    <name>
+      <en>Automatic Pistol: Browning Baby</en>
+      <es>Pistola Automática: Browning Baby</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstGP35</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Browning GP35</id>
+    <name>
+      <en>Automatic Pistol: Browning GP35</en>
+      <es>Pistola Automática: Browning GP35</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstC1911</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Colt M1911</id>
+    <name>
+      <en>Automatic Pistol: Colt M1911</en>
+      <es>Pistola Automática: Colt M1911</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstCS</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Colt Service</id>
+    <name>
+      <en>Automatic Pistol: Colt Service</en>
+      <es>Pistola Automática: Colt Service</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstCW</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Colt Woodsman</id>
+    <name>
+      <en>Automatic Pistol: Colt Woodsman</en>
+      <es>Pistola Automática: Colt Woodsman</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstCZ24</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: CZ 24</id>
+    <name>
+      <en>Automatic Pistol: CZ 24</en>
+      <es>Pistola Automática: CZ 24</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstCZ27</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: CZ 27</id>
+    <name>
+      <en>Automatic Pistol: CZ 27</en>
+      <es>Pistola Automática: CZ 27</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstFM29</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Frommer M29</id>
+    <name>
+      <en>Automatic Pistol: Frommer M29</en>
+      <es>Pistola Automática: Frommer M29</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstFM37</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Frommer M37</id>
+    <name>
+      <en>Automatic Pistol: Frommer M37</en>
+      <es>Pistola Automática: Frommer M37</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstFS</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Frommer Stop</id>
+    <name>
+      <en>Automatic Pistol: Frommer Stop</en>
+      <es>Pistola Automática: Frommer Stop</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstJa94</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Japanse Model 94</id>
+    <name>
+      <en>Automatic Pistol: Japanse Model 94</en>
+      <es>Pistola Automática: Japanse Model 94</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstLM11</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Llama Model 11</id>
+    <name>
+      <en>Automatic Pistol: Llama Model 11</en>
+      <es>Pistola Automática: Llama Model 11</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstLM3</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Llama Model 3</id>
+    <name>
+      <en>Automatic Pistol: Llama Model 3</en>
+      <es>Pistola Automática: Llama Model 3</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstMMA</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Mab Model A</id>
+    <name>
+      <en>Automatic Pistol: Mab Model A</en>
+      <es>Pistola Automática: Mab Model A</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstMMD</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Mab Model D</id>
+    <name>
+      <en>Automatic Pistol: Mab Model D</en>
+      <es>Pistola Automática: Mab Model D</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstM1901</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Mannlicher 1901</id>
+    <name>
+      <en>Automatic Pistol: Mannlicher 1901</en>
+      <es>Pistola Automática: Mannlicher 1901</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstMC96</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Mauser C96</id>
+    <name>
+      <en>Automatic Pistol: Mauser C96</en>
+      <es>Pistola Automática: Mauser C96</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstMPM1910</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Mauser Pocket Model 1910</id>
+    <name>
+      <en>Automatic Pistol: Mauser Pocket Model 1910</en>
+      <es>Pistola Automática: Mauser Pocket Model 1910</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstMPM1934</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Mauser Pocket Model 1934</id>
+    <name>
+      <en>Automatic Pistol: Mauser Pocket Model 1934</en>
+      <es>Pistola Automática: Mauser Pocket Model 1934</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstNBy</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Nambu Baby</id>
+    <name>
+      <en>Automatic Pistol: Nambu Baby</en>
+      <es>Pistola Automática: Nambu Baby</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstN1904</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Namby 1904</id>
+    <name>
+      <en>Automatic Pistol: Namby 1904</en>
+      <es>Pistola Automática: Namby 1904</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstPLP08</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Parabellum Luger P08</id>
+    <name>
+      <en>Automatic Pistol: Parabellum Luger P08</en>
+      <es>Pistola Automática: Parabellum Luger P08</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstRdm</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Radom</id>
+    <name>
+      <en>Automatic Pistol: Radom</en>
+      <es>Pistola Automática: Radom</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstSBM</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Sauer Behorden Model</id>
+    <name>
+      <en>Automatic Pistol: Sauer Behorden Model</en>
+      <es>Pistola Automática: Sauer Behorden Model</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstSM38H</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Sauer Model 38H</id>
+    <name>
+      <en>Automatic Pistol: Sauer Model 38H</en>
+      <es>Pistola Automática: Sauer Model 38H</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstSMB</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Star Model B</id>
+    <name>
+      <en>Automatic Pistol: Star Model B</en>
+      <es>Pistola Automática: Star Model B</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstTT33</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: TT-33 Tokarev</id>
+    <name>
+      <en>Automatic Pistol: TT-33 Tokarev</en>
+      <es>Pistola Automática: TT-33 Tokarev</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstT80</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Type 80</id>
+    <name>
+      <en>Automatic Pistol: Type 80</en>
+      <es>Pistola Automática: Type 80</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstWM8</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Walther Model 8</id>
+    <name>
+      <en>Automatic Pistol: Walther Model 8</en>
+      <es>Pistola Automática: Walther Model 8</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstWMP</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Walther Model Pistole</id>
+    <name>
+      <en>Automatic Pistol: Walther Model Pistole</en>
+      <es>Pistola Automática: Walther Model Pistole</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstWMPP</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Walther Model PP</id>
+    <name>
+      <en>Automatic Pistol: Walther Model PP</en>
+      <es>Pistola Automática: Walther Model PP</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstWMPPK</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Walther Model PPK</id>
+    <name>
+      <en>Automatic Pistol: Walther Model PPK</en>
+      <es>Pistola Automática: Walther Model PPK</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>sfMP351</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Subfusil: Bergman MP35/1</id>
+    <name>
+      <en>Submachine Gun: Bergman MP35/1</en>
+      <es>Subfusil: Bergman MP35/1</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>sfCZ383</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Subfusil: CZ 383</id>
+    <name>
+      <en>Submachine Gun: CZ 383</en>
+      <es>Subfusil: CZ 383</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>sfMP38</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Subfusil: Erma MP38</id>
+    <name>
+      <en>Submachine Gun: Erma MP38</en>
+      <es>Subfusil: Erma MP38</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>sfMPE</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Subfusil: Erme MPE</id>
+    <name>
+      <en>Submachine Gun: Erme MPE</en>
+      <es>Subfusil: Erme MPE</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>sfM30</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Subfusil: M30 Broomhandle</id>
+    <name>
+      <en>Submachine Gun: M30 Broomhandle</en>
+      <es>Subfusil: M30 Broomhandle</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>sfMM38</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Subfusil: MAS M38</id>
+    <name>
+      <en>Submachine Gun: MAS M38</en>
+      <es>Subfusil: MAS M38</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>sfMP28/11</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Subfusil: MP 28/11</id>
+    <name>
+      <en>Submachine Gun: MP 28/11</en>
+      <es>Subfusil: MP 28/11</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>sfSM31</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Subfusil: Suomi M31</id>
+    <name>
+      <en>Submachine Gun: Suomi M31</en>
+      <es>Subfusil: Suomi M31</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>sfTM1928</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Subfusil: Thompson M1928</id>
+    <name>
+      <en>Submachine Gun: Thompson M1928</en>
+      <es>Subfusil: Thompson M1928</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>sfTM1</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Subfusil: Thompson M1</id>
+    <name>
+      <en>Submachine Gun: Thompson M1</en>
+      <es>Subfusil: Thompson M1</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfAT99</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: Ariasaka Type 99</id>
+    <name>
+      <en>Rifle: Ariasaka Type 99</en>
+      <es>Rifle: Ariasaka Type 99</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfZH29</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: Czech ZH29</id>
+    <name>
+      <en>Rifle: Czech ZH29</en>
+      <es>Rifle: Czech ZH29</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfE1917</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: Enfield M1917</id>
+    <name>
+      <en>Rifle: Enfield M1917</en>
+      <es>Rifle: Enfield M1917</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfF1916</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: French 1916 8mm</id>
+    <name>
+      <en>Rifle: French 1916 8mm</en>
+      <es>Rifle: French 1916 8mm</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfHHBQ</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: H&amp;H BQ Mag Rifle</id>
+    <name>
+      <en>Rifle: H&amp;H BQ Mag Rifle</en>
+      <es>Rifle: H&amp;H BQ Mag Rifle</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfHH2H</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: H&amp;H #2 Hammerless</id>
+    <name>
+      <en>Rifle: H&amp;H #2 Hammerless</en>
+      <es>Rifle: H&amp;H #2 Hammerless</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfRDC300</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: H&amp;H Royal DC 300</id>
+    <name>
+      <en>Rifle: H&amp;H Royal DC 300</en>
+      <es>Rifle: H&amp;H Royal DC 300</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfHM35</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: Hungarian M35</id>
+    <name>
+      <en>Rifle: Hungarian M35</en>
+      <es>Rifle: Hungarian M35</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfJT38</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: Japanese Type 38</id>
+    <name>
+      <en>Rifle: Japanese Type 38</en>
+      <es>Rifle: Japanese Type 38</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfLE1</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: Lee-Enfield Mk I</id>
+    <name>
+      <en>Rifle: Lee-Enfield Mk I</en>
+      <es>Rifle: Lee-Enfield Mk I</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfLE3</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: Lee-Enfield SMLE Mk 3</id>
+    <name>
+      <en>Rifle: Lee-Enfield SMLE Mk 3</en>
+      <es>Rifle: Lee-Enfield SMLE Mk 3</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfM1Ga</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: M1 Garand</id>
+    <name>
+      <en>Rifle: M1 Garand</en>
+      <es>Rifle: M1 Garand</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfMAS</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: MAS 1936</id>
+    <name>
+      <en>Rifle: MAS 1936</en>
+      <es>Rifle: MAS 1936</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfMG98</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: Mauser Gewehr 98</id>
+    <name>
+      <en>Rifle: Mauser Gewehr 98</en>
+      <es>Rifle: Mauser Gewehr 98</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfMN1981</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: Moshin-Nagant 1891</id>
+    <name>
+      <en>Rifle: Moshin-Nagant 1891</en>
+      <es>Rifle: Moshin-Nagant 1891</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfSR1931</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: Schmidt-Rubin 1931</id>
+    <name>
+      <en>Rifle: Schmidt-Rubin 1931</en>
+      <es>Rifle: Schmidt-Rubin 1931</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfSM36</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: Simonov Model 36</id>
+    <name>
+      <en>Rifle: Simonov Model 36</en>
+      <es>Rifle: Simonov Model 36</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfS18</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: Solothurn S-18/100 AT</id>
+    <name>
+      <en>Rifle: Solothurn S-18/100 AT</en>
+      <es>Rifle: Solothurn S-18/100 AT</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfS1909</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: Springfield 1903A1</id>
+    <name>
+      <en>Rifle: Springfield 1903A1</en>
+      <es>Rifle: Springfield 1903A1</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rfTk38</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle: Tokarev SVT-38</id>
+    <name>
+      <en>Rifle: Tokarev SVT-38</en>
+      <es>Rifle: Tokarev SVT-38</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>amM30</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Ametralladora: Breda M30</id>
+    <name>
+      <en>Machine Gun: Breda M30</en>
+      <es>Ametralladora: Breda M30</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>amM37</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Ametralladora: Breda M37</id>
+    <name>
+      <en>Machine Gun: Breda M37</en>
+      <es>Ametralladora: Breda M37</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>amB1</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Ametralladora: Bren Mk I</id>
+    <name>
+      <en>Machine Gun: Bren Mk I</en>
+      <es>Ametralladora: Bren Mk I</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>amM2HB</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Ametralladora: Browning M2HB</id>
+    <name>
+      <en>Machine Gun: Browning M2HB</en>
+      <es>Ametralladora: Browning M2HB</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>amCha29</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Ametralladora: Chatellerault 1924/29</id>
+    <name>
+      <en>Machine Gun: Chatellerault 1924/29</en>
+      <es>Ametralladora: Chatellerault 1924/29</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>amDDP</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Ametralladora: Degtyarev DP</id>
+    <name>
+      <en>Machine Gun: Degtyarev DP</en>
+      <es>Ametralladora: Degtyarev DP</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>amH1</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Ametralladora: Hotchkiss Mk I</id>
+    <name>
+      <en>Machine Gun: Hotchkiss Mk I</en>
+      <es>Ametralladora: Hotchkiss Mk I</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>amH1922</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Ametralladora: Hotchkiss 1922</id>
+    <name>
+      <en>Machine Gun: Hotchkiss 1922</en>
+      <es>Ametralladora: Hotchkiss 1922</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>amJa11</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Ametralladora: Japanese Type 11</id>
+    <name>
+      <en>Machine Gun: Japanese Type 11</en>
+      <es>Ametralladora: Japanese Type 11</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>amJa92</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Ametralladora: Japanese Type 92</id>
+    <name>
+      <en>Machine Gun: Japanese Type 92</en>
+      <es>Ametralladora: Japanese Type 92</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>amM26</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Ametralladora: M26 Lahti Saloranta</id>
+    <name>
+      <en>Machine Gun: M26 Lahti Saloranta</en>
+      <es>Ametralladora: M26 Lahti Saloranta</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>amMG34</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Ametralladora: MG34</id>
+    <name>
+      <en>Machine Gun: MG34</en>
+      <es>Ametralladora: MG34</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>amZB26</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Ametralladora: ZB26</id>
+    <name>
+      <en>Machine Gun: ZB26</en>
+      <es>Ametralladora: ZB26</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>escB410</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Escopeta: Beretta 410 10-G mag.</id>
+    <name>
+      <en>Shotgun: Beretta 410 10-G mag.</en>
+      <es>Escopeta: Beretta 410 10-G mag.</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>escBA5</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Escopeta: Browning Auto-5</id>
+    <name>
+      <en>Shotgun: Browning Auto-5</en>
+      <es>Escopeta: Browning Auto-5</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>escWM1911</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Escopeta: Winchester M1911</id>
+    <name>
+      <en>Shotgun: Winchester M1911</en>
+      <es>Escopeta: Winchester M1911</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+</armas>

@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class TrainingFactory extends XmlFactory<Training> {
 
-    private static final String XML_FILE = "adiestramientos.xml";
+    private static final String XML_FILE = "trainings.xml";
 
     private static final class TrainingFactoryHolder {
         private static final TrainingFactory INSTANCE = new TrainingFactory();

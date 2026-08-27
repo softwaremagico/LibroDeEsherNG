@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.softwaremagico.librodeesher.Element;
+import com.softwaremagico.librodeesher.language.TranslatedText;
 
 import java.util.Collections;
 import java.util.List;
@@ -50,7 +51,7 @@ public class Perk extends Element {
     private String bonusesRaw;
 
     @JsonProperty("description")
-    private String description;
+    private TranslatedText description;
 
     public Perk() {
         super();
@@ -110,11 +111,16 @@ public class Perk extends Element {
         this.bonusesRaw = bonusesRaw;
     }
 
-    public String getDescription() {
+    public TranslatedText getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(TranslatedText description) {
         this.description = description;
+    }
+
+    /** Convenience setter building the {@link TranslatedText} from its two languages. */
+    public void setDescription(String spanish, String english) {
+        this.description = new TranslatedText(spanish, english);
     }
 }

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<categorias>
+  <categoria>
+    <abbreviation>CienM</abbreviation>
+    <characteristics>
+      <characteristic>Ra</characteristic>
+      <characteristic>Me</characteristic>
+      <characteristic>In</characteristic>
+    </characteristics>
+    <id>Ciencia/Analítica·Médica</id>
+    <name>
+      <en>Science/Analytic: Médica</en>
+      <es>Ciencia/Analítica·Médica</es>
+    </name>
+    <skills>
+      <skill>Autópsia</skill>
+      <skill>Práctica Médica</skill>
+      <skill>Ciencia Médica</skill>
+      <skill>Fármacos</skill>
+      <skill>Terapia con Drogas</skill>
+    </skills>
+    <skillsRaw>Autópsia, Práctica Médica, Ciencia Médica, Fármacos, Terapia con Drogas</skillsRaw>
+    <type>Estándar</type>
+  </categoria>
+  <categoria>
+    <abbreviation>CienT</abbreviation>
+    <characteristics>
+      <characteristic>Ra</characteristic>
+      <characteristic>Me</characteristic>
+      <characteristic>Ag</characteristic>
+    </characteristics>
+    <id>Ciencia/Analítica·Técnica</id>
+    <name>
+      <en>Science/Analytic: Técnica</en>
+      <es>Ciencia/Analítica·Técnica</es>
+    </name>
+    <skills>
+      <skill>Tecnología Criminal</skill>
+      <skill>Tecnología Electrónica</skill>
+      <skill>Tecnología Genética</skill>
+      <skill>Tecnología Mecánica</skill>
+      <skill>Tecnología Armamentística</skill>
+      <skill>Creación de Artilugios</skill>
+    </skills>
+    <skillsRaw>Tecnología Criminal, Tecnología Electrónica, Tecnología Genética, Tecnología Mecánica, Tecnología Armamentística, Creación de Artilugios</skillsRaw>
+    <type>Estándar</type>
+  </categoria>
+  <categoria>
+    <abbreviation>ConAca</abbreviation>
+    <characteristics>
+      <characteristic>Me</characteristic>
+      <characteristic>Ra</characteristic>
+      <characteristic>Me</characteristic>
+    </characteristics>
+    <id>Conocimiento·Académico</id>
+    <name>
+      <en>Lore: Académico</en>
+      <es>Conocimiento·Académico</es>
+    </name>
+    <skills>
+      <skill>Historia del Arte</skill>
+      <skill>Filosofía</skill>
+      <skill>Periodismo</skill>
+      <skill>Ciencias Políticas</skill>
+      <skill>Derecho</skill>
+      <skill>Historia de la Religión</skill>
+      <skill>Artes Gráficas</skill>
+      <skill>Canon</skill>
+      <skill>Comparación de Religiones</skill>
+      <skill>Doctrina Filosófica/Religiosa</skill>
+      <skill>Sociología</skill>
+      <skill>Arqueología</skill>
+      <skill>Teología</skill>
+      <skill>Geografía</skill>
+    </skills>
+    <skillsRaw>Historia del Arte, Filosofía, Periodismo, Ciencias Políticas, Derecho, Historia de la Religión, Artes Gráficas, Canon, Comparación de Religiones, Doctrina Filosófica/Religiosa, Sociología, Arqueología, Teología, Geografía</skillsRaw>
+    <type>Estándar</type>
+  </categoria>
+</categorias>

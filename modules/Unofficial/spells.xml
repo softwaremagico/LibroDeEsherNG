@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Armadura del Caos</id>
+    <name>
+      <en>Armor of the Caos</en>
+      <es>Armadura del Caos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lord del Caos</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Arma del Caos</id>
+    <name>
+      <en>Arma of the Caos</en>
+      <es>Arma del Caos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lord del Caos</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Esencia|Maestría del Caos</id>
+    <name>
+      <en>Maestría of the Caos</en>
+      <es>Maestría del Caos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lord del Caos</owner>
+    </owners>
+    <realm>Esencia</realm>
+  </listaDeHechizos>
+</hechizos>

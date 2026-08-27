@@ -37,7 +37,7 @@ public class SkillMigrationToolTest {
             final int written = SkillMigrationTool.migrate(sourceRoot, targetRoot);
             Assert.assertEquals(written, 1);
 
-            final List<Skill> skills = readGeneratedFile(targetRoot.resolve("Basico/habilidades.xml"));
+            final List<Skill> skills = readGeneratedFile(targetRoot.resolve("Core/skills.xml"));
             Assert.assertEquals(skills.size(), 3);
 
             final Skill style = findById(skills, "Estilo de la Grulla");

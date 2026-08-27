@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class ProfessionFactory extends XmlFactory<Profession> {
 
-    private static final String XML_FILE = "profesiones.xml";
+    private static final String XML_FILE = "professions.xml";
 
     private static final class ProfessionFactoryHolder {
         private static final ProfessionFactory INSTANCE = new ProfessionFactory();

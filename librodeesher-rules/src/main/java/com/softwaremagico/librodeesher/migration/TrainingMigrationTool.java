@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.migration;
 
+import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.file.ModuleManager;
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
 import com.softwaremagico.librodeesher.training.Training;
@@ -44,7 +45,7 @@ import java.util.stream.Stream;
 public final class TrainingMigrationTool {
 
     private static final String TRAININGS_FOLDER = "adiestramientos";
-    private static final String OUTPUT_FILE = "adiestramientos.xml";
+    private static final String OUTPUT_FILE = "trainings.xml";
     private static final String NOTHING_MARKER = "ningun";
 
     private TrainingMigrationTool() {
@@ -63,7 +64,7 @@ public final class TrainingMigrationTool {
 
         int written = 0;
         for (final String module : ModuleManager.getAllModules()) {
-            final Path trainingsDir = modulosDir.resolve(module).resolve(TRAININGS_FOLDER);
+            final Path trainingsDir = modulosDir.resolve(LegacyModules.sourceFolderFor(module)).resolve(TRAININGS_FOLDER);
             if (!Files.isDirectory(trainingsDir)) {
                 continue;
             }
@@ -90,7 +91,7 @@ public final class TrainingMigrationTool {
         final SectionCursor cursor = new SectionCursor(Files.readAllLines(file, StandardCharsets.UTF_8));
 
         final Training training = new Training(trainingName);
-        training.setName(trainingName);
+        training.setName(trainingName, Translations.toEnglish(trainingName));
         training.setTrainingTimeInMonths(Integer.valueOf(cursor.nextSection().get(0).trim()));
         training.setLimitedRaces(parseCommaList(cursor.nextSection()));
         training.setSpecialItems(parseSpecialItems(cursor.nextSection()));

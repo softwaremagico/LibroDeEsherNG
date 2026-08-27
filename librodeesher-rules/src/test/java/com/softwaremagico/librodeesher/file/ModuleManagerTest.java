@@ -13,8 +13,8 @@ public class ModuleManagerTest {
     @Test
     public void allTwentyRulebookModulesAreKnown() {
         Assert.assertEquals(ModuleManager.getAllModules().size(), 20);
-        Assert.assertTrue(ModuleManager.getAllModules().contains(ModuleManager.BASICO));
-        Assert.assertTrue(ModuleManager.getAllModules().contains(ModuleManager.RAZAS_Y_CULTURAS));
+        Assert.assertTrue(ModuleManager.getAllModules().contains(ModuleManager.CORE));
+        Assert.assertTrue(ModuleManager.getAllModules().contains(ModuleManager.RACES_AND_CULTURES));
     }
 
     @Test

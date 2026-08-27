@@ -81,7 +81,7 @@ public class TrainingMigrationToolTest {
             final int written = TrainingMigrationTool.migrate(sourceRoot, targetRoot);
             Assert.assertEquals(written, 1);
 
-            final List<Training> trainings = readGeneratedFile(targetRoot.resolve("Basico/adiestramientos.xml"));
+            final List<Training> trainings = readGeneratedFile(targetRoot.resolve("Core/trainings.xml"));
             Assert.assertEquals(trainings.size(), 1);
             final Training explorador = trainings.get(0);
 

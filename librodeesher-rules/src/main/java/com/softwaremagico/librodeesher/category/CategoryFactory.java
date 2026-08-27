@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class CategoryFactory extends XmlFactory<Category> {
 
-    private static final String XML_FILE = "categorias.xml";
+    private static final String XML_FILE = "categories.xml";
 
     private static final class CategoryFactoryHolder {
         private static final CategoryFactory INSTANCE = new CategoryFactory();

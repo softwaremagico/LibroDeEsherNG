@@ -12,9 +12,9 @@ import java.util.List;
  * migration tool that needs to walk the "Habilidades" column of that file
  * ({@link CategoryMigrationTool}, {@link SkillMigrationTool}).
  *
- * <p>"Basico" is special-cased to also include the base {@code rolemaster/categorias.txt} file
- * (outside any module folder), which the legacy application always loaded first regardless of which
- * modules were enabled.</p>
+ * <p>{@link ModuleManager#CORE} is special-cased to also include the base
+ * {@code rolemaster/categorias.txt} file (outside any module folder), which the legacy application
+ * always loaded first regardless of which modules were enabled.</p>
  */
 final class LegacyCategoriesFiles {
 
@@ -24,12 +24,16 @@ final class LegacyCategoriesFiles {
         // Utility class.
     }
 
-    static List<Path> forModule(String module, Path rolemasterDir, Path modulosDir) {
+    /**
+     * @param englishModuleId English {@link ModuleManager} module id (e.g. {@link ModuleManager#CORE}).
+     */
+    static List<Path> forModule(String englishModuleId, Path rolemasterDir, Path modulosDir) {
         final List<Path> files = new ArrayList<>();
-        if (ModuleManager.BASICO.equals(module)) {
+        if (ModuleManager.CORE.equals(englishModuleId)) {
             addIfExists(files, rolemasterDir.resolve(CATEGORIES_FILE));
         }
-        addIfExists(files, modulosDir.resolve(module).resolve(CATEGORIES_FILE));
+        final String sourceFolder = LegacyModules.sourceFolderFor(englishModuleId);
+        addIfExists(files, modulosDir.resolve(sourceFolder).resolve(CATEGORIES_FILE));
         return files;
     }
 

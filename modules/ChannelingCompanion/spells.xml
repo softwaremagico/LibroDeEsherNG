@@ -1,0 +1,666 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Ataduras de las Invocaciones</id>
+    <name>
+      <en>Ataduras of the Invocaciones</en>
+      <es>Ataduras de las Invocaciones</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Invocador</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Círculos de Invocaciones</id>
+    <name>
+      <en>Círculos of Invocaciones</en>
+      <es>Círculos de Invocaciones</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Invocador</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Invocaciones de Animales</id>
+    <name>
+      <en>Invocaciones of Animals</en>
+      <es>Invocaciones de Animales</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Invocador</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Invocaciones Planares</id>
+    <name>
+      <en>Invocaciones Planares</en>
+      <es>Invocaciones Planares</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Invocador</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Maestría de las Invocaciones</id>
+    <name>
+      <en>Maestría of the Invocaciones</en>
+      <es>Maestría de las Invocaciones</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Invocador</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Umbrales</id>
+    <name>
+      <en>Umbrales</en>
+      <es>Umbrales</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Invocador</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Destrucción de la Fe</id>
+    <name>
+      <en>Destrucción of the Fe</en>
+      <es>Destrucción de la Fe</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Nefando</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Ley de la Perdición</id>
+    <name>
+      <en>Ley of the Perdición</en>
+      <es>Ley de la Perdición</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Nefando</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Ley de la Venganza</id>
+    <name>
+      <en>Ley of the Venganza</en>
+      <es>Ley de la Venganza</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Nefando</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Maestría de lo Extraño</id>
+    <name>
+      <en>Maestría of lo Extraño</en>
+      <es>Maestría de lo Extraño</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Nefando</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Semblante del Terror</id>
+    <name>
+      <en>Semblante of the Terror</en>
+      <es>Semblante del Terror</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Nefando</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Transformaciones</id>
+    <name>
+      <en>Transformaciones</en>
+      <es>Transformaciones</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Nefando</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|El Defensor</id>
+    <name>
+      <en>The Defensor</en>
+      <es>El Defensor</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mítico</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|El Ojo</id>
+    <name>
+      <en>The Ojo</en>
+      <es>El Ojo</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mítico</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|La Máscara</id>
+    <name>
+      <en>The Máscara</en>
+      <es>La Máscara</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mítico</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|La Voluntad</id>
+    <name>
+      <en>The Voluntad</en>
+      <es>La Voluntad</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mítico</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Misión Sagrada</id>
+    <name>
+      <en>Misión Sagrada</en>
+      <es>Misión Sagrada</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mítico</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Venganza</id>
+    <name>
+      <en>Venganza</en>
+      <es>Venganza</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mítico</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Arma Sagrada</id>
+    <name>
+      <en>Arma Sagrada</en>
+      <es>Arma Sagrada</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Aura Divina</id>
+    <name>
+      <en>Aura Divina</en>
+      <es>Aura Divina</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Ceremonias</id>
+    <name>
+      <en>Ceremonias</en>
+      <es>Ceremonias</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Conocimiento del Tiempo</id>
+    <name>
+      <en>Lore of the Tiempo</en>
+      <es>Conocimiento del Tiempo</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Cruzada</id>
+    <name>
+      <en>Cruzada</en>
+      <es>Cruzada</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Curación de Campaña</id>
+    <name>
+      <en>Curación of Campaña</en>
+      <es>Curación de Campaña</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Defensa Sagrada</id>
+    <name>
+      <en>Defense Sagrada</en>
+      <es>Defensa Sagrada</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Destierros</id>
+    <name>
+      <en>Destierros</en>
+      <es>Destierros</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Disciplina Sagrada</id>
+    <name>
+      <en>Disciplina Sagrada</en>
+      <es>Disciplina Sagrada</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Dominación de la Naturaleza</id>
+    <name>
+      <en>Dominación of the Naturaleza</en>
+      <es>Dominación de la Naturaleza</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Dominación de los Espíritus</id>
+    <name>
+      <en>Dominación of the Espíritus</en>
+      <es>Dominación de los Espíritus</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|El Cazador</id>
+    <name>
+      <en>The Cazador</en>
+      <es>El Cazador</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Elementos Sagrados</id>
+    <name>
+      <en>Elements Sagrados</en>
+      <es>Elementos Sagrados</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Encantamientos</id>
+    <name>
+      <en>Encantamientos</en>
+      <es>Encantamientos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Escudo de la Fe</id>
+    <name>
+      <en>Shield of the Fe</en>
+      <es>Escudo de la Fe</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Formas Acuáticas</id>
+    <name>
+      <en>Formas Acuáticas</en>
+      <es>Formas Acuáticas</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Formas Terrestres</id>
+    <name>
+      <en>Formas Terrestres</en>
+      <es>Formas Terrestres</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Ira Sagrada</id>
+    <name>
+      <en>Ira Sagrada</en>
+      <es>Ira Sagrada</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Ley de las Serpientes</id>
+    <name>
+      <en>Ley of the Serpientes</en>
+      <es>Ley de las Serpientes</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Ley de los Espíritus</id>
+    <name>
+      <en>Ley of the Espíritus</en>
+      <es>Ley de los Espíritus</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Maestría de la Caza</id>
+    <name>
+      <en>Maestría of the Caza</en>
+      <es>Maestría de la Caza</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Maestría de la Muerte</id>
+    <name>
+      <en>Maestría of the Death</en>
+      <es>Maestría de la Muerte</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Maestría de las Piedras</id>
+    <name>
+      <en>Maestría of the Piedras</en>
+      <es>Maestría de las Piedras</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Maestría de los Árboles</id>
+    <name>
+      <en>Maestría of the Árboles</en>
+      <es>Maestría de los Árboles</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Maestría de los Caballos</id>
+    <name>
+      <en>Maestría of the Caballos</en>
+      <es>Maestría de los Caballos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Maestría de los Insectos</id>
+    <name>
+      <en>Maestría of the Insectos</en>
+      <es>Maestría de los Insectos</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Magia Divina</id>
+    <name>
+      <en>Magic Divina</en>
+      <es>Magia Divina</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Magia Vudú</id>
+    <name>
+      <en>Magic Vudú</en>
+      <es>Magia Vudú</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Proselitismo</id>
+    <name>
+      <en>Proselitismo</en>
+      <es>Proselitismo</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Símbolo Sagrado</id>
+    <name>
+      <en>Símbolo Sagrado</en>
+      <es>Símbolo Sagrado</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Trances Sagrados</id>
+    <name>
+      <en>Trances Sagrados</en>
+      <es>Trances Sagrados</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Vientos Sagrados</id>
+    <name>
+      <en>Vientos Sagrados</en>
+      <es>Vientos Sagrados</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Visiones Espirituales</id>
+    <name>
+      <en>Visiones Espirituales</en>
+      <es>Visiones Espirituales</es>
+    </name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sacerdote</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+</hechizos>

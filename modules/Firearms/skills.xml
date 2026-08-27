@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<habilidades>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Maniobras de Combate</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Fuego de Supresión</id>
+    <name>
+      <en>Suppression Fire</en>
+      <es>Fuego de Supresión</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>FIREARM</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Maniobras de Combate</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Fuego Rápido</id>
+    <name>
+      <en>Rapid Fire</en>
+      <es>Fuego Rápido</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>FIREARM</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Percepción·Sentidos</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Percepción del Entorno: Munición</id>
+    <name>
+      <en>Environment Perception: Ammunition</en>
+      <es>Percepción del Entorno: Munición</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>FIREARM</skillGroup>
+  </habilidad>
+</habilidades>

@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<armas>
+  <arma>
+    <abbreviation>ka</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Katana</id>
+    <name>
+      <en>Katana</en>
+      <es>Katana</es>
+    </name>
+    <rare>true</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>nu</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Nunchaku</id>
+    <name>
+      <en>Nunchaku</en>
+      <es>Nunchaku</es>
+    </name>
+    <rare>true</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>te</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Tetsubo</id>
+    <name>
+      <en>Tetsubo</en>
+      <es>Tetsubo</es>
+    </name>
+    <rare>true</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>v3</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Vara de Tres Secciones</id>
+    <name>
+      <en>Three-Section Staff</en>
+      <es>Vara de Tres Secciones</es>
+    </name>
+    <rare>true</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>chg</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Chigiriki</id>
+    <name>
+      <en>Chigiriki</en>
+      <es>Chigiriki</es>
+    </name>
+    <rare>true</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>lgm</abbreviation>
+    <categoryId>Armas·Contundentes</categoryId>
+    <id>Látigo Metálico</id>
+    <name>
+      <en>Metal Whip</en>
+      <es>Látigo Metálico</es>
+    </name>
+    <rare>true</rare>
+    <type>Contundentes</type>
+  </arma>
+  <arma>
+    <abbreviation>sa</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Sable</id>
+    <name>
+      <en>Saber</en>
+      <es>Sable</es>
+    </name>
+    <rare>true</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>km</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Kama</id>
+    <name>
+      <en>Kama</en>
+      <es>Kama</es>
+    </name>
+    <rare>true</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>wa</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Wakizashi</id>
+    <name>
+      <en>Wakizashi</en>
+      <es>Wakizashi</es>
+    </name>
+    <rare>true</rare>
+    <type>Filo</type>
+  </arma>
+</armas>

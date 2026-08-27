@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class MagicSpellListFactory extends XmlFactory<MagicSpellList> {
 
-    private static final String XML_FILE = "hechizos.xml";
+    private static final String XML_FILE = "spells.xml";
 
     private static final class MagicSpellListFactoryHolder {
         private static final MagicSpellListFactory INSTANCE = new MagicSpellListFactory();

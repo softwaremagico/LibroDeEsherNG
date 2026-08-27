@@ -19,12 +19,12 @@
     <build>
         <finalName>librodeesher-rules</finalName>
         <resources>
-            <!-- Rule data lives outside src/main/resources (sibling "modulo" folder), one directory
+            <!-- Rule data lives outside src/main/resources (sibling "modules" folder), one directory
                  per rulebook/supplement, so it can be edited without recompiling. It is copied into
-                 the jar under "modulo/" at build time, same convention as ThinkMachine-4E. -->
+                 the jar under "modules/" at build time, same convention as ThinkMachine-4E. -->
             <resource>
-                <directory>../modulo</directory>
-                <targetPath>modulo/</targetPath>
+                <directory>../modules</directory>
+                <targetPath>modules/</targetPath>
             </resource>
             <resource>
                 <directory>src/main/resources</directory>

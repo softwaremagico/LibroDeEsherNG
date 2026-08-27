@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class PerkFactory extends XmlFactory<Perk> {
 
-    private static final String XML_FILE = "talentos.xml";
+    private static final String XML_FILE = "perks.xml";
 
     private static final class PerkFactoryHolder {
         private static final PerkFactory INSTANCE = new PerkFactory();

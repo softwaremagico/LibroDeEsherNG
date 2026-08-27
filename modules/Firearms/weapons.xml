@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<armas>
+  <arma>
+    <abbreviation>pstSc</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Automática: Samuel Coutty</id>
+    <name>
+      <en>Automatic Pistol: Samuel Coutty</en>
+      <es>Pistola Automática: Samuel Coutty</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstTfcp</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Avancarga: Thomas French Contract Pistol</id>
+    <name>
+      <en>Muzzleloader Pistol: Thomas French Contract Pistol</en>
+      <es>Pistola Avancarga: Thomas French Contract Pistol</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>pstCt</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Revolver: Colt Trooper</id>
+    <name>
+      <en>Revolver: Colt Trooper</en>
+      <es>Revolver: Colt Trooper</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>rflMf</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle de Avancarga: Mosquete Francés de 1600</id>
+    <name>
+      <en>Muzzleloader Rifle: Mosquete Francés de 1600</en>
+      <es>Rifle de Avancarga: Mosquete Francés de 1600</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>rflMs</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle de Avancarga: Moroccan Snaphance</id>
+    <name>
+      <en>Muzzleloader Rifle: Moroccan Snaphance</en>
+      <es>Rifle de Avancarga: Moroccan Snaphance</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+</armas>

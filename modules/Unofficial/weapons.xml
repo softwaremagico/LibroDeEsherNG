@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<armas>
+  <arma>
+    <abbreviation>ro</abbreviation>
+    <categoryId>Armas·Arrojadizas</categoryId>
+    <id>Roca</id>
+    <name>
+      <en>Rock</en>
+      <es>Roca</es>
+    </name>
+    <rare>true</rare>
+    <type>Arrojadizas</type>
+  </arma>
+  <arma>
+    <abbreviation>cñ</abbreviation>
+    <categoryId>Armas·Artillería</categoryId>
+    <id>Cañon</id>
+    <name>
+      <en>Cannon</en>
+      <es>Cañon</es>
+    </name>
+    <rare>true</rare>
+    <type>Artillería</type>
+  </arma>
+  <arma>
+    <abbreviation>pstSa</abbreviation>
+    <categoryId>Armas·Fuego 1mano</categoryId>
+    <id>Pistola Energética: Saukur</id>
+    <name>
+      <en>Energy Pistol: Saukur</en>
+      <es>Pistola Energética: Saukur</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 1mano</type>
+  </arma>
+  <arma>
+    <abbreviation>rflSa</abbreviation>
+    <categoryId>Armas·Fuego 2manos</categoryId>
+    <id>Rifle Energético: Saukur</id>
+    <name>
+      <en>Energy Rifle: Saukur</en>
+      <es>Rifle Energético: Saukur</es>
+    </name>
+    <rare>false</rare>
+    <type>Fuego 2manos</type>
+  </arma>
+</armas>

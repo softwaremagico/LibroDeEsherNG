@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class SkillFactory extends XmlFactory<Skill> {
 
-    private static final String XML_FILE = "habilidades.xml";
+    private static final String XML_FILE = "skills.xml";
 
     private static final class SkillFactoryHolder {
         private static final SkillFactory INSTANCE = new SkillFactory();

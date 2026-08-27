@@ -1,0 +1,520 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<armas>
+  <arma>
+    <abbreviation>hbt</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Hacha Bastarda</id>
+    <name>
+      <en>Bastard Axe</en>
+      <es>Hacha Bastarda</es>
+    </name>
+    <rare>false</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>ebt</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Espada Bastarda</id>
+    <name>
+      <en>Bastard Sword</en>
+      <es>Espada Bastarda</es>
+    </name>
+    <rare>false</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>eg</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Espada Grande</id>
+    <name>
+      <en>Great Sword</en>
+      <es>Espada Grande</es>
+    </name>
+    <rare>false</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>cl</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Cimitarra Larga</id>
+    <name>
+      <en>Long Scimitar</en>
+      <es>Cimitarra Larga</es>
+    </name>
+    <rare>false</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>ks</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Kyotetsu-shoge</id>
+    <name>
+      <en>Kyotetsu-shoge</en>
+      <es>Kyotetsu-shoge</es>
+    </name>
+    <rare>true</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>ni</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Ninjato</id>
+    <name>
+      <en>Ninjato</en>
+      <es>Ninjato</es>
+    </name>
+    <rare>true</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>nd</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>No Dachi</id>
+    <name>
+      <en>Not Dachi</en>
+      <es>No Dachi</es>
+    </name>
+    <rare>true</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>co</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Martillo Cometa</id>
+    <name>
+      <en>Meteor Hammer</en>
+      <es>Martillo Cometa</es>
+    </name>
+    <rare>true</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>ak</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Aklys</id>
+    <name>
+      <en>Aklys</en>
+      <es>Aklys</es>
+    </name>
+    <rare>true</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>sh</abbreviation>
+    <categoryId>Armas·Arrojadizas</categoryId>
+    <id>Shuriken</id>
+    <name>
+      <en>Shuriken</en>
+      <es>Shuriken</es>
+    </name>
+    <rare>true</rare>
+    <type>Arrojadizas</type>
+  </arma>
+  <arma>
+    <abbreviation>dcu</abbreviation>
+    <categoryId>Armas·Arrojadizas</categoryId>
+    <id>Dardo con Cuerda</id>
+    <name>
+      <en>Corded Dart</en>
+      <es>Dardo con Cuerda</es>
+    </name>
+    <rare>true</rare>
+    <type>Arrojadizas</type>
+  </arma>
+  <arma>
+    <abbreviation>boo</abbreviation>
+    <categoryId>Armas·Arrojadizas</categoryId>
+    <id>Boomerang</id>
+    <name>
+      <en>Boomerang</en>
+      <es>Boomerang</es>
+    </name>
+    <rare>false</rare>
+    <type>Arrojadizas</type>
+  </arma>
+  <arma>
+    <abbreviation>drd</abbreviation>
+    <categoryId>Armas·Arrojadizas</categoryId>
+    <id>Dardo</id>
+    <name>
+      <en>Dart</en>
+      <es>Dardo</es>
+    </name>
+    <rare>false</rare>
+    <type>Arrojadizas</type>
+  </arma>
+  <arma>
+    <abbreviation>lzo</abbreviation>
+    <categoryId>Armas·Arrojadizas</categoryId>
+    <id>Lazo</id>
+    <name>
+      <en>Lasso</en>
+      <es>Lazo</es>
+    </name>
+    <rare>false</rare>
+    <type>Arrojadizas</type>
+  </arma>
+  <arma>
+    <abbreviation>woo</abbreviation>
+    <categoryId>Armas·Arrojadizas</categoryId>
+    <id>Woomera</id>
+    <name>
+      <en>Woomera</en>
+      <es>Woomera</es>
+    </name>
+    <rare>true</rare>
+    <type>Arrojadizas</type>
+  </arma>
+  <arma>
+    <abbreviation>ngk</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Nagamaki</id>
+    <name>
+      <en>Nagamaki</en>
+      <es>Nagamaki</es>
+    </name>
+    <rare>true</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>ngt</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Naginata</id>
+    <name>
+      <en>Naginata</en>
+      <es>Naginata</es>
+    </name>
+    <rare>true</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>bdc</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Bardiche</id>
+    <name>
+      <en>Bardiche</en>
+      <es>Bardiche</es>
+    </name>
+    <rare>true</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>hpi</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Hacha Picuda</id>
+    <name>
+      <en>Pick Axe</en>
+      <es>Hacha Picuda</es>
+    </name>
+    <rare>true</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>bco</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Bec de Corbin</id>
+    <name>
+      <en>Bec of Corbin</en>
+      <es>Bec de Corbin</es>
+    </name>
+    <rare>true</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>fau</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Fauchard</id>
+    <name>
+      <en>Fauchard</en>
+      <es>Fauchard</es>
+    </name>
+    <rare>true</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>guj</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Guja</id>
+    <name>
+      <en>Guja</en>
+      <es>Guja</es>
+    </name>
+    <rare>true</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>bis</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Bisarma</id>
+    <name>
+      <en>Bisarme</en>
+      <es>Bisarma</es>
+    </name>
+    <rare>true</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>arp</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Arpón</id>
+    <name>
+      <en>Harpoon</en>
+      <es>Arpón</es>
+    </name>
+    <rare>false</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>lap</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Lanza Pesada</id>
+    <name>
+      <en>Heavy Spear</en>
+      <es>Lanza Pesada</es>
+    </name>
+    <rare>true</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>luc</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Martillo Lucerne</id>
+    <name>
+      <en>Lucerne Hammer</en>
+      <es>Martillo Lucerne</es>
+    </name>
+    <rare>true</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>ath</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Atrapa Hombres</id>
+    <name>
+      <en>Man Catcher</en>
+      <es>Atrapa Hombres</es>
+    </name>
+    <rare>true</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>hor</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Horca</id>
+    <name>
+      <en>Pitchfork</en>
+      <es>Horca</es>
+    </name>
+    <rare>false</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>prt</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Partisan</id>
+    <name>
+      <en>Partisan</en>
+      <es>Partisan</es>
+    </name>
+    <rare>true</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>pi</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Pica</id>
+    <name>
+      <en>Pike</en>
+      <es>Pica</es>
+    </name>
+    <rare>false</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>ra</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Ranscur</id>
+    <name>
+      <en>Ranscur</en>
+      <es>Ranscur</es>
+    </name>
+    <rare>true</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>alb</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Alabarda</id>
+    <name>
+      <en>Halberd</en>
+      <es>Alabarda</es>
+    </name>
+    <rare>false</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>tri</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Tridente</id>
+    <name>
+      <en>Trident</en>
+      <es>Tridente</es>
+    </name>
+    <rare>false</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>ji</abbreviation>
+    <categoryId>Armas·Contundentes</categoryId>
+    <id>Jitte</id>
+    <name>
+      <en>Jitte</en>
+      <es>Jitte</es>
+    </name>
+    <rare>true</rare>
+    <type>Contundentes</type>
+  </arma>
+  <arma>
+    <abbreviation>sai</abbreviation>
+    <categoryId>Armas·Contundentes</categoryId>
+    <id>Sai</id>
+    <name>
+      <en>Sai</en>
+      <es>Sai</es>
+    </name>
+    <rare>true</rare>
+    <type>Contundentes</type>
+  </arma>
+  <arma>
+    <abbreviation>lga</abbreviation>
+    <categoryId>Armas·Contundentes</categoryId>
+    <id>Látigo de Acero</id>
+    <name>
+      <en>Steel Whip</en>
+      <es>Látigo de Acero</es>
+    </name>
+    <rare>true</rare>
+    <type>Contundentes</type>
+  </arma>
+  <arma>
+    <abbreviation>ab</abbreviation>
+    <categoryId>Armas·Contundentes</categoryId>
+    <id>Abanico de Combate</id>
+    <name>
+      <en>Combat Fan</en>
+      <es>Abanico de Combate</es>
+    </name>
+    <rare>true</rare>
+    <type>Contundentes</type>
+  </arma>
+  <arma>
+    <abbreviation>g9c</abbreviation>
+    <categoryId>Armas·Contundentes</categoryId>
+    <id>Gato de Nueve Colas</id>
+    <name>
+      <en>Cat o' Nine Tails</en>
+      <es>Gato de Nueve Colas</es>
+    </name>
+    <rare>false</rare>
+    <type>Contundentes</type>
+  </arma>
+  <arma>
+    <abbreviation>rgla</abbreviation>
+    <categoryId>Armas·Contundentes</categoryId>
+    <id>Red de Gladiador</id>
+    <name>
+      <en>Gladiator Net</en>
+      <es>Red de Gladiador</es>
+    </name>
+    <rare>false</rare>
+    <type>Contundentes</type>
+  </arma>
+  <arma>
+    <abbreviation>cut</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Cutlass</id>
+    <name>
+      <en>Cutlass</en>
+      <es>Cutlass</es>
+    </name>
+    <rare>false</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>flo</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Florete</id>
+    <name>
+      <en>Florete</en>
+      <es>Florete</es>
+    </name>
+    <rare>true</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>cu</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Cuchillo</id>
+    <name>
+      <en>Knife</en>
+      <es>Cuchillo</es>
+    </name>
+    <rare>false</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>elar</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Espada Larga</id>
+    <name>
+      <en>Long Sword</en>
+      <es>Espada Larga</es>
+    </name>
+    <rare>false</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>gart</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Garfio de Tigre</id>
+    <name>
+      <en>Tiger Hook</en>
+      <es>Garfio de Tigre</es>
+    </name>
+    <rare>true</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>cer</abbreviation>
+    <categoryId>Armas·Proyectiles</categoryId>
+    <id>Cerbatana</id>
+    <name>
+      <en>Blowgun</en>
+      <es>Cerbatana</es>
+    </name>
+    <rare>false</rare>
+    <type>Proyectiles</type>
+  </arma>
+  <arma>
+    <abbreviation>bm</abbreviation>
+    <categoryId>Armas·Proyectiles</categoryId>
+    <id>Ballesta de Mano</id>
+    <name>
+      <en>Hand Crossbow</en>
+      <es>Ballesta de Mano</es>
+    </name>
+    <rare>true</rare>
+    <type>Proyectiles</type>
+  </arma>
+  <arma>
+    <abbreviation>bho</abbreviation>
+    <categoryId>Armas·Proyectiles</categoryId>
+    <id>Bastón Honda</id>
+    <name>
+      <en>Staff Sling</en>
+      <es>Bastón Honda</es>
+    </name>
+    <rare>false</rare>
+    <type>Proyectiles</type>
+  </arma>
+</armas>

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<habilidades>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Hechizos Dirigidos</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Bola de Frío</id>
+    <name>
+      <en>Bola of Cold</en>
+      <es>Bola de Frío</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Hechizos Dirigidos</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Bola de Fuego</id>
+    <name>
+      <en>Bola of Fuego</en>
+      <es>Bola de Fuego</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Hechizos Dirigidos</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Rayo de Fuego</id>
+    <name>
+      <en>Rayo of Fuego</en>
+      <es>Rayo de Fuego</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Hechizos Dirigidos</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Rayo de Hielo</id>
+    <name>
+      <en>Rayo of Hielo</en>
+      <es>Rayo de Hielo</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Hechizos Dirigidos</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Rayo de Descarga</id>
+    <name>
+      <en>Rayo of Descarga</en>
+      <es>Rayo de Descarga</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+  <habilidad>
+    <allEnabled>false</allEnabled>
+    <categoryId>Hechizos Dirigidos</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>Rayo de Agua</id>
+    <name>
+      <en>Rayo of Agua</en>
+      <es>Rayo de Agua</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+  </habilidad>
+</habilidades>

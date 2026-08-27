@@ -43,7 +43,7 @@ public class MagicMigrationToolTest {
             Assert.assertEquals(written, 1, "the list was already defined by 'Esencia', so 'GuiaTesoros' "
                     + "contributes no new list of its own");
 
-            final List<MagicSpellList> lists = readGeneratedFile(targetRoot.resolve("Esencia/hechizos.xml"));
+            final List<MagicSpellList> lists = readGeneratedFile(targetRoot.resolve("Essence/spells.xml"));
             Assert.assertEquals(lists.size(), 3);
 
             final MagicSpellList openList = findByName(lists, "Barrera Contra Hechizos");
@@ -72,7 +72,7 @@ public class MagicMigrationToolTest {
     }
 
     private static MagicSpellList findByName(List<MagicSpellList> lists, String name) {
-        return lists.stream().filter(list -> list.getName().equals(name)).findFirst()
+        return lists.stream().filter(list -> list.getName().getSpanish().equals(name)).findFirst()
                 .orElseThrow(() -> new AssertionError("Spell list '" + name + "' not found"));
     }
 

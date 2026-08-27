@@ -39,7 +39,7 @@ import java.util.Set;
 public final class SkillMigrationTool {
 
     private static final String DYNAMIC_SKILLS_MARKER = "noimporta";
-    private static final String OUTPUT_FILE = "habilidades.xml";
+    private static final String OUTPUT_FILE = "skills.xml";
 
     private SkillMigrationTool() {
         // Utility class.

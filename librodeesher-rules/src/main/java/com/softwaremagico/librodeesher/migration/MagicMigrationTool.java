@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.migration;
 
+import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.file.ModuleManager;
 import com.softwaremagico.librodeesher.magic.MagicSpellList;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
@@ -33,7 +34,7 @@ import java.util.Set;
 public final class MagicMigrationTool {
 
     private static final String SPELLS_FOLDER = "hechizos";
-    private static final String OUTPUT_FILE = "hechizos.xml";
+    private static final String OUTPUT_FILE = "spells.xml";
 
     private MagicMigrationTool() {
         // Utility class.
@@ -54,7 +55,7 @@ public final class MagicMigrationTool {
 
         for (final String module : ModuleManager.getAllModules()) {
             for (final RealmOfMagic realm : RealmOfMagic.values()) {
-                final Path file = modulosDir.resolve(module).resolve(SPELLS_FOLDER).resolve(realm.getTag() + ".txt");
+                final Path file = modulosDir.resolve(LegacyModules.sourceFolderFor(module)).resolve(SPELLS_FOLDER).resolve(realm.getTag() + ".txt");
                 if (!Files.isRegularFile(file) || !LegacyFileFilters.isRealDataFile(file)) {
                     continue;
                 }
@@ -86,7 +87,7 @@ public final class MagicMigrationTool {
             final MagicSpellList existing = spellListsById.get(id);
             if (existing == null) {
                 final MagicSpellList spellList = new MagicSpellList(id);
-                spellList.setName(name);
+                spellList.setName(name, Translations.toEnglish(name));
                 spellList.setRealm(realm);
                 spellList.setOwners(owners);
                 spellListsById.put(id, spellList);

@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.skill;
 
+import com.softwaremagico.librodeesher.language.Translations;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -54,7 +55,7 @@ public final class SkillNameParser {
         final String name = removeTypeMarkers(remaining).trim();
 
         final Skill skill = new Skill(name);
-        skill.setName(name);
+        skill.setName(name, Translations.toEnglish(name));
         skill.setRare(rare);
         skill.setSkillType(skillType);
         skill.setSkillGroup(detectGroup(name));

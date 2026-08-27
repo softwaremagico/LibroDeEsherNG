@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class WeaponFactory extends XmlFactory<Weapon> {
 
-    private static final String XML_FILE = "armas.xml";
+    private static final String XML_FILE = "weapons.xml";
 
     private static final class WeaponFactoryHolder {
         private static final WeaponFactory INSTANCE = new WeaponFactory();

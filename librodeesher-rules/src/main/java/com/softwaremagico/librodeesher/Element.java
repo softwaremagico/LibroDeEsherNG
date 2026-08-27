@@ -2,6 +2,7 @@ package com.softwaremagico.librodeesher;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.softwaremagico.librodeesher.language.TranslatedText;
 
 import java.util.Objects;
 
@@ -14,6 +15,12 @@ import java.util.Objects;
  * class read its own text file from its constructor. Separating "what an element is" (this class)
  * from "how it is loaded" ({@link XmlFactory}) is the central refactor requested for this
  * modernization.</p>
+ *
+ * <p>{@link #getId()} is a stable, language-independent identifier (the original Spanish name, as
+ * used throughout the legacy data as a cross-reference key: category ids, skill names,
+ * training/profession names...). {@link #getName()} is the human-readable, bilingual display text;
+ * every rulebook file is Spanish-only in origin, so the English translation is produced once by the
+ * migration tools (see {@code com.softwaremagico.librodeesher.language.Translations}).</p>
  */
 public class Element implements Comparable<Element> {
 
@@ -21,7 +28,7 @@ public class Element implements Comparable<Element> {
     private String id;
 
     @JsonProperty("name")
-    private String name;
+    private TranslatedText name;
 
     /**
      * Optional grouping tag (e.g. weapon category, spell realm). Not every element type uses it.
@@ -49,12 +56,17 @@ public class Element implements Comparable<Element> {
         this.id = id;
     }
 
-    public String getName() {
+    public TranslatedText getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(TranslatedText name) {
         this.name = name;
+    }
+
+    /** Convenience setter building the {@link TranslatedText} from its two languages. */
+    public void setName(String spanish, String english) {
+        this.name = new TranslatedText(spanish, english);
     }
 
     public String getGroup() {

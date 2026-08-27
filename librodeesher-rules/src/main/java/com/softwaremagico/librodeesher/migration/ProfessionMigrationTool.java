@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.migration;
 
+import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.file.ModuleManager;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.ProfessionBonus;
@@ -39,7 +40,7 @@ import java.util.stream.Stream;
 public final class ProfessionMigrationTool {
 
     private static final String PROFESSIONS_FOLDER = "profesiones";
-    private static final String OUTPUT_FILE = "profesiones.xml";
+    private static final String OUTPUT_FILE = "professions.xml";
 
     private ProfessionMigrationTool() {
         // Utility class.
@@ -57,7 +58,7 @@ public final class ProfessionMigrationTool {
 
         int written = 0;
         for (final String module : ModuleManager.getAllModules()) {
-            final Path professionsDir = modulosDir.resolve(module).resolve(PROFESSIONS_FOLDER);
+            final Path professionsDir = modulosDir.resolve(LegacyModules.sourceFolderFor(module)).resolve(PROFESSIONS_FOLDER);
             if (!Files.isDirectory(professionsDir)) {
                 continue;
             }
@@ -84,7 +85,7 @@ public final class ProfessionMigrationTool {
         final SectionCursor cursor = new SectionCursor(Files.readAllLines(file, StandardCharsets.UTF_8));
 
         final Profession profession = new Profession(professionName);
-        profession.setName(professionName);
+        profession.setName(professionName, Translations.toEnglish(professionName));
         profession.setCharacteristicPreferences(parseCharacteristicPreferences(cursor.nextSection()));
         profession.setMagicRealms(parseCommaList(cursor.nextSection()));
         profession.setBonuses(parseBonuses(cursor.nextSection()));
