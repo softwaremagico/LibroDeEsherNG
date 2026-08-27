@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<armas>
+  <arma>
+    <abbreviation>ca</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Cayado</id>
+    <name>Cayado</name>
+    <rare>false</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>e2</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Espadón</id>
+    <name>Espadón</name>
+    <rare>false</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>hb</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Hacha de Batalla</id>
+    <name>Hacha de Batalla</name>
+    <rare>false</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>mg</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Mangual</id>
+    <name>Mangual</name>
+    <rare>false</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>pc</abbreviation>
+    <categoryId>Armas·2manos</categoryId>
+    <id>Pica de Guerra</id>
+    <name>Pica de Guerra</name>
+    <rare>false</rare>
+    <type>2manos</type>
+  </arma>
+  <arma>
+    <abbreviation>bo</abbreviation>
+    <categoryId>Armas·Arrojadizas</categoryId>
+    <id>Boleadoras</id>
+    <name>Boleadoras</name>
+    <rare>false</rare>
+    <type>Arrojadizas</type>
+  </arma>
+  <arma>
+    <abbreviation>daA</abbreviation>
+    <categoryId>Armas·Arrojadizas</categoryId>
+    <id>Daga Arrojadiza</id>
+    <name>Daga Arrojadiza</name>
+    <rare>false</rare>
+    <type>Arrojadizas</type>
+  </arma>
+  <arma>
+    <abbreviation>cp</abbreviation>
+    <categoryId>Armas·Artillería</categoryId>
+    <id>Catapulta</id>
+    <name>Catapulta</name>
+    <rare>false</rare>
+    <type>Artillería</type>
+  </arma>
+  <arma>
+    <abbreviation>ar</abbreviation>
+    <categoryId>Armas·Artillería</categoryId>
+    <id>Ariete</id>
+    <name>Ariete</name>
+    <rare>false</rare>
+    <type>Artillería</type>
+  </arma>
+  <arma>
+    <abbreviation>aa</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Arma de Asta</id>
+    <name>Arma de Asta</name>
+    <rare>false</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>ja</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Jabalina</id>
+    <name>Jabalina</name>
+    <rare>false</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>la</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Lanza</id>
+    <name>Lanza</name>
+    <rare>false</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>lc</abbreviation>
+    <categoryId>Armas·Asta</categoryId>
+    <id>Lanza de Caballería</id>
+    <name>Lanza de Caballería</name>
+    <rare>false</rare>
+    <type>Asta</type>
+  </arma>
+  <arma>
+    <abbreviation>em</abbreviation>
+    <categoryId>Armas·Contundentes</categoryId>
+    <id>Estrella de la Mañana</id>
+    <name>Estrella de la Mañana</name>
+    <rare>false</rare>
+    <type>Contundentes</type>
+  </arma>
+  <arma>
+    <abbreviation>ga</abbreviation>
+    <categoryId>Armas·Contundentes</categoryId>
+    <id>Garrote</id>
+    <name>Garrote</name>
+    <rare>false</rare>
+    <type>Contundentes</type>
+  </arma>
+  <arma>
+    <abbreviation>lg</abbreviation>
+    <categoryId>Armas·Contundentes</categoryId>
+    <id>Látigo</id>
+    <name>Látigo</name>
+    <rare>false</rare>
+    <type>Contundentes</type>
+  </arma>
+  <arma>
+    <abbreviation>mr</abbreviation>
+    <categoryId>Armas·Contundentes</categoryId>
+    <id>Martillo de Guerra</id>
+    <name>Martillo de Guerra</name>
+    <rare>false</rare>
+    <type>Contundentes</type>
+  </arma>
+  <arma>
+    <abbreviation>ma</abbreviation>
+    <categoryId>Armas·Contundentes</categoryId>
+    <id>Maza</id>
+    <name>Maza</name>
+    <rare>false</rare>
+    <type>Contundentes</type>
+  </arma>
+  <arma>
+    <abbreviation>af</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Alfanje</id>
+    <name>Alfanje</name>
+    <rare>false</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>ci</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Cimitarra</id>
+    <name>Cimitarra</name>
+    <rare>false</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>da</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Daga</id>
+    <name>Daga</name>
+    <rare>false</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>ea</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Espada</id>
+    <name>Espada</name>
+    <rare>false</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>ec</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Espada Corta</id>
+    <name>Espada Corta</name>
+    <rare>false</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>et</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Estoque</id>
+    <name>Estoque</name>
+    <rare>false</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>hm</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Hacha de Mano</id>
+    <name>Hacha de Mano</name>
+    <rare>false</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>mg</abbreviation>
+    <categoryId>Armas·Filo</categoryId>
+    <id>Main Gauche</id>
+    <name>Main Gauche</name>
+    <rare>false</rare>
+    <type>Filo</type>
+  </arma>
+  <arma>
+    <abbreviation>am</abbreviation>
+    <categoryId>Armas·Proyectiles</categoryId>
+    <id>Arco Compuesto</id>
+    <name>Arco Compuesto</name>
+    <rare>false</rare>
+    <type>Proyectiles</type>
+  </arma>
+  <arma>
+    <abbreviation>ac</abbreviation>
+    <categoryId>Armas·Proyectiles</categoryId>
+    <id>Arco Corto</id>
+    <name>Arco Corto</name>
+    <rare>false</rare>
+    <type>Proyectiles</type>
+  </arma>
+  <arma>
+    <abbreviation>al</abbreviation>
+    <categoryId>Armas·Proyectiles</categoryId>
+    <id>Arco Largo</id>
+    <name>Arco Largo</name>
+    <rare>false</rare>
+    <type>Proyectiles</type>
+  </arma>
+  <arma>
+    <abbreviation>bl</abbreviation>
+    <categoryId>Armas·Proyectiles</categoryId>
+    <id>Ballesta Ligera</id>
+    <name>Ballesta Ligera</name>
+    <rare>false</rare>
+    <type>Proyectiles</type>
+  </arma>
+  <arma>
+    <abbreviation>bp</abbreviation>
+    <categoryId>Armas·Proyectiles</categoryId>
+    <id>Ballesta Pesada</id>
+    <name>Ballesta Pesada</name>
+    <rare>false</rare>
+    <type>Proyectiles</type>
+  </arma>
+  <arma>
+    <abbreviation>ho</abbreviation>
+    <categoryId>Armas·Proyectiles</categoryId>
+    <id>Honda</id>
+    <name>Honda</name>
+    <rare>false</rare>
+    <type>Proyectiles</type>
+  </arma>
+</armas>
