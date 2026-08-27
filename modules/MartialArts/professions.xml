@@ -140,7 +140,7 @@ Urbana	3/7</categoryCostsRaw>
       <characteristic>In</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Sentido del Tiempo, Artes Marciales·Maniobras de Combate#1</commonSkillsRaw>
-    <id>monkTaoísta</id>
+    <id>monkTaoist</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
 Lista Básica (6-10)	6/6/6
@@ -193,7 +193,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	12/12
 Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	12/12
 Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
     <name>
-      <en>Monk Taoísta</en>
+      <en>Monk Taoist</en>
       <es>Monje Taoísta</es>
     </name>
     <professionalSkillsRaw>Meditación</professionalSkillsRaw>

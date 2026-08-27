@@ -8,7 +8,7 @@
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>loreAcadémico</name>
+        <name>loreAcademic</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -89,7 +89,7 @@ Urbana	3/8</categoryCostsRaw>
     <commonSkillsRaw>Administración
 Investigación
 {Percepción del Entorno}#1</commonSkillsRaw>
-    <id>académicoPulp</id>
+    <id>academicPulp</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	35
 Lista Abierta (6-10)	70
@@ -137,7 +137,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	16/16
 Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	16/16
 Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
     <name>
-      <en>Académico (Pulp)</en>
+      <en>Academic (Pulp)</en>
       <es>Académico (Pulp)</es>
     </name>
     <professionalSkillsRaw>Conocimiento·Académico#1</professionalSkillsRaw>
@@ -332,7 +332,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <trainingCost>
         <cost>27</cost>
         <costNotMagic>27</costNotMagic>
-        <trainingName>mecánico</trainingName>
+        <trainingName>mechanical</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
@@ -455,7 +455,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>loreAcadémico</name>
+        <name>loreAcademic</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -804,7 +804,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>mecánico</trainingName>
+        <trainingName>mechanical</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
@@ -1305,7 +1305,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>mecánico</trainingName>
+        <trainingName>mechanical</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
@@ -1806,7 +1806,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>mecánico</trainingName>
+        <trainingName>mechanical</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
@@ -2288,7 +2288,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <trainingCost>
         <cost>26</cost>
         <costNotMagic>26</costNotMagic>
-        <trainingName>mecánico</trainingName>
+        <trainingName>mechanical</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
@@ -2403,7 +2403,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>loreAcadémico</name>
+        <name>loreAcademic</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -2727,7 +2727,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <trainingCost>
         <cost>27</cost>
         <costNotMagic>27</costNotMagic>
-        <trainingName>mecánico</trainingName>
+        <trainingName>mechanical</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>

@@ -20,9 +20,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceDesvíosElementales</id>
+    <id>essenceDeflectionsElementales</id>
     <name>
-      <en>Desvíos Elementales</en>
+      <en>Deflections Elementales</en>
       <es>Desvíos Elementales</es>
     </name>
     <openList>false</openList>
@@ -69,9 +69,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaOfTheViento</id>
+    <id>essenceMasteryOfTheViento</id>
     <name>
-      <en>Maestría of the Viento</en>
+      <en>Mastery of the Viento</en>
       <es>Maestría del Viento</es>
     </name>
     <openList>false</openList>
@@ -95,9 +95,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaOfTheEarth</id>
+    <id>essenceMasteryOfTheEarth</id>
     <name>
-      <en>Maestría of the Earth</en>
+      <en>Mastery of the Earth</en>
       <es>Maestría de la Tierra</es>
     </name>
     <openList>false</openList>
@@ -134,9 +134,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaOfTheCold</id>
+    <id>essenceMasteryOfTheCold</id>
     <name>
-      <en>Maestría of the Cold</en>
+      <en>Mastery of the Cold</en>
       <es>Maestría del Frío</es>
     </name>
     <openList>false</openList>
@@ -147,9 +147,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaOfTheHielo</id>
+    <id>essenceMasteryOfTheHielo</id>
     <name>
-      <en>Maestría of the Hielo</en>
+      <en>Mastery of the Hielo</en>
       <es>Maestría del Hielo</es>
     </name>
     <openList>false</openList>
@@ -160,9 +160,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaOfTheLight</id>
+    <id>essenceMasteryOfTheLight</id>
     <name>
-      <en>Maestría of the Light</en>
+      <en>Mastery of the Light</en>
       <es>Maestría de la Luz</es>
     </name>
     <openList>false</openList>
@@ -173,9 +173,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaOfTheOscuridad</id>
+    <id>essenceMasteryOfTheOscuridad</id>
     <name>
-      <en>Maestría of the Oscuridad</en>
+      <en>Mastery of the Oscuridad</en>
       <es>Maestría de la Oscuridad</es>
     </name>
     <openList>false</openList>
@@ -186,9 +186,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaOfTheWater</id>
+    <id>essenceMasteryOfTheWater</id>
     <name>
-      <en>Maestría of the Water</en>
+      <en>Mastery of the Water</en>
       <es>Maestría del Agua</es>
     </name>
     <openList>false</openList>
@@ -225,9 +225,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceCuraciónElemental</id>
+    <id>essenceHealingElemental</id>
     <name>
-      <en>Curación Elemental</en>
+      <en>Healing Elemental</en>
       <es>Curación Elemental</es>
     </name>
     <openList>false</openList>
@@ -238,9 +238,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaOfThePortalesElementales</id>
+    <id>essenceMasteryOfThePortalesElementales</id>
     <name>
-      <en>Maestría of the Portales Elementales</en>
+      <en>Mastery of the Portales Elementales</en>
       <es>Maestría de los Portales Elementales</es>
     </name>
     <openList>false</openList>
@@ -264,9 +264,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceRestauraciónElemental</id>
+    <id>essenceRestorationElemental</id>
     <name>
-      <en>Restauración Elemental</en>
+      <en>Restoration Elemental</en>
       <es>Restauración Elemental</es>
     </name>
     <openList>false</openList>
@@ -329,9 +329,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceCompañerosElementales</id>
+    <id>essenceCompanionsElementales</id>
     <name>
-      <en>Compañeros Elementales</en>
+      <en>Companions Elementales</en>
       <es>Compañeros Elementales</es>
     </name>
     <openList>false</openList>
@@ -355,9 +355,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceVínculosOfCombat</id>
+    <id>essenceBondsOfCombat</id>
     <name>
-      <en>Vínculos of Combat</en>
+      <en>Bonds of Combat</en>
       <es>Vínculos de Combate</es>
     </name>
     <openList>false</openList>
@@ -368,9 +368,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceEnergíaElementalVerdadera</id>
+    <id>essenceEnergyElementalVerdadera</id>
     <name>
-      <en>Energía Elemental Verdadera</en>
+      <en>Energy Elemental Verdadera</en>
       <es>Energía Elemental Verdadera</es>
     </name>
     <openList>false</openList>
@@ -381,9 +381,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceFluídosElementalesVerdaderos</id>
+    <id>essenceFluidsElementalesVerdaderos</id>
     <name>
-      <en>Fluídos Elementales Verdaderos</en>
+      <en>Fluids Elementales Verdaderos</en>
       <es>Fluídos Elementales Verdaderos</es>
     </name>
     <openList>false</openList>
@@ -394,9 +394,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaOfTheEter</id>
+    <id>essenceMasteryOfTheEter</id>
     <name>
-      <en>Maestría of the Eter</en>
+      <en>Mastery of the Eter</en>
       <es>Maestría del Eter</es>
     </name>
     <openList>false</openList>
@@ -407,9 +407,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaOfTheVacío</id>
+    <id>essenceMasteryOfTheVoid</id>
     <name>
-      <en>Maestría of the Vacío</en>
+      <en>Mastery of the Void</en>
       <es>Maestría del Vacío</es>
     </name>
     <openList>false</openList>
@@ -420,9 +420,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaElementalVerdadera</id>
+    <id>essenceMasteryElementalVerdadera</id>
     <name>
-      <en>Maestría Elemental Verdadera</en>
+      <en>Mastery Elemental Verdadera</en>
       <es>Maestría Elemental Verdadera</es>
     </name>
     <openList>false</openList>
@@ -446,9 +446,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceArtesaníaElemental</id>
+    <id>essenceCraftsmanshipElemental</id>
     <name>
-      <en>Artesanía Elemental</en>
+      <en>Craftsmanship Elemental</en>
       <es>Artesanía Elemental</es>
     </name>
     <openList>false</openList>

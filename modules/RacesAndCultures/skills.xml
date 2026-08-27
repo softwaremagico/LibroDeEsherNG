@@ -30,9 +30,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>hablarÉlfico</id>
+    <id>hablarElven</id>
     <name>
-      <en>Hablar Élfico</en>
+      <en>Hablar Elven</en>
       <es>Hablar Élfico</es>
     </name>
     <rare>false</rare>
@@ -43,9 +43,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>escribirÉlfico</id>
+    <id>escribirElven</id>
     <name>
-      <en>Escribir Élfico</en>
+      <en>Escribir Elven</en>
       <es>Escribir Élfico</es>
     </name>
     <rare>false</rare>
@@ -56,9 +56,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>hablarÉlficoAlto</id>
+    <id>hablarElvenAlto</id>
     <name>
-      <en>Hablar Élfico Alto</en>
+      <en>Hablar Elven Alto</en>
       <es>Hablar Élfico Alto</es>
     </name>
     <rare>false</rare>
@@ -69,9 +69,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>escribirÉlficoAlto</id>
+    <id>escribirElvenAlto</id>
     <name>
-      <en>Escribir Élfico Alto</en>
+      <en>Escribir Elven Alto</en>
       <es>Escribir Élfico Alto</es>
     </name>
     <rare>false</rare>
@@ -82,9 +82,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>hablarÉlficoGris</id>
+    <id>hablarElvenGris</id>
     <name>
-      <en>Hablar Élfico Gris</en>
+      <en>Hablar Elven Gris</en>
       <es>Hablar Élfico Gris</es>
     </name>
     <rare>false</rare>
@@ -95,9 +95,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>escribirÉlficoGris</id>
+    <id>escribirElvenGris</id>
     <name>
-      <en>Escribir Élfico Gris</en>
+      <en>Escribir Elven Gris</en>
       <es>Escribir Élfico Gris</es>
     </name>
     <rare>false</rare>
@@ -108,9 +108,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>hablarÉlficoOfTheBosques</id>
+    <id>hablarElvenOfTheBosques</id>
     <name>
-      <en>Hablar Élfico of the Bosques</en>
+      <en>Hablar Elven of the Bosques</en>
       <es>Hablar Élfico de los Bosques</es>
     </name>
     <rare>false</rare>
@@ -121,9 +121,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>escribirÉlficoOfTheBosques</id>
+    <id>escribirElvenOfTheBosques</id>
     <name>
-      <en>Escribir Élfico of the Bosques</en>
+      <en>Escribir Elven of the Bosques</en>
       <es>Escribir Élfico de los Bosques</es>
     </name>
     <rare>false</rare>
@@ -134,9 +134,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>hablarFaérico</id>
+    <id>hablarFaerie</id>
     <name>
-      <en>Hablar Faérico</en>
+      <en>Hablar Faerie</en>
       <es>Hablar Faérico</es>
     </name>
     <rare>false</rare>
@@ -147,9 +147,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>escribirFaérico</id>
+    <id>escribirFaerie</id>
     <name>
-      <en>Escribir Faérico</en>
+      <en>Escribir Faerie</en>
       <es>Escribir Faérico</es>
     </name>
     <rare>false</rare>
@@ -160,9 +160,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>hablarGnómico</id>
+    <id>hablarGnomish</id>
     <name>
-      <en>Hablar Gnómico</en>
+      <en>Hablar Gnomish</en>
       <es>Hablar Gnómico</es>
     </name>
     <rare>false</rare>
@@ -173,9 +173,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>escribirGnómico</id>
+    <id>escribirGnomish</id>
     <name>
-      <en>Escribir Gnómico</en>
+      <en>Escribir Gnomish</en>
       <es>Escribir Gnómico</es>
     </name>
     <rare>false</rare>
@@ -290,9 +290,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>hablarDríade</id>
+    <id>hablarDryad</id>
     <name>
-      <en>Hablar Dríade</en>
+      <en>Hablar Dryad</en>
       <es>Hablar Dríade</es>
     </name>
     <rare>false</rare>
@@ -303,9 +303,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>escribirDríade</id>
+    <id>escribirDryad</id>
     <name>
-      <en>Escribir Dríade</en>
+      <en>Escribir Dryad</en>
       <es>Escribir Dríade</es>
     </name>
     <rare>false</rare>

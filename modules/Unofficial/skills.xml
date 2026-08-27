@@ -4,9 +4,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>hablarCentauroEscorpión</id>
+    <id>hablarCentauroScorpion</id>
     <name>
-      <en>Hablar Centauro Escorpión</en>
+      <en>Hablar Centauro Scorpion</en>
       <es>Hablar Centauro Escorpión</es>
     </name>
     <rare>false</rare>
@@ -17,9 +17,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>escribirCentauroEscorpión</id>
+    <id>escribirCentauroScorpion</id>
     <name>
-      <en>Escribir Centauro Escorpión</en>
+      <en>Escribir Centauro Scorpion</en>
       <es>Escribir Centauro Escorpión</es>
     </name>
     <rare>false</rare>

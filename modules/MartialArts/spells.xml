@@ -2,14 +2,14 @@
 <spells>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceArmoníaOfTheNaturaleza</id>
+    <id>essenceHarmonyOfTheNaturaleza</id>
     <name>
-      <en>Armonía of the Naturaleza</en>
+      <en>Harmony of the Naturaleza</en>
       <es>Armonía de la Naturaleza</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Taoísta</owner>
+      <owner>Monk Taoist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -22,7 +22,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Taoísta</owner>
+      <owner>Monk Taoist</owner>
       <owner>Monk</owner>
     </owners>
     <realm>ESSENCE</realm>
@@ -36,7 +36,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Taoísta</owner>
+      <owner>Monk Taoist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -49,7 +49,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Taoísta</owner>
+      <owner>Monk Taoist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -62,30 +62,30 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Taoísta</owner>
+      <owner>Monk Taoist</owner>
       <owner>Monk</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceRenovaciónOfTheBody</id>
+    <id>essenceRenewalOfTheBody</id>
     <name>
-      <en>Renovación of the Body</en>
+      <en>Renewal of the Body</en>
       <es>Renovación del Cuerpo</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Taoísta</owner>
+      <owner>Monk Taoist</owner>
       <owner>Monk</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismConcentraciónZen</id>
+    <id>mentalismConcentrationZen</id>
     <name>
-      <en>Concentración Zen</en>
+      <en>Concentration Zen</en>
       <es>Concentración Zen</es>
     </name>
     <openList>false</openList>
@@ -135,9 +135,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismRenovaciónOfTheBody</id>
+    <id>mentalismRenewalOfTheBody</id>
     <name>
-      <en>Renovación of the Body</en>
+      <en>Renewal of the Body</en>
       <es>Renovación del Cuerpo</es>
     </name>
     <openList>false</openList>

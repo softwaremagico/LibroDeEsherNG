@@ -20,7 +20,7 @@
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfSpells</name>
+        <name>listsBasicOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -32,7 +32,7 @@
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrasProfesiones</name>
+        <name>listsBasicOfOtrasProfesiones</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -44,7 +44,7 @@
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrosRealms</name>
+        <name>listsBasicOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -471,7 +471,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfSpells</name>
+        <name>listsBasicOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -483,7 +483,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrasProfesiones</name>
+        <name>listsBasicOfOtrasProfesiones</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -495,7 +495,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrosRealms</name>
+        <name>listsBasicOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -878,7 +878,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfSpells</name>
+        <name>listsBasicOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -890,7 +890,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrasProfesiones</name>
+        <name>listsBasicOfOtrasProfesiones</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -902,7 +902,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrosRealms</name>
+        <name>listsBasicOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -1294,7 +1294,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfSpells</name>
+        <name>listsBasicOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -1306,7 +1306,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrasProfesiones</name>
+        <name>listsBasicOfOtrasProfesiones</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -1318,7 +1318,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrosRealms</name>
+        <name>listsBasicOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -3367,7 +3367,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfSpells</name>
+        <name>listsBasicOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -3379,7 +3379,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrasProfesiones</name>
+        <name>listsBasicOfOtrasProfesiones</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -3391,7 +3391,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrosRealms</name>
+        <name>listsBasicOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -3495,7 +3495,7 @@ Urbana	2/5</categoryCostsRaw>
       <characteristic>In</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Estabilización Adreanl, Maestría de los Hechizo, Meditación, Ritual Mágica, Sentido del Tiempo</commonSkillsRaw>
-    <id>místico</id>
+    <id>mystic</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
 Lista Básica (6-10)	3/3/3
@@ -3548,7 +3548,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	8/8
 Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	8/8
 Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     <name>
-      <en>Místico</en>
+      <en>Mystic</en>
       <es>Místico</es>
     </name>
     <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
@@ -3923,7 +3923,7 @@ Urbana	4</categoryCostsRaw>
       <characteristic>Em</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Justar</commonSkillsRaw>
-    <id>paladín</id>
+    <id>paladin</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
 Lista Básica (6-10)	6/6/6
@@ -3976,7 +3976,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	12/12
 Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	12/12
 Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
     <name>
-      <en>Paladín</en>
+      <en>Paladin</en>
       <es>Paladín</es>
     </name>
     <professionalSkillsRaw>Religión</professionalSkillsRaw>
@@ -4230,7 +4230,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfSpells</name>
+        <name>listsBasicOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -4242,7 +4242,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrasProfesiones</name>
+        <name>listsBasicOfOtrasProfesiones</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -4254,7 +4254,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrosRealms</name>
+        <name>listsBasicOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>

@@ -2,9 +2,9 @@
 <spells>
   <spellList>
     <closedList>true</closedList>
-    <id>essenceBastónArcane</id>
+    <id>essenceStaffArcane</id>
     <name>
-      <en>Bastón Arcane</en>
+      <en>Staff Arcane</en>
       <es>Bastón Mágico</es>
     </name>
     <openList>false</openList>

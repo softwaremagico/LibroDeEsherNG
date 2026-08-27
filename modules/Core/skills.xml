@@ -351,9 +351,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>evasiónAdrenal</id>
+    <id>evasionAdrenal</id>
     <name>
-      <en>Evasión Adrenal</en>
+      <en>Evasion Adrenal</en>
       <es>Evasión Adrenal</es>
     </name>
     <rare>false</rare>
@@ -832,9 +832,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>caídaAdrenal</id>
+    <id>fallAdrenal</id>
     <name>
-      <en>Caída Adrenal</en>
+      <en>Fall Adrenal</en>
       <es>Caída Adrenal</es>
     </name>
     <rare>false</rare>
@@ -845,9 +845,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>selfControl</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>concentraciónAdrenal</id>
+    <id>concentrationAdrenal</id>
     <name>
-      <en>Concentración Adrenal</en>
+      <en>Concentration Adrenal</en>
       <es>Concentración Adrenal</es>
     </name>
     <rare>false</rare>
@@ -1027,9 +1027,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>scienceAnalyticBasic</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>mathematicsBásicas</id>
+    <id>mathematicsBasic</id>
     <name>
-      <en>Mathematics Básicas</en>
+      <en>Mathematics Basic</en>
       <es>Matemáticas Básicas</es>
     </name>
     <rare>false</rare>
@@ -1573,9 +1573,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>maestríaOfAnimals</id>
+    <id>masteryOfAnimals</id>
     <name>
-      <en>Maestría of Animals</en>
+      <en>Mastery of Animals</en>
       <es>Maestría de Animales</es>
     </name>
     <rare>false</rare>
@@ -1677,9 +1677,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>outdoorAnimals</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>curaciónOfAnimals</id>
+    <id>healingOfAnimals</id>
     <name>
-      <en>Curación of Animals</en>
+      <en>Healing of Animals</en>
       <es>Curación de Animales</es>
     </name>
     <rare>false</rare>
@@ -1716,9 +1716,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>espeleología</id>
+    <id>speleology</id>
     <name>
-      <en>Espeleología</en>
+      <en>Speleology</en>
       <es>Espeleología</es>
     </name>
     <rare>false</rare>
@@ -1742,9 +1742,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>orientaciónCeleste</id>
+    <id>orientationCeleste</id>
     <name>
-      <en>Orientación Celeste</en>
+      <en>Orientation Celeste</en>
       <es>Orientación Celeste</es>
     </name>
     <rare>false</rare>
@@ -1755,9 +1755,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>predicciónOfTheClima</id>
+    <id>predictionOfTheClima</id>
     <name>
-      <en>Predicción of the Clima</en>
+      <en>Prediction of the Clima</en>
       <es>Predicción del Clima</es>
     </name>
     <rare>false</rare>
@@ -1781,9 +1781,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>supervivenciaMontañas</id>
+    <id>supervivenciaMountains</id>
     <name>
-      <en>Supervivencia (Montañas)</en>
+      <en>Supervivencia (Mountains)</en>
       <es>Supervivencia (Montañas)</es>
     </name>
     <rare>false</rare>
@@ -1833,9 +1833,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>supervivenciaSubterráneos</id>
+    <id>supervivenciaUnderground</id>
     <name>
-      <en>Supervivencia (Subterráneos)</en>
+      <en>Supervivencia (Underground)</en>
       <es>Supervivencia (Subterráneos)</es>
     </name>
     <rare>false</rare>
@@ -1846,9 +1846,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>supervivenciaÁrtico</id>
+    <id>supervivenciaArctic</id>
     <name>
-      <en>Supervivencia (Ártico)</en>
+      <en>Supervivencia (Arctic)</en>
       <es>Supervivencia (Ártico)</es>
     </name>
     <rare>false</rare>
@@ -1859,9 +1859,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>relámpago</id>
+    <id>lightning</id>
     <name>
-      <en>Relámpago</en>
+      <en>Lightning</en>
       <es>Relámpago</es>
     </name>
     <rare>false</rare>
@@ -1870,7 +1870,7 @@
   </skill>
   <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>listsBásicasOfSpells</categoryId>
+    <categoryId>listsBasicOfSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
     <id>spells</id>
     <name>
@@ -2054,9 +2054,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>attackOfRevés</id>
+    <id>attackOfBackhand</id>
     <name>
-      <en>Attack of Revés</en>
+      <en>Attack of Backhand</en>
       <es>Ataque de Revés</es>
     </name>
     <rare>false</rare>
@@ -2067,9 +2067,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>esquivaAcrobática</id>
+    <id>esquivaAcrobatic</id>
     <name>
-      <en>Esquiva Acrobática</en>
+      <en>Esquiva Acrobatic</en>
       <es>Esquiva Acrobática</es>
     </name>
     <rare>false</rare>
@@ -2080,9 +2080,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>styleOfArmaBásico</id>
+    <id>styleOfArmaBasic</id>
     <name>
-      <en>Style of Arma (Básico)</en>
+      <en>Style of Arma (Basic)</en>
       <es>Estilo de Arma (Básico)</es>
     </name>
     <rare>false</rare>
@@ -2132,9 +2132,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>maestríaOfTheSpells</id>
+    <id>masteryOfTheSpells</id>
     <name>
-      <en>Maestría of the Spells</en>
+      <en>Mastery of the Spells</en>
       <es>Maestría de los Hechizos</es>
     </name>
     <rare>false</rare>
@@ -2145,9 +2145,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>maestríaOfTheSpellsControlOfTheAire</id>
+    <id>masteryOfTheSpellsControlOfTheAire</id>
     <name>
-      <en>Maestría of the Spells: Control of the Aire</en>
+      <en>Mastery of the Spells: Control of the Aire</en>
       <es>Maestría de los Hechizos: Control del Aire</es>
     </name>
     <rare>false</rare>
@@ -2158,9 +2158,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>maestríaOfTheSpellsLawOfTheLight</id>
+    <id>masteryOfTheSpellsLawOfTheLight</id>
     <name>
-      <en>Maestría of the Spells: Law of the Light</en>
+      <en>Mastery of the Spells: Law of the Light</en>
       <es>Maestría de los Hechizos: Ley de la Luz</es>
     </name>
     <rare>false</rare>
@@ -2171,9 +2171,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>maestríaOfTheSpellsMaestríaOfTheEspiritus</id>
+    <id>masteryOfTheSpellsMasteryOfTheEspiritus</id>
     <name>
-      <en>Maestría of the Spells: Maestría of the Espiritus</en>
+      <en>Mastery of the Spells: Mastery of the Espiritus</en>
       <es>Maestría de los Hechizos: Maestría de los Espiritus</es>
     </name>
     <rare>false</rare>
@@ -2197,9 +2197,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>powerManipulation</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>ocultaciónOfSpells</id>
+    <id>concealmentOfSpells</id>
     <name>
-      <en>Ocultación of Spells</en>
+      <en>Concealment of Spells</en>
       <es>Ocultación de Hechizos</es>
     </name>
     <rare>false</rare>
@@ -2353,9 +2353,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>crafts</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>peletería</id>
+    <id>furriery</id>
     <name>
-      <en>Peletería</en>
+      <en>Furriery</en>
       <es>Peletería</es>
     </name>
     <rare>false</rare>
@@ -2457,9 +2457,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>perceptionSearching</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>observación</id>
+    <id>observation</id>
     <name>
-      <en>Observación</en>
+      <en>Observation</en>
       <es>Observación</es>
     </name>
     <rare>false</rare>
@@ -2548,9 +2548,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>perceptionOfTheEnvironmentExploración</id>
+    <id>perceptionOfTheEnvironmentExploration</id>
     <name>
-      <en>Perception of the Environment: Exploración</en>
+      <en>Perception of the Environment: Exploration</en>
       <es>Percepción del Entorno: Exploración</es>
     </name>
     <rare>false</rare>
@@ -2561,9 +2561,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>sentidoOfTheDirección</id>
+    <id>sentidoOfTheDirection</id>
     <name>
-      <en>Sentido of the Dirección</en>
+      <en>Sentido of the Direction</en>
       <es>Sentido de la Dirección</es>
     </name>
     <rare>false</rare>
@@ -2639,9 +2639,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>perceptionSenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>oído</id>
+    <id>hearing</id>
     <name>
-      <en>Oído</en>
+      <en>Hearing</en>
       <es>Oído</es>
     </name>
     <rare>false</rare>
@@ -2704,9 +2704,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>powerAwareness</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>sintonización</id>
+    <id>attunement</id>
     <name>
-      <en>Sintonización</en>
+      <en>Attunement</en>
       <es>Sintonización</es>
     </name>
     <rare>false</rare>
@@ -2717,9 +2717,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>powerAwareness</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>adivinación</id>
+    <id>divination</id>
     <name>
-      <en>Adivinación</en>
+      <en>Divination</en>
       <es>Adivinación</es>
     </name>
     <rare>false</rare>
@@ -2860,9 +2860,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>subterfugeMechanics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>falsificación</id>
+    <id>forgery</id>
     <name>
-      <en>Falsificación</en>
+      <en>Forgery</en>
       <es>Falsificación</es>
     </name>
     <rare>false</rare>
@@ -2873,9 +2873,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>subterfugeMechanics</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>imitación</id>
+    <id>imitation</id>
     <name>
-      <en>Imitación</en>
+      <en>Imitation</en>
       <es>Imitación</es>
     </name>
     <rare>false</rare>
@@ -3029,9 +3029,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>orientación</id>
+    <id>orientation</id>
     <name>
-      <en>Orientación</en>
+      <en>Orientation</en>
       <es>Orientación</es>
     </name>
     <rare>false</rare>
@@ -3068,9 +3068,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>cuidadosMédicos</id>
+    <id>cuidadosMedical</id>
     <name>
-      <en>Cuidados Médicos</en>
+      <en>Cuidados Medical</en>
       <es>Cuidados Médicos</es>
     </name>
     <rare>false</rare>
@@ -3094,9 +3094,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>ingeniería</id>
+    <id>engineering</id>
     <name>
-      <en>Ingeniería</en>
+      <en>Engineering</en>
       <es>Ingeniería</es>
     </name>
     <rare>false</rare>
@@ -3120,9 +3120,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>minería</id>
+    <id>mining</id>
     <name>
-      <en>Minería</en>
+      <en>Mining</en>
       <es>Minería</es>
     </name>
     <rare>false</rare>
@@ -3159,9 +3159,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>cirugía</id>
+    <id>surgery</id>
     <name>
-      <en>Cirugía</en>
+      <en>Surgery</en>
       <es>Cirugía</es>
     </name>
     <rare>false</rare>
@@ -3172,9 +3172,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>organizaciónMilitar</id>
+    <id>organizationMilitar</id>
     <name>
-      <en>Organización Militar</en>
+      <en>Organization Militar</en>
       <es>Organización Militar</es>
     </name>
     <rare>false</rare>
@@ -3198,9 +3198,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>zahorí</id>
+    <id>dowser</id>
     <name>
-      <en>Zahorí</en>
+      <en>Dowser</en>
       <es>Zahorí</es>
     </name>
     <rare>false</rare>
@@ -3211,9 +3211,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeProfessional</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>investigación</id>
+    <id>investigation</id>
     <name>
-      <en>Investigación</en>
+      <en>Investigation</en>
       <es>Investigación</es>
     </name>
     <rare>false</rare>
@@ -3224,9 +3224,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>administración</id>
+    <id>administration</id>
     <name>
-      <en>Administración</en>
+      <en>Administration</en>
       <es>Administración</es>
     </name>
     <rare>false</rare>
@@ -3302,9 +3302,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>navegación</id>
+    <id>navigation</id>
     <name>
-      <en>Navegación</en>
+      <en>Navigation</en>
       <es>Navegación</es>
     </name>
     <rare>false</rare>
@@ -3315,9 +3315,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>táctica</id>
+    <id>tactics</id>
     <name>
-      <en>Táctica</en>
+      <en>Tactics</en>
       <es>Táctica</es>
     </name>
     <rare>false</rare>
@@ -3341,9 +3341,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>artimañas</id>
+    <id>trickery</id>
     <name>
-      <en>Artimañas</en>
+      <en>Trickery</en>
       <es>Artimañas</es>
     </name>
     <rare>false</rare>
@@ -3354,9 +3354,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>cartografía</id>
+    <id>cartography</id>
     <name>
-      <en>Cartografía</en>
+      <en>Cartography</en>
       <es>Cartografía</es>
     </name>
     <rare>false</rare>
@@ -3367,9 +3367,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>ingenieríaOfAsedio</id>
+    <id>engineeringOfAsedio</id>
     <name>
-      <en>Ingeniería of Asedio</en>
+      <en>Engineering of Asedio</en>
       <es>Ingeniería de Asedio</es>
     </name>
     <rare>false</rare>
@@ -3380,9 +3380,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>partería</id>
+    <id>midwifery</id>
     <name>
-      <en>Partería</en>
+      <en>Midwifery</en>
       <es>Partería</es>
     </name>
     <rare>false</rare>
@@ -3523,9 +3523,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>specialAttacks</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>attackRacialVómito</id>
+    <id>attackRacialVomit</id>
     <name>
-      <en>Attack Racial: Vómito</en>
+      <en>Attack Racial: Vomit</en>
       <es>Ataque Racial: Vómito</es>
     </name>
     <rare>true</rare>
@@ -3536,9 +3536,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>hablarHablaComún</id>
+    <id>hablarHablaCommon</id>
     <name>
-      <en>Hablar Habla Común</en>
+      <en>Hablar Habla Common</en>
       <es>Hablar Habla Común</es>
     </name>
     <rare>false</rare>
@@ -3549,9 +3549,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>escribirHablaComún</id>
+    <id>escribirHablaCommon</id>
     <name>
-      <en>Escribir Habla Común</en>
+      <en>Escribir Habla Common</en>
       <es>Escribir Habla Común</es>
     </name>
     <rare>false</rare>

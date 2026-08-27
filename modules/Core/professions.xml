@@ -907,7 +907,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfSpells</name>
+        <name>listsBasicOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -919,7 +919,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrasProfesiones</name>
+        <name>listsBasicOfOtrasProfesiones</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -931,7 +931,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrosRealms</name>
+        <name>listsBasicOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -1853,7 +1853,7 @@ Urbana	1/2</categoryCostsRaw>
       <characteristic>Co</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Embaucar, Maquinaria, {Percepción del Entorno: Ciudades; Percepción del Entorno: Combate; Percepción del Entorno: Durmiendo; Percepción del Entorno: Exploración}</commonSkillsRaw>
-    <id>ladrón</id>
+    <id>thief</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	18
 Lista Abierta (6-10)	36
@@ -1901,7 +1901,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	16/16
 Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	16/16
 Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
     <name>
-      <en>Ladrón</en>
+      <en>Thief</en>
       <es>Ladrón</es>
     </name>
     <professionalSkillsRaw>Abrir Cerraduras</professionalSkillsRaw>
@@ -2550,7 +2550,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfSpells</name>
+        <name>listsBasicOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -2562,7 +2562,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrasProfesiones</name>
+        <name>listsBasicOfOtrasProfesiones</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -2574,7 +2574,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrosRealms</name>
+        <name>listsBasicOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -2961,7 +2961,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfSpells</name>
+        <name>listsBasicOfSpells</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -2973,7 +2973,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrasProfesiones</name>
+        <name>listsBasicOfOtrasProfesiones</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
@@ -2985,7 +2985,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>5</bonus>
-        <name>listsBásicasOfOtrosRealms</name>
+        <name>listsBasicOfOtrosRealms</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>

@@ -17,9 +17,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>styleOfArtMarcialBásico</id>
+    <id>styleOfArtMarcialBasic</id>
     <name>
-      <en>Style of Art Marcial (Básico)</en>
+      <en>Style of Art Marcial (Basic)</en>
       <es>Estilo de Arte Marcial (Básico)</es>
     </name>
     <rare>false</rare>
@@ -279,9 +279,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>styleFistOfAlgodón</id>
+    <id>styleFistOfCotton</id>
     <name>
-      <en>Style Fist of Algodón</en>
+      <en>Style Fist of Cotton</en>
       <es>Estilo Puño de Algodón</es>
     </name>
     <rare>false</rare>
@@ -313,9 +313,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>martialArtsCombatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>styleTúnicaOfIron</id>
+    <id>styleRobeOfIron</id>
     <name>
-      <en>Style Túnica of Iron</en>
+      <en>Style Robe of Iron</en>
       <es>Estilo Túnica de Hierro</es>
     </name>
     <rare>false</rare>

@@ -121,7 +121,7 @@ Urbana	4</categoryCostsRaw>
     </characteristicPreferences>
     <commonSkillsRaw>{Supervivencia; Supervivencia (Montañas); Supervivencia (Bosques); Supervivencia (Desiertos); Supervivencia (Llanuras)}
 {Montar; Forrajear; Predicción del Clima}</commonSkillsRaw>
-    <id>bárbaro</id>
+    <id>barbarian</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	28
 Lista Abierta (6-10)	56
@@ -169,7 +169,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	16/16
 Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	16/16
 Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
     <name>
-      <en>Bárbaro</en>
+      <en>Barbarian</en>
       <es>Bárbaro</es>
     </name>
     <professionalSkillsRaw>Religión</professionalSkillsRaw>

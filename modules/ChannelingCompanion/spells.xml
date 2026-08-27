@@ -15,9 +15,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationCírculosOfInvocaciones</id>
+    <id>canalizationCirclesOfInvocaciones</id>
     <name>
-      <en>Círculos of Invocaciones</en>
+      <en>Circles of Invocaciones</en>
       <es>Círculos de Invocaciones</es>
     </name>
     <openList>false</openList>
@@ -54,9 +54,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMaestríaOfTheInvocaciones</id>
+    <id>canalizationMasteryOfTheInvocaciones</id>
     <name>
-      <en>Maestría of the Invocaciones</en>
+      <en>Mastery of the Invocaciones</en>
       <es>Maestría de las Invocaciones</es>
     </name>
     <openList>false</openList>
@@ -80,9 +80,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationDestrucciónOfTheFe</id>
+    <id>canalizationDestructionOfTheFe</id>
     <name>
-      <en>Destrucción of the Fe</en>
+      <en>Destruction of the Fe</en>
       <es>Destrucción de la Fe</es>
     </name>
     <openList>false</openList>
@@ -93,9 +93,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationLawOfThePerdición</id>
+    <id>canalizationLawOfTheDoom</id>
     <name>
-      <en>Law of the Perdición</en>
+      <en>Law of the Doom</en>
       <es>Ley de la Perdición</es>
     </name>
     <openList>false</openList>
@@ -119,9 +119,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMaestríaOfLoExtraño</id>
+    <id>canalizationMasteryOfLoStrange</id>
     <name>
-      <en>Maestría of lo Extraño</en>
+      <en>Mastery of lo Strange</en>
       <es>Maestría de lo Extraño</es>
     </name>
     <openList>false</openList>
@@ -165,7 +165,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mítico</owner>
+      <owner>Mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -178,20 +178,20 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mítico</owner>
+      <owner>Mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationTheMáscara</id>
+    <id>canalizationTheMask</id>
     <name>
-      <en>The Máscara</en>
+      <en>The Mask</en>
       <es>La Máscara</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mítico</owner>
+      <owner>Mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -204,20 +204,20 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mítico</owner>
+      <owner>Mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMisiónSagrada</id>
+    <id>canalizationMissionSagrada</id>
     <name>
-      <en>Misión Sagrada</en>
+      <en>Mission Sagrada</en>
       <es>Misión Sagrada</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mítico</owner>
+      <owner>Mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -230,7 +230,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mítico</owner>
+      <owner>Mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -301,9 +301,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationCuraciónOfCampaña</id>
+    <id>canalizationHealingOfCampaign</id>
     <name>
-      <en>Curación of Campaña</en>
+      <en>Healing of Campaign</en>
       <es>Curación de Campaña</es>
     </name>
     <openList>false</openList>
@@ -353,9 +353,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationDominaciónOfTheNaturaleza</id>
+    <id>canalizationDominationOfTheNaturaleza</id>
     <name>
-      <en>Dominación of the Naturaleza</en>
+      <en>Domination of the Naturaleza</en>
       <es>Dominación de la Naturaleza</es>
     </name>
     <openList>false</openList>
@@ -366,9 +366,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationDominaciónOfTheEspíritus</id>
+    <id>canalizationDominationOfTheSpirits</id>
     <name>
-      <en>Dominación of the Espíritus</en>
+      <en>Domination of the Spirits</en>
       <es>Dominación de los Espíritus</es>
     </name>
     <openList>false</openList>
@@ -431,9 +431,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationFormasAcuáticas</id>
+    <id>canalizationFormasAquatic</id>
     <name>
-      <en>Formas Acuáticas</en>
+      <en>Formas Aquatic</en>
       <es>Formas Acuáticas</es>
     </name>
     <openList>false</openList>
@@ -483,9 +483,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationLawOfTheEspíritus</id>
+    <id>canalizationLawOfTheSpirits</id>
     <name>
-      <en>Law of the Espíritus</en>
+      <en>Law of the Spirits</en>
       <es>Ley de los Espíritus</es>
     </name>
     <openList>false</openList>
@@ -496,9 +496,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMaestríaOfTheCaza</id>
+    <id>canalizationMasteryOfTheCaza</id>
     <name>
-      <en>Maestría of the Caza</en>
+      <en>Mastery of the Caza</en>
       <es>Maestría de la Caza</es>
     </name>
     <openList>false</openList>
@@ -509,9 +509,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMaestríaOfTheDeath</id>
+    <id>canalizationMasteryOfTheDeath</id>
     <name>
-      <en>Maestría of the Death</en>
+      <en>Mastery of the Death</en>
       <es>Maestría de la Muerte</es>
     </name>
     <openList>false</openList>
@@ -522,9 +522,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMaestríaOfThePiedras</id>
+    <id>canalizationMasteryOfThePiedras</id>
     <name>
-      <en>Maestría of the Piedras</en>
+      <en>Mastery of the Piedras</en>
       <es>Maestría de las Piedras</es>
     </name>
     <openList>false</openList>
@@ -535,9 +535,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMaestríaOfTheÁrboles</id>
+    <id>canalizationMasteryOfTheTrees</id>
     <name>
-      <en>Maestría of the Árboles</en>
+      <en>Mastery of the Trees</en>
       <es>Maestría de los Árboles</es>
     </name>
     <openList>false</openList>
@@ -548,9 +548,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMaestríaOfTheCaballos</id>
+    <id>canalizationMasteryOfTheCaballos</id>
     <name>
-      <en>Maestría of the Caballos</en>
+      <en>Mastery of the Caballos</en>
       <es>Maestría de los Caballos</es>
     </name>
     <openList>false</openList>
@@ -561,9 +561,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMaestríaOfTheInsectos</id>
+    <id>canalizationMasteryOfTheInsectos</id>
     <name>
-      <en>Maestría of the Insectos</en>
+      <en>Mastery of the Insectos</en>
       <es>Maestría de los Insectos</es>
     </name>
     <openList>false</openList>
@@ -587,9 +587,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMagicVudú</id>
+    <id>canalizationMagicVoodoo</id>
     <name>
-      <en>Magic Vudú</en>
+      <en>Magic Voodoo</en>
       <es>Magia Vudú</es>
     </name>
     <openList>false</openList>
@@ -613,9 +613,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationSímboloSagrado</id>
+    <id>canalizationSymbolSagrado</id>
     <name>
-      <en>Símbolo Sagrado</en>
+      <en>Symbol Sagrado</en>
       <es>Símbolo Sagrado</es>
     </name>
     <openList>false</openList>

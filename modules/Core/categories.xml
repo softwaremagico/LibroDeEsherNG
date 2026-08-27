@@ -915,9 +915,9 @@
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>listsBásicasOfSpells</id>
+    <id>listsBasicOfSpells</id>
     <name>
-      <en>Lists Básicas of Spells</en>
+      <en>Lists Basic of Spells</en>
       <es>Listas Básicas de Hechizos</es>
     </name>
     <skills>
@@ -963,9 +963,9 @@
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>listsBásicasOfOtrasProfesiones</id>
+    <id>listsBasicOfOtrasProfesiones</id>
     <name>
-      <en>Lists Básicas of Otras Profesiones</en>
+      <en>Lists Basic of Otras Profesiones</en>
       <es>Listas Básicas de Otras Profesiones</es>
     </name>
     <skills>
@@ -1011,9 +1011,9 @@
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>listsBásicasOfOtrosRealms</id>
+    <id>listsBasicOfOtrosRealms</id>
     <name>
-      <en>Lists Básicas of Otros Realms</en>
+      <en>Lists Basic of Otros Realms</en>
       <es>Listas Básicas de Otros Reinos</es>
     </name>
     <skills>
@@ -1075,9 +1075,9 @@
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>listsBásicasOfTheTríada</id>
+    <id>listsBasicOfTheTriad</id>
     <name>
-      <en>Lists Básicas of the Tríada</en>
+      <en>Lists Basic of the Triad</en>
       <es>Listas Básicas de la Tríada</es>
     </name>
     <skills>
@@ -1091,9 +1091,9 @@
     <characteristics>
       <characteristic>*</characteristic>
     </characteristics>
-    <id>listsBásicasElementalesComplementarias</id>
+    <id>listsBasicElementalesComplementarias</id>
     <name>
-      <en>Lists Básicas Elementales Complementarias</en>
+      <en>Lists Basic Elementales Complementarias</en>
       <es>Listas Básicas Elementales Complementarias</es>
     </name>
     <skills>

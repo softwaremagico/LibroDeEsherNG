@@ -7,9 +7,9 @@
       <characteristic>Me</characteristic>
       <characteristic>In</characteristic>
     </characteristics>
-    <id>scienceAnalyticMédica</id>
+    <id>scienceAnalyticMedical</id>
     <name>
-      <en>Science/Analytic: Médica</en>
+      <en>Science/Analytic: Medical</en>
       <es>Ciencia/Analítica·Médica</es>
     </name>
     <skills>
@@ -29,9 +29,9 @@
       <characteristic>Me</characteristic>
       <characteristic>Ag</characteristic>
     </characteristics>
-    <id>scienceAnalyticTécnica</id>
+    <id>scienceAnalyticTechnique</id>
     <name>
-      <en>Science/Analytic: Técnica</en>
+      <en>Science/Analytic: Technique</en>
       <es>Ciencia/Analítica·Técnica</es>
     </name>
     <skills>
@@ -52,9 +52,9 @@
       <characteristic>Ra</characteristic>
       <characteristic>Me</characteristic>
     </characteristics>
-    <id>loreAcadémico</id>
+    <id>loreAcademic</id>
     <name>
-      <en>Lore: Académico</en>
+      <en>Lore: Academic</en>
       <es>Conocimiento·Académico</es>
     </name>
     <skills>

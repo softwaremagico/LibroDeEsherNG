@@ -67,9 +67,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationSendasOfTheConmoción</id>
+    <id>canalizationSendasOfTheConcussion</id>
     <name>
-      <en>Sendas of the Conmoción</en>
+      <en>Sendas of the Concussion</en>
       <es>Sendas de la Conmoción</es>
     </name>
     <openList>true</openList>
@@ -132,9 +132,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>canalizationLawOfTheMúsculos</id>
+    <id>canalizationLawOfTheMuscles</id>
     <name>
-      <en>Law of the Músculos</en>
+      <en>Law of the Muscles</en>
       <es>Ley de los Músculos</es>
     </name>
     <openList>false</openList>
@@ -145,9 +145,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>canalizationSendasOfTheLocalización</id>
+    <id>canalizationSendasOfTheLocation</id>
     <name>
-      <en>Sendas of the Localización</en>
+      <en>Sendas of the Location</en>
       <es>Sendas de la Localización</es>
     </name>
     <openList>false</openList>
@@ -210,9 +210,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>canalizationLawOfTheÓrganos</id>
+    <id>canalizationLawOfTheOrgans</id>
     <name>
-      <en>Law of the Órganos</en>
+      <en>Law of the Organs</en>
       <es>Ley de los Órganos</es>
     </name>
     <openList>false</openList>
@@ -223,9 +223,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>canalizationSerenarEspíritus</id>
+    <id>canalizationSerenarSpirits</id>
     <name>
-      <en>Serenar Espíritus</en>
+      <en>Serenar Spirits</en>
       <es>Serenar Espíritus</es>
     </name>
     <openList>false</openList>
@@ -262,9 +262,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMaestríaOfThePlantas</id>
+    <id>canalizationMasteryOfThePlantas</id>
     <name>
-      <en>Maestría of the Plantas</en>
+      <en>Mastery of the Plantas</en>
       <es>Maestría de las Plantas</es>
     </name>
     <openList>false</openList>
@@ -288,9 +288,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMaestríaOfTheHerbs</id>
+    <id>canalizationMasteryOfTheHerbs</id>
     <name>
-      <en>Maestría of the Herbs</en>
+      <en>Mastery of the Herbs</en>
       <es>Maestría de las Hierbas</es>
     </name>
     <openList>false</openList>
@@ -301,9 +301,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMaestríaOfTheAnimals</id>
+    <id>canalizationMasteryOfTheAnimals</id>
     <name>
-      <en>Maestría of the Animals</en>
+      <en>Mastery of the Animals</en>
       <es>Maestría de los Animales</es>
     </name>
     <openList>false</openList>
@@ -340,9 +340,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMaestríaOfTheLife</id>
+    <id>canalizationMasteryOfTheLife</id>
     <name>
-      <en>Maestría of the Life</en>
+      <en>Mastery of the Life</en>
       <es>Maestría de la Vida</es>
     </name>
     <openList>false</openList>
@@ -412,20 +412,20 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Paladín</owner>
+      <owner>Paladin</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationCuraciónSagrada</id>
+    <id>canalizationHealingSagrada</id>
     <name>
-      <en>Curación Sagrada</en>
+      <en>Healing Sagrada</en>
       <es>Curación Sagrada</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Paladín</owner>
+      <owner>Paladin</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -438,20 +438,20 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Paladín</owner>
+      <owner>Paladin</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationComunión</id>
+    <id>canalizationCommunion</id>
     <name>
-      <en>Comunión</en>
+      <en>Communion</en>
       <es>Comunión</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Paladín</owner>
+      <owner>Paladin</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -464,20 +464,20 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Paladín</owner>
+      <owner>Paladin</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationSendasOfTheInspiración</id>
+    <id>canalizationSendasOfTheInspiration</id>
     <name>
-      <en>Sendas of the Inspiración</en>
+      <en>Sendas of the Inspiration</en>
       <es>Sendas de la Inspiración</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Paladín</owner>
+      <owner>Paladin</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -496,9 +496,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMaestríaOfTheCaminos</id>
+    <id>canalizationMasteryOfTheCaminos</id>
     <name>
-      <en>Maestría of the Caminos</en>
+      <en>Mastery of the Caminos</en>
       <es>Maestría de los Caminos</es>
     </name>
     <openList>false</openList>
@@ -522,9 +522,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationInvocaciónOfTheNaturaleza</id>
+    <id>canalizationSummoningOfTheNaturaleza</id>
     <name>
-      <en>Invocación of the Naturaleza</en>
+      <en>Summoning of the Naturaleza</en>
       <es>Invocación de la Naturaleza</es>
     </name>
     <openList>false</openList>
@@ -587,9 +587,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationSendasOfTheMúsculos</id>
+    <id>canalizationSendasOfTheMuscles</id>
     <name>
-      <en>Sendas of the Músculos</en>
+      <en>Sendas of the Muscles</en>
       <es>Sendas de los Músculos</es>
     </name>
     <openList>false</openList>
@@ -626,9 +626,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationSendaOfTheÓrganos</id>
+    <id>canalizationSendaOfTheOrgans</id>
     <name>
-      <en>Senda of the Órganos</en>
+      <en>Senda of the Organs</en>
       <es>Senda de los Órganos</es>
     </name>
     <openList>false</openList>
@@ -639,9 +639,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationDestrucciónOfTheCarne</id>
+    <id>canalizationDestructionOfTheCarne</id>
     <name>
-      <en>Destrucción of the Carne</en>
+      <en>Destruction of the Carne</en>
       <es>Destrucción de la Carne</es>
     </name>
     <openList>false</openList>
@@ -652,9 +652,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationDestrucciónOfTheGases</id>
+    <id>canalizationDestructionOfTheGases</id>
     <name>
-      <en>Destrucción of the Gases</en>
+      <en>Destruction of the Gases</en>
       <es>Destrucción de los Gases</es>
     </name>
     <openList>false</openList>
@@ -665,9 +665,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationDestrucciónOfTheAlma</id>
+    <id>canalizationDestructionOfTheAlma</id>
     <name>
-      <en>Destrucción of the Alma</en>
+      <en>Destruction of the Alma</en>
       <es>Destrucción del Alma</es>
     </name>
     <openList>false</openList>
@@ -678,9 +678,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationDestrucciónOfTheFluidos</id>
+    <id>canalizationDestructionOfTheFluidos</id>
     <name>
-      <en>Destrucción of the Fluidos</en>
+      <en>Destruction of the Fluidos</en>
       <es>Destrucción de los Fluidos</es>
     </name>
     <openList>false</openList>
@@ -691,9 +691,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationDestrucciónOfTheSólidos</id>
+    <id>canalizationDestructionOfTheSolids</id>
     <name>
-      <en>Destrucción of the Sólidos</en>
+      <en>Destruction of the Solids</en>
       <es>Destrucción de los Sólidos</es>
     </name>
     <openList>false</openList>
@@ -704,9 +704,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationDestrucciónMental</id>
+    <id>canalizationDestructionMental</id>
     <name>
-      <en>Destrucción Mental</en>
+      <en>Destruction Mental</en>
       <es>Destrucción Mental</es>
     </name>
     <openList>false</openList>
@@ -756,9 +756,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationLoreImpío</id>
+    <id>canalizationLoreImpious</id>
     <name>
-      <en>Lore Impío</en>
+      <en>Lore Impious</en>
       <es>Conocimiento Impío</es>
     </name>
     <openList>false</openList>

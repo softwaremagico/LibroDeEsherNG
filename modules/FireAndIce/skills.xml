@@ -4,9 +4,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>bolaOfÉter</id>
+    <id>bolaOfAether</id>
     <name>
-      <en>Bola of Éter</en>
+      <en>Bola of Aether</en>
       <es>Bola de Éter</es>
     </name>
     <rare>false</rare>
@@ -17,9 +17,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>rayoOfÉter</id>
+    <id>rayoOfAether</id>
     <name>
-      <en>Rayo of Éter</en>
+      <en>Rayo of Aether</en>
       <es>Rayo de Éter</es>
     </name>
     <rare>false</rare>
@@ -82,9 +82,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>bolaOfVacío</id>
+    <id>bolaOfVoid</id>
     <name>
-      <en>Bola of Vacío</en>
+      <en>Bola of Void</en>
       <es>Bola de Vacío</es>
     </name>
     <rare>false</rare>
@@ -95,9 +95,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>rayoOfVacío</id>
+    <id>rayoOfVoid</id>
     <name>
-      <en>Rayo of Vacío</en>
+      <en>Rayo of Void</en>
       <es>Rayo de Vacío</es>
     </name>
     <rare>false</rare>
@@ -121,9 +121,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>directedSpells</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>estallidoCiclónico</id>
+    <id>estallidoCyclonic</id>
     <name>
-      <en>Estallido Ciclónico</en>
+      <en>Estallido Cyclonic</en>
       <es>Estallido Ciclónico</es>
     </name>
     <rare>false</rare>

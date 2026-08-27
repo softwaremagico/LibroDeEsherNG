@@ -15,9 +15,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaOfTheRunas</id>
+    <id>essenceMasteryOfTheRunas</id>
     <name>
-      <en>Maestría of the Runas</en>
+      <en>Mastery of the Runas</en>
       <es>Maestría de las Runas</es>
     </name>
     <openList>true</openList>
@@ -41,9 +41,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceSendasOfTheIndagación</id>
+    <id>essenceSendasOfTheInquiry</id>
     <name>
-      <en>Sendas of the Indagación</en>
+      <en>Sendas of the Inquiry</en>
       <es>Sendas de la Indagación</es>
     </name>
     <openList>true</openList>
@@ -106,9 +106,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMejoraFísica</id>
+    <id>essenceMejoraPhysical</id>
     <name>
-      <en>Mejora Física</en>
+      <en>Mejora Physical</en>
       <es>Mejora Física</es>
     </name>
     <openList>true</openList>
@@ -119,9 +119,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceSendasOfTheDetección</id>
+    <id>essenceSendasOfTheDetection</id>
     <name>
-      <en>Sendas of the Detección</en>
+      <en>Sendas of the Detection</en>
       <es>Sendas de la Detección</es>
     </name>
     <openList>true</openList>
@@ -145,9 +145,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>essenceMaestríaOfTheEspíritus</id>
+    <id>essenceMasteryOfTheSpirits</id>
     <name>
-      <en>Maestría of the Espíritus</en>
+      <en>Mastery of the Spirits</en>
       <es>Maestría de los Espíritus</es>
     </name>
     <openList>false</openList>
@@ -197,9 +197,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>essenceSendaOfTheAnulación</id>
+    <id>essenceSendaOfTheNullification</id>
     <name>
-      <en>Senda of the Anulación</en>
+      <en>Senda of the Nullification</en>
       <es>Senda de la Anulación</es>
     </name>
     <openList>false</openList>
@@ -210,9 +210,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>essenceMaestríaOfTheEscudos</id>
+    <id>essenceMasteryOfTheEscudos</id>
     <name>
-      <en>Maestría of the Escudos</en>
+      <en>Mastery of the Escudos</en>
       <es>Maestría de los Escudos</es>
     </name>
     <openList>false</openList>
@@ -223,9 +223,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>essenceMaestríaOfThePortales</id>
+    <id>essenceMasteryOfThePortales</id>
     <name>
-      <en>Maestría of the Portales</en>
+      <en>Mastery of the Portales</en>
       <es>Maestría de los Portales</es>
     </name>
     <openList>false</openList>
@@ -275,9 +275,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaOfTheIlusiones</id>
+    <id>essenceMasteryOfTheIlusiones</id>
     <name>
-      <en>Maestría of the Ilusiones</en>
+      <en>Mastery of the Ilusiones</en>
       <es>Maestría de las Ilusiones</es>
     </name>
     <openList>false</openList>
@@ -450,9 +450,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaOfTheMovimiento</id>
+    <id>essenceMasteryOfTheMovimiento</id>
     <name>
-      <en>Maestría of the Movimiento</en>
+      <en>Mastery of the Movimiento</en>
       <es>Maestría del Movimiento</es>
     </name>
     <openList>false</openList>
@@ -463,9 +463,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMaestríaOfTheOcultamiento</id>
+    <id>essenceMasteryOfTheOcultamiento</id>
     <name>
-      <en>Maestría of the Ocultamiento</en>
+      <en>Mastery of the Ocultamiento</en>
       <es>Maestría del Ocultamiento</es>
     </name>
     <openList>false</openList>
@@ -541,87 +541,87 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceAlteraciónOfTheGases</id>
+    <id>essenceAlterationOfTheGases</id>
     <name>
-      <en>Alteración of the Gases</en>
+      <en>Alteration of the Gases</en>
       <es>Alteración de los Gases</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Místico</owner>
+      <owner>Mystic</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceAlteraciónOfTheLíquidos</id>
+    <id>essenceAlterationOfTheLiquids</id>
     <name>
-      <en>Alteración of the Líquidos</en>
+      <en>Alteration of the Liquids</en>
       <es>Alteración de los Líquidos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Místico</owner>
+      <owner>Mystic</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceAlteraciónOfTheSólidos</id>
+    <id>essenceAlterationOfTheSolids</id>
     <name>
-      <en>Alteración of the Sólidos</en>
+      <en>Alteration of the Solids</en>
       <es>Alteración de los Sólidos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Místico</owner>
+      <owner>Mystic</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceCambioMístico</id>
+    <id>essenceCambioMystic</id>
     <name>
-      <en>Cambio Místico</en>
+      <en>Cambio Mystic</en>
       <es>Cambio Místico</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Místico</owner>
+      <owner>Mystic</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceHidingMístico</id>
+    <id>essenceHidingMystic</id>
     <name>
-      <en>Hiding (Místico)</en>
+      <en>Hiding (Mystic)</en>
       <es>Esconderse (Místico)</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Místico</owner>
+      <owner>Mystic</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceSendasOfTheConfusión</id>
+    <id>essenceSendasOfTheConfusion</id>
     <name>
-      <en>Sendas of the Confusión</en>
+      <en>Sendas of the Confusion</en>
       <es>Sendas de la Confusión</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Místico</owner>
+      <owner>Mystic</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceDestrucciónOfTheCarne</id>
+    <id>essenceDestructionOfTheCarne</id>
     <name>
-      <en>Destrucción of the Carne</en>
+      <en>Destruction of the Carne</en>
       <es>Destrucción de la Carne</es>
     </name>
     <openList>false</openList>
@@ -632,9 +632,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceDestrucciónOfTheFluidos</id>
+    <id>essenceDestructionOfTheFluidos</id>
     <name>
-      <en>Destrucción of the Fluidos</en>
+      <en>Destruction of the Fluidos</en>
       <es>Destrucción de los Fluidos</es>
     </name>
     <openList>false</openList>
@@ -645,9 +645,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceDestrucciónOfTheGases</id>
+    <id>essenceDestructionOfTheGases</id>
     <name>
-      <en>Destrucción of the Gases</en>
+      <en>Destruction of the Gases</en>
       <es>Destrucción de los Gases</es>
     </name>
     <openList>false</openList>
@@ -658,9 +658,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceDestrucciónOfTheSólidos</id>
+    <id>essenceDestructionOfTheSolids</id>
     <name>
-      <en>Destrucción of the Sólidos</en>
+      <en>Destruction of the Solids</en>
       <es>Destrucción de los Sólidos</es>
     </name>
     <openList>false</openList>
@@ -671,9 +671,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceDestrucciónOfTheAlma</id>
+    <id>essenceDestructionOfTheAlma</id>
     <name>
-      <en>Destrucción of the Alma</en>
+      <en>Destruction of the Alma</en>
       <es>Destrucción del Alma</es>
     </name>
     <openList>false</openList>
@@ -684,9 +684,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceDestrucciónMental</id>
+    <id>essenceDestructionMental</id>
     <name>
-      <en>Destrucción Mental</en>
+      <en>Destruction Mental</en>
       <es>Destrucción Mental</es>
     </name>
     <openList>false</openList>
@@ -711,9 +711,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceDestrucciónOfTheMateria</id>
+    <id>essenceDestructionOfTheMateria</id>
     <name>
-      <en>Destrucción of the Materia</en>
+      <en>Destruction of the Materia</en>
       <es>Destrucción de la Materia</es>
     </name>
     <openList>false</openList>
@@ -724,9 +724,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceErosiónFísica</id>
+    <id>essenceErosionPhysical</id>
     <name>
-      <en>Erosión Física</en>
+      <en>Erosion Physical</en>
       <es>Erosión Física</es>
     </name>
     <openList>false</openList>
@@ -751,9 +751,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceInvocaciónOfEntidades</id>
+    <id>essenceSummoningOfEntidades</id>
     <name>
-      <en>Invocación of Entidades</en>
+      <en>Summoning of Entidades</en>
       <es>Invocación de Entidades</es>
     </name>
     <openList>false</openList>
