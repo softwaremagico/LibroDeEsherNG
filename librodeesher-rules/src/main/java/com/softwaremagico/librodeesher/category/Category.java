@@ -1,0 +1,140 @@
+package com.softwaremagico.librodeesher.category;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.softwaremagico.librodeesher.Element;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * A skill category (e.g. "Armadura·Ligera", "Ataques Especiales"), as defined in a rulebook's
+ * {@code categorias.xml}.
+ *
+ * <p>This replaces the legacy {@code Category}/{@code StandardCategory}/{@code CombinedCategory}/...
+ * class hierarchy: instead of one Java subclass per progression type with hard-coded development
+ * costs, the progression type is now plain data ({@link CategoryType}); the point-cost tables
+ * themselves are a game rule, not something read from a file, and will be attached separately once
+ * character development is ported (see {@code librodeesher-rules} roadmap).</p>
+ *
+ * <p>The {@code skills} column of the legacy text files could look like:</p>
+ * <pre>Cuero Endurecido [TA9; TA10; TA11], Cuero Blando [TA5; TA6; TA7]</pre>
+ * <p>The part in brackets described which "hidden" skill ranks unlock which armor/weapon training
+ * tables. That bracket syntax is not parsed yet: {@link #getSkillsRaw()} preserves it verbatim so no
+ * information is lost, while {@link #getSkills()} exposes the plain skill names for immediate use.</p>
+ */
+public class Category extends Element {
+
+    /** Marks a category whose skills are not fixed, but derived from another file (e.g. weapons). */
+    private static final String DYNAMIC_SKILLS_MARKER = "noimporta";
+
+    @JsonProperty("abbreviation")
+    private String abbreviation;
+
+    @JacksonXmlElementWrapper(localName = "characteristics")
+    @JacksonXmlProperty(localName = "characteristic")
+    private List<String> characteristics;
+
+    @JsonProperty("type")
+    private CategoryType type;
+
+    /** Plain skill names, parsed from {@link #skillsRaw}. Empty when {@link #skillsRaw} is "noimporta". */
+    @JacksonXmlElementWrapper(localName = "skills")
+    @JacksonXmlProperty(localName = "skill")
+    private List<String> skills;
+
+    /** Verbatim "Habilidades" column from the legacy file, kept for full fidelity/debugging. */
+    @JsonProperty("skillsRaw")
+    private String skillsRaw;
+
+    public Category() {
+        super();
+    }
+
+    public Category(String id) {
+        super(id);
+    }
+
+    public String getAbbreviation() {
+        return abbreviation;
+    }
+
+    public void setAbbreviation(String abbreviation) {
+        this.abbreviation = abbreviation;
+    }
+
+    public List<String> getCharacteristics() {
+        return characteristics == null ? Collections.emptyList() : characteristics;
+    }
+
+    public void setCharacteristics(List<String> characteristics) {
+        this.characteristics = characteristics;
+    }
+
+    /**
+     * Convenience method parsing the legacy "Ag/Fu/Ag" characteristics tag into {@link #characteristics}.
+     * Deliberately not named {@code setCharacteristics} to avoid a same-name overload with a
+     * different argument type, which confuses Jackson's property-setter resolution during XML
+     * deserialization.
+     */
+    public void setCharacteristicsTag(String characteristicsTag) {
+        this.characteristics = Arrays.asList(characteristicsTag.split("/"));
+    }
+
+    public CategoryType getType() {
+        return type;
+    }
+
+    public void setType(CategoryType type) {
+        this.type = type;
+    }
+
+    public List<String> getSkills() {
+        return skills == null ? Collections.emptyList() : skills;
+    }
+
+    public void setSkills(List<String> skills) {
+        this.skills = skills;
+    }
+
+    public String getSkillsRaw() {
+        return skillsRaw;
+    }
+
+    /** Sets the raw skills column and derives {@link #skills} from it. */
+    public void setSkillsRaw(String skillsRaw) {
+        this.skillsRaw = skillsRaw;
+        this.skills = parseSkillNames(skillsRaw);
+    }
+
+    /** Whether this category's skills come from another data source (e.g. weapon files) instead of a fixed list. */
+    public boolean hasDynamicSkills() {
+        return DYNAMIC_SKILLS_MARKER.equalsIgnoreCase(skillsRaw == null ? "" : skillsRaw.trim());
+    }
+
+    /**
+     * Splits the raw "Habilidades" column into plain skill names, dropping the "[...]" unlock hints.
+     * Top-level commas separate skills; brackets never contain a comma in the source data (they use
+     * semicolons), so a naive split on commas is safe here.
+     */
+    private static List<String> parseSkillNames(String raw) {
+        final List<String> names = new ArrayList<>();
+        if (raw == null || raw.isBlank() || DYNAMIC_SKILLS_MARKER.equalsIgnoreCase(raw.trim())) {
+            return names;
+        }
+        for (final String entry : raw.split(",")) {
+            String name = entry.trim();
+            final int bracketIndex = name.indexOf('[');
+            if (bracketIndex >= 0) {
+                name = name.substring(0, bracketIndex).trim();
+            }
+            if (!name.isEmpty()) {
+                names.add(name);
+            }
+        }
+        return names;
+    }
+}

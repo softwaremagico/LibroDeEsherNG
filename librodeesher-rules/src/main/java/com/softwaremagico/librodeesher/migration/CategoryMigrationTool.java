@@ -1,0 +1,154 @@
+package com.softwaremagico.librodeesher.migration;
+
+import com.softwaremagico.librodeesher.category.Category;
+import com.softwaremagico.librodeesher.file.ModuleManager;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * One-shot command line tool that converts the legacy tab-separated {@code categorias.txt} files
+ * (from the original "LibroDeEsher" desktop application) into the {@code categorias.xml} files read
+ * by {@link com.softwaremagico.librodeesher.category.CategoryFactory}.
+ *
+ * <h2>Legacy file format</h2>
+ * Each non-comment line has 4 tab-separated columns:
+ * <pre>Nombre(Abreviatura)\tCaracterísticas\tProgresión\tHabilidades</pre>
+ * e.g. {@code Armadura·Ligera(ArdL)\tAg/Fu/Ag\tEstándar\tCuero Endurecido [TA9; TA10; TA11], ...}
+ *
+ * <h2>Cross-module category identity</h2>
+ * The legacy application also reads a base {@code rolemaster/categorias.txt} file (outside of any
+ * module folder), always active regardless of which modules are enabled, plus one {@code
+ * categorias.txt} per module. If a module re-declares a category that already exists (same name),
+ * the original code only <em>appends</em> its skills to the existing category instead of replacing
+ * it. This tool reproduces that behaviour at migration time: the base file is treated as part of the
+ * "Basico" module, and whichever module first declares a given category id keeps it in its generated
+ * {@code categorias.xml}; any skills added later by another module are merged into that same
+ * category before writing.
+ *
+ * <p><strong>Known limitation:</strong> because the merge happens once, at migration time, disabling
+ * a module that only <em>contributed extra skills</em> to a category first defined by another module
+ * will not remove those extra skills at runtime (the category and its full skill list always live in
+ * the defining module's XML). Revisiting this would require {@link
+ * com.softwaremagico.librodeesher.xml.XmlFactory} to support additive (not just override) merging of
+ * individual fields, which is left as future work.</p>
+ */
+public final class CategoryMigrationTool {
+
+    private static final String CATEGORIES_FILE = "categorias.txt";
+    private static final String OUTPUT_FILE = "categorias.xml";
+
+    private CategoryMigrationTool() {
+        // Utility class.
+    }
+
+    public static void main(String[] args) throws IOException {
+        final Path sourceRoot = Path.of(args.length > 0 ? args[0] : "../../LibroDeEsher");
+        final Path modulesTarget = Path.of(args.length > 1 ? args[1] : "../modulo");
+        final int written = migrate(sourceRoot, modulesTarget);
+        System.out.println("Wrote " + written + " '" + OUTPUT_FILE + "' file(s) under " + modulesTarget.toAbsolutePath());
+    }
+
+    /**
+     * Reads every {@code categorias.txt} under {@code sourceRoot/rolemaster} and writes one
+     * {@code categorias.xml} per module under {@code modulesTarget}.
+     *
+     * @return the number of {@code categorias.xml} files written.
+     */
+    public static int migrate(Path sourceRoot, Path modulesTarget) throws IOException {
+        final Path rolemasterDir = sourceRoot.resolve("rolemaster");
+        final Path modulosDir = rolemasterDir.resolve("modulos");
+
+        // Category id -> element, in creation order, shared across every source file so that a
+        // module re-declaring an existing category merges into it instead of creating a duplicate.
+        final Map<String, Category> categoriesById = new LinkedHashMap<>();
+        // Module name -> categories first defined by that module, in the order that will be written.
+        final Map<String, List<Category>> categoriesByModule = new LinkedHashMap<>();
+
+        for (final String module : ModuleManager.getAllModules()) {
+            for (final Path file : sourceFilesForModule(module, rolemasterDir, modulosDir)) {
+                readCategoriesFile(file, module, categoriesById, categoriesByModule);
+            }
+        }
+
+        int written = 0;
+        for (final Map.Entry<String, List<Category>> entry : categoriesByModule.entrySet()) {
+            XmlMigrationWriter.write(modulesTarget.resolve(entry.getKey()).resolve(OUTPUT_FILE),
+                    "categorias", "categoria", entry.getValue());
+            written++;
+        }
+        return written;
+    }
+
+    /**
+     * Returns the {@code categorias.txt} files that contribute to the given module, in read order.
+     * "Basico" is special-cased to also include the base file living directly under {@code
+     * rolemaster/} (outside any module folder), which the legacy application always loaded first.
+     */
+    private static List<Path> sourceFilesForModule(String module, Path rolemasterDir, Path modulosDir) {
+        final List<Path> files = new ArrayList<>();
+        if (ModuleManager.BASICO.equals(module)) {
+            addIfExists(files, rolemasterDir.resolve(CATEGORIES_FILE));
+        }
+        addIfExists(files, modulosDir.resolve(module).resolve(CATEGORIES_FILE));
+        return files;
+    }
+
+    private static void addIfExists(List<Path> files, Path candidate) {
+        if (Files.isRegularFile(candidate)) {
+            files.add(candidate);
+        }
+    }
+
+    private static void readCategoriesFile(Path file, String module, Map<String, Category> categoriesById,
+                                            Map<String, List<Category>> categoriesByModule) throws IOException {
+        for (final String line : Files.readAllLines(file, StandardCharsets.UTF_8)) {
+            if (line.isBlank() || line.startsWith("#")) {
+                continue;
+            }
+            final ParsedCategoryLine parsed = ParsedCategoryLine.parse(line, file);
+            final Category existing = categoriesById.get(parsed.name());
+            if (existing == null) {
+                final Category category = new Category(parsed.name());
+                category.setName(parsed.name());
+                category.setAbbreviation(parsed.abbreviation());
+                category.setCharacteristicsTag(parsed.characteristicsTag());
+                category.setType(com.softwaremagico.librodeesher.category.CategoryType.fromTag(parsed.typeTag()));
+                category.setSkillsRaw(parsed.skillsRaw());
+                categoriesById.put(parsed.name(), category);
+                categoriesByModule.computeIfAbsent(module, key -> new ArrayList<>()).add(category);
+            } else {
+                // Another module contributes extra skills to an already-known category: merge them.
+                existing.setSkillsRaw(existing.getSkillsRaw() + ", " + parsed.skillsRaw());
+            }
+        }
+    }
+
+    /** One parsed data line of a {@code categorias.txt} file. */
+    private record ParsedCategoryLine(String name, String abbreviation, String characteristicsTag, String typeTag,
+                                       String skillsRaw) {
+
+        static ParsedCategoryLine parse(String line, Path file) {
+            final String[] columns = line.split("\t");
+            if (columns.length != 4) {
+                throw new IllegalStateException(
+                        "Malformed category line in '" + file + "': expected 4 tab-separated columns, got "
+                                + columns.length + ": " + line);
+            }
+            final int openParenthesis = columns[0].indexOf('(');
+            if (openParenthesis < 0 || !columns[0].endsWith(")")) {
+                throw new IllegalStateException(
+                        "Malformed category name/abbreviation in '" + file + "': " + columns[0]);
+            }
+            final String name = columns[0].substring(0, openParenthesis);
+            final String abbreviation = columns[0].substring(openParenthesis + 1, columns[0].length() - 1);
+            return new ParsedCategoryLine(name, abbreviation, columns[1], columns[2], columns[3]);
+        }
+    }
+}
