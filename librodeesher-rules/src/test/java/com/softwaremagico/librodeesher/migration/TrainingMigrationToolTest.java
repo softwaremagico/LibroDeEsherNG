@@ -30,6 +30,11 @@ public class TrainingMigrationToolTest {
         try {
             final Path trainingsDir = sourceRoot.resolve("rolemaster/modulos/Basico/adiestramientos");
             Files.createDirectories(trainingsDir);
+            Files.writeString(sourceRoot.resolve("rolemaster/categorias.txt"), String.join("\n",
+                    "Rastrear(Ras)\tAg/In\tEstándar\tRastrear",
+                    "Armas·2manos(Arm2)\tFu/Ag\tEstándar\tEspada, Hacha",
+                    "Armas·Filo(ArmF)\tFu/Ag\tEstándar\tEspada, Hacha",
+                    ""), StandardCharsets.UTF_8);
             Files.writeString(trainingsDir.resolve("Explorador.txt"), String.join("\n",
                     "# TIEMPO (meses)",
                     "####################################",
@@ -101,7 +106,7 @@ public class TrainingMigrationToolTest {
 
             Assert.assertEquals(explorador.getCategories().size(), 2);
             final TrainingCategoryGrant trackingCategory = explorador.getCategories().get(0);
-            Assert.assertEquals(trackingCategory.getCategoryOptions(), List.of("Rastrear"));
+            Assert.assertEquals(trackingCategory.getCategoryOptions(), List.of("tracking"));
             Assert.assertFalse(trackingCategory.isChoice());
             Assert.assertEquals(trackingCategory.getRanksGranted(), Integer.valueOf(2));
             Assert.assertEquals(trackingCategory.getMinSkills(), Integer.valueOf(1));
@@ -114,7 +119,7 @@ public class TrainingMigrationToolTest {
             Assert.assertEquals(trackingSkill.getRanksToDistribute(), Integer.valueOf(2));
 
             final TrainingCategoryGrant weaponCategory = explorador.getCategories().get(1);
-            Assert.assertEquals(weaponCategory.getCategoryOptions(), List.of("Armas·2manos", "Armas·Filo"));
+            Assert.assertEquals(weaponCategory.getCategoryOptions(), List.of("weaponsTwoHanded", "weaponsEdged"));
             Assert.assertTrue(weaponCategory.isChoice());
             Assert.assertEquals(weaponCategory.getRanksGranted(), Integer.valueOf(1));
             Assert.assertEquals(weaponCategory.getRanksToDistribute(), Integer.valueOf(3));

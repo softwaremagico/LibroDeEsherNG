@@ -5,7 +5,7 @@
     <categories>
       <categoryGrant>
         <categoryOptions>
-          <category>Armas·Proyectiles</category>
+          <category>weaponsMissile</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -15,10 +15,10 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Armas·Contundentes</category>
-          <category>Armas·Asta</category>
-          <category>Armas·Filo</category>
-          <category>Armas·2manos</category>
+          <category>weaponsBlunt</category>
+          <category>weaponsPolearm</category>
+          <category>weaponsEdged</category>
+          <category>weaponsTwoHanded</category>
         </categoryOptions>
         <choice>true</choice>
         <maxSkills>1</maxSkills>
@@ -28,7 +28,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Artes Marciales·Barridos</category>
+          <category>martialArtsSweeps</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -38,7 +38,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Atletismo·Gimnasia</category>
+          <category>athleticsGymnastics</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>2</maxSkills>
@@ -64,7 +64,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Exteriores·Animales</category>
+          <category>outdoorAnimals</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -83,7 +83,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Exteriores·Entorno</category>
+          <category>outdoorEnvironment</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -93,7 +93,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Percepción·Búsqueda</category>
+          <category>perceptionSearching</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>2</maxSkills>
@@ -103,7 +103,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Subterfugio·Sigilo</category>
+          <category>subterfugeStealth</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>2</maxSkills>
@@ -191,7 +191,7 @@
     <categories>
       <categoryGrant>
         <categoryOptions>
-          <category>Oficios</category>
+          <category>crafts</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>

@@ -5,7 +5,7 @@
     <categories>
       <categoryGrant>
         <categoryOptions>
-          <category>Arte·Activo</category>
+          <category>artPerforming</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>2</maxSkills>
@@ -15,7 +15,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Listas Hechizos de Adiestramiento</category>
+          <category>listsSpellsOfTraining</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>2</maxSkills>
@@ -41,7 +41,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Influencia</category>
+          <category>influence</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>2</maxSkills>
@@ -60,7 +60,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Percepción·Búsqueda</category>
+          <category>perceptionSearching</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -79,7 +79,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Subterfugio·Mecánica</category>
+          <category>subterfugeMechanics</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -98,7 +98,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Urbana</category>
+          <category>urban</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>

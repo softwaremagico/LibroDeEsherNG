@@ -21,6 +21,9 @@ public class CultureMigrationToolTest {
         try {
             final Path cultureDir = sourceRoot.resolve("rolemaster/modulos/RazasYCulturas/culturas");
             Files.createDirectories(cultureDir);
+            Files.writeString(sourceRoot.resolve("rolemaster/categorias.txt"), String.join("\n",
+                    "Exteriores·Entorno(ExtE)\tCn/In\tEstándar\tRastrear, Acechar",
+                    ""), StandardCharsets.UTF_8);
             Files.writeString(cultureDir.resolve("Rural.txt"), String.join("\n",
                     "# ARMAS TÍPICAS", "####################", "Filo, Arco Largo", "",
                     "# ARMADURAS TÍPICAS", "####################", "Armadura Tipo I, Armadura Tipo II", "",
@@ -43,7 +46,7 @@ public class CultureMigrationToolTest {
             Assert.assertEquals(rural.getTypicalWeaponIds(), List.of("edged", "longBow"));
             Assert.assertEquals(rural.getTypicalArmors(), List.of("Armor Tipo I", "Armor Tipo II"));
             Assert.assertEquals(rural.getAdolescenceRanks().size(), 1);
-            Assert.assertEquals(rural.getAdolescenceRanks().get(0).getCategoryOptions(), List.of("Exteriores·Entorno"));
+            Assert.assertEquals(rural.getAdolescenceRanks().get(0).getCategoryOptions(), List.of("outdoorEnvironment"));
             Assert.assertEquals(rural.getHobbyRanks(), Integer.valueOf(10));
             Assert.assertEquals(rural.getHobbyIds(), List.of("tracking", "exclude:stalking"));
             Assert.assertEquals(rural.getLanguageMaxRanks().get(0).getLanguageId(), "commonSpeech");

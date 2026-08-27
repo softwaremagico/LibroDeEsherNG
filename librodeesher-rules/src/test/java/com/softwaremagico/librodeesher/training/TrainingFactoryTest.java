@@ -35,7 +35,7 @@ public class TrainingFactoryTest {
         final Training soldier = TrainingFactory.getInstance().getElement("soldier");
 
         final TrainingCategoryGrant lightArmor = soldier.getCategories().stream()
-                .filter(grant -> grant.getCategoryOptions().contains("Armadura·Ligera"))
+                .filter(grant -> grant.getCategoryOptions().contains("armorLight"))
                 .findFirst().orElseThrow();
 
         Assert.assertFalse(lightArmor.isChoice());
@@ -54,7 +54,7 @@ public class TrainingFactoryTest {
                 .findFirst().orElseThrow();
 
         Assert.assertTrue(weaponChoice.getCategoryOptions().size() > 1);
-        Assert.assertTrue(weaponChoice.getCategoryOptions().stream().allMatch(option -> option.startsWith("Armas·")));
+        Assert.assertTrue(weaponChoice.getCategoryOptions().stream().allMatch(option -> option.startsWith("weapons")));
     }
 
     @Test(expectedExceptions = InvalidXmlElementException.class)

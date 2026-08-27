@@ -62,22 +62,9 @@ public final class CategoryMigrationTool {
      * @return the number of {@code categorias.xml} files written.
      */
     public static int migrate(Path sourceRoot, Path modulesTarget) throws IOException {
-        final Path rolemasterDir = sourceRoot.resolve("rolemaster");
-        final Path modulosDir = rolemasterDir.resolve("modulos");
-
-        // Spanish category name -> element, in creation order, shared across every source file so
-        // that a module re-declaring an existing category merges into it instead of creating a
-        // duplicate.
-        final Map<String, Category> categoriesBySpanishName = new LinkedHashMap<>();
         // Module name -> categories first defined by that module, in the order that will be written.
         final Map<String, List<Category>> categoriesByModule = new LinkedHashMap<>();
-        final IdAllocator idAllocator = new IdAllocator();
-
-        for (final String module : ModuleManager.getAllModules()) {
-            for (final Path file : LegacyCategoriesFiles.forModule(module, rolemasterDir, modulosDir)) {
-                readCategoriesFile(file, module, categoriesBySpanishName, categoriesByModule, idAllocator);
-            }
-        }
+        readAllCategories(sourceRoot, categoriesByModule);
 
         int written = 0;
         for (final Map.Entry<String, List<Category>> entry : categoriesByModule.entrySet()) {
@@ -86,6 +73,40 @@ public final class CategoryMigrationTool {
             written++;
         }
         return written;
+    }
+
+    /**
+     * Rebuilds the full set of migrated categories (deterministically, same ids as {@link
+     * #migrate(Path, Path)}) and returns a Spanish category name -&gt; id index, so that other
+     * migration tools (e.g. {@code TrainingMigrationTool}, {@code CultureMigrationTool}) can resolve
+     * the categories referenced by name in their own legacy files to the real category id instead of
+     * embedding the raw Spanish name in {@code categoryOptions}.
+     */
+    public static Map<String, String> buildCategoryIndex(Path sourceRoot) throws IOException {
+        final Map<String, List<Category>> categoriesByModule = new LinkedHashMap<>();
+        final Map<String, Category> categoriesBySpanishName = readAllCategories(sourceRoot, categoriesByModule);
+        final Map<String, String> index = new LinkedHashMap<>();
+        categoriesBySpanishName.forEach((name, category) -> index.put(name, category.getId()));
+        return index;
+    }
+
+    private static Map<String, Category> readAllCategories(Path sourceRoot, Map<String, List<Category>> categoriesByModule)
+            throws IOException {
+        final Path rolemasterDir = sourceRoot.resolve("rolemaster");
+        final Path modulosDir = rolemasterDir.resolve("modulos");
+
+        // Spanish category name -> element, in creation order, shared across every source file so
+        // that a module re-declaring an existing category merges into it instead of creating a
+        // duplicate.
+        final Map<String, Category> categoriesBySpanishName = new LinkedHashMap<>();
+        final IdAllocator idAllocator = new IdAllocator();
+
+        for (final String module : ModuleManager.getAllModules()) {
+            for (final Path file : LegacyCategoriesFiles.forModule(module, rolemasterDir, modulosDir)) {
+                readCategoriesFile(file, module, categoriesBySpanishName, categoriesByModule, idAllocator);
+            }
+        }
+        return categoriesBySpanishName;
     }
 
     /**

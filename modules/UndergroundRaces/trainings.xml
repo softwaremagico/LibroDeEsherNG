@@ -5,7 +5,7 @@
     <categories>
       <categoryGrant>
         <categoryOptions>
-          <category>Desarrollo Físico</category>
+          <category>physicalDevelopment</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -24,7 +24,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Manipulación del Poder</category>
+          <category>powerManipulation</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -43,7 +43,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Percepción de Poder</category>
+          <category>powerAwareness</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -53,9 +53,9 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Armadura·Ligera</category>
-          <category>Armadura·Media</category>
-          <category>Armadura·Pesada</category>
+          <category>armorLight</category>
+          <category>armorMiddle</category>
+          <category>armorHeavy</category>
         </categoryOptions>
         <choice>true</choice>
         <maxSkills>1</maxSkills>
@@ -65,13 +65,13 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Armas·2manos</category>
-          <category>Armas·Arrojadizas</category>
-          <category>Armas·Artillería</category>
-          <category>Armas·Contundentes</category>
-          <category>Armas·Asta</category>
-          <category>Armas·Filo</category>
-          <category>Armas·Proyectiles</category>
+          <category>weaponsTwoHanded</category>
+          <category>weaponsThrown</category>
+          <category>weaponsSiege</category>
+          <category>weaponsBlunt</category>
+          <category>weaponsPolearm</category>
+          <category>weaponsEdged</category>
+          <category>weaponsMissile</category>
         </categoryOptions>
         <choice>true</choice>
         <maxSkills>1</maxSkills>
@@ -81,8 +81,8 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Listas Básicas de Hechizos</category>
-          <category>Listas Abiertas de Hechizos</category>
+          <category>listsBasicOfSpells</category>
+          <category>listsAbiertasOfSpells</category>
         </categoryOptions>
         <choice>true</choice>
         <maxSkills>1</maxSkills>
@@ -167,7 +167,7 @@
     <categories>
       <categoryGrant>
         <categoryOptions>
-          <category>Listas Básicas de Hechizos</category>
+          <category>listsBasicOfSpells</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -186,7 +186,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Técnica/Comercio·General</category>
+          <category>technicalTradeGeneral</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -205,7 +205,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Técnica/Comercio·Profesional</category>
+          <category>technicalTradeProfessional</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>2</maxSkills>
@@ -231,7 +231,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Ciencia/Analítica·Especializada</category>
+          <category>scienceAnalyticSpecialized</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -250,7 +250,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Conocimiento·Mágico</category>
+          <category>loreArcane</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -269,7 +269,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Manipulación del Poder</category>
+          <category>powerManipulation</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>3</maxSkills>
@@ -288,13 +288,13 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Armas·2manos</category>
-          <category>Armas·Arrojadizas</category>
-          <category>Armas·Artillería</category>
-          <category>Armas·Contundentes</category>
-          <category>Armas·Asta</category>
-          <category>Armas·Filo</category>
-          <category>Armas·Proyectiles</category>
+          <category>weaponsTwoHanded</category>
+          <category>weaponsThrown</category>
+          <category>weaponsSiege</category>
+          <category>weaponsBlunt</category>
+          <category>weaponsPolearm</category>
+          <category>weaponsEdged</category>
+          <category>weaponsMissile</category>
         </categoryOptions>
         <choice>true</choice>
         <maxSkills>1</maxSkills>

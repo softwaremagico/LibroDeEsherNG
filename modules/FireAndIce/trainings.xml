@@ -5,7 +5,7 @@
     <categories>
       <categoryGrant>
         <categoryOptions>
-          <category>Atletismo·Resistencia</category>
+          <category>athleticsEndurance</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -24,7 +24,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Autocontrol</category>
+          <category>selfControl</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -43,7 +43,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Conocimiento·Mágico</category>
+          <category>loreArcane</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -62,7 +62,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Listas Básicas de Hechizos</category>
+          <category>listsBasicOfSpells</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>3</maxSkills>
@@ -116,7 +116,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Percepción de Poder</category>
+          <category>powerAwareness</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -211,7 +211,7 @@
     <categories>
       <categoryGrant>
         <categoryOptions>
-          <category>Conocimiento·Mágico</category>
+          <category>loreArcane</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -230,7 +230,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Conocimiento·Oscuro</category>
+          <category>loreDark</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -240,7 +240,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Listas Básicas de Hechizos</category>
+          <category>listsBasicOfSpells</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>3</maxSkills>
@@ -294,7 +294,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Percepción de Poder</category>
+          <category>powerAwareness</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -320,7 +320,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Subterfugio·Sigilo</category>
+          <category>subterfugeStealth</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -433,7 +433,7 @@
     <categories>
       <categoryGrant>
         <categoryOptions>
-          <category>Conocimiento·Mágico</category>
+          <category>loreArcane</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -452,7 +452,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Listas Básicas de Hechizos</category>
+          <category>listsBasicOfSpells</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>3</maxSkills>
@@ -506,7 +506,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Percepción de Poder</category>
+          <category>powerAwareness</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>2</maxSkills>
@@ -532,12 +532,12 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Armas·2manos</category>
-          <category>Armas·Contundentes</category>
-          <category>Armas·Asta</category>
-          <category>Armas·Filo</category>
-          <category>Armas·Arrojadizas</category>
-          <category>Armas·Proyectiles</category>
+          <category>weaponsTwoHanded</category>
+          <category>weaponsBlunt</category>
+          <category>weaponsPolearm</category>
+          <category>weaponsEdged</category>
+          <category>weaponsThrown</category>
+          <category>weaponsMissile</category>
         </categoryOptions>
         <choice>true</choice>
         <maxSkills>1</maxSkills>

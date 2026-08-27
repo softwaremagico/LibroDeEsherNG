@@ -18,6 +18,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 /**
@@ -62,6 +63,7 @@ public final class TrainingMigrationTool {
     public static int migrate(Path sourceRoot, Path modulesTarget) throws IOException {
         final Path modulosDir = sourceRoot.resolve("rolemaster").resolve("modulos");
         final IdAllocator idAllocator = new IdAllocator();
+        final Map<String, String> categoryIndex = CategoryMigrationTool.buildCategoryIndex(sourceRoot);
 
         int written = 0;
         for (final String module : ModuleManager.getAllModules()) {
@@ -73,7 +75,7 @@ public final class TrainingMigrationTool {
             try (Stream<Path> files = Files.list(trainingsDir)) {
                 for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
                         .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
-                    trainings.add(readTrainingFile(file, idAllocator));
+                    trainings.add(readTrainingFile(file, idAllocator, categoryIndex));
                 }
             }
             if (trainings.isEmpty()) {
@@ -86,7 +88,8 @@ public final class TrainingMigrationTool {
         return written;
     }
 
-    private static Training readTrainingFile(Path file, IdAllocator idAllocator) throws IOException {
+    private static Training readTrainingFile(Path file, IdAllocator idAllocator, Map<String, String> categoryIndex)
+            throws IOException {
         final String fileName = file.getFileName().toString();
         final String trainingName = fileName.substring(0, fileName.length() - ".txt".length());
         final SectionCursor cursor = new SectionCursor(Files.readAllLines(file, StandardCharsets.UTF_8));
@@ -96,7 +99,7 @@ public final class TrainingMigrationTool {
         training.setTrainingTimeInMonths(Integer.valueOf(cursor.nextSection().get(0).trim()));
         training.setLimitedRaces(parseCommaList(cursor.nextSection()));
         training.setSpecialItems(parseSpecialItems(cursor.nextSection()));
-        training.setCategories(parseCategories(cursor.nextSection()));
+        training.setCategories(parseCategories(cursor.nextSection(), categoryIndex));
         training.setCharacteristicUpgrades(parseChoiceGroups(cursor.nextSection()));
         training.setRequirements(parseRequirements(cursor.nextSection()));
         training.setLifeSkills(parseChoiceGroups(cursor.nextSection()));
@@ -112,12 +115,12 @@ public final class TrainingMigrationTool {
      * that follows to the category grant declared immediately above it (a line belongs to a skill,
      * not a category, precisely when it contains a "*", exactly like the legacy parser).
      */
-    static List<TrainingCategoryGrant> parseCategories(List<String> sectionLines) {
+    static List<TrainingCategoryGrant> parseCategories(List<String> sectionLines, Map<String, String> categoryIndex) {
         final List<TrainingCategoryGrant> categories = new ArrayList<>();
         TrainingCategoryGrant currentCategory = null;
         for (final String rawLine : sectionLines) {
             if (!rawLine.contains("*")) {
-                currentCategory = parseCategoryLine(rawLine);
+                currentCategory = parseCategoryLine(rawLine, categoryIndex);
                 categories.add(currentCategory);
             } else {
                 if (currentCategory == null) {
@@ -134,16 +137,17 @@ public final class TrainingMigrationTool {
      * {@code "{Cat1; Cat2}\tRanks\tMin\tMax\tDistribute"} (player chooses one of the listed
      * categories).
      */
-    static TrainingCategoryGrant parseCategoryLine(String rawLine) {
+    static TrainingCategoryGrant parseCategoryLine(String rawLine, Map<String, String> categoryIndex) {
         final List<String> categoryOptions;
         final String[] numberColumns;
         if (rawLine.contains("{")) {
             final String[] parts = rawLine.trim().split("}", 2);
-            categoryOptions = parseChoiceOptions(parts[0].substring(parts[0].indexOf('{') + 1));
+            categoryOptions = resolveCategoryIds(parseChoiceOptions(parts[0].substring(parts[0].indexOf('{') + 1)),
+                    categoryIndex);
             numberColumns = onlyNonBlank(parts[1].split("\t"));
         } else {
             final String[] columns = rawLine.split("\t");
-            categoryOptions = List.of(columns[0].trim());
+            categoryOptions = resolveCategoryIds(List.of(columns[0].trim()), categoryIndex);
             numberColumns = Arrays.copyOfRange(columns, 1, columns.length);
         }
 
@@ -154,6 +158,41 @@ public final class TrainingMigrationTool {
         grant.setMaxSkills(Integer.valueOf(numberColumns[2].trim()));
         grant.setRanksToDistribute(Integer.valueOf(numberColumns[3].trim()));
         return grant;
+    }
+
+    /**
+     * Resolves a list of Spanish category names to their real category id (via {@code categoryIndex},
+     * built from the migrated categories). Two special cases are preserved:
+     * <ul>
+     *     <li>{@code "all"} is already an id (never a Spanish name) and is left untouched.</li>
+     *     <li>A pseudo-category name that is not an actual category but merely contains "arma"
+     *     (weapon) or "ataque" (attack), e.g. {@code "Arma"} on its own, is the legacy application's
+     *     dynamic shorthand for "any weapon category" / "any attack category" (resolved at runtime
+     *     against every category currently loaded, see the original {@code Training.java}). Since the
+     *     actual set of matching categories depends on which modules are enabled, it cannot be fixed
+     *     at migration time; it is preserved as the {@code allWeaponCategories} / {@code
+     *     allAttackCategories} marker id, to be expanded at rule-resolution time instead.</li>
+     * </ul>
+     */
+    static List<String> resolveCategoryIds(List<String> spanishNames, Map<String, String> categoryIndex) {
+        final List<String> ids = new ArrayList<>();
+        for (final String spanishName : spanishNames) {
+            if ("all".equals(spanishName)) {
+                ids.add(spanishName);
+                continue;
+            }
+            final String id = categoryIndex.get(spanishName);
+            if (id != null) {
+                ids.add(id);
+            } else if (spanishName.toLowerCase().contains("arma")) {
+                ids.add("allWeaponCategories");
+            } else if (spanishName.toLowerCase().contains("ataque")) {
+                ids.add("allAttackCategories");
+            } else {
+                throw new IllegalStateException("Unknown category name: '" + spanishName + "'.");
+            }
+        }
+        return ids;
     }
 
     /**

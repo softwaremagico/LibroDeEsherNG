@@ -5,10 +5,10 @@
     <categories>
       <categoryGrant>
         <categoryOptions>
-          <category>Armas·2manos</category>
-          <category>Armas·Contundentes</category>
-          <category>Armas·Asta</category>
-          <category>Armas·Filo</category>
+          <category>weaponsTwoHanded</category>
+          <category>weaponsBlunt</category>
+          <category>weaponsPolearm</category>
+          <category>weaponsEdged</category>
         </categoryOptions>
         <choice>true</choice>
         <maxSkills>1</maxSkills>
@@ -18,7 +18,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Artes Marciales·Barridos</category>
+          <category>martialArtsSweeps</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -28,7 +28,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Artes Marciales·Golpes</category>
+          <category>martialArtsStrikes</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -38,7 +38,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Artes Marciales·Maniobras de Combate</category>
+          <category>martialArtsCombatManeuvers</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -48,7 +48,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Atletismo·Gimnasia</category>
+          <category>athleticsGymnastics</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>2</maxSkills>
@@ -58,7 +58,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Autocontrol</category>
+          <category>selfControl</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>2</maxSkills>
@@ -68,7 +68,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Desarrollo Físico</category>
+          <category>physicalDevelopment</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -87,7 +87,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Maniobras de Combate</category>
+          <category>combatManeuvers</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>2</maxSkills>
@@ -97,7 +97,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Subterfugio·Ataque</category>
+          <category>subterfugeAttack</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>2</maxSkills>
@@ -107,7 +107,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Subterfugio·Sigilo</category>
+          <category>subterfugeStealth</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>4</maxSkills>
@@ -117,7 +117,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Urbana</category>
+          <category>urban</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -192,10 +192,10 @@
     <categories>
       <categoryGrant>
         <categoryOptions>
-          <category>Armas·2manos</category>
-          <category>Armas·Contundentes</category>
-          <category>Armas·Asta</category>
-          <category>Armas·Filo</category>
+          <category>weaponsTwoHanded</category>
+          <category>weaponsBlunt</category>
+          <category>weaponsPolearm</category>
+          <category>weaponsEdged</category>
         </categoryOptions>
         <choice>true</choice>
         <maxSkills>1</maxSkills>
@@ -205,7 +205,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Artes Marciales·Barridos</category>
+          <category>martialArtsSweeps</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -215,7 +215,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Artes Marciales·Golpes</category>
+          <category>martialArtsStrikes</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -225,7 +225,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Artes Marciales·Maniobras de Combate</category>
+          <category>martialArtsCombatManeuvers</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -235,7 +235,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Autocontrol</category>
+          <category>selfControl</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>2</maxSkills>
@@ -245,7 +245,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Conocimiento·General</category>
+          <category>loreGeneral</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>2</maxSkills>
@@ -255,7 +255,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Conocimiento·Técnico</category>
+          <category>loreTechnical</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>
@@ -265,7 +265,7 @@
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
-          <category>Desarrollo Físico</category>
+          <category>physicalDevelopment</category>
         </categoryOptions>
         <choice>false</choice>
         <maxSkills>1</maxSkills>

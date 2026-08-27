@@ -14,6 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 /** Converts legacy {@code culturas/*.txt} files into module-level {@code cultures.xml}. */
@@ -36,6 +37,7 @@ public final class CultureMigrationTool {
     public static int migrate(Path sourceRoot, Path modulesTarget) throws IOException {
         final Path modulosDir = sourceRoot.resolve("rolemaster").resolve("modulos");
         final IdAllocator idAllocator = new IdAllocator();
+        final Map<String, String> categoryIndex = CategoryMigrationTool.buildCategoryIndex(sourceRoot);
         int written = 0;
         for (final String module : ModuleManager.getAllModules()) {
             final Path culturesDir = modulosDir.resolve(LegacyModules.sourceFolderFor(module)).resolve(CULTURES_FOLDER);
@@ -46,7 +48,7 @@ public final class CultureMigrationTool {
             try (Stream<Path> files = Files.list(culturesDir)) {
                 for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
                         .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
-                    cultures.add(readCultureFile(file, idAllocator));
+                    cultures.add(readCultureFile(file, idAllocator, categoryIndex));
                 }
             }
             if (!cultures.isEmpty()) {
@@ -57,7 +59,8 @@ public final class CultureMigrationTool {
         return written;
     }
 
-    private static Culture readCultureFile(Path file, IdAllocator idAllocator) throws IOException {
+    private static Culture readCultureFile(Path file, IdAllocator idAllocator, Map<String, String> categoryIndex)
+            throws IOException {
         final String fileName = file.getFileName().toString();
         final String cultureName = fileName.substring(0, fileName.length() - ".txt".length());
         final SectionCursor cursor = new SectionCursor(Files.readAllLines(file, StandardCharsets.UTF_8));
@@ -66,7 +69,7 @@ public final class CultureMigrationTool {
         culture.setName(cultureName, Translations.toEnglish(cultureName));
         culture.setTypicalWeaponIds(parseWeaponIds(cursor.nextSection()));
         culture.setTypicalArmors(parseTranslatedList(cursor.nextSection()));
-        culture.setAdolescenceRanks(parseAdolescenceRanks(cursor.nextSection()));
+        culture.setAdolescenceRanks(parseAdolescenceRanks(cursor.nextSection(), categoryIndex));
         culture.setHobbyRanks(parseOptionalInteger(cursor.nextSection()));
         culture.setHobbyIds(parseHobbyIds(cursor.nextSection()));
         culture.setLanguageMaxRanks(parseLanguageRanks(cursor.nextSection()));
@@ -108,7 +111,7 @@ public final class CultureMigrationTool {
         return values;
     }
 
-    private static List<TrainingCategoryGrant> parseAdolescenceRanks(List<String> lines) {
+    private static List<TrainingCategoryGrant> parseAdolescenceRanks(List<String> lines, Map<String, String> categoryIndex) {
         final List<TrainingCategoryGrant> categories = new ArrayList<>();
         TrainingCategoryGrant current = null;
         for (final String line : lines) {
@@ -118,9 +121,17 @@ public final class CultureMigrationTool {
                 current = new TrainingCategoryGrant();
                 if (rawCategory.contains("{")) {
                     final String options = rawCategory.substring(rawCategory.indexOf('{') + 1, rawCategory.indexOf('}'));
-                    current.setCategoryOptions(TrainingMigrationTool.parseChoiceOptions(options));
+                    final List<String> optionNames = TrainingMigrationTool.parseChoiceOptions(options);
+                    // A single name inside braces is not a literal category but a group prefix (e.g.
+                    // "{Conocimiento}" means "any category whose name starts with Conocimiento·"),
+                    // exactly like the legacy CategoryFactory.getCategoryByGroup lookup; two or more
+                    // names are a literal choice between those exact categories instead.
+                    current.setCategoryOptions(optionNames.size() == 1
+                            ? resolveCategoryGroup(optionNames.get(0), categoryIndex)
+                            : TrainingMigrationTool.resolveCategoryIds(optionNames, categoryIndex));
                 } else {
-                    current.setCategoryOptions(List.of(rawCategory));
+                    current.setCategoryOptions(
+                            TrainingMigrationTool.resolveCategoryIds(List.of(rawCategory), categoryIndex));
                 }
                 current.setRanksGranted(Integer.valueOf(columns[1].trim()));
                 current.setMinSkills(0);
@@ -137,6 +148,25 @@ public final class CultureMigrationTool {
 
     private static Integer parseOptionalInteger(List<String> section) {
         return section.isEmpty() ? null : Integer.valueOf(section.get(0).trim());
+    }
+
+    /**
+     * Resolves every category whose Spanish name starts with {@code "groupPrefix·"} (e.g.
+     * "Conocimiento" matches "Conocimiento·General", "Conocimiento·Técnico", ...), mirroring the
+     * legacy {@code CategoryFactory.getCategoryByGroup} prefix lookup.
+     */
+    private static List<String> resolveCategoryGroup(String groupPrefix, Map<String, String> categoryIndex) {
+        final String prefix = groupPrefix.toLowerCase() + "\u00b7";
+        final List<String> ids = new ArrayList<>();
+        categoryIndex.forEach((spanishName, id) -> {
+            if (spanishName.toLowerCase().startsWith(prefix)) {
+                ids.add(id);
+            }
+        });
+        if (ids.isEmpty()) {
+            throw new IllegalStateException("No categories found for group prefix '" + groupPrefix + "'.");
+        }
+        return ids;
     }
 
     private static List<String> parseHobbyIds(List<String> lines) {
