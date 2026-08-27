@@ -39,7 +39,7 @@
       <Fu>2</Fu>
     </characteristicBonuses>
     <cultures>
-      <cultureId>group:industrializado</cultureId>
+      <cultureId>group:industrialized</cultureId>
       <cultureId>group:tercerMundo</cultureId>
     </cultures>
     <expectedLifeYears>80</expectedLifeYears>

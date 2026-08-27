@@ -1,0 +1,216 @@
+package com.softwaremagico.librodeesher.migration;
+
+import com.softwaremagico.librodeesher.culture.Culture;
+import com.softwaremagico.librodeesher.culture.CultureLanguageRank;
+import com.softwaremagico.librodeesher.culture.CultureTrainingPrice;
+import com.softwaremagico.librodeesher.file.ModuleManager;
+import com.softwaremagico.librodeesher.language.Translations;
+import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
+import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
+/** Converts legacy {@code culturas/*.txt} files into module-level {@code cultures.xml}. */
+public final class CultureMigrationTool {
+
+    private static final String CULTURES_FOLDER = "culturas";
+    private static final String OUTPUT_FILE = "cultures.xml";
+
+    private CultureMigrationTool() {
+        // Utility class.
+    }
+
+    public static void main(String[] args) throws IOException {
+        final Path sourceRoot = Path.of(args.length > 0 ? args[0] : "../../LibroDeEsher");
+        final Path modulesTarget = Path.of(args.length > 1 ? args[1] : "../modules");
+        final int written = migrate(sourceRoot, modulesTarget);
+        System.out.println("Wrote " + written + " '" + OUTPUT_FILE + "' file(s) under " + modulesTarget.toAbsolutePath());
+    }
+
+    public static int migrate(Path sourceRoot, Path modulesTarget) throws IOException {
+        final Path modulosDir = sourceRoot.resolve("rolemaster").resolve("modulos");
+        final IdAllocator idAllocator = new IdAllocator();
+        int written = 0;
+        for (final String module : ModuleManager.getAllModules()) {
+            final Path culturesDir = modulosDir.resolve(LegacyModules.sourceFolderFor(module)).resolve(CULTURES_FOLDER);
+            if (!Files.isDirectory(culturesDir)) {
+                continue;
+            }
+            final List<Culture> cultures = new ArrayList<>();
+            try (Stream<Path> files = Files.list(culturesDir)) {
+                for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
+                        .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
+                    cultures.add(readCultureFile(file, idAllocator));
+                }
+            }
+            if (!cultures.isEmpty()) {
+                XmlMigrationWriter.write(modulesTarget.resolve(module).resolve(OUTPUT_FILE), "cultures", "culture", cultures);
+                written++;
+            }
+        }
+        return written;
+    }
+
+    private static Culture readCultureFile(Path file, IdAllocator idAllocator) throws IOException {
+        final String fileName = file.getFileName().toString();
+        final String cultureName = fileName.substring(0, fileName.length() - ".txt".length());
+        final SectionCursor cursor = new SectionCursor(Files.readAllLines(file, StandardCharsets.UTF_8));
+
+        final Culture culture = new Culture(idAllocator.idFor(cultureName));
+        culture.setName(cultureName, Translations.toEnglish(cultureName));
+        culture.setTypicalWeaponIds(parseWeaponIds(cursor.nextSection()));
+        culture.setTypicalArmors(parseTranslatedList(cursor.nextSection()));
+        culture.setAdolescenceRanks(parseAdolescenceRanks(cursor.nextSection()));
+        culture.setHobbyRanks(parseOptionalInteger(cursor.nextSection()));
+        culture.setHobbyIds(parseHobbyIds(cursor.nextSection()));
+        culture.setLanguageMaxRanks(parseLanguageRanks(cursor.nextSection()));
+        culture.setTrainingPrices(parseTrainingPrices(cursor.nextSectionOrEmpty()));
+        return culture;
+    }
+
+    private static List<String> parseWeaponIds(List<String> lines) {
+        final List<String> ids = new ArrayList<>();
+        for (final String line : lines) {
+            if (isAll(line)) {
+                ids.add("all");
+                continue;
+            }
+            if (isNone(line)) {
+                continue;
+            }
+            for (final String token : splitComma(line)) {
+                ids.add(Translations.toEnglishId(stripBraces(token)));
+            }
+        }
+        return ids;
+    }
+
+    private static List<String> parseTranslatedList(List<String> lines) {
+        final List<String> values = new ArrayList<>();
+        for (final String line : lines) {
+            if (isAll(line)) {
+                values.add("All");
+                continue;
+            }
+            if (isNone(line)) {
+                continue;
+            }
+            for (final String token : splitComma(line)) {
+                values.add(Translations.toEnglish(token));
+            }
+        }
+        return values;
+    }
+
+    private static List<TrainingCategoryGrant> parseAdolescenceRanks(List<String> lines) {
+        final List<TrainingCategoryGrant> categories = new ArrayList<>();
+        TrainingCategoryGrant current = null;
+        for (final String line : lines) {
+            if (!line.contains("*")) {
+                final String[] columns = line.split("\t");
+                final String rawCategory = columns[0].trim();
+                current = new TrainingCategoryGrant();
+                if (rawCategory.contains("{")) {
+                    final String options = rawCategory.substring(rawCategory.indexOf('{') + 1, rawCategory.indexOf('}'));
+                    current.setCategoryOptions(TrainingMigrationTool.parseChoiceOptions(options));
+                } else {
+                    current.setCategoryOptions(List.of(rawCategory));
+                }
+                current.setRanksGranted(Integer.valueOf(columns[1].trim()));
+                current.setMinSkills(0);
+                current.setMaxSkills(0);
+                current.setRanksToDistribute(0);
+                categories.add(current);
+            } else if (current != null) {
+                final String[] columns = line.replace("*", "").trim().split("\t");
+                current.getSkills().add(new TrainingSkillGrant(List.of(columns[0].trim()), Integer.valueOf(columns[1].trim())));
+            }
+        }
+        return categories;
+    }
+
+    private static Integer parseOptionalInteger(List<String> section) {
+        return section.isEmpty() ? null : Integer.valueOf(section.get(0).trim());
+    }
+
+    private static List<String> parseHobbyIds(List<String> lines) {
+        final List<String> ids = new ArrayList<>();
+        for (final String line : lines) {
+            if (isAll(line)) {
+                ids.add("all");
+                continue;
+            }
+            if (isNone(line)) {
+                continue;
+            }
+            for (final String token : splitComma(line)) {
+                final String cleaned = token.startsWith("-") ? token.substring(1).trim() : token;
+                ids.add((token.startsWith("-") ? "exclude:" : "") + Translations.toEnglishId(cleaned));
+            }
+        }
+        return ids;
+    }
+
+    private static List<CultureLanguageRank> parseLanguageRanks(List<String> lines) {
+        final List<CultureLanguageRank> ranks = new ArrayList<>();
+        for (final String line : lines) {
+            if (isAll(line)) {
+                ranks.add(new CultureLanguageRank("all", 10, 10));
+                continue;
+            }
+            if (isNone(line)) {
+                continue;
+            }
+            final String[] columns = line.split("\t");
+            if (columns.length >= 2) {
+                final String[] pair = columns[1].trim().split("/");
+                ranks.add(new CultureLanguageRank(Translations.toEnglishId(columns[0].trim()),
+                        Integer.valueOf(pair[0].trim()), Integer.valueOf(pair[1].trim())));
+            }
+        }
+        return ranks;
+    }
+
+    private static List<CultureTrainingPrice> parseTrainingPrices(List<String> lines) {
+        final List<CultureTrainingPrice> prices = new ArrayList<>();
+        for (final String line : lines) {
+            if (isNone(line)) {
+                continue;
+            }
+            final String[] columns = line.split("\t");
+            if (columns.length >= 2) {
+                final String rawValue = columns[1].replace("%", "").replace(".", "").replace(",", "").trim();
+                prices.add(new CultureTrainingPrice(Translations.toEnglishId(columns[0].trim()), Double.valueOf(rawValue) / 100d));
+            }
+        }
+        return prices;
+    }
+
+    private static List<String> splitComma(String line) {
+        final List<String> tokens = new ArrayList<>();
+        for (final String token : line.split(",")) {
+            if (!token.trim().isEmpty()) {
+                tokens.add(token.trim());
+            }
+        }
+        return tokens;
+    }
+
+    private static String stripBraces(String value) {
+        return value.replace("{", "").replace("}", "").trim();
+    }
+
+    private static boolean isAll(String line) {
+        return line.equalsIgnoreCase("Todas") || line.equalsIgnoreCase("Todos") || line.equalsIgnoreCase("all");
+    }
+
+    private static boolean isNone(String line) {
+        return line.toLowerCase().contains("ningun") || line.toLowerCase().contains("none");
+    }
+}

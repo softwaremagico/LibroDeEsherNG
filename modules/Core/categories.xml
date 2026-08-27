@@ -28,9 +28,9 @@
       <characteristic>Ag</characteristic>
       <characteristic>Fu</characteristic>
     </characteristics>
-    <id>armorMedium</id>
+    <id>armorMiddle</id>
     <name>
-      <en>Armor: Medium</en>
+      <en>Armor: Middle</en>
       <es>Armadura·Media</es>
     </name>
     <skills>

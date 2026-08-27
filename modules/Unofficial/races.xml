@@ -6,7 +6,7 @@
       <backgroundLanguage>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla Common</name>
+        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -283,7 +283,7 @@
       <raceLanguage>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla Common</name>
+        <name>Common Speech</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -317,7 +317,7 @@
       <backgroundLanguage>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla of the Bosques</name>
+        <name>Woodland Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -439,14 +439,14 @@
       <raceLanguage>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla Common</name>
+        <name>Common Speech</name>
         <startingSpeakingRanks>10</startingSpeakingRanks>
         <startingWritingRanks>10</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Elven Alto</name>
+        <name>High Elven</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>8</startingWritingRanks>
       </raceLanguage>
@@ -534,14 +534,14 @@
       <backgroundLanguage>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>0</maxWritingRanks>
-        <name>Habla of the Bosques</name>
+        <name>Woodland Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>0</maxWritingRanks>
-        <name>Habla Common</name>
+        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -760,7 +760,7 @@
       <backgroundLanguage>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla Common</name>
+        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -924,14 +924,14 @@
       <raceLanguage>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla of the Bosques</name>
+        <name>Woodland Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla Common</name>
+        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>

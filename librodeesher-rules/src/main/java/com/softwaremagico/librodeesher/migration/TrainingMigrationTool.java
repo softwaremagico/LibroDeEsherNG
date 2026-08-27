@@ -112,7 +112,7 @@ public final class TrainingMigrationTool {
      * that follows to the category grant declared immediately above it (a line belongs to a skill,
      * not a category, precisely when it contains a "*", exactly like the legacy parser).
      */
-    private static List<TrainingCategoryGrant> parseCategories(List<String> sectionLines) {
+    static List<TrainingCategoryGrant> parseCategories(List<String> sectionLines) {
         final List<TrainingCategoryGrant> categories = new ArrayList<>();
         TrainingCategoryGrant currentCategory = null;
         for (final String rawLine : sectionLines) {
@@ -134,7 +134,7 @@ public final class TrainingMigrationTool {
      * {@code "{Cat1; Cat2}\tRanks\tMin\tMax\tDistribute"} (player chooses one of the listed
      * categories).
      */
-    private static TrainingCategoryGrant parseCategoryLine(String rawLine) {
+    static TrainingCategoryGrant parseCategoryLine(String rawLine) {
         final List<String> categoryOptions;
         final String[] numberColumns;
         if (rawLine.contains("{")) {
@@ -161,7 +161,7 @@ public final class TrainingMigrationTool {
      * {@code "{Skill1; Skill2}\t-Ranks"} (player chooses one of the listed skills; the leading "-" is
      * a purely cosmetic legacy marker for "choice" and is stripped).
      */
-    private static TrainingSkillGrant parseSkillLine(String rawLine) {
+    static TrainingSkillGrant parseSkillLine(String rawLine) {
         final String withoutMarker = rawLine.replace("*", "").trim();
         final List<String> skillOptions;
         final String ranksColumn;
@@ -179,7 +179,7 @@ public final class TrainingMigrationTool {
     }
 
     /** Splits a {@code "a; b"} or {@code "a, b"} choice list (without its surrounding braces) and trims each option. */
-    private static List<String> parseChoiceOptions(String content) {
+    static List<String> parseChoiceOptions(String content) {
         final List<String> options = new ArrayList<>();
         for (final String option : content.replace(";", ",").split(",")) {
             if (!option.isBlank()) {
@@ -189,7 +189,7 @@ public final class TrainingMigrationTool {
         return options;
     }
 
-    private static String[] onlyNonBlank(String[] tokens) {
+    static String[] onlyNonBlank(String[] tokens) {
         return Arrays.stream(tokens).filter(token -> !token.isBlank()).toArray(String[]::new);
     }
 

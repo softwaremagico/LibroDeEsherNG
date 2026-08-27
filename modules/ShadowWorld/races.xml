@@ -13,7 +13,7 @@
       <backgroundLanguage>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla Common</name>
+        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -116,7 +116,7 @@
       <backgroundLanguage>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla Common</name>
+        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -238,7 +238,7 @@
       <raceLanguage>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla Common</name>
+        <name>Common Speech</name>
         <startingSpeakingRanks>5</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -272,7 +272,7 @@
       <backgroundLanguage>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla Common</name>
+        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>

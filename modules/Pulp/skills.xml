@@ -28,7 +28,7 @@
   </skill>
   <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>armorMedium</categoryId>
+    <categoryId>armorMiddle</categoryId>
     <enabledByDefault>true</enabledByDefault>
     <id>armorTipoIii</id>
     <name>
@@ -41,7 +41,7 @@
   </skill>
   <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>armorMedium</categoryId>
+    <categoryId>armorMiddle</categoryId>
     <enabledByDefault>true</enabledByDefault>
     <id>armorTipoIv</id>
     <name>

@@ -38,7 +38,7 @@
   </skill>
   <skill>
     <allEnabled>false</allEnabled>
-    <categoryId>armorMedium</categoryId>
+    <categoryId>armorMiddle</categoryId>
     <enabledByDefault>true</enabledByDefault>
     <id>chainMail</id>
     <name>
@@ -3588,9 +3588,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>hablarHablaAlta</id>
+    <id>hablarHablaHigh</id>
     <name>
-      <en>Hablar Habla Alta</en>
+      <en>Hablar Habla High</en>
       <es>Hablar Habla Alta</es>
     </name>
     <rare>false</rare>
@@ -3601,9 +3601,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>escribirHablaAlta</id>
+    <id>escribirHablaHigh</id>
     <name>
-      <en>Escribir Habla Alta</en>
+      <en>Escribir Habla High</en>
       <es>Escribir Habla Alta</es>
     </name>
     <rare>false</rare>

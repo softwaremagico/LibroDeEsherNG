@@ -1543,14 +1543,14 @@
       <raceLanguage>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla Common</name>
+        <name>Common Speech</name>
         <startingSpeakingRanks>5</startingSpeakingRanks>
         <startingWritingRanks>2</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla of the Bosques</name>
+        <name>Woodland Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
