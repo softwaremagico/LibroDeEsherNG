@@ -249,7 +249,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>sweepsOfArtesMarciales</id>
     <name>
-      <en>Martial Arts Sweeps</en>
+      <en>Sweeps of Artes Marciales</en>
       <es>Barridos de Artes Marciales</es>
     </name>
     <rare>false</rare>
@@ -327,7 +327,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>strikesOfArtesMarciales</id>
     <name>
-      <en>Martial Arts Strikes</en>
+      <en>Strikes of Artes Marciales</en>
       <es>Golpes de Artes Marciales</es>
     </name>
     <rare>false</rare>
@@ -561,7 +561,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>walkingByTheRopeSlack</id>
     <name>
-      <en>Walking on a Slack Rope</en>
+      <en>Walking by the Rope Slack</en>
       <es>Caminar por la Cuerda Floja</es>
     </name>
     <rare>false</rare>
@@ -717,7 +717,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>carreraOfDistance</id>
     <name>
-      <en>Distance Sprint</en>
+      <en>Carrera of Distance</en>
       <es>Carrera de Fondo</es>
     </name>
     <rare>false</rare>
@@ -860,7 +860,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>controlOfLycanthropy</id>
     <name>
-      <en>Lycanthropy Control</en>
+      <en>Control of Lycanthropy</en>
       <es>Control de la Licantropía</es>
     </name>
     <rare>false</rare>
@@ -964,7 +964,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>tranceOfTheDeath</id>
     <name>
-      <en>Death Trance</en>
+      <en>Trance of the Death</en>
       <es>Trance de la Muerte</es>
     </name>
     <rare>false</rare>
@@ -1133,7 +1133,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>readingTheLips</id>
     <name>
-      <en>Lip Reading</en>
+      <en>Reading the Lips</en>
       <es>Leer los Labios</es>
     </name>
     <rare>false</rare>
@@ -1575,7 +1575,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>masteryOfAnimals</id>
     <name>
-      <en>Animal Mastery</en>
+      <en>Mastery of Animals</en>
       <es>Maestría de Animales</es>
     </name>
     <rare>false</rare>
@@ -1588,7 +1588,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>manejoOfTheAnimals</id>
     <name>
-      <en>Animal Handling</en>
+      <en>Manejo of the Animals</en>
       <es>Manejo de los Animales</es>
     </name>
     <rare>false</rare>
@@ -1757,7 +1757,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>predictionOfTheClima</id>
     <name>
-      <en>Weather Prediction</en>
+      <en>Prediction of the Clima</en>
       <es>Predicción del Clima</es>
     </name>
     <rare>false</rare>
@@ -1820,9 +1820,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>supervivenciaLlanuras</id>
+    <id>supervivenciaPlains</id>
     <name>
-      <en>Supervivencia (Llanuras)</en>
+      <en>Supervivencia (Plains)</en>
       <es>Supervivencia (Llanuras)</es>
     </name>
     <rare>false</rare>
@@ -2082,7 +2082,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>styleOfArmaBasic</id>
     <name>
-      <en>Weapon Style (Basic)</en>
+      <en>Style of Arma (Basic)</en>
       <es>Estilo de Arma (Básico)</es>
     </name>
     <rare>false</rare>
@@ -2095,7 +2095,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>styleOfArmaAdvanced</id>
     <name>
-      <en>Weapon Style (Advanced)</en>
+      <en>Style of Arma (Advanced)</en>
       <es>Estilo de Arma (Avanzado)</es>
     </name>
     <rare>false</rare>
@@ -2134,7 +2134,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>masteryOfSpells</id>
     <name>
-      <en>Spell Mastery</en>
+      <en>Mastery of spells</en>
       <es>Maestría de los Hechizos</es>
     </name>
     <rare>false</rare>
@@ -2147,7 +2147,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>masteryOfSpellsControlOfAir</id>
     <name>
-      <en>Spell Mastery: Air Control</en>
+      <en>Mastery of spells: Control of Air</en>
       <es>Maestría de los Hechizos: Control del Aire</es>
     </name>
     <rare>false</rare>
@@ -2160,7 +2160,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>masteryOfSpellsLawOfLight</id>
     <name>
-      <en>Spell Mastery: Light Law</en>
+      <en>Mastery of spells: Law of Light</en>
       <es>Maestría de los Hechizos: Ley de la Luz</es>
     </name>
     <rare>false</rare>
@@ -2173,7 +2173,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>masteryOfSpellsMasteryOfEspiritus</id>
     <name>
-      <en>Spell Mastery: Spirit Mastery</en>
+      <en>Mastery of spells: Mastery of Espiritus</en>
       <es>Maestría de los Hechizos: Maestría de los Espiritus</es>
     </name>
     <rare>false</rare>
@@ -2199,7 +2199,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>concealmentOfSpells</id>
     <name>
-      <en>Spell Concealment</en>
+      <en>Concealment of Spells</en>
       <es>Ocultación de Hechizos</es>
     </name>
     <rare>false</rare>
@@ -2225,7 +2225,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>manejoOfCuerdas</id>
     <name>
-      <en>Rope Handling</en>
+      <en>Manejo of Cuerdas</en>
       <es>Manejo de Cuerdas</es>
     </name>
     <rare>false</rare>
@@ -2238,7 +2238,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>trabajarTheLeather</id>
     <name>
-      <en>Leatherworking</en>
+      <en>Trabajar the Leather</en>
       <es>Trabajar el Cuero</es>
     </name>
     <rare>false</rare>
@@ -2251,7 +2251,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>trabajarTheMetal</id>
     <name>
-      <en>Metalworking</en>
+      <en>Trabajar the Metal</en>
       <es>Trabajar el Metal</es>
     </name>
     <rare>false</rare>
@@ -2264,7 +2264,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>trabajarTheMadera</id>
     <name>
-      <en>Woodworking</en>
+      <en>Trabajar the Madera</en>
       <es>Trabajar la Madera</es>
     </name>
     <rare>false</rare>
@@ -2277,7 +2277,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>trabajarTheStone</id>
     <name>
-      <en>Stoneworking</en>
+      <en>Trabajar the Stone</en>
       <es>Trabajar la Piedra</es>
     </name>
     <rare>false</rare>
@@ -2511,7 +2511,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>perceptionOfTheEnvironmentCiudades</id>
     <name>
-      <en>City Environmental Perception</en>
+      <en>Perception of the Environment: Ciudades</en>
       <es>Percepción del Entorno: Ciudades</es>
     </name>
     <rare>false</rare>
@@ -2524,7 +2524,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>perceptionOfTheEnvironmentCombat</id>
     <name>
-      <en>Combat Environmental Perception</en>
+      <en>Perception of the Environment: Combat</en>
       <es>Percepción del Entorno: Combate</es>
     </name>
     <rare>false</rare>
@@ -2537,7 +2537,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>perceptionOfTheEnvironmentDurmiendo</id>
     <name>
-      <en>Sleep Environmental Perception</en>
+      <en>Perception of the Environment: Durmiendo</en>
       <es>Percepción del Entorno: Durmiendo</es>
     </name>
     <rare>false</rare>
@@ -2550,7 +2550,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>perceptionOfTheEnvironmentExploration</id>
     <name>
-      <en>Exploration Environmental Perception</en>
+      <en>Perception of the Environment: Exploration</en>
       <es>Percepción del Entorno: Exploración</es>
     </name>
     <rare>false</rare>
@@ -2563,7 +2563,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>senseOfDirection</id>
     <name>
-      <en>Direction Sense</en>
+      <en>Sense of Direction</en>
       <es>Sentido de la Dirección</es>
     </name>
     <rare>false</rare>
@@ -2576,7 +2576,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>senseOfEspacio</id>
     <name>
-      <en>Space Sense</en>
+      <en>Sense of Espacio</en>
       <es>Sentido del Espacio</es>
     </name>
     <rare>false</rare>
@@ -2589,7 +2589,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>senseOfTiempo</id>
     <name>
-      <en>Time Sense</en>
+      <en>Sense of Tiempo</en>
       <es>Sentido del Tiempo</es>
     </name>
     <rare>false</rare>
@@ -2667,7 +2667,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>senseOfRealidad</id>
     <name>
-      <en>Reality Sense</en>
+      <en>Sense of Realidad</en>
       <es>Sentido de la Realidad</es>
     </name>
     <rare>false</rare>
@@ -2732,7 +2732,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>perceptionOfThePower</id>
     <name>
-      <en>Power Perception</en>
+      <en>Perception of the Power</en>
       <es>Percepción del Poder</es>
     </name>
     <rare>false</rare>
@@ -3239,7 +3239,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>manejoOfBotes</id>
     <name>
-      <en>Boat Handling</en>
+      <en>Manejo of Botes</en>
       <es>Manejo de Botes</es>
     </name>
     <rare>false</rare>
@@ -3538,7 +3538,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>hablarHablaCommon</id>
     <name>
-      <en>Speak Common Tongue</en>
+      <en>Hablar Habla Common</en>
       <es>Hablar Habla Común</es>
     </name>
     <rare>false</rare>
@@ -3551,7 +3551,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>escribirHablaCommon</id>
     <name>
-      <en>Write Common Tongue</en>
+      <en>Escribir Habla Common</en>
       <es>Escribir Habla Común</es>
     </name>
     <rare>false</rare>
@@ -3562,9 +3562,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>hablarHablaOfTheLlanuras</id>
+    <id>hablarHablaOfThePlains</id>
     <name>
-      <en>Speak Plains Tongue</en>
+      <en>Hablar Habla of the Plains</en>
       <es>Hablar Habla de las Llanuras</es>
     </name>
     <rare>false</rare>
@@ -3575,9 +3575,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>escribirHablaOfTheLlanuras</id>
+    <id>escribirHablaOfThePlains</id>
     <name>
-      <en>Write Plains Tongue</en>
+      <en>Escribir Habla of the Plains</en>
       <es>Escribir Habla de las Llanuras</es>
     </name>
     <rare>false</rare>
@@ -3590,8 +3590,8 @@
     <enabledByDefault>true</enabledByDefault>
     <id>hablarHablaAlta</id>
     <name>
-      <en>Speak High Tongue</en>
-      <es>Speak High Tongue</es>
+      <en>Hablar Habla Alta</en>
+      <es>Hablar Habla Alta</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
@@ -3603,8 +3603,8 @@
     <enabledByDefault>true</enabledByDefault>
     <id>escribirHablaAlta</id>
     <name>
-      <en>Write High Tongue</en>
-      <es>Write High Tongue</es>
+      <en>Escribir Habla Alta</en>
+      <es>Escribir Habla Alta</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
@@ -3614,9 +3614,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>hablarHablaOfTheDesierto</id>
+    <id>hablarHablaOfTheDesert</id>
     <name>
-      <en>Speak Desert Tongue</en>
+      <en>Hablar Habla of the Desert</en>
       <es>Hablar Habla del Desierto</es>
     </name>
     <rare>false</rare>
@@ -3627,9 +3627,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>escribirHablaOfTheDesierto</id>
+    <id>escribirHablaOfTheDesert</id>
     <name>
-      <en>Write Desert Tongue</en>
+      <en>Escribir Habla of the Desert</en>
       <es>Escribir Habla del Desierto</es>
     </name>
     <rare>false</rare>
@@ -3642,7 +3642,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>hablarHablaOfTheNorte</id>
     <name>
-      <en>Speak Northern Tongue</en>
+      <en>Hablar Habla of the Norte</en>
       <es>Hablar Habla del Norte</es>
     </name>
     <rare>false</rare>
@@ -3655,7 +3655,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>escribirHablaOfTheNorte</id>
     <name>
-      <en>Write Northern Tongue</en>
+      <en>Escribir Habla of the Norte</en>
       <es>Escribir Habla del Norte</es>
     </name>
     <rare>false</rare>
@@ -3668,7 +3668,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>hablarHablaOfTheSur</id>
     <name>
-      <en>Speak Southern Tongue</en>
+      <en>Hablar Habla of the Sur</en>
       <es>Hablar Habla del Sur</es>
     </name>
     <rare>false</rare>
@@ -3681,7 +3681,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>escribirHablaOfTheSur</id>
     <name>
-      <en>Write Southern Tongue</en>
+      <en>Escribir Habla of the Sur</en>
       <es>Escribir Habla del Sur</es>
     </name>
     <rare>false</rare>
@@ -3694,7 +3694,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>hablarHablaOfTheMares</id>
     <name>
-      <en>Speak Sea Tongue</en>
+      <en>Hablar Habla of the Mares</en>
       <es>Hablar Habla de los Mares</es>
     </name>
     <rare>false</rare>
@@ -3707,7 +3707,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>escribirHablaOfTheMares</id>
     <name>
-      <en>Write Sea Tongue</en>
+      <en>Escribir Habla of the Mares</en>
       <es>Escribir Habla de los Mares</es>
     </name>
     <rare>false</rare>
@@ -3720,7 +3720,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>hablarHablaOfTheColinas</id>
     <name>
-      <en>Speak Hill Tongue</en>
+      <en>Hablar Habla of the Colinas</en>
       <es>Hablar Habla de las Colinas</es>
     </name>
     <rare>false</rare>
@@ -3733,7 +3733,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>escribirHablaOfTheColinas</id>
     <name>
-      <en>Write Hill Tongue</en>
+      <en>Escribir Habla of the Colinas</en>
       <es>Escribir Habla de las Colinas</es>
     </name>
     <rare>false</rare>
@@ -3746,7 +3746,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>hablarHablaOfTheBosques</id>
     <name>
-      <en>Speak Forest Tongue</en>
+      <en>Hablar Habla of the Bosques</en>
       <es>Hablar Habla de los Bosques</es>
     </name>
     <rare>false</rare>
@@ -3759,7 +3759,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>escribirHablaOfTheBosques</id>
     <name>
-      <en>Write Forest Tongue</en>
+      <en>Escribir Habla of the Bosques</en>
       <es>Escribir Habla de los Bosques</es>
     </name>
     <rare>false</rare>

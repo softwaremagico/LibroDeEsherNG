@@ -19,7 +19,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>styleOfArtMarcialBasic</id>
     <name>
-      <en>Martial Arts Style (Basic)</en>
+      <en>Style of Art Marcial (Basic)</en>
       <es>Estilo de Arte Marcial (Básico)</es>
     </name>
     <rare>false</rare>
@@ -32,7 +32,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>styleOfArtMarcialAdvanced</id>
     <name>
-      <en>Martial Arts Style (Advanced)</en>
+      <en>Style of Art Marcial (Advanced)</en>
       <es>Estilo de Arte Marcial (Avanzado)</es>
     </name>
     <rare>false</rare>
@@ -58,7 +58,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>styleOfTheCrane</id>
     <name>
-      <en>Crane Style</en>
+      <en>Style of the Crane</en>
       <es>Estilo de la Grulla</es>
     </name>
     <rare>false</rare>
@@ -75,7 +75,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>styleOfTheOchoFeyBorrachas</id>
     <name>
-      <en>Style of the Eight Drunken Fey</en>
+      <en>Style of the Ocho Fey Borrachas</en>
       <es>Estilo de las Ocho Hadas Borrachas</es>
     </name>
     <rare>false</rare>
@@ -93,7 +93,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>styleOfTheSnake</id>
     <name>
-      <en>Snake Style</en>
+      <en>Style of the Snake</en>
       <es>Estilo de la Serpiente</es>
     </name>
     <rare>false</rare>
@@ -281,7 +281,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>styleFistOfCotton</id>
     <name>
-      <en>Cotton Fist Style</en>
+      <en>Style Fist of Cotton</en>
       <es>Estilo Puño de Algodón</es>
     </name>
     <rare>false</rare>
@@ -315,7 +315,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>styleRobeOfIron</id>
     <name>
-      <en>Iron Robe Style</en>
+      <en>Style Robe of Iron</en>
       <es>Estilo Túnica de Hierro</es>
     </name>
     <rare>false</rare>
@@ -530,7 +530,7 @@
     <enabledByDefault>false</enabledByDefault>
     <id>chiPowerHandOfBuddha</id>
     <name>
-      <en>Chi Power: Buddha’s Hand</en>
+      <en>Chi Power: Hand of Buddha</en>
       <es>Poderes Chi: Mano de Buda</es>
     </name>
     <rare>false</rare>
@@ -556,7 +556,7 @@
     <enabledByDefault>false</enabledByDefault>
     <id>chiPowerFistsOfIron</id>
     <name>
-      <en>Chi Power: Iron Fists</en>
+      <en>Chi Power: Fists of Iron</en>
       <es>Poderes Chi: Puños de Hierro</es>
     </name>
     <rare>false</rare>
@@ -686,7 +686,7 @@
     <enabledByDefault>false</enabledByDefault>
     <id>chiPowerFallingOfTheLeaf</id>
     <name>
-      <en>Chi Power: Falling Leaf</en>
+      <en>Chi Power: Falling of the Leaf</en>
       <es>Poderes Chi: Caer de la Hoja</es>
     </name>
     <rare>false</rare>
@@ -751,7 +751,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>loreOfPointsVitales</id>
     <name>
-      <en>Lore of Vital Points</en>
+      <en>Lore of Points Vitales</en>
       <es>Conocimiento de los Puntos Vitales</es>
     </name>
     <rare>false</rare>
@@ -764,7 +764,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>loreOfPowersChi</id>
     <name>
-      <en>Lore of Chi Powers</en>
+      <en>Lore of Powers Chi</en>
       <es>Conocimiento de los Poderes Chi</es>
     </name>
     <rare>false</rare>
@@ -881,7 +881,7 @@
     <enabledByDefault>false</enabledByDefault>
     <id>chiPowerRebirthOfThePhoenix</id>
     <name>
-      <en>Chi Power: Phoenix Rebirth</en>
+      <en>Chi Power: Rebirth of the Phoenix</en>
       <es>Poderes Chi: Resurgir del Fénix</es>
     </name>
     <rare>false</rare>

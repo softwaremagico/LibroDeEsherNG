@@ -16,7 +16,14 @@ final class SectionCursor {
     private int position;
 
     SectionCursor(List<String> lines) {
-        this.lines = lines;
+        this.lines = lines.stream().map(SectionCursor::stripBom).toList();
+    }
+
+    private static String stripBom(String line) {
+        if (line != null && !line.isEmpty() && line.charAt(0) == '\ufeff') {
+            return line.substring(1);
+        }
+        return line;
     }
 
     /** Skips blank/comment lines, then collects every line up to the next blank line or EOF. */

@@ -2,9 +2,9 @@
 <spells>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceHarmonyOfNature</id>
+    <id>essenceHarmonyOfTheNaturaleza</id>
     <name>
-      <en>Harmony of Nature</en>
+      <en>Harmony of the Naturaleza</en>
       <es>Armonía de la Naturaleza</es>
     </name>
     <openList>false</openList>
@@ -29,9 +29,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceFormsOfNature</id>
+    <id>essenceFormasOfTheNaturaleza</id>
     <name>
-      <en>Forms of Nature</en>
+      <en>Formas of the Naturaleza</en>
       <es>Formas de la Naturaleza</es>
     </name>
     <openList>false</openList>
@@ -55,9 +55,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMonkPower</id>
+    <id>essencePuenyouOfTheMonk</id>
     <name>
-      <en>Monk Power</en>
+      <en>Puenyou of the Monk</en>
       <es>Puente del Monje</es>
     </name>
     <openList>false</openList>
@@ -69,9 +69,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceBodyRenewal</id>
+    <id>essenceRenewalOfTheBody</id>
     <name>
-      <en>Body Renewal</en>
+      <en>Renewal of the Body</en>
       <es>Renovación del Cuerpo</es>
     </name>
     <openList>false</openList>
@@ -135,9 +135,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>mentalismBodyRenewal</id>
+    <id>mentalismRenewalOfTheBody</id>
     <name>
-      <en>Body Renewal</en>
+      <en>Renewal of the Body</en>
       <es>Renovación del Cuerpo</es>
     </name>
     <openList>false</openList>

@@ -563,8 +563,8 @@
       <skill>Escribir Habla Común</skill>
       <skill>Hablar Habla de las Llanuras</skill>
       <skill>Escribir Habla de las Llanuras</skill>
-      <skill>Speak High Tongue</skill>
-      <skill>Write High Tongue</skill>
+      <skill>Hablar Habla Alta</skill>
+      <skill>Escribir Habla Alta</skill>
       <skill>Hablar Habla del Desierto</skill>
       <skill>Escribir Habla del Desierto</skill>
       <skill>Hablar Habla del Norte</skill>
@@ -652,12 +652,12 @@
       <skill>Escribir Lydiano</skill>
       <skill>Hablar Dyari</skill>
       <skill>Escribir Dyari</skill>
-      <skill>Speak Troll Tongue</skill>
-      <skill>Write Troll Tongue</skill>
+      <skill>Hablar Habla Troll</skill>
+      <skill>Escribir Habla Troll</skill>
       <skill>Hablar Erlini</skill>
       <skill>Escribir Erlini</skill>
     </skills>
-    <skillsRaw>Leer los Labios, Señales, Hablar Habla Común, Escribir Habla Común, Hablar Habla de las Llanuras, Escribir Habla de las Llanuras, Speak High Tongue, Write High Tongue, Hablar Habla del Desierto, Escribir Habla del Desierto, Hablar Habla del Norte, Escribir Habla del Norte, Hablar Habla del Sur, Escribir Habla del Sur, Hablar Habla de los Mares, Escribir Habla de los Mares, Hablar Habla de las Colinas, Escribir Habla de las Colinas, Hablar Habla de los Bosques, Escribir Habla de los Bosques, Idiomas Mágicos  (R), Idiomas Mágicos: Hechizos Elementales (R), Idiomas Mágicos: Espiritus (R), Hablar Centauro Escorpión, Escribir Centauro Escorpión,, Lectura Rápida, Hablar Inglés, Escribir Inglés, Hablar Francés, Escribir Francés, Hablar Español, Escribir Español, Hablar Ruso, Escribir Ruso, Hablar Catalán, Escribir Catalán, Hablar Portugués, Escribir Portugués, Hablar Italiano, Escribir Italiano, Hablar Rumano, Escribir Rumano, Hablar Lituano, Escribir Lituano, Hablar Alemán, Escribir Alemán, Hablar Holandés, Escribir Holandés, Hablar Mandarín, Escribir Mandarín, Hablar Catonés, Escribir Cantonés, Hablar Tibetano, Escribir Tibetano, Hablar Thai, Escribir Thai, Hablar Japonés, Escribir Japonés, Hablar Lengua Nigerocongolesa, Escribir Lengua Nigerocongolesa, Escribir Latín, Hablar Lengua Negra, Escribir Lengua Negra, Hablar Élfico, Escribir Élfico, Hablar Élfico Alto, Escribir Élfico Alto, Hablar Élfico Gris, Escribir Élfico Gris, Hablar Élfico de los Bosques, Escribir Élfico de los Bosques, Hablar Faérico, Escribir Faérico, Hablar Gnómico, Escribir Gnómico, Hablar Enano, Escribir Enano, Hablar Centauro, Escribir Centauro, Hablar Hirazi, Escribir Hirazi, Hablar Lennai, Escribir Lennai, Hablar Dríade, Escribir Dríade, Hablar Orco, Escribir Orco, Hablar Ky'taari, Escribir Ky'taari, Hablar Jameri, Escribir Jameri, Hablar Lydiano, Escribir Lydiano, Hablar Dyari, Escribir Dyari, Speak Troll Tongue, Write Troll Tongue, Hablar Erlini, Escribir Erlini</skillsRaw>
+    <skillsRaw>Leer los Labios, Señales, Hablar Habla Común, Escribir Habla Común, Hablar Habla de las Llanuras, Escribir Habla de las Llanuras, Hablar Habla Alta, Escribir Habla Alta, Hablar Habla del Desierto, Escribir Habla del Desierto, Hablar Habla del Norte, Escribir Habla del Norte, Hablar Habla del Sur, Escribir Habla del Sur, Hablar Habla de los Mares, Escribir Habla de los Mares, Hablar Habla de las Colinas, Escribir Habla de las Colinas, Hablar Habla de los Bosques, Escribir Habla de los Bosques, Idiomas Mágicos  (R), Idiomas Mágicos: Hechizos Elementales (R), Idiomas Mágicos: Espiritus (R), Hablar Centauro Escorpión, Escribir Centauro Escorpión,, Lectura Rápida, Hablar Inglés, Escribir Inglés, Hablar Francés, Escribir Francés, Hablar Español, Escribir Español, Hablar Ruso, Escribir Ruso, Hablar Catalán, Escribir Catalán, Hablar Portugués, Escribir Portugués, Hablar Italiano, Escribir Italiano, Hablar Rumano, Escribir Rumano, Hablar Lituano, Escribir Lituano, Hablar Alemán, Escribir Alemán, Hablar Holandés, Escribir Holandés, Hablar Mandarín, Escribir Mandarín, Hablar Catonés, Escribir Cantonés, Hablar Tibetano, Escribir Tibetano, Hablar Thai, Escribir Thai, Hablar Japonés, Escribir Japonés, Hablar Lengua Nigerocongolesa, Escribir Lengua Nigerocongolesa, Escribir Latín, Hablar Lengua Negra, Escribir Lengua Negra, Hablar Élfico, Escribir Élfico, Hablar Élfico Alto, Escribir Élfico Alto, Hablar Élfico Gris, Escribir Élfico Gris, Hablar Élfico de los Bosques, Escribir Élfico de los Bosques, Hablar Faérico, Escribir Faérico, Hablar Gnómico, Escribir Gnómico, Hablar Enano, Escribir Enano, Hablar Centauro, Escribir Centauro, Hablar Hirazi, Escribir Hirazi, Hablar Lennai, Escribir Lennai, Hablar Dríade, Escribir Dríade, Hablar Orco, Escribir Orco, Hablar Ky'taari, Escribir Ky'taari, Hablar Jameri, Escribir Jameri, Hablar Lydiano, Escribir Lydiano, Hablar Dyari, Escribir Dyari, Hablar Habla Troll, Escribir Habla Troll, Hablar Erlini, Escribir Erlini</skillsRaw>
     <type>STANDARD</type>
   </category>
   <category>

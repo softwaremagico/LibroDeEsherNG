@@ -14,7 +14,7 @@
       <owner>Water Wizard</owner>
       <owner>Fire Wizard</owner>
       <owner>Wizard of the Ice</owner>
-      <owner>Air Wizard</owner>
+      <owner>Wizard of the Air</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -32,7 +32,7 @@
       <owner>Water Wizard</owner>
       <owner>Fire Wizard</owner>
       <owner>Wizard of the Ice</owner>
-      <owner>Air Wizard</owner>
+      <owner>Wizard of the Air</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -50,33 +50,33 @@
       <owner>Water Wizard</owner>
       <owner>Fire Wizard</owner>
       <owner>Wizard of the Ice</owner>
-      <owner>Air Wizard</owner>
+      <owner>Wizard of the Air</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceAirControl</id>
+    <id>essenceControlOfAir</id>
     <name>
-      <en>Air Control</en>
+      <en>Control of Air</en>
       <es>Control del Aire</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Air Wizard</owner>
+      <owner>Wizard of the Air</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceWindMastery</id>
+    <id>essenceMasteryOfWind</id>
     <name>
-      <en>Wind Mastery</en>
+      <en>Mastery of Wind</en>
       <es>Maestría del Viento</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Air Wizard</owner>
+      <owner>Wizard of the Air</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -95,9 +95,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceEarthMastery</id>
+    <id>essenceMasteryOfEarth</id>
     <name>
-      <en>Earth Mastery</en>
+      <en>Mastery of Earth</en>
       <es>Maestría de la Tierra</es>
     </name>
     <openList>false</openList>
@@ -108,9 +108,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceFlamePath</id>
+    <id>essencePathOfFlames</id>
     <name>
-      <en>Flame Path</en>
+      <en>Path of Flames</en>
       <es>Camino de las Llamas</es>
     </name>
     <openList>false</openList>
@@ -121,9 +121,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceFirePaths</id>
+    <id>essencePathsOfFire</id>
     <name>
-      <en>Fire Paths</en>
+      <en>Paths of Fire</en>
       <es>Sendas del Fuego</es>
     </name>
     <openList>false</openList>
@@ -134,9 +134,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceColdMastery</id>
+    <id>essenceMasteryOfCold</id>
     <name>
-      <en>Cold Mastery</en>
+      <en>Mastery of Cold</en>
       <es>Maestría del Frío</es>
     </name>
     <openList>false</openList>
@@ -147,9 +147,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceIceMastery</id>
+    <id>essenceMasteryOfIce</id>
     <name>
-      <en>Ice Mastery</en>
+      <en>Mastery of Ice</en>
       <es>Maestría del Hielo</es>
     </name>
     <openList>false</openList>
@@ -160,9 +160,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceLightMastery</id>
+    <id>essenceMasteryOfLight</id>
     <name>
-      <en>Light Mastery</en>
+      <en>Mastery of Light</en>
       <es>Maestría de la Luz</es>
     </name>
     <openList>false</openList>
@@ -173,9 +173,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMasteryOfDarkness</id>
+    <id>essenceMasteryOfOscuridad</id>
     <name>
-      <en>Mastery of Darkness</en>
+      <en>Mastery of Oscuridad</en>
       <es>Maestría de la Oscuridad</es>
     </name>
     <openList>false</openList>
@@ -186,9 +186,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceWaterMastery</id>
+    <id>essenceMasteryOfWater</id>
     <name>
-      <en>Water Mastery</en>
+      <en>Mastery of Water</en>
       <es>Maestría del Agua</es>
     </name>
     <openList>false</openList>
@@ -238,9 +238,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceMasteryOfElementalPortals</id>
+    <id>essenceMasteryOfPortalesElementales</id>
     <name>
-      <en>Mastery of Elemental Portals</en>
+      <en>Mastery of Portales Elementales</en>
       <es>Maestría de los Portales Elementales</es>
     </name>
     <openList>false</openList>
@@ -355,9 +355,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceCombatBonds</id>
+    <id>essenceBondsOfCombat</id>
     <name>
-      <en>Combat Bonds</en>
+      <en>Bonds of Combat</en>
       <es>Vínculos de Combate</es>
     </name>
     <openList>false</openList>
@@ -394,9 +394,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceAetherMastery</id>
+    <id>essenceMasteryOfEter</id>
     <name>
-      <en>Aether Mastery</en>
+      <en>Mastery of Eter</en>
       <es>Maestría del Eter</es>
     </name>
     <openList>false</openList>
@@ -407,9 +407,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceVoidMastery</id>
+    <id>essenceMasteryOfVoid</id>
     <name>
-      <en>Void Mastery</en>
+      <en>Mastery of Void</en>
       <es>Maestría del Vacío</es>
     </name>
     <openList>false</openList>

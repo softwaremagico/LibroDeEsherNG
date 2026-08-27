@@ -1,0 +1,163 @@
+package com.softwaremagico.librodeesher.race;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.softwaremagico.librodeesher.Element;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * A playable race/species (e.g. Human, Elf, Dwarf), migrated from the legacy one-file-per-race
+ * {@code razas/*.txt} format.
+ *
+ * <p>The source files contain many small tabular sections. Stable numeric/rule data is modeled as
+ * typed fields. References to other rule elements (professions, cultures, categories, skills) are
+ * stored by id, not by display name, following the English id standard used by the rest of the new
+ * XML data.</p>
+ */
+public class Race extends Element {
+
+    @JsonProperty("appearanceBonus")
+    private Integer appearanceBonus;
+
+    @JsonProperty("expectedLifeYears")
+    private Integer expectedLifeYears;
+
+    @JsonProperty("soulDepartTime")
+    private Integer soulDepartTime;
+
+    @JsonProperty("raceType")
+    private Integer raceType;
+
+    @JsonProperty("size")
+    private String size;
+
+    @JsonProperty("restorationTime")
+    private Double restorationTime;
+
+    @JsonProperty("languagePoints")
+    private Integer languagePoints;
+
+    @JsonProperty("backgroundPoints")
+    private Integer backgroundPoints;
+
+    @JsonProperty("naturalArmorType")
+    private Integer naturalArmorType;
+
+    @JsonProperty("characteristicBonuses")
+    private Map<String, Integer> characteristicBonuses;
+
+    @JsonProperty("resistanceBonuses")
+    private Map<String, Integer> resistanceBonuses;
+
+    @JsonProperty("progressionRankValues")
+    private Map<String, String> progressionRankValues;
+
+    @JacksonXmlElementWrapper(localName = "restrictedProfessions")
+    @JacksonXmlProperty(localName = "professionId")
+    private List<String> restrictedProfessionIds;
+
+    @JacksonXmlElementWrapper(localName = "raceLanguages")
+    @JacksonXmlProperty(localName = "raceLanguage")
+    private List<RaceLanguage> raceLanguages;
+
+    @JacksonXmlElementWrapper(localName = "backgroundLanguages")
+    @JacksonXmlProperty(localName = "backgroundLanguage")
+    private List<RaceLanguage> backgroundLanguages;
+
+    @JacksonXmlElementWrapper(localName = "commonSkills")
+    @JacksonXmlProperty(localName = "commonSkillId")
+    private List<String> commonSkillIds;
+
+    @JacksonXmlElementWrapper(localName = "commonCategories")
+    @JacksonXmlProperty(localName = "commonCategoryId")
+    private List<String> commonCategoryIds;
+
+    @JacksonXmlElementWrapper(localName = "restrictedSkills")
+    @JacksonXmlProperty(localName = "restrictedSkillId")
+    private List<String> restrictedSkillIds;
+
+    @JacksonXmlElementWrapper(localName = "restrictedCategories")
+    @JacksonXmlProperty(localName = "restrictedCategoryId")
+    private List<String> restrictedCategoryIds;
+
+    @JacksonXmlElementWrapper(localName = "cultures")
+    @JacksonXmlProperty(localName = "cultureId")
+    private List<String> cultureIds;
+
+    @JacksonXmlElementWrapper(localName = "specials")
+    @JacksonXmlProperty(localName = "special")
+    private List<RaceSpecial> specials;
+
+    @JacksonXmlElementWrapper(localName = "maleNames")
+    @JacksonXmlProperty(localName = "maleName")
+    private List<String> maleNames;
+
+    @JacksonXmlElementWrapper(localName = "femaleNames")
+    @JacksonXmlProperty(localName = "femaleName")
+    private List<String> femaleNames;
+
+    @JacksonXmlElementWrapper(localName = "familyNames")
+    @JacksonXmlProperty(localName = "familyName")
+    private List<String> familyNames;
+
+    public Race() {
+        super();
+    }
+
+    public Race(String id) {
+        super(id);
+    }
+
+    public Integer getAppearanceBonus() { return appearanceBonus; }
+    public void setAppearanceBonus(Integer appearanceBonus) { this.appearanceBonus = appearanceBonus; }
+    public Integer getExpectedLifeYears() { return expectedLifeYears; }
+    public void setExpectedLifeYears(Integer expectedLifeYears) { this.expectedLifeYears = expectedLifeYears; }
+    public Integer getSoulDepartTime() { return soulDepartTime; }
+    public void setSoulDepartTime(Integer soulDepartTime) { this.soulDepartTime = soulDepartTime; }
+    public Integer getRaceType() { return raceType; }
+    public void setRaceType(Integer raceType) { this.raceType = raceType; }
+    public String getSize() { return size; }
+    public void setSize(String size) { this.size = size; }
+    public Double getRestorationTime() { return restorationTime; }
+    public void setRestorationTime(Double restorationTime) { this.restorationTime = restorationTime; }
+    public Integer getLanguagePoints() { return languagePoints; }
+    public void setLanguagePoints(Integer languagePoints) { this.languagePoints = languagePoints; }
+    public Integer getBackgroundPoints() { return backgroundPoints; }
+    public void setBackgroundPoints(Integer backgroundPoints) { this.backgroundPoints = backgroundPoints; }
+    public Integer getNaturalArmorType() { return naturalArmorType; }
+    public void setNaturalArmorType(Integer naturalArmorType) { this.naturalArmorType = naturalArmorType; }
+    public Map<String, Integer> getCharacteristicBonuses() { return characteristicBonuses == null ? Collections.emptyMap() : characteristicBonuses; }
+    public void setCharacteristicBonuses(Map<String, Integer> characteristicBonuses) { this.characteristicBonuses = characteristicBonuses; }
+    public Map<String, Integer> getResistanceBonuses() { return resistanceBonuses == null ? Collections.emptyMap() : resistanceBonuses; }
+    public void setResistanceBonuses(Map<String, Integer> resistanceBonuses) { this.resistanceBonuses = resistanceBonuses; }
+    public Map<String, String> getProgressionRankValues() { return progressionRankValues == null ? Collections.emptyMap() : progressionRankValues; }
+    public void setProgressionRankValues(Map<String, String> progressionRankValues) { this.progressionRankValues = progressionRankValues; }
+    public List<String> getRestrictedProfessionIds() { return restrictedProfessionIds == null ? Collections.emptyList() : restrictedProfessionIds; }
+    public void setRestrictedProfessionIds(List<String> restrictedProfessionIds) { this.restrictedProfessionIds = restrictedProfessionIds; }
+    public List<RaceLanguage> getRaceLanguages() { return raceLanguages == null ? Collections.emptyList() : raceLanguages; }
+    public void setRaceLanguages(List<RaceLanguage> raceLanguages) { this.raceLanguages = raceLanguages; }
+    public List<RaceLanguage> getBackgroundLanguages() { return backgroundLanguages == null ? Collections.emptyList() : backgroundLanguages; }
+    public void setBackgroundLanguages(List<RaceLanguage> backgroundLanguages) { this.backgroundLanguages = backgroundLanguages; }
+    public List<String> getCommonSkillIds() { return commonSkillIds == null ? Collections.emptyList() : commonSkillIds; }
+    public void setCommonSkillIds(List<String> commonSkillIds) { this.commonSkillIds = commonSkillIds; }
+    public List<String> getCommonCategoryIds() { return commonCategoryIds == null ? Collections.emptyList() : commonCategoryIds; }
+    public void setCommonCategoryIds(List<String> commonCategoryIds) { this.commonCategoryIds = commonCategoryIds; }
+    public List<String> getRestrictedSkillIds() { return restrictedSkillIds == null ? Collections.emptyList() : restrictedSkillIds; }
+    public void setRestrictedSkillIds(List<String> restrictedSkillIds) { this.restrictedSkillIds = restrictedSkillIds; }
+    public List<String> getRestrictedCategoryIds() { return restrictedCategoryIds == null ? Collections.emptyList() : restrictedCategoryIds; }
+    public void setRestrictedCategoryIds(List<String> restrictedCategoryIds) { this.restrictedCategoryIds = restrictedCategoryIds; }
+    public List<String> getCultureIds() { return cultureIds == null ? Collections.emptyList() : cultureIds; }
+    public void setCultureIds(List<String> cultureIds) { this.cultureIds = cultureIds; }
+    public List<RaceSpecial> getSpecials() { return specials == null ? Collections.emptyList() : specials; }
+    public void setSpecials(List<RaceSpecial> specials) { this.specials = specials; }
+    public List<String> getMaleNames() { return maleNames == null ? Collections.emptyList() : maleNames; }
+    public void setMaleNames(List<String> maleNames) { this.maleNames = maleNames; }
+    public List<String> getFemaleNames() { return femaleNames == null ? Collections.emptyList() : femaleNames; }
+    public void setFemaleNames(List<String> femaleNames) { this.femaleNames = femaleNames; }
+    public List<String> getFamilyNames() { return familyNames == null ? Collections.emptyList() : familyNames; }
+    public void setFamilyNames(List<String> familyNames) { this.familyNames = familyNames; }
+}

@@ -41,9 +41,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationLawOfNature</id>
+    <id>canalizationLawOfNaturaleza</id>
     <name>
-      <en>Law of Nature</en>
+      <en>Law of Naturaleza</en>
       <es>Ley de la Naturaleza</es>
     </name>
     <openList>true</openList>
@@ -67,9 +67,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationConcussionPaths</id>
+    <id>canalizationPathsOfConcussion</id>
     <name>
-      <en>Concussion Paths</en>
+      <en>Paths of Concussion</en>
       <es>Sendas de la Conmoción</es>
     </name>
     <openList>true</openList>
@@ -80,9 +80,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationLawOfBarriers</id>
+    <id>canalizationLawOfBarreras</id>
     <name>
-      <en>Law of Barriers</en>
+      <en>Law of Barreras</en>
       <es>Ley de las Barreras</es>
     </name>
     <openList>true</openList>
@@ -132,9 +132,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>canalizationMuscleLaw</id>
+    <id>canalizationLawOfMuscles</id>
     <name>
-      <en>Muscle Law</en>
+      <en>Law of Muscles</en>
       <es>Ley de los Músculos</es>
     </name>
     <openList>false</openList>
@@ -145,9 +145,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>canalizationLocationPaths</id>
+    <id>canalizationPathsOfLocation</id>
     <name>
-      <en>Location Paths</en>
+      <en>Paths of Location</en>
       <es>Sendas de la Localización</es>
     </name>
     <openList>false</openList>
@@ -171,9 +171,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>canalizationNerveLaw</id>
+    <id>canalizationLawOfNervios</id>
     <name>
-      <en>Nerve Law</en>
+      <en>Law of Nervios</en>
       <es>Ley de los Nervios</es>
     </name>
     <openList>false</openList>
@@ -184,9 +184,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>canalizationSymbolPaths</id>
+    <id>canalizationPathsOfSymbols</id>
     <name>
-      <en>Symbol Paths</en>
+      <en>Paths of Symbols</en>
       <es>Sendas de los Símbolos</es>
     </name>
     <openList>false</openList>
@@ -197,9 +197,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>canalizationBloodLaw</id>
+    <id>canalizationLawOfBlood</id>
     <name>
-      <en>Blood Law</en>
+      <en>Law of Blood</en>
       <es>Ley de la Sangre</es>
     </name>
     <openList>false</openList>
@@ -210,9 +210,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>canalizationOrganLaw</id>
+    <id>canalizationLawOfOrgans</id>
     <name>
-      <en>Organ Law</en>
+      <en>Law of Organs</en>
       <es>Ley de los Órganos</es>
     </name>
     <openList>false</openList>
@@ -236,9 +236,9 @@
   </spellList>
   <spellList>
     <closedList>true</closedList>
-    <id>canalizationBoneLaw</id>
+    <id>canalizationLawOfHuesos</id>
     <name>
-      <en>Bone Law</en>
+      <en>Law of Huesos</en>
       <es>Ley de los Huesos</es>
     </name>
     <openList>false</openList>
@@ -249,9 +249,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationLoreOfNature</id>
+    <id>canalizationLoreOfNaturaleza</id>
     <name>
-      <en>Lore of Nature</en>
+      <en>Lore of Naturaleza</en>
       <es>Conocimiento de la Naturaleza</es>
     </name>
     <openList>false</openList>
@@ -262,9 +262,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationPlantMastery</id>
+    <id>canalizationMasteryOfPlantas</id>
     <name>
-      <en>Plant Mastery</en>
+      <en>Mastery of Plantas</en>
       <es>Maestría de las Plantas</es>
     </name>
     <openList>false</openList>
@@ -275,9 +275,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMovementSensesOfNature</id>
+    <id>canalizationMovimientoSensesOfTheNaturaleza</id>
     <name>
-      <en>Movement/Senses of Nature</en>
+      <en>Movimiento/Senses of the Naturaleza</en>
       <es>Movimiento/Sentidos de la Naturaleza</es>
     </name>
     <openList>false</openList>
@@ -288,9 +288,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationHerbMastery</id>
+    <id>canalizationMasteryOfHerbs</id>
     <name>
-      <en>Herb Mastery</en>
+      <en>Mastery of Herbs</en>
       <es>Maestría de las Hierbas</es>
     </name>
     <openList>false</openList>
@@ -301,9 +301,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationAnimalMastery</id>
+    <id>canalizationMasteryOfAnimals</id>
     <name>
-      <en>Animal Mastery</en>
+      <en>Mastery of Animals</en>
       <es>Maestría de los Animales</es>
     </name>
     <openList>false</openList>
@@ -314,9 +314,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationProtectionsOfNature</id>
+    <id>canalizationProtectionsOfNaturaleza</id>
     <name>
-      <en>Protections of Nature</en>
+      <en>Protections of Naturaleza</en>
       <es>Protecciones de la Naturaleza</es>
     </name>
     <openList>false</openList>
@@ -340,9 +340,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationLifeMastery</id>
+    <id>canalizationMasteryOfLife</id>
     <name>
-      <en>Life Mastery</en>
+      <en>Mastery of Life</en>
       <es>Maestría de la Vida</es>
     </name>
     <openList>false</openList>
@@ -470,9 +470,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationInspirationPaths</id>
+    <id>canalizationPathsOfInspiration</id>
     <name>
-      <en>Inspiration Paths</en>
+      <en>Paths of Inspiration</en>
       <es>Sendas de la Inspiración</es>
     </name>
     <openList>false</openList>
@@ -483,9 +483,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationFormsOfNature</id>
+    <id>canalizationFormasOfTheNaturaleza</id>
     <name>
-      <en>Forms of Nature</en>
+      <en>Formas of the Naturaleza</en>
       <es>Formas de la Naturaleza</es>
     </name>
     <openList>false</openList>
@@ -496,9 +496,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationRoadMastery</id>
+    <id>canalizationMasteryOfCaminos</id>
     <name>
-      <en>Road Mastery</en>
+      <en>Mastery of Caminos</en>
       <es>Maestría de los Caminos</es>
     </name>
     <openList>false</openList>
@@ -509,9 +509,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationPathsOfNature</id>
+    <id>canalizationPathsOfNaturaleza</id>
     <name>
-      <en>Paths of Nature</en>
+      <en>Paths of Naturaleza</en>
       <es>Sendas de la Naturaleza</es>
     </name>
     <openList>false</openList>
@@ -522,9 +522,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationSummoningOfNature</id>
+    <id>canalizationSummoningOfTheNaturaleza</id>
     <name>
-      <en>Summoning of Nature</en>
+      <en>Summoning of the Naturaleza</en>
       <es>Invocación de la Naturaleza</es>
     </name>
     <openList>false</openList>
@@ -548,7 +548,7 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMovementPaths</id>
+    <id>canalizationPathsOfMovimiento</id>
     <name>
       <en>Paths of Movimiento</en>
       <es>Sendas del Movimiento</es>
@@ -574,9 +574,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationSurfacePaths</id>
+    <id>canalizationPathsOfSuperficies</id>
     <name>
-      <en>Surface Paths</en>
+      <en>Paths of Superficies</en>
       <es>Sendas de las Superficies</es>
     </name>
     <openList>false</openList>
@@ -587,9 +587,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMusclePaths</id>
+    <id>canalizationPathsOfMuscles</id>
     <name>
-      <en>Muscle Paths</en>
+      <en>Paths of Muscles</en>
       <es>Sendas de los Músculos</es>
     </name>
     <openList>false</openList>
@@ -600,9 +600,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationBloodPaths</id>
+    <id>canalizationPathsOfBlood</id>
     <name>
-      <en>Blood Paths</en>
+      <en>Paths of Blood</en>
       <es>Sendas de la Sangre</es>
     </name>
     <openList>false</openList>
@@ -613,9 +613,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationBonePaths</id>
+    <id>canalizationPathsOfHuesos</id>
     <name>
-      <en>Bone Paths</en>
+      <en>Paths of Huesos</en>
       <es>Sendas de los Huesos</es>
     </name>
     <openList>false</openList>
@@ -639,9 +639,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationFleshDestruction</id>
+    <id>canalizationDestructionOfTheFlesh</id>
     <name>
-      <en>Flesh Destruction</en>
+      <en>Destruction of the Flesh</en>
       <es>Destrucción de la Carne</es>
     </name>
     <openList>false</openList>
@@ -652,9 +652,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationGasDestruction</id>
+    <id>canalizationDestructionOfTheGases</id>
     <name>
-      <en>Gas Destruction</en>
+      <en>Destruction of the Gases</en>
       <es>Destrucción de los Gases</es>
     </name>
     <openList>false</openList>
@@ -665,9 +665,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationSoulDestruction</id>
+    <id>canalizationDestructionOfTheSoul</id>
     <name>
-      <en>Soul Destruction</en>
+      <en>Destruction of the Soul</en>
       <es>Destrucción del Alma</es>
     </name>
     <openList>false</openList>
@@ -678,9 +678,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationFluidDestruction</id>
+    <id>canalizationDestructionOfTheFluidos</id>
     <name>
-      <en>Fluid Destruction</en>
+      <en>Destruction of the Fluidos</en>
       <es>Destrucción de los Fluidos</es>
     </name>
     <openList>false</openList>
@@ -691,9 +691,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationSolidDestruction</id>
+    <id>canalizationDestructionOfTheSolids</id>
     <name>
-      <en>Solid Destruction</en>
+      <en>Destruction of the Solids</en>
       <es>Destrucción de los Sólidos</es>
     </name>
     <openList>false</openList>

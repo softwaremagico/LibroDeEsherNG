@@ -305,7 +305,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>creationOfDevices</id>
     <name>
-      <en>Device Creation</en>
+      <en>Creation of Devices</en>
       <es>Creación de Artilugios</es>
     </name>
     <rare>false</rare>
@@ -786,7 +786,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>historyOfTheArt</id>
     <name>
-      <en>Art History</en>
+      <en>History of the Art</en>
       <es>Historia del Arte</es>
     </name>
     <rare>false</rare>
@@ -851,7 +851,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>historyOfTheReligion</id>
     <name>
-      <en>Religious History</en>
+      <en>History of the Religion</en>
       <es>Historia de la Religión</es>
     </name>
     <rare>false</rare>
@@ -890,7 +890,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>comparisonOfReligions</id>
     <name>
-      <en>Comparative Religion</en>
+      <en>Comparison of Religions</en>
       <es>Comparación de Religiones</es>
     </name>
     <rare>false</rare>
@@ -968,7 +968,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>lavadoOfCerebro</id>
     <name>
-      <en>Brainwashing</en>
+      <en>Lavado of Cerebro</en>
       <es>Lavado de Cerebro</es>
     </name>
     <rare>false</rare>
@@ -994,7 +994,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>pilotoOfCombat</id>
     <name>
-      <en>Combat Pilot</en>
+      <en>Piloto of Combat</en>
       <es>Piloto de Combate</es>
     </name>
     <rare>false</rare>
@@ -1007,7 +1007,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>pilotoOfTanque</id>
     <name>
-      <en>Tank Pilot</en>
+      <en>Piloto of Tanque</en>
       <es>Piloto de Tanque</es>
     </name>
     <rare>false</rare>
@@ -1059,7 +1059,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>operacionesOfSeguridad</id>
     <name>
-      <en>Security Operations</en>
+      <en>Operaciones of Seguridad</en>
       <es>Operaciones de Seguridad</es>
     </name>
     <rare>false</rare>
@@ -1072,7 +1072,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>evasionOfImpuestos</id>
     <name>
-      <en>Tax Evasion</en>
+      <en>Evasion of Impuestos</en>
       <es>Evasión de Impuestos</es>
     </name>
     <rare>false</rare>
@@ -1085,7 +1085,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>jugarToTheBillar</id>
     <name>
-      <en>Play Billiards</en>
+      <en>Jugar to the Billar</en>
       <es>Jugar al Billar</es>
     </name>
     <rare>false</rare>
@@ -1111,7 +1111,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>pilotoOfAeronaves</id>
     <name>
-      <en>Aviation Pilot</en>
+      <en>Piloto of Aeronaves</en>
       <es>Piloto de Aeronaves</es>
     </name>
     <rare>false</rare>
@@ -1124,7 +1124,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>captainOfShip</id>
     <name>
-      <en>Ship Captain</en>
+      <en>Captain of Ship</en>
       <es>Capitán de Barco</es>
     </name>
     <rare>false</rare>
@@ -1137,7 +1137,7 @@
     <enabledByDefault>true</enabledByDefault>
     <id>ingenieroOfTrenes</id>
     <name>
-      <en>Rail Engineer</en>
+      <en>Ingeniero of Trenes</en>
       <es>Ingeniero de Trenes</es>
     </name>
     <rare>false</rare>

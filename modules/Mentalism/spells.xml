@@ -147,7 +147,7 @@
     <closedList>true</closedList>
     <id>mentalismMasteryOfSenses</id>
     <name>
-      <en>Sense Mastery</en>
+      <en>Mastery of Senses</en>
       <es>Maestría de los Sentidos</es>
     </name>
     <openList>false</openList>
@@ -264,7 +264,7 @@
     <closedList>false</closedList>
     <id>mentalismMasteryOfConcussion</id>
     <name>
-      <en>Concussion Mastery</en>
+      <en>Mastery of Concussion</en>
       <es>Maestría de la Conmoción</es>
     </name>
     <openList>false</openList>
@@ -277,7 +277,7 @@
     <closedList>false</closedList>
     <id>mentalismMasteryOfBlood</id>
     <name>
-      <en>Blood Mastery</en>
+      <en>Mastery of Blood</en>
       <es>Maestría de la Sangre</es>
     </name>
     <openList>false</openList>
@@ -290,7 +290,7 @@
     <closedList>false</closedList>
     <id>mentalismMasteryOfHuesos</id>
     <name>
-      <en>Bone Mastery</en>
+      <en>Mastery of Huesos</en>
       <es>Maestría de los Huesos</es>
     </name>
     <openList>false</openList>
@@ -316,7 +316,7 @@
     <closedList>false</closedList>
     <id>mentalismMasteryOfOrgansNervios</id>
     <name>
-      <en>Organs/Nerves Mastery</en>
+      <en>Mastery of Organs/Nervios</en>
       <es>Maestría de los Órganos/Nervios</es>
     </name>
     <openList>false</openList>
@@ -355,7 +355,7 @@
     <closedList>false</closedList>
     <id>mentalismControlOfSenses</id>
     <name>
-      <en>Senses Control</en>
+      <en>Control of Senses</en>
       <es>Control de los Sentidos</es>
     </name>
     <openList>false</openList>
@@ -433,7 +433,7 @@
     <closedList>false</closedList>
     <id>mentalismSongsOfControl</id>
     <name>
-      <en>Song of Control</en>
+      <en>Songs of Control</en>
       <es>Canciones de Control</es>
     </name>
     <openList>false</openList>
@@ -459,7 +459,7 @@
     <closedList>false</closedList>
     <id>mentalismControlOfSound</id>
     <name>
-      <en>Sound Control</en>
+      <en>Control of Sound</en>
       <es>Control del Sonido</es>
     </name>
     <openList>false</openList>
@@ -485,7 +485,7 @@
     <closedList>false</closedList>
     <id>mentalismPathsOfDiversion</id>
     <name>
-      <en>Diversion Paths</en>
+      <en>Paths of Diversion</en>
       <es>Sendas de la Diversión</es>
     </name>
     <openList>false</openList>
@@ -511,7 +511,7 @@
     <closedList>false</closedList>
     <id>mentalismMasteryOfDisfraces</id>
     <name>
-      <en>Disguise Mastery</en>
+      <en>Mastery of Disfraces</en>
       <es>Maestría de los Disfraces</es>
     </name>
     <openList>false</openList>
@@ -524,7 +524,7 @@
     <closedList>false</closedList>
     <id>mentalismMasteryOfPoisons</id>
     <name>
-      <en>Poison Mastery</en>
+      <en>Mastery of Poisons</en>
       <es>Maestría de los Venenos</es>
     </name>
     <openList>false</openList>
@@ -576,7 +576,7 @@
     <closedList>false</closedList>
     <id>mentalismPathsOfSuperficies</id>
     <name>
-      <en>Surface Paths</en>
+      <en>Paths of Superficies</en>
       <es>Sendas de las Superficies</es>
     </name>
     <openList>false</openList>
@@ -589,7 +589,7 @@
     <closedList>false</closedList>
     <id>mentalismPathsOfMuscles</id>
     <name>
-      <en>Muscle Paths</en>
+      <en>Paths of Muscles</en>
       <es>Sendas de los Músculos</es>
     </name>
     <openList>false</openList>
@@ -602,7 +602,7 @@
     <closedList>false</closedList>
     <id>mentalismPathsOfBlood</id>
     <name>
-      <en>Blood Paths</en>
+      <en>Paths of Blood</en>
       <es>Sendas de la Sangre</es>
     </name>
     <openList>false</openList>
@@ -615,7 +615,7 @@
     <closedList>false</closedList>
     <id>mentalismPathsOfHuesos</id>
     <name>
-      <en>Bone Paths</en>
+      <en>Paths of Huesos</en>
       <es>Sendas de los Huesos</es>
     </name>
     <openList>false</openList>
@@ -641,7 +641,7 @@
     <closedList>false</closedList>
     <id>mentalismAlterationOfTheGases</id>
     <name>
-      <en>Gas Alteration</en>
+      <en>Alteration of the Gases</en>
       <es>Alteración de los Gases</es>
     </name>
     <openList>false</openList>
@@ -654,7 +654,7 @@
     <closedList>false</closedList>
     <id>mentalismAlterationOfTheLiquids</id>
     <name>
-      <en>Liquid Alteration</en>
+      <en>Alteration of the Liquids</en>
       <es>Alteración de los Líquidos</es>
     </name>
     <openList>false</openList>
@@ -667,7 +667,7 @@
     <closedList>false</closedList>
     <id>mentalismAlterationOfTheSolids</id>
     <name>
-      <en>Solid Alteration</en>
+      <en>Alteration of the Solids</en>
       <es>Alteración de los Sólidos</es>
     </name>
     <openList>false</openList>
@@ -719,7 +719,7 @@
     <closedList>false</closedList>
     <id>mentalismDominationOfTheMind</id>
     <name>
-      <en>Mind Domination</en>
+      <en>Domination of the Mind</en>
       <es>Dominación de la Mente</es>
     </name>
     <openList>false</openList>
@@ -745,7 +745,7 @@
     <closedList>false</closedList>
     <id>mentalismErosionOfTheMind</id>
     <name>
-      <en>Mind Erosion</en>
+      <en>Erosion of the Mind</en>
       <es>Erosión de la Mente</es>
     </name>
     <openList>false</openList>
@@ -771,7 +771,7 @@
     <closedList>false</closedList>
     <id>mentalismDeathOfTheMind</id>
     <name>
-      <en>Mind Death</en>
+      <en>Death of the Mind</en>
       <es>Muerte de la Mente</es>
     </name>
     <openList>false</openList>
@@ -784,7 +784,7 @@
     <closedList>false</closedList>
     <id>mentalismSubversionOfTheMind</id>
     <name>
-      <en>Mind Subversion</en>
+      <en>Subversion of the Mind</en>
       <es>Subversión de la Mente</es>
     </name>
     <openList>false</openList>

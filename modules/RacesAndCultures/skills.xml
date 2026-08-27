@@ -186,9 +186,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>hablarEnano</id>
+    <id>hablarDwarf</id>
     <name>
-      <en>Hablar Enano</en>
+      <en>Hablar Dwarf</en>
       <es>Hablar Enano</es>
     </name>
     <rare>false</rare>
@@ -199,9 +199,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>communication</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>escribirEnano</id>
+    <id>escribirDwarf</id>
     <name>
-      <en>Escribir Enano</en>
+      <en>Escribir Dwarf</en>
       <es>Escribir Enano</es>
     </name>
     <rare>false</rare>
