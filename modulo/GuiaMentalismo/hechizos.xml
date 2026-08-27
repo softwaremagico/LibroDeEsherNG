@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Conocimiento de las Estrellas</id>
+    <name>Conocimiento de las Estrellas</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Astrólogo</owner>
+      <owner>Oráculo</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Luces de las Estrellas</id>
+    <name>Luces de las Estrellas</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Astrólogo</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Sendas de la Voz</id>
+    <name>Sendas de la Voz</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Astrólogo</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Sentido de las Estrellas</id>
+    <name>Sentido de las Estrellas</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Astrólogo</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Visiones Sagradas</id>
+    <name>Visiones Sagradas</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Astrólogo</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Voz Lejana</id>
+    <name>Voz Lejana</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Astrólogo</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Espejismo de Defensa</id>
+    <name>Espejismo de Defensa</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Encantador</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Espejismo de Recuerdos</id>
+    <name>Espejismo de Recuerdos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Encantador</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Ley de los Espejismos</id>
+    <name>Ley de los Espejismos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Encantador</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Maestría de los Espejismos</id>
+    <name>Maestría de los Espejismos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Encantador</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Mejora de los Espejismos</id>
+    <name>Mejora de los Espejismos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Encantador</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Proyección de los Espejismos</id>
+    <name>Proyección de los Espejismos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Encantador</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Ley de la Batalla</id>
+    <name>Ley de la Batalla</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Maestro de Armas</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Ley de la Fortaleza</id>
+    <name>Ley de la Fortaleza</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Maestro de Armas</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Ley del Guerrero</id>
+    <name>Ley del Guerrero</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Maestro de Armas</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Ley Marcial</id>
+    <name>Ley Marcial</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Maestro de Armas</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Maestría de las Armaduras</id>
+    <name>Maestría de las Armaduras</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Maestro de Armas</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Maestría de las Armas</id>
+    <name>Maestría de las Armas</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Maestro de Armas</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Apropiación de la Visión</id>
+    <name>Apropiación de la Visión</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Vidente</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Protección de las Visiones</id>
+    <name>Protección de las Visiones</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Vidente</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Visiones Lejanas</id>
+    <name>Visiones Lejanas</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Vidente</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Visiones del Futuro</id>
+    <name>Visiones del Futuro</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Vidente</owner>
+      <owner>Oráculo</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Visiones del Pasado</id>
+    <name>Visiones del Pasado</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Vidente</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Visiones Mentales</id>
+    <name>Visiones Mentales</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Vidente</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Charadas</id>
+    <name>Charadas</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Charlatán</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Ley de la Medicina</id>
+    <name>Ley de la Medicina</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Médico Especialista</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Medicina</id>
+    <name>Medicina</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Médico Especialista</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Maestría de la Navegación</id>
+    <name>Maestría de la Navegación</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Marinero</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Maestría del Mar</id>
+    <name>Maestría del Mar</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Marinero</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Maestría del Conocimiento</id>
+    <name>Maestría del Conocimiento</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sabio</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Besos del Houri</id>
+    <name>Besos del Houri</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Houri</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Engaños del Houri</id>
+    <name>Engaños del Houri</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Houri</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Viaje Onírico</id>
+    <name>Viaje Onírico</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Viajero Onírico</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Ley de los Sueños</id>
+    <name>Ley de los Sueños</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Tejesueños</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Conocimiento de los Sueños</id>
+    <name>Conocimiento de los Sueños</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Tejesueños</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Atar Animales</id>
+    <name>Atar Animales</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Señor de las Bestias</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Cambio de Mente</id>
+    <name>Cambio de Mente</name>
+    <openList>false</openList>
+    <owners>
+      <owner>NiIdea</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Cambio de Cuerpo</id>
+    <name>Cambio de Cuerpo</name>
+    <openList>false</openList>
+    <owners>
+      <owner>NiIdea</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+</hechizos>

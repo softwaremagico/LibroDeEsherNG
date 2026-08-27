@@ -1,0 +1,613 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Autocuración</id>
+    <name>Autocuración</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Detecciones</id>
+    <name>Detecciones</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Evasión de los Ataques</id>
+    <name>Evasión de los Ataques</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Ilusiones</id>
+    <name>Ilusiones</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Investigación</id>
+    <name>Investigación</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Ocultación</id>
+    <name>Ocultación</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Presentimientos</id>
+    <name>Presentimientos</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Resistencia a los Hechizos</id>
+    <name>Resistencia a los Hechizos</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Resistencia al Daño</id>
+    <name>Resistencia al Daño</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Resplandor</id>
+    <name>Resplandor</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Mentalismo|Cambio</id>
+    <name>Cambio</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Mentalismo|Maestría de los Sentidos</id>
+    <name>Maestría de los Sentidos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Mentalismo|Maestría Mental</id>
+    <name>Maestría Mental</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Mentalismo|Manipulación de los Gases</id>
+    <name>Manipulación de los Gases</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Mentalismo|Manipulación de los Líquidos</id>
+    <name>Manipulación de los Líquidos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Mentalismo|Manipulación de los Sólidos</id>
+    <name>Manipulación de los Sólidos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Mentalismo|Movimiento</id>
+    <name>Movimiento</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Mentalismo|Puerta Mental</id>
+    <name>Puerta Mental</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Mentalismo|Telequinesis</id>
+    <name>Telequinesis</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Mentalismo|Velocidad</id>
+    <name>Velocidad</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Maestría de la Conmoción</id>
+    <name>Maestría de la Conmoción</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Curandero</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Maestría de la Sangre</id>
+    <name>Maestría de la Sangre</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Curandero</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Maestría de los Huesos</id>
+    <name>Maestría de los Huesos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Curandero</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Maestría de los Músculos</id>
+    <name>Maestría de los Músculos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Curandero</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Maestría de los Órganos/Nervios</id>
+    <name>Maestría de los Órganos/Nervios</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Curandero</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Prótesis</id>
+    <name>Prótesis</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Curandero</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Ataque Mental</id>
+    <name>Ataque Mental</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mentalista</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Control de los Sentidos</id>
+    <name>Control de los Sentidos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mentalista</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Control Mental</id>
+    <name>Control Mental</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mentalista</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Fusión Mental</id>
+    <name>Fusión Mental</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mentalista</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Presencia</id>
+    <name>Presencia</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mentalista</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Telepatía</id>
+    <name>Telepatía</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mentalista</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Amplificación del Sonido</id>
+    <name>Amplificación del Sonido</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Bardo</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Canciones de Control</id>
+    <name>Canciones de Control</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Bardo</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Conocimiento de los Objetos</id>
+    <name>Conocimiento de los Objetos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Bardo</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Control del Sonido</id>
+    <name>Control del Sonido</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Bardo</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Saberes</id>
+    <name>Saberes</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Bardo</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Sendas de la Diversión</id>
+    <name>Sendas de la Diversión</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Bardo</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Escabullirse</id>
+    <name>Escabullirse</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Magente</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Maestría de los Disfraces</id>
+    <name>Maestría de los Disfraces</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Magente</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Maestría de los Venenos</id>
+    <name>Maestría de los Venenos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Magente</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Maestría del Asesinato</id>
+    <name>Maestría del Asesinato</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Magente</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Recopilar Secretos</id>
+    <name>Recopilar Secretos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Magente</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Redirecciones</id>
+    <name>Redirecciones</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Magente</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Sendas de las Superficies</id>
+    <name>Sendas de las Superficies</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sanador</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Sendas de los Músculos</id>
+    <name>Sendas de los Músculos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sanador</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Sendas de la Sangre</id>
+    <name>Sendas de la Sangre</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sanador</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Sendas de los Huesos</id>
+    <name>Sendas de los Huesos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sanador</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Senda de los Órganos</id>
+    <name>Senda de los Órganos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sanador</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Alteración de los Gases</id>
+    <name>Alteración de los Gases</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Místico</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Alteración de los Líquidos</id>
+    <name>Alteración de los Líquidos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Místico</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Alteración de los Sólidos</id>
+    <name>Alteración de los Sólidos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Místico</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Cambio Místico</id>
+    <name>Cambio Místico</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Místico</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Esconderse (Místico)</id>
+    <name>Esconderse (Místico)</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Místico</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Sendas de la Confusión</id>
+    <name>Sendas de la Confusión</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Místico</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Dominación de la Mente</id>
+    <name>Dominación de la Mente</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mentalismo Maligno</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Enfermedades Mentales</id>
+    <name>Enfermedades Mentales</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mentalismo Maligno</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Erosión de la Mente</id>
+    <name>Erosión de la Mente</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mentalismo Maligno</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Ilusiones Mentales</id>
+    <name>Ilusiones Mentales</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mentalismo Maligno</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Muerte de la Mente</id>
+    <name>Muerte de la Mente</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mentalismo Maligno</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Mentalismo|Subversión de la Mente</id>
+    <name>Subversión de la Mente</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Mentalismo Maligno</owner>
+    </owners>
+    <realm>Mentalismo</realm>
+  </listaDeHechizos>
+</hechizos>

@@ -1,0 +1,613 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Defensa Mágica</id>
+    <name>Defensa Mágica</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Movimiento en las Alturas</id>
+    <name>Movimiento en las Alturas</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Senda del Sonido</id>
+    <name>Senda del Sonido</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Ley de la Naturaleza</id>
+    <name>Ley de la Naturaleza</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Purificaciones</id>
+    <name>Purificaciones</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Sendas de la Conmoción</id>
+    <name>Sendas de la Conmoción</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Ley de las Barreras</id>
+    <name>Ley de las Barreras</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Senda de la Luz</id>
+    <name>Senda de la Luz</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Sendas del Clima</id>
+    <name>Sendas del Clima</name>
+    <openList>true</openList>
+    <owners>
+      <owner>Lista Abierta</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Canalización|Conocimiento</id>
+    <name>Conocimiento</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Canalización|Ley de los Músculos</id>
+    <name>Ley de los Músculos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Canalización|Sendas de la Localización</id>
+    <name>Sendas de la Localización</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Canalización|Creaciones</id>
+    <name>Creaciones</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Canalización|Ley de los Nervios</id>
+    <name>Ley de los Nervios</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Canalización|Sendas de los Símbolos</id>
+    <name>Sendas de los Símbolos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Canalización|Ley de la Sangre</id>
+    <name>Ley de la Sangre</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Canalización|Ley de los Órganos</id>
+    <name>Ley de los Órganos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Canalización|Serenar Espíritus</id>
+    <name>Serenar Espíritus</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>true</closedList>
+    <id>Canalización|Ley de los Huesos</id>
+    <name>Ley de los Huesos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Lista Cerrada</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Conocimiento de la Naturaleza</id>
+    <name>Conocimiento de la Naturaleza</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Animista</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Maestría de las Plantas</id>
+    <name>Maestría de las Plantas</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Animista</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Movimiento/Sentidos de la Naturaleza</id>
+    <name>Movimiento/Sentidos de la Naturaleza</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Animista</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Maestría de las Hierbas</id>
+    <name>Maestría de las Hierbas</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Animista</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Maestría de los Animales</id>
+    <name>Maestría de los Animales</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Animista</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Protecciones de la Naturaleza</id>
+    <name>Protecciones de la Naturaleza</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Animista</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Canalizaciones</id>
+    <name>Canalizaciones</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Clérigo</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Maestría de la Vida</id>
+    <name>Maestría de la Vida</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Clérigo</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Rechazos</id>
+    <name>Rechazos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Clérigo</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Invocaciones</id>
+    <name>Invocaciones</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Clérigo</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Protecciones</id>
+    <name>Protecciones</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Clérigo</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Sendas Comunes</id>
+    <name>Sendas Comunes</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Clérigo</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Ataques Sagrados</id>
+    <name>Ataques Sagrados</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Paladín</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Curación Sagrada</id>
+    <name>Curación Sagrada</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Paladín</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Exorcismos</id>
+    <name>Exorcismos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Paladín</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Comunión</id>
+    <name>Comunión</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Paladín</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Defensas Sagradas</id>
+    <name>Defensas Sagradas</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Paladín</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Sendas de la Inspiración</id>
+    <name>Sendas de la Inspiración</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Paladín</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Formas de la Naturaleza</id>
+    <name>Formas de la Naturaleza</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Montaraz</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Maestría de los Caminos</id>
+    <name>Maestría de los Caminos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Montaraz</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Sendas de la Naturaleza</id>
+    <name>Sendas de la Naturaleza</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Montaraz</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Invocación de la Naturaleza</id>
+    <name>Invocación de la Naturaleza</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Montaraz</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Muros Interiores</id>
+    <name>Muros Interiores</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Montaraz</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Sendas del Movimiento</id>
+    <name>Sendas del Movimiento</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Montaraz</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Purificar</id>
+    <name>Purificar</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sanador</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Sendas de las Superficies</id>
+    <name>Sendas de las Superficies</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sanador</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Sendas de los Músculos</id>
+    <name>Sendas de los Músculos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sanador</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Sendas de la Sangre</id>
+    <name>Sendas de la Sangre</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sanador</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Sendas de los Huesos</id>
+    <name>Sendas de los Huesos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sanador</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Senda de los Órganos</id>
+    <name>Senda de los Órganos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Sanador</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Destrucción de la Carne</id>
+    <name>Destrucción de la Carne</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Hechicero</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Destrucción de los Gases</id>
+    <name>Destrucción de los Gases</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Hechicero</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Destrucción del Alma</id>
+    <name>Destrucción del Alma</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Hechicero</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Destrucción de los Fluidos</id>
+    <name>Destrucción de los Fluidos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Hechicero</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Destrucción de los Sólidos</id>
+    <name>Destrucción de los Sólidos</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Hechicero</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Destrucción Mental</id>
+    <name>Destrucción Mental</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Hechicero</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Canalizaciones Oscuras</id>
+    <name>Canalizaciones Oscuras</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Canalización Maligna</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Enfermedades</id>
+    <name>Enfermedades</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Canalización Maligna</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Maldiciones</id>
+    <name>Maldiciones</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Canalización Maligna</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Conocimiento Impío</id>
+    <name>Conocimiento Impío</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Canalización Maligna</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Herir</id>
+    <name>Herir</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Canalización Maligna</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+  <listaDeHechizos>
+    <closedList>false</closedList>
+    <id>Canalización|Nigromacia</id>
+    <name>Nigromacia</name>
+    <openList>false</openList>
+    <owners>
+      <owner>Canalización Maligna</owner>
+    </owners>
+    <realm>Canalización</realm>
+  </listaDeHechizos>
+</hechizos>
