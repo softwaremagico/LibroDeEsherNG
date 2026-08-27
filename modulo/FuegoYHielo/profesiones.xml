@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<profesiones>
+  <profesion>
+    <bonuses>
+      <bonus>
+        <bonus>10</bonus>
+        <name>Conocimiento·Mágico</name>
+      </bonus>
+      <bonus>
+        <bonus>5</bonus>
+        <name>Desarrollo de Puntos de Poder</name>
+      </bonus>
+      <bonus>
+        <bonus>5</bonus>
+        <name>Listas Básicas de la Tríada</name>
+      </bonus>
+      <bonus>
+        <bonus>5</bonus>
+        <name>Listas Básicas Elementales Complementarias</name>
+      </bonus>
+      <bonus>
+        <bonus>5</bonus>
+        <name>Listas Básicas de Hechizos</name>
+      </bonus>
+      <bonus>
+        <bonus>5</bonus>
+        <name>Listas Abiertas de Hechizos</name>
+      </bonus>
+      <bonus>
+        <bonus>5</bonus>
+        <name>Listas Cerradas de Hechizos</name>
+      </bonus>
+      <bonus>
+        <bonus>5</bonus>
+        <name>Listas Básicas de Otras Profesiones</name>
+      </bonus>
+      <bonus>
+        <bonus>5</bonus>
+        <name>Listas Abiertas de Otros Reinos</name>
+      </bonus>
+      <bonus>
+        <bonus>5</bonus>
+        <name>Listas Cerradas de Otros Reinos</name>
+      </bonus>
+      <bonus>
+        <bonus>5</bonus>
+        <name>Listas Básicas de Otros Reinos</name>
+      </bonus>
+      <bonus>
+        <bonus>5</bonus>
+        <name>Listas Abiertas Arcanas</name>
+      </bonus>
+      <bonus>
+        <bonus>5</bonus>
+        <name>Listas Básicas de Otras Profesiones</name>
+      </bonus>
+      <bonus>
+        <bonus>10</bonus>
+        <name>Hechizos Dirigidos</name>
+      </bonus>
+      <bonus>
+        <bonus>5</bonus>
+        <name>Percepción de Poder</name>
+      </bonus>
+      <bonus>
+        <bonus>5</bonus>
+        <name>Manipulación del Poder</name>
+      </bonus>
+    </bonuses>
+    <categoryCostsRaw>Armadura·Ligera	9
+Armadura·Media	10
+Armadura·Pesada	11
+Armas·Categoría1	9
+Armas·Categoría2	20
+Armas·Categoría3	20
+Armas·Categoría4	20
+Armas·Categoría5	20
+Armas·Categoría6	20
+Armas·Categoría7	20
+Arte·Activo	2/5
+Arte·Pasivo	2/5
+Artes Marciales·Golpes	9
+Artes Marciales·Barridos	9
+Artes Marciales·Maniobras de Combate	18
+Ataques Especiales	15
+Atletismo·Gimnasia	3
+Atletismo·Potencia	6
+Atletismo·Resistencia	3
+Autocontrol	4
+Ciencia/Analítica·Básica	1/4
+Ciencia/Analítica·Especializada	6/14
+Comunicación	2/2/2
+Conocimiento·General	1/3
+Conocimiento·Mágico	1/4
+Conocimiento·Oscuro	3/7
+Conocimiento·Técnico	2/6
+Defensas Especiales	40
+Desarrollo de Puntos de Poder	4
+Desarrollo Físico	15
+Exteriores·Animales	5
+Exteriores·Entorno	5
+Hechizos Dirigidos	2/5
+Influencia	2/6
+Maniobras de Combate	18
+Manipulación del Poder	3/9
+Oficios	4/10
+Percepción·Búsqueda	3
+Percepción·Perspicacia	6
+Percepción·Sentidos	3/7
+Percepción de Poder	2/5
+Subterfugio·Ataque	15
+Subterfugio·Mecánica	7
+Subterfugio·Sigilo	5
+Técnica/Comercio·General	3/7
+Técnica/Comercio·Profesional	8
+Técnica/Comercio·Vocacional	5/12
+Urbana	2/5</categoryCostsRaw>
+    <characteristicPreferences>
+      <characteristic>Em</characteristic>
+      <characteristic>Ra</characteristic>
+      <characteristic>Ad</characteristic>
+      <characteristic>Me</characteristic>
+      <characteristic>Ag</characteristic>
+      <characteristic>Rp</characteristic>
+      <characteristic>In</characteristic>
+      <characteristic>Pr</characteristic>
+      <characteristic>Fu</characteristic>
+      <characteristic>Co</characteristic>
+    </characteristicPreferences>
+    <commonSkillsRaw>Sentido del Tiempo, Conocimiento de los Planos</commonSkillsRaw>
+    <id>Elementalista</id>
+    <indifferentToCharacteristics>false</indifferentToCharacteristics>
+    <magicCostsRaw>Lista Básica (1-5)	3/3/3
+Lista Básica (6-10)	3/3/3
+Lista Básica (11-15)	3/3/3
+Lista Básica (16-20)	3/3/3
+Lista Básica (21+)	3/3/3
+Listas Básicas de la Tríada (1-5)	6/6/6
+Listas Básicas de la Tríada (6-10)	6/6/6
+Listas Básicas de la Tríada (11-15)	6/6/6
+Listas Básicas de la Tríada (16-20)	6/6/6
+Listas Básicas de la Tríada (21+)	6/6/6
+Listas Básicas Elementales Complementarias (1-5)	8/8
+Listas Básicas Elementales Complementarias (6-10)	8/8
+Listas Básicas Elementales Complementarias (11-15)	8/8
+Listas Básicas Elementales Complementarias (16-20)	8/8
+Listas Básicas Elementales Complementarias (21+)	8/8
+Lista Abierta (1-5)	4/4/4
+Lista Abierta (6-10)	4/4/4
+Lista Abierta (11-15)	4/4/4
+Lista Abierta (16-20)	4/4/4
+Lista Abierta (21+)	6/6/6
+Lista Cerrada (1-5)	4/4/4
+Lista Cerrada (6-10)	4/4/4
+Lista Cerrada (11-15)	4/4/4
+Lista Cerrada (16-20)	4/4/4
+Lista Cerrada (21+)	8/8
+Listas Básicas de Otras Profesiones (1-5)	8/8
+Listas Básicas de Otras Profesiones (6-10)	10/10
+Listas Básicas de Otras Profesiones (11-15)	12
+Listas Básicas de Otras Profesiones (16-20)	25
+Listas Básicas de Otras Profesiones (21+)	40
+Listas Abiertas de Otros Reinos (1-5)	10/10
+Listas Abiertas de Otros Reinos (6-10)	12
+Listas Abiertas de Otros Reinos (11-15)	25
+Listas Abiertas de Otros Reinos (16-20)	40
+Listas Abiertas de Otros Reinos (21+)	60
+Listas Cerradas de Otros Reinos (1-5)	20
+Listas Cerradas de Otros Reinos (6-10)	25
+Listas Cerradas de Otros Reinos (11-15)	40
+Listas Cerradas de Otros Reinos (16-20)	60
+Listas Cerradas de Otros Reinos (21+)	80
+Listas Básicas de Otros Reinos (1-5)	50
+Listas Básicas de Otros Reinos (6-10)	70
+Listas Básicas de Otros Reinos (11-15)	90
+Listas Básicas de Otros Reinos (16-20)	110
+Listas Básicas de Otros Reinos (21+)	130
+Listas Abiertas Arcanas (1-5)	6/6
+Listas Abiertas Arcanas (6-10)	8/8
+Listas Abiertas Arcanas (11-15)	10/10
+Listas Abiertas Arcanas (16-20)	12
+Listas Abiertas Arcanas (21+)	25
+Listas Hechizos de Adiestramiento (1-5)	4/4/4
+Listas Hechizos de Adiestramiento (6-10)	4/4/4
+Listas Hechizos de Adiestramiento (11-15)	4/4/4
+Listas Hechizos de Adiestramiento (16-20)	4/4/4
+Listas Hechizos de Adiestramiento (21+)	4/4/4
+Listas Hechizos de Adiestramientos de Otros Reinos (1-5)	8/8
+Listas Hechizos de Adiestramientos de Otros Reinos (6-10)	8/8
+Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	8/8
+Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	8/8
+Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
+    <name>Elementalista</name>
+    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
+    <magicRealms>
+      <realm>Esencia</realm>
+    </magicRealms>
+    <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
+    <spellCaster>true</spellCaster>
+    <trainingCosts>
+      <trainingCost>
+        <cost>28</cost>
+        <costNotMagic>28</costNotMagic>
+        <trainingName>Artesano Elemental</trainingName>
+        <type>STANDARD</type>
+      </trainingCost>
+      <trainingCost>
+        <cost>25</cost>
+        <costNotMagic>25</costNotMagic>
+        <trainingName>Erudito Elemental</trainingName>
+        <type>STANDARD</type>
+      </trainingCost>
+      <trainingCost>
+        <cost>29</cost>
+        <costNotMagic>29</costNotMagic>
+        <trainingName>Mago de la Luz</trainingName>
+        <type>STANDARD</type>
+      </trainingCost>
+      <trainingCost>
+        <cost>29</cost>
+        <costNotMagic>29</costNotMagic>
+        <trainingName>Mago de la Tierra</trainingName>
+        <type>STANDARD</type>
+      </trainingCost>
+      <trainingCost>
+        <cost>28</cost>
+        <costNotMagic>28</costNotMagic>
+        <trainingName>Mago del Agua</trainingName>
+        <type>STANDARD</type>
+      </trainingCost>
+      <trainingCost>
+        <cost>29</cost>
+        <costNotMagic>29</costNotMagic>
+        <trainingName>Mago del Aire</trainingName>
+        <type>STANDARD</type>
+      </trainingCost>
+      <trainingCost>
+        <cost>29</cost>
+        <costNotMagic>29</costNotMagic>
+        <trainingName>Mago del Fuego</trainingName>
+        <type>STANDARD</type>
+      </trainingCost>
+      <trainingCost>
+        <cost>28</cost>
+        <costNotMagic>28</costNotMagic>
+        <trainingName>Mago de Hielo</trainingName>
+        <type>STANDARD</type>
+      </trainingCost>
+    </trainingCosts>
+  </profesion>
+</profesiones>

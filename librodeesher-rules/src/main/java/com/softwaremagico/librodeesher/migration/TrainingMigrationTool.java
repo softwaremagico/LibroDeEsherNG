@@ -83,7 +83,7 @@ public final class TrainingMigrationTool {
     private static Training readTrainingFile(Path file) throws IOException {
         final String fileName = file.getFileName().toString();
         final String trainingName = fileName.substring(0, fileName.length() - ".txt".length());
-        final Cursor cursor = new Cursor(Files.readAllLines(file, StandardCharsets.UTF_8));
+        final SectionCursor cursor = new SectionCursor(Files.readAllLines(file, StandardCharsets.UTF_8));
 
         final Training training = new Training(trainingName);
         training.setName(trainingName);
@@ -199,40 +199,5 @@ public final class TrainingMigrationTool {
 
     private static boolean isNothingMarker(String line) {
         return line.toLowerCase().contains(NOTHING_MARKER);
-    }
-
-    /** Walks a training file section by section, mirroring the legacy index-based line scanning. */
-    private static final class Cursor {
-        private final List<String> lines;
-        private int position;
-
-        Cursor(List<String> lines) {
-            this.lines = lines;
-        }
-
-        /** Skips blank/comment lines, then collects every line up to the next blank line or EOF. */
-        List<String> nextSection() {
-            skipHeader();
-            final List<String> section = new ArrayList<>();
-            while (position < lines.size() && !lines.get(position).isBlank() && !lines.get(position).startsWith("#")) {
-                section.add(lines.get(position));
-                position++;
-            }
-            return section;
-        }
-
-        /** Same as {@link #nextSection()}, but returns an empty list instead of failing at EOF. */
-        List<String> nextSectionOrEmpty() {
-            if (position >= lines.size()) {
-                return List.of();
-            }
-            return nextSection();
-        }
-
-        private void skipHeader() {
-            while (position < lines.size() && (lines.get(position).isBlank() || lines.get(position).startsWith("#"))) {
-                position++;
-            }
-        }
     }
 }
