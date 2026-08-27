@@ -4,12 +4,12 @@
     <closedList>false</closedList>
     <id>essenceArmorOfTheChaos</id>
     <name>
-      <en>Armor of the Chaos</en>
+      <en>Armor of Chaos</en>
       <es>Armadura del Caos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Lord of the Chaos</owner>
+      <owner>Chaos Lord</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -17,12 +17,12 @@
     <closedList>false</closedList>
     <id>essenceArmaOfTheChaos</id>
     <name>
-      <en>Arma of the Chaos</en>
+      <en>Weapon of Chaos</en>
       <es>Arma del Caos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Lord of the Chaos</owner>
+      <owner>Chaos Lord</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -30,12 +30,12 @@
     <closedList>false</closedList>
     <id>essenceMasteryOfChaos</id>
     <name>
-      <en>Mastery of Chaos</en>
+      <en>Chaos Mastery</en>
       <es>Maestría del Caos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Lord of the Chaos</owner>
+      <owner>Chaos Lord</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>

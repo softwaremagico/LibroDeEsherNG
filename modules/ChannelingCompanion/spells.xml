@@ -2,9 +2,9 @@
 <spells>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationAtadurasOfTheSummonings</id>
+    <id>canalizationBondsOfSummoning</id>
     <name>
-      <en>Ataduras of the Summonings</en>
+      <en>Bonds of Summoning</en>
       <es>Ataduras de las Invocaciones</es>
     </name>
     <openList>false</openList>
@@ -56,7 +56,7 @@
     <closedList>false</closedList>
     <id>canalizationMasteryOfSummonings</id>
     <name>
-      <en>Mastery of Summonings</en>
+      <en>Summoning Mastery</en>
       <es>Maestría de las Invocaciones</es>
     </name>
     <openList>false</openList>
@@ -80,9 +80,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationDestructionOfTheFe</id>
+    <id>canalizationFaithDestruction</id>
     <name>
-      <en>Destruction of the Fe</en>
+      <en>Faith Destruction</en>
       <es>Destrucción de la Fe</es>
     </name>
     <openList>false</openList>
@@ -95,7 +95,7 @@
     <closedList>false</closedList>
     <id>canalizationLawOfDoom</id>
     <name>
-      <en>Law of Doom</en>
+      <en>Doom Law</en>
       <es>Ley de la Perdición</es>
     </name>
     <openList>false</openList>
@@ -108,7 +108,7 @@
     <closedList>false</closedList>
     <id>canalizationLawOfVenganza</id>
     <name>
-      <en>Law of Venganza</en>
+      <en>Vengeance Law</en>
       <es>Ley de la Venganza</es>
     </name>
     <openList>false</openList>
@@ -119,9 +119,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMasteryOfLoStrange</id>
+    <id>canalizationMasteryOfTheStrange</id>
     <name>
-      <en>Mastery of lo Strange</en>
+      <en>Mastery of the Strange</en>
       <es>Maestría de lo Extraño</es>
     </name>
     <openList>false</openList>
@@ -132,9 +132,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationSemblanyouOfTheTerror</id>
+    <id>canalizationSemblanceOfTerror</id>
     <name>
-      <en>Semblanyou of the Terror</en>
+      <en>semblance of Terror</en>
       <es>Semblante del Terror</es>
     </name>
     <openList>false</openList>
@@ -353,9 +353,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationDominationOfTheNaturaleza</id>
+    <id>canalizationDominationOfNature</id>
     <name>
-      <en>Domination of the Naturaleza</en>
+      <en>Domination of Nature</en>
       <es>Dominación de la Naturaleza</es>
     </name>
     <openList>false</openList>
@@ -420,7 +420,7 @@
     <closedList>false</closedList>
     <id>canalizationShieldOfTheFe</id>
     <name>
-      <en>Shield of the Fe</en>
+      <en>Shield of Faith</en>
       <es>Escudo de la Fe</es>
     </name>
     <openList>false</openList>
@@ -472,7 +472,7 @@
     <closedList>false</closedList>
     <id>canalizationLawOfSerpientes</id>
     <name>
-      <en>Law of Serpientes</en>
+      <en>Snake Law</en>
       <es>Ley de las Serpientes</es>
     </name>
     <openList>false</openList>
@@ -485,7 +485,7 @@
     <closedList>false</closedList>
     <id>canalizationLawOfSpirits</id>
     <name>
-      <en>Law of Spirits</en>
+      <en>Spirit Law</en>
       <es>Ley de los Espíritus</es>
     </name>
     <openList>false</openList>
@@ -496,9 +496,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMasteryOfCaza</id>
+    <id>canalizationHuntingMastery</id>
     <name>
-      <en>Mastery of Caza</en>
+      <en>Hunting Mastery</en>
       <es>Maestría de la Caza</es>
     </name>
     <openList>false</openList>
@@ -511,7 +511,7 @@
     <closedList>false</closedList>
     <id>canalizationMasteryOfDeath</id>
     <name>
-      <en>Mastery of Death</en>
+      <en>Death Mastery</en>
       <es>Maestría de la Muerte</es>
     </name>
     <openList>false</openList>
@@ -522,7 +522,7 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMasteryOfPiedras</id>
+    <id>canalizationStoneMastery</id>
     <name>
       <en>Mastery of Piedras</en>
       <es>Maestría de las Piedras</es>
@@ -537,7 +537,7 @@
     <closedList>false</closedList>
     <id>canalizationMasteryOfTrees</id>
     <name>
-      <en>Mastery of Trees</en>
+      <en>Tree Mastery</en>
       <es>Maestría de los Árboles</es>
     </name>
     <openList>false</openList>
@@ -548,9 +548,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMasteryOfCaballos</id>
+    <id>canalizationHorseMastery</id>
     <name>
-      <en>Mastery of Caballos</en>
+      <en>Horse Mastery</en>
       <es>Maestría de los Caballos</es>
     </name>
     <openList>false</openList>
@@ -561,9 +561,9 @@
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationMasteryOfInsectos</id>
+    <id>canalizationInsectMastery</id>
     <name>
-      <en>Mastery of Insectos</en>
+      <en>Insect Mastery</en>
       <es>Maestría de los Insectos</es>
     </name>
     <openList>false</openList>
