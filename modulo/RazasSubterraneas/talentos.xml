@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<talentos>
+  <talento>
+    <availableToEveryone>false</availableToEveryone>
+    <bonusesRaw>Ninguno</bonusesRaw>
+    <cost>20</cost>
+    <description>Necesitas un turno menos para lanzar un hechizo. Si el hechizo es instantáneo, tienes un +5 al lanzamiento de hechizos. Consulta la página 99 de razas subterráneas par más información.</description>
+    <grade>mayor</grade>
+    <id>Ansioso</id>
+    <availableTo>
+      <name>Orco Gris</name>
+    </availableTo>
+    <type>Otros</type>
+    <weakness>false</weakness>
+  </talento>
+  <talento>
+    <availableToEveryone>false</availableToEveryone>
+    <bonusesRaw>Conocimiento de los No-Muertos (5)</bonusesRaw>
+    <cost>10</cost>
+    <description>Además tus no-muertos son considerados de un nivel superior a efectos de dispersión. Consulta la página 99 de razas subterráneas par más información.</description>
+    <grade>mayor</grade>
+    <id>Regalo Mortal</id>
+    <availableTo>
+      <name>Orco Gris</name>
+    </availableTo>
+    <type>Otros</type>
+    <weakness>false</weakness>
+  </talento>
+</talentos>
