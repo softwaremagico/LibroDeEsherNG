@@ -3,8 +3,10 @@ package com.softwaremagico.librodeesher.migration;
 import com.softwaremagico.librodeesher.file.ModuleManager;
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
 import com.softwaremagico.librodeesher.training.Training;
+import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
 import com.softwaremagico.librodeesher.training.TrainingProfessionCost;
 import com.softwaremagico.librodeesher.training.TrainingRequirement;
+import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
 import com.softwaremagico.librodeesher.training.TrainingSpecialItem;
 import com.softwaremagico.librodeesher.training.TrainingType;
 
@@ -13,6 +15,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -28,7 +31,8 @@ import java.util.stream.Stream;
  *     <li>TIEMPO (meses): a single integer.</li>
  *     <li>EXCLUSIVO RAZA: "Ninguno" or a comma-separated race list.</li>
  *     <li>ESPECIAL: "Nombre\tProbabilidad\tBonus\tHabilidad" lines (bonus/skill optional).</li>
- *     <li>HABILIDADES: category/skill ranks granted; kept verbatim, see {@link Training}'s javadoc.</li>
+ *     <li>HABILIDADES: category/skill ranks granted, e.g. "Influencia\t3\t2\t2\t4" followed by
+ *     "  *  Seducción\t3"; see {@link TrainingCategoryGrant} for the full syntax.</li>
  *     <li>AUMENTOS CARACTERÍSTICAS: "Ninguno", a comma list of fixed grants, or {@code {Ab1;Ab2}}
  *     choice groups.</li>
  *     <li>REQUISITOS PROFESIONALES: "Ninguno" or "Nombre (valor) (modificador), ..." entries.</li>
@@ -90,7 +94,7 @@ public final class TrainingMigrationTool {
         training.setTrainingTimeInMonths(Integer.valueOf(cursor.nextSection().get(0).trim()));
         training.setLimitedRaces(parseCommaList(cursor.nextSection()));
         training.setSpecialItems(parseSpecialItems(cursor.nextSection()));
-        training.setCategoriesRaw(String.join("\n", cursor.nextSection()));
+        training.setCategories(parseCategories(cursor.nextSection()));
         training.setCharacteristicUpgrades(parseChoiceGroups(cursor.nextSection()));
         training.setRequirements(parseRequirements(cursor.nextSection()));
         training.setLifeSkills(parseChoiceGroups(cursor.nextSection()));
@@ -99,6 +103,92 @@ public final class TrainingMigrationTool {
         training.setRestrictedSkills(parseChoiceGroups(cursor.nextSection()));
         training.setProfessionCosts(parseProfessionCosts(cursor.nextSectionOrEmpty()));
         return training;
+    }
+
+    /**
+     * Parses the "HABILIDADES" section into category grants, attaching each "  *  Skill..." line
+     * that follows to the category grant declared immediately above it (a line belongs to a skill,
+     * not a category, precisely when it contains a "*", exactly like the legacy parser).
+     */
+    private static List<TrainingCategoryGrant> parseCategories(List<String> sectionLines) {
+        final List<TrainingCategoryGrant> categories = new ArrayList<>();
+        TrainingCategoryGrant currentCategory = null;
+        for (final String rawLine : sectionLines) {
+            if (!rawLine.contains("*")) {
+                currentCategory = parseCategoryLine(rawLine);
+                categories.add(currentCategory);
+            } else {
+                if (currentCategory == null) {
+                    throw new IllegalStateException("Skill line without a preceding category: '" + rawLine + "'.");
+                }
+                currentCategory.getSkills().add(parseSkillLine(rawLine));
+            }
+        }
+        return categories;
+    }
+
+    /**
+     * Parses one category line: either {@code "Nombre\tRanks\tMin\tMax\tDistribute"} or
+     * {@code "{Cat1; Cat2}\tRanks\tMin\tMax\tDistribute"} (player chooses one of the listed
+     * categories).
+     */
+    private static TrainingCategoryGrant parseCategoryLine(String rawLine) {
+        final List<String> categoryOptions;
+        final String[] numberColumns;
+        if (rawLine.contains("{")) {
+            final String[] parts = rawLine.trim().split("}", 2);
+            categoryOptions = parseChoiceOptions(parts[0].substring(parts[0].indexOf('{') + 1));
+            numberColumns = onlyNonBlank(parts[1].split("\t"));
+        } else {
+            final String[] columns = rawLine.split("\t");
+            categoryOptions = List.of(columns[0].trim());
+            numberColumns = Arrays.copyOfRange(columns, 1, columns.length);
+        }
+
+        final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+        grant.setCategoryOptions(categoryOptions);
+        grant.setRanksGranted(Integer.valueOf(numberColumns[0].trim()));
+        grant.setMinSkills(Integer.valueOf(numberColumns[1].trim()));
+        grant.setMaxSkills(Integer.valueOf(numberColumns[2].trim()));
+        grant.setRanksToDistribute(Integer.valueOf(numberColumns[3].trim()));
+        return grant;
+    }
+
+    /**
+     * Parses one "  *  Skill..." line: either {@code "Nombre\tRanks"} or
+     * {@code "{Skill1; Skill2}\t-Ranks"} (player chooses one of the listed skills; the leading "-" is
+     * a purely cosmetic legacy marker for "choice" and is stripped).
+     */
+    private static TrainingSkillGrant parseSkillLine(String rawLine) {
+        final String withoutMarker = rawLine.replace("*", "").trim();
+        final List<String> skillOptions;
+        final String ranksColumn;
+        if (withoutMarker.contains("{")) {
+            final String[] parts = withoutMarker.split("}", 2);
+            skillOptions = parseChoiceOptions(parts[0].substring(parts[0].indexOf('{') + 1));
+            ranksColumn = parts[1];
+        } else {
+            final String[] columns = withoutMarker.split("\t");
+            skillOptions = List.of(columns[0].trim());
+            ranksColumn = columns.length > 1 ? columns[1] : "0";
+        }
+        final Integer ranks = Integer.valueOf(ranksColumn.replace("-", "").replace("\t", "").trim());
+        return new TrainingSkillGrant(skillOptions, ranks);
+    }
+
+    /** Splits a {@code "a; b"} or {@code "a, b"} choice list (without its surrounding braces) and trims each option. */
+    private static List<String> parseChoiceOptions(String content) {
+        final List<String> options = new ArrayList<>();
+        for (final String option : content.replace(";", ",").split(",")) {
+            if (!option.isBlank()) {
+                options.add(option.trim());
+            }
+        }
+        return options;
+    }
+
+    private static String[] onlyNonBlank(String[] tokens) {
+        return Arrays.stream(tokens).filter(token -> !token.isBlank()).toArray(String[]::new);
     }
 
     private static List<String> parseCommaList(List<String> sectionLines) {

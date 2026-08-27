@@ -2,18 +2,130 @@
 <adiestramientos>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>{Armas·2manos; Armas·Contundentes; Armas·Asta; Armas·Filo}	1	1	1	1
-Artes Marciales·Barridos	1	1	1	1
-Artes Marciales·Golpes	1	1	1	1
-Artes Marciales·Maniobras de Combate	0	1	1	2
-Atletismo·Gimnasia	4	1	2	4
-Autocontrol	2	1	2	2
-Desarrollo Físico	0	1	1	1
-  *  Desarrollo Físico	1
-Maniobras de Combate	0	1	2	2
-Subterfugio·Ataque	0	1	2	2
-Subterfugio·Sigilo	5	1	4	5
-Urbana	1	1	1	1</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armas·2manos</category>
+          <category>Armas·Contundentes</category>
+          <category>Armas·Asta</category>
+          <category>Armas·Filo</category>
+        </categoryOptions>
+        <choice>true</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Artes Marciales·Barridos</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Artes Marciales·Golpes</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Artes Marciales·Maniobras de Combate</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Atletismo·Gimnasia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>4</ranksGranted>
+        <ranksToDistribute>4</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Autocontrol</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Desarrollo Físico</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Desarrollo Físico</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Maniobras de Combate</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Subterfugio·Ataque</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Subterfugio·Sigilo</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>4</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>5</ranksGranted>
+        <ranksToDistribute>5</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Urbana</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+    </categories>
     <id>Ninja</id>
     <name>Ninja</name>
     <specialItems>
@@ -74,15 +186,100 @@ Urbana	1	1	1	1</categoriesRaw>
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>{Armas·2manos; Armas·Contundentes; Armas·Asta; Armas·Filo}	1	1	1	1
-Artes Marciales·Barridos	2	1	1	2
-Artes Marciales·Golpes	2	1	1	2
-Artes Marciales·Maniobras de Combate	0	1	1	2
-Autocontrol	2	1	2	2
-Conocimiento·General	2	1	2	2
-Conocimiento·Técnico	1	1	1	1
-Desarrollo Físico	0	1	1	1
-  *  Desarrollo Físico	1</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armas·2manos</category>
+          <category>Armas·Contundentes</category>
+          <category>Armas·Asta</category>
+          <category>Armas·Filo</category>
+        </categoryOptions>
+        <choice>true</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Artes Marciales·Barridos</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Artes Marciales·Golpes</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Artes Marciales·Maniobras de Combate</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Autocontrol</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·General</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·Técnico</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Desarrollo Físico</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Desarrollo Físico</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Sacerdote Guerrero</id>
     <name>Sacerdote Guerrero</name>
     <specialItems>

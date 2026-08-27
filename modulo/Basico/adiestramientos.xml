@@ -2,18 +2,113 @@
 <adiestramientos>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>Conocimiento·General	4	3	3	4
-  *  Conocimiento de la Fauna	2	-	-	-
-  *  Conocimiento de la Flora	1	-	-	-
-  *  Conocimiento Regional	1	-	-	-
-Exteriores·Animales	4	1	3	4
-Exteriores·Entorno	2	1	2	2
-Percepción·Búsqueda	2	2	2	2
-  *  Leer Huellas	1	-	-	-
-  *  Rastrear	1	-	-	-
-Subterfugio·Sigilo	2	2	2	2
-  *  Acechar	1	-	-	-
-  *  Esconderse	1	-	-	-</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·General</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>3</maxSkills>
+        <minSkills>3</minSkills>
+        <ranksGranted>4</ranksGranted>
+        <ranksToDistribute>4</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Conocimiento de la Fauna</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Conocimiento de la Flora</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Conocimiento Regional</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Exteriores·Animales</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>3</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>4</ranksGranted>
+        <ranksToDistribute>4</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Exteriores·Entorno</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción·Búsqueda</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Leer Huellas</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Rastrear</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Subterfugio·Sigilo</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Acechar</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Esconderse</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Amigo de las Bestias</id>
     <name>Amigo de las Bestias</name>
     <specialItems>
@@ -62,10 +157,48 @@ Subterfugio·Sigilo	2	2	2	2
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>Arte·Activo	3	1	1	3
-Atletismo·Gimnasia	1	1	1	1
-Comunicación	5	1	5	5
-Influencia	2	1	2	2</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Arte·Activo</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>3</ranksGranted>
+        <ranksToDistribute>3</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Atletismo·Gimnasia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Comunicación</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>5</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>5</ranksGranted>
+        <ranksToDistribute>5</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Influencia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+    </categories>
     <id>Artista</id>
     <name>Artista</name>
     <specialItems>
@@ -104,21 +237,157 @@ Influencia	2	1	2	2</categoriesRaw>
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>{Armas·2manos; Armas·Contundentes; Armas·Asta; Armas·Filo; Armas·Proyectiles; Armas·Artillería; Armas·Arrojadizas}	1	1	1	1
-Atletismo·Gimnasia	2	1	1	1
-  *  Trepar	1	-	-	-
-Atletismo·Resistencia	2	1	1	1
-  *  Nadar	1	-	-	-
-Desarrollo Físico	0	1	1	1
-  *  Desarrollo Físico	1	-	-	-
-Percepción de Poder	1	1	1	1
-  *  Sintonización	1	-	-	-
-Percepción·Búsqueda	2	1	1	1
-  *  Observación	1	-	-	-
-Percepción·Perspicacia	0	1	1	2
-  *  Alerta	2	-	-	-
-Técnica/Comercio·General	1	1	1	1
-  *  Primeros Auxilios	1	-	-	-</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armas·2manos</category>
+          <category>Armas·Contundentes</category>
+          <category>Armas·Asta</category>
+          <category>Armas·Filo</category>
+          <category>Armas·Proyectiles</category>
+          <category>Armas·Artillería</category>
+          <category>Armas·Arrojadizas</category>
+        </categoryOptions>
+        <choice>true</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Atletismo·Gimnasia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Trepar</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Atletismo·Resistencia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Nadar</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Desarrollo Físico</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Desarrollo Físico</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción de Poder</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Sintonización</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción·Búsqueda</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Observación</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción·Perspicacia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Alerta</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Técnica/Comercio·General</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Primeros Auxilios</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Aventurero</id>
     <name>Aventurero</name>
     <specialItems>
@@ -187,15 +456,97 @@ Técnica/Comercio·General	1	1	1	1
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>Armadura·Pesada	2	1	1	2
-  *  Coraza	2	-	-	-
-{Armas·2manos; Armas·Contundentes; Armas·Asta; Armas·Filo}	2	1	1	2
-Conocimiento·General	2	1	1	2
-  *  Heráldica	2	-	-	-
-Exteriores·Animales	1	1	1	2
-  *  Montar: Caballos	2
-Maniobras de Combate	0	2	2	3
-  *  Combate Montado	2	-	-	-</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armadura·Pesada</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Coraza</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armas·2manos</category>
+          <category>Armas·Contundentes</category>
+          <category>Armas·Asta</category>
+          <category>Armas·Filo</category>
+        </categoryOptions>
+        <choice>true</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·General</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Heráldica</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Exteriores·Animales</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Montar: Caballos</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Maniobras de Combate</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>3</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Combate Montado</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Caballero</id>
     <name>Caballero</name>
     <specialItems>
@@ -270,20 +621,134 @@ Maniobras de Combate	0	2	2	3
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>Armas·Proyectiles	1	1	1	1
-Conocimiento·General	3	2	2	3
-  *  Conocimiento de la Fauna	2	0	0	0
-  *  Conocimiento de la Flora	1	0	0	0
-Exteriores·Entorno	4	2	3	4
-  *  Cazar	2	0	0	0
-Oficios	0	1	1	1
-  *  Trabajar el Cuero	1	0	0	0
-Percepción·Búsqueda	4	2	2	4
-  *  Leer Huellas	2	0	0	0
-  *  Rastrear	2	0	0	0
-Subterfugio·Sigilo	2	2	2	2
-  *  Acechar	1	0	0	0
-  *  Esconderse	1	0	0	0</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armas·Proyectiles</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·General</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>3</ranksGranted>
+        <ranksToDistribute>3</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Conocimiento de la Fauna</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Conocimiento de la Flora</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Exteriores·Entorno</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>3</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>4</ranksGranted>
+        <ranksToDistribute>4</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Cazar</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Oficios</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Trabajar el Cuero</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción·Búsqueda</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>4</ranksGranted>
+        <ranksToDistribute>4</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Leer Huellas</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Rastrear</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Subterfugio·Sigilo</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Acechar</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Esconderse</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Cazador</id>
     <name>Cazador</name>
     <specialItems>
@@ -328,15 +793,98 @@ Subterfugio·Sigilo	2	2	2	2
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>{Armas·2manos; Armas·Contundentes; Armas·Asta; Armas·Filo; Armas·Proyectiles; Armas·Artillería; Armas·Arrojadizas}	1	1	1	1
-Atletismo·Gimnasia	2	1	2	2
-  *  Trepar	1	0	0	0
-Conocimiento·General	2	2	2	2
-  *  Conocimiento Cultural	1	0	0	0
-  *  Heráldica	1	0	0	0
-Conocimiento·Técnico	2	1	1	2
-  *  Conocimiento de las Cerraduras	2	0	0	0
-Subterfugio·Mecánica	2	1	2	2</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armas·2manos</category>
+          <category>Armas·Contundentes</category>
+          <category>Armas·Asta</category>
+          <category>Armas·Filo</category>
+          <category>Armas·Proyectiles</category>
+          <category>Armas·Artillería</category>
+          <category>Armas·Arrojadizas</category>
+        </categoryOptions>
+        <choice>true</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Atletismo·Gimnasia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Trepar</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·General</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Conocimiento Cultural</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Heráldica</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·Técnico</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Conocimiento de las Cerraduras</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Subterfugio·Mecánica</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+    </categories>
     <id>Desvalijador</id>
     <name>Desvalijador</name>
     <specialItems>
@@ -379,12 +927,60 @@ Subterfugio·Mecánica	2	1	2	2</categoriesRaw>
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>Técnica/Comercio·General	0	2	2	2
-  *  Primeros Auxilios	1
-  *  Usar Hierbas	1
-Técnica/Comercio·Profesional	0	2	2	6
-  *  Cuidados Médicos	3
-  *  Diagnosis	3</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Técnica/Comercio·General</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Primeros Auxilios</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Usar Hierbas</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Técnica/Comercio·Profesional</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>6</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>3</ranksToDistribute>
+            <skillOptions>
+              <skill>Cuidados Médicos</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>3</ranksToDistribute>
+            <skillOptions>
+              <skill>Diagnosis</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Doctor</id>
     <name>Doctor</name>
     <specialItems>
@@ -425,10 +1021,48 @@ Técnica/Comercio·Profesional	0	2	2	6
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>Conocimiento·General	6	1	3	6
-Conocimiento·Mágico	3	1	2	3
-Conocimiento·Oscuro	1	1	1	1
-Conocimiento·Técnico	1	1	1	1</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·General</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>3</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>6</ranksGranted>
+        <ranksToDistribute>6</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·Mágico</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>3</ranksGranted>
+        <ranksToDistribute>3</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·Oscuro</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·Técnico</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+    </categories>
     <id>Erudito</id>
     <name>Erudito</name>
     <specialItems>
@@ -462,13 +1096,77 @@ Conocimiento·Técnico	1	1	1	1</categoriesRaw>
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>{Armas·2manos; Armas·Contundentes; Armas·Asta; Armas·Filo; Armas·Proyectiles; Armas·Artillería; Armas·Arrojadizas}	1	1	1	1
-Exteriores·Animales	2	1	2	2
-Exteriores·Entorno	3	1	3	3
-Percepción·Búsqueda	4	3	3	4
-  *  Leer Huellas	1	0	0	0
-  *  Observación	2	0	0	0
-  *  Rastrear	1	0	0	0</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armas·2manos</category>
+          <category>Armas·Contundentes</category>
+          <category>Armas·Asta</category>
+          <category>Armas·Filo</category>
+          <category>Armas·Proyectiles</category>
+          <category>Armas·Artillería</category>
+          <category>Armas·Arrojadizas</category>
+        </categoryOptions>
+        <choice>true</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Exteriores·Animales</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Exteriores·Entorno</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>3</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>3</ranksGranted>
+        <ranksToDistribute>3</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción·Búsqueda</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>3</maxSkills>
+        <minSkills>3</minSkills>
+        <ranksGranted>4</ranksGranted>
+        <ranksToDistribute>4</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Leer Huellas</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Observación</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Rastrear</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Explorador</id>
     <name>Explorador</name>
     <specialItems>
@@ -499,17 +1197,119 @@ Percepción·Búsqueda	4	3	3	4
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>{Armas·2manos; Armas·Contundentes; Armas·Asta; Armas·Filo; Armas·Proyectiles; Armas·Artillería; Armas·Arrojadizas}	2	1	1	1
-Conocimiento·General	1	1	1	1
-  *  Heráldica	1	0	0	0
-Desarrollo Físico	0	1	1	1
-  *  Desarrollo Físico	1	0	0	0
-Percepción·Búsqueda	1	1	1	1
-  *  Observación	1	0	0	0
-Técnica/Comercio·General	1	1	1	1
-  *  Primeros Auxilios	1	0	0	0
-Urbana	1	1	1	1
-  *  Instinto Urbano	1	0	0	0</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armas·2manos</category>
+          <category>Armas·Contundentes</category>
+          <category>Armas·Asta</category>
+          <category>Armas·Filo</category>
+          <category>Armas·Proyectiles</category>
+          <category>Armas·Artillería</category>
+          <category>Armas·Arrojadizas</category>
+        </categoryOptions>
+        <choice>true</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·General</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Heráldica</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Desarrollo Físico</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Desarrollo Físico</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción·Búsqueda</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Observación</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Técnica/Comercio·General</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Primeros Auxilios</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Urbana</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Instinto Urbano</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Guardia</id>
     <name>Guardia</name>
     <specialItems>
@@ -550,14 +1350,84 @@ Urbana	1	1	1	1
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>Conocimiento·General	2	1	1	2
-  *  Conocimiento de la Flora	2	0	0	0
-Exteriores·Entorno	4	1	2	4
-  *  Forrajear	3	0	0	0
-Oficios	0	1	1	2
-  *  Horticultura	2	0	0	0
-Técnica/Comercio·General	0	1	1	2
-  *  Usar Hierbas	2	0	0	0</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·General</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Conocimiento de la Flora</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Exteriores·Entorno</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>4</ranksGranted>
+        <ranksToDistribute>4</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>3</ranksToDistribute>
+            <skillOptions>
+              <skill>Forrajear</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Oficios</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Horticultura</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Técnica/Comercio·General</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Usar Hierbas</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Herbolario</id>
     <name>Herbolario</name>
     <specialItems>
@@ -618,12 +1488,64 @@ Técnica/Comercio·General	0	1	1	2
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>Conocimiento·Mágico	2	1	1	2
-Conocimiento·Técnico	1	1	1	1
-Listas Básicas de Hechizos	0	1	3	3
-Percepción de Poder	2	2	2	2
-  *  Leer Runas	1	0	0	0
-  *  Sintonización	1	0	0	0</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·Mágico</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·Técnico</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Listas Básicas de Hechizos</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>3</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>3</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción de Poder</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Leer Runas</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Sintonización</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Mago Principiante</id>
     <name>Mago Principiante</name>
     <specialItems>
@@ -660,11 +1582,56 @@ Percepción de Poder	2	2	2	2
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>Ciencia/Analítica·Básica	1	1	1	1
-  *  Matemáticas Básicas	1
-Comunicación	3	1	3	3
-Técnica/Comercio·Vocacional	0	2	2	3
-  *  Tasar	2	</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Ciencia/Analítica·Básica</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Matemáticas Básicas</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Comunicación</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>3</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>3</ranksGranted>
+        <ranksToDistribute>3</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Técnica/Comercio·Vocacional</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>3</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Tasar</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Mercader</id>
     <name>Mercader</name>
     <specialItems>
@@ -701,14 +1668,88 @@ Técnica/Comercio·Vocacional	0	2	2	3
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>Armadura·Ligera	2	1	1	2
-{Armas·2manos; Armas·Contundentes; Armas·Asta; Armas·Filo}	2	1	1	2
-Conocimiento·General	1	1	1	1
-  *  Heráldica	1	0	0	0
-Desarrollo Físico	0	1	1	2
-  *  Desarrollo Físico	2	0	0	0
-Técnica/Comercio·Vocacional	0	1	1	1
-  *  Táctica	1	0	0	0</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armadura·Ligera</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armas·2manos</category>
+          <category>Armas·Contundentes</category>
+          <category>Armas·Asta</category>
+          <category>Armas·Filo</category>
+        </categoryOptions>
+        <choice>true</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·General</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Heráldica</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Desarrollo Físico</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Desarrollo Físico</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Técnica/Comercio·Vocacional</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Táctica</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Soldado</id>
     <name>Soldado</name>
     <specialItems>
@@ -777,15 +1818,96 @@ Técnica/Comercio·Vocacional	0	1	1	1
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>Atletismo·Gimnasia	1	1	1	1
-  *  Trepar	1
-Atletismo·Resistencia	1	1	1	1
-  *  Nadar	1
-Exteriores·Animales	1	1	1	1
-  *  {Montar: Lobos; Montar: Caballos; Montar: Osos}	1
-Exteriores·Entorno	1	1	1	1
-Percepción·Búsqueda	1	1	1	1
-  *  Observación	1</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Atletismo·Gimnasia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Trepar</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Atletismo·Resistencia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Nadar</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Exteriores·Animales</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>true</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Montar: Lobos</skill>
+              <skill>Montar: Caballos</skill>
+              <skill>Montar: Osos</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Exteriores·Entorno</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción·Búsqueda</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Observación</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Viajero</id>
     <name>Viajero</name>
     <specialItems>

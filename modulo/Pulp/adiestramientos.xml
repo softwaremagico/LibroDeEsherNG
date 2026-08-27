@@ -2,16 +2,102 @@
 <adiestramientos>
   <adiestramiento>
     <availableToEveryRace>false</availableToEveryRace>
-    <categoriesRaw>Comunicación	2	1	2	2
-Influencia	2	2	2	4
-  *  Liderazgo	2
-  *  Oratoria	2
-Conocimiento·General	4	1	1	8
-  *  Religión	8
-Conocimiento·Mágico	1	1	1	1
-Conocimiento·Oscuro	2	1	1	2
-Percepción de Poder	0	1	1	1
-  *  Adivinación	1</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Comunicación</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Influencia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>4</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Liderazgo</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Oratoria</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·General</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>4</ranksGranted>
+        <ranksToDistribute>8</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>8</ranksToDistribute>
+            <skillOptions>
+              <skill>Religión</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·Mágico</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·Oscuro</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción de Poder</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Adivinación</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Clero</id>
     <name>Clero</name>
     <limitedRaces>
@@ -55,15 +141,94 @@ Percepción de Poder	0	1	1	1
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>false</availableToEveryRace>
-    <categoriesRaw>Percepción·Sentidos	2	2	2	3
-  *  Percepción del Entorno: Ciudades	2	-	-	-
-  *  Sentido del Tiempo	1	-	-	-
-Comunicación	3	2	2	6
-Oficios	0	1	1	2
-Influencia	4	1	4	4
-Conocimiento·Técnico	2	1	1	2
-Técnica/Comercio·Profesional	0	1	4	4
-Urbana	2	1	2	2</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción·Sentidos</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>3</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Percepción del Entorno: Ciudades</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Sentido del Tiempo</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Comunicación</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>3</ranksGranted>
+        <ranksToDistribute>6</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Oficios</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Influencia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>4</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>4</ranksGranted>
+        <ranksToDistribute>4</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Conocimiento·Técnico</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Técnica/Comercio·Profesional</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>4</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>4</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Urbana</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+    </categories>
     <id>Emprendedor</id>
     <name>Emprendedor</name>
     <limitedRaces>
@@ -103,14 +268,87 @@ Urbana	2	1	2	2</categoriesRaw>
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>false</availableToEveryRace>
-    <categoriesRaw>Arte·Activo	1	1	1	1
-Arte·Pasivo	1	1	1	1
-Percepción·Búsqueda	2	1	2	2
-Influencia	4	2	3	6
-  *  Seducción	4
-Subterfugio·Mecánica	1	1	1	1
-Subterfugio·Sigilo	2	1	2	2
-Urbana	2	1	2	2</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Arte·Activo</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Arte·Pasivo</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción·Búsqueda</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Influencia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>3</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>4</ranksGranted>
+        <ranksToDistribute>6</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>4</ranksToDistribute>
+            <skillOptions>
+              <skill>Seducción</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Subterfugio·Mecánica</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Subterfugio·Sigilo</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Urbana</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+    </categories>
     <id>Femme Fatale</id>
     <name>Femme Fatale</name>
     <limitedRaces>
@@ -146,15 +384,104 @@ Urbana	2	1	2	2</categoriesRaw>
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>false</availableToEveryRace>
-    <categoriesRaw>{Armas·2manos; Armas·Contundentes; Armas·Asta; Armas·Filo; Armas·Proyectiles; Armas·Artillería; Armas·Arrojadizas}	1	1	1	1
-{Armas·Fuego 1mano; Armas·Fuego 2manos}	1	1	1	1
-Maniobras de Combate	0	1	1	1
-Influencia	3	1	3	3
-Ataques Especiales	0	1	1	1
-  *  Pelea	1	-	-	-
-Subterfugio·Mecánica	1	1	1	1
-Subterfugio·Sigilo	1	1	1	1
-Urbana	2	1	2	2</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armas·2manos</category>
+          <category>Armas·Contundentes</category>
+          <category>Armas·Asta</category>
+          <category>Armas·Filo</category>
+          <category>Armas·Proyectiles</category>
+          <category>Armas·Artillería</category>
+          <category>Armas·Arrojadizas</category>
+        </categoryOptions>
+        <choice>true</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armas·Fuego 1mano</category>
+          <category>Armas·Fuego 2manos</category>
+        </categoryOptions>
+        <choice>true</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Maniobras de Combate</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Influencia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>3</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>3</ranksGranted>
+        <ranksToDistribute>3</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Ataques Especiales</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Pelea</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Subterfugio·Mecánica</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Subterfugio·Sigilo</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Urbana</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+    </categories>
     <id>Gangster</id>
     <name>Gangster</name>
     <limitedRaces>
@@ -194,27 +521,210 @@ Urbana	2	1	2	2</categoriesRaw>
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>false</availableToEveryRace>
-    <categoriesRaw>{Armas·Fuego 1mano; Armas·Fuego 2manos}	2	1	1	2
-Armadura·Ligera	1	1	1	1
-  *  {Armadura Tipo I; Armadura Tipo II}	1	-	-	-
-Percepción·Perspicacia	0	1	1	1
-Percepción·Búsqueda	2	1	2	2
-Percepción·Sentidos	1	1	1	1
-  *  Percepción del Entorno: Ciudades	1
-Desarrollo Físico	0	1	1	1
-  *  Desarrollo Físico	1	-	-	-
-Maniobras de Combate	0	1	1	1
-Influencia	0	2	2	2
-  *  Interrogar	1	-	-	-
-  *  Liderazgo	1	-	-	-
-Ciencia/Analítica·Especializada	0	1	1	1
-  *  Criminología	1	-	-	-
-Ataques Especiales	0	1	1	1
-Técnica/Comercio·Profesional	0	1	1	1
-  *  Conducir (Vehículo Mecánico)	1
-Técnica/Comercio·Vocacional	0	1	1	1
-  *  Administración	1	-	-	-
-Urbana	2	1	2	2</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armas·Fuego 1mano</category>
+          <category>Armas·Fuego 2manos</category>
+        </categoryOptions>
+        <choice>true</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armadura·Ligera</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>true</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Armadura Tipo I</skill>
+              <skill>Armadura Tipo II</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción·Perspicacia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción·Búsqueda</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción·Sentidos</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Percepción del Entorno: Ciudades</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Desarrollo Físico</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Desarrollo Físico</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Maniobras de Combate</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Influencia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Interrogar</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Liderazgo</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Ciencia/Analítica·Especializada</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Criminología</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Ataques Especiales</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Técnica/Comercio·Profesional</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Conducir (Vehículo Mecánico)</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Técnica/Comercio·Vocacional</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Administración</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Urbana</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+    </categories>
     <id>Hombre del Gobierno</id>
     <name>Hombre del Gobierno</name>
     <limitedRaces>

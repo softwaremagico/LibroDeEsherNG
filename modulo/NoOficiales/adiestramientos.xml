@@ -2,19 +2,132 @@
 <adiestramientos>
   <adiestramiento>
     <availableToEveryRace>false</availableToEveryRace>
-    <categoriesRaw>Armas·Proyectiles	2	1	1	2
-{Armas·Contundentes; Armas·Asta; Armas·Filo; Armas·2manos}	1	1	1	1
-Artes Marciales·Barridos	1	1	1	1
-Atletismo·Gimnasia	4	2	2	4
-  *  Acrobacias	2
-  *  Trepar	2
-Exteriores·Animales	1	1	1	1
-  *  Montar: Caballos	1
-Exteriores·Entorno	1	1	1	1
-Percepción·Búsqueda	1	1	2	2
-Subterfugio·Sigilo	2	2	2	2
-  *  Acechar	1
-  *  Esconderse	1</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armas·Proyectiles</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Armas·Contundentes</category>
+          <category>Armas·Asta</category>
+          <category>Armas·Filo</category>
+          <category>Armas·2manos</category>
+        </categoryOptions>
+        <choice>true</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Artes Marciales·Barridos</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Atletismo·Gimnasia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>4</ranksGranted>
+        <ranksToDistribute>4</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Acrobacias</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Trepar</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Exteriores·Animales</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Montar: Caballos</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Exteriores·Entorno</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción·Búsqueda</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Subterfugio·Sigilo</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Acechar</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Esconderse</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Amazona</id>
     <name>Amazona</name>
     <limitedRaces>
@@ -72,8 +185,27 @@ Subterfugio·Sigilo	2	2	2	2
   </adiestramiento>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>Oficios	0	1	1	5
-  *  Barrer	5	-	-	-</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Oficios</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>5</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>5</ranksToDistribute>
+            <skillOptions>
+              <skill>Barrer</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Barrendero</id>
     <name>Barrendero</name>
     <professionCosts>

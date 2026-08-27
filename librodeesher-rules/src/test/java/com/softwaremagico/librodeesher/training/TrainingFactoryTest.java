@@ -25,9 +25,36 @@ public class TrainingFactoryTest {
         Assert.assertEquals(soldier.getTrainingTimeInMonths(), Integer.valueOf(26));
         Assert.assertTrue(soldier.isAvailableToEveryRace());
         Assert.assertFalse(soldier.getSpecialItems().isEmpty());
-        Assert.assertTrue(soldier.getCategoriesRaw().contains("Armadura"));
+        Assert.assertFalse(soldier.getCategories().isEmpty());
         Assert.assertTrue(soldier.getCharacteristicUpgrades().isEmpty());
         Assert.assertTrue(soldier.getRequirements().isEmpty());
+    }
+
+    @Test
+    public void soldierTrainingGrantsLightArmorCategoryRanks() throws InvalidXmlElementException {
+        final Training soldier = TrainingFactory.getInstance().getElement("Soldado");
+
+        final TrainingCategoryGrant lightArmor = soldier.getCategories().stream()
+                .filter(grant -> grant.getCategoryOptions().contains("Armadura·Ligera"))
+                .findFirst().orElseThrow();
+
+        Assert.assertFalse(lightArmor.isChoice());
+        Assert.assertEquals(lightArmor.getRanksGranted(), Integer.valueOf(2));
+        Assert.assertEquals(lightArmor.getMinSkills(), Integer.valueOf(1));
+        Assert.assertEquals(lightArmor.getMaxSkills(), Integer.valueOf(1));
+        Assert.assertEquals(lightArmor.getRanksToDistribute(), Integer.valueOf(2));
+    }
+
+    @Test
+    public void soldierTrainingOffersAChoiceOfWeaponCategories() throws InvalidXmlElementException {
+        final Training soldier = TrainingFactory.getInstance().getElement("Soldado");
+
+        final TrainingCategoryGrant weaponChoice = soldier.getCategories().stream()
+                .filter(TrainingCategoryGrant::isChoice)
+                .findFirst().orElseThrow();
+
+        Assert.assertTrue(weaponChoice.getCategoryOptions().size() > 1);
+        Assert.assertTrue(weaponChoice.getCategoryOptions().stream().allMatch(option -> option.startsWith("Armas·")));
     }
 
     @Test(expectedExceptions = InvalidXmlElementException.class)

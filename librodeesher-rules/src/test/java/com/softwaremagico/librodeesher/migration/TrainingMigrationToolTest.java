@@ -2,6 +2,8 @@ package com.softwaremagico.librodeesher.migration;
 
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
 import com.softwaremagico.librodeesher.training.Training;
+import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
+import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
 import com.softwaremagico.librodeesher.training.TrainingSpecialItem;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,9 +16,9 @@ import java.util.List;
 
 /**
  * Verifies {@link TrainingMigrationTool} against a fixture file covering every section of the legacy
- * format: training time, race restriction, special items, the (preserved verbatim) category/skill
- * section, a characteristic upgrade choice group, a professional requirement and the four skill
- * sections.
+ * format: training time, race restriction, special items, category/skill ranks granted (including a
+ * choice of categories and a choice of skills), a characteristic upgrade choice group, a professional
+ * requirement and the four skill sections.
  */
 @Test(groups = "migration")
 public class TrainingMigrationToolTest {
@@ -45,6 +47,9 @@ public class TrainingMigrationToolTest {
                     "#HABILIDADES",
                     "####################################",
                     "Rastrear\t2\t1\t1\t2",
+                    "  *  Rastrear\t2",
+                    "{Armas·2manos; Armas·Filo}\t1\t1\t1\t3",
+                    "  *  {Espada; Hacha}\t-3",
                     "",
                     "# AUMENTOS CARACTERÍSTICAS",
                     "####################################",
@@ -94,7 +99,29 @@ public class TrainingMigrationToolTest {
             Assert.assertNull(friends.getBonus());
             Assert.assertNull(friends.getSkillName());
 
-            Assert.assertTrue(explorador.getCategoriesRaw().contains("Rastrear"));
+            Assert.assertEquals(explorador.getCategories().size(), 2);
+            final TrainingCategoryGrant trackingCategory = explorador.getCategories().get(0);
+            Assert.assertEquals(trackingCategory.getCategoryOptions(), List.of("Rastrear"));
+            Assert.assertFalse(trackingCategory.isChoice());
+            Assert.assertEquals(trackingCategory.getRanksGranted(), Integer.valueOf(2));
+            Assert.assertEquals(trackingCategory.getMinSkills(), Integer.valueOf(1));
+            Assert.assertEquals(trackingCategory.getMaxSkills(), Integer.valueOf(1));
+            Assert.assertEquals(trackingCategory.getRanksToDistribute(), Integer.valueOf(2));
+            Assert.assertEquals(trackingCategory.getSkills().size(), 1);
+            final TrainingSkillGrant trackingSkill = trackingCategory.getSkills().get(0);
+            Assert.assertEquals(trackingSkill.getSkillOptions(), List.of("Rastrear"));
+            Assert.assertFalse(trackingSkill.isChoice());
+            Assert.assertEquals(trackingSkill.getRanksToDistribute(), Integer.valueOf(2));
+
+            final TrainingCategoryGrant weaponCategory = explorador.getCategories().get(1);
+            Assert.assertEquals(weaponCategory.getCategoryOptions(), List.of("Armas·2manos", "Armas·Filo"));
+            Assert.assertTrue(weaponCategory.isChoice());
+            Assert.assertEquals(weaponCategory.getRanksGranted(), Integer.valueOf(1));
+            Assert.assertEquals(weaponCategory.getRanksToDistribute(), Integer.valueOf(3));
+            final TrainingSkillGrant weaponSkillChoice = weaponCategory.getSkills().get(0);
+            Assert.assertEquals(weaponSkillChoice.getSkillOptions(), List.of("Espada", "Hacha"));
+            Assert.assertTrue(weaponSkillChoice.isChoice());
+            Assert.assertEquals(weaponSkillChoice.getRanksToDistribute(), Integer.valueOf(3));
 
             Assert.assertEquals(explorador.getCharacteristicUpgrades().size(), 1);
             Assert.assertEquals(explorador.getCharacteristicUpgrades().get(0).getOptions(), List.of("Ag", "Ra"));

@@ -20,7 +20,7 @@ import java.util.List;
  * lists spell list development costs by character level range (DESARROLLO DE HECHIZOS); these are
  * significant enough scope on their own (and depend on {@code Category}/{@code Skill}/magic-list
  * cross-references) that they are preserved verbatim for now, the same trade-off already applied to
- * {@code Perk#getBonusesRaw()} and {@code Training#getCategoriesRaw()}.</p>
+ * {@code Perk#getBonusesRaw()}.</p>
  */
 public class Profession extends Element {
 

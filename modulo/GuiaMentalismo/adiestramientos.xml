@@ -2,18 +2,120 @@
 <adiestramientos>
   <adiestramiento>
     <availableToEveryRace>true</availableToEveryRace>
-    <categoriesRaw>Arte·Activo	2	1	2	2
-Listas Hechizos de Adiestramiento	0	2	2	4
-  *  Besos del Houri	2
-  *  Engaños del Houri	2
-Influencia	3	2	2	4
-  *  Seducción	3
-Percepción·Búsqueda	1	1	1	1
-  *  Detectar Mentiras	1
-Subterfugio·Mecánica	1	1	1	3
-  *  Disfrazarse	3
-Urbana	1	1	1	1
-  *  Callejeo	1</categoriesRaw>
+    <categories>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Arte·Activo</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>2</ranksGranted>
+        <ranksToDistribute>2</ranksToDistribute>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Listas Hechizos de Adiestramiento</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>0</ranksGranted>
+        <ranksToDistribute>4</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Besos del Houri</skill>
+            </skillOptions>
+          </skillGrant>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>2</ranksToDistribute>
+            <skillOptions>
+              <skill>Engaños del Houri</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Influencia</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>2</maxSkills>
+        <minSkills>2</minSkills>
+        <ranksGranted>3</ranksGranted>
+        <ranksToDistribute>4</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>3</ranksToDistribute>
+            <skillOptions>
+              <skill>Seducción</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Percepción·Búsqueda</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Detectar Mentiras</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Subterfugio·Mecánica</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>3</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>3</ranksToDistribute>
+            <skillOptions>
+              <skill>Disfrazarse</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+      <categoryGrant>
+        <categoryOptions>
+          <category>Urbana</category>
+        </categoryOptions>
+        <choice>false</choice>
+        <maxSkills>1</maxSkills>
+        <minSkills>1</minSkills>
+        <ranksGranted>1</ranksGranted>
+        <ranksToDistribute>1</ranksToDistribute>
+        <skills>
+          <skillGrant>
+            <choice>false</choice>
+            <ranksToDistribute>1</ranksToDistribute>
+            <skillOptions>
+              <skill>Callejeo</skill>
+            </skillOptions>
+          </skillGrant>
+        </skills>
+      </categoryGrant>
+    </categories>
     <id>Houri</id>
     <name>Houri</name>
     <specialItems>

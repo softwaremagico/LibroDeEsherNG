@@ -13,14 +13,10 @@ import java.util.List;
  * {@code adiestramientos.xml}.
  *
  * <p>The legacy {@code Training} constructor parsed a fixed sequence of 9 sections from its text
- * file: training time, race restriction, special starting items, category/skill ranks granted,
- * characteristic upgrade choices, professional requirements, four kinds of extra skills
- * (life/common/professional/restricted), and an (in practice always empty in the shipped data)
- * per-profession cost override. Every section except "category/skill ranks granted" is modeled as
- * plain data here; that one section's syntax (nested choose-groups of categories that themselves
- * contain choose-groups of skills, with per-tier rank thresholds) is significant enough scope on its
- * own that it is preserved verbatim via {@link #getCategoriesRaw()} and left as dedicated future
- * work, the same trade-off already applied to {@code Perk#getBonusesRaw()}.</p>
+ * file: training time, race restriction, special starting items, category/skill ranks granted
+ * ({@link #getCategories()}), characteristic upgrade choices, professional requirements, four kinds
+ * of extra skills (life/common/professional/restricted), and an (in practice always empty in the
+ * shipped data) per-profession cost override.</p>
  */
 public class Training extends Element {
 
@@ -35,9 +31,10 @@ public class Training extends Element {
     @JacksonXmlProperty(localName = "specialItem")
     private List<TrainingSpecialItem> specialItems;
 
-    /** Verbatim "HABILIDADES" (category/skill ranks) section; see the class javadoc. */
-    @JsonProperty("categoriesRaw")
-    private String categoriesRaw;
+    /** Category/skill ranks granted by this training; see {@link TrainingCategoryGrant}. */
+    @JacksonXmlElementWrapper(localName = "categories")
+    @JacksonXmlProperty(localName = "categoryGrant")
+    private List<TrainingCategoryGrant> categories;
 
     @JacksonXmlElementWrapper(localName = "characteristicUpgrades")
     @JacksonXmlProperty(localName = "upgradeChoice")
@@ -104,12 +101,12 @@ public class Training extends Element {
         this.specialItems = specialItems;
     }
 
-    public String getCategoriesRaw() {
-        return categoriesRaw;
+    public List<TrainingCategoryGrant> getCategories() {
+        return categories == null ? Collections.emptyList() : categories;
     }
 
-    public void setCategoriesRaw(String categoriesRaw) {
-        this.categoriesRaw = categoriesRaw;
+    public void setCategories(List<TrainingCategoryGrant> categories) {
+        this.categories = categories;
     }
 
     public List<ChoiceGroup> getCharacteristicUpgrades() {
