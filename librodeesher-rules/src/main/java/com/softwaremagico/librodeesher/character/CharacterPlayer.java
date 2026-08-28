@@ -398,39 +398,46 @@ public class CharacterPlayer {
 	 * for {@link com.softwaremagico.librodeesher.category.CategoryType#STANDARD}
 	 * categories) plus its flat bonus (only non-zero for
 	 * {@link com.softwaremagico.librodeesher.category.CategoryType#PD}) plus the
-	 * flat bonus the selected profession grants this category, if any, plus every
-	 * selected perk's flat bonus to it (see {@link #getPerkCategoryBonus(String)})
+	 * flat bonus the selected profession grants this category, if any, plus the
+	 * background points spent on it (see {@link Background#getCategoryBonus(String)}),
+	 * plus every selected perk's flat and {@link PerkBonusKind#CONDITIONAL} bonus to
+	 * it (see {@link #getPerkCategoryBonus(String)}/{@link
+	 * #getPerkCategoryConditionalBonus(String)} - matching the legacy {@code
+	 * getSimpleBonus(Category)} exactly, a conditional bonus is included in the
+	 * total unconditionally: consuming code/the player is expected to know when
+	 * the condition described in the perk's free-text description applies)
 	 * plus its per-rank perk bonus (see {@link #getPerkCategoryRankBonus(String)})
 	 * times the ranks bought in it.
 	 *
 	 * <p>
-	 * Race/background bonuses are future work. A perk's
-	 * {@link PerkBonusKind#CONDITIONAL} bonus (see
-	 * {@link #getPerkCategoryConditionalBonus(String)}) is deliberately not
-	 * included: it only applies under some condition described in the perk's
-	 * free-text description, which is not modeled.
+	 * Race bonuses are future work (no shipped race actually grants one to a real
+	 * category, see {@code RaceMigrationTool#parseSpecials}, so there is nothing to
+	 * wire yet in practice).
 	 * </p>
 	 */
 	public Integer getCategoryDevelopmentBonus(Category category) throws InvalidXmlElementException {
 		final int ranks = this.getCategoryTotalRanks(category.getId());
 		return category.getCategoryRankBonus(ranks) + category.getFixedBonus()
-				+ this.getProfessionBonus(category.getId()) + this.getPerkCategoryBonus(category.getId())
+				+ this.getProfessionBonus(category.getId()) + this.background.getCategoryBonus(category.getId())
+				+ this.getPerkCategoryBonus(category.getId()) + this.getPerkCategoryConditionalBonus(category.getId())
 				+ this.getPerkCategoryRankBonus(category.getId()) * ranks;
 	}
 
 	/**
 	 * A skill's bonus from its own ranks, using its category's progression table,
 	 * plus the flat bonus the selected profession grants this skill, if any, plus
-	 * every selected perk's flat bonus to it (see {@link #getPerkSkillBonus(String)})
-	 * plus its per-rank perk bonus (see {@link #getPerkSkillRankBonus(String)})
-	 * times its "real ranks" (see {@link #getSkillRealRanks(Skill)}), matching the
-	 * legacy {@code getPerkBonus(Skill)} exactly.
+	 * the background points spent on it (see {@link Background#getSkillBonus(String)}),
+	 * plus every selected perk's flat and {@link PerkBonusKind#CONDITIONAL} bonus to
+	 * it (see {@link #getPerkSkillBonus(String)}/{@link
+	 * #getPerkSkillConditionalBonus(String)}, included unconditionally, same as
+	 * {@link #getCategoryDevelopmentBonus}) plus its per-rank perk bonus (see
+	 * {@link #getPerkSkillRankBonus(String)}) times its "real ranks" (see
+	 * {@link #getSkillRealRanks(Skill)}), matching the legacy
+	 * {@code getSimpleBonus(Skill)} exactly.
 	 *
 	 * <p>
-	 * Race/background bonuses and the characteristic bonus are future work. A
-	 * perk's {@link PerkBonusKind#CONDITIONAL} bonus (see
-	 * {@link #getPerkSkillConditionalBonus(String)}) is deliberately not
-	 * included, for the same reason as {@link #getCategoryDevelopmentBonus}.
+	 * The race bonus and the characteristic bonus are future work (no shipped
+	 * race actually grants a bonus to a real skill either, same as categories).
 	 * </p>
 	 */
 	public Integer getSkillDevelopmentBonus(Category category, String skillId) throws InvalidXmlElementException {
@@ -439,7 +446,8 @@ public class CharacterPlayer {
 				? 0
 				: perkSkillRankBonus * this.getSkillRealRanks(RulesCatalog.getInstance().getSkill(skillId));
 		return category.getSkillRankBonus(this.getSkillTotalRanks(skillId)) + this.getProfessionBonus(skillId)
-				+ this.getPerkSkillBonus(skillId) + perkRankTerm;
+				+ this.background.getSkillBonus(skillId) + this.getPerkSkillBonus(skillId)
+				+ this.getPerkSkillConditionalBonus(skillId) + perkRankTerm;
 	}
 
 	/**

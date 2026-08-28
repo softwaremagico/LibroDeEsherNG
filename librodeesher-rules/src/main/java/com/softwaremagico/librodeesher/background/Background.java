@@ -12,12 +12,14 @@ import java.util.Map;
 
 /**
  * A character's background: a handful of "background points" the player can spend before play
- * starts on a few extra category/skill ranks, characteristic rolls and history languages, plus the
- * languages picked from the race's optional selection.
+ * starts on a few extra category/skill ranks, characteristic rolls and history languages.
  *
  * <p>Categories and skills are referenced by their plain id (String, the same id used by {@code
  * CategoryFactory}/{@code SkillFactory}), instead of embedding the rule objects themselves; see
- * {@code LevelUp} for why.</p>
+ * {@code LevelUp} for why. The race's optional language slots this background spends points on are
+ * tracked by {@code CharacterPlayer}'s decision layer instead of here (see {@code
+ * CharacterPlayer#assignOptionalBackgroundLanguage}), unlike the legacy {@code
+ * Background#optionalRaceLanguageSelection}.</p>
  */
 public class Background {
 
@@ -30,14 +32,8 @@ public class Background {
     private List<String> skillIds = new ArrayList<>();
     @JsonProperty("characteristicUpdates")
     private List<CharacteristicRoll> characteristicUpdates = new ArrayList<>();
-    @JsonProperty("optionalRaceLanguageSelection")
-    private List<String> optionalRaceLanguageSelection = new ArrayList<>();
     @JsonProperty("languageRanks")
     private Map<String, Integer> languageRanks = new HashMap<>();
-
-    public void resetLanguageOptions() {
-        optionalRaceLanguageSelection.clear();
-    }
 
     public void setSkillPoint(String skillId, boolean selected) {
         if (selected) {
@@ -143,10 +139,6 @@ public class Background {
 
     public int getLanguagesPointCost() {
         return (int) Math.ceil(getLanguagesTotalRanksAdded() / 20f);
-    }
-
-    public List<String> getOptionalRaceLanguageSelection() {
-        return optionalRaceLanguageSelection;
     }
 
     public Map<String, Integer> getLanguageRanks() {

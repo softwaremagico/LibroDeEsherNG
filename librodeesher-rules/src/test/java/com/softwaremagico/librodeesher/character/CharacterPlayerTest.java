@@ -875,11 +875,34 @@ public class CharacterPlayerTest {
     }
 
     @Test
-    public void perkConditionalBonusIsQueryableButNotAutoApplied() throws InvalidXmlElementException {
+    public void perkConditionalBonusIsQueryableAndIncludedInTheDevelopmentBonusTotal() throws InvalidXmlElementException {
         final CharacterPlayer character = new CharacterPlayer();
+        Assert.assertEquals(character.getPerkSkillConditionalBonus("attunement"), Integer.valueOf(0));
 
-        Assert.assertEquals(character.getPerkSkillConditionalBonus("climbing"), Integer.valueOf(0));
-        Assert.assertEquals(character.getPerkCategoryConditionalBonus("athleticsGymnastics"), Integer.valueOf(0));
+        character.addPerk("magicalAbility");
+
+        // Matches the legacy getSimpleBonus(Skill): a conditional bonus is included in the total
+        // unconditionally, the player/consuming code is expected to know when it actually applies.
+        Assert.assertEquals(character.getPerkSkillConditionalBonus("attunement"), Integer.valueOf(25));
+
+        final Category category = new Category("attunement");
+        category.setType(CategoryType.STANDARD);
+        Assert.assertEquals(character.getSkillDevelopmentBonus(category, "attunement"),
+                Integer.valueOf(category.getSkillRankBonus(0) + 25));
+    }
+
+    @Test
+    public void backgroundPointsSpentOnASkillOrCategoryApplyToTheDevelopmentBonus() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.getBackground().setSkillPoint("climbing", true);
+        character.getBackground().setCategoryPoint("athleticsGymnastics", true);
+
+        final Category category = new Category("athleticsGymnastics");
+        category.setType(CategoryType.STANDARD);
+        Assert.assertEquals(character.getSkillDevelopmentBonus(category, "climbing"),
+                Integer.valueOf(category.getSkillRankBonus(0) + 10));
+        Assert.assertEquals(character.getCategoryDevelopmentBonus(category),
+                Integer.valueOf(category.getCategoryRankBonus(0) + 5));
     }
 
     @Test
