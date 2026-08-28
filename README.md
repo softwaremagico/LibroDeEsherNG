@@ -55,9 +55,9 @@ Highlights of the modernization:
 - **A modernized, tested codebase.** The domain model, rule catalog, migration tools and
   character-creation logic are new code, covered by unit tests down to the migration fixtures and
   the real generated data, replacing the original application's Swing UI-coupled, untested classes.
-- **Library-first architecture.** No AWT/Swing/JPA dependencies: the rules engine is a plain,
-  Android-safe Java library, ready to be consumed by different front-ends instead of being tied to
-  one desktop UI.
+- **Library-first architecture.** No AWT/Swing/JPA dependencies: unlike the original desktop
+  application, this is now just a plain, Android-safe Java library, ready to be embedded into any
+  kind of front-end — for example, an Android app — instead of being tied to one desktop UI.
 
 Libro de Esher is a Java library for the **Rolemaster** character system. It provides a fully
 data-driven rules engine covering every rulebook/supplement of the original desktop application,
@@ -130,8 +130,9 @@ Two additional modules are scaffolded for future work:
 ## Architecture
 
 - Multi-module Maven build (`librodeesher-rules`, `librodeesher-random`, `librodeesher-pdf`).
-- Library-first: no UI dependency, designed for integration into external apps/services, and safe to
-  run on Android (Jackson XML instead of JAXB/DOM/SAX, no reflection-heavy frameworks).
+- Library-first: no UI dependency, no AWT/Swing/JPA. Designed to be embedded into an external
+  application or service, including an Android app, instead of shipping its own UI (Jackson XML is
+  used instead of JAXB/DOM/SAX, and no reflection-heavy frameworks are required).
 - Rule data lives outside the compiled jar's `src/main/resources`, under a sibling `modules/` folder,
   one directory per rulebook/supplement, so it can be edited without recompiling.
 
