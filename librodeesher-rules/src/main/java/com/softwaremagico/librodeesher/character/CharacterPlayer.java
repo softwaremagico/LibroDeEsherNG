@@ -253,23 +253,44 @@ public class CharacterPlayer {
     /**
      * The bonus a category grants from ranks bought directly in it (only non-zero for {@link
      * com.softwaremagico.librodeesher.category.CategoryType#STANDARD} categories) plus its flat bonus
-     * (only non-zero for {@link com.softwaremagico.librodeesher.category.CategoryType#PD}).
+     * (only non-zero for {@link com.softwaremagico.librodeesher.category.CategoryType#PD}) plus the
+     * flat bonus the selected profession grants this category, if any.
      *
-     * <p>Profession/race/background/perk/item bonuses are future work.</p>
+     * <p>Race/background/perk/item bonuses are future work.</p>
      */
-    public Integer getCategoryDevelopmentBonus(Category category) {
-        return category.getCategoryRankBonus(getCategoryTotalRanks(category.getId())) + category.getFixedBonus();
+    public Integer getCategoryDevelopmentBonus(Category category) throws InvalidXmlElementException {
+        return category.getCategoryRankBonus(getCategoryTotalRanks(category.getId())) + category.getFixedBonus()
+                + getProfessionBonus(category.getId());
     }
 
     /**
-     * A skill's bonus from its own ranks, using its category's progression table.
+     * A skill's bonus from its own ranks, using its category's progression table, plus the flat
+     * bonus the selected profession grants this skill, if any.
      *
-     * <p>Profession/race/background/perk/item bonuses, the "real ranks" multiplier (restricted/
-     * common/professional/generalized skills cost and count differently) and the characteristic
-     * bonus are future work.</p>
+     * <p>Race/background/perk/item bonuses, the "real ranks" multiplier (restricted/common/
+     * professional/generalized skills cost and count differently) and the characteristic bonus are
+     * future work.</p>
      */
-    public Integer getSkillDevelopmentBonus(Category category, String skillId) {
-        return category.getSkillRankBonus(getSkillTotalRanks(skillId));
+    public Integer getSkillDevelopmentBonus(Category category, String skillId) throws InvalidXmlElementException {
+        return category.getSkillRankBonus(getSkillTotalRanks(skillId)) + getProfessionBonus(skillId);
+    }
+
+    /**
+     * The flat bonus the selected profession grants a category or skill named {@code id}, or 0 if no
+     * profession is selected or it grants that id none.
+     */
+    public Integer getProfessionBonus(String id) throws InvalidXmlElementException {
+        final Profession profession = getProfession();
+        return profession == null ? 0 : profession.getBonus(id);
+    }
+
+    /**
+     * Whether {@code abbreviation} is the selected profession's primary or secondary preferred
+     * characteristic, or {@code false} if no profession is selected.
+     */
+    public boolean isPreferredCharacteristic(CharacteristicAbbreviation abbreviation) throws InvalidXmlElementException {
+        final Profession profession = getProfession();
+        return profession != null && profession.isPreferredCharacteristic(abbreviation);
     }
 
     public Background getBackground() {

@@ -87,6 +87,17 @@ public class Profession extends Element {
         return getCharacteristicPreferences().isEmpty();
     }
 
+    /**
+     * Whether {@code abbreviation} is this profession's primary or secondary preferred characteristic
+     * (the first two entries of {@link #getCharacteristicPreferences()}), used e.g. to grant a
+     * higher initial characteristic value during character creation.
+     */
+    public boolean isPreferredCharacteristic(CharacteristicAbbreviation abbreviation) {
+        final List<CharacteristicAbbreviation> preferences = getCharacteristicPreferences();
+        return preferences.size() > 0 && preferences.get(0) == abbreviation
+                || preferences.size() > 1 && preferences.get(1) == abbreviation;
+    }
+
     public List<RealmOfMagic> getMagicRealms() {
         return magicRealms == null ? Collections.emptyList() : magicRealms;
     }
@@ -106,6 +117,19 @@ public class Profession extends Element {
 
     public void setBonuses(List<ProfessionBonus> bonuses) {
         this.bonuses = bonuses;
+    }
+
+    /**
+     * The flat bonus this profession grants to a category or a skill named {@code id} (see
+     * {@link ProfessionBonus}), or 0 if this profession grants it none.
+     */
+    public Integer getBonus(String id) {
+        for (final ProfessionBonus bonus : getBonuses()) {
+            if (bonus.getName().equals(id)) {
+                return bonus.getBonus();
+            }
+        }
+        return 0;
     }
 
     public String getCategoryCostsRaw() {

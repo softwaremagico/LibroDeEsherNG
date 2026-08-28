@@ -118,7 +118,7 @@ public class CharacterPlayerTest {
     }
 
     @Test
-    public void categoryDevelopmentBonusUsesTheCategoryTypeProgressionTable() {
+    public void categoryDevelopmentBonusUsesTheCategoryTypeProgressionTable() throws InvalidXmlElementException {
         final CharacterPlayer character = new CharacterPlayer();
         character.getCurrentLevel().setCategoryRanks("weaponsEdged", 10);
 
@@ -129,7 +129,7 @@ public class CharacterPlayerTest {
     }
 
     @Test
-    public void physicalDevelopmentCategoryGrantsItsFixedBonusRegardlessOfRanks() {
+    public void physicalDevelopmentCategoryGrantsItsFixedBonusRegardlessOfRanks() throws InvalidXmlElementException {
         final CharacterPlayer character = new CharacterPlayer();
         final Category category = new Category("physicalDevelopment");
         category.setType(CategoryType.PD);
@@ -138,7 +138,7 @@ public class CharacterPlayerTest {
     }
 
     @Test
-    public void skillDevelopmentBonusUsesItsCategorysProgressionTable() {
+    public void skillDevelopmentBonusUsesItsCategorysProgressionTable() throws InvalidXmlElementException {
         final CharacterPlayer character = new CharacterPlayer();
         character.getCurrentLevel().setSkillRanks("tracking", 10, false);
 
@@ -146,5 +146,37 @@ public class CharacterPlayerTest {
         category.setType(CategoryType.STANDARD);
 
         Assert.assertEquals(character.getSkillDevelopmentBonus(category, "tracking"), CategoryType.STANDARD.getSkillRankBonus(10));
+    }
+
+    @Test
+    public void professionBonusIsZeroWithoutAProfessionSelected() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        Assert.assertEquals(character.getProfessionBonus("loreArcane"), Integer.valueOf(0));
+        Assert.assertFalse(character.isPreferredCharacteristic(CharacteristicAbbreviation.EMPATHY));
+    }
+
+    @Test
+    public void professionBonusIsAddedToCategoryAndSkillDevelopmentBonus() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("wizard");
+        Assert.assertEquals(character.getProfessionBonus("loreArcane"), Integer.valueOf(10));
+        Assert.assertEquals(character.getProfessionBonus("unknownCategoryOrSkill"), Integer.valueOf(0));
+
+        final Category category = new Category("loreArcane");
+        category.setType(CategoryType.STANDARD);
+        Assert.assertEquals(character.getCategoryDevelopmentBonus(category),
+                CategoryType.STANDARD.getCategoryRankBonus(0) + 10);
+        Assert.assertEquals(character.getSkillDevelopmentBonus(category, "loreArcane"),
+                CategoryType.STANDARD.getSkillRankBonus(0) + 10);
+    }
+
+    @Test
+    public void preferredCharacteristicIsThePrimaryOrSecondaryOnly() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("wizard");
+
+        Assert.assertTrue(character.isPreferredCharacteristic(CharacteristicAbbreviation.EMPATHY));
+        Assert.assertTrue(character.isPreferredCharacteristic(CharacteristicAbbreviation.REASONING));
+        Assert.assertFalse(character.isPreferredCharacteristic(CharacteristicAbbreviation.CONSTITUTION));
     }
 }
