@@ -320,6 +320,11 @@ public class CharacterPlayer {
      * grant's ranks to that category, then does the same for each of its nested skill grants (keyed
      * as {@code key + ":skill:" + <index>}).
      *
+     * <p>{@link #ALL_WEAPON_CATEGORIES}/{@link #ALL_ATTACK_CATEGORIES} wildcard markers in {@code
+     * grant}'s category options (see {@code TrainingMigrationTool.resolveCategoryIds}) are expanded
+     * into every real matching category id before resolving the decision, so {@code
+     * selectedCategoryId} must be one of the real ids, not the wildcard marker itself.</p>
+     *
      * <p>Ranks are added to the <em>current</em> level; call this once per level the grant actually
      * applies at (typically once, when the training/culture is first taken).</p>
      *
@@ -335,8 +340,11 @@ public class CharacterPlayer {
      *                           {@link TrainingCategoryGrant#getSkills()}; ignored for grants that are
      *                           not a choice or are already decided.
      */
-    public void applyCategoryGrant(String key, TrainingCategoryGrant grant, String selectedCategoryId, List<String> selectedSkillIds) {
-        final Decision categoryDecision = decideOrReuse(key, () -> grant.resolve(selectedCategoryId));
+    public void applyCategoryGrant(String key, TrainingCategoryGrant grant, String selectedCategoryId, List<String> selectedSkillIds)
+            throws InvalidXmlElementException {
+        final List<String> offeredCategories = expandCategoryWildcards(grant.getCategoryOptions());
+        final Decision categoryDecision = decideOrReuse(key,
+                () -> offeredCategories.size() > 1 ? Decision.select(offeredCategories, selectedCategoryId) : Decision.fixed(offeredCategories));
         getCurrentLevel().addCategoryRanks(categoryDecision.getSelectedOption(), grant.getRanksGranted());
 
         final List<TrainingSkillGrant> skills = grant.getSkills();
@@ -363,7 +371,7 @@ public class CharacterPlayer {
      * @param skillSelections    same, but for each grant's nested skill choices, keyed the same way.
      */
     public void applyTrainingCategories(Training training, Map<Integer, String> categorySelections,
-                                         Map<Integer, List<String>> skillSelections) {
+                                         Map<Integer, List<String>> skillSelections) throws InvalidXmlElementException {
         applyCategoryGrants("training:" + training.getId() + ":category", training.getCategories(), categorySelections, skillSelections);
     }
 
@@ -373,12 +381,12 @@ public class CharacterPlayer {
      * {@link #applyTrainingCategories} for the selection map semantics.
      */
     public void applyCultureAdolescenceRanks(Culture culture, Map<Integer, String> categorySelections,
-                                              Map<Integer, List<String>> skillSelections) {
+                                              Map<Integer, List<String>> skillSelections) throws InvalidXmlElementException {
         applyCategoryGrants("culture:" + culture.getId() + ":adolescence", culture.getAdolescenceRanks(), categorySelections, skillSelections);
     }
 
     private void applyCategoryGrants(String keyPrefix, List<TrainingCategoryGrant> grants, Map<Integer, String> categorySelections,
-                                      Map<Integer, List<String>> skillSelections) {
+                                      Map<Integer, List<String>> skillSelections) throws InvalidXmlElementException {
         for (int i = 0; i < grants.size(); i++) {
             final String selectedCategoryId = categorySelections == null ? null : categorySelections.get(i);
             final List<String> selectedSkillIds = skillSelections == null ? null : skillSelections.get(i);
@@ -421,5 +429,53 @@ public class CharacterPlayer {
         final Decision decision = resolver.get();
         decisions.set(key, decision);
         return decision;
+    }
+
+    /**
+     * Pseudo-category marker (see {@code TrainingMigrationTool.resolveCategoryIds}) standing for
+     * "any weapon category", expanded by {@link #expandCategoryWildcards(List)} into every category
+     * id starting with "weapons" (matching {@code CategoryMigrationTool}'s id convention for every
+     * "Armas·&lt;Tipo&gt;" category).
+     */
+    public static final String ALL_WEAPON_CATEGORIES = "allWeaponCategories";
+
+    /**
+     * Pseudo-category marker standing for "any non-weapon attack category" (martial arts strikes/
+     * sweeps/combat maneuvers, special attacks), matching the exact set the legacy application
+     * hardcoded in {@code CategoryFactory.getOthersAttack()}.
+     */
+    public static final String ALL_ATTACK_CATEGORIES = "allAttackCategories";
+
+    private static final List<String> ATTACK_CATEGORY_IDS = List.of(
+            "martialArtsStrikes", "martialArtsSweeps", "martialArtsCombatManeuvers", "specialAttacks");
+
+    /**
+     * Expands any {@link #ALL_WEAPON_CATEGORIES}/{@link #ALL_ATTACK_CATEGORIES} marker in {@code
+     * categoryIds} into the real category ids it stands for (every other id is kept as-is). The
+     * actual set depends on which modules are currently enabled (through {@link RulesCatalog}), so
+     * this cannot be resolved once and for all at migration time.
+     */
+    public List<String> expandCategoryWildcards(List<String> categoryIds) throws InvalidXmlElementException {
+        final List<String> expanded = new ArrayList<>();
+        for (final String categoryId : categoryIds) {
+            if (ALL_WEAPON_CATEGORIES.equals(categoryId)) {
+                expanded.addAll(getWeaponCategoryIds());
+            } else if (ALL_ATTACK_CATEGORIES.equals(categoryId)) {
+                expanded.addAll(ATTACK_CATEGORY_IDS);
+            } else {
+                expanded.add(categoryId);
+            }
+        }
+        return expanded;
+    }
+
+    private List<String> getWeaponCategoryIds() throws InvalidXmlElementException {
+        final List<String> ids = new ArrayList<>();
+        for (final Category category : RulesCatalog.getInstance().getCategories()) {
+            if (category.getId().startsWith("weapons")) {
+                ids.add(category.getId());
+            }
+        }
+        return ids;
     }
 }

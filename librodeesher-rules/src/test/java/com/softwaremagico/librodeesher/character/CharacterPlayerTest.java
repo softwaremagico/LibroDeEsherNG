@@ -193,7 +193,7 @@ public class CharacterPlayerTest {
     }
 
     @Test
-    public void applyingAFixedCategoryGrantAddsItsRanksAndNestedSkillRanks() {
+    public void applyingAFixedCategoryGrantAddsItsRanksAndNestedSkillRanks() throws InvalidXmlElementException {
         final CharacterPlayer character = new CharacterPlayer();
         final TrainingCategoryGrant grant = new TrainingCategoryGrant();
         grant.setCategoryOptions(List.of("outdoorEnvironment"));
@@ -209,7 +209,7 @@ public class CharacterPlayerTest {
     }
 
     @Test
-    public void applyingAChoiceCategoryGrantRequiresAndRecordsTheSelection() {
+    public void applyingAChoiceCategoryGrantRequiresAndRecordsTheSelection() throws InvalidXmlElementException {
         final CharacterPlayer character = new CharacterPlayer();
         final TrainingCategoryGrant grant = new TrainingCategoryGrant();
         grant.setCategoryOptions(List.of("weaponsTwoHanded", "weaponsEdged"));
@@ -223,7 +223,7 @@ public class CharacterPlayerTest {
     }
 
     @Test(expectedExceptions = InvalidDecisionException.class)
-    public void applyingAChoiceCategoryGrantWithAnInvalidSelectionFails() {
+    public void applyingAChoiceCategoryGrantWithAnInvalidSelectionFails() throws InvalidXmlElementException {
         final CharacterPlayer character = new CharacterPlayer();
         final TrainingCategoryGrant grant = new TrainingCategoryGrant();
         grant.setCategoryOptions(List.of("weaponsTwoHanded", "weaponsEdged"));
@@ -233,7 +233,7 @@ public class CharacterPlayerTest {
     }
 
     @Test
-    public void applyingTheSameGrantTwiceReusesTheFirstDecisionAndAccumulatesRanks() {
+    public void applyingTheSameGrantTwiceReusesTheFirstDecisionAndAccumulatesRanks() throws InvalidXmlElementException {
         final CharacterPlayer character = new CharacterPlayer();
         final TrainingCategoryGrant grant = new TrainingCategoryGrant();
         grant.setCategoryOptions(List.of("weaponsTwoHanded", "weaponsEdged"));
@@ -314,5 +314,52 @@ public class CharacterPlayerTest {
         character.applyCharacteristicUpgrade("training:adventurer:characteristic:0", group, CharacteristicAbbreviation.AGILITY);
 
         Assert.assertEquals(character.getDecisions().getSelectedOption("training:adventurer:characteristic:0"), "STRENGTH");
+    }
+
+    @Test
+    public void expandCategoryWildcardsExpandsAllWeaponCategoriesToEveryRealWeaponCategory() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final List<String> expanded = character.expandCategoryWildcards(List.of(CharacterPlayer.ALL_WEAPON_CATEGORIES));
+
+        Assert.assertTrue(expanded.contains("weaponsEdged"));
+        Assert.assertTrue(expanded.contains("weaponsBlunt"));
+        Assert.assertTrue(expanded.size() >= 8);
+    }
+
+    @Test
+    public void expandCategoryWildcardsExpandsAllAttackCategoriesToTheFixedSet() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final List<String> expanded = character.expandCategoryWildcards(List.of(CharacterPlayer.ALL_ATTACK_CATEGORIES));
+
+        Assert.assertEquals(expanded, List.of("martialArtsStrikes", "martialArtsSweeps", "martialArtsCombatManeuvers", "specialAttacks"));
+    }
+
+    @Test
+    public void expandCategoryWildcardsLeavesRealCategoryIdsUntouched() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        Assert.assertEquals(character.expandCategoryWildcards(List.of("outdoorEnvironment")), List.of("outdoorEnvironment"));
+    }
+
+    @Test
+    public void applyingACategoryGrantWithTheWeaponWildcardOffersEveryWeaponCategory() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+        grant.setCategoryOptions(List.of(CharacterPlayer.ALL_WEAPON_CATEGORIES));
+        grant.setRanksGranted(2);
+
+        character.applyCategoryGrant("training:berserker:category:0", grant, "weaponsEdged", null);
+
+        Assert.assertEquals(character.getCategoryTotalRanks("weaponsEdged"), Integer.valueOf(2));
+        Assert.assertEquals(character.getDecisions().get("training:berserker:category:0").getOfferedOptions().contains("weaponsBlunt"), true);
+    }
+
+    @Test(expectedExceptions = InvalidDecisionException.class)
+    public void applyingACategoryGrantWithTheWeaponWildcardRejectsANonWeaponSelection() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+        grant.setCategoryOptions(List.of(CharacterPlayer.ALL_WEAPON_CATEGORIES));
+        grant.setRanksGranted(2);
+
+        character.applyCategoryGrant("training:berserker:category:0", grant, "outdoorEnvironment", null);
     }
 }
