@@ -475,4 +475,74 @@ public class CharacterPlayerTest {
         Assert.assertEquals(character.getSkillTotalRanks("Prueba"), Integer.valueOf(4));
         Assert.assertEquals(character.getSkillRealRanks(skill), 12);
     }
+
+    @Test
+    public void addingAPerkTwiceOnlySelectsItOnce() {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.addPerk("acrobat");
+        character.addPerk("acrobat");
+
+        Assert.assertTrue(character.isPerkSelected("acrobat"));
+        Assert.assertEquals(character.getSelectedPerks().size(), 1);
+    }
+
+    @Test
+    public void removingAPerkForgetsItAndItsWeakness() {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.addPerk("acrobat");
+        character.setWeakness("acrobat", "slightAddiction");
+        character.removePerk("acrobat");
+
+        Assert.assertFalse(character.isPerkSelected("acrobat"));
+    }
+
+    @Test
+    public void perksBackgroundCostUsesTheGradeFormula() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.addPerk("acrobat");
+
+        // acrobat is MINOR grade, no weakness, not random: base cost 3.
+        Assert.assertEquals(character.getPerksBackgroundPointsCost(), 3);
+    }
+
+    @Test
+    public void pairingAWeaknessDiscountsThePerksBackgroundCost() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.addPerk("acrobat");
+        character.setWeakness("acrobat", "slightAddiction");
+
+        // acrobat is MINOR, slightAddiction is MINIMUM: one grade below, discount of 1.
+        Assert.assertTrue(character.hasWeakness("acrobat"));
+        Assert.assertEquals(character.getPerksBackgroundPointsCost(), 2);
+    }
+
+    @Test
+    public void aWeaknessSelectedDirectlyCostsNothing() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.addPerk("slightAddiction");
+
+        Assert.assertEquals(character.getPerksBackgroundPointsCost(), 0);
+    }
+
+    @Test
+    public void randomPerkSelectionIsTrackedAndDiscountsCost() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.addPerk("acrobat");
+        character.setPerkAsRandom("acrobat", true);
+
+        Assert.assertTrue(character.isPerkRandom("acrobat"));
+        // MINOR base 3, random discount of 1.
+        Assert.assertEquals(character.getPerksBackgroundPointsCost(), 2);
+    }
+
+    @Test
+    public void remainingBackgroundPointsSubtractsPerksAndBackgroundCosts() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("grayOrc");
+        character.addPerk("acrobat");
+        character.getBackground().setCategoryPoint("outdoorEnvironment", true);
+
+        final int raceBackgroundPoints = character.getRace().getBackgroundPoints();
+        Assert.assertEquals(character.getRemainingBackgroundPoints(), raceBackgroundPoints - 1 - 3);
+    }
 }

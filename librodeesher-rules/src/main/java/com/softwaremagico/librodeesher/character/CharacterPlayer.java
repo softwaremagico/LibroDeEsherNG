@@ -17,6 +17,9 @@ import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
+import com.softwaremagico.librodeesher.perk.Perk;
+import com.softwaremagico.librodeesher.perk.PerkGrade;
+import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.skill.Skill;
 import com.softwaremagico.librodeesher.skill.SkillType;
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
@@ -60,6 +63,7 @@ public class CharacterPlayer {
     private final List<LevelUp> levels = new ArrayList<>();
     private final Background background = new Background();
     private final Decisions decisions = new Decisions();
+    private final List<SelectedPerk> selectedPerks = new ArrayList<>();
 
     public CharacterPlayer() {
         for (final CharacteristicAbbreviation abbreviation : allRealCharacteristics()) {
@@ -634,5 +638,90 @@ public class CharacterPlayer {
      */
     public int getSkillRealRanks(Skill skill) throws InvalidXmlElementException {
         return (int) (getSkillTotalRanks(skill.getName().getSpanish()) * getSkillRankMultiplier(skill));
+    }
+
+    public List<SelectedPerk> getSelectedPerks() {
+        return selectedPerks;
+    }
+
+    public boolean isPerkSelected(String perkId) {
+        return findSelectedPerk(perkId) != null;
+    }
+
+    /** Selects {@code perkId}, if it was not already selected. */
+    public void addPerk(String perkId) {
+        if (!isPerkSelected(perkId)) {
+            selectedPerks.add(new SelectedPerk(perkId));
+        }
+    }
+
+    /** Unselects {@code perkId} and forgets any weakness paired with it. */
+    public void removePerk(String perkId) {
+        selectedPerks.removeIf(selectedPerk -> selectedPerk.getPerkId().equals(perkId));
+    }
+
+    /** Pairs an already-selected perk with a weakness, discounting the perk's background points cost. */
+    public void setWeakness(String perkId, String weaknessPerkId) {
+        final SelectedPerk selectedPerk = findSelectedPerk(perkId);
+        if (selectedPerk != null) {
+            selectedPerk.setWeaknessId(weaknessPerkId);
+        }
+    }
+
+    public boolean hasWeakness(String perkId) {
+        final SelectedPerk selectedPerk = findSelectedPerk(perkId);
+        return selectedPerk != null && selectedPerk.getWeaknessId() != null;
+    }
+
+    /** Marks an already-selected perk as chosen by random character generation (not player-removable). */
+    public void setPerkAsRandom(String perkId, boolean random) {
+        final SelectedPerk selectedPerk = findSelectedPerk(perkId);
+        if (selectedPerk != null) {
+            selectedPerk.setRandom(random);
+        }
+    }
+
+    public boolean isPerkRandom(String perkId) {
+        final SelectedPerk selectedPerk = findSelectedPerk(perkId);
+        return selectedPerk != null && selectedPerk.isRandom();
+    }
+
+    private SelectedPerk findSelectedPerk(String perkId) {
+        for (final SelectedPerk selectedPerk : selectedPerks) {
+            if (selectedPerk.getPerkId().equals(perkId)) {
+                return selectedPerk;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Total background points spent on every selected perk so far, discounted by any weakness paired
+     * with each one and by whether it was chosen at random (see {@link PerkGrade#getBackgroundCost}).
+     * A perk that is itself a weakness ({@link Perk#isWeakness()}) costs nothing here, matching the
+     * legacy rule (its points are refunded some other way, not modeled yet).
+     */
+    public int getPerksBackgroundPointsCost() throws InvalidXmlElementException {
+        int cost = 0;
+        for (final SelectedPerk selectedPerk : selectedPerks) {
+            final Perk perk = RulesCatalog.getInstance().getPerk(selectedPerk.getPerkId());
+            if (perk.isWeakness()) {
+                continue;
+            }
+            final Perk weakness = selectedPerk.getWeaknessId() == null ? null
+                    : RulesCatalog.getInstance().getPerk(selectedPerk.getWeaknessId());
+            cost += perk.getGrade().getBackgroundCost(weakness == null ? null : weakness.getGrade(), selectedPerk.isRandom());
+        }
+        return cost;
+    }
+
+    /**
+     * Background points left to spend: the race's total ({@link Race#getBackgroundPoints()}, 0
+     * without a race selected) minus what {@link Background} and the selected perks have spent so far.
+     */
+    public int getRemainingBackgroundPoints() throws InvalidXmlElementException {
+        final Race race = getRace();
+        final int totalBackgroundPoints = race == null || race.getBackgroundPoints() == null ? 0 : race.getBackgroundPoints();
+        return totalBackgroundPoints - background.getSpentBackgroundPoints() - getPerksBackgroundPointsCost();
     }
 }

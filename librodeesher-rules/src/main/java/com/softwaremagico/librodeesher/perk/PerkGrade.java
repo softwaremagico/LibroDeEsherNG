@@ -34,6 +34,33 @@ public enum PerkGrade {
         return level;
     }
 
+    /**
+     * The background points cost of taking a perk of this grade, discounted by the grade of the
+     * weakness paired with it (if any: -2 points if they match in grade, -1 if the weakness is one
+     * grade below, no discount otherwise), and by one extra point (down to a minimum of 1) if the
+     * perk was chosen at random.
+     */
+    public int getBackgroundCost(PerkGrade weaknessGrade, boolean random) {
+        int cost = switch (this) {
+            case MINIMUM -> 2;
+            case MINOR -> 3;
+            case MAJOR -> 4;
+            case MAXIMUM -> 5;
+        };
+        if (weaknessGrade != null) {
+            final int difference = getLevel() - weaknessGrade.getLevel();
+            if (difference == 0) {
+                cost -= 2;
+            } else if (difference == 1) {
+                cost -= 1;
+            }
+        }
+        if (random && cost > 1) {
+            cost--;
+        }
+        return cost;
+    }
+
     public static PerkGrade fromTag(String tag) {
         for (final PerkGrade grade : values()) {
             if (grade.tag.equalsIgnoreCase(tag)) {
