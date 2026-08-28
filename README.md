@@ -1,4 +1,4 @@
-# Libro de Esher 2
+# Libro de Esher
 
 [![GNU GPL 3.0 License](https://img.shields.io/badge/license-GNU_GPL_3.0-brightgreen.svg)](https://github.com/softwaremagico/librodeesher/blob/master/license/gnugpl/license.txt)
 [![Powered by](https://img.shields.io/badge/powered%20by%20java-orange.svg?logo=OpenJDK&logoColor=white)]()
