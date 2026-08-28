@@ -395,6 +395,69 @@ public class CharacterPlayer {
     }
 
     /**
+     * Resolves every choice in a training's "HABILIDADES DE ESTILO DE VIDA"/"COMUNES"/
+     * "PROFESIONALES"/"RESTRINGIDAS" sections, recording which skill each one grants (as opposed to
+     * how many ranks: these sections make a skill available at a favourable cost tier rather than
+     * granting ranks directly, so there is nothing to add to {@link LevelUp} here).
+     *
+     * <p>Skill names here are not yet resolved to {@code Skill} ids (see {@link Training}'s class
+     * javadoc), so {@code selectedXxxSkillId} values and the results of {@link
+     * #getTrainingCommonSkills}/etc. are still the plain (Spanish) skill name.</p>
+     *
+     * @param lifeSkillSelections         the skill to use for each of {@link Training#getLifeSkills()}
+     *                                    that offers a choice and has not been decided yet, by index.
+     * @param commonSkillSelections       same, for {@link Training#getCommonSkills()}.
+     * @param professionalSkillSelections same, for {@link Training#getProfessionalSkills()}.
+     * @param restrictedSkillSelections   same, for {@link Training#getRestrictedSkills()}.
+     */
+    public void applyTrainingSkillChoices(Training training, Map<Integer, String> lifeSkillSelections,
+                                           Map<Integer, String> commonSkillSelections,
+                                           Map<Integer, String> professionalSkillSelections,
+                                           Map<Integer, String> restrictedSkillSelections) {
+        final String prefix = "training:" + training.getId();
+        applyChoiceGroups(prefix + ":lifeSkill", training.getLifeSkills(), lifeSkillSelections);
+        applyChoiceGroups(prefix + ":commonSkill", training.getCommonSkills(), commonSkillSelections);
+        applyChoiceGroups(prefix + ":professionalSkill", training.getProfessionalSkills(), professionalSkillSelections);
+        applyChoiceGroups(prefix + ":restrictedSkill", training.getRestrictedSkills(), restrictedSkillSelections);
+    }
+
+    public List<String> getTrainingLifeSkills(Training training) {
+        return getDecidedOptions("training:" + training.getId() + ":lifeSkill", training.getLifeSkills().size());
+    }
+
+    public List<String> getTrainingCommonSkills(Training training) {
+        return getDecidedOptions("training:" + training.getId() + ":commonSkill", training.getCommonSkills().size());
+    }
+
+    public List<String> getTrainingProfessionalSkills(Training training) {
+        return getDecidedOptions("training:" + training.getId() + ":professionalSkill", training.getProfessionalSkills().size());
+    }
+
+    public List<String> getTrainingRestrictedSkills(Training training) {
+        return getDecidedOptions("training:" + training.getId() + ":restrictedSkill", training.getRestrictedSkills().size());
+    }
+
+    private void applyChoiceGroups(String keyPrefix, List<ChoiceGroup> groups, Map<Integer, String> selections) {
+        for (int i = 0; i < groups.size(); i++) {
+            final ChoiceGroup group = groups.get(i);
+            final String selectedOption = selections == null ? null : selections.get(i);
+            decideOrReuse(keyPrefix + ":" + i, () -> group.resolve(selectedOption));
+        }
+    }
+
+    /** The selected option of every decision {@code keyPrefix + ":0"} through {@code keyPrefix + ":" + (count - 1)}. */
+    private List<String> getDecidedOptions(String keyPrefix, int count) {
+        final List<String> selected = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            final String option = decisions.getSelectedOption(keyPrefix + ":" + i);
+            if (option != null) {
+                selected.add(option);
+            }
+        }
+        return selected;
+    }
+
+    /**
      * Applies one of a training's "AUMENTOS CARACTERÍSTICAS" choices: resolves which characteristic
      * it applies to (reusing an already-made decision if {@code key} was decided before), rolls 2d10
      * and increases that characteristic's temporal value by {@link Characteristic#getCharacteristicUpgrade},

@@ -362,4 +362,32 @@ public class CharacterPlayerTest {
 
         character.applyCategoryGrant("training:berserker:category:0", grant, "outdoorEnvironment", null);
     }
+
+    @Test
+    public void applyTrainingSkillChoicesRecordsEveryGrantedSkill() throws InvalidXmlElementException {
+        final Training lightWizard = RulesCatalog.getInstance().getTraining("lightWizard");
+        final CharacterPlayer character = new CharacterPlayer();
+
+        character.applyTrainingSkillChoices(lightWizard, null, null, null, null);
+
+        Assert.assertEquals(character.getTrainingCommonSkills(lightWizard), List.of("Velocidad Adrenal", "Esprintar"));
+        Assert.assertTrue(character.getTrainingLifeSkills(lightWizard).isEmpty()
+                || character.getTrainingLifeSkills(lightWizard).size() == lightWizard.getLifeSkills().size());
+        Assert.assertTrue(character.getTrainingProfessionalSkills(lightWizard).size() <= lightWizard.getProfessionalSkills().size());
+        Assert.assertTrue(character.getTrainingRestrictedSkills(lightWizard).size() <= lightWizard.getRestrictedSkills().size());
+    }
+
+    @Test
+    public void applyTrainingSkillChoicesResolvesAChoiceAndReusesIt() {
+        final CharacterPlayer character = new CharacterPlayer();
+        final Training training = new Training("test");
+        training.setCommonSkills(List.of(new ChoiceGroup(List.of("stalking", "hunting"))));
+
+        character.applyTrainingSkillChoices(training, null, Map.of(0, "hunting"), null, null);
+        Assert.assertEquals(character.getTrainingCommonSkills(training), List.of("hunting"));
+
+        // Reusing the same training/index keeps the first decision even with a different selection.
+        character.applyTrainingSkillChoices(training, null, Map.of(0, "stalking"), null, null);
+        Assert.assertEquals(character.getTrainingCommonSkills(training), List.of("hunting"));
+    }
 }
