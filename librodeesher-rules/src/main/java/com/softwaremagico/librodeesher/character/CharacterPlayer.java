@@ -438,11 +438,7 @@ public class CharacterPlayer {
      * how many ranks: these sections make a skill available at a favourable cost tier rather than
      * granting ranks directly, so there is nothing to add to {@link LevelUp} here).
      *
-     * <p>Skill names here are not yet resolved to {@code Skill} ids (see {@link Training}'s class
-     * javadoc), so {@code selectedXxxSkillId} values and the results of {@link
-     * #getTrainingCommonSkills}/etc. are still the plain (Spanish) skill name.</p>
-     *
-     * @param lifeSkillSelections         the skill to use for each of {@link Training#getLifeSkills()}
+     * @param lifeSkillSelections         the skill id to use for each of {@link Training#getLifeSkills()}
      *                                    that offers a choice and has not been decided yet, by index.
      * @param commonSkillSelections       same, for {@link Training#getCommonSkills()}.
      * @param professionalSkillSelections same, for {@link Training#getProfessionalSkills()}.
@@ -459,18 +455,22 @@ public class CharacterPlayer {
         applyChoiceGroups(prefix + ":restrictedSkill", training.getRestrictedSkills(), restrictedSkillSelections);
     }
 
+    /** The {@code Skill} id granted by each decided choice in {@link Training#getLifeSkills()}. */
     public List<String> getTrainingLifeSkills(Training training) {
         return getDecidedOptions("training:" + training.getId() + ":lifeSkill", training.getLifeSkills().size());
     }
 
+    /** Same as {@link #getTrainingLifeSkills}, for {@link Training#getCommonSkills()}. */
     public List<String> getTrainingCommonSkills(Training training) {
         return getDecidedOptions("training:" + training.getId() + ":commonSkill", training.getCommonSkills().size());
     }
 
+    /** Same as {@link #getTrainingLifeSkills}, for {@link Training#getProfessionalSkills()}. */
     public List<String> getTrainingProfessionalSkills(Training training) {
         return getDecidedOptions("training:" + training.getId() + ":professionalSkill", training.getProfessionalSkills().size());
     }
 
+    /** Same as {@link #getTrainingLifeSkills}, for {@link Training#getRestrictedSkills()}. */
     public List<String> getTrainingRestrictedSkills(Training training) {
         return getDecidedOptions("training:" + training.getId() + ":restrictedSkill", training.getRestrictedSkills().size());
     }
@@ -585,12 +585,12 @@ public class CharacterPlayer {
     }
 
     /**
-     * Whether {@code skillName} was granted as a "generalized" skill (marked directly on a level, not
+     * Whether {@code skillId} was granted as a "generalized" skill (marked directly on a level, not
      * derived from anything else) in any level so far.
      */
-    public boolean isSkillGeneralized(String skillName) {
+    public boolean isSkillGeneralized(String skillId) {
         for (final LevelUp levelUp : levels) {
-            if (levelUp.getGeneralizedSkills().contains(skillName)) {
+            if (levelUp.getGeneralizedSkills().contains(skillId)) {
                 return true;
             }
         }
@@ -599,14 +599,14 @@ public class CharacterPlayer {
 
     /**
      * Whether any training taken so far (see {@link LevelUp#getTrainings()}) granted {@code
-     * skillName} through its {@code trainingSkillsGetter} section (common/professional/restricted).
+     * skillId} through its {@code trainingSkillsGetter} section (common/professional/restricted).
      */
-    private boolean isSkillGrantedByAnyTraining(String skillName, Function<Training, List<String>> trainingSkillsGetter)
+    private boolean isSkillGrantedByAnyTraining(String skillId, Function<Training, List<String>> trainingSkillsGetter)
             throws InvalidXmlElementException {
         for (final LevelUp levelUp : levels) {
             for (final String trainingId : levelUp.getTrainings()) {
                 final Training training = RulesCatalog.getInstance().getTraining(trainingId);
-                if (trainingSkillsGetter.apply(training).contains(skillName)) {
+                if (trainingSkillsGetter.apply(training).contains(skillId)) {
                     return true;
                 }
             }
@@ -626,21 +626,21 @@ public class CharacterPlayer {
      */
     public boolean isSkillRestricted(Skill skill) throws InvalidXmlElementException {
         return skill.getSkillType() == SkillType.RESTRICTED
-                || isSkillGrantedByAnyTraining(skill.getName().getSpanish(), this::getTrainingRestrictedSkills)
+                || isSkillGrantedByAnyTraining(skill.getId(), this::getTrainingRestrictedSkills)
                 || isSkillRestrictedByRace(skill.getId());
     }
 
     /** Same limitation as {@link #isSkillRestricted(Skill)}, for {@link SkillType#COMMON}. */
     public boolean isSkillCommon(Skill skill) throws InvalidXmlElementException {
         return skill.getSkillType() == SkillType.COMMON
-                || isSkillGrantedByAnyTraining(skill.getName().getSpanish(), this::getTrainingCommonSkills)
+                || isSkillGrantedByAnyTraining(skill.getId(), this::getTrainingCommonSkills)
                 || isSkillCommonByRace(skill.getId());
     }
 
     /** Same limitation as {@link #isSkillRestricted(Skill)}, for {@link SkillType#PROFESSIONAL}. */
     public boolean isSkillProfessional(Skill skill) throws InvalidXmlElementException {
         return skill.getSkillType() == SkillType.PROFESSIONAL
-                || isSkillGrantedByAnyTraining(skill.getName().getSpanish(), this::getTrainingProfessionalSkills);
+                || isSkillGrantedByAnyTraining(skill.getId(), this::getTrainingProfessionalSkills);
     }
 
     /**
@@ -655,7 +655,7 @@ public class CharacterPlayer {
         }
         final boolean common = isSkillCommon(skill);
         final boolean professional = isSkillProfessional(skill);
-        if (isSkillGeneralized(skill.getName().getSpanish())) {
+        if (isSkillGeneralized(skill.getId())) {
             return common || professional ? 1 : 0.5;
         }
         if (professional) {
@@ -667,16 +667,9 @@ public class CharacterPlayer {
         return 1;
     }
 
-    /**
-     * A skill's "real ranks": its bought ranks times {@link #getSkillRankMultiplier}.
-     *
-     * <p>Ranks are looked up by {@code skill.getName().getSpanish()}, not {@code skill.getId()}: a
-     * training's skill grants are not yet resolved to real {@code Skill} ids (see {@code Training}'s
-     * class javadoc), so {@link #getSkillTotalRanks(String)} is keyed by the raw Spanish skill name
-     * for skills granted this way; future work once that cross-reference is resolved.</p>
-     */
+    /** A skill's "real ranks": its bought ranks (see {@link #getSkillTotalRanks(String)}) times {@link #getSkillRankMultiplier}. */
     public int getSkillRealRanks(Skill skill) throws InvalidXmlElementException {
-        return (int) (getSkillTotalRanks(skill.getName().getSpanish()) * getSkillRankMultiplier(skill));
+        return (int) (getSkillTotalRanks(skill.getId()) * getSkillRankMultiplier(skill));
     }
 
     public List<SelectedPerk> getSelectedPerks() {

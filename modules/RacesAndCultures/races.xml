@@ -34,7 +34,7 @@
     <commonSkills>
       <commonSkillId>stalking</commonSkillId>
       <commonSkillId>hiding</commonSkillId>
-      <commonSkillId>cazar</commonSkillId>
+      <commonSkillId>hunting</commonSkillId>
       <commonSkillId>forrajear</commonSkillId>
     </commonSkills>
     <cultures>
@@ -202,7 +202,7 @@
     <commonSkills>
       <commonSkillId>stalking</commonSkillId>
       <commonSkillId>hiding</commonSkillId>
-      <commonSkillId>cazar</commonSkillId>
+      <commonSkillId>hunting</commonSkillId>
       <commonSkillId>forrajear</commonSkillId>
       <commonSkillId>tracking</commonSkillId>
     </commonSkills>
@@ -373,7 +373,7 @@
     <commonSkills>
       <commonSkillId>stalking</commonSkillId>
       <commonSkillId>hiding</commonSkillId>
-      <commonSkillId>cazar</commonSkillId>
+      <commonSkillId>hunting</commonSkillId>
       <commonSkillId>forrajear</commonSkillId>
       <commonSkillId>tracking</commonSkillId>
     </commonSkills>
@@ -12994,7 +12994,7 @@
     </characteristicBonuses>
     <commonSkills>
       <commonSkillId>horticultura</commonSkillId>
-      <commonSkillId>cazar</commonSkillId>
+      <commonSkillId>hunting</commonSkillId>
       <commonSkillId>conducir</commonSkillId>
       <commonSkillId>pastoreo</commonSkillId>
     </commonSkills>

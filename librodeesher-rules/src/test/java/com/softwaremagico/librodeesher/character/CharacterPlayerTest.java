@@ -374,7 +374,7 @@ public class CharacterPlayerTest {
 
         character.applyTrainingSkillChoices(lightWizard, null, null, null, null);
 
-        Assert.assertEquals(character.getTrainingCommonSkills(lightWizard), List.of("Velocidad Adrenal", "Esprintar"));
+        Assert.assertEquals(character.getTrainingCommonSkills(lightWizard), List.of("speedAdrenal", "sprinting"));
         Assert.assertTrue(character.getTrainingLifeSkills(lightWizard).isEmpty()
                 || character.getTrainingLifeSkills(lightWizard).size() == lightWizard.getLifeSkills().size());
         Assert.assertTrue(character.getTrainingProfessionalSkills(lightWizard).size() <= lightWizard.getProfessionalSkills().size());
@@ -443,12 +443,12 @@ public class CharacterPlayerTest {
         final Skill commonSkill = new Skill("test1");
         commonSkill.setName("Prueba", "Test");
         commonSkill.setSkillType(SkillType.COMMON);
-        character.getCurrentLevel().getGeneralizedSkills().add("Prueba");
+        character.getCurrentLevel().getGeneralizedSkills().add("test1");
         Assert.assertEquals(character.getSkillRankMultiplier(commonSkill), 1.0);
 
         final Skill standardSkill = new Skill("test2");
         standardSkill.setName("Otra", "Other");
-        character.getCurrentLevel().getGeneralizedSkills().add("Otra");
+        character.getCurrentLevel().getGeneralizedSkills().add("test2");
         Assert.assertEquals(character.getSkillRankMultiplier(standardSkill), 0.5);
     }
 
@@ -459,7 +459,7 @@ public class CharacterPlayerTest {
         character.getCurrentLevel().addTraining("lightWizard");
         character.applyTrainingSkillChoices(lightWizard, null, null, null, null);
 
-        final Skill skill = new Skill("test");
+        final Skill skill = new Skill("sprinting");
         skill.setName("Esprintar", "Sprint");
 
         Assert.assertTrue(character.isSkillCommon(skill));
@@ -472,9 +472,9 @@ public class CharacterPlayerTest {
         final Skill skill = new Skill("test");
         skill.setName("Prueba", "Test");
         skill.setSkillType(SkillType.PROFESSIONAL);
-        character.getCurrentLevel().setSkillRanks("Prueba", 4, false);
+        character.getCurrentLevel().setSkillRanks("test", 4, false);
 
-        Assert.assertEquals(character.getSkillTotalRanks("Prueba"), Integer.valueOf(4));
+        Assert.assertEquals(character.getSkillTotalRanks("test"), Integer.valueOf(4));
         Assert.assertEquals(character.getSkillRealRanks(skill), 12);
     }
 

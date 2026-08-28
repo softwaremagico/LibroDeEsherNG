@@ -145,13 +145,13 @@
       <commonSkillChoice>
         <fixed>true</fixed>
         <options>
-          <option>Velocidad Adrenal</option>
+          <option>speedAdrenal</option>
         </options>
       </commonSkillChoice>
       <commonSkillChoice>
         <fixed>true</fixed>
         <options>
-          <option>Esprintar</option>
+          <option>sprinting</option>
         </options>
       </commonSkillChoice>
     </commonSkills>
@@ -160,7 +160,7 @@
       <lifeSkillChoice>
         <fixed>true</fixed>
         <options>
-          <option>Velocidad Adrenal</option>
+          <option>speedAdrenal</option>
         </options>
       </lifeSkillChoice>
     </lifeSkills>
@@ -342,18 +342,18 @@
       <commonSkillChoice>
         <fixed>true</fixed>
         <options>
-          <option>Volar/Planear</option>
+          <option>flyingGliding</option>
         </options>
       </commonSkillChoice>
       <commonSkillChoice>
         <fixed>false</fixed>
         <options>
-          <option>Arco Compuesto</option>
-          <option>Arco Corto</option>
-          <option>Arco Largo</option>
-          <option>Ballesta Ligera</option>
-          <option>Ballesta Pesada</option>
-          <option>Honda</option>
+          <option>compositeBow</option>
+          <option>shortBow</option>
+          <option>longBow</option>
+          <option>lightCrossbow</option>
+          <option>heavyCrossbow</option>
+          <option>sling</option>
         </options>
       </commonSkillChoice>
     </commonSkills>
@@ -362,13 +362,13 @@
       <lifeSkillChoice>
         <fixed>true</fixed>
         <options>
-          <option>Volar/Planear</option>
+          <option>flyingGliding</option>
         </options>
       </lifeSkillChoice>
       <lifeSkillChoice>
         <fixed>true</fixed>
         <options>
-          <option>Acechar</option>
+          <option>stalking</option>
         </options>
       </lifeSkillChoice>
     </lifeSkills>
@@ -380,13 +380,13 @@
       <restrictedSkillChoice>
         <fixed>true</fixed>
         <options>
-          <option>Esprintar</option>
+          <option>sprinting</option>
         </options>
       </restrictedSkillChoice>
       <restrictedSkillChoice>
         <fixed>true</fixed>
         <options>
-          <option>Velocidad Adrenal</option>
+          <option>speedAdrenal</option>
         </options>
       </restrictedSkillChoice>
     </restrictedSkills>
@@ -550,19 +550,11 @@
       <commonSkillChoice>
         <fixed>true</fixed>
         <options>
-          <option>Frenesí</option>
+          <option>frenzy</option>
         </options>
       </commonSkillChoice>
     </commonSkills>
     <id>fireWizard</id>
-    <lifeSkills>
-      <lifeSkillChoice>
-        <fixed>true</fixed>
-        <options>
-          <option>Arma</option>
-        </options>
-      </lifeSkillChoice>
-    </lifeSkills>
     <name>
       <en>Fire Wizard</en>
       <es>Mago del Fuego</es>
@@ -571,7 +563,7 @@
       <restrictedSkillChoice>
         <fixed>true</fixed>
         <options>
-          <option>Nadar</option>
+          <option>swimming</option>
         </options>
       </restrictedSkillChoice>
     </restrictedSkills>

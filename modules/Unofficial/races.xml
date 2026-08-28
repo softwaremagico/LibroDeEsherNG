@@ -27,7 +27,7 @@
     <commonSkills>
       <commonSkillId>stalking</commonSkillId>
       <commonSkillId>hiding</commonSkillId>
-      <commonSkillId>cazar</commonSkillId>
+      <commonSkillId>hunting</commonSkillId>
       <commonSkillId>forrajear</commonSkillId>
       <commonSkillId>tracking</commonSkillId>
       <commonSkillId>attackRacialOtro</commonSkillId>
@@ -177,7 +177,7 @@
       </special>
       <special>
         <text>
-          <en>Arma Natural: Pinzas of Scorpion adicionales (Size Medium)</en>
+          <en>Weapon Natural: Pinzas of Scorpion adicionales (Size Medium)</en>
           <es>Arma Natural: Pinzas de escorpión adicionales (Tamaño Medio)</es>
         </text>
       </special>
@@ -480,7 +480,7 @@
       <special>
         <points>15</points>
         <text>
-          <en>Arma Natural: Garras and Mordisco hasta a Maximum of Mediano</en>
+          <en>Weapon Natural: Garras and Mordisco hasta a Maximum of Mediano</en>
           <es>Arma Natural: Garras y Mordisco hasta un máximo de Mediano</es>
         </text>
       </special>
@@ -501,7 +501,7 @@
       <special>
         <points>15</points>
         <text>
-          <en>Arma Natural: Aliento of Dragon (30m/1xmin/20xdia)</en>
+          <en>Weapon Natural: Aliento of Dragon (30m/1xmin/20xdia)</en>
           <es>Arma Natural: Aliento de Dragón (30m/1xmin/20xdia)</es>
         </text>
       </special>

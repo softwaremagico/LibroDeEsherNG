@@ -1703,9 +1703,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>cazar</id>
+    <id>hunting</id>
     <name>
-      <en>Cazar</en>
+      <en>Hunting</en>
       <es>Cazar</es>
     </name>
     <rare>false</rare>
@@ -2080,9 +2080,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>styleOfArmaBasic</id>
+    <id>styleOfWeaponBasic</id>
     <name>
-      <en>Style of Arma (Basic)</en>
+      <en>Style of Weapon (Basic)</en>
       <es>Estilo de Arma (Básico)</es>
     </name>
     <rare>false</rare>
@@ -2093,9 +2093,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>combatManeuvers</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>styleOfArmaAdvanced</id>
+    <id>styleOfWeaponAdvanced</id>
     <name>
-      <en>Style of Arma (Advanced)</en>
+      <en>Style of Weapon (Advanced)</en>
       <es>Estilo de Arma (Avanzado)</es>
     </name>
     <rare>false</rare>
@@ -3250,9 +3250,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>technicalTradeVocational</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>evaluarArma</id>
+    <id>evaluarWeapon</id>
     <name>
-      <en>Evaluar Arma</en>
+      <en>Evaluar Weapon</en>
       <es>Evaluar Arma</es>
     </name>
     <rare>false</rare>

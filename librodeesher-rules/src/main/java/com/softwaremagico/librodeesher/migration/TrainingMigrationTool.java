@@ -103,10 +103,10 @@ public final class TrainingMigrationTool {
         training.setCategories(parseCategories(cursor.nextSection(), categoryIndex));
         training.setCharacteristicUpgrades(parseCharacteristicChoiceGroups(cursor.nextSection()));
         training.setRequirements(parseRequirements(cursor.nextSection()));
-        training.setLifeSkills(parseChoiceGroups(cursor.nextSection()));
-        training.setCommonSkills(parseChoiceGroups(cursor.nextSection()));
-        training.setProfessionalSkills(parseChoiceGroups(cursor.nextSection()));
-        training.setRestrictedSkills(parseChoiceGroups(cursor.nextSection()));
+        training.setLifeSkills(parseSkillChoiceGroups(cursor.nextSection()));
+        training.setCommonSkills(parseSkillChoiceGroups(cursor.nextSection()));
+        training.setProfessionalSkills(parseSkillChoiceGroups(cursor.nextSection()));
+        training.setRestrictedSkills(parseSkillChoiceGroups(cursor.nextSection()));
         training.setProfessionCosts(parseProfessionCosts(cursor.nextSectionOrEmpty()));
         return training;
     }
@@ -282,6 +282,36 @@ public final class TrainingMigrationTool {
                 resolved.add(abbreviation.name());
             }
             groups.add(new ChoiceGroup(resolved));
+        }
+        return groups;
+    }
+
+    /**
+     * Parses the shared "Ninguno(a)" / plain comma list / {@code {alt1;alt2}} choice syntax used by
+     * the four skill sections ("HABILIDADES DE ESTILO DE VIDA"/"COMUNES"/"PROFESIONALES"/
+     * "RESTRINGIDAS"), resolving every option to a real {@code Skill} id via {@link
+     * Translations#toEnglishId} (every skill name found across every shipped training matches a real
+     * migrated skill id exactly, since weapons are migrated as skills too, see {@code
+     * SkillMigrationTool}).
+     *
+     * <p>The bare {@code "Arma"} marker (found once, in "Mago del Fuego") is dropped instead of
+     * resolved: the legacy {@code SkillFactory#getSkill(String)} special-cased it to always return
+     * {@code null} (matching neither a real skill nor throwing), so it was already a dead/no-op
+     * option there, the same as the "Idiomas" hobby marker (see {@code CultureMigrationTool}).</p>
+     */
+    private static List<ChoiceGroup> parseSkillChoiceGroups(List<String> sectionLines) {
+        final List<ChoiceGroup> groups = new ArrayList<>();
+        for (final ChoiceGroup group : parseChoiceGroups(sectionLines)) {
+            final List<String> resolved = new ArrayList<>();
+            for (final String option : group.getOptions()) {
+                if (option.equalsIgnoreCase("Arma")) {
+                    continue;
+                }
+                resolved.add(Translations.toEnglishId(option));
+            }
+            if (!resolved.isEmpty()) {
+                groups.add(new ChoiceGroup(resolved));
+            }
         }
         return groups;
     }

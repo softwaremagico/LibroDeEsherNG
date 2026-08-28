@@ -1226,6 +1226,7 @@ public final class Translations {
         put(m, "Remar", "Rowing");
         put(m, "Documentar", "Documenting");
         put(m, "Rastrear", "Tracking");
+        put(m, "Cazar", "Hunting");
         put(m, "Acechar", "Stalking");
         put(m, "Esconderse", "Hiding");
         put(m, "Emboscar", "Ambushing");

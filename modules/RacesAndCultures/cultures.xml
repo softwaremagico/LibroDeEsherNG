@@ -10423,7 +10423,7 @@
       <hobbyId>armorMiddle</hobbyId>
       <hobbyId>singing</hobbyId>
       <hobbyId>carreraOfDistance</hobbyId>
-      <hobbyId>cazar</hobbyId>
+      <hobbyId>hunting</hobbyId>
       <hobbyId>combatMontado</hobbyId>
       <hobbyId>loreRegional</hobbyId>
       <hobbyId>diplomacia</hobbyId>
@@ -10919,7 +10919,7 @@
       <hobbyId>armorLight</hobbyId>
       <hobbyId>streetSmarts</hobbyId>
       <hobbyId>carreraOfDistance</hobbyId>
-      <hobbyId>cazar</hobbyId>
+      <hobbyId>hunting</hobbyId>
       <hobbyId>cocinar</hobbyId>
       <hobbyId>conducir</hobbyId>
       <hobbyId>loreRegional</hobbyId>
@@ -11411,7 +11411,7 @@
       <hobbyId>weaponsBlunt</hobbyId>
       <hobbyId>armorLight</hobbyId>
       <hobbyId>carreraOfDistance</hobbyId>
-      <hobbyId>cazar</hobbyId>
+      <hobbyId>hunting</hobbyId>
       <hobbyId>cocinar</hobbyId>
       <hobbyId>comerciar</hobbyId>
       <hobbyId>loreRegional</hobbyId>
@@ -11905,7 +11905,7 @@
       <hobbyId>armorLight</hobbyId>
       <hobbyId>softLeather</hobbyId>
       <hobbyId>carreraOfDistance</hobbyId>
-      <hobbyId>cazar</hobbyId>
+      <hobbyId>hunting</hobbyId>
       <hobbyId>cocinar</hobbyId>
       <hobbyId>conducir</hobbyId>
       <hobbyId>loreRegional</hobbyId>
@@ -15400,7 +15400,7 @@
       <hobbyId>weaponsThrown</hobbyId>
       <hobbyId>walkingByTheRopeSlack</hobbyId>
       <hobbyId>camuflaje</hobbyId>
-      <hobbyId>cazar</hobbyId>
+      <hobbyId>hunting</hobbyId>
       <hobbyId>loreOfFauna</hobbyId>
       <hobbyId>loreOfFlora</hobbyId>
       <hobbyId>loreRegional</hobbyId>
@@ -15914,7 +15914,7 @@
       <hobbyId>armorLight</hobbyId>
       <hobbyId>walkingByTheRopeSlack</hobbyId>
       <hobbyId>camuflaje</hobbyId>
-      <hobbyId>cazar</hobbyId>
+      <hobbyId>hunting</hobbyId>
       <hobbyId>loreOfFauna</hobbyId>
       <hobbyId>loreOfFlora</hobbyId>
       <hobbyId>loreRegional</hobbyId>
@@ -16423,7 +16423,7 @@
       <hobbyId>walkingByTheRopeSlack</hobbyId>
       <hobbyId>camuflaje</hobbyId>
       <hobbyId>singing</hobbyId>
-      <hobbyId>cazar</hobbyId>
+      <hobbyId>hunting</hobbyId>
       <hobbyId>loreOfFauna</hobbyId>
       <hobbyId>loreOfFlora</hobbyId>
       <hobbyId>loreOfHerbs</hobbyId>
@@ -21391,7 +21391,7 @@
       <hobbyId>weaponsPolearm</hobbyId>
       <hobbyId>weaponsThrown</hobbyId>
       <hobbyId>camuflaje</hobbyId>
-      <hobbyId>cazar</hobbyId>
+      <hobbyId>hunting</hobbyId>
       <hobbyId>loreRegionalArctic</hobbyId>
       <hobbyId>skiing</hobbyId>
       <hobbyId>construirTrampas</hobbyId>
@@ -21900,7 +21900,7 @@
       <hobbyId>weaponsThrown</hobbyId>
       <hobbyId>weaponsBlunt</hobbyId>
       <hobbyId>camuflaje</hobbyId>
-      <hobbyId>cazar</hobbyId>
+      <hobbyId>hunting</hobbyId>
       <hobbyId>comerciar</hobbyId>
       <hobbyId>loreRegionalArctic</hobbyId>
       <hobbyId>loreOfFaunaArctic</hobbyId>
@@ -22409,7 +22409,7 @@
       <hobbyId>weaponsPolearm</hobbyId>
       <hobbyId>weaponsThrown</hobbyId>
       <hobbyId>camuflaje</hobbyId>
-      <hobbyId>cazar</hobbyId>
+      <hobbyId>hunting</hobbyId>
       <hobbyId>comerciar</hobbyId>
       <hobbyId>singing</hobbyId>
       <hobbyId>carreraOfDistance</hobbyId>

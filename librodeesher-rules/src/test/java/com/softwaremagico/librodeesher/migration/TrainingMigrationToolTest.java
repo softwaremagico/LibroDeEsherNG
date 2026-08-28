@@ -142,8 +142,8 @@ public class TrainingMigrationToolTest {
             final List<ChoiceGroup> commonSkills = explorador.getCommonSkills();
             Assert.assertEquals(commonSkills.size(), 2);
             Assert.assertTrue(commonSkills.get(0).isFixed());
-            Assert.assertEquals(commonSkills.get(0).getOptions(), List.of("Cazar"));
-            Assert.assertEquals(commonSkills.get(1).getOptions(), List.of("Rastrear", "Acechar"));
+            Assert.assertEquals(commonSkills.get(0).getOptions(), List.of("hunting"));
+            Assert.assertEquals(commonSkills.get(1).getOptions(), List.of("tracking", "stalking"));
 
             Assert.assertTrue(explorador.getProfessionCosts().isEmpty());
         } finally {
