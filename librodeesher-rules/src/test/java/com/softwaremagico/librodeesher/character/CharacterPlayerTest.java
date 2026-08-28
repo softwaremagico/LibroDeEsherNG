@@ -4,10 +4,15 @@ import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.category.CategoryType;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
+import com.softwaremagico.librodeesher.decision.InvalidDecisionException;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
+import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
+import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 /** Verifies {@link CharacterPlayer}'s identity, characteristic and level bookkeeping. */
 @Test(groups = "character")
@@ -178,5 +183,61 @@ public class CharacterPlayerTest {
         Assert.assertTrue(character.isPreferredCharacteristic(CharacteristicAbbreviation.EMPATHY));
         Assert.assertTrue(character.isPreferredCharacteristic(CharacteristicAbbreviation.REASONING));
         Assert.assertFalse(character.isPreferredCharacteristic(CharacteristicAbbreviation.CONSTITUTION));
+    }
+
+    @Test
+    public void applyingAFixedCategoryGrantAddsItsRanksAndNestedSkillRanks() {
+        final CharacterPlayer character = new CharacterPlayer();
+        final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+        grant.setCategoryOptions(List.of("outdoorEnvironment"));
+        grant.setRanksGranted(2);
+        grant.getSkills().add(new TrainingSkillGrant(List.of("tracking"), 2));
+
+        character.applyCategoryGrant("training:scout:category:0", grant, null, null);
+
+        Assert.assertEquals(character.getCategoryTotalRanks("outdoorEnvironment"), Integer.valueOf(2));
+        Assert.assertEquals(character.getSkillTotalRanks("tracking"), Integer.valueOf(2));
+        Assert.assertEquals(character.getDecisions().getSelectedOption("training:scout:category:0"), "outdoorEnvironment");
+        Assert.assertEquals(character.getDecisions().getSelectedOption("training:scout:category:0:skill:0"), "tracking");
+    }
+
+    @Test
+    public void applyingAChoiceCategoryGrantRequiresAndRecordsTheSelection() {
+        final CharacterPlayer character = new CharacterPlayer();
+        final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+        grant.setCategoryOptions(List.of("weaponsTwoHanded", "weaponsEdged"));
+        grant.setRanksGranted(1);
+
+        character.applyCategoryGrant("training:soldier:category:1", grant, "weaponsEdged", null);
+
+        Assert.assertEquals(character.getCategoryTotalRanks("weaponsEdged"), Integer.valueOf(1));
+        Assert.assertEquals(character.getCategoryTotalRanks("weaponsTwoHanded"), Integer.valueOf(0));
+        Assert.assertEquals(character.getDecisions().getSelectedOption("training:soldier:category:1"), "weaponsEdged");
+    }
+
+    @Test(expectedExceptions = InvalidDecisionException.class)
+    public void applyingAChoiceCategoryGrantWithAnInvalidSelectionFails() {
+        final CharacterPlayer character = new CharacterPlayer();
+        final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+        grant.setCategoryOptions(List.of("weaponsTwoHanded", "weaponsEdged"));
+        grant.setRanksGranted(1);
+
+        character.applyCategoryGrant("training:soldier:category:1", grant, "weaponsMissile", null);
+    }
+
+    @Test
+    public void applyingTheSameGrantTwiceReusesTheFirstDecisionAndAccumulatesRanks() {
+        final CharacterPlayer character = new CharacterPlayer();
+        final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+        grant.setCategoryOptions(List.of("weaponsTwoHanded", "weaponsEdged"));
+        grant.setRanksGranted(1);
+
+        character.applyCategoryGrant("training:soldier:category:1", grant, "weaponsEdged", null);
+        // A different (and otherwise invalid, since it wasn't offered before) id is ignored because
+        // the decision was already made.
+        character.applyCategoryGrant("training:soldier:category:1", grant, "somethingElse", null);
+
+        Assert.assertEquals(character.getCategoryTotalRanks("weaponsEdged"), Integer.valueOf(2));
+        Assert.assertEquals(character.getDecisions().getSelectedOption("training:soldier:category:1"), "weaponsEdged");
     }
 }

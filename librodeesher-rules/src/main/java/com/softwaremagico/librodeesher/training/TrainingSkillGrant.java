@@ -3,6 +3,7 @@ package com.softwaremagico.librodeesher.training;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.softwaremagico.librodeesher.decision.Decision;
 
 import java.util.Collections;
 import java.util.List;
@@ -45,6 +46,15 @@ public class TrainingSkillGrant {
     /** Whether the player must choose one skill among several, rather than getting a fixed one. */
     public boolean isChoice() {
         return getSkillOptions().size() > 1;
+    }
+
+    /**
+     * Resolves which skill this grant applies to: for a fixed grant, {@code selectedSkillId} is
+     * ignored and the single option is used; for an actual choice, {@code selectedSkillId} must be
+     * one of {@link #getSkillOptions()}.
+     */
+    public Decision resolve(String selectedSkillId) {
+        return isChoice() ? Decision.select(getSkillOptions(), selectedSkillId) : Decision.fixed(getSkillOptions());
     }
 
     public Integer getRanksToDistribute() {

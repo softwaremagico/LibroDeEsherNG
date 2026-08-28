@@ -2,6 +2,7 @@ package com.softwaremagico.librodeesher.training;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.softwaremagico.librodeesher.decision.Decision;
 
 import java.util.Collections;
 import java.util.List;
@@ -38,5 +39,14 @@ public class ChoiceGroup {
     /** Whether this group is a single, fixed option rather than an actual choice. */
     public boolean isFixed() {
         return getOptions().size() == 1;
+    }
+
+    /**
+     * Resolves this group into a {@link Decision}: for a fixed group, {@code selectedOption} is
+     * ignored and the single option is used; for an actual choice, {@code selectedOption} must be one
+     * of {@link #getOptions()}.
+     */
+    public Decision resolve(String selectedOption) {
+        return isFixed() ? Decision.fixed(getOptions()) : Decision.select(getOptions(), selectedOption);
     }
 }

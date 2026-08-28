@@ -3,6 +3,7 @@ package com.softwaremagico.librodeesher.training;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.softwaremagico.librodeesher.decision.Decision;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -66,6 +67,15 @@ public class TrainingCategoryGrant {
     /** Whether the player must choose one category among several, rather than getting a fixed one. */
     public boolean isChoice() {
         return getCategoryOptions().size() > 1;
+    }
+
+    /**
+     * Resolves which category this grant applies to: for a fixed grant, {@code selectedCategoryId}
+     * is ignored and the single option is used; for an actual choice, {@code selectedCategoryId} must
+     * be one of {@link #getCategoryOptions()}.
+     */
+    public Decision resolve(String selectedCategoryId) {
+        return isChoice() ? Decision.select(getCategoryOptions(), selectedCategoryId) : Decision.fixed(getCategoryOptions());
     }
 
     public Integer getRanksGranted() {

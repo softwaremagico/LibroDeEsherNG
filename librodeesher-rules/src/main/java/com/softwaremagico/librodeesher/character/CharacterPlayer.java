@@ -7,16 +7,21 @@ import com.softwaremagico.librodeesher.characteristic.Appearance;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.culture.Culture;
+import com.softwaremagico.librodeesher.decision.Decision;
+import com.softwaremagico.librodeesher.decision.Decisions;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
+import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
+import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Supplier;
 
 /**
  * A player character in progress.
@@ -46,6 +51,7 @@ public class CharacterPlayer {
 
     private final List<LevelUp> levels = new ArrayList<>();
     private final Background background = new Background();
+    private final Decisions decisions = new Decisions();
 
     public CharacterPlayer() {
         for (final CharacteristicAbbreviation abbreviation : allRealCharacteristics()) {
@@ -295,5 +301,58 @@ public class CharacterPlayer {
 
     public Background getBackground() {
         return background;
+    }
+
+    /** Every choice the player has made so far for a category/skill/characteristic grant; see {@link Decisions}. */
+    public Decisions getDecisions() {
+        return decisions;
+    }
+
+    /**
+     * Applies one of a training's (or culture's adolescence) category grants to the current level:
+     * resolves which category it applies to (reusing an already-made decision if {@code key} was
+     * decided before, otherwise validating {@code selectedCategoryId} and recording it), adds the
+     * grant's ranks to that category, then does the same for each of its nested skill grants (keyed
+     * as {@code key + ":skill:" + <index>}).
+     *
+     * <p>Ranks are added to the <em>current</em> level; call this once per level the grant actually
+     * applies at (typically once, when the training/culture is first taken).</p>
+     *
+     * @param key                a caller-chosen id identifying this specific grant uniquely for this
+     *                           character (e.g. {@code "training:soldier:category:1"}), reused as-is
+     *                           on subsequent calls once a choice has been made.
+     * @param grant              the category grant to apply.
+     * @param selectedCategoryId the category to use if {@code grant} offers a choice and {@code key}
+     *                           has not been decided yet; ignored otherwise (including when {@code
+     *                           grant} is not a choice).
+     * @param selectedSkillIds   the skill to use for each of {@code grant}'s nested skill grants that
+     *                           offers a choice and has not been decided yet, in the same order as
+     *                           {@link TrainingCategoryGrant#getSkills()}; ignored for grants that are
+     *                           not a choice or are already decided.
+     */
+    public void applyCategoryGrant(String key, TrainingCategoryGrant grant, String selectedCategoryId, List<String> selectedSkillIds) {
+        final Decision categoryDecision = decideOrReuse(key, () -> grant.resolve(selectedCategoryId));
+        getCurrentLevel().addCategoryRanks(categoryDecision.getSelectedOption(), grant.getRanksGranted());
+
+        final List<TrainingSkillGrant> skills = grant.getSkills();
+        for (int i = 0; i < skills.size(); i++) {
+            final TrainingSkillGrant skillGrant = skills.get(i);
+            final String skillKey = key + ":skill:" + i;
+            final String selectedSkillId = selectedSkillIds != null && i < selectedSkillIds.size() ? selectedSkillIds.get(i) : null;
+            final Decision skillDecision = decideOrReuse(skillKey, () -> skillGrant.resolve(selectedSkillId));
+            // Whether this is a spell skill is not resolved here (it requires cross-referencing the
+            // skill's category), see LevelUp#setSkillRanks; future work.
+            getCurrentLevel().addSkillRanks(skillDecision.getSelectedOption(), skillGrant.getRanksToDistribute(), false);
+        }
+    }
+
+    /** Returns the existing decision for {@code key}, or resolves it via {@code resolver} and records it. */
+    private Decision decideOrReuse(String key, Supplier<Decision> resolver) {
+        if (decisions.isDecided(key)) {
+            return decisions.get(key);
+        }
+        final Decision decision = resolver.get();
+        decisions.set(key, decision);
+        return decision;
     }
 }

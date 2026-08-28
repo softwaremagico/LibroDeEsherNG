@@ -25,6 +25,18 @@ public class LevelUpTest {
     }
 
     @Test
+    public void addCategoryAndSkillRanksAccumulateOnTopOfExistingRanks() {
+        final LevelUp levelUp = new LevelUp();
+        levelUp.setCategoryRanks("outdoorEnvironment", 2);
+        levelUp.addCategoryRanks("outdoorEnvironment", 3);
+        Assert.assertEquals(levelUp.getCategoryRanks("outdoorEnvironment"), Integer.valueOf(5));
+
+        levelUp.setSkillRanks("tracking", 1, false);
+        levelUp.addSkillRanks("tracking", 2, false);
+        Assert.assertEquals(levelUp.getSkillRanks("tracking"), Integer.valueOf(3));
+    }
+
+    @Test
     public void spellSkillsAreTrackedSeparatelyFromRegularSkills() {
         final LevelUp levelUp = new LevelUp();
         levelUp.setSkillRanks("regularSkill", 2, false);

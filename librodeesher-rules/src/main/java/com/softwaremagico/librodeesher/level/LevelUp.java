@@ -59,6 +59,11 @@ public class LevelUp {
         }
     }
 
+    /** Adds {@code ranks} to whatever ranks in {@code categoryId} were already bought this level. */
+    public void addCategoryRanks(String categoryId, Integer ranks) {
+        setCategoryRanks(categoryId, getCategoryRanks(categoryId) + ranks);
+    }
+
     public List<String> getCategoriesWithRanks() {
         return new ArrayList<>(categoryRanks.keySet());
     }
@@ -92,6 +97,11 @@ public class LevelUp {
                 spellsUpdated.add(skillId);
             }
         }
+    }
+
+    /** Adds {@code ranks} to whatever ranks in {@code skillId} were already bought this level. */
+    public void addSkillRanks(String skillId, Integer ranks, boolean isSpellSkill) {
+        setSkillRanks(skillId, getSkillRanks(skillId) + ranks, isSpellSkill);
     }
 
     public List<String> getSkillsWithRanks() {
