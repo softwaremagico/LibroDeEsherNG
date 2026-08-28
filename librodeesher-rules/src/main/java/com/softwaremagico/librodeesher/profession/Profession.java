@@ -240,4 +240,19 @@ public class Profession extends Element {
     public void setTrainingCosts(List<ProfessionTrainingCost> trainingCosts) {
         this.trainingCosts = trainingCosts;
     }
+
+    /**
+     * This profession's explicit background point cost/preference (favourite/forbidden) for
+     * {@code trainingId} (the "ADIESTRAMIENTO" section), or {@code null} if it does not mention that
+     * training at all (its cost then falls back to {@link
+     * com.softwaremagico.librodeesher.training.Training}'s own base cost, not modeled yet).
+     */
+    public ProfessionTrainingCost getTrainingCost(String trainingId) {
+        for (final ProfessionTrainingCost cost : getTrainingCosts()) {
+            if (cost.getTrainingName().equals(trainingId)) {
+                return cost;
+            }
+        }
+        return null;
+    }
 }

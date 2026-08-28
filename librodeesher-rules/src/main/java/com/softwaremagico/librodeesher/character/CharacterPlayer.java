@@ -26,6 +26,7 @@ import com.softwaremagico.librodeesher.perk.PerkChoiceScope;
 import com.softwaremagico.librodeesher.perk.PerkGrade;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.profession.Profession;
+import com.softwaremagico.librodeesher.profession.ProfessionTrainingCost;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.race.RaceLanguage;
@@ -37,6 +38,7 @@ import com.softwaremagico.librodeesher.training.ChoiceGroup;
 import com.softwaremagico.librodeesher.training.Training;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
 import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
+import com.softwaremagico.librodeesher.training.TrainingType;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
@@ -1331,6 +1333,28 @@ public class CharacterPlayer {
 	public double getCultureTrainingPricePercentage(String trainingId) throws InvalidXmlElementException {
 		final Culture culture = this.getCulture();
 		return culture == null ? 1.0 : culture.getTrainingPricePercentage(trainingId);
+	}
+
+	/**
+	 * The selected profession's explicit background point cost/preference for {@code trainingId}
+	 * (see {@link Profession#getTrainingCost(String)}), or {@code null} if no profession is selected
+	 * or it does not mention that training.
+	 */
+	public ProfessionTrainingCost getProfessionTrainingCost(String trainingId) throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		return profession == null ? null : profession.getTrainingCost(trainingId);
+	}
+
+	/** Whether the selected profession forbids {@code trainingId}, or {@code false} if no profession is selected or it does not mention it. */
+	public boolean isTrainingForbiddenByProfession(String trainingId) throws InvalidXmlElementException {
+		final ProfessionTrainingCost cost = this.getProfessionTrainingCost(trainingId);
+		return cost != null && cost.getType() == TrainingType.FORBIDDEN;
+	}
+
+	/** Whether the selected profession favours {@code trainingId}, or {@code false} if no profession is selected or it does not mention it. */
+	public boolean isTrainingFavouredByProfession(String trainingId) throws InvalidXmlElementException {
+		final ProfessionTrainingCost cost = this.getProfessionTrainingCost(trainingId);
+		return cost != null && cost.getType() == TrainingType.FAVOURITE;
 	}
 
 	private static final String PERK_CHOICE_KEY_PREFIX = "perk:";

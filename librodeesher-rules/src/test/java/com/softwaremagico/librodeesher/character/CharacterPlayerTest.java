@@ -1016,4 +1016,19 @@ public class CharacterPlayerTest {
         Assert.assertTrue(character.isSkillEnabled(chiPower));
         Assert.assertFalse(character.isSkillEnabled(otherChiPower));
     }
+
+    @Test
+    public void professionTrainingPreferenceIsQueryable() throws InvalidXmlElementException {
+        final CharacterPlayer withoutProfession = new CharacterPlayer();
+        Assert.assertNull(withoutProfession.getProfessionTrainingCost("knight"));
+        Assert.assertFalse(withoutProfession.isTrainingFavouredByProfession("knight"));
+
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("fighter");
+
+        Assert.assertTrue(character.isTrainingFavouredByProfession("knight"));
+        Assert.assertFalse(character.isTrainingForbiddenByProfession("knight"));
+        Assert.assertEquals(character.getProfessionTrainingCost("knight").getCost(), Integer.valueOf(25));
+        Assert.assertFalse(character.isTrainingFavouredByProfession("unmentionedTraining"));
+    }
 }
