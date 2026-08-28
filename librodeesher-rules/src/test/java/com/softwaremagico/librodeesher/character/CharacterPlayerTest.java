@@ -610,4 +610,18 @@ public class CharacterPlayerTest {
         Assert.assertTrue(character.isCategoryCommonByRace("loreTechnical"));
         Assert.assertFalse(character.isCategoryRestrictedByRace("loreTechnical"));
     }
+
+    @Test
+    public void raceCommonWeaponSkillIsRecognizedSinceWeaponsAreAlsoSkills() throws InvalidXmlElementException {
+        // grayOrc's common skills are actually weapon names (e.g. "staff"): weapons are migrated as
+        // skills too (SkillMigrationTool), so this must be recognized like any other common skill.
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("grayOrc");
+
+        Assert.assertTrue(character.isSkillCommonByRace("staff"));
+
+        final Skill staff = new Skill("staff");
+        staff.setName("Bastón", "Staff");
+        Assert.assertTrue(character.isSkillCommon(staff));
+    }
 }

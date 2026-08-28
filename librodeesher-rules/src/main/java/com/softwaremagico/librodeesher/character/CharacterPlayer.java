@@ -609,8 +609,7 @@ public class CharacterPlayer {
      * Whether {@code skill} is restricted: either by its own {@link SkillType#RESTRICTED} tag,
      * because a training taken so far grants it as one of its restricted skills, or because the
      * selected race restricts it (matched by {@code skill.getId()} against {@link
-     * Race#getRestrictedSkillIds()}; see that field's javadoc for why it may miss a match for a
-     * skill that is really a weapon under the hood).
+     * Race#getRestrictedSkillIds()}).
      *
      * <p>The legacy rule also considers profession and perk classifications; those are future work
      * (they need {@code Profession}'s not-yet-parsed skill sections, and perk skill classification,

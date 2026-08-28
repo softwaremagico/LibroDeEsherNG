@@ -39,4 +39,56 @@
     <skillGroup>STANDARD</skillGroup>
     <skillType>STANDARD</skillType>
   </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>weaponsThrown</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>rock</id>
+    <name>
+      <en>Rock</en>
+      <es>Roca</es>
+    </name>
+    <rare>true</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>weaponsSiege</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>cannon</id>
+    <name>
+      <en>Cannon</en>
+      <es>Cañon</es>
+    </name>
+    <rare>true</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>weaponsFirearmOneHanded</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>energyPistolSaukur</id>
+    <name>
+      <en>Energy Pistol: Saukur</en>
+      <es>Pistola Energética: Saukur</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>weaponsFirearmTwoHanded</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>energyRifleSaukur</id>
+    <name>
+      <en>Energy Rifle: Saukur</en>
+      <es>Rifle Energético: Saukur</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
 </skills>

@@ -59,6 +59,39 @@ public class SkillMigrationToolTest {
         }
     }
 
+    @Test
+    public void everyWeaponIsAlsoASkill() throws IOException {
+        final Path sourceRoot = Files.createTempDirectory("librodeesher-skill-migration-weapons-source");
+        final Path targetRoot = Files.createTempDirectory("librodeesher-skill-migration-weapons-target");
+        try {
+            final Path rolemasterDir = sourceRoot.resolve("rolemaster");
+            Files.createDirectories(rolemasterDir);
+            Files.writeString(rolemasterDir.resolve("categorias.txt"), String.join("\n",
+                    "Percepción(Perc)\tIn/Em/In\tEstándar\tRastrear, Acechar", ""), StandardCharsets.UTF_8);
+
+            final Path weaponsDir = rolemasterDir.resolve("modulos/Basico/armas");
+            Files.createDirectories(weaponsDir);
+            Files.writeString(weaponsDir.resolve("Filo.txt"), String.join("\n",
+                    "Espada Larga\tEsL", "Daga*\tDag", ""), StandardCharsets.UTF_8);
+
+            SkillMigrationTool.migrate(sourceRoot, targetRoot);
+
+            final List<Skill> skills = readGeneratedFile(targetRoot.resolve("Core/skills.xml"));
+            Assert.assertEquals(skills.size(), 4, "2 skills from categorias.txt plus 2 weapons");
+
+            final Skill longSword = findById(skills, "longSword");
+            Assert.assertEquals(longSword.getCategoryId(), "weaponsEdged");
+            Assert.assertFalse(longSword.isRare());
+
+            final Skill dagger = findById(skills, "dagger");
+            Assert.assertEquals(dagger.getCategoryId(), "weaponsEdged");
+            Assert.assertTrue(dagger.isRare());
+        } finally {
+            deleteRecursively(sourceRoot);
+            deleteRecursively(targetRoot);
+        }
+    }
+
     private static List<Skill> readGeneratedFile(Path file) throws IOException {
         Assert.assertTrue(Files.isRegularFile(file), "expected generated file at " + file);
         try (var inputStream = Files.newInputStream(file)) {

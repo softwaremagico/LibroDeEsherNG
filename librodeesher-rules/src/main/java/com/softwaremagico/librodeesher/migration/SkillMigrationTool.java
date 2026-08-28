@@ -4,6 +4,7 @@ import com.softwaremagico.librodeesher.file.ModuleManager;
 import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.skill.Skill;
 import com.softwaremagico.librodeesher.skill.SkillNameParser;
+import com.softwaremagico.librodeesher.weapon.WeaponType;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -15,6 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Stream;
 
 /**
  * One-shot command line tool that builds the global skill catalog and writes it as {@code
@@ -32,6 +34,14 @@ import java.util.Set;
  *     files instead) contributes no skill.</li>
  * </ul>
  *
+ * <p>Every weapon is also a skill (the legacy application's {@code
+ * CategoryFactory#addWeaponsAsSkills()} converted each one via {@code SkillFactory#getSkill(weapon.getName())}
+ * and assigned it to its weapon category): this tool reproduces that by walking every {@code
+ * armas/<Tipo>.txt} file the same way {@link WeaponMigrationTool} does, after every category-derived
+ * skill, contributing one more skill (assigned to {@link WeaponType#getCategoryId()}) for each weapon
+ * name not already present. A race/perk/training referencing a weapon name is therefore expected to
+ * resolve against this same catalog, not a separate one.</p>
+ *
  * <p>Ids are English-derived (see {@link IdAllocator}), assigned in a second pass once every skill's
  * Spanish name is known, so that {@link Skill#getEnableSkills()} (which references other skills by
  * name) can be rewritten from Spanish names to the final ids.</p>
@@ -45,6 +55,7 @@ public final class SkillMigrationTool {
 
     private static final String DYNAMIC_SKILLS_MARKER = "noimporta";
     private static final String OUTPUT_FILE = "skills.xml";
+    private static final String WEAPONS_FOLDER = "armas";
 
     private SkillMigrationTool() {
         // Utility class.
@@ -68,6 +79,19 @@ public final class SkillMigrationTool {
         for (final String module : ModuleManager.getAllModules()) {
             for (final Path file : LegacyCategoriesFiles.forModule(module, rolemasterDir, modulosDir)) {
                 readSkillsFromCategoriesFile(file, module, skillsBySpanishName, skillsByModule);
+            }
+        }
+
+        for (final String module : ModuleManager.getAllModules()) {
+            final Path weaponsDir = modulosDir.resolve(LegacyModules.sourceFolderFor(module)).resolve(WEAPONS_FOLDER);
+            if (!Files.isDirectory(weaponsDir)) {
+                continue;
+            }
+            try (Stream<Path> files = Files.list(weaponsDir)) {
+                for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
+                        .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
+                    readWeaponSkillsFromFile(file, module, skillsBySpanishName, skillsByModule);
+                }
             }
         }
 
@@ -108,6 +132,35 @@ public final class SkillMigrationTool {
                 skillsBySpanishName.put(spanishName, parsed);
                 skillsByModule.computeIfAbsent(module, key -> new ArrayList<>()).add(parsed);
             }
+        }
+    }
+
+    /**
+     * Reads one {@code armas/<Tipo>.txt} file (see {@link WeaponMigrationTool}'s class javadoc for
+     * its format) and contributes one skill per weapon name not already present, assigned to that
+     * weapon type's category id.
+     */
+    private static void readWeaponSkillsFromFile(Path file, String module, Map<String, Skill> skillsBySpanishName,
+                                                  Map<String, List<Skill>> skillsByModule) throws IOException {
+        final String fileName = file.getFileName().toString();
+        final WeaponType type = WeaponType.fromTag(fileName.substring(0, fileName.length() - ".txt".length()));
+
+        for (final String line : Files.readAllLines(file, StandardCharsets.UTF_8)) {
+            if (line.isBlank() || line.startsWith("#")) {
+                continue;
+            }
+            final String[] columns = line.split("\t");
+            if (columns.length < 2) {
+                continue;
+            }
+            final Skill parsed = SkillNameParser.parse(columns[0].trim());
+            final String spanishName = parsed.getId();
+            if (skillsBySpanishName.containsKey(spanishName)) {
+                continue;
+            }
+            parsed.setCategoryId(type.getCategoryId());
+            skillsBySpanishName.put(spanishName, parsed);
+            skillsByModule.computeIfAbsent(module, key -> new ArrayList<>()).add(parsed);
         }
     }
 

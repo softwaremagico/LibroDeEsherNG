@@ -39,4 +39,69 @@
     <skillGroup>FIREARM</skillGroup>
     <skillType>STANDARD</skillType>
   </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>weaponsFirearmOneHanded</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>automaticPistolSamuelCoutty</id>
+    <name>
+      <en>Automatic Pistol: Samuel Coutty</en>
+      <es>Pistola Automática: Samuel Coutty</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>weaponsFirearmOneHanded</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>muzzleloaderPistolThomasFrenchContractPistol</id>
+    <name>
+      <en>Muzzleloader Pistol: Thomas French Contract Pistol</en>
+      <es>Pistola Avancarga: Thomas French Contract Pistol</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>weaponsFirearmOneHanded</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>revolverColtTrooper</id>
+    <name>
+      <en>Revolver: Colt Trooper</en>
+      <es>Revolver: Colt Trooper</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>weaponsFirearmTwoHanded</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>muzzleloaderRifleMosqueyouFrenchOf1600</id>
+    <name>
+      <en>Muzzleloader Rifle: Mosqueyou French of 1600</en>
+      <es>Rifle de Avancarga: Mosquete Francés de 1600</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>weaponsFirearmTwoHanded</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>muzzleloaderRifleMoroccanSnaphance</id>
+    <name>
+      <en>Muzzleloader Rifle: Moroccan Snaphance</en>
+      <es>Rifle de Avancarga: Moroccan Snaphance</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
 </skills>
