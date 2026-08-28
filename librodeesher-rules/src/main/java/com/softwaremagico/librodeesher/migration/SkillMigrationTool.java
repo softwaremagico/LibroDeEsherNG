@@ -76,6 +76,40 @@ public final class SkillMigrationTool {
         final Map<String, Skill> skillsBySpanishName = new LinkedHashMap<>();
         final Map<String, List<Skill>> skillsByModule = new LinkedHashMap<>();
 
+        readEverySkill(sourceRoot, skillsBySpanishName, skillsByModule);
+        assignIdsAndRewriteEnableSkills(skillsBySpanishName);
+        applyDisabledByEnableSkills(skillsBySpanishName.values());
+
+        int written = 0;
+        for (final Map.Entry<String, List<Skill>> entry : skillsByModule.entrySet()) {
+            XmlMigrationWriter.write(modulesTarget.resolve(entry.getKey()).resolve(OUTPUT_FILE),
+                    "skills", "skill", entry.getValue());
+            written++;
+        }
+        return written;
+    }
+
+    /**
+     * Builds a Spanish skill name -&gt; id index the same way {@link #migrate(Path, Path)} builds the
+     * skill catalog itself (every category's "Habilidades" column, across every module, plus every
+     * weapon), so other migration tools (e.g. {@code PerkMigrationTool}) can resolve a skill name
+     * referenced by another rulebook file to the real skill id instead of embedding the raw Spanish
+     * name.
+     */
+    public static Map<String, String> buildSkillIndex(Path sourceRoot) throws IOException {
+        final Map<String, Skill> skillsBySpanishName = new LinkedHashMap<>();
+        readEverySkill(sourceRoot, skillsBySpanishName, new LinkedHashMap<>());
+        assignIdsAndRewriteEnableSkills(skillsBySpanishName);
+        final Map<String, String> index = new LinkedHashMap<>();
+        skillsBySpanishName.forEach((name, skill) -> index.put(name, skill.getId()));
+        return index;
+    }
+
+    private static void readEverySkill(Path sourceRoot, Map<String, Skill> skillsBySpanishName,
+                                        Map<String, List<Skill>> skillsByModule) throws IOException {
+        final Path rolemasterDir = sourceRoot.resolve("rolemaster");
+        final Path modulosDir = rolemasterDir.resolve("modulos");
+
         for (final String module : ModuleManager.getAllModules()) {
             for (final Path file : LegacyCategoriesFiles.forModule(module, rolemasterDir, modulosDir)) {
                 readSkillsFromCategoriesFile(file, module, skillsBySpanishName, skillsByModule);
@@ -94,17 +128,6 @@ public final class SkillMigrationTool {
                 }
             }
         }
-
-        assignIdsAndRewriteEnableSkills(skillsBySpanishName);
-        applyDisabledByEnableSkills(skillsBySpanishName.values());
-
-        int written = 0;
-        for (final Map.Entry<String, List<Skill>> entry : skillsByModule.entrySet()) {
-            XmlMigrationWriter.write(modulesTarget.resolve(entry.getKey()).resolve(OUTPUT_FILE),
-                    "skills", "skill", entry.getValue());
-            written++;
-        }
-        return written;
     }
 
     private static void readSkillsFromCategoriesFile(Path file, String module, Map<String, Skill> skillsBySpanishName,

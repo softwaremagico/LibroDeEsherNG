@@ -2,7 +2,15 @@
 <perks>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ataque Racial: Boca (Común)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>MAKES_COMMON</kind>
+        <movement>false</movement>
+        <skillId>attackRacialBoca</skillId>
+      </bonus>
+    </bonuses>
     <cost>30</cost>
     <description>
       <en>Eres a Vampire. Consulta the reglas especiales to the respecto.</en>

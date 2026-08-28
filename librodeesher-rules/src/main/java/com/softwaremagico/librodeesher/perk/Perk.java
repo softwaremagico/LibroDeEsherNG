@@ -17,13 +17,12 @@ import java.util.List;
  * instead of costing them), matching the legacy convention.</p>
  *
  * <p>The "bonuses" column of the legacy file packs a lot of different, loosely structured
- * information: fixed bonuses to a category/skill/characteristic/resistance, conditional bonuses,
- * extra ranks, and "choose one of these N options" groups (including special tokens like
- * {@code "Cualquier Categoría"}). Interpreting all of that requires cross-referencing
- * {@link com.softwaremagico.librodeesher.category.Category} and
- * {@link com.softwaremagico.librodeesher.skill.Skill}, and is significant enough scope that it is left
- * as dedicated future work (the equivalent of the legacy {@code PerkFactory#addBonuses}). For now
- * {@link #getBonusesRaw()} preserves the column verbatim so no information is lost.</p>
+ * information: fixed bonuses to a category/skill/characteristic/resistance/appearance/armor/movement
+ * (see {@link #getBonuses()}, matching the legacy {@code PerkFactory#addDefinedBonus}), and "choose
+ * one of these N options" groups (see {@link #getChoiceGrants()}, matching {@code
+ * PerkFactory#addListToChooseBonus}). A few bonus targets are spell-list groupings the magic system
+ * (not modeled yet) would need to resolve; see {@link PerkBonus#getUnresolvedTargetId()}/{@link
+ * PerkChoiceGrant#getUnresolvedScopeId()}.</p>
  */
 public class Perk extends Element {
 
@@ -46,9 +45,15 @@ public class Perk extends Element {
     @JsonProperty("type")
     private PerkType type;
 
-    /** Verbatim "bonuses" column, see the class javadoc. */
-    @JsonProperty("bonusesRaw")
-    private String bonusesRaw;
+    /** Fixed bonuses; see the class javadoc and {@link PerkBonus}. */
+    @JacksonXmlElementWrapper(localName = "bonuses")
+    @JacksonXmlProperty(localName = "bonus")
+    private List<PerkBonus> bonuses;
+
+    /** "Choose N of..." grants; see the class javadoc and {@link PerkChoiceGrant}. */
+    @JacksonXmlElementWrapper(localName = "choiceGrants")
+    @JacksonXmlProperty(localName = "choiceGrant")
+    private List<PerkChoiceGrant> choiceGrants;
 
     @JsonProperty("description")
     private TranslatedText description;
@@ -103,12 +108,20 @@ public class Perk extends Element {
         this.type = type;
     }
 
-    public String getBonusesRaw() {
-        return bonusesRaw;
+    public List<PerkBonus> getBonuses() {
+        return bonuses == null ? Collections.emptyList() : bonuses;
     }
 
-    public void setBonusesRaw(String bonusesRaw) {
-        this.bonusesRaw = bonusesRaw;
+    public void setBonuses(List<PerkBonus> bonuses) {
+        this.bonuses = bonuses;
+    }
+
+    public List<PerkChoiceGrant> getChoiceGrants() {
+        return choiceGrants == null ? Collections.emptyList() : choiceGrants;
+    }
+
+    public void setChoiceGrants(List<PerkChoiceGrant> choiceGrants) {
+        this.choiceGrants = choiceGrants;
     }
 
     public TranslatedText getDescription() {

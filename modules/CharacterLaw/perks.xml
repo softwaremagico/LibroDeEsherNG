@@ -2,7 +2,16 @@
 <perks>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Atletismo·Gimnasia (20)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>athleticsGymnastics</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>20</value>
+      </bonus>
+    </bonuses>
     <cost>7</cost>
     <description>
       <en>See page 52 of Character Law.</en>
@@ -22,7 +31,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Trepar (50)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>climbing</skillId>
+        <value>50</value>
+      </bonus>
+    </bonuses>
     <cost>25</cost>
     <description>
       <en>Puedes Walking by the paredes or techos. See page 68 of Character Law for more information.</en>
@@ -42,7 +60,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-20</cost>
     <description>
       <en>See page 90 of Character Law for more information.</en>
@@ -62,7 +79,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-5</cost>
     <description>
       <en>See page 90 of Character Law for more information.</en>
@@ -82,7 +98,55 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Artes Marciales·Barridos (20), Artes Marciales·Golpes (20), Artes Marciales·Maniobras de Combate (20), Autocontrol (20), Defensas Especiales (20), Defensas Especiales (Común)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>martialArtsSweeps</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>martialArtsStrikes</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>martialArtsCombatManeuvers</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>selfControl</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>specialDefenses</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>specialDefenses</categoryId>
+        <kind>MAKES_COMMON</kind>
+        <movement>false</movement>
+      </bonus>
+    </bonuses>
     <cost>30</cost>
     <description>
       <en>A Skill of Defenses especiales es Common. See page 52 of Character Law for more information.</en>
@@ -102,7 +166,48 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Artes Marciales·Barridos (15), Artes Marciales·Golpes (15), Artes Marciales·Maniobras de Combate (15), Autocontrol (15), Defensas Especiales (15)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>martialArtsSweeps</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>martialArtsStrikes</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>martialArtsCombatManeuvers</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>selfControl</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>specialDefenses</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+    </bonuses>
     <cost>15</cost>
     <description>
       <en>See page 52 of Character Law for more information.</en>
@@ -122,7 +227,48 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Artes Marciales·Barridos (10), Artes Marciales·Golpes (10), Artes Marciales·Maniobras de Combate (10), Autocontrol (10), Defensas Especiales (10)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>martialArtsSweeps</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>10</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>martialArtsStrikes</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>10</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>martialArtsCombatManeuvers</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>10</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>selfControl</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>10</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>specialDefenses</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>10</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>See page 52 of Character Law for more information.</en>
@@ -142,7 +288,56 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Conocimiento de los Venenos (25), Usa/Curar Venenos (25), Ataque Silencioso (25), Acechar (25), Esconderse (25), Emboscar (25)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>loreOfPoisons</skillId>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>usaCurarPoisons</skillId>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>attackSilencioso</skillId>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>stalking</skillId>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>hiding</skillId>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>ambushing</skillId>
+        <value>25</value>
+      </bonus>
+    </bonuses>
     <cost>15</cost>
     <description>
       <en>See page 52 of Character Law for more information.</en>
@@ -162,7 +357,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-15</cost>
     <description>
       <en>Al die you conviertes in Lich or Vampire. Eres resistenyou to the spells of Preservation and Resucitar. Tu partida of the Soul es of 1. See page 97 of Character Law for more information.</en>
@@ -182,7 +376,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-5</cost>
     <description>
       <en>Tienes a hobby que you ocupa gran paryou of the tiempo. Tirada of Adx3 for resistiris to ella. See page 90 of Character Law for more information.</en>
@@ -202,7 +395,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-10</cost>
     <description>
       <en>Si llega the momento que debes of aceptar the surrender of the enemigo, debes hacer a tirada bajo Adx3 or not puedes evitar matarlo. See page 90 of Character Law for more information.</en>
@@ -222,7 +414,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>15</cost>
     <description>
       <en>Tienes garras, spikes, zarpas, pinzas... que puedes usar for atacar desarrollando the Skill pertinenyou in Attacks Especiales. Esta Skill will be Common for ti.</en>
@@ -232,9 +423,9 @@
       <entry>Everyone</entry>
     </availableTo>
     <grade>MAJOR</grade>
-    <id>armaNatural</id>
+    <id>weaponNatural</id>
     <name>
-      <en>Arma Natural</en>
+      <en>Weapon Natural</en>
       <es>Arma Natural</es>
     </name>
     <type>OTHER</type>
@@ -242,7 +433,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Armas·Proyectiles (5)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>weaponsMissile</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>5</value>
+      </bonus>
+    </bonuses>
     <cost>8</cost>
     <description>
       <en>You increais the range of Everyone the bows a 25%. See page 52 of Character Law for more information.</en>
@@ -262,7 +462,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-15</cost>
     <description>
       <en>Posees a Appearance unique. Algo que es significativamenyou distinguible in ti. Esto causa que the genyou you reconozca mucho More easily. Not is puede ocultar and resta 2d10 to Appearance. See page 81 of Character Law for more information.</en>
@@ -282,7 +481,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-10</cost>
     <description>
       <en>Posees a Appearance unique. Algo que es significativamenyou distinguible in ti. Esto causa que the genyou you reconozca mucho More easily. Necesitas a disfraz for ocultarlo. Cuando not are disfrazado, debes restar d10 to Appearance. See page 81 of Character Law for more information.</en>
@@ -302,7 +500,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-5</cost>
     <description>
       <en>Posees a Appearance unique. Algo que es significativamenyou distinguible in ti. Esto causa que the genyou you reconozca mucho More easily. Lo que you hace unique es relativamenyou easy of ocultar. See page 81 of Character Law for more information.</en>
@@ -322,7 +519,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>15</cost>
     <description>
       <en>Puedes realizar a Attack to Distance equivalenyou to a rayo of Discharge. Debes desarrollar esta Skill.</en>
@@ -342,7 +538,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Desarrollo de Puntos de Poder (+4/r)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>PER_RANK</kind>
+        <movement>false</movement>
+        <skillId>powerPointDevelopment</skillId>
+        <value>4</value>
+      </bonus>
+    </bonuses>
     <cost>20</cost>
     <description>
       <en>Te da +4 to cada Rank of the Skill of Desarrollo of Points of Power. See page 62 of Character Law for more information.</en>
@@ -362,7 +567,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-5</cost>
     <description>
       <en>Siempre que gastes grandes sumas of dinero, you must tirar a tirada bajo AD. See page 90 of Character Law for more information.</en>
@@ -382,7 +586,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ag (8)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>AGILITY</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>8</value>
+      </bonus>
+    </bonuses>
     <cost>30</cost>
     <description>
       <en>Otorga a +8 to Empathy. See page 69 of Character Law for more information.</en>
@@ -402,7 +615,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ag (5)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>AGILITY</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>5</value>
+      </bonus>
+    </bonuses>
     <cost>20</cost>
     <description>
       <en>Otorga a +5 to Empathy. See page 69 of Character Law for more information.</en>
@@ -422,7 +644,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ag (3)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>AGILITY</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>3</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>Otorga a +3 to Empathy. See page 69 of Character Law for more information.</en>
@@ -442,7 +673,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ad (8)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>SELF_DISCIPLINE</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>8</value>
+      </bonus>
+    </bonuses>
     <cost>30</cost>
     <description>
       <en>Otorga a +8 to Self Discipline. See page 69 of Character Law for more information.</en>
@@ -462,7 +702,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ad (5)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>SELF_DISCIPLINE</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>5</value>
+      </bonus>
+    </bonuses>
     <cost>20</cost>
     <description>
       <en>Otorga a +5 to Self Discipline. See page 69 of Character Law for more information.</en>
@@ -482,7 +731,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ad (3)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>SELF_DISCIPLINE</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>3</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>Otorga a +3 to Self Discipline. See page 69 of Character Law for more information.</en>
@@ -502,7 +760,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Co (8)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>CONSTITUTION</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>8</value>
+      </bonus>
+    </bonuses>
     <cost>30</cost>
     <description>
       <en>Otorga a +8 to Constitution. See page 69 of Character Law for more information.</en>
@@ -522,7 +789,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Co (5)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>CONSTITUTION</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>5</value>
+      </bonus>
+    </bonuses>
     <cost>20</cost>
     <description>
       <en>Otorga a +5 to Constitution. See page 69 of Character Law for more information.</en>
@@ -542,7 +818,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Co (3)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>CONSTITUTION</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>3</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>Otorga a +3 to Constitution. See page 69 of Character Law for more information.</en>
@@ -562,7 +847,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Fu (8)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>STRENGTH</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>8</value>
+      </bonus>
+    </bonuses>
     <cost>30</cost>
     <description>
       <en>Otorga a +8 to Strength. See page 69 of Character Law for more information.</en>
@@ -582,7 +876,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Fu (5)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>STRENGTH</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>5</value>
+      </bonus>
+    </bonuses>
     <cost>20</cost>
     <description>
       <en>Otorga a +5 to Strength. See page 69 of Character Law for more information.</en>
@@ -602,7 +905,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Fu (3)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>STRENGTH</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>3</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>Otorga a +3 to Strength. See page 69 of Character Law for more information.</en>
@@ -622,7 +934,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>In (8)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>INTUITION</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>8</value>
+      </bonus>
+    </bonuses>
     <cost>30</cost>
     <description>
       <en>Otorga a +8 to Intuition. See page 69 of Character Law for more information.</en>
@@ -642,7 +963,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>In (5)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>INTUITION</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>5</value>
+      </bonus>
+    </bonuses>
     <cost>20</cost>
     <description>
       <en>Otorga a +5 to Intuition. See page 69 of Character Law for more information.</en>
@@ -662,7 +992,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>In (3)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>INTUITION</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>3</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>Otorga a +3 to Intuition. See page 69 of Character Law for more information.</en>
@@ -682,7 +1021,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Me (8)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>MEMORY</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>8</value>
+      </bonus>
+    </bonuses>
     <cost>30</cost>
     <description>
       <en>Otorga a +8 to Memory. See page 69 of Character Law for more information.</en>
@@ -702,7 +1050,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Me (5)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>MEMORY</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>5</value>
+      </bonus>
+    </bonuses>
     <cost>20</cost>
     <description>
       <en>Otorga a +5 to Memory. See page 69 of Character Law for more information.</en>
@@ -722,7 +1079,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Me (3)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>MEMORY</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>3</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>Otorga a +3 to Memory. See page 69 of Character Law for more information.</en>
@@ -742,7 +1108,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Pr (8)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>PRESENCE</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>8</value>
+      </bonus>
+    </bonuses>
     <cost>30</cost>
     <description>
       <en>Otorga a +8 to Presence. See page 69 of Character Law for more information.</en>
@@ -762,7 +1137,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Pr (5)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>PRESENCE</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>5</value>
+      </bonus>
+    </bonuses>
     <cost>20</cost>
     <description>
       <en>Otorga a +5 to Presence. See page 69 of Character Law for more information.</en>
@@ -782,7 +1166,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Pr (3)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>PRESENCE</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>3</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>Otorga a +3 to Presence. See page 69 of Character Law for more information.</en>
@@ -802,7 +1195,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Rp (8)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>QUICKNESS</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>8</value>
+      </bonus>
+    </bonuses>
     <cost>30</cost>
     <description>
       <en>Otorga a +8 to Quickness. See page 69 of Character Law for more information.</en>
@@ -822,7 +1224,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Rp (5)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>QUICKNESS</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>5</value>
+      </bonus>
+    </bonuses>
     <cost>20</cost>
     <description>
       <en>Otorga a +5 to Quickness. See page 69 of Character Law for more information.</en>
@@ -842,7 +1253,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Rp (3)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>QUICKNESS</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>3</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>Otorga a +3 to Quickness. See page 69 of Character Law for more information.</en>
@@ -862,7 +1282,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ra (8)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>REASONING</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>8</value>
+      </bonus>
+    </bonuses>
     <cost>30</cost>
     <description>
       <en>Otorga a +8 to Reasoning. See page 69 of Character Law for more information.</en>
@@ -882,7 +1311,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ra (5)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>REASONING</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>5</value>
+      </bonus>
+    </bonuses>
     <cost>20</cost>
     <description>
       <en>Otorga a +5 to Reasoning. See page 69 of Character Law for more information.</en>
@@ -902,7 +1340,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ra (3)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <characteristic>REASONING</characteristic>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>3</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>Otorga a +3 to Reasoning. See page 69 of Character Law for more information.</en>
@@ -922,7 +1369,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>5</cost>
     <description>
       <en>Everyone the alcances of the Weapons Thrown is incrementan a 25%. See page 56 of Character Law for more information.</en>
@@ -942,7 +1388,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-10</cost>
     <description>
       <en>Not puedes atacar by the espalda, to enemigos desarmados, in ventaja of oportunidades, etc. See page 90 of Character Law for more information.</en>
@@ -962,7 +1407,88 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>TR Reino (50), Listas Básicas de Hechizos (25), Listas Abiertas de Hechizos (25), Listas Cerradas de Hechizos (25), Listas Básicas de Otras Profesiones (25), Listas Básicas de la Tríada (25), Listas Hechizos de Adiestramiento (25), Listas Básicas Elementales Complementarias (25), Sintonización (25*), Leer Runas (25*)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <unresolvedTargetId>realm</unresolvedTargetId>
+        <value>50</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsBasicOfSpells</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsAbiertasOfSpells</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsCerradasOfSpells</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsBasicOfOtrasProfesiones</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsBasicOfTheTriad</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsSpellsOfTraining</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsBasicElementalesComplementarias</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>CONDITIONAL</kind>
+        <movement>false</movement>
+        <skillId>attunement</skillId>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>CONDITIONAL</kind>
+        <movement>false</movement>
+        <skillId>readingRunes</skillId>
+        <value>25</value>
+      </bonus>
+    </bonuses>
     <cost>30</cost>
     <description>
       <en>Solo afecta to the spells and Objects of your propio Realm. See page 62 of Character Law for more information.</en>
@@ -982,7 +1508,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-5</cost>
     <description>
       <en>Ves in blanco and negro. See page 84 of Character Law.</en>
@@ -1002,7 +1527,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>25</cost>
     <description>
       <en>Ganas the Skill of controlar mentalmenyou to a sujeto. See page 65 of Character Law for more information.</en>
@@ -1022,7 +1546,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>10</cost>
     <description>
       <en>Todas the Weapons of your Category reducen su pifia in 2. The resto the reducen in 1. See page 53 of Character Law for more information.</en>
@@ -1042,7 +1565,6 @@
   </perk>
   <perk>
     <availableToEveryone>false</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-10</cost>
     <description>
       <en>Te sientes culpable and deprimido siempre que mates to a humanoide. Si you damage or hieres to uno of ellos, you will have a penalty of -25 duranyou the d10 days siguientes. See page 91 of Character Law.</en>
@@ -1062,7 +1584,64 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Armas·2manos (-20), Armas·Arrojadizas (-20), Armas·Artillería (-20), Armas·Contundentes (-20), Armas·Asta (-20), Armas·Filo (-20), Armas·Proyectiles (-20)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>weaponsTwoHanded</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>-20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>weaponsThrown</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>-20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>weaponsSiege</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>-20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>weaponsBlunt</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>-20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>weaponsPolearm</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>-20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>weaponsEdged</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>-20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>weaponsMissile</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>-20</value>
+      </bonus>
+    </bonuses>
     <cost>-20</cost>
     <description>
       <en>See page 91 of Character Law for more information.</en>
@@ -1082,7 +1661,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-7</cost>
     <description>
       <en>Sufres a critical To of Desequilibrio siempre que falles a maniobra. See page 85 of Character Law.</en>
@@ -1102,7 +1680,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Liderazgo (25)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>liderazgo</skillId>
+        <value>25</value>
+      </bonus>
+    </bonuses>
     <cost>18</cost>
     <description>
       <en>By a action of the 25% +10 BO and +10 BD to your allies, by a action of the 50% causas fear to your opponents. See page 57 of Character Law for more information.</en>
@@ -1122,7 +1709,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>30</cost>
     <description>
       <en>Genera a copia exacta of ti mismo. See page 70 of Character Law for more information.</en>
@@ -1142,7 +1728,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-10</cost>
     <description>
       <en>Como Minimum has alcanzado a mediana Old Age for your raza. You must of tirar by deterioro of characteristics cada year (see the GM manual). Eres viejo, Probably wiis and a poco slow. See page 85 of Character Law for more information.</en>
@@ -1162,7 +1747,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>15</cost>
     <description>
       <en>Cualquier bleeding is reduced to the half. See page 57 of Character Law for more information.</en>
@@ -1182,7 +1766,88 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Listas Básicas de Hechizos (15), Listas Abiertas de Hechizos (15), Listas Cerradas de Hechizos (15), Listas Básicas de Otras Profesiones (15), Listas Básicas de la Tríada (15), Listas Básicas Elementales Complementarias (15), Listas Hechizos de Adiestramiento (15), Listas Abiertas de Otros Reinos (15), Listas Abiertas Arcanas (15), Listas Cerradas de Otros Reinos (15)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsBasicOfSpells</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsAbiertasOfSpells</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsCerradasOfSpells</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsBasicOfOtrasProfesiones</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsBasicOfTheTriad</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsBasicElementalesComplementarias</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsSpellsOfTraining</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsAbiertasOfOtrosRealms</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsAbiertasArcanas</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>listsCerradasOfOtrosRealms</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>15</value>
+      </bonus>
+    </bonuses>
     <cost>15</cost>
     <description>
       <en>Solo afecta to the spells and Objects of your propio Realm. See page 62 of Character Law for more information.</en>
@@ -1202,7 +1867,6 @@
   </perk>
   <perk>
     <availableToEveryone>false</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>5</cost>
     <description>
       <en>Envejeces More lentamenyou que the resto of your raza. Todas the Maneuvers of envejecimiento is realizan with a Category menos hacia the izquierda. See page 63 of Character Law.</en>
@@ -1222,7 +1886,32 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>TR Esencia (25), TR Canalización (25), TR Mentalismo (25)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <resistanceType>ESSENCE</resistanceType>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <resistanceType>CHANNELING</resistanceType>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <resistanceType>MENTALISM</resistanceType>
+        <value>25</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>Not puedes usar Spells ni Artifacts Magical). See page 66 of Character Law for more information.</en>
@@ -1242,7 +1931,14 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>{Cualquier Categoría} (20)[1]</bonusesRaw>
+    <choiceGrants>
+      <choiceGrant>
+        <kind>FLAT</kind>
+        <optionsToChoose>1</optionsToChoose>
+        <scope>ANY_CATEGORY</scope>
+        <value>20</value>
+      </choiceGrant>
+    </choiceGrants>
     <cost>30</cost>
     <description>
       <en>Solamenyou Categories with progression Standard or Combined. See page 54 of Character Law for more information.</en>
@@ -1262,7 +1958,14 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>{Cualquier Categoría} (15)[1]</bonusesRaw>
+    <choiceGrants>
+      <choiceGrant>
+        <kind>FLAT</kind>
+        <optionsToChoose>1</optionsToChoose>
+        <scope>ANY_CATEGORY</scope>
+        <value>15</value>
+      </choiceGrant>
+    </choiceGrants>
     <cost>20</cost>
     <description>
       <en>Solamenyou Categories with progression Standard or Combined. See page 54 of Character Law for more information.</en>
@@ -1282,7 +1985,14 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>{Cualquier Categoría} (10)[1]</bonusesRaw>
+    <choiceGrants>
+      <choiceGrant>
+        <kind>FLAT</kind>
+        <optionsToChoose>1</optionsToChoose>
+        <scope>ANY_CATEGORY</scope>
+        <value>10</value>
+      </choiceGrant>
+    </choiceGrants>
     <cost>10</cost>
     <description>
       <en>Solamenyou Categories with progression Standard or Combined. See page 54 of Character Law for more information.</en>
@@ -1302,7 +2012,14 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>{Cualquier Categoría} (5)[1]</bonusesRaw>
+    <choiceGrants>
+      <choiceGrant>
+        <kind>FLAT</kind>
+        <optionsToChoose>1</optionsToChoose>
+        <scope>ANY_CATEGORY</scope>
+        <value>5</value>
+      </choiceGrant>
+    </choiceGrants>
     <cost>5</cost>
     <description>
       <en>Solamenyou Categories with progression Standard or Combined. See page 54 of Character Law for more information.</en>
@@ -1322,7 +2039,14 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>{Cualquier Habilidad} (40)[1]</bonusesRaw>
+    <choiceGrants>
+      <choiceGrant>
+        <kind>FLAT</kind>
+        <optionsToChoose>1</optionsToChoose>
+        <scope>ANY_SKILL</scope>
+        <value>40</value>
+      </choiceGrant>
+    </choiceGrants>
     <cost>30</cost>
     <description>
       <en>Solamenyou Skills with progression Standard or Combined. See page 54 of Character Law for more information.</en>
@@ -1342,7 +2066,14 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>{Cualquier Habilidad} (30)[1]</bonusesRaw>
+    <choiceGrants>
+      <choiceGrant>
+        <kind>FLAT</kind>
+        <optionsToChoose>1</optionsToChoose>
+        <scope>ANY_SKILL</scope>
+        <value>30</value>
+      </choiceGrant>
+    </choiceGrants>
     <cost>20</cost>
     <description>
       <en>Solamenyou Skills with progression Standard or Combined. See page 54 of Character Law for more information.</en>
@@ -1362,7 +2093,14 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>{Cualquier Habilidad} (20)[1]</bonusesRaw>
+    <choiceGrants>
+      <choiceGrant>
+        <kind>FLAT</kind>
+        <optionsToChoose>1</optionsToChoose>
+        <scope>ANY_SKILL</scope>
+        <value>20</value>
+      </choiceGrant>
+    </choiceGrants>
     <cost>10</cost>
     <description>
       <en>Solamenyou Skills with progression Standard or Combined. See page 54 of Character Law for more information.</en>
@@ -1382,7 +2120,14 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>{Cualquier Habilidad} (10)[1]</bonusesRaw>
+    <choiceGrants>
+      <choiceGrant>
+        <kind>FLAT</kind>
+        <optionsToChoose>1</optionsToChoose>
+        <scope>ANY_SKILL</scope>
+        <value>10</value>
+      </choiceGrant>
+    </choiceGrants>
     <cost>5</cost>
     <description>
       <en>Solamenyou Skills with progression Standard or Combined. See page 54 of Character Law for more information.</en>
@@ -1402,7 +2147,13 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>{Cualquier Arma}(Común)[1]</bonusesRaw>
+    <choiceGrants>
+      <choiceGrant>
+        <kind>MAKES_COMMON</kind>
+        <optionsToChoose>1</optionsToChoose>
+        <scope>ANY_WEAPON_SKILL</scope>
+      </choiceGrant>
+    </choiceGrants>
     <cost>10</cost>
     <description>
       <en>A Skill of Weapons will be Common. See page 54 of Character Law for more information.</en>
@@ -1422,7 +2173,56 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Cocinar (20), Forrajear (20), Usar Hierbas (20), Preparar Hierbas (20), Conocimiento de los Venenos (20), Conocimiento de las Hierbas (20)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>cocinar</skillId>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>forrajear</skillId>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>usarHerbs</skillId>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>prepararHerbs</skillId>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>loreOfPoisons</skillId>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>loreOfHerbs</skillId>
+        <value>20</value>
+      </bonus>
+    </bonuses>
     <cost>7</cost>
     <description>
       <en>See page 54 of Character Law for more information.</en>
@@ -1442,7 +2242,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-20</cost>
     <description>
       <en>Everyone the alcances of Spells and Missile to the half. See page 86 of Character Law for more information.</en>
@@ -1462,7 +2261,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-10</cost>
     <description>
       <en>Crees with mucha Strength in a persona or ideal. Could ser a ruler, a ser loved, a country, or a Religion. Esta fe es lo More importanyou for ti. Probably not you will notice no flaw in lo que crees, e incluso puedes estar willing to die by it. You follow the code or the orders of lo que crees of forma fanatical. See page 92 of Character Law for more information.</en>
@@ -1482,7 +2280,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Desarrollo Físico (20)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>physicalDevelopment</skillId>
+        <value>20</value>
+      </bonus>
+    </bonuses>
     <cost>8</cost>
     <description>
       <en>See page 58 of Character Law for more information.</en>
@@ -1502,7 +2309,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-10</cost>
     <description>
       <en>10% of triplicar your Bonus to Strength in a estado emocional extremo. See page 86 of Character Law for more information.</en>
@@ -1522,7 +2328,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-3</cost>
     <description>
       <en>Te gusta comer and beber. Si es necesario que not comas, debes hacer a tirada of Strength of voluntad with a Bonus of your Self Discipline x3. Also sufres of sobrepeso.</en>
@@ -1542,7 +2347,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>7</cost>
     <description>
       <en>+10 to BO and BD for a Combat (1 vez to the day). See page 58 of Character Law for more information.</en>
@@ -1562,7 +2366,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>18</cost>
     <description>
       <en>The duration of Everyone your Spells is dobla, salvo the instantaneous or aquellos que requieran concentration. See page 64 of Character Law for more information.</en>
@@ -1582,7 +2385,48 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Forrajear (50), Rastrear (20), Cazar (20), Acechar (20), Esconderse (20)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>forrajear</skillId>
+        <value>50</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>tracking</skillId>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>hunting</skillId>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>stalking</skillId>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>hiding</skillId>
+        <value>20</value>
+      </bonus>
+    </bonuses>
     <cost>12</cost>
     <description>
       <en>The bonus solamenyou afectan mientras is is in the exterior. Also da a +50 to Encender Fire and Buscar Refugios. See page 55 of Character Law for more information.</en>
@@ -1602,7 +2446,6 @@
   </perk>
   <perk>
     <availableToEveryone>false</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-15</cost>
     <description>
       <en>Tienes a illusion in the que crees ciegamente. The deception posee repercusiones potencialmenyou fatales. Debes interpretarlo siempre que sea necesario. See page 92 of Character Law.</en>
@@ -1622,7 +2465,6 @@
   </perk>
   <perk>
     <availableToEveryone>false</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-10</cost>
     <description>
       <en>Tienes a illusion in the que crees ciegamente. The deception afecta to your Life of forma importante, pero not impide your interaction with the others. Debes interpretarlo siempre que sea necesario. See page 92 of Character Law.</en>
@@ -1642,7 +2484,6 @@
   </perk>
   <perk>
     <availableToEveryone>false</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-3</cost>
     <description>
       <en>Tienes a illusion in the que crees ciegamente. The deception es of character Minor (by ejemplo, the planeta es plano). Debes interpretarlo siempre que sea necesario. See page 92 of Character Law.</en>
@@ -1662,7 +2503,6 @@
   </perk>
   <perk>
     <availableToEveryone>false</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-20</cost>
     <description>
       <en>Eres indeciso. Tu indecision es Major cuanto More fast es the decision to realizar. Sufres a penalty of -50 to todas your acciones apresuradas in lugar of the -20 habitual. See page 93 of Character Law.</en>
@@ -1682,7 +2522,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>5</cost>
     <description>
       <en>Permiyou ver in the oscuridad hasta 30 metros. Also tienes uno +25 to Tracking by the noche si the target ha Past by the zona hace menos of 30 minutos. See page 58 of Character Law for more information.</en>
@@ -1702,7 +2541,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>7</cost>
     <description>
       <en>See page 67 of Character Law for more information.</en>
@@ -1722,7 +2560,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-5</cost>
     <description>
       <en>Debes mostrar disgust anyou the target of your intolerance. See page 93 of Character Law for more information.</en>
@@ -1742,7 +2579,40 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Montar: Caballos (25), Manejo de los Animales (25), Combate Montado (25), Maestría de Animales (25)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>montarCaballos</skillId>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>manejoOfTheAnimals</skillId>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>combatMontado</skillId>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>masteryOfAnimals</skillId>
+        <value>25</value>
+      </bonus>
+    </bonuses>
     <cost>7</cost>
     <description>
       <en>Solamenyou is aplica to caballos. See page 55 of Character Law for more information.</en>
@@ -1762,7 +2632,32 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Artes Marciales·Barridos (20), Artes Marciales·Golpes (20), Armas·Arrojadizas (20)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>martialArtsSweeps</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>martialArtsStrikes</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>weaponsThrown</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>20</value>
+      </bonus>
+    </bonuses>
     <cost>15</cost>
     <description>
       <en>See page 58 of Character Law for more information.</en>
@@ -1782,7 +2677,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>15</cost>
     <description>
       <en>Exisyou a 25% of que cuando luches by your ideal you posea a entidad giving you a TA11, BO +25, BD +10. Not puedes parar. Also to the acabar the Combat exisyou the posibilidad of que is quede 2D10 horas controlando your Body si fallas a TR Against Nivel 10 of Channeling. See page 64 of Character Law for more information.</en>
@@ -1802,7 +2696,14 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>{cualquier Categoría de Armas} (-20)[-1]</bonusesRaw>
+    <choiceGrants>
+      <choiceGrant>
+        <kind>FLAT</kind>
+        <optionsToChoose>-1</optionsToChoose>
+        <scope>ANY_WEAPON_CATEGORY</scope>
+        <value>-20</value>
+      </choiceGrant>
+    </choiceGrants>
     <cost>-15</cost>
     <description>
       <en>See page 94 of Character Law for more information.</en>
@@ -1822,7 +2723,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-10</cost>
     <description>
       <en>Respondes violentamenyou antes the afrentas. Spear a D100 +40 - 3xAd. Si the resultado es superior of 100 you act agresivamente. See page 93 of Character Law for more information.</en>
@@ -1842,7 +2742,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-10</cost>
     <description>
       <en>Crees in a meta in the Life. See page 94 of Character Law for more information.</en>
@@ -1862,7 +2761,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Autocontrol (20)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>selfControl</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>20</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>See page 67 of Character Law for more information.</en>
@@ -1882,7 +2790,29 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Armadura·Ligera (Restringida), Armadura·Media (Restringida), Armadura·Pesada (Restringida)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>armorLight</categoryId>
+        <kind>MAKES_RESTRICTED</kind>
+        <movement>false</movement>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>armorMiddle</categoryId>
+        <kind>MAKES_RESTRICTED</kind>
+        <movement>false</movement>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>armorHeavy</categoryId>
+        <kind>MAKES_RESTRICTED</kind>
+        <movement>false</movement>
+      </bonus>
+    </bonuses>
     <cost>-20</cost>
     <description>
       <en>Not you gustan the Armor. Todas the Skills of the grupo of Armor son clasificadas como Skills restringidas. See page 92 of Character Law for more information.</en>
@@ -1902,7 +2832,72 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Embaucar (10*), Sobornar (10*), Interrogar (10*), Diplomacia (10*), Liderazgo (10*), Seducción (10*), Mendigar (10*), Comerciar (10*)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>CONDITIONAL</kind>
+        <movement>false</movement>
+        <skillId>embaucar</skillId>
+        <value>10</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>CONDITIONAL</kind>
+        <movement>false</movement>
+        <skillId>sobornar</skillId>
+        <value>10</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>CONDITIONAL</kind>
+        <movement>false</movement>
+        <skillId>interrogar</skillId>
+        <value>10</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>CONDITIONAL</kind>
+        <movement>false</movement>
+        <skillId>diplomacia</skillId>
+        <value>10</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>CONDITIONAL</kind>
+        <movement>false</movement>
+        <skillId>liderazgo</skillId>
+        <value>10</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>CONDITIONAL</kind>
+        <movement>false</movement>
+        <skillId>seduction</skillId>
+        <value>10</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>CONDITIONAL</kind>
+        <movement>false</movement>
+        <skillId>mendigar</skillId>
+        <value>10</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>CONDITIONAL</kind>
+        <movement>false</movement>
+        <skillId>comerciar</skillId>
+        <value>10</value>
+      </bonus>
+    </bonuses>
     <cost>5</cost>
     <description>
       <en>Siempre que the ojos sean visibles. Consulta the Page 59 for More Information.</en>
@@ -1922,7 +2917,24 @@
   </perk>
   <perk>
     <availableToEveryone>false</availableToEveryone>
-    <bonusesRaw>Olfato (10), Rastrear (25*)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>olfato</skillId>
+        <value>10</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>CONDITIONAL</kind>
+        <movement>false</movement>
+        <skillId>tracking</skillId>
+        <value>25</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>Tienes a sentido of the olfato muy fino. Detectas olores hasta 30 metros with the Wind in Against, 600 metros with the Wind to favor and 150 with the Wind in calma. See page 59 of Character Law.</en>
@@ -1942,7 +2954,22 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Apariencia (-40), TA (11)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>true</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>-40</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>true</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>11</value>
+      </bonus>
+    </bonuses>
     <cost>25</cost>
     <description>
       <en>Otorga a TA 11. See page 60 of Character Law for more information.</en>
@@ -1962,7 +2989,22 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Apariencia (-20), TA (4)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>true</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>-20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>true</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>4</value>
+      </bonus>
+    </bonuses>
     <cost>15</cost>
     <description>
       <en>Otorga a TA 4. See page 60 of Character Law for more information.</en>
@@ -1982,7 +3024,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-10</cost>
     <description>
       <en>Siempre que uis metal (Armor) sufre a -10 to todas the acciones. See page 88 of Character Law for more information.</en>
@@ -2002,7 +3043,6 @@
   </perk>
   <perk>
     <availableToEveryone>false</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>15</cost>
     <description>
       <en>Puedes Gliding como a bird. The producto of your altitud and your Speed horizontal not puede exceder the 30 metros by asalto. By ejemplo, puedes Gliding to a Speed of 1,5 metros by asalto to a altura of 20 metros or to a Speed of 15 metros by asalto si the altura es of 2 metros. The multiple debe ser siempre 30. See page 60 of Character Law.</en>
@@ -2022,7 +3062,14 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>{Listas Básicas de Hechizos} (3r)[3]</bonusesRaw>
+    <choiceGrants>
+      <choiceGrant>
+        <categoryId>listsBasicOfSpells</categoryId>
+        <kind>PER_RANK</kind>
+        <optionsToChoose>3</optionsToChoose>
+        <value>3</value>
+      </choiceGrant>
+    </choiceGrants>
     <cost>5</cost>
     <description>
       <en>Tienes tres Ranks adicionales of Spells.</en>
@@ -2042,7 +3089,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-20</cost>
     <description>
       <en>A Vow como ayudar the weak, desafiar to the que you agravien, etc. See page 96 of Character Law for more information.</en>
@@ -2062,7 +3108,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-15</cost>
     <description>
       <en>A Vow como not usar Weapons of Edged, not hablar, etc. See page 96 of Character Law for more information.</en>
@@ -2082,7 +3127,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-7</cost>
     <description>
       <en>A Vow como castidad, not comer Flesh, etc. See page 96 of Character Law for more information.</en>
@@ -2102,7 +3146,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-3</cost>
     <description>
       <en>A Vow como not vestir nunca a color, etc. See page 96 of Character Law for more information.</en>
@@ -2122,7 +3165,15 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Desarrollo de Puntos de Poder (Común)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>MAKES_COMMON</kind>
+        <movement>false</movement>
+        <skillId>powerPointDevelopment</skillId>
+      </bonus>
+    </bonuses>
     <cost>18</cost>
     <description>
       <en>The Skill of Desarrollo of Points of Power es Common. See page 64 of Character Law for more information.</en>
@@ -2142,7 +3193,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>5</cost>
     <description>
       <en>Aguantas the breath diez segundos More a minuto by cada Point of Bonus to Constitution. See page 60 of Character Law for more information.</en>
@@ -2162,7 +3212,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>7</cost>
     <description>
       <en>Puedes hacer a tirada adicional of iniciativa and elegir. See page 67 of Character Law for more information.</en>
@@ -2182,7 +3231,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>25</cost>
     <description>
       <en>Tu Body recupera tres Points of Damage by asalto. Consulta the Page 60 of the Manual of Personajes for More detalles.</en>
@@ -2202,7 +3250,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>15</cost>
     <description>
       <en>Tu Body recupera dos Points of Damage by asalto. Consulta the Page 60 of the Manual of Personajes for More detalles.</en>
@@ -2222,7 +3269,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>8</cost>
     <description>
       <en>Tu Body recupera a Point of Damage by minuto. Consulta the Page 60 of the Manual of Personajes for More detalles.</en>
@@ -2242,7 +3288,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>10</cost>
     <description>
       <en>Genera a veneno of Nº5. Impacata si hace critical in a Attack Special. See page 60 of Character Law for more information.</en>
@@ -2262,7 +3307,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>20</cost>
     <description>
       <en>Resta in 4 the Points of Life sufridos by Attack (hasta a Minimum of 1). See page 61 of Character Law for more information.</en>
@@ -2282,7 +3326,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>15</cost>
     <description>
       <en>Resta in 3 the Points of Life sufridos by Attack (hasta a Minimum of 1). See page 61 of Character Law for more information.</en>
@@ -2302,7 +3345,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>10</cost>
     <description>
       <en>Resta in 2 the Points of Life sufridos by Attack (hasta a Minimum of 1). See page 61 of Character Law for more information.</en>
@@ -2322,7 +3364,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>5</cost>
     <description>
       <en>Resta in 1 the Points of Life sufridos by Attack (hasta a Minimum of 1). See page 61 of Character Law for more information.</en>
@@ -2342,7 +3383,32 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Subterfugio·Sigilo (-10), Acechar(-15), Esconderse (-15)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>subterfugeStealth</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>-10</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>stalking</skillId>
+        <value>-15</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>hiding</skillId>
+        <value>-15</value>
+      </bonus>
+    </bonuses>
     <cost>-15</cost>
     <description>
       <en>Not eres especialmenyou silencioso. Consulta the Page 88 of the Manual of Personajes for More detalles.</en>
@@ -2362,7 +3428,16 @@
   </perk>
   <perk>
     <availableToEveryone>false</availableToEveryone>
-    <bonusesRaw>Saltar (30)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>jumping</skillId>
+        <value>30</value>
+      </bonus>
+    </bonuses>
     <cost>5</cost>
     <description>
       <en>See page 61 of Character Law.</en>
@@ -2382,7 +3457,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-15</cost>
     <description>
       <en>Exisyou a Secret que si alguien lo descubriera you would die. See page 102 of Character Law for more information.</en>
@@ -2402,7 +3476,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-10</cost>
     <description>
       <en>Exisyou a Secret que si alguien lo descubriera you would be encarcelado or apaleado. See page 102 of Character Law for more information.</en>
@@ -2422,7 +3495,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>-5</cost>
     <description>
       <en>Exisyou a Secret que si alguien lo descubriera you would feel shame. See page 102 of Character Law for more information.</en>
@@ -2442,7 +3514,6 @@
   </perk>
   <perk>
     <availableToEveryone>false</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>6</cost>
     <description>
       <en>The pelos of your nuca is ponen of punta cuando you encuentras cerca of a gran fuenyou of Power, a lugar encantado, a nodo of Power, a area maldita, etc. See page 64 of Character Law.</en>
@@ -2462,7 +3533,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>10</cost>
     <description>
       <en>Reduces in 1 the asaltos Stunned. See page 67 of Character Law for more information.</en>
@@ -2482,7 +3552,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-15</cost>
     <description>
       <en>Sientes que tienes a responsabilidad with alguien or algo. Es a sentimiento interno, algo que you has autoimpuesto. Not You can traicionar, herir or mentir to aquel with the que tienes Sentido of the Deber. The deber tiene que ver with a country or a grupo of genyou igual of grande. See page 96 of Character Law for more information.</en>
@@ -2502,7 +3571,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-10</cost>
     <description>
       <en>Sientes que tienes a responsabilidad with alguien or algo. Es a sentimiento interno, algo que you has autoimpuesto. Not You can traicionar, herir or mentir to aquel with the que tienes Sentido of the Deber. The deber tiene que ver with a grupo grande of personas or a organization. See page 96 of Character Law for more information.</en>
@@ -2522,7 +3590,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-5</cost>
     <description>
       <en>Sientes que tienes a responsabilidad with alguien or algo. Es a sentimiento interno, algo que you has autoimpuesto. Not You can traicionar, herir or mentir to aquel with the que tienes Sentido of the Deber. The deber tiene que ver with alguien cercano or a grupo small of personas. See page 96 of Character Law for more information.</en>
@@ -2542,7 +3609,24 @@
   </perk>
   <perk>
     <availableToEveryone>false</availableToEveryone>
-    <bonusesRaw>Maniobrar Aturdido (20), Superar Aturdimiento (20)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>maneuveringStunned</skillId>
+        <value>20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>overcomingStun</skillId>
+        <value>20</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>See page 67 of Character Law.</en>
@@ -2562,7 +3646,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>-10</cost>
     <description>
       <en>-25 to todas the Skills que duren More of Medium minuto. See page 97 of Character Law.</en>
@@ -2582,7 +3665,32 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Acechar (-20), Caminar con Zancos (-20), Caminar por la Cuerda Floja (-20)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>stalking</skillId>
+        <value>-20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>walkingWithStilts</skillId>
+        <value>-20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>walkingByTheRopeSlack</skillId>
+        <value>-20</value>
+      </bonus>
+    </bonuses>
     <cost>-20</cost>
     <description>
       <en>See page 89 of Character Law for more information.</en>
@@ -2602,7 +3710,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>30</cost>
     <description>
       <en>Tiradas abiertas to 93-100. See page 73 of Character Law for more information.</en>
@@ -2622,7 +3729,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>20</cost>
     <description>
       <en>Tiradas abiertas to 94-100. See page 73 of Character Law for more information.</en>
@@ -2642,7 +3748,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>10</cost>
     <description>
       <en>Tiradas abiertas to 95-100. See page 73 of Character Law for more information.</en>
@@ -2662,7 +3767,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>5</cost>
     <description>
       <en>Tiradas abiertas to 01-05 and 95-100. See page 73 of Character Law for more information.</en>
@@ -2682,7 +3786,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>10</cost>
     <description>
       <en>Tiradas abiertas to 01-07 and 94-100. See page 73 of Character Law for more information.</en>
@@ -2702,7 +3805,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>15</cost>
     <description>
       <en>Tiradas abiertas to 01-08 and 93-100. See page 73 of Character Law for more information.</en>
@@ -2722,7 +3824,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>20</cost>
     <description>
       <en>Tiradas abiertas to 01-09 and 92-100. See page 73 of Character Law for more information.</en>
@@ -2742,7 +3843,24 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Acechar (25), Esconderse (25)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>stalking</skillId>
+        <value>25</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>hiding</skillId>
+        <value>25</value>
+      </bonus>
+    </bonuses>
     <cost>8</cost>
     <description>
       <en>See page 61 of Character Law for more information.</en>
@@ -2762,7 +3880,15 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Movimiento (10)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>true</movement>
+        <value>10</value>
+      </bonus>
+    </bonuses>
     <cost>5</cost>
     <description>
       <en>Tu capacidad of movimiento is incrementa in 10. See page 62 of Character Law for more information.</en>
@@ -2782,7 +3908,6 @@
   </perk>
   <perk>
     <availableToEveryone>false</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>10</cost>
     <description>
       <en>Cerrando the ojos and concentrating duranyou 2d10 asaltos, puedes cambiar your vision for percibir cosas invisibles. Esto dura 10D10 minutos and only puede ser usado a vez to the day. The activation of esyou Power not interfiere with your vision normal. See page 65 of Character Law.</en>
@@ -2802,7 +3927,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>7</cost>
     <description>
       <en>Te permiyou ver in Presence of Light faint. Consulta the Page 62 of the Manual of Personajes for More detalles.</en>
@@ -2822,7 +3946,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>7</cost>
     <description>
       <en>The Bonus of the enemigo by atacaryou by the flanco es solo of +5 and +15 by the espalda. See page 62 of Character Law for more information.</en>
@@ -2842,7 +3965,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>7</cost>
     <description>
       <en>Rompe Objects of cristal or aturde opponents a asalto by cada 10 of fallo in the TR. Si is usa esyou Power More of a vez to the day is queda without Voice a semana. See page 62 of Character Law for more information.</en>
@@ -2862,7 +3984,32 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Artes Marciales·Barridos (-20), Artes Marciales·Golpes (-20), Artes Marciales·Maniobras de Combate (-20)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>martialArtsSweeps</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>-20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>martialArtsStrikes</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>-20</value>
+      </bonus>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <categoryId>martialArtsCombatManeuvers</categoryId>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <value>-20</value>
+      </bonus>
+    </bonuses>
     <cost>-20</cost>
     <description>
       <en>See page 89 of Character Law for more information.</en>
@@ -2882,7 +4029,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>20</cost>
     <description>
       <en>Tienes a Jump horizontal basic with carrera tres veces superior to the normal, the vertical es cinco veces Major. See page 72 of Character Law for more information.</en>
@@ -2902,7 +4048,6 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Ninguna</bonusesRaw>
     <cost>5</cost>
     <description>
       <en>Tienes Empathy with cierto tipo of animal. Cualquier maniobra relacionada with estos Animals recibe a Bonus Special +25. Si you asocias with uno of estos Animals duranyou a mes, puedes comunicaryou empathically with him to a Distance of 30 cm by nivel. See page 66 of Character Law for more information.</en>
@@ -2922,7 +4067,16 @@
   </perk>
   <perk>
     <availableToEveryone>true</availableToEveryone>
-    <bonusesRaw>Oído (-20)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>hearing</skillId>
+        <value>-20</value>
+      </bonus>
+    </bonuses>
     <cost>-10</cost>
     <description>
       <en>Tienes dificultad for escuchar Sounds. Cualquier maniobra of Perception basada in the Hearing tiene a penalty of -20. See page 85 of Character Law for more information.</en>

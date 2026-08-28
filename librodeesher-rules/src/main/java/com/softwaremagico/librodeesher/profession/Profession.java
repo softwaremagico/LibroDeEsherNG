@@ -23,7 +23,8 @@ import java.util.List;
  * weapon category" decision it enables is not modeled yet. One section lists spell list development
  * costs by character level range (DESARROLLO DE HECHIZOS); this is significant enough scope on its
  * own (it depends on magic-list cross-references not modeled yet) that it is preserved verbatim for
- * now, the same trade-off already applied to {@code Perk#getBonusesRaw()}.</p>
+ * now, the same trade-off {@code Perk}'s unresolved spell-list bonus targets make (see {@code
+ * PerkBonus#getUnresolvedTargetId()}).</p>
  */
 public class Profession extends Element {
 

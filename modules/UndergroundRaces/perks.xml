@@ -2,7 +2,6 @@
 <perks>
   <perk>
     <availableToEveryone>false</availableToEveryone>
-    <bonusesRaw>Ninguno</bonusesRaw>
     <cost>20</cost>
     <description>
       <en>Necesitas a turno menos for lanzar a Spell. Si the spell es instantaneous, tienes a +5 to the Throw of Spells. Consulta the Page 99 of razas underground par More Information.</en>
@@ -22,7 +21,16 @@
   </perk>
   <perk>
     <availableToEveryone>false</availableToEveryone>
-    <bonusesRaw>Conocimiento de los No-Muertos (5)</bonusesRaw>
+    <bonuses>
+      <bonus>
+        <appearance>false</appearance>
+        <armor>false</armor>
+        <kind>FLAT</kind>
+        <movement>false</movement>
+        <skillId>loreOfUndead</skillId>
+        <value>5</value>
+      </bonus>
+    </bonuses>
     <cost>10</cost>
     <description>
       <en>Also your Undead son considerados of a nivel superior to efectos of turning. Consulta the Page 99 of razas underground par More Information.</en>
