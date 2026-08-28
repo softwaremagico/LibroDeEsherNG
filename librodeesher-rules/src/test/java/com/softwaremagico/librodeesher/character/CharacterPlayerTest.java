@@ -750,4 +750,31 @@ public class CharacterPlayerTest {
         character.setBackgroundLanguageRank("dwarvish", 1);
         Assert.assertEquals(character.getBackground().getHistoryLanguageRank("dwarvish"), 0);
     }
+
+    @Test
+    public void hobbySkillRanksAreTrackedAndSummed() {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setHobbySkillRank("acrobatics", 3);
+        character.setHobbySkillRank("falling", 2);
+
+        Assert.assertEquals(character.getHobbySkillRank("acrobatics"), 3);
+        Assert.assertEquals(character.getTotalHobbySkillRanks(), 5);
+
+        character.setHobbySkillRank("acrobatics", 0);
+        Assert.assertEquals(character.getHobbySkillRank("acrobatics"), 0);
+        Assert.assertEquals(character.getTotalHobbySkillRanks(), 2);
+    }
+
+    @Test
+    public void cultureHobbyDataIsQueryableAlongsideCharacterSpentRanks() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setCultureId("aquaticMilitarista");
+        character.setHobbySkillRank("acrobatics", 12);
+
+        final Culture culture = character.getCulture();
+        Assert.assertEquals(culture.getHobbyRanks(), Integer.valueOf(12));
+        Assert.assertTrue(culture.isHobbySkillAllowed("acrobatics"));
+        Assert.assertFalse(culture.isHobbySkillAllowed("someSkillNotInTheList"));
+        Assert.assertEquals(character.getTotalHobbySkillRanks(), 12);
+    }
 }

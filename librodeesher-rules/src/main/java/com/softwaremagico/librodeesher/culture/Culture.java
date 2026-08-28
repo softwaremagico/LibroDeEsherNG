@@ -70,6 +70,19 @@ public class Culture extends Element {
     public void setHobbyRanks(Integer hobbyRanks) { this.hobbyRanks = hobbyRanks; }
     public List<String> getHobbyIds() { return hobbyIds == null ? Collections.emptyList() : hobbyIds; }
     public void setHobbyIds(List<String> hobbyIds) { this.hobbyIds = hobbyIds; }
+
+    /**
+     * Whether hobby points may be spent on {@code skillId}: excluded (the {@code "exclude:"} prefix
+     * marker) always wins, otherwise the {@code "all"} marker allows any skill, otherwise only a
+     * skill explicitly listed in {@link #getHobbyIds()} is allowed.
+     */
+    public boolean isHobbySkillAllowed(String skillId) {
+        final List<String> ids = getHobbyIds();
+        if (ids.contains("exclude:" + skillId)) {
+            return false;
+        }
+        return ids.contains("all") || ids.contains(skillId);
+    }
     public List<CultureLanguageRank> getLanguageMaxRanks() { return languageMaxRanks == null ? Collections.emptyList() : languageMaxRanks; }
     public void setLanguageMaxRanks(List<CultureLanguageRank> languageMaxRanks) { this.languageMaxRanks = languageMaxRanks; }
     public List<LanguageSlot> getOptionalLanguages() { return optionalLanguages == null ? Collections.emptyList() : optionalLanguages; }

@@ -34,6 +34,7 @@ import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -69,6 +70,7 @@ public class CharacterPlayer {
     private final Background background = new Background();
     private final Decisions decisions = new Decisions();
     private final List<SelectedPerk> selectedPerks = new ArrayList<>();
+    private final Map<String, Integer> hobbySkillRanks = new LinkedHashMap<>();
 
     public CharacterPlayer() {
         for (final CharacteristicAbbreviation abbreviation : allRealCharacteristics()) {
@@ -1012,5 +1014,34 @@ public class CharacterPlayer {
         if (background.getHistoryLanguageRank(languageId) > getLanguageMaxSpeakingRanks(languageId)) {
             background.setHistoryLanguageRank(languageId, 0);
         }
+    }
+
+    /**
+     * Sets how many of the selected culture's hobby points were spent on {@code skillId} (the
+     * legacy "AFICIONES" section's free ranks), matching {@code CultureDecisions#setHobbyRanks}
+     * exactly: unlike {@link #setBackgroundLanguageRank}, the legacy application never validated
+     * this against {@link Culture#getHobbyRanks()} or {@link Culture#isHobbySkillAllowed(String)} at
+     * the model level (only in its UI), so this does not either; use those two query methods to
+     * validate a choice before calling this, if desired.
+     */
+    public void setHobbySkillRank(String skillId, int ranks) {
+        if (ranks <= 0) {
+            hobbySkillRanks.remove(skillId);
+        } else {
+            hobbySkillRanks.put(skillId, ranks);
+        }
+    }
+
+    public int getHobbySkillRank(String skillId) {
+        return hobbySkillRanks.getOrDefault(skillId, 0);
+    }
+
+    /** The sum of every hobby rank spent so far, to compare against the selected culture's {@link Culture#getHobbyRanks()}. */
+    public int getTotalHobbySkillRanks() {
+        int total = 0;
+        for (final int ranks : hobbySkillRanks.values()) {
+            total += ranks;
+        }
+        return total;
     }
 }
