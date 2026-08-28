@@ -1,6 +1,7 @@
 package com.softwaremagico.librodeesher.migration;
 
 import com.softwaremagico.librodeesher.file.ModuleManager;
+import com.softwaremagico.librodeesher.language.LanguageSlot;
 import com.softwaremagico.librodeesher.language.TranslatedText;
 import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
@@ -33,6 +34,8 @@ public final class RaceMigrationTool {
 
     private static final String RACES_FOLDER = "razas";
     private static final String OUTPUT_FILE = "races.xml";
+    private static final String ANY_RACE_LANGUAGE = "Idioma Racial";
+    private static final String ANY_CULTURE_LANGUAGE = "Idioma Regional";
 
     private RaceMigrationTool() {
         // Utility class.
@@ -106,8 +109,12 @@ public final class RaceMigrationTool {
         race.setProgressionRankValues(parseStringMap(cursor.nextSection()));
         race.setRestrictedProfessionIds(parseReferenceIds(cursor.nextSection(), ReferenceKind.PROFESSION));
         parseOtherRaceInformation(cursor, race);
-        race.setRaceLanguages(parseLanguages(cursor.nextSection()));
-        race.setBackgroundLanguages(parseLanguages(cursor.nextSection()));
+        final ParsedLanguages raceLanguages = parseLanguages(cursor.nextSection());
+        race.setRaceLanguages(raceLanguages.languages());
+        race.setOptionalRaceLanguages(raceLanguages.optionalLanguages());
+        final ParsedLanguages backgroundLanguages = parseLanguages(cursor.nextSection());
+        race.setBackgroundLanguages(backgroundLanguages.languages());
+        race.setOptionalBackgroundLanguages(backgroundLanguages.optionalLanguages());
         parseSpecialSkillSection(cursor.nextSection(), knownCategoryNames, race.getCommonSkillIds(), race.getCommonCategoryIds());
         parseSpecialSkillSection(cursor.nextSection(), knownCategoryNames, race.getRestrictedSkillIds(), race.getRestrictedCategoryIds());
         race.setCultureIds(parseCultureIds(cursor.nextSection()));
@@ -205,8 +212,14 @@ public final class RaceMigrationTool {
         return section.isEmpty() ? null : Double.valueOf(section.get(0).trim().replace(',', '.'));
     }
 
-    private static List<RaceLanguage> parseLanguages(List<String> lines) {
+    /**
+     * Parses a race's "IDIOMAS"/"IDIOMAS DE TRASFONDO" section: each line is either a named language
+     * ("Nombre\tInicialHabla/Escritura\tMáxHabla/Escritura") or the anonymous "Idioma Racial"/"Idioma
+     * Regional" marker (a language slot the player picks freely, see {@link LanguageSlot}).
+     */
+    private static ParsedLanguages parseLanguages(List<String> lines) {
         final List<RaceLanguage> languages = new ArrayList<>();
+        final List<LanguageSlot> optionalLanguages = new ArrayList<>();
         for (final String line : lines) {
             if (line.toLowerCase().contains("ningun")) {
                 continue;
@@ -217,9 +230,18 @@ public final class RaceMigrationTool {
             }
             final int[] initial = parseRankPair(columns[1]);
             final int[] max = parseRankPair(columns[2]);
-            languages.add(new RaceLanguage(Translations.toEnglishId(columns[0].trim()), initial[0], initial[1], max[0], max[1]));
+            final String name = columns[0].trim();
+            if (ANY_RACE_LANGUAGE.equalsIgnoreCase(name) || ANY_CULTURE_LANGUAGE.equalsIgnoreCase(name)) {
+                optionalLanguages.add(new LanguageSlot(initial[0], initial[1], max[0], max[1]));
+            } else {
+                languages.add(new RaceLanguage(Translations.toEnglishId(name), initial[0], initial[1], max[0], max[1]));
+            }
         }
-        return languages;
+        return new ParsedLanguages(languages, optionalLanguages);
+    }
+
+    /** The result of {@link #parseLanguages(List)}: named languages, and anonymous optional slots. */
+    private record ParsedLanguages(List<RaceLanguage> languages, List<LanguageSlot> optionalLanguages) {
     }
 
     private static int[] parseRankPair(String value) {

@@ -41,6 +41,13 @@ public class RaceMigrationToolTest {
             Assert.assertEquals(elf.getLanguagePoints(), Integer.valueOf(3));
             Assert.assertEquals(elf.getBackgroundPoints(), Integer.valueOf(5));
             Assert.assertEquals(elf.getRaceLanguages().size(), 2);
+            Assert.assertEquals(elf.getOptionalRaceLanguages().size(), 1);
+            Assert.assertEquals(elf.getOptionalRaceLanguages().get(0).getStartingSpeakingRanks(), Integer.valueOf(2));
+            Assert.assertEquals(elf.getOptionalRaceLanguages().get(0).getStartingWritingRanks(), Integer.valueOf(1));
+            Assert.assertEquals(elf.getOptionalRaceLanguages().get(0).getMaxSpeakingRanks(), Integer.valueOf(10));
+            Assert.assertEquals(elf.getOptionalRaceLanguages().get(0).getMaxWritingRanks(), Integer.valueOf(6));
+            Assert.assertEquals(elf.getBackgroundLanguages().size(), 1);
+            Assert.assertEquals(elf.getOptionalBackgroundLanguages().size(), 1);
             Assert.assertEquals(elf.getCommonCategoryIds(), List.of("loreGeneral"));
             Assert.assertEquals(elf.getCommonSkillIds(), List.of("stalking"));
             Assert.assertEquals(elf.getCultureIds(), List.of("rural", "woodland"));
@@ -79,8 +86,9 @@ public class RaceMigrationToolTest {
                 "#RECUPERACIÓN", "####################################", "1", "",
                 "#IDIOMAS", "####################################", "3", "",
                 "#HISTORIAL", "####################################", "5", "",
-                "#IDIOMAS\tInicial\tMax.Cultura", "####################################", "Élfico Alto\t8/8\t10/10", "Habla Común\t5/0\t8/8", "",
-                "#IDIOMAS HISTORIAL", "####################################", "Habla Común\t0/0\t10/10", "",
+                "#IDIOMAS\tInicial\tMax.Cultura", "####################################", "Élfico Alto\t8/8\t10/10", "Habla Común\t5/0\t8/8",
+                "Idioma Racial\t2/1\t10/6", "",
+                "#IDIOMAS HISTORIAL", "####################################", "Habla Común\t0/0\t10/10", "Idioma Regional\t0/0\t10/10", "",
                 "#HABILIDADES COMUNES", "####################################", "Conocimiento·General, Acechar", "",
                 "#HABILIDADES RESTRINGIDAS", "####################################", "Ninguna", "",
                 "#CULTURAS", "####################################", "Rural, Silvana", "",

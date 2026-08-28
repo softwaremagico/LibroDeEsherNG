@@ -644,6 +644,14 @@
       <es>Droloi</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>10</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/7/4/2/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -655,13 +663,6 @@
     <raceLanguages>
       <raceLanguage>
         <languageId>droloi</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>10</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -862,6 +863,14 @@
       <es>Dyari</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/6/5/2/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -873,13 +882,6 @@
     <raceLanguages>
       <raceLanguage>
         <languageId>dyari</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -2450,6 +2452,14 @@
       <es>Eritari</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/6/5/2/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -2461,13 +2471,6 @@
     <raceLanguages>
       <raceLanguage>
         <languageId>eritari</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -2855,6 +2858,14 @@
       <es>Erlini</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/6/4/2/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -2868,13 +2879,6 @@
         <languageId>erlini</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
@@ -3076,6 +3080,14 @@
       <es>Garks</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <restrictedProfessions>
       <professionId>animista</professionId>
       <professionId>cleric</professionId>
@@ -3124,13 +3136,6 @@
       </raceLanguage>
       <raceLanguage>
         <languageId>gark</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -4390,13 +4395,6 @@
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
-      <backgroundLanguage>
-        <languageId>idiomaRegional</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>10</maxWritingRanks>
-        <startingSpeakingRanks>0</startingSpeakingRanks>
-        <startingWritingRanks>0</startingWritingRanks>
-      </backgroundLanguage>
     </backgroundLanguages>
     <backgroundPoints>6</backgroundPoints>
     <characteristicBonuses>
@@ -4513,6 +4511,22 @@
       <es>Hizari</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalBackgroundLanguages>
+      <optionalBackgroundLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>10</maxWritingRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </optionalBackgroundLanguageSlot>
+    </optionalBackgroundLanguages>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>8</maxSpeakingRanks>
+        <maxWritingRanks>4</maxWritingRanks>
+        <startingSpeakingRanks>6</startingSpeakingRanks>
+        <startingWritingRanks>2</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/6/2/2/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -4528,13 +4542,6 @@
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
-        <maxSpeakingRanks>8</maxSpeakingRanks>
-        <maxWritingRanks>4</maxWritingRanks>
-        <startingSpeakingRanks>6</startingSpeakingRanks>
-        <startingWritingRanks>2</startingWritingRanks>
       </raceLanguage>
     </raceLanguages>
     <raceType>2</raceType>
@@ -6408,6 +6415,14 @@
       <es>Ky'taari</es>
     </name>
     <naturalArmorType>150</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/7/5/3/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -6419,13 +6434,6 @@
     <raceLanguages>
       <raceLanguage>
         <languageId>kyTaari</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -6509,13 +6517,6 @@
       <backgroundLanguage>
         <languageId>worim</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
-        <maxWritingRanks>4</maxWritingRanks>
-        <startingSpeakingRanks>0</startingSpeakingRanks>
-        <startingWritingRanks>0</startingWritingRanks>
-      </backgroundLanguage>
-      <backgroundLanguage>
-        <languageId>idiomaRacial</languageId>
-        <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
@@ -7105,6 +7106,28 @@
       <es>Laan</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalBackgroundLanguages>
+      <optionalBackgroundLanguageSlot>
+        <maxSpeakingRanks>8</maxSpeakingRanks>
+        <maxWritingRanks>4</maxWritingRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </optionalBackgroundLanguageSlot>
+    </optionalBackgroundLanguages>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>4</maxSpeakingRanks>
+        <maxWritingRanks>4</maxWritingRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/7/4/2/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -7127,20 +7150,6 @@
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
-        <startingSpeakingRanks>0</startingSpeakingRanks>
-        <startingWritingRanks>0</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRacial</languageId>
-        <maxSpeakingRanks>4</maxSpeakingRanks>
-        <maxWritingRanks>4</maxWritingRanks>
-        <startingSpeakingRanks>0</startingSpeakingRanks>
-        <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
     </raceLanguages>
     <raceType>3</raceType>
@@ -7333,6 +7342,14 @@
       <es>Lennai</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <restrictedProfessions>
       <professionId>fighter</professionId>
       <professionId>rogue</professionId>
@@ -7362,13 +7379,6 @@
         <languageId>lennai</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
@@ -7642,6 +7652,14 @@
       <es>Linaeri</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/6/5/2/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -7653,13 +7671,6 @@
     <raceLanguages>
       <raceLanguage>
         <languageId>lineari</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -7954,6 +7965,14 @@
       <es>Loari</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/6/5/2/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -7965,13 +7984,6 @@
     <raceLanguages>
       <raceLanguage>
         <languageId>loari</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -8049,15 +8061,6 @@
   </race>
   <race>
     <appearanceBonus>-80</appearanceBonus>
-    <backgroundLanguages>
-      <backgroundLanguage>
-        <languageId>idiomaRacial</languageId>
-        <maxSpeakingRanks>8</maxSpeakingRanks>
-        <maxWritingRanks>6</maxWritingRanks>
-        <startingSpeakingRanks>0</startingSpeakingRanks>
-        <startingWritingRanks>0</startingWritingRanks>
-      </backgroundLanguage>
-    </backgroundLanguages>
     <backgroundPoints>6</backgroundPoints>
     <characteristicBonuses>
       <AGILITY>0</AGILITY>
@@ -8196,6 +8199,22 @@
       <es>Lugrôki Mayores</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalBackgroundLanguages>
+      <optionalBackgroundLanguageSlot>
+        <maxSpeakingRanks>8</maxSpeakingRanks>
+        <maxWritingRanks>6</maxWritingRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </optionalBackgroundLanguageSlot>
+    </optionalBackgroundLanguages>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>6</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>3</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <restrictedProfessions>
       <professionId>paladin</professionId>
     </restrictedProfessions>
@@ -8210,13 +8229,6 @@
     <raceLanguages>
       <raceLanguage>
         <languageId>lugrôki</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>6</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>3</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -8255,15 +8267,6 @@
   </race>
   <race>
     <appearanceBonus>-80</appearanceBonus>
-    <backgroundLanguages>
-      <backgroundLanguage>
-        <languageId>idiomaRacial</languageId>
-        <maxSpeakingRanks>4</maxSpeakingRanks>
-        <maxWritingRanks>4</maxWritingRanks>
-        <startingSpeakingRanks>0</startingSpeakingRanks>
-        <startingWritingRanks>0</startingWritingRanks>
-      </backgroundLanguage>
-    </backgroundLanguages>
     <backgroundPoints>6</backgroundPoints>
     <characteristicBonuses>
       <AGILITY>0</AGILITY>
@@ -8405,6 +8408,22 @@
       <es>Lugrôki Menores</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalBackgroundLanguages>
+      <optionalBackgroundLanguageSlot>
+        <maxSpeakingRanks>4</maxSpeakingRanks>
+        <maxWritingRanks>4</maxWritingRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </optionalBackgroundLanguageSlot>
+    </optionalBackgroundLanguages>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>6</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>3</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <restrictedProfessions>
       <professionId>paladin</professionId>
       <professionId>group:essence</professionId>
@@ -8422,13 +8441,6 @@
     <raceLanguages>
       <raceLanguage>
         <languageId>lugrôki</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>6</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>3</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -9240,6 +9252,14 @@
       <es>Murlogi</es>
     </name>
     <naturalArmorType>15</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>6</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/6/3/2/1</physicalDevelopment>
       <ppArcane>0/3/2/1/1</ppArcane>
@@ -9253,13 +9273,6 @@
         <languageId>murlogi</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>6</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
@@ -10349,6 +10362,14 @@
       <es>Punkari</es>
     </name>
     <naturalArmorType>150</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/7/5/3/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -10360,13 +10381,6 @@
     <raceLanguages>
       <raceLanguage>
         <languageId>punkari</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -11127,6 +11141,14 @@
       <es>Shuluri</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/6/5/2/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -11138,13 +11160,6 @@
     <raceLanguages>
       <raceLanguage>
         <languageId>shuluri</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -11250,13 +11265,6 @@
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
-      <backgroundLanguage>
-        <languageId>idiomaRegional</languageId>
-        <maxSpeakingRanks>8</maxSpeakingRanks>
-        <maxWritingRanks>4</maxWritingRanks>
-        <startingSpeakingRanks>0</startingSpeakingRanks>
-        <startingWritingRanks>0</startingWritingRanks>
-      </backgroundLanguage>
     </backgroundLanguages>
     <backgroundPoints>6</backgroundPoints>
     <characteristicBonuses>
@@ -11322,6 +11330,22 @@
       <es>Sirénidos</es>
     </name>
     <naturalArmorType>3</naturalArmorType>
+    <optionalBackgroundLanguages>
+      <optionalBackgroundLanguageSlot>
+        <maxSpeakingRanks>8</maxSpeakingRanks>
+        <maxWritingRanks>4</maxWritingRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </optionalBackgroundLanguageSlot>
+    </optionalBackgroundLanguages>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>6</maxSpeakingRanks>
+        <maxWritingRanks>4</maxWritingRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/7/3/2/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -11376,13 +11400,6 @@
       <raceLanguage>
         <languageId>shuluri</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
-        <maxWritingRanks>4</maxWritingRanks>
-        <startingSpeakingRanks>0</startingSpeakingRanks>
-        <startingWritingRanks>0</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
-        <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
@@ -11968,6 +11985,14 @@
       <es>Sulini</es>
     </name>
     <naturalArmorType>150</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/6/5/2/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -11979,13 +12004,6 @@
     <raceLanguages>
       <raceLanguage>
         <languageId>suluni</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -12574,6 +12592,14 @@
       <es>Trogli</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/7/4/2/1</physicalDevelopment>
       <ppArcane>0/3/2/1/1</ppArcane>
@@ -12585,13 +12611,6 @@
     <raceLanguages>
       <raceLanguage>
         <languageId>trogli</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -13110,6 +13129,14 @@
       <es>Umli</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/6/5/2/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -13121,13 +13148,6 @@
     <raceLanguages>
       <raceLanguage>
         <languageId>umli</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -13549,6 +13569,14 @@
       <es>Vorloi</es>
     </name>
     <naturalArmorType>150</naturalArmorType>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>8</maxWritingRanks>
+        <startingSpeakingRanks>8</startingSpeakingRanks>
+        <startingWritingRanks>4</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/6/5/2/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -13560,13 +13588,6 @@
     <raceLanguages>
       <raceLanguage>
         <languageId>vorloi</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>8</maxWritingRanks>
-        <startingSpeakingRanks>8</startingSpeakingRanks>
-        <startingWritingRanks>4</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>

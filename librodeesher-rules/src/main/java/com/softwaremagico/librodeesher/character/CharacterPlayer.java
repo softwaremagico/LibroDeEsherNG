@@ -24,6 +24,7 @@ import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.race.RaceLanguage;
 import com.softwaremagico.librodeesher.culture.CultureLanguageRank;
+import com.softwaremagico.librodeesher.language.LanguageSlot;
 import com.softwaremagico.librodeesher.skill.Skill;
 import com.softwaremagico.librodeesher.skill.SkillType;
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
@@ -547,6 +548,10 @@ public class CharacterPlayer {
     private static final List<String> ATTACK_CATEGORY_IDS = List.of(
             "martialArtsStrikes", "martialArtsSweeps", "martialArtsCombatManeuvers", "specialAttacks");
 
+    private static final String OPTIONAL_RACE_LANGUAGE_PREFIX = "language:optionalRace:";
+    private static final String OPTIONAL_BACKGROUND_LANGUAGE_PREFIX = "language:optionalBackground:";
+    private static final String OPTIONAL_CULTURE_LANGUAGE_PREFIX = "language:optionalCulture:";
+
     /**
      * Expands any {@link #ALL_WEAPON_CATEGORIES}/{@link #ALL_ATTACK_CATEGORIES} marker in {@code
      * categoryIds} into the real category ids it stands for (every other id is kept as-is). The
@@ -807,31 +812,38 @@ public class CharacterPlayer {
 
     /**
      * The fixed speaking ranks a race grants at creation for a language (0 if no race is selected or
-     * it does not grant that language at creation).
+     * it does not grant that language at creation), including a language assigned to one of the
+     * race's optional "Idioma Racial"/"Idioma Regional" slots (see {@link #assignOptionalRaceLanguage}).
      */
     public int getRaceLanguageStartingSpeakingRanks(String languageId) throws InvalidXmlElementException {
         final RaceLanguage language = findRaceLanguage(languageId, false);
-        return language == null || language.getStartingSpeakingRanks() == null ? 0 : language.getStartingSpeakingRanks();
+        final int named = language == null || language.getStartingSpeakingRanks() == null ? 0 : language.getStartingSpeakingRanks();
+        return Math.max(named, getOptionalRaceLanguageRanks(languageId, LanguageSlot::getStartingSpeakingRanks, false));
     }
 
     /** Same as {@link #getRaceLanguageStartingSpeakingRanks(String)}, for writing ranks. */
     public int getRaceLanguageStartingWritingRanks(String languageId) throws InvalidXmlElementException {
         final RaceLanguage language = findRaceLanguage(languageId, false);
-        return language == null || language.getStartingWritingRanks() == null ? 0 : language.getStartingWritingRanks();
+        final int named = language == null || language.getStartingWritingRanks() == null ? 0 : language.getStartingWritingRanks();
+        return Math.max(named, getOptionalRaceLanguageRanks(languageId, LanguageSlot::getStartingWritingRanks, false));
     }
 
     /**
      * The maximum speaking ranks a language can reach for the selected race, checking both the
-     * languages granted at creation and those only available through background points; the legacy
-     * default of 10 if the race does not mention that language at all (no race selected returns 0
-     * instead, since there is no race to ask).
+     * languages granted at creation and those only available through background points, plus a
+     * language assigned to any optional slot; the legacy default of 10 applies only if the race
+     * mentions the language nowhere at all (0 without a race selected, since there is no race to ask).
      */
     public int getRaceLanguageMaxSpeakingRanks(String languageId) throws InvalidXmlElementException {
         if (getRace() == null) {
             return 0;
         }
         final RaceLanguage language = findRaceLanguage(languageId, true);
-        return language == null || language.getMaxSpeakingRanks() == null ? 10 : language.getMaxSpeakingRanks();
+        if (language != null && language.getMaxSpeakingRanks() != null) {
+            return language.getMaxSpeakingRanks();
+        }
+        final int fromSlot = getOptionalRaceLanguageRanks(languageId, LanguageSlot::getMaxSpeakingRanks, true);
+        return fromSlot > 0 ? fromSlot : 10;
     }
 
     /** Same as {@link #getRaceLanguageMaxSpeakingRanks(String)}, for writing ranks. */
@@ -840,7 +852,11 @@ public class CharacterPlayer {
             return 0;
         }
         final RaceLanguage language = findRaceLanguage(languageId, true);
-        return language == null || language.getMaxWritingRanks() == null ? 10 : language.getMaxWritingRanks();
+        if (language != null && language.getMaxWritingRanks() != null) {
+            return language.getMaxWritingRanks();
+        }
+        final int fromSlot = getOptionalRaceLanguageRanks(languageId, LanguageSlot::getMaxWritingRanks, true);
+        return fromSlot > 0 ? fromSlot : 10;
     }
 
     private RaceLanguage findRaceLanguage(String languageId, boolean includeBackgroundLanguages) throws InvalidXmlElementException {
@@ -864,19 +880,75 @@ public class CharacterPlayer {
     }
 
     /**
+     * Assigns {@code languageId} to one of the race's optional "IDIOMAS" slots (by its index in
+     * {@link Race#getOptionalRaceLanguages()}), recording the choice so {@link
+     * #getRaceLanguageStartingSpeakingRanks}/{@link #getRaceLanguageMaxSpeakingRanks} (and their
+     * writing-rank counterparts) pick up that slot's ranks for {@code languageId}.
+     */
+    public void assignOptionalRaceLanguage(int slotIndex, String languageId) {
+        decisions.set(OPTIONAL_RACE_LANGUAGE_PREFIX + slotIndex, Decision.fixed(List.of(languageId)));
+    }
+
+    public String getOptionalRaceLanguageAssignment(int slotIndex) {
+        return decisions.getSelectedOption(OPTIONAL_RACE_LANGUAGE_PREFIX + slotIndex);
+    }
+
+    /** Same as {@link #assignOptionalRaceLanguage}, but for {@link Race#getOptionalBackgroundLanguages()}. */
+    public void assignOptionalBackgroundLanguage(int slotIndex, String languageId) {
+        decisions.set(OPTIONAL_BACKGROUND_LANGUAGE_PREFIX + slotIndex, Decision.fixed(List.of(languageId)));
+    }
+
+    public String getOptionalBackgroundLanguageAssignment(int slotIndex) {
+        return decisions.getSelectedOption(OPTIONAL_BACKGROUND_LANGUAGE_PREFIX + slotIndex);
+    }
+
+    private int getOptionalRaceLanguageRanks(String languageId, Function<LanguageSlot, Integer> rankGetter,
+                                              boolean includeBackgroundLanguages) throws InvalidXmlElementException {
+        final Race race = getRace();
+        if (race == null) {
+            return 0;
+        }
+        int best = matchingSlotRank(race.getOptionalRaceLanguages(), OPTIONAL_RACE_LANGUAGE_PREFIX, languageId, rankGetter);
+        if (includeBackgroundLanguages) {
+            best = Math.max(best, matchingSlotRank(race.getOptionalBackgroundLanguages(), OPTIONAL_BACKGROUND_LANGUAGE_PREFIX,
+                    languageId, rankGetter));
+        }
+        return best;
+    }
+
+    private int matchingSlotRank(List<LanguageSlot> slots, String keyPrefix, String languageId, Function<LanguageSlot, Integer> rankGetter) {
+        int best = 0;
+        for (int i = 0; i < slots.size(); i++) {
+            if (languageId.equals(decisions.getSelectedOption(keyPrefix + i))) {
+                final Integer rank = rankGetter.apply(slots.get(i));
+                best = Math.max(best, rank == null ? 0 : rank);
+            }
+        }
+        return best;
+    }
+
+    /**
      * The maximum speaking ranks a language can reach for the selected culture, resolving the {@code
      * "all"} marker (a culture that caps every language the same way) as a fallback when the language
-     * is not mentioned by name; 0 if no culture is selected or it does not mention that language.
+     * is not mentioned by name, plus a language assigned to one of the culture's optional "Idioma
+     * Regional" slots (see {@link #assignOptionalCultureLanguage}); 0 if no culture is selected or it
+     * does not mention that language anywhere.
      */
     public int getCultureLanguageMaxSpeakingRanks(String languageId) throws InvalidXmlElementException {
         final CultureLanguageRank rank = findCultureLanguageRank(languageId);
-        return rank == null || rank.getMaxSpeakingRanks() == null ? 0 : rank.getMaxSpeakingRanks();
+        if (rank != null && rank.getMaxSpeakingRanks() != null) {
+            return rank.getMaxSpeakingRanks();
+        }
+        return getOptionalCultureLanguageMaxRanks(languageId, LanguageSlot::getMaxSpeakingRanks);
     }
 
     /** Same as {@link #getCultureLanguageMaxSpeakingRanks(String)}, for writing ranks. */
     public int getCultureLanguageMaxWritingRanks(String languageId) throws InvalidXmlElementException {
         final CultureLanguageRank rank = findCultureLanguageRank(languageId);
-        return rank == null || rank.getMaxWritingRanks() == null ? 0 : rank.getMaxWritingRanks();
+        if (rank != null && rank.getMaxWritingRanks() != null) {
+            return rank.getMaxWritingRanks();
+        }
+        return getOptionalCultureLanguageMaxRanks(languageId, LanguageSlot::getMaxWritingRanks);
     }
 
     private CultureLanguageRank findCultureLanguageRank(String languageId) throws InvalidXmlElementException {
@@ -896,13 +968,30 @@ public class CharacterPlayer {
         return allLanguagesRank;
     }
 
+    /** Assigns {@code languageId} to one of the culture's optional "IDIOMAS" slots; see {@link #assignOptionalRaceLanguage}. */
+    public void assignOptionalCultureLanguage(int slotIndex, String languageId) {
+        decisions.set(OPTIONAL_CULTURE_LANGUAGE_PREFIX + slotIndex, Decision.fixed(List.of(languageId)));
+    }
+
+    public String getOptionalCultureLanguageAssignment(int slotIndex) {
+        return decisions.getSelectedOption(OPTIONAL_CULTURE_LANGUAGE_PREFIX + slotIndex);
+    }
+
+    private int getOptionalCultureLanguageMaxRanks(String languageId, Function<LanguageSlot, Integer> rankGetter) throws InvalidXmlElementException {
+        final Culture culture = getCulture();
+        if (culture == null) {
+            return 0;
+        }
+        return matchingSlotRank(culture.getOptionalLanguages(), OPTIONAL_CULTURE_LANGUAGE_PREFIX, languageId, rankGetter);
+    }
+
     /**
      * The highest speaking-ranks cap a language can reach, taking the best of what the selected race
      * and culture allow (the legacy rule takes the highest value offered by any source that mentions
-     * a language). 0 if neither mentions it.
+     * a language, including any assigned optional-language slot). 0 if neither mentions it.
      *
-     * <p>The optional culture/race language selections and Background's own language point spending
-     * are not folded in here yet; future work.</p>
+     * <p>Validating Background's spent language points against this cap is not folded in here yet;
+     * future work.</p>
      */
     public int getLanguageMaxSpeakingRanks(String languageId) throws InvalidXmlElementException {
         return Math.max(getRaceLanguageMaxSpeakingRanks(languageId), getCultureLanguageMaxSpeakingRanks(languageId));

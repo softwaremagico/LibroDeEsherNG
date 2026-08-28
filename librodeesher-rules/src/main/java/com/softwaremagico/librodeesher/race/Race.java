@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.softwaremagico.librodeesher.Element;
+import com.softwaremagico.librodeesher.language.LanguageSlot;
 
 import java.util.Collections;
 import java.util.List;
@@ -66,9 +67,23 @@ public class Race extends Element {
     @JacksonXmlProperty(localName = "raceLanguage")
     private List<RaceLanguage> raceLanguages;
 
+    /**
+     * Anonymous "Idioma Racial"/"Idioma Regional" slots found in the "IDIOMAS" section (a language
+     * the player picks freely, as opposed to the fixed languages in {@link #raceLanguages}); see
+     * {@link com.softwaremagico.librodeesher.language.LanguageSlot}.
+     */
+    @JacksonXmlElementWrapper(localName = "optionalRaceLanguages")
+    @JacksonXmlProperty(localName = "optionalRaceLanguageSlot")
+    private List<LanguageSlot> optionalRaceLanguages;
+
     @JacksonXmlElementWrapper(localName = "backgroundLanguages")
     @JacksonXmlProperty(localName = "backgroundLanguage")
     private List<RaceLanguage> backgroundLanguages;
+
+    /** Same as {@link #optionalRaceLanguages}, but for the "IDIOMAS DE TRASFONDO" section. */
+    @JacksonXmlElementWrapper(localName = "optionalBackgroundLanguages")
+    @JacksonXmlProperty(localName = "optionalBackgroundLanguageSlot")
+    private List<LanguageSlot> optionalBackgroundLanguages;
 
     /** Ids of skills (including weapon skills, see {@code SkillMigrationTool}) this race treats as common (developed at a favourable cost tier). */
     @JacksonXmlElementWrapper(localName = "commonSkills")
@@ -144,8 +159,12 @@ public class Race extends Element {
     public void setRestrictedProfessionIds(List<String> restrictedProfessionIds) { this.restrictedProfessionIds = restrictedProfessionIds; }
     public List<RaceLanguage> getRaceLanguages() { return raceLanguages == null ? Collections.emptyList() : raceLanguages; }
     public void setRaceLanguages(List<RaceLanguage> raceLanguages) { this.raceLanguages = raceLanguages; }
+    public List<LanguageSlot> getOptionalRaceLanguages() { return optionalRaceLanguages == null ? Collections.emptyList() : optionalRaceLanguages; }
+    public void setOptionalRaceLanguages(List<LanguageSlot> optionalRaceLanguages) { this.optionalRaceLanguages = optionalRaceLanguages; }
     public List<RaceLanguage> getBackgroundLanguages() { return backgroundLanguages == null ? Collections.emptyList() : backgroundLanguages; }
     public void setBackgroundLanguages(List<RaceLanguage> backgroundLanguages) { this.backgroundLanguages = backgroundLanguages; }
+    public List<LanguageSlot> getOptionalBackgroundLanguages() { return optionalBackgroundLanguages == null ? Collections.emptyList() : optionalBackgroundLanguages; }
+    public void setOptionalBackgroundLanguages(List<LanguageSlot> optionalBackgroundLanguages) { this.optionalBackgroundLanguages = optionalBackgroundLanguages; }
     public List<String> getCommonSkillIds() { return commonSkillIds == null ? Collections.emptyList() : commonSkillIds; }
     public void setCommonSkillIds(List<String> commonSkillIds) { this.commonSkillIds = commonSkillIds; }
     public List<String> getCommonCategoryIds() { return commonCategoryIds == null ? Collections.emptyList() : commonCategoryIds; }

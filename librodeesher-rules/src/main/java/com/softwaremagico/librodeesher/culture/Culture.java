@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.softwaremagico.librodeesher.Element;
+import com.softwaremagico.librodeesher.language.LanguageSlot;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
 
 import java.util.Collections;
@@ -38,6 +39,15 @@ public class Culture extends Element {
     @JacksonXmlProperty(localName = "languageRank")
     private List<CultureLanguageRank> languageMaxRanks;
 
+    /**
+     * Anonymous "Idioma Regional" slots found in the "IDIOMAS" section (a language the player picks
+     * freely, as opposed to the fixed languages in {@link #languageMaxRanks}); see {@link
+     * com.softwaremagico.librodeesher.language.LanguageSlot}.
+     */
+    @JacksonXmlElementWrapper(localName = "optionalLanguages")
+    @JacksonXmlProperty(localName = "languageSlot")
+    private List<LanguageSlot> optionalLanguages;
+
     @JacksonXmlElementWrapper(localName = "trainingPrices")
     @JacksonXmlProperty(localName = "trainingPrice")
     private List<CultureTrainingPrice> trainingPrices;
@@ -62,6 +72,8 @@ public class Culture extends Element {
     public void setHobbyIds(List<String> hobbyIds) { this.hobbyIds = hobbyIds; }
     public List<CultureLanguageRank> getLanguageMaxRanks() { return languageMaxRanks == null ? Collections.emptyList() : languageMaxRanks; }
     public void setLanguageMaxRanks(List<CultureLanguageRank> languageMaxRanks) { this.languageMaxRanks = languageMaxRanks; }
+    public List<LanguageSlot> getOptionalLanguages() { return optionalLanguages == null ? Collections.emptyList() : optionalLanguages; }
+    public void setOptionalLanguages(List<LanguageSlot> optionalLanguages) { this.optionalLanguages = optionalLanguages; }
     public List<CultureTrainingPrice> getTrainingPrices() { return trainingPrices == null ? Collections.emptyList() : trainingPrices; }
     public void setTrainingPrices(List<CultureTrainingPrice> trainingPrices) { this.trainingPrices = trainingPrices; }
 }

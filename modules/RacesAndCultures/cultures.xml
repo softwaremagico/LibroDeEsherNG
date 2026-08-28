@@ -469,12 +469,15 @@
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
       </languageRank>
-      <languageRank>
-        <languageId>idiomaRegional</languageId>
+    </languageMaxRanks>
+    <optionalLanguages>
+      <languageSlot>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-      </languageRank>
-    </languageMaxRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </languageSlot>
+    </optionalLanguages>
     <name>
       <en>Aquatic Militarista</en>
       <es>Acuática Militarista</es>
@@ -968,12 +971,15 @@
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
       </languageRank>
-      <languageRank>
-        <languageId>idiomaRegional</languageId>
+    </languageMaxRanks>
+    <optionalLanguages>
+      <languageSlot>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-      </languageRank>
-    </languageMaxRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </languageSlot>
+    </optionalLanguages>
     <name>
       <en>Aquatic Nomadic</en>
       <es>Acuática Nómada</es>
@@ -1457,12 +1463,15 @@
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
       </languageRank>
-      <languageRank>
-        <languageId>idiomaRegional</languageId>
+    </languageMaxRanks>
+    <optionalLanguages>
+      <languageSlot>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-      </languageRank>
-    </languageMaxRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </languageSlot>
+    </optionalLanguages>
     <name>
       <en>Aquatic Urban (Class High)</en>
       <es>Acuática Urbana (Clase Alta)</es>
@@ -1950,12 +1959,15 @@
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
       </languageRank>
-      <languageRank>
-        <languageId>idiomaRegional</languageId>
+    </languageMaxRanks>
+    <optionalLanguages>
+      <languageSlot>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-      </languageRank>
-    </languageMaxRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </languageSlot>
+    </optionalLanguages>
     <name>
       <en>Aquatic Urban (Class Low)</en>
       <es>Acuática Urbana (Clase Baja)</es>
@@ -2439,12 +2451,15 @@
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
       </languageRank>
-      <languageRank>
-        <languageId>idiomaRegional</languageId>
+    </languageMaxRanks>
+    <optionalLanguages>
+      <languageSlot>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-      </languageRank>
-    </languageMaxRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </languageSlot>
+    </optionalLanguages>
     <name>
       <en>Aquatic Urban (Class Middle)</en>
       <es>Acuática Urbana (Clase Media)</es>
@@ -2927,12 +2942,15 @@
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
       </languageRank>
-      <languageRank>
-        <languageId>idiomaRegional</languageId>
+    </languageMaxRanks>
+    <optionalLanguages>
+      <languageSlot>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-      </languageRank>
-    </languageMaxRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </languageSlot>
+    </optionalLanguages>
     <name>
       <en>Aquatic</en>
       <es>Acuática</es>
@@ -17462,12 +17480,15 @@
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
       </languageRank>
-      <languageRank>
-        <languageId>idiomaRegional</languageId>
+    </languageMaxRanks>
+    <optionalLanguages>
+      <languageSlot>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-      </languageRank>
-    </languageMaxRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </languageSlot>
+    </optionalLanguages>
     <name>
       <en>Underground Urban (Calis High)</en>
       <es>Subterránea Urbana (Calse Alta)</es>

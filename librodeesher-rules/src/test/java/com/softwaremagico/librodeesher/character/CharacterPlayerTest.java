@@ -680,4 +680,46 @@ public class CharacterPlayerTest {
         Assert.assertEquals(character.getCultureLanguageMaxSpeakingRanks("commonSpeech"), 8);
         Assert.assertEquals(character.getLanguageMaxSpeakingRanks("commonSpeech"), 8);
     }
+
+    @Test
+    public void unassignedOptionalRaceLanguageSlotContributesNothing() throws InvalidXmlElementException {
+        // dyari has one optional 'Idioma Regional' slot (8/4 starting, 10/8 max) that nothing was
+        // ever assigned to, so an arbitrary language must fall back to the plain default (10/10).
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("dyari");
+
+        Assert.assertEquals(character.getRaceLanguageStartingSpeakingRanks("elvish"), 0);
+        Assert.assertEquals(character.getRaceLanguageMaxSpeakingRanks("elvish"), 10);
+    }
+
+    @Test
+    public void assigningAnOptionalRaceLanguageGrantsItsSlotRanks() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("dyari");
+
+        character.assignOptionalRaceLanguage(0, "elvish");
+
+        Assert.assertEquals(character.getOptionalRaceLanguageAssignment(0), "elvish");
+        Assert.assertEquals(character.getRaceLanguageStartingSpeakingRanks("elvish"), 8);
+        Assert.assertEquals(character.getRaceLanguageStartingWritingRanks("elvish"), 4);
+        Assert.assertEquals(character.getRaceLanguageMaxSpeakingRanks("elvish"), 10);
+        Assert.assertEquals(character.getRaceLanguageMaxWritingRanks("elvish"), 8);
+
+        // A different, unassigned language is unaffected.
+        Assert.assertEquals(character.getRaceLanguageStartingSpeakingRanks("dwarvish"), 0);
+    }
+
+    @Test
+    public void assigningAnOptionalCultureLanguageGrantsItsSlotMaxRanks() throws InvalidXmlElementException {
+        // aquaticMilitarista has one optional 'Idioma Regional' slot capping at 8/8 (no starting ranks).
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setCultureId("aquaticMilitarista");
+
+        character.assignOptionalCultureLanguage(0, "elvish");
+
+        Assert.assertEquals(character.getOptionalCultureLanguageAssignment(0), "elvish");
+        Assert.assertEquals(character.getCultureLanguageMaxSpeakingRanks("elvish"), 8);
+        Assert.assertEquals(character.getCultureLanguageMaxWritingRanks("elvish"), 8);
+        Assert.assertEquals(character.getCultureLanguageMaxSpeakingRanks("dwarvish"), 0);
+    }
 }

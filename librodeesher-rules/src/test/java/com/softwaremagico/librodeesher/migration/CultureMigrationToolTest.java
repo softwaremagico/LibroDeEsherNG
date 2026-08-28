@@ -30,7 +30,7 @@ public class CultureMigrationToolTest {
                     "# RANGOS", "####################", "Exteriores·Entorno\t3", "  *  Rastrear\t2", "",
                     "# PUNTOS AFICIONES", "####################", "10", "",
                     "# AFICIONES", "####################", "Rastrear, -Acechar", "",
-                    "# IDIOMAS", "####################", "Habla Común\t8/8", "",
+                    "# IDIOMAS", "####################", "Habla Común\t8/8", "Idioma Regional\t6/4", "",
                     "# ADIESTAMIENTOS", "####################", "Soldado\t50%", "",
                     "### FIN CULTURA ###"), StandardCharsets.UTF_8);
 
@@ -51,6 +51,9 @@ public class CultureMigrationToolTest {
             Assert.assertEquals(rural.getHobbyIds(), List.of("tracking", "exclude:stalking"));
             Assert.assertEquals(rural.getLanguageMaxRanks().get(0).getLanguageId(), "commonSpeech");
             Assert.assertEquals(rural.getLanguageMaxRanks().get(0).getMaxSpeakingRanks(), Integer.valueOf(8));
+            Assert.assertEquals(rural.getOptionalLanguages().size(), 1);
+            Assert.assertEquals(rural.getOptionalLanguages().get(0).getMaxSpeakingRanks(), Integer.valueOf(6));
+            Assert.assertEquals(rural.getOptionalLanguages().get(0).getMaxWritingRanks(), Integer.valueOf(4));
             Assert.assertEquals(rural.getTrainingPrices().get(0).getTrainingId(), "soldier");
             Assert.assertEquals(rural.getTrainingPrices().get(0).getPrice(), Double.valueOf(0.5d));
         } finally {

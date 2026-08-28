@@ -2,29 +2,6 @@
 <races>
   <race>
     <appearanceBonus>0</appearanceBonus>
-    <backgroundLanguages>
-      <backgroundLanguage>
-        <languageId>idiomaRegional</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>10</maxWritingRanks>
-        <startingSpeakingRanks>0</startingSpeakingRanks>
-        <startingWritingRanks>0</startingWritingRanks>
-      </backgroundLanguage>
-      <backgroundLanguage>
-        <languageId>idiomaRegional</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>10</maxWritingRanks>
-        <startingSpeakingRanks>0</startingSpeakingRanks>
-        <startingWritingRanks>0</startingWritingRanks>
-      </backgroundLanguage>
-      <backgroundLanguage>
-        <languageId>idiomaRegional</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>10</maxWritingRanks>
-        <startingSpeakingRanks>0</startingSpeakingRanks>
-        <startingWritingRanks>0</startingWritingRanks>
-      </backgroundLanguage>
-    </backgroundLanguages>
     <backgroundPoints>6</backgroundPoints>
     <characteristicBonuses>
       <AGILITY>0</AGILITY>
@@ -336,6 +313,26 @@
       <es>Hombre Moderno</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalBackgroundLanguages>
+      <optionalBackgroundLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>10</maxWritingRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </optionalBackgroundLanguageSlot>
+      <optionalBackgroundLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>10</maxWritingRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </optionalBackgroundLanguageSlot>
+      <optionalBackgroundLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>10</maxWritingRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </optionalBackgroundLanguageSlot>
+    </optionalBackgroundLanguages>
     <progressionRankValues>
       <physicalDevelopment>0/6/4/2/1</physicalDevelopment>
       <ppArcane>0/2/1/1/1</ppArcane>

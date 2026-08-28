@@ -191,15 +191,6 @@
   </race>
   <race>
     <appearanceBonus>0</appearanceBonus>
-    <backgroundLanguages>
-      <backgroundLanguage>
-        <languageId>idiomaRegional</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>10</maxWritingRanks>
-        <startingSpeakingRanks>0</startingSpeakingRanks>
-        <startingWritingRanks>0</startingWritingRanks>
-      </backgroundLanguage>
-    </backgroundLanguages>
     <backgroundPoints>4</backgroundPoints>
     <characteristicBonuses>
       <AGILITY>3</AGILITY>
@@ -260,6 +251,22 @@
       <es>Doppleganger</es>
     </name>
     <naturalArmorType>1</naturalArmorType>
+    <optionalBackgroundLanguages>
+      <optionalBackgroundLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>10</maxWritingRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </optionalBackgroundLanguageSlot>
+    </optionalBackgroundLanguages>
+    <optionalRaceLanguages>
+      <optionalRaceLanguageSlot>
+        <maxSpeakingRanks>10</maxSpeakingRanks>
+        <maxWritingRanks>10</maxWritingRanks>
+        <startingSpeakingRanks>0</startingSpeakingRanks>
+        <startingWritingRanks>0</startingWritingRanks>
+      </optionalRaceLanguageSlot>
+    </optionalRaceLanguages>
     <restrictedProfessions>
       <professionId>cleric</professionId>
       <professionId>mythic</professionId>
@@ -285,13 +292,6 @@
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
         <startingSpeakingRanks>6</startingSpeakingRanks>
-        <startingWritingRanks>0</startingWritingRanks>
-      </raceLanguage>
-      <raceLanguage>
-        <languageId>idiomaRegional</languageId>
-        <maxSpeakingRanks>10</maxSpeakingRanks>
-        <maxWritingRanks>10</maxWritingRanks>
-        <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
     </raceLanguages>

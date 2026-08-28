@@ -4,6 +4,7 @@ import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.culture.CultureLanguageRank;
 import com.softwaremagico.librodeesher.culture.CultureTrainingPrice;
 import com.softwaremagico.librodeesher.file.ModuleManager;
+import com.softwaremagico.librodeesher.language.LanguageSlot;
 import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
 import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
@@ -22,6 +23,7 @@ public final class CultureMigrationTool {
 
     private static final String CULTURES_FOLDER = "culturas";
     private static final String OUTPUT_FILE = "cultures.xml";
+    private static final String ANY_CULTURE_LANGUAGE = "Idioma Regional";
 
     private CultureMigrationTool() {
         // Utility class.
@@ -72,7 +74,9 @@ public final class CultureMigrationTool {
         culture.setAdolescenceRanks(parseAdolescenceRanks(cursor.nextSection(), categoryIndex));
         culture.setHobbyRanks(parseOptionalInteger(cursor.nextSection()));
         culture.setHobbyIds(parseHobbyIds(cursor.nextSection()));
-        culture.setLanguageMaxRanks(parseLanguageRanks(cursor.nextSection()));
+        final ParsedCultureLanguages languages = parseLanguageRanks(cursor.nextSection());
+        culture.setLanguageMaxRanks(languages.ranks());
+        culture.setOptionalLanguages(languages.optionalLanguages());
         culture.setTrainingPrices(parseTrainingPrices(cursor.nextSectionOrEmpty()));
         return culture;
     }
@@ -187,8 +191,14 @@ public final class CultureMigrationTool {
         return ids;
     }
 
-    private static List<CultureLanguageRank> parseLanguageRanks(List<String> lines) {
+    /**
+     * Parses the "IDIOMAS" section: each line is either a named language ("Nombre\tMáxHabla/Escritura"),
+     * the {@code "Todas"}/{@code "all"} marker (every language capped the same way), or the anonymous
+     * "Idioma Regional" marker (a language slot the player picks freely, see {@link LanguageSlot}).
+     */
+    private static ParsedCultureLanguages parseLanguageRanks(List<String> lines) {
         final List<CultureLanguageRank> ranks = new ArrayList<>();
+        final List<LanguageSlot> optionalLanguages = new ArrayList<>();
         for (final String line : lines) {
             if (isAll(line)) {
                 ranks.add(new CultureLanguageRank("all", 10, 10));
@@ -200,11 +210,21 @@ public final class CultureMigrationTool {
             final String[] columns = line.split("\t");
             if (columns.length >= 2) {
                 final String[] pair = columns[1].trim().split("/");
-                ranks.add(new CultureLanguageRank(Translations.toEnglishId(columns[0].trim()),
-                        Integer.valueOf(pair[0].trim()), Integer.valueOf(pair[1].trim())));
+                final int maxSpeaking = Integer.parseInt(pair[0].trim());
+                final int maxWriting = Integer.parseInt(pair[1].trim());
+                final String name = columns[0].trim();
+                if (ANY_CULTURE_LANGUAGE.equalsIgnoreCase(name)) {
+                    optionalLanguages.add(new LanguageSlot(0, 0, maxSpeaking, maxWriting));
+                } else {
+                    ranks.add(new CultureLanguageRank(Translations.toEnglishId(name), maxSpeaking, maxWriting));
+                }
             }
         }
-        return ranks;
+        return new ParsedCultureLanguages(ranks, optionalLanguages);
+    }
+
+    /** The result of {@link #parseLanguageRanks(List)}: named language ranks, and anonymous optional slots. */
+    private record ParsedCultureLanguages(List<CultureLanguageRank> ranks, List<LanguageSlot> optionalLanguages) {
     }
 
     private static List<CultureTrainingPrice> parseTrainingPrices(List<String> lines) {
