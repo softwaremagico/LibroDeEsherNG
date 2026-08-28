@@ -2968,8 +2968,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -3468,8 +3468,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -3959,9 +3959,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
-      <armor>Chain Mail</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
+      <armorId>chainMail</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -4458,9 +4458,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
-      <armor>Chain Mail</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
+      <armorId>chainMail</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -4968,9 +4968,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
-      <armor>Chain Mail</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
+      <armorId>chainMail</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -5473,9 +5473,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
-      <armor>Chain Mail</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
+      <armorId>chainMail</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -5897,7 +5897,7 @@
       <hobbyId>abrirLocks</hobbyId>
       <hobbyId>stalking</hobbyId>
       <hobbyId>agenciar</hobbyId>
-      <hobbyId>arma</hobbyId>
+      <hobbyId>weapon</hobbyId>
       <hobbyId>armorLight</hobbyId>
       <hobbyId>singing</hobbyId>
       <hobbyId>carreraOfDistance</hobbyId>
@@ -5976,9 +5976,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
-      <armor>Chain Mail</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
+      <armorId>chainMail</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -6480,9 +6480,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
-      <armor>Chain Mail</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
+      <armorId>chainMail</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -6977,8 +6977,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -7410,7 +7410,7 @@
       <hobbyId>jumping</hobbyId>
       <hobbyId>climbing</hobbyId>
       <hobbyId>stalking</hobbyId>
-      <hobbyId>arma</hobbyId>
+      <hobbyId>weapon</hobbyId>
       <hobbyId>armor</hobbyId>
       <hobbyId>dancing</hobbyId>
       <hobbyId>comerciar</hobbyId>
@@ -7485,8 +7485,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -7905,7 +7905,7 @@
       </categoryGrant>
     </adolescenceRanks>
     <hobbies>
-      <hobbyId>arma</hobbyId>
+      <hobbyId>weapon</hobbyId>
       <hobbyId>armor</hobbyId>
       <hobbyId>dancing</hobbyId>
       <hobbyId>singing</hobbyId>
@@ -7982,8 +7982,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -8405,7 +8405,7 @@
       <hobbyId>stalking</hobbyId>
       <hobbyId>acrobatics</hobbyId>
       <hobbyId>agenciar</hobbyId>
-      <hobbyId>arma</hobbyId>
+      <hobbyId>weapon</hobbyId>
       <hobbyId>armorLight</hobbyId>
       <hobbyId>dancing</hobbyId>
       <hobbyId>singing</hobbyId>
@@ -8486,8 +8486,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -8907,7 +8907,7 @@
     </adolescenceRanks>
     <hobbies>
       <hobbyId>tasar</hobbyId>
-      <hobbyId>arma</hobbyId>
+      <hobbyId>weapon</hobbyId>
       <hobbyId>armor</hobbyId>
       <hobbyId>manejoOfBotes</hobbyId>
       <hobbyId>physicalDevelopment</hobbyId>
@@ -8989,8 +8989,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -9423,7 +9423,7 @@
       <hobbyId>climbing</hobbyId>
       <hobbyId>stalking</hobbyId>
       <hobbyId>acting</hobbyId>
-      <hobbyId>arma</hobbyId>
+      <hobbyId>weapon</hobbyId>
       <hobbyId>armor</hobbyId>
       <hobbyId>dancing</hobbyId>
       <hobbyId>coserTejer</hobbyId>
@@ -9498,8 +9498,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -9997,8 +9997,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -10492,8 +10492,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -10987,8 +10987,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -11479,8 +11479,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -11974,9 +11974,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Chain Mail</armor>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>chainMail</armorId>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -12395,7 +12395,7 @@
       </categoryGrant>
     </adolescenceRanks>
     <hobbies>
-      <hobbyId>arma</hobbyId>
+      <hobbyId>weapon</hobbyId>
       <hobbyId>armor</hobbyId>
       <hobbyId>loreRegional</hobbyId>
       <hobbyId>physicalDevelopment</hobbyId>
@@ -12475,9 +12475,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Chain Mail</armor>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>chainMail</armorId>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -12971,10 +12971,10 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
-      <armor>Chain Mail</armor>
-      <armor>Breastplate</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
+      <armorId>chainMail</armorId>
+      <armorId>breastplate</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -13394,7 +13394,7 @@
     </adolescenceRanks>
     <hobbies>
       <hobbyId>stalking</hobbyId>
-      <hobbyId>arma</hobbyId>
+      <hobbyId>weapon</hobbyId>
       <hobbyId>armor</hobbyId>
       <hobbyId>cocinar</hobbyId>
       <hobbyId>loreRegional</hobbyId>
@@ -13474,10 +13474,10 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
-      <armor>Chain Mail</armor>
-      <armor>Breastplate</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
+      <armorId>chainMail</armorId>
+      <armorId>breastplate</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -13972,10 +13972,10 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
-      <armor>Chain Mail</armor>
-      <armor>Breastplate</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
+      <armorId>chainMail</armorId>
+      <armorId>breastplate</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -14471,7 +14471,7 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
+      <armorId>softLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -14980,7 +14980,7 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
+      <armorId>softLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -15488,7 +15488,7 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
+      <armorId>softLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -16001,7 +16001,7 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
+      <armorId>softLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -16508,9 +16508,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Chain Mail</armor>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>chainMail</armorId>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -16998,9 +16998,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Chain Mail</armor>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>chainMail</armorId>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -17499,9 +17499,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Chain Mail</armor>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>chainMail</armorId>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -17980,9 +17980,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Chain Mail</armor>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>chainMail</armorId>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -18460,9 +18460,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Chain Mail</armor>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>chainMail</armorId>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -18949,9 +18949,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Chain Mail</armor>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>chainMail</armorId>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -19430,8 +19430,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -19930,8 +19930,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -20351,7 +20351,7 @@
     </adolescenceRanks>
     <hobbies>
       <hobbyId>stalking</hobbyId>
-      <hobbyId>arma</hobbyId>
+      <hobbyId>weapon</hobbyId>
       <hobbyId>armor</hobbyId>
       <hobbyId>singing</hobbyId>
       <hobbyId>loreRegional</hobbyId>
@@ -20451,8 +20451,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -20874,7 +20874,7 @@
       <hobbyId>stalking</hobbyId>
       <hobbyId>acrobatics</hobbyId>
       <hobbyId>acting</hobbyId>
-      <hobbyId>arma</hobbyId>
+      <hobbyId>weapon</hobbyId>
       <hobbyId>armorLight</hobbyId>
       <hobbyId>singing</hobbyId>
       <hobbyId>loreRegional</hobbyId>
@@ -20965,9 +20965,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
-      <armor>Chain Mail</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
+      <armorId>chainMail</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -21473,9 +21473,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
-      <armor>Chain Mail</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
+      <armorId>chainMail</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -21983,9 +21983,9 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Soft Leather</armor>
-      <armor>Hardened Leather</armor>
-      <armor>Chain Mail</armor>
+      <armorId>softLeather</armorId>
+      <armorId>hardenedLeather</armorId>
+      <armorId>chainMail</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>

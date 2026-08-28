@@ -2,8 +2,8 @@
 <cultures>
   <culture>
     <typicalArmors>
-      <armor>Armor Tipo I</armor>
-      <armor>Armor Tipo II</armor>
+      <armorId>armorTipoI</armorId>
+      <armorId>armorTipoIi</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -720,8 +720,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Armor Tipo I</armor>
-      <armor>Armor Tipo II</armor>
+      <armorId>armorTipoI</armorId>
+      <armorId>armorTipoIi</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -1081,8 +1081,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Armor Tipo I</armor>
-      <armor>Armor Tipo II</armor>
+      <armorId>armorTipoI</armorId>
+      <armorId>armorTipoIi</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -2156,8 +2156,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Armor Tipo I</armor>
-      <armor>Armor Tipo II</armor>
+      <armorId>armorTipoI</armorId>
+      <armorId>armorTipoIi</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -2517,7 +2517,7 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>All</armor>
+      <armorId>all</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -2877,8 +2877,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Armor Tipo I</armor>
-      <armor>Armor Tipo II</armor>
+      <armorId>armorTipoI</armorId>
+      <armorId>armorTipoIi</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -3238,8 +3238,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Armor Tipo I</armor>
-      <armor>Armor Tipo II</armor>
+      <armorId>armorTipoI</armorId>
+      <armorId>armorTipoIi</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -3599,8 +3599,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Armor Tipo I</armor>
-      <armor>Armor Tipo II</armor>
+      <armorId>armorTipoI</armorId>
+      <armorId>armorTipoIi</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>
@@ -3960,8 +3960,8 @@
   </culture>
   <culture>
     <typicalArmors>
-      <armor>Armor Tipo I</armor>
-      <armor>Armor Tipo II</armor>
+      <armorId>armorTipoI</armorId>
+      <armorId>armorTipoIi</armorId>
     </typicalArmors>
     <adolescenceRanks>
       <categoryGrant>

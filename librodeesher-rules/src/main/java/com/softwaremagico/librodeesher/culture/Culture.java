@@ -21,8 +21,8 @@ public class Culture extends Element {
     private List<String> typicalWeaponIds;
 
     @JacksonXmlElementWrapper(localName = "typicalArmors")
-    @JacksonXmlProperty(localName = "armor")
-    private List<String> typicalArmors;
+    @JacksonXmlProperty(localName = "armorId")
+    private List<String> typicalArmorIds;
 
     @JacksonXmlElementWrapper(localName = "adolescenceRanks")
     @JacksonXmlProperty(localName = "categoryGrant")
@@ -62,8 +62,8 @@ public class Culture extends Element {
 
     public List<String> getTypicalWeaponIds() { return typicalWeaponIds == null ? Collections.emptyList() : typicalWeaponIds; }
     public void setTypicalWeaponIds(List<String> typicalWeaponIds) { this.typicalWeaponIds = typicalWeaponIds; }
-    public List<String> getTypicalArmors() { return typicalArmors == null ? Collections.emptyList() : typicalArmors; }
-    public void setTypicalArmors(List<String> typicalArmors) { this.typicalArmors = typicalArmors; }
+    public List<String> getTypicalArmorIds() { return typicalArmorIds == null ? Collections.emptyList() : typicalArmorIds; }
+    public void setTypicalArmorIds(List<String> typicalArmorIds) { this.typicalArmorIds = typicalArmorIds; }
     public List<TrainingCategoryGrant> getAdolescenceRanks() { return adolescenceRanks == null ? Collections.emptyList() : adolescenceRanks; }
     public void setAdolescenceRanks(List<TrainingCategoryGrant> adolescenceRanks) { this.adolescenceRanks = adolescenceRanks; }
     public Integer getHobbyRanks() { return hobbyRanks; }
@@ -73,15 +73,28 @@ public class Culture extends Element {
 
     /**
      * Whether hobby points may be spent on {@code skillId}: excluded (the {@code "exclude:"} prefix
-     * marker) always wins, otherwise the {@code "all"} marker allows any skill, otherwise only a
-     * skill explicitly listed in {@link #getHobbyIds()} is allowed.
+     * marker) always wins, otherwise the {@code "all"} marker allows any skill, otherwise a skill
+     * explicitly listed in {@link #getHobbyIds()} is allowed, and so is any weapon in {@link
+     * #getTypicalWeaponIds()} (behind the {@code "weapon"} marker) or armor in {@link
+     * #getTypicalArmorIds()} (behind the {@code "armor"} marker) — the legacy application resolved
+     * those two markers the same way (see {@code CharacterPlayer#getRealSkills(String)}), since
+     * every weapon/armor is also migrated as a skill (see {@code SkillMigrationTool}).
      */
     public boolean isHobbySkillAllowed(String skillId) {
         final List<String> ids = getHobbyIds();
         if (ids.contains("exclude:" + skillId)) {
             return false;
         }
-        return ids.contains("all") || ids.contains(skillId);
+        if (ids.contains("all")) {
+            return true;
+        }
+        if (ids.contains("weapon") && getTypicalWeaponIds().contains(skillId)) {
+            return true;
+        }
+        if (ids.contains("armor") && getTypicalArmorIds().contains(skillId)) {
+            return true;
+        }
+        return ids.contains(skillId);
     }
     public List<CultureLanguageRank> getLanguageMaxRanks() { return languageMaxRanks == null ? Collections.emptyList() : languageMaxRanks; }
     public void setLanguageMaxRanks(List<CultureLanguageRank> languageMaxRanks) { this.languageMaxRanks = languageMaxRanks; }

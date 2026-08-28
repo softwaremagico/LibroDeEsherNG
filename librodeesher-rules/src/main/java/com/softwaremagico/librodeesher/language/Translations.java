@@ -283,6 +283,7 @@ public final class Translations {
     private static void registerWeaponAndCategoryGroups() {
         final Map<String, String> m = PHRASES;
         put(m, "Armas", "Weapons");
+        put(m, "Arma", "Weapon");
         put(m, "Armadura", "Armor");
         put(m, "Ligera", "Light");
         put(m, "Media", "Medium");

@@ -70,7 +70,7 @@ public final class CultureMigrationTool {
         final Culture culture = new Culture(idAllocator.idFor(cultureName));
         culture.setName(cultureName, Translations.toEnglish(cultureName));
         culture.setTypicalWeaponIds(parseWeaponIds(cursor.nextSection()));
-        culture.setTypicalArmors(parseTranslatedList(cursor.nextSection()));
+        culture.setTypicalArmorIds(parseArmorIds(cursor.nextSection()));
         culture.setAdolescenceRanks(parseAdolescenceRanks(cursor.nextSection(), categoryIndex));
         culture.setHobbyRanks(parseOptionalInteger(cursor.nextSection()));
         culture.setHobbyIds(parseHobbyIds(cursor.nextSection()));
@@ -98,21 +98,21 @@ public final class CultureMigrationTool {
         return ids;
     }
 
-    private static List<String> parseTranslatedList(List<String> lines) {
-        final List<String> values = new ArrayList<>();
+    private static List<String> parseArmorIds(List<String> lines) {
+        final List<String> ids = new ArrayList<>();
         for (final String line : lines) {
             if (isAll(line)) {
-                values.add("All");
+                ids.add("all");
                 continue;
             }
             if (isNone(line)) {
                 continue;
             }
             for (final String token : splitComma(line)) {
-                values.add(Translations.toEnglish(token));
+                ids.add(Translations.toEnglishId(token));
             }
         }
-        return values;
+        return ids;
     }
 
     private static List<TrainingCategoryGrant> parseAdolescenceRanks(List<String> lines, Map<String, String> categoryIndex) {

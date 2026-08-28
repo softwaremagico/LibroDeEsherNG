@@ -44,7 +44,7 @@ public class CultureMigrationToolTest {
             Assert.assertEquals(rural.getId(), "rural");
             Assert.assertEquals(rural.getName().getSpanish(), "Rural");
             Assert.assertEquals(rural.getTypicalWeaponIds(), List.of("edged", "longBow"));
-            Assert.assertEquals(rural.getTypicalArmors(), List.of("Armor Tipo I", "Armor Tipo II"));
+            Assert.assertEquals(rural.getTypicalArmorIds(), List.of("armorTipoI", "armorTipoIi"));
             Assert.assertEquals(rural.getAdolescenceRanks().size(), 1);
             Assert.assertEquals(rural.getAdolescenceRanks().get(0).getCategoryOptions(), List.of("outdoorEnvironment"));
             Assert.assertEquals(rural.getHobbyRanks(), Integer.valueOf(10));

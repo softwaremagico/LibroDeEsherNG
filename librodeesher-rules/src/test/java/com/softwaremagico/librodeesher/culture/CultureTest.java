@@ -41,4 +41,24 @@ public class CultureTest {
         final Culture culture = new Culture("test");
         Assert.assertFalse(culture.isHobbySkillAllowed("hunting"));
     }
+
+    @Test
+    public void weaponMarkerAllowsAnyOfTheCulturesTypicalWeapons() {
+        final Culture culture = new Culture("test");
+        culture.setHobbyIds(List.of("weapon"));
+        culture.setTypicalWeaponIds(List.of("shortSword", "longBow"));
+
+        Assert.assertTrue(culture.isHobbySkillAllowed("shortSword"));
+        Assert.assertFalse(culture.isHobbySkillAllowed("dagger"));
+    }
+
+    @Test
+    public void armorMarkerAllowsAnyOfTheCulturesTypicalArmors() {
+        final Culture culture = new Culture("test");
+        culture.setHobbyIds(List.of("armor"));
+        culture.setTypicalArmorIds(List.of("softLeather", "hardenedLeather"));
+
+        Assert.assertTrue(culture.isHobbySkillAllowed("softLeather"));
+        Assert.assertFalse(culture.isHobbySkillAllowed("chainMail"));
+    }
 }
