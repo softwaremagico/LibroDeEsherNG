@@ -10,6 +10,7 @@ import com.softwaremagico.librodeesher.decision.InvalidDecisionException;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
+import com.softwaremagico.librodeesher.perk.PerkChoiceGrant;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.skill.Skill;
@@ -113,7 +114,7 @@ public class CharacterPlayerTest {
     }
 
     @Test
-    public void appearanceTotalCombinesTheRollWithPresence() {
+    public void appearanceTotalCombinesTheRollWithPresence() throws InvalidXmlElementException {
         final CharacterPlayer character = new CharacterPlayer();
         character.setCharacteristicPotentialValue(CharacteristicAbbreviation.PRESENCE, 90);
         Assert.assertEquals(character.getAppearanceTotal(), character.getAppearance().getTotal(90));
@@ -804,5 +805,53 @@ public class CharacterPlayerTest {
         Assert.assertEquals(character.getCultureTrainingPricePercentage("soldier"), 0.75);
         Assert.assertEquals(character.getCultureTrainingPricePercentage("mercenary"), 0.75);
         Assert.assertEquals(character.getCultureTrainingPricePercentage("unmentionedTraining"), 1.0);
+    }
+
+    @Test
+    public void selectedPerkAppliesItsFlatCategoryBonus() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.addPerk("acrobat");
+
+        Assert.assertEquals(character.getPerkCategoryBonus("athleticsGymnastics"), Integer.valueOf(20));
+        Assert.assertEquals(character.getPerkCategoryBonus("crafts"), Integer.valueOf(0));
+
+        final Category category = RulesCatalog.getInstance().getCategory("athleticsGymnastics");
+        Assert.assertEquals(character.getCategoryDevelopmentBonus(category),
+                Integer.valueOf(category.getCategoryRankBonus(0) + 20));
+    }
+
+    @Test
+    public void selectedPerkAppliesItsFlatCharacteristicBonus() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.addPerk("bonusToAgilityMinor");
+
+        Assert.assertEquals(character.getPerkCharacteristicBonus(CharacteristicAbbreviation.AGILITY), Integer.valueOf(3));
+        Assert.assertEquals(character.getCharacteristicTotalBonus(CharacteristicAbbreviation.AGILITY),
+                character.getCharacteristicTemporalBonus(CharacteristicAbbreviation.AGILITY)
+                        + character.getCharacteristicRaceBonus(CharacteristicAbbreviation.AGILITY) + 3);
+    }
+
+    @Test
+    public void unresolvedPerkChoiceGrantContributesNothingUntilResolved() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.addPerk("experiencedCatMaximum");
+
+        Assert.assertEquals(character.getPerkCategoryBonus("athleticsGymnastics"), Integer.valueOf(0));
+    }
+
+    @Test
+    public void resolvedPerkChoiceGrantAppliesToTheChosenCategory() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.addPerk("experiencedCatMaximum");
+        final PerkChoiceGrant grant = RulesCatalog.getInstance().getPerk("experiencedCatMaximum").getChoiceGrants().get(0);
+
+        final String resolved = character.applyPerkChoiceGrant("experiencedCatMaximum", 0, grant, "athleticsGymnastics");
+
+        Assert.assertEquals(resolved, "athleticsGymnastics");
+        Assert.assertEquals(character.getPerkCategoryBonus("athleticsGymnastics"), Integer.valueOf(20));
+        Assert.assertEquals(character.getPerkCategoryBonus("crafts"), Integer.valueOf(0));
+
+        // Reusing the same key/index does not ask again.
+        Assert.assertEquals(character.applyPerkChoiceGrant("experiencedCatMaximum", 0, grant, "crafts"), "athleticsGymnastics");
     }
 }

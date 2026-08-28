@@ -18,12 +18,17 @@ import com.softwaremagico.librodeesher.language.LanguageSlot;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.perk.Perk;
+import com.softwaremagico.librodeesher.perk.PerkBonus;
+import com.softwaremagico.librodeesher.perk.PerkBonusKind;
+import com.softwaremagico.librodeesher.perk.PerkChoiceGrant;
+import com.softwaremagico.librodeesher.perk.PerkChoiceScope;
 import com.softwaremagico.librodeesher.perk.PerkGrade;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.race.RaceLanguage;
+import com.softwaremagico.librodeesher.resistance.ResistanceType;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.skill.Skill;
 import com.softwaremagico.librodeesher.skill.SkillType;
@@ -235,11 +240,12 @@ public class CharacterPlayer {
 
 	/**
 	 * The characteristic's total bonus: its temporal bonus plus the race's fixed
-	 * bonus.
+	 * bonus plus every selected perk's flat bonus to it (see
+	 * {@link #getPerkCharacteristicBonus(CharacteristicAbbreviation)}).
 	 *
 	 * <p>
-	 * Background/perk/special bonuses are future work, to be added here once
-	 * ported. {@link CharacteristicAbbreviation#REALM_OF_MAGIC} (used by spell
+	 * Background/special bonuses are future work.
+	 * {@link CharacteristicAbbreviation#REALM_OF_MAGIC} (used by spell
 	 * categories) is not resolved here yet either: it requires knowing the caster's
 	 * current realm of magic, which is future (magic) work; it returns 0 for now.
 	 * </p>
@@ -250,7 +256,8 @@ public class CharacterPlayer {
 				|| abbreviation == CharacteristicAbbreviation.REALM_OF_MAGIC) {
 			return 0;
 		}
-		return this.getCharacteristicTemporalBonus(abbreviation) + this.getCharacteristicRaceBonus(abbreviation);
+		return this.getCharacteristicTemporalBonus(abbreviation) + this.getCharacteristicRaceBonus(abbreviation)
+				+ this.getPerkCharacteristicBonus(abbreviation);
 	}
 
 	public Appearance getAppearance() {
@@ -263,10 +270,12 @@ public class CharacterPlayer {
 
 	/**
 	 * The Appearance characteristic's final value, combining the {@link Appearance}
-	 * roll with Presence.
+	 * roll with Presence and every selected perk's flat bonus to appearance (see
+	 * {@link #getPerkAppearanceBonus()}).
 	 */
-	public int getAppearanceTotal() {
-		return this.appearance.getTotal(this.getCharacteristicPotentialValue(CharacteristicAbbreviation.PRESENCE));
+	public int getAppearanceTotal() throws InvalidXmlElementException {
+		return this.appearance.getTotal(this.getCharacteristicPotentialValue(CharacteristicAbbreviation.PRESENCE))
+				+ this.getPerkAppearanceBonus();
 	}
 
 	public int getCurrentAge() {
@@ -348,29 +357,35 @@ public class CharacterPlayer {
 	 * for {@link com.softwaremagico.librodeesher.category.CategoryType#STANDARD}
 	 * categories) plus its flat bonus (only non-zero for
 	 * {@link com.softwaremagico.librodeesher.category.CategoryType#PD}) plus the
-	 * flat bonus the selected profession grants this category, if any.
+	 * flat bonus the selected profession grants this category, if any, plus every
+	 * selected perk's flat bonus to it (see {@link #getPerkCategoryBonus(String)}).
 	 *
 	 * <p>
-	 * Race/background/perk/item bonuses are future work.
+	 * Race/background bonuses and perks' per-rank bonuses (see
+	 * {@link #getPerkCategoryRankBonus(String)}) are future work.
 	 * </p>
 	 */
 	public Integer getCategoryDevelopmentBonus(Category category) throws InvalidXmlElementException {
 		return category.getCategoryRankBonus(this.getCategoryTotalRanks(category.getId())) + category.getFixedBonus()
-				+ this.getProfessionBonus(category.getId());
+				+ this.getProfessionBonus(category.getId()) + this.getPerkCategoryBonus(category.getId());
 	}
 
 	/**
 	 * A skill's bonus from its own ranks, using its category's progression table,
-	 * plus the flat bonus the selected profession grants this skill, if any.
+	 * plus the flat bonus the selected profession grants this skill, if any, plus
+	 * every selected perk's flat bonus to it (see {@link #getPerkSkillBonus(String)}).
 	 *
 	 * <p>
-	 * Race/background/perk/item bonuses, the "real ranks" multiplier
+	 * Race/background bonuses, the "real ranks" multiplier
 	 * (restricted/common/ professional/generalized skills cost and count
-	 * differently) and the characteristic bonus are future work.
+	 * differently), perks' per-rank bonuses (see
+	 * {@link #getPerkSkillRankBonus(String)}) and the characteristic bonus are
+	 * future work.
 	 * </p>
 	 */
 	public Integer getSkillDevelopmentBonus(Category category, String skillId) throws InvalidXmlElementException {
-		return category.getSkillRankBonus(this.getSkillTotalRanks(skillId)) + this.getProfessionBonus(skillId);
+		return category.getSkillRankBonus(this.getSkillTotalRanks(skillId)) + this.getProfessionBonus(skillId)
+				+ this.getPerkSkillBonus(skillId);
 	}
 
 	/**
@@ -742,20 +757,17 @@ public class CharacterPlayer {
 	 * {@link SkillType#RESTRICTED} tag, because a training taken so far grants it
 	 * as one of its restricted skills, because the selected race restricts it
 	 * (matched by {@code skill.getId()} against
-	 * {@link Race#getRestrictedSkillIds()}), or because the selected profession
-	 * does ({@link Profession#isRestrictedSkill(String)}).
-	 *
-	 * <p>
-	 * The legacy rule also considers perk classifications; that is future work
-	 * (it needs perk skill classification, not yet modeled).
-	 * </p>
+	 * {@link Race#getRestrictedSkillIds()}), because the selected profession
+	 * does ({@link Profession#isRestrictedSkill(String)}), or because a selected
+	 * perk does (see {@link #isSkillRestrictedByPerk(String)}).
 	 */
 	public boolean isSkillRestricted(Skill skill) throws InvalidXmlElementException {
 		final Profession profession = getProfession();
 		return skill.getSkillType() == SkillType.RESTRICTED
 				|| this.isSkillGrantedByAnyTraining(skill.getId(), this::getTrainingRestrictedSkills)
 				|| this.isSkillRestrictedByRace(skill.getId())
-				|| (profession != null && profession.isRestrictedSkill(skill.getId()));
+				|| (profession != null && profession.isRestrictedSkill(skill.getId()))
+				|| this.isSkillRestrictedByPerk(skill.getId());
 	}
 
 	/**
@@ -767,7 +779,8 @@ public class CharacterPlayer {
 		return skill.getSkillType() == SkillType.COMMON
 				|| this.isSkillGrantedByAnyTraining(skill.getId(), this::getTrainingCommonSkills)
 				|| this.isSkillCommonByRace(skill.getId())
-				|| (profession != null && profession.isCommonSkill(skill.getId()));
+				|| (profession != null && profession.isCommonSkill(skill.getId()))
+				|| this.isSkillCommonByPerk(skill.getId());
 	}
 
 	/**
@@ -1256,5 +1269,307 @@ public class CharacterPlayer {
 	public double getCultureTrainingPricePercentage(String trainingId) throws InvalidXmlElementException {
 		final Culture culture = this.getCulture();
 		return culture == null ? 1.0 : culture.getTrainingPricePercentage(trainingId);
+	}
+
+	private static final String PERK_CHOICE_KEY_PREFIX = "perk:";
+
+	/**
+	 * Resolves one of a selected perk's "choose N" grants ({@link PerkChoiceGrant},
+	 * the {@code "{...}"} entries of its "bonuses" column): a grant that already
+	 * names a specific category ({@link PerkChoiceGrant#getCategoryId()}) or skill
+	 * ({@link PerkChoiceGrant#getSkillId()}) auto-resolves to it (there is nothing
+	 * to choose); otherwise {@code selectedTargetId} must be one of {@link
+	 * PerkChoiceGrant#getScope()}'s pool (every category/skill, every weapon
+	 * category, or every weapon skill, per {@link PerkChoiceScope}).
+	 *
+	 * <p>{@link PerkChoiceGrant#getOptionsToChoose()} (how many distinct targets a
+	 * grant lets the player pick) is not enforced here: every choice grant in the
+	 * shipped data effectively resolves to a single target anyway (either the
+	 * grant already names one, or its one N&gt;1 case still only has that same
+	 * single, fixed category as its "pool"), so a single {@code selectedTargetId}
+	 * per grant covers every real perk; future work if a perk ever needs more.</p>
+	 *
+	 * @param perkId    the selected perk this grant belongs to.
+	 * @param grantIndex the grant's index within {@link Perk#getChoiceGrants()}.
+	 */
+	public String applyPerkChoiceGrant(String perkId, int grantIndex, PerkChoiceGrant grant, String selectedTargetId)
+			throws InvalidXmlElementException {
+		final String key = PERK_CHOICE_KEY_PREFIX + perkId + ":choice:" + grantIndex;
+		final Decision decision = this.decideOrReuse(key, () -> {
+			if (grant.getCategoryId() != null) {
+				return Decision.fixed(List.of(grant.getCategoryId()));
+			}
+			if (grant.getSkillId() != null) {
+				return Decision.fixed(List.of(grant.getSkillId()));
+			}
+			try {
+				return Decision.select(this.getPerkChoiceScopeOptions(grant.getScope()), selectedTargetId);
+			} catch (final InvalidXmlElementException e) {
+				throw new IllegalStateException(e);
+			}
+		});
+		return decision.getSelectedOption();
+	}
+
+	/** Every category/skill id {@link PerkChoiceScope#getScope()} lets the player pick from. */
+	private List<String> getPerkChoiceScopeOptions(PerkChoiceScope scope) throws InvalidXmlElementException {
+		final List<String> ids = new ArrayList<>();
+		switch (scope) {
+			case ANY_CATEGORY -> {
+				for (final Category category : RulesCatalog.getInstance().getCategories()) {
+					ids.add(category.getId());
+				}
+			}
+			case ANY_WEAPON_CATEGORY -> ids.addAll(this.getWeaponCategoryIds());
+			case ANY_SKILL -> {
+				for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
+					ids.add(skill.getId());
+				}
+			}
+			case ANY_WEAPON_SKILL -> {
+				for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
+					if (skill.getCategoryId() != null && skill.getCategoryId().startsWith("weapons")) {
+						ids.add(skill.getId());
+					}
+				}
+			}
+		}
+		return ids;
+	}
+
+	/** Whether {@code grant}'s resolved target (see {@link #applyPerkChoiceGrant}) is a skill id. */
+	private static boolean isPerkChoiceGrantSkillTarget(PerkChoiceGrant grant) {
+		return grant.getSkillId() != null || grant.getScope() == PerkChoiceScope.ANY_SKILL
+				|| grant.getScope() == PerkChoiceScope.ANY_WEAPON_SKILL;
+	}
+
+	/** Whether {@code grant}'s resolved target (see {@link #applyPerkChoiceGrant}) is a category id. */
+	private static boolean isPerkChoiceGrantCategoryTarget(PerkChoiceGrant grant) {
+		return grant.getCategoryId() != null || grant.getScope() == PerkChoiceScope.ANY_CATEGORY
+				|| grant.getScope() == PerkChoiceScope.ANY_WEAPON_CATEGORY;
+	}
+
+	/** Every {@link PerkBonus} of every currently selected perk, in selection order. */
+	private List<PerkBonus> getSelectedPerkBonuses() throws InvalidXmlElementException {
+		final List<PerkBonus> bonuses = new ArrayList<>();
+		for (final SelectedPerk selectedPerk : this.selectedPerks) {
+			bonuses.addAll(RulesCatalog.getInstance().getPerk(selectedPerk.getPerkId()).getBonuses());
+		}
+		return bonuses;
+	}
+
+	/**
+	 * Every already-resolved {@link PerkChoiceGrant} of every currently selected perk (paired with
+	 * its resolved target id via {@link #applyPerkChoiceGrant}); a grant nobody has resolved yet
+	 * (see {@link #applyPerkChoiceGrant}) contributes nothing until it is.
+	 */
+	private List<Map.Entry<PerkChoiceGrant, String>> getResolvedPerkChoiceGrants() throws InvalidXmlElementException {
+		final List<Map.Entry<PerkChoiceGrant, String>> resolved = new ArrayList<>();
+		for (final SelectedPerk selectedPerk : this.selectedPerks) {
+			final Perk perk = RulesCatalog.getInstance().getPerk(selectedPerk.getPerkId());
+			final List<PerkChoiceGrant> grants = perk.getChoiceGrants();
+			for (int i = 0; i < grants.size(); i++) {
+				final String key = PERK_CHOICE_KEY_PREFIX + perk.getId() + ":choice:" + i;
+				if (this.decisions.isDecided(key)) {
+					resolved.add(Map.entry(grants.get(i), this.decisions.get(key).getSelectedOption()));
+				}
+			}
+		}
+		return resolved;
+	}
+
+	/**
+	 * The flat bonus every selected perk grants characteristic {@code abbreviation}, or 0. Only
+	 * {@link PerkBonusKind#FLAT} bonuses count: {@link PerkBonusKind#CONDITIONAL} ones only apply
+	 * under some condition described in the perk's free-text description, which is not modeled.
+	 */
+	public Integer getPerkCharacteristicBonus(CharacteristicAbbreviation abbreviation) throws InvalidXmlElementException {
+		int total = 0;
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (bonus.getCharacteristic() == abbreviation && bonus.getKind() == PerkBonusKind.FLAT) {
+				total += bonus.getValue();
+			}
+		}
+		return total;
+	}
+
+	/** Same as {@link #getPerkCharacteristicBonus}, for {@link PerkBonus#isAppearance()}. */
+	public int getPerkAppearanceBonus() throws InvalidXmlElementException {
+		int total = 0;
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (bonus.isAppearance() && bonus.getKind() == PerkBonusKind.FLAT) {
+				total += bonus.getValue();
+			}
+		}
+		return total;
+	}
+
+	/** Same as {@link #getPerkCharacteristicBonus}, for {@link PerkBonus#isArmor()}. */
+	public int getPerkArmorBonus() throws InvalidXmlElementException {
+		int total = 0;
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (bonus.isArmor() && bonus.getKind() == PerkBonusKind.FLAT) {
+				total += bonus.getValue();
+			}
+		}
+		return total;
+	}
+
+	/** Same as {@link #getPerkCharacteristicBonus}, for {@link PerkBonus#isMovement()}. */
+	public int getPerkMovementBonus() throws InvalidXmlElementException {
+		int total = 0;
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (bonus.isMovement() && bonus.getKind() == PerkBonusKind.FLAT) {
+				total += bonus.getValue();
+			}
+		}
+		return total;
+	}
+
+	/** Same as {@link #getPerkCharacteristicBonus}, for {@link PerkBonus#getResistanceType()}. */
+	public Integer getPerkResistanceBonus(ResistanceType resistanceType) throws InvalidXmlElementException {
+		int total = 0;
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (bonus.getResistanceType() == resistanceType && bonus.getKind() == PerkBonusKind.FLAT) {
+				total += bonus.getValue();
+			}
+		}
+		return total;
+	}
+
+	/**
+	 * The flat bonus every selected perk grants skill {@code skillId}, or 0: either directly
+	 * ({@link PerkBonus#getSkillId()}) or through an already-resolved choice grant that targets it
+	 * (see {@link #applyPerkChoiceGrant}). {@link PerkBonusKind#PER_RANK} bonuses are not included
+	 * here; see {@link #getPerkSkillRankBonus(String)}.
+	 */
+	public Integer getPerkSkillBonus(String skillId) throws InvalidXmlElementException {
+		int total = 0;
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (skillId.equals(bonus.getSkillId()) && bonus.getKind() == PerkBonusKind.FLAT) {
+				total += bonus.getValue();
+			}
+		}
+		for (final Map.Entry<PerkChoiceGrant, String> resolved : this.getResolvedPerkChoiceGrants()) {
+			final PerkChoiceGrant grant = resolved.getKey();
+			if (isPerkChoiceGrantSkillTarget(grant) && skillId.equals(resolved.getValue())
+					&& grant.getKind() == PerkBonusKind.FLAT) {
+				total += grant.getValue();
+			}
+		}
+		return total;
+	}
+
+	/** Same as {@link #getPerkSkillBonus(String)}, for {@link PerkBonus#getCategoryId()}. */
+	public Integer getPerkCategoryBonus(String categoryId) throws InvalidXmlElementException {
+		int total = 0;
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (categoryId.equals(bonus.getCategoryId()) && bonus.getKind() == PerkBonusKind.FLAT) {
+				total += bonus.getValue();
+			}
+		}
+		for (final Map.Entry<PerkChoiceGrant, String> resolved : this.getResolvedPerkChoiceGrants()) {
+			final PerkChoiceGrant grant = resolved.getKey();
+			if (isPerkChoiceGrantCategoryTarget(grant) && categoryId.equals(resolved.getValue())
+					&& grant.getKind() == PerkBonusKind.FLAT) {
+				total += grant.getValue();
+			}
+		}
+		return total;
+	}
+
+	/**
+	 * The sum of every {@link PerkBonusKind#PER_RANK} bonus a selected perk grants skill
+	 * {@code skillId} (a bonus applied to every rank bought, e.g. "+4 to every rank of X"): not yet
+	 * multiplied into {@link #getSkillDevelopmentBonus} (future work, since that depends on how many
+	 * ranks were actually bought).
+	 */
+	public Integer getPerkSkillRankBonus(String skillId) throws InvalidXmlElementException {
+		int total = 0;
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (skillId.equals(bonus.getSkillId()) && bonus.getKind() == PerkBonusKind.PER_RANK) {
+				total += bonus.getValue();
+			}
+		}
+		return total;
+	}
+
+	/** Same as {@link #getPerkSkillRankBonus(String)}, for {@link PerkBonus#getCategoryId()}. */
+	public Integer getPerkCategoryRankBonus(String categoryId) throws InvalidXmlElementException {
+		int total = 0;
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (categoryId.equals(bonus.getCategoryId()) && bonus.getKind() == PerkBonusKind.PER_RANK) {
+				total += bonus.getValue();
+			}
+		}
+		return total;
+	}
+
+	/** Whether a selected perk (or an already-resolved choice grant) makes {@code skillId} restricted. */
+	public boolean isSkillRestrictedByPerk(String skillId) throws InvalidXmlElementException {
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (skillId.equals(bonus.getSkillId()) && bonus.getKind() == PerkBonusKind.MAKES_RESTRICTED) {
+				return true;
+			}
+		}
+		for (final Map.Entry<PerkChoiceGrant, String> resolved : this.getResolvedPerkChoiceGrants()) {
+			final PerkChoiceGrant grant = resolved.getKey();
+			if (isPerkChoiceGrantSkillTarget(grant) && skillId.equals(resolved.getValue())
+					&& grant.getKind() == PerkBonusKind.MAKES_RESTRICTED) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/** Same as {@link #isSkillRestrictedByPerk(String)}, for {@link PerkBonusKind#MAKES_COMMON}. */
+	public boolean isSkillCommonByPerk(String skillId) throws InvalidXmlElementException {
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (skillId.equals(bonus.getSkillId()) && bonus.getKind() == PerkBonusKind.MAKES_COMMON) {
+				return true;
+			}
+		}
+		for (final Map.Entry<PerkChoiceGrant, String> resolved : this.getResolvedPerkChoiceGrants()) {
+			final PerkChoiceGrant grant = resolved.getKey();
+			if (isPerkChoiceGrantSkillTarget(grant) && skillId.equals(resolved.getValue())
+					&& grant.getKind() == PerkBonusKind.MAKES_COMMON) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/** Same as {@link #isSkillRestrictedByPerk(String)}, for {@link PerkBonus#getCategoryId()}. */
+	public boolean isCategoryRestrictedByPerk(String categoryId) throws InvalidXmlElementException {
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (categoryId.equals(bonus.getCategoryId()) && bonus.getKind() == PerkBonusKind.MAKES_RESTRICTED) {
+				return true;
+			}
+		}
+		for (final Map.Entry<PerkChoiceGrant, String> resolved : this.getResolvedPerkChoiceGrants()) {
+			final PerkChoiceGrant grant = resolved.getKey();
+			if (isPerkChoiceGrantCategoryTarget(grant) && categoryId.equals(resolved.getValue())
+					&& grant.getKind() == PerkBonusKind.MAKES_RESTRICTED) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/** Same as {@link #isCategoryRestrictedByPerk(String)}, for {@link PerkBonusKind#MAKES_COMMON}. */
+	public boolean isCategoryCommonByPerk(String categoryId) throws InvalidXmlElementException {
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (categoryId.equals(bonus.getCategoryId()) && bonus.getKind() == PerkBonusKind.MAKES_COMMON) {
+				return true;
+			}
+		}
+		for (final Map.Entry<PerkChoiceGrant, String> resolved : this.getResolvedPerkChoiceGrants()) {
+			final PerkChoiceGrant grant = resolved.getKey();
+			if (isPerkChoiceGrantCategoryTarget(grant) && categoryId.equals(resolved.getValue())
+					&& grant.getKind() == PerkBonusKind.MAKES_COMMON) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
