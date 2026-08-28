@@ -109,4 +109,19 @@ public class Culture extends Element {
     public void setOptionalLanguages(List<LanguageSlot> optionalLanguages) { this.optionalLanguages = optionalLanguages; }
     public List<CultureTrainingPrice> getTrainingPrices() { return trainingPrices == null ? Collections.emptyList() : trainingPrices; }
     public void setTrainingPrices(List<CultureTrainingPrice> trainingPrices) { this.trainingPrices = trainingPrices; }
+
+    /**
+     * The culture's discount/markup on {@code trainingId}'s background points cost (the
+     * "ADIESTAMIENTOS" section), as a fraction to multiply the training's base cost by (e.g.
+     * {@code 0.75} for 25% off); {@code 1.0} (no change) if the culture does not mention that
+     * training at all.
+     */
+    public double getTrainingPricePercentage(String trainingId) {
+        for (final CultureTrainingPrice price : getTrainingPrices()) {
+            if (price.getTrainingId().equals(trainingId)) {
+                return price.getPrice();
+            }
+        }
+        return 1.0;
+    }
 }

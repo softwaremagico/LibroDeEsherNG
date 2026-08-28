@@ -1044,4 +1044,14 @@ public class CharacterPlayer {
         }
         return total;
     }
+
+    /**
+     * The selected culture's discount/markup on {@code trainingId}'s background points cost (see
+     * {@link Culture#getTrainingPricePercentage(String)}), or {@code 1.0} (no change) if no culture
+     * is selected.
+     */
+    public double getCultureTrainingPricePercentage(String trainingId) throws InvalidXmlElementException {
+        final Culture culture = getCulture();
+        return culture == null ? 1.0 : culture.getTrainingPricePercentage(trainingId);
+    }
 }

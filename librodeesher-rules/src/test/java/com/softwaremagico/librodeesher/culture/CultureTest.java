@@ -61,4 +61,13 @@ public class CultureTest {
         Assert.assertTrue(culture.isHobbySkillAllowed("softLeather"));
         Assert.assertFalse(culture.isHobbySkillAllowed("chainMail"));
     }
+
+    @Test
+    public void trainingPricePercentageDefaultsToOne() {
+        final Culture culture = new Culture("test");
+        culture.setTrainingPrices(List.of(new CultureTrainingPrice("soldier", 0.75)));
+
+        Assert.assertEquals(culture.getTrainingPricePercentage("soldier"), 0.75);
+        Assert.assertEquals(culture.getTrainingPricePercentage("mercenary"), 1.0);
+    }
 }

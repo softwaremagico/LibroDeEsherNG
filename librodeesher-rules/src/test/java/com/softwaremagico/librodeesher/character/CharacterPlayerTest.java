@@ -777,4 +777,20 @@ public class CharacterPlayerTest {
         Assert.assertFalse(culture.isHobbySkillAllowed("someSkillNotInTheList"));
         Assert.assertEquals(character.getTotalHobbySkillRanks(), 12);
     }
+
+    @Test
+    public void cultureTrainingPricePercentageDefaultsToOneWithoutACulture() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        Assert.assertEquals(character.getCultureTrainingPricePercentage("soldier"), 1.0);
+    }
+
+    @Test
+    public void cultureTrainingPricePercentageAppliesTheSelectedCulturesDiscount() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setCultureId("aquaticMilitarista");
+
+        Assert.assertEquals(character.getCultureTrainingPricePercentage("soldier"), 0.75);
+        Assert.assertEquals(character.getCultureTrainingPricePercentage("mercenary"), 0.75);
+        Assert.assertEquals(character.getCultureTrainingPricePercentage("unmentionedTraining"), 1.0);
+    }
 }
