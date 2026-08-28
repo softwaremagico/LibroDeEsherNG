@@ -1,6 +1,7 @@
 package com.softwaremagico.librodeesher.character;
 
 import com.softwaremagico.librodeesher.age.AgeModification;
+import com.softwaremagico.librodeesher.age.AgeRules;
 import com.softwaremagico.librodeesher.background.Background;
 import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.characteristic.Appearance;
@@ -270,12 +271,19 @@ public class CharacterPlayer {
 
 	/**
 	 * The Appearance characteristic's final value, combining the {@link Appearance}
-	 * roll with Presence and every selected perk's flat bonus to appearance (see
-	 * {@link #getPerkAppearanceBonus()}).
+	 * roll with Presence, the selected race's flat bonus (see
+	 * {@link #getAppearanceRaceBonus()}) and every selected perk's flat bonus to
+	 * appearance (see {@link #getPerkAppearanceBonus()}).
 	 */
 	public int getAppearanceTotal() throws InvalidXmlElementException {
 		return this.appearance.getTotal(this.getCharacteristicPotentialValue(CharacteristicAbbreviation.PRESENCE))
-				+ this.getPerkAppearanceBonus();
+				+ this.getAppearanceRaceBonus() + this.getPerkAppearanceBonus();
+	}
+
+	/** The selected race's flat appearance bonus, or 0 if no race is selected or it grants none. */
+	public int getAppearanceRaceBonus() throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		return race == null || race.getAppearanceBonus() == null ? 0 : race.getAppearanceBonus();
 	}
 
 	public int getCurrentAge() {
@@ -292,6 +300,39 @@ public class CharacterPlayer {
 
 	public void setFinalAge(int finalAge) {
 		this.finalAge = finalAge;
+	}
+
+	/**
+	 * Advances the character from its current age to {@link #getFinalAge()} one year at a time,
+	 * rolling {@link AgeRules#hasCharacteristicDecrease} every year and, whenever it triggers,
+	 * recording the resulting {@link AgeModification} on {@link #getCurrentLevel()} and applying it
+	 * immediately: the rolled characteristic's temporal value decreases by the full roll, its
+	 * potential value by a third of it (rounded down), and the temporal value is then clamped to
+	 * never exceed the (now lower) potential value - matching the legacy
+	 * {@code AgeRules.increaseAge(CharacterPlayer)}/{@code getCharacteristicTemporalValue}'s "Age
+	 * modifications" clamp exactly, except applied once here instead of recomputed on every read.
+	 *
+	 * <p>Requires a race to be selected, for {@link Race#getExpectedLifeYears()}/{@link
+	 * Race#getRaceType()}.</p>
+	 */
+	public void increaseAge() throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		while (this.currentAge < this.finalAge) {
+			if (AgeRules.hasCharacteristicDecrease(this.currentAge, race.getExpectedLifeYears(),
+					this.getCharacteristicTotalBonus(CharacteristicAbbreviation.CONSTITUTION),
+					this.getCharacteristicTotalBonus(CharacteristicAbbreviation.SELF_DISCIPLINE))) {
+				final AgeModification ageModification = new AgeModification(this.currentAge, race.getRaceType());
+				this.getCurrentLevel().addAgeModification(ageModification);
+
+				final CharacteristicAbbreviation abbreviation = ageModification.getCharacteristicAbbreviation();
+				final int modification = ageModification.getCharacteristicModification();
+				final int newPotentialValue = this.getCharacteristicPotentialValue(abbreviation) - modification / 3;
+				this.setCharacteristicPotentialValue(abbreviation, newPotentialValue);
+				final int newTemporalValue = this.getCharacteristicTemporalValue(abbreviation) - modification;
+				this.setCharacteristicTemporalValue(abbreviation, Math.min(newTemporalValue, newPotentialValue));
+			}
+			this.currentAge++;
+		}
 	}
 
 	public List<LevelUp> getLevels() {
@@ -1612,5 +1653,74 @@ public class CharacterPlayer {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * The selected race's fixed bonus/penalty to {@code resistanceType}'s resistance roll, or 0 if no
+	 * race is selected or it grants none.
+	 */
+	public Integer getResistanceRaceBonus(ResistanceType resistanceType) throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		return race == null ? 0 : race.getResistanceBonuses().getOrDefault(resistanceType.name(), 0);
+	}
+
+	/**
+	 * {@code resistanceType}'s total resistance bonus: the selected race's fixed bonus plus every
+	 * selected perk's flat bonus to it (see {@link #getPerkResistanceBonus(ResistanceType)}).
+	 */
+	public Integer getResistanceTotalBonus(ResistanceType resistanceType) throws InvalidXmlElementException {
+		return this.getResistanceRaceBonus(resistanceType) + this.getPerkResistanceBonus(resistanceType);
+	}
+
+	/**
+	 * Whether the selected race restricts profession {@code professionId} (the "PROFESIONES
+	 * PROHIBIDAS" section), or {@code false} if no race is selected.
+	 */
+	public boolean isProfessionRestrictedByRace(String professionId) throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		return race != null && race.getRestrictedProfessionIds().contains(professionId);
+	}
+
+	/**
+	 * Every profession id the selected race allows (every profession {@link RulesCatalog} knows about,
+	 * minus {@link Race#getRestrictedProfessionIds()}), or every known profession if no race is
+	 * selected, matching the legacy {@code Race#getAvailableProfessions()}.
+	 */
+	public List<String> getAvailableProfessionIds() throws InvalidXmlElementException {
+		final List<String> ids = new ArrayList<>();
+		for (final Profession profession : RulesCatalog.getInstance().getProfessions()) {
+			if (!this.isProfessionRestrictedByRace(profession.getId())) {
+				ids.add(profession.getId());
+			}
+		}
+		return ids;
+	}
+
+	/**
+	 * Whether the selected race allows culture {@code cultureId} (its "CULTURAS DISPONIBLES"
+	 * section, {@link Race#getCultureIds()}), or {@code false} if no race is selected.
+	 */
+	public boolean isCultureAvailableForRace(String cultureId) throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		return race != null && race.getCultureIds().contains(cultureId);
+	}
+
+	/**
+	 * Every culture id the selected race allows, restricted to cultures {@link RulesCatalog} actually
+	 * knows about (a race may list a culture belonging to a module that is not currently enabled),
+	 * matching the legacy {@code Race#getAvailableCultures()}; empty if no race is selected.
+	 */
+	public List<String> getAvailableCultureIds() throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		if (race == null) {
+			return List.of();
+		}
+		final List<String> ids = new ArrayList<>();
+		for (final Culture culture : RulesCatalog.getInstance().getCultures()) {
+			if (race.getCultureIds().contains(culture.getId())) {
+				ids.add(culture.getId());
+			}
+		}
+		return ids;
 	}
 }

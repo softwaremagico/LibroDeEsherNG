@@ -2,6 +2,7 @@ package com.softwaremagico.librodeesher.character;
 
 import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.category.CategoryType;
+import com.softwaremagico.librodeesher.age.AgeModification;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicRoll;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
@@ -12,6 +13,7 @@ import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.perk.PerkChoiceGrant;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
+import com.softwaremagico.librodeesher.resistance.ResistanceType;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.skill.Skill;
 import com.softwaremagico.librodeesher.skill.SkillType;
@@ -878,5 +880,88 @@ public class CharacterPlayerTest {
 
         Assert.assertEquals(character.getPerkSkillConditionalBonus("climbing"), Integer.valueOf(0));
         Assert.assertEquals(character.getPerkCategoryConditionalBonus("athleticsGymnastics"), Integer.valueOf(0));
+    }
+
+    @Test
+    public void raceAppearanceBonusAppliesToAppearanceTotal() throws InvalidXmlElementException {
+        final CharacterPlayer withoutRace = new CharacterPlayer();
+        Assert.assertEquals(withoutRace.getAppearanceRaceBonus(), 0);
+
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("lionCentaur");
+
+        Assert.assertEquals(character.getAppearanceRaceBonus(), -5);
+        Assert.assertEquals(character.getAppearanceTotal(),
+                character.getAppearance().getTotal(character.getCharacteristicPotentialValue(CharacteristicAbbreviation.PRESENCE)) - 5);
+    }
+
+    @Test
+    public void raceResistanceBonusCombinesWithPerkBonus() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("lionCentaur");
+
+        Assert.assertEquals(character.getResistanceRaceBonus(ResistanceType.POISON), Integer.valueOf(15));
+        Assert.assertEquals(character.getResistanceRaceBonus(ResistanceType.HEAT), Integer.valueOf(0));
+        Assert.assertEquals(character.getResistanceTotalBonus(ResistanceType.POISON), Integer.valueOf(15));
+    }
+
+    @Test
+    public void raceRestrictedProfessionsAreExcludedFromAvailableProfessions() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("lionCentaur");
+
+        Assert.assertTrue(character.isProfessionRestrictedByRace("combatMontado"));
+        Assert.assertTrue(character.isProfessionRestrictedByRace("montar"));
+        Assert.assertFalse(character.isProfessionRestrictedByRace("fighter"));
+
+        final List<String> available = character.getAvailableProfessionIds();
+        Assert.assertTrue(available.contains("fighter"));
+        Assert.assertFalse(available.contains("combatMontado"));
+        Assert.assertFalse(available.contains("montar"));
+    }
+
+    @Test
+    public void raceAvailableCulturesMatchItsOwnCultureList() throws InvalidXmlElementException {
+        final CharacterPlayer withoutRace = new CharacterPlayer();
+        Assert.assertTrue(withoutRace.getAvailableCultureIds().isEmpty());
+
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("lionCentaur");
+
+        Assert.assertTrue(character.isCultureAvailableForRace("plains"));
+        Assert.assertFalse(character.isCultureAvailableForRace("aquaticMilitarista"));
+        Assert.assertEquals(character.getAvailableCultureIds(), List.of("plains"));
+    }
+
+    @Test
+    public void increaseAgeAppliesACharacteristicDecreaseNearEndOfLifespan() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("lionCentaur"); // expectedLifeYears=100, raceType=2
+        for (final CharacteristicAbbreviation abbreviation : CharacteristicAbbreviation.values()) {
+            if (abbreviation != CharacteristicAbbreviation.NONE && abbreviation != CharacteristicAbbreviation.REALM_OF_MAGIC) {
+                character.rollCharacteristicPotentialValue(abbreviation);
+            }
+        }
+        final int potentialBefore = character.getCharacteristicPotentialValue(CharacteristicAbbreviation.CONSTITUTION);
+        character.setCurrentAge(99);
+        character.setFinalAge(100);
+
+        character.increaseAge();
+
+        Assert.assertEquals(character.getCurrentAge(), 100);
+        Assert.assertEquals(character.getCurrentLevel().getAgeModifications().size(), 1);
+
+        final AgeModification ageModification = character.getCurrentLevel().getAgeModifications().get(0);
+        final CharacteristicAbbreviation affected = ageModification.getCharacteristicAbbreviation();
+        final int modification = ageModification.getCharacteristicModification();
+
+        if (affected == CharacteristicAbbreviation.CONSTITUTION) {
+            final int expectedPotential = potentialBefore - modification / 3;
+            Assert.assertEquals(character.getCharacteristicPotentialValue(affected), expectedPotential);
+            Assert.assertEquals(character.getCharacteristicTemporalValue(affected),
+                    Math.min(Characteristics.INITIAL_CHARACTERISTIC_VALUE - modification, expectedPotential));
+        } else {
+            Assert.assertNotEquals(character.getCharacteristicTemporalValue(affected), Characteristics.INITIAL_CHARACTERISTIC_VALUE);
+        }
     }
 }
