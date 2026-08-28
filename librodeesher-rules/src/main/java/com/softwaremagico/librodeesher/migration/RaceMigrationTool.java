@@ -3,6 +3,7 @@ package com.softwaremagico.librodeesher.migration;
 import com.softwaremagico.librodeesher.file.ModuleManager;
 import com.softwaremagico.librodeesher.language.TranslatedText;
 import com.softwaremagico.librodeesher.language.Translations;
+import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.race.RaceLanguage;
 import com.softwaremagico.librodeesher.race.RaceSpecial;
@@ -117,6 +118,12 @@ public final class RaceMigrationTool {
         return race;
     }
 
+    /**
+     * Parses the "MODIFICACIÓN A LAS CARACTERÍSTICAS" section, keyed by {@link
+     * CharacteristicAbbreviation} constant name (resolved from the legacy two-letter Spanish tag via
+     * {@link CharacteristicAbbreviation#fromTag(String)}) instead of the raw tag itself, so the
+     * generated XML never embeds Spanish text as a map key/element name.
+     */
     private static void parseCharacteristics(List<String> lines, Race race) {
         final Map<String, Integer> bonuses = new LinkedHashMap<>();
         int appearance = 0;
@@ -125,10 +132,13 @@ public final class RaceMigrationTool {
             if (columns.length < 2) {
                 continue;
             }
-            if ("Ap".equals(columns[0].trim())) {
+            final CharacteristicAbbreviation abbreviation = CharacteristicAbbreviation.fromTag(columns[0].trim());
+            if (abbreviation == CharacteristicAbbreviation.APPEARANCE) {
                 appearance = Integer.parseInt(columns[1].trim());
+            } else if (abbreviation != CharacteristicAbbreviation.NONE) {
+                bonuses.put(abbreviation.name(), Integer.parseInt(columns[1].trim()));
             } else {
-                bonuses.put(columns[0].trim(), Integer.parseInt(columns[1].trim()));
+                throw new IllegalStateException("Unknown characteristic tag: '" + columns[0].trim() + "'.");
             }
         }
         race.setCharacteristicBonuses(bonuses);

@@ -47,9 +47,11 @@ public class Race extends Element {
     @JsonProperty("naturalArmorType")
     private Integer naturalArmorType;
 
+    /** Keyed by {@code com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation} constant name. */
     @JsonProperty("characteristicBonuses")
     private Map<String, Integer> characteristicBonuses;
 
+    /** Keyed by {@code com.softwaremagico.librodeesher.resistance.ResistanceType} constant name. */
     @JsonProperty("resistanceBonuses")
     private Map<String, Integer> resistanceBonuses;
 

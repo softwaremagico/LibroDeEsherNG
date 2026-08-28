@@ -27,16 +27,16 @@
     </backgroundLanguages>
     <backgroundPoints>6</backgroundPoints>
     <characteristicBonuses>
-      <Ag>0</Ag>
-      <Co>0</Co>
-      <Me>0</Me>
-      <Ra>1</Ra>
-      <Ad>1</Ad>
-      <Em>0</Em>
-      <In>0</In>
-      <Pr>0</Pr>
-      <Rp>0</Rp>
-      <Fu>2</Fu>
+      <AGILITY>0</AGILITY>
+      <CONSTITUTION>0</CONSTITUTION>
+      <MEMORY>0</MEMORY>
+      <REASONING>1</REASONING>
+      <SELF_DISCIPLINE>1</SELF_DISCIPLINE>
+      <EMPATHY>0</EMPATHY>
+      <INTUITION>0</INTUITION>
+      <PRESENCE>0</PRESENCE>
+      <QUICKNESS>0</QUICKNESS>
+      <STRENGTH>2</STRENGTH>
     </characteristicBonuses>
     <cultures>
       <cultureId>group:industrialized</cultureId>

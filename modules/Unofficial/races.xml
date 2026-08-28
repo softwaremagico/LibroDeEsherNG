@@ -13,16 +13,16 @@
     </backgroundLanguages>
     <backgroundPoints>4</backgroundPoints>
     <characteristicBonuses>
-      <Ag>0</Ag>
-      <Co>6</Co>
-      <Me>0</Me>
-      <Ra>-4</Ra>
-      <Ad>-2</Ad>
-      <Em>-4</Em>
-      <In>0</In>
-      <Pr>4</Pr>
-      <Rp>0</Rp>
-      <Fu>10</Fu>
+      <AGILITY>0</AGILITY>
+      <CONSTITUTION>6</CONSTITUTION>
+      <MEMORY>0</MEMORY>
+      <REASONING>-4</REASONING>
+      <SELF_DISCIPLINE>-2</SELF_DISCIPLINE>
+      <EMPATHY>-4</EMPATHY>
+      <INTUITION>0</INTUITION>
+      <PRESENCE>4</PRESENCE>
+      <QUICKNESS>0</QUICKNESS>
+      <STRENGTH>10</STRENGTH>
     </characteristicBonuses>
     <commonSkills>
       <commonSkillId>stalking</commonSkillId>
@@ -202,16 +202,16 @@
     </backgroundLanguages>
     <backgroundPoints>4</backgroundPoints>
     <characteristicBonuses>
-      <Ag>3</Ag>
-      <Co>0</Co>
-      <Me>0</Me>
-      <Ra>0</Ra>
-      <Ad>4</Ad>
-      <Em>0</Em>
-      <In>-2</In>
-      <Pr>4</Pr>
-      <Rp>0</Rp>
-      <Fu>2</Fu>
+      <AGILITY>3</AGILITY>
+      <CONSTITUTION>0</CONSTITUTION>
+      <MEMORY>0</MEMORY>
+      <REASONING>0</REASONING>
+      <SELF_DISCIPLINE>4</SELF_DISCIPLINE>
+      <EMPATHY>0</EMPATHY>
+      <INTUITION>-2</INTUITION>
+      <PRESENCE>4</PRESENCE>
+      <QUICKNESS>0</QUICKNESS>
+      <STRENGTH>2</STRENGTH>
     </characteristicBonuses>
     <cultures>
       <cultureId>all</cultureId>
@@ -331,16 +331,16 @@
     </backgroundLanguages>
     <backgroundPoints>1</backgroundPoints>
     <characteristicBonuses>
-      <Ag>5</Ag>
-      <Co>4</Co>
-      <Me>0</Me>
-      <Ra>0</Ra>
-      <Ad>-5</Ad>
-      <Em>2</Em>
-      <In>0</In>
-      <Pr>-5</Pr>
-      <Rp>5</Rp>
-      <Fu>4</Fu>
+      <AGILITY>5</AGILITY>
+      <CONSTITUTION>4</CONSTITUTION>
+      <MEMORY>0</MEMORY>
+      <REASONING>0</REASONING>
+      <SELF_DISCIPLINE>-5</SELF_DISCIPLINE>
+      <EMPATHY>2</EMPATHY>
+      <INTUITION>0</INTUITION>
+      <PRESENCE>-5</PRESENCE>
+      <QUICKNESS>5</QUICKNESS>
+      <STRENGTH>4</STRENGTH>
     </characteristicBonuses>
     <commonCategories>
       <commonCategoryId>powerPointDevelopment</commonCategoryId>
@@ -555,16 +555,16 @@
     </backgroundLanguages>
     <backgroundPoints>6</backgroundPoints>
     <characteristicBonuses>
-      <Ag>2</Ag>
-      <Co>-4</Co>
-      <Me>0</Me>
-      <Ra>2</Ra>
-      <Ad>4</Ad>
-      <Em>0</Em>
-      <In>-4</In>
-      <Pr>-8</Pr>
-      <Rp>0</Rp>
-      <Fu>-4</Fu>
+      <AGILITY>2</AGILITY>
+      <CONSTITUTION>-4</CONSTITUTION>
+      <MEMORY>0</MEMORY>
+      <REASONING>2</REASONING>
+      <SELF_DISCIPLINE>4</SELF_DISCIPLINE>
+      <EMPATHY>0</EMPATHY>
+      <INTUITION>-4</INTUITION>
+      <PRESENCE>-8</PRESENCE>
+      <QUICKNESS>0</QUICKNESS>
+      <STRENGTH>-4</STRENGTH>
     </characteristicBonuses>
     <commonSkills>
       <commonSkillId>hiding</commonSkillId>
@@ -774,16 +774,16 @@
     </backgroundLanguages>
     <backgroundPoints>4</backgroundPoints>
     <characteristicBonuses>
-      <Ag>12</Ag>
-      <Co>-2</Co>
-      <Me>0</Me>
-      <Ra>0</Ra>
-      <Ad>0</Ad>
-      <Em>6</Em>
-      <In>-4</In>
-      <Pr>0</Pr>
-      <Rp>15</Rp>
-      <Fu>-15</Fu>
+      <AGILITY>12</AGILITY>
+      <CONSTITUTION>-2</CONSTITUTION>
+      <MEMORY>0</MEMORY>
+      <REASONING>0</REASONING>
+      <SELF_DISCIPLINE>0</SELF_DISCIPLINE>
+      <EMPATHY>6</EMPATHY>
+      <INTUITION>-4</INTUITION>
+      <PRESENCE>0</PRESENCE>
+      <QUICKNESS>15</QUICKNESS>
+      <STRENGTH>-15</STRENGTH>
     </characteristicBonuses>
     <commonSkills>
       <commonSkillId>hiding</commonSkillId>

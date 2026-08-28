@@ -34,16 +34,16 @@
     </backgroundLanguages>
     <backgroundPoints>4</backgroundPoints>
     <characteristicBonuses>
-      <Ag>-2</Ag>
-      <Co>12</Co>
-      <Me>0</Me>
-      <Ra>0</Ra>
-      <Ad>0</Ad>
-      <Em>2</Em>
-      <In>-4</In>
-      <Pr>0</Pr>
-      <Rp>-2</Rp>
-      <Fu>14</Fu>
+      <AGILITY>-2</AGILITY>
+      <CONSTITUTION>12</CONSTITUTION>
+      <MEMORY>0</MEMORY>
+      <REASONING>0</REASONING>
+      <SELF_DISCIPLINE>0</SELF_DISCIPLINE>
+      <EMPATHY>2</EMPATHY>
+      <INTUITION>-4</INTUITION>
+      <PRESENCE>0</PRESENCE>
+      <QUICKNESS>-2</QUICKNESS>
+      <STRENGTH>14</STRENGTH>
     </characteristicBonuses>
     <cultures>
       <cultureId>aerial</cultureId>
@@ -123,16 +123,16 @@
     </backgroundLanguages>
     <backgroundPoints>6</backgroundPoints>
     <characteristicBonuses>
-      <Ag>4</Ag>
-      <Co>-2</Co>
-      <Me>0</Me>
-      <Ra>0</Ra>
-      <Ad>0</Ad>
-      <Em>2</Em>
-      <In>2</In>
-      <Pr>0</Pr>
-      <Rp>6</Rp>
-      <Fu>-4</Fu>
+      <AGILITY>4</AGILITY>
+      <CONSTITUTION>-2</CONSTITUTION>
+      <MEMORY>0</MEMORY>
+      <REASONING>0</REASONING>
+      <SELF_DISCIPLINE>0</SELF_DISCIPLINE>
+      <EMPATHY>2</EMPATHY>
+      <INTUITION>2</INTUITION>
+      <PRESENCE>0</PRESENCE>
+      <QUICKNESS>6</QUICKNESS>
+      <STRENGTH>-4</STRENGTH>
     </characteristicBonuses>
     <cultures>
       <cultureId>aquatic</cultureId>
@@ -279,16 +279,16 @@
     </backgroundLanguages>
     <backgroundPoints>6</backgroundPoints>
     <characteristicBonuses>
-      <Ag>2</Ag>
-      <Co>10</Co>
-      <Me>-2</Me>
-      <Ra>-2</Ra>
-      <Ad>0</Ad>
-      <Em>-4</Em>
-      <In>-4</In>
-      <Pr>-2</Pr>
-      <Rp>0</Rp>
-      <Fu>8</Fu>
+      <AGILITY>2</AGILITY>
+      <CONSTITUTION>10</CONSTITUTION>
+      <MEMORY>-2</MEMORY>
+      <REASONING>-2</REASONING>
+      <SELF_DISCIPLINE>0</SELF_DISCIPLINE>
+      <EMPATHY>-4</EMPATHY>
+      <INTUITION>-4</INTUITION>
+      <PRESENCE>-2</PRESENCE>
+      <QUICKNESS>0</QUICKNESS>
+      <STRENGTH>8</STRENGTH>
     </characteristicBonuses>
     <commonCategories>
       <commonCategoryId>weaponsTwoHanded</commonCategoryId>

@@ -13,16 +13,16 @@
     </backgroundLanguages>
     <backgroundPoints>4</backgroundPoints>
     <characteristicBonuses>
-      <Ag>0</Ag>
-      <Co>4</Co>
-      <Me>2</Me>
-      <Ra>0</Ra>
-      <Ad>-1</Ad>
-      <Em>2</Em>
-      <In>2</In>
-      <Pr>0</Pr>
-      <Rp>0</Rp>
-      <Fu>1</Fu>
+      <AGILITY>0</AGILITY>
+      <CONSTITUTION>4</CONSTITUTION>
+      <MEMORY>2</MEMORY>
+      <REASONING>0</REASONING>
+      <SELF_DISCIPLINE>-1</SELF_DISCIPLINE>
+      <EMPATHY>2</EMPATHY>
+      <INTUITION>2</INTUITION>
+      <PRESENCE>0</PRESENCE>
+      <QUICKNESS>0</QUICKNESS>
+      <STRENGTH>1</STRENGTH>
     </characteristicBonuses>
     <commonSkills>
       <commonSkillId>staff</commonSkillId>
