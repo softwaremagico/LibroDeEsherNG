@@ -104,7 +104,7 @@
       <es>Clero</es>
     </name>
     <limitedRaces>
-      <race>Modern Man</race>
+      <race>modernMan</race>
     </limitedRaces>
     <specialItems>
       <specialItem>
@@ -256,7 +256,7 @@
       <es>Emprendedor</es>
     </name>
     <limitedRaces>
-      <race>Modern Man</race>
+      <race>modernMan</race>
     </limitedRaces>
     <specialItems>
       <specialItem>
@@ -400,7 +400,7 @@
       <es>Femme Fatale</es>
     </name>
     <limitedRaces>
-      <race>Modern Man</race>
+      <race>modernMan</race>
     </limitedRaces>
     <specialItems>
       <specialItem>
@@ -554,7 +554,7 @@
       <es>Gangster</es>
     </name>
     <limitedRaces>
-      <race>Modern Man</race>
+      <race>modernMan</race>
     </limitedRaces>
     <specialItems>
       <specialItem>
@@ -818,7 +818,7 @@
       <es>Hombre del Gobierno</es>
     </name>
     <limitedRaces>
-      <race>Modern Man</race>
+      <race>modernMan</race>
     </limitedRaces>
     <specialItems>
       <specialItem>

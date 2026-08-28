@@ -1031,4 +1031,26 @@ public class CharacterPlayerTest {
         Assert.assertEquals(character.getProfessionTrainingCost("knight").getCost(), Integer.valueOf(25));
         Assert.assertFalse(character.isTrainingFavouredByProfession("unmentionedTraining"));
     }
+
+    @Test
+    public void trainingRaceRestrictionIsHonoured() throws InvalidXmlElementException {
+        final Training scholar = RulesCatalog.getInstance().getTraining("scholar");
+        Assert.assertTrue(scholar.isAvailableToEveryRace());
+
+        final Training rukleftakSher = RulesCatalog.getInstance().getTraining("rukleftakSher");
+        Assert.assertFalse(rukleftakSher.isAvailableToEveryRace());
+        Assert.assertEquals(rukleftakSher.getLimitedRaces(), List.of("grayOrc"));
+
+        final CharacterPlayer withoutRace = new CharacterPlayer();
+        Assert.assertTrue(withoutRace.isTrainingAvailableForRace(scholar));
+        Assert.assertFalse(withoutRace.isTrainingAvailableForRace(rukleftakSher));
+
+        final CharacterPlayer wrongRace = new CharacterPlayer();
+        wrongRace.setRaceId("lionCentaur");
+        Assert.assertFalse(wrongRace.isTrainingAvailableForRace(rukleftakSher));
+
+        final CharacterPlayer rightRace = new CharacterPlayer();
+        rightRace.setRaceId("grayOrc");
+        Assert.assertTrue(rightRace.isTrainingAvailableForRace(rukleftakSher));
+    }
 }

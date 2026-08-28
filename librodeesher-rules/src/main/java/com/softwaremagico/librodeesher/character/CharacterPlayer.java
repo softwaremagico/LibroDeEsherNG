@@ -1357,6 +1357,20 @@ public class CharacterPlayer {
 		return cost != null && cost.getType() == TrainingType.FAVOURITE;
 	}
 
+	/**
+	 * Whether {@code training} is available to the selected race: either it has no "EXCLUSIVO RAZA"
+	 * restriction at all ({@link Training#isAvailableToEveryRace()}), or the selected race's id is
+	 * one of {@link Training#getLimitedRaces()}. {@code false} if it is race-restricted and no race
+	 * is selected.
+	 */
+	public boolean isTrainingAvailableForRace(Training training) throws InvalidXmlElementException {
+		if (training.isAvailableToEveryRace()) {
+			return true;
+		}
+		final Race race = this.getRace();
+		return race != null && training.getLimitedRaces().contains(race.getId());
+	}
+
 	private static final String PERK_CHOICE_KEY_PREFIX = "perk:";
 
 	/**

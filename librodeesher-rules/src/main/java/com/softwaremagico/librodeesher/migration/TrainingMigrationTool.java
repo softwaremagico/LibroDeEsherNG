@@ -234,6 +234,7 @@ public final class TrainingMigrationTool {
         return Arrays.stream(tokens).filter(token -> !token.isBlank()).toArray(String[]::new);
     }
 
+    /** Parses "EXCLUSIVO RAZA" into race ids (the same {@code Translations#toEnglishId} RaceMigrationTool's own {@code IdAllocator} would produce for the same Spanish name). */
     private static List<String> parseCommaList(List<String> sectionLines) {
         final List<String> values = new ArrayList<>();
         for (final String line : sectionLines) {
@@ -242,7 +243,7 @@ public final class TrainingMigrationTool {
             }
             for (final String token : line.split(",\\s*")) {
                 if (!token.isBlank()) {
-                    values.add(Translations.toEnglish(token.trim()));
+                    values.add(Translations.toEnglishId(token.trim()));
                 }
             }
         }

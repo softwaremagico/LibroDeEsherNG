@@ -23,6 +23,7 @@ public class Training extends Element {
     @JsonProperty("trainingTimeInMonths")
     private Integer trainingTimeInMonths;
 
+    /** Race ids this training is exclusive to (the "EXCLUSIVO RAZA" section), empty means every race. */
     @JacksonXmlElementWrapper(localName = "limitedRaces")
     @JacksonXmlProperty(localName = "race")
     private List<String> limitedRaces;

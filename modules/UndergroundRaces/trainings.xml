@@ -97,7 +97,7 @@
       <es>Rukleftak-sher</es>
     </name>
     <limitedRaces>
-      <race>Gray Orc</race>
+      <race>grayOrc</race>
     </limitedRaces>
     <specialItems>
       <specialItem>
@@ -333,7 +333,7 @@
       <es>Shaguk Kun-Toramim</es>
     </name>
     <limitedRaces>
-      <race>Gray Orc</race>
+      <race>grayOrc</race>
     </limitedRaces>
     <specialItems>
       <specialItem>
