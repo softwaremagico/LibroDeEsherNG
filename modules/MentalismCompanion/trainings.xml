@@ -160,7 +160,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Pr</option>
+          <option>PRESENCE</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>

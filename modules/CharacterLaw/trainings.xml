@@ -241,13 +241,13 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Fu</option>
+          <option>STRENGTH</option>
         </options>
       </upgradeChoice>
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Ag</option>
+          <option>AGILITY</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -461,7 +461,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Fu</option>
+          <option>STRENGTH</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -1220,21 +1220,21 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Co</option>
+          <option>CONSTITUTION</option>
         </options>
       </upgradeChoice>
       <upgradeChoice>
         <fixed>false</fixed>
         <options>
-          <option>Ag</option>
-          <option>Me</option>
-          <option>Ra</option>
-          <option>Ad</option>
-          <option>Em</option>
-          <option>In</option>
-          <option>Pr</option>
-          <option>Rp</option>
-          <option>Fu</option>
+          <option>AGILITY</option>
+          <option>MEMORY</option>
+          <option>REASONING</option>
+          <option>SELF_DISCIPLINE</option>
+          <option>EMPATHY</option>
+          <option>INTUITION</option>
+          <option>PRESENCE</option>
+          <option>QUICKNESS</option>
+          <option>STRENGTH</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -1325,13 +1325,13 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Fu</option>
+          <option>STRENGTH</option>
         </options>
       </upgradeChoice>
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Ag</option>
+          <option>AGILITY</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -1432,7 +1432,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>In</option>
+          <option>INTUITION</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -1536,7 +1536,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Rz</option>
+          <option>REASONING</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -1659,7 +1659,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Co</option>
+          <option>CONSTITUTION</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -1997,7 +1997,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Co</option>
+          <option>CONSTITUTION</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -2096,13 +2096,13 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>In</option>
+          <option>INTUITION</option>
         </options>
       </upgradeChoice>
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Pr</option>
+          <option>PRESENCE</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -2451,7 +2451,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Co</option>
+          <option>CONSTITUTION</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>

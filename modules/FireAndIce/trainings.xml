@@ -195,13 +195,13 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Em</option>
+          <option>EMPATHY</option>
         </options>
       </upgradeChoice>
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Rp</option>
+          <option>QUICKNESS</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -417,13 +417,13 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Em</option>
+          <option>EMPATHY</option>
         </options>
       </upgradeChoice>
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Ag</option>
+          <option>AGILITY</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -602,7 +602,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Em</option>
+          <option>EMPATHY</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>

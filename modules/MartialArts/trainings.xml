@@ -176,13 +176,13 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Ag</option>
+          <option>AGILITY</option>
         </options>
       </upgradeChoice>
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Co</option>
+          <option>CONSTITUTION</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>

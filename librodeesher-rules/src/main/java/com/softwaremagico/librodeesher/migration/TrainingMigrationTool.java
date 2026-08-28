@@ -1,6 +1,7 @@
 package com.softwaremagico.librodeesher.migration;
 
 import com.softwaremagico.librodeesher.language.Translations;
+import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.file.ModuleManager;
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
 import com.softwaremagico.librodeesher.training.Training;
@@ -100,7 +101,7 @@ public final class TrainingMigrationTool {
         training.setLimitedRaces(parseCommaList(cursor.nextSection()));
         training.setSpecialItems(parseSpecialItems(cursor.nextSection()));
         training.setCategories(parseCategories(cursor.nextSection(), categoryIndex));
-        training.setCharacteristicUpgrades(parseChoiceGroups(cursor.nextSection()));
+        training.setCharacteristicUpgrades(parseCharacteristicChoiceGroups(cursor.nextSection()));
         training.setRequirements(parseRequirements(cursor.nextSection()));
         training.setLifeSkills(parseChoiceGroups(cursor.nextSection()));
         training.setCommonSkills(parseChoiceGroups(cursor.nextSection()));
@@ -256,6 +257,33 @@ public final class TrainingMigrationTool {
             items.add(new TrainingSpecialItem(columns[0].trim(), Integer.valueOf(columns[1].trim()), bonus, skillName));
         }
         return items;
+    }
+
+    /**
+     * Parses the "AUMENTOS CARACTERÍSTICAS" section like {@link #parseChoiceGroups(List)}, but
+     * additionally resolving each option through {@link CharacteristicAbbreviation#fromTag(String)}
+     * (e.g. "Ag" -&gt; "AGILITY") instead of keeping the raw Spanish two-letter tag, so the generated
+     * XML never embeds Spanish text.
+     *
+     * <p><strong>Known data typo:</strong> "ManualPersonajes/adiestramientos/Filósofo.txt" uses "Rz"
+     * instead of the standard "Ra" tag for Razón/Reasoning; normalized here rather than left to fail,
+     * since it is unambiguous (no other characteristic tag starts with "R" except "Rp"/Quickness).</p>
+     */
+    private static List<ChoiceGroup> parseCharacteristicChoiceGroups(List<String> sectionLines) {
+        final List<ChoiceGroup> groups = new ArrayList<>();
+        for (final ChoiceGroup group : parseChoiceGroups(sectionLines)) {
+            final List<String> resolved = new ArrayList<>();
+            for (final String tag : group.getOptions()) {
+                final String normalizedTag = "Rz".equalsIgnoreCase(tag) ? "Ra" : tag;
+                final CharacteristicAbbreviation abbreviation = CharacteristicAbbreviation.fromTag(normalizedTag);
+                if (abbreviation == CharacteristicAbbreviation.NONE) {
+                    throw new IllegalStateException("Unknown characteristic tag: '" + tag + "'.");
+                }
+                resolved.add(abbreviation.name());
+            }
+            groups.add(new ChoiceGroup(resolved));
+        }
+        return groups;
     }
 
     /**

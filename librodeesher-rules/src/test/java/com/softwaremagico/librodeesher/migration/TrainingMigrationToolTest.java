@@ -129,7 +129,8 @@ public class TrainingMigrationToolTest {
             Assert.assertEquals(weaponSkillChoice.getRanksToDistribute(), Integer.valueOf(3));
 
             Assert.assertEquals(explorador.getCharacteristicUpgrades().size(), 1);
-            Assert.assertEquals(explorador.getCharacteristicUpgrades().get(0).getOptions(), List.of("Ag", "Ra"));
+            Assert.assertEquals(explorador.getCharacteristicUpgrades().get(0).getOptions(),
+                    List.of("AGILITY", "REASONING"));
             Assert.assertFalse(explorador.getCharacteristicUpgrades().get(0).isFixed());
 
             Assert.assertEquals(explorador.getRequirements().size(), 1);

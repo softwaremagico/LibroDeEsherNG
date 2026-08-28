@@ -137,7 +137,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Me</option>
+          <option>MEMORY</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -780,7 +780,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>In</option>
+          <option>INTUITION</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>

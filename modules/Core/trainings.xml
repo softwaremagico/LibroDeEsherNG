@@ -153,7 +153,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Em</option>
+          <option>EMPATHY</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -434,31 +434,31 @@
       <upgradeChoice>
         <fixed>false</fixed>
         <options>
-          <option>Ag</option>
-          <option>Rp</option>
-          <option>Em</option>
-          <option>Ad</option>
-          <option>Ra</option>
-          <option>Me</option>
-          <option>Fu</option>
-          <option>Pr</option>
-          <option>In</option>
-          <option>Co</option>
+          <option>AGILITY</option>
+          <option>QUICKNESS</option>
+          <option>EMPATHY</option>
+          <option>SELF_DISCIPLINE</option>
+          <option>REASONING</option>
+          <option>MEMORY</option>
+          <option>STRENGTH</option>
+          <option>PRESENCE</option>
+          <option>INTUITION</option>
+          <option>CONSTITUTION</option>
         </options>
       </upgradeChoice>
       <upgradeChoice>
         <fixed>false</fixed>
         <options>
-          <option>Ag</option>
-          <option>Rp</option>
-          <option>Em</option>
-          <option>Ad</option>
-          <option>Ra</option>
-          <option>Me</option>
-          <option>Fu</option>
-          <option>Pr</option>
-          <option>In</option>
-          <option>Co</option>
+          <option>AGILITY</option>
+          <option>QUICKNESS</option>
+          <option>EMPATHY</option>
+          <option>SELF_DISCIPLINE</option>
+          <option>REASONING</option>
+          <option>MEMORY</option>
+          <option>STRENGTH</option>
+          <option>PRESENCE</option>
+          <option>INTUITION</option>
+          <option>CONSTITUTION</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -626,7 +626,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Co</option>
+          <option>CONSTITUTION</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -801,7 +801,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Co</option>
+          <option>CONSTITUTION</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -1611,7 +1611,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>Me</option>
+          <option>MEMORY</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>

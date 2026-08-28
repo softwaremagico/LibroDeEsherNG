@@ -148,16 +148,16 @@
       <upgradeChoice>
         <fixed>false</fixed>
         <options>
-          <option>Ag</option>
-          <option>Co</option>
-          <option>Ra</option>
-          <option>Me</option>
-          <option>Ad</option>
-          <option>Em</option>
-          <option>Pr</option>
-          <option>In</option>
-          <option>Rp</option>
-          <option>Fu</option>
+          <option>AGILITY</option>
+          <option>CONSTITUTION</option>
+          <option>REASONING</option>
+          <option>MEMORY</option>
+          <option>SELF_DISCIPLINE</option>
+          <option>EMPATHY</option>
+          <option>PRESENCE</option>
+          <option>INTUITION</option>
+          <option>QUICKNESS</option>
+          <option>STRENGTH</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
@@ -350,7 +350,7 @@
       <upgradeChoice>
         <fixed>true</fixed>
         <options>
-          <option>In</option>
+          <option>INTUITION</option>
         </options>
       </upgradeChoice>
     </characteristicUpgrades>
