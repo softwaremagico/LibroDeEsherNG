@@ -70,6 +70,13 @@ public class Race extends Element {
     @JacksonXmlProperty(localName = "backgroundLanguage")
     private List<RaceLanguage> backgroundLanguages;
 
+    /**
+     * Ids of skills this race treats as common (developed at a favourable cost tier). Despite the
+     * name, a handful of entries may actually be a {@code Weapon} id rather than a {@code Skill} id:
+     * the legacy application treated every weapon as also being a skill (one unified "developable
+     * thing" concept), which this migration keeps split into two separate catalogs; matching against
+     * either one is left to the consuming code (see {@code CharacterPlayer}).
+     */
     @JacksonXmlElementWrapper(localName = "commonSkills")
     @JacksonXmlProperty(localName = "commonSkillId")
     private List<String> commonSkillIds;
@@ -78,6 +85,7 @@ public class Race extends Element {
     @JacksonXmlProperty(localName = "commonCategoryId")
     private List<String> commonCategoryIds;
 
+    /** Same {@code Skill}-vs-{@code Weapon} id caveat as {@link #commonSkillIds}. */
     @JacksonXmlElementWrapper(localName = "restrictedSkills")
     @JacksonXmlProperty(localName = "restrictedSkillId")
     private List<String> restrictedSkillIds;

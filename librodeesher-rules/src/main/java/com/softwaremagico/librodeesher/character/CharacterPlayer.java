@@ -176,6 +176,30 @@ public class CharacterPlayer {
         return race.getCharacteristicBonuses().getOrDefault(abbreviation.name(), 0);
     }
 
+    /** Whether the selected race restricts {@code skillId}, or {@code false} if no race is selected. */
+    public boolean isSkillRestrictedByRace(String skillId) throws InvalidXmlElementException {
+        final Race race = getRace();
+        return race != null && race.getRestrictedSkillIds().contains(skillId);
+    }
+
+    /** Whether the selected race treats {@code skillId} as common, or {@code false} if no race is selected. */
+    public boolean isSkillCommonByRace(String skillId) throws InvalidXmlElementException {
+        final Race race = getRace();
+        return race != null && race.getCommonSkillIds().contains(skillId);
+    }
+
+    /** Whether the selected race restricts {@code categoryId}, or {@code false} if no race is selected. */
+    public boolean isCategoryRestrictedByRace(String categoryId) throws InvalidXmlElementException {
+        final Race race = getRace();
+        return race != null && race.getRestrictedCategoryIds().contains(categoryId);
+    }
+
+    /** Whether the selected race treats {@code categoryId} as common, or {@code false} if no race is selected. */
+    public boolean isCategoryCommonByRace(String categoryId) throws InvalidXmlElementException {
+        final Race race = getRace();
+        return race != null && race.getCommonCategoryIds().contains(categoryId);
+    }
+
     /**
      * The characteristic's total bonus: its temporal bonus plus the race's fixed bonus.
      *
@@ -582,22 +606,27 @@ public class CharacterPlayer {
     }
 
     /**
-     * Whether {@code skill} is restricted: either by its own {@link SkillType#RESTRICTED} tag, or
-     * because a training taken so far grants it as one of its restricted skills.
+     * Whether {@code skill} is restricted: either by its own {@link SkillType#RESTRICTED} tag,
+     * because a training taken so far grants it as one of its restricted skills, or because the
+     * selected race restricts it (matched by {@code skill.getId()} against {@link
+     * Race#getRestrictedSkillIds()}; see that field's javadoc for why it may miss a match for a
+     * skill that is really a weapon under the hood).
      *
-     * <p>The legacy rule also considers profession, race and perk classifications; those are future
-     * work (they need {@code Profession}'s not-yet-parsed skill sections, and {@code Race}/perk skill
-     * classification, respectively).</p>
+     * <p>The legacy rule also considers profession and perk classifications; those are future work
+     * (they need {@code Profession}'s not-yet-parsed skill sections, and perk skill classification,
+     * respectively).</p>
      */
     public boolean isSkillRestricted(Skill skill) throws InvalidXmlElementException {
         return skill.getSkillType() == SkillType.RESTRICTED
-                || isSkillGrantedByAnyTraining(skill.getName().getSpanish(), this::getTrainingRestrictedSkills);
+                || isSkillGrantedByAnyTraining(skill.getName().getSpanish(), this::getTrainingRestrictedSkills)
+                || isSkillRestrictedByRace(skill.getId());
     }
 
     /** Same limitation as {@link #isSkillRestricted(Skill)}, for {@link SkillType#COMMON}. */
     public boolean isSkillCommon(Skill skill) throws InvalidXmlElementException {
         return skill.getSkillType() == SkillType.COMMON
-                || isSkillGrantedByAnyTraining(skill.getName().getSpanish(), this::getTrainingCommonSkills);
+                || isSkillGrantedByAnyTraining(skill.getName().getSpanish(), this::getTrainingCommonSkills)
+                || isSkillCommonByRace(skill.getId());
     }
 
     /** Same limitation as {@link #isSkillRestricted(Skill)}, for {@link SkillType#PROFESSIONAL}. */

@@ -580,4 +580,34 @@ public class CharacterPlayerTest {
 
         Assert.assertEquals(character.applyMagicRealmChoice("profession:wizard:realm:0", grant, null), RealmOfMagic.ESSENCE);
     }
+
+    @Test
+    public void raceRestrictedSkillIsReflectedInIsSkillRestricted() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("horseCentaur");
+
+        Assert.assertTrue(character.isSkillRestrictedByRace("combatMontado"));
+
+        final Skill skill = new Skill("combatMontado");
+        skill.setName("Combate Montado", "Mounted Combat");
+        Assert.assertTrue(character.isSkillRestricted(skill));
+    }
+
+    @Test
+    public void raceClassificationIsFalseWithoutARaceSelected() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        Assert.assertFalse(character.isSkillRestrictedByRace("combatMontado"));
+        Assert.assertFalse(character.isSkillCommonByRace("combatMontado"));
+        Assert.assertFalse(character.isCategoryRestrictedByRace("outdoorEnvironment"));
+        Assert.assertFalse(character.isCategoryCommonByRace("outdoorEnvironment"));
+    }
+
+    @Test
+    public void raceCommonCategoryIsExposedThroughIsCategoryCommonByRace() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("dyari");
+
+        Assert.assertTrue(character.isCategoryCommonByRace("loreTechnical"));
+        Assert.assertFalse(character.isCategoryRestrictedByRace("loreTechnical"));
+    }
 }
