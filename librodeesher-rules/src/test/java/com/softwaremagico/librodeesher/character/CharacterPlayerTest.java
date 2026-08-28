@@ -668,4 +668,16 @@ public class CharacterPlayerTest {
         character.setCultureId("aquaticMilitarista");
         Assert.assertEquals(character.getCultureLanguageMaxSpeakingRanks("someLanguageThisCultureNeverMentions"), 0);
     }
+
+    @Test
+    public void languageMaxRanksTakesTheHigherOfRaceAndCulture() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        // horseCentaur caps commonSpeech at 6, aquaticMilitarista caps it at 8.
+        character.setRaceId("horseCentaur");
+        character.setCultureId("aquaticMilitarista");
+
+        Assert.assertEquals(character.getRaceLanguageMaxSpeakingRanks("commonSpeech"), 6);
+        Assert.assertEquals(character.getCultureLanguageMaxSpeakingRanks("commonSpeech"), 8);
+        Assert.assertEquals(character.getLanguageMaxSpeakingRanks("commonSpeech"), 8);
+    }
 }

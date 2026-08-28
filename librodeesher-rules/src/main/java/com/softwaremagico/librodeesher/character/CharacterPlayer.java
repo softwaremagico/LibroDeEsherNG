@@ -895,4 +895,21 @@ public class CharacterPlayer {
         }
         return allLanguagesRank;
     }
+
+    /**
+     * The highest speaking-ranks cap a language can reach, taking the best of what the selected race
+     * and culture allow (the legacy rule takes the highest value offered by any source that mentions
+     * a language). 0 if neither mentions it.
+     *
+     * <p>The optional culture/race language selections and Background's own language point spending
+     * are not folded in here yet; future work.</p>
+     */
+    public int getLanguageMaxSpeakingRanks(String languageId) throws InvalidXmlElementException {
+        return Math.max(getRaceLanguageMaxSpeakingRanks(languageId), getCultureLanguageMaxSpeakingRanks(languageId));
+    }
+
+    /** Same as {@link #getLanguageMaxSpeakingRanks(String)}, for writing ranks. */
+    public int getLanguageMaxWritingRanks(String languageId) throws InvalidXmlElementException {
+        return Math.max(getRaceLanguageMaxWritingRanks(languageId), getCultureLanguageMaxWritingRanks(languageId));
+    }
 }
