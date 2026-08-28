@@ -17,6 +17,8 @@ import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
+import com.softwaremagico.librodeesher.skill.Skill;
+import com.softwaremagico.librodeesher.skill.SkillType;
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
 import com.softwaremagico.librodeesher.training.Training;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
@@ -26,6 +28,7 @@ import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 /**
@@ -540,5 +543,96 @@ public class CharacterPlayer {
             }
         }
         return ids;
+    }
+
+    /**
+     * Whether {@code skillName} was granted as a "generalized" skill (marked directly on a level, not
+     * derived from anything else) in any level so far.
+     */
+    public boolean isSkillGeneralized(String skillName) {
+        for (final LevelUp levelUp : levels) {
+            if (levelUp.getGeneralizedSkills().contains(skillName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Whether any training taken so far (see {@link LevelUp#getTrainings()}) granted {@code
+     * skillName} through its {@code trainingSkillsGetter} section (common/professional/restricted).
+     */
+    private boolean isSkillGrantedByAnyTraining(String skillName, Function<Training, List<String>> trainingSkillsGetter)
+            throws InvalidXmlElementException {
+        for (final LevelUp levelUp : levels) {
+            for (final String trainingId : levelUp.getTrainings()) {
+                final Training training = RulesCatalog.getInstance().getTraining(trainingId);
+                if (trainingSkillsGetter.apply(training).contains(skillName)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Whether {@code skill} is restricted: either by its own {@link SkillType#RESTRICTED} tag, or
+     * because a training taken so far grants it as one of its restricted skills.
+     *
+     * <p>The legacy rule also considers profession, race and perk classifications; those are future
+     * work (they need {@code Profession}'s not-yet-parsed skill sections, and {@code Race}/perk skill
+     * classification, respectively).</p>
+     */
+    public boolean isSkillRestricted(Skill skill) throws InvalidXmlElementException {
+        return skill.getSkillType() == SkillType.RESTRICTED
+                || isSkillGrantedByAnyTraining(skill.getName().getSpanish(), this::getTrainingRestrictedSkills);
+    }
+
+    /** Same limitation as {@link #isSkillRestricted(Skill)}, for {@link SkillType#COMMON}. */
+    public boolean isSkillCommon(Skill skill) throws InvalidXmlElementException {
+        return skill.getSkillType() == SkillType.COMMON
+                || isSkillGrantedByAnyTraining(skill.getName().getSpanish(), this::getTrainingCommonSkills);
+    }
+
+    /** Same limitation as {@link #isSkillRestricted(Skill)}, for {@link SkillType#PROFESSIONAL}. */
+    public boolean isSkillProfessional(Skill skill) throws InvalidXmlElementException {
+        return skill.getSkillType() == SkillType.PROFESSIONAL
+                || isSkillGrantedByAnyTraining(skill.getName().getSpanish(), this::getTrainingProfessionalSkills);
+    }
+
+    /**
+     * The multiplier applied to a skill's bought ranks to get its "real ranks" (used for skill bonus
+     * purposes, as opposed to category-bonus purposes): restricted skills count for half, professional
+     * skills for triple, common skills for double, and a generalized skill counts fully only if it is
+     * also common or professional (half otherwise); standard skills count for their full value.
+     */
+    public double getSkillRankMultiplier(Skill skill) throws InvalidXmlElementException {
+        if (isSkillRestricted(skill)) {
+            return 0.5;
+        }
+        final boolean common = isSkillCommon(skill);
+        final boolean professional = isSkillProfessional(skill);
+        if (isSkillGeneralized(skill.getName().getSpanish())) {
+            return common || professional ? 1 : 0.5;
+        }
+        if (professional) {
+            return 3;
+        }
+        if (common) {
+            return 2;
+        }
+        return 1;
+    }
+
+    /**
+     * A skill's "real ranks": its bought ranks times {@link #getSkillRankMultiplier}.
+     *
+     * <p>Ranks are looked up by {@code skill.getName().getSpanish()}, not {@code skill.getId()}: a
+     * training's skill grants are not yet resolved to real {@code Skill} ids (see {@code Training}'s
+     * class javadoc), so {@link #getSkillTotalRanks(String)} is keyed by the raw Spanish skill name
+     * for skills granted this way; future work once that cross-reference is resolved.</p>
+     */
+    public int getSkillRealRanks(Skill skill) throws InvalidXmlElementException {
+        return (int) (getSkillTotalRanks(skill.getName().getSpanish()) * getSkillRankMultiplier(skill));
     }
 }

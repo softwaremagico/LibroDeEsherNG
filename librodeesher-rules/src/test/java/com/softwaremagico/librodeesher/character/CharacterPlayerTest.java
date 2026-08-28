@@ -10,6 +10,8 @@ import com.softwaremagico.librodeesher.decision.InvalidDecisionException;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
+import com.softwaremagico.librodeesher.skill.Skill;
+import com.softwaremagico.librodeesher.skill.SkillType;
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
 import com.softwaremagico.librodeesher.training.Training;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
@@ -389,5 +391,88 @@ public class CharacterPlayerTest {
         // Reusing the same training/index keeps the first decision even with a different selection.
         character.applyTrainingSkillChoices(training, null, Map.of(0, "stalking"), null, null);
         Assert.assertEquals(character.getTrainingCommonSkills(training), List.of("hunting"));
+    }
+
+    @Test
+    public void restrictedSkillsCountForHalfRanks() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final Skill skill = new Skill("test");
+        skill.setName("Prueba", "Test");
+        skill.setSkillType(SkillType.RESTRICTED);
+
+        Assert.assertTrue(character.isSkillRestricted(skill));
+        Assert.assertEquals(character.getSkillRankMultiplier(skill), 0.5);
+    }
+
+    @Test
+    public void professionalSkillsCountForTripleRanks() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final Skill skill = new Skill("test");
+        skill.setName("Prueba", "Test");
+        skill.setSkillType(SkillType.PROFESSIONAL);
+
+        Assert.assertTrue(character.isSkillProfessional(skill));
+        Assert.assertEquals(character.getSkillRankMultiplier(skill), 3.0);
+    }
+
+    @Test
+    public void commonSkillsCountForDoubleRanks() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final Skill skill = new Skill("test");
+        skill.setName("Prueba", "Test");
+        skill.setSkillType(SkillType.COMMON);
+
+        Assert.assertTrue(character.isSkillCommon(skill));
+        Assert.assertEquals(character.getSkillRankMultiplier(skill), 2.0);
+    }
+
+    @Test
+    public void standardSkillsCountFully() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final Skill skill = new Skill("test");
+        skill.setName("Prueba", "Test");
+
+        Assert.assertEquals(character.getSkillRankMultiplier(skill), 1.0);
+    }
+
+    @Test
+    public void generalizedSkillCountsFullyOnlyIfAlsoCommonOrProfessional() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final Skill commonSkill = new Skill("test1");
+        commonSkill.setName("Prueba", "Test");
+        commonSkill.setSkillType(SkillType.COMMON);
+        character.getCurrentLevel().getGeneralizedSkills().add("Prueba");
+        Assert.assertEquals(character.getSkillRankMultiplier(commonSkill), 1.0);
+
+        final Skill standardSkill = new Skill("test2");
+        standardSkill.setName("Otra", "Other");
+        character.getCurrentLevel().getGeneralizedSkills().add("Otra");
+        Assert.assertEquals(character.getSkillRankMultiplier(standardSkill), 0.5);
+    }
+
+    @Test
+    public void trainingGrantedCommonSkillCountsAsCommonEvenIfStandardByItself() throws InvalidXmlElementException {
+        final Training lightWizard = RulesCatalog.getInstance().getTraining("lightWizard");
+        final CharacterPlayer character = new CharacterPlayer();
+        character.getCurrentLevel().addTraining("lightWizard");
+        character.applyTrainingSkillChoices(lightWizard, null, null, null, null);
+
+        final Skill skill = new Skill("test");
+        skill.setName("Esprintar", "Sprint");
+
+        Assert.assertTrue(character.isSkillCommon(skill));
+        Assert.assertEquals(character.getSkillRankMultiplier(skill), 2.0);
+    }
+
+    @Test
+    public void realRanksAppliesTheMultiplierToBoughtRanks() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final Skill skill = new Skill("test");
+        skill.setName("Prueba", "Test");
+        skill.setSkillType(SkillType.PROFESSIONAL);
+        character.getCurrentLevel().setSkillRanks("Prueba", 4, false);
+
+        Assert.assertEquals(character.getSkillTotalRanks("Prueba"), Integer.valueOf(4));
+        Assert.assertEquals(character.getSkillRealRanks(skill), 12);
     }
 }
