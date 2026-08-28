@@ -75,16 +75,16 @@ Técnica/Comercio·Profesional	6
 Técnica/Comercio·Vocacional	3/9
 Urbana	3/8</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Rp</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Administración
 Investigación
@@ -546,16 +546,16 @@ Técnica/Comercio·Profesional	6
 Técnica/Comercio·Vocacional	3/9
 Urbana	2/5</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Me</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Co</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Influencia#1</commonSkillsRaw>
     <id>bardPulp</id>
@@ -1050,16 +1050,16 @@ Técnica/Comercio·Profesional	6
 Técnica/Comercio·Vocacional	3/9
 Urbana	1/3</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>Pr</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>PRESENCE</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Embaucar, {Conocimiento·Técnico}#1, {Boxeo; Placaje; Lucha Libre}#1, {Percepción del Entorno}#1</commonSkillsRaw>
     <id>roguePulp</id>
@@ -2028,16 +2028,16 @@ Técnica/Comercio·Profesional	6
 Técnica/Comercio·Vocacional	3/9
 Urbana	2/4</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Co</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Pr</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>PRESENCE</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Percepción del Entorno: Combate
 Frenesí
@@ -2470,16 +2470,16 @@ Técnica/Comercio·Profesional	6
 Técnica/Comercio·Vocacional	3/9
 Urbana	3/8</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Rp</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Administración
 Investigación

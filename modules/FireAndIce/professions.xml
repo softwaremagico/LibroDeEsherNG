@@ -116,16 +116,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	2/5</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Em</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Co</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Sentido del Tiempo, Conocimiento de los Planos</commonSkillsRaw>
     <id>elementalist</id>

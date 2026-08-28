@@ -120,16 +120,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	4</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>In</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Pr</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>PRESENCE</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Adivinación, Canalización, Meditación, Religión, Sentido del Tiempo</commonSkillsRaw>
     <id>animista</id>
@@ -567,16 +567,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	3</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>In</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Rp</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Sentido del Tiempo, Meditación</commonSkillsRaw>
     <id>curandero</id>
@@ -970,16 +970,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	3</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Em</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Fu</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>STRENGTH</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Adivinación, Canalización, Maestría de los Hechizos, Meditación, Ritual Mágico, Sentido del Tiempo</commonSkillsRaw>
     <id>sorcerer</id>
@@ -1386,16 +1386,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	3</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Em</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Co</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Maestría de los Hechizos, Meditación, Sentido del Tiempo</commonSkillsRaw>
     <id>illusionist</id>
@@ -2237,16 +2237,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	1/4</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Ra</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Co</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Ninguna</commonSkillsRaw>
     <id>magente</id>
@@ -2628,16 +2628,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	3/6</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Rp</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ra</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>REASONING</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Detectar Emboscadas, Maniobras de Combate#1</commonSkillsRaw>
     <id>monkWarrior</id>
@@ -3052,16 +3052,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	3</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Ad</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ra</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>REASONING</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Sentido del Tiempo</commonSkillsRaw>
     <id>monk</id>
@@ -3483,16 +3483,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	2/5</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Em</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>In</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>INTUITION</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Estabilización Adreanl, Maestría de los Hechizo, Meditación, Ritual Mágica, Sentido del Tiempo</commonSkillsRaw>
     <id>mystic</id>
@@ -3911,16 +3911,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	4</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Ad</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Em</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>EMPATHY</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Justar</commonSkillsRaw>
     <id>paladin</id>
@@ -4330,16 +4330,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	3</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>In</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Rp</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Sentido del Tiempo, Estabilización Adrenal, Conocimiento de las Hierbas, Forrajear
 {Cirugía; Cuidados Médicos; Partería}#1</commonSkillsRaw>

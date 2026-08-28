@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.softwaremagico.librodeesher.Element;
+import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 
 import java.util.Collections;
@@ -31,7 +32,7 @@ public class Profession extends Element {
      */
     @JacksonXmlElementWrapper(localName = "characteristicPreferences")
     @JacksonXmlProperty(localName = "characteristic")
-    private List<String> characteristicPreferences;
+    private List<CharacteristicAbbreviation> characteristicPreferences;
 
     @JacksonXmlElementWrapper(localName = "magicRealms")
     @JacksonXmlProperty(localName = "realm")
@@ -73,11 +74,11 @@ public class Profession extends Element {
         super(id);
     }
 
-    public List<String> getCharacteristicPreferences() {
+    public List<CharacteristicAbbreviation> getCharacteristicPreferences() {
         return characteristicPreferences == null ? Collections.emptyList() : characteristicPreferences;
     }
 
-    public void setCharacteristicPreferences(List<String> characteristicPreferences) {
+    public void setCharacteristicPreferences(List<CharacteristicAbbreviation> characteristicPreferences) {
         this.characteristicPreferences = characteristicPreferences;
     }
 

@@ -1,6 +1,7 @@
 package com.softwaremagico.librodeesher.migration;
 
 import com.softwaremagico.librodeesher.language.Translations;
+import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.file.ModuleManager;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.profession.Profession;
@@ -100,14 +101,18 @@ public final class ProfessionMigrationTool {
         return profession;
     }
 
-    private static List<String> parseCharacteristicPreferences(List<String> sectionLines) {
+    private static List<CharacteristicAbbreviation> parseCharacteristicPreferences(List<String> sectionLines) {
         if (sectionLines.isEmpty() || sectionLines.get(0).toLowerCase().contains("indiferente")) {
             return List.of();
         }
-        final List<String> preferences = new ArrayList<>();
+        final List<CharacteristicAbbreviation> preferences = new ArrayList<>();
         for (final String token : sectionLines.get(0).split(" ")) {
             if (!token.isBlank()) {
-                preferences.add(token.trim());
+                final CharacteristicAbbreviation abbreviation = CharacteristicAbbreviation.fromTag(token.trim());
+                if (abbreviation == CharacteristicAbbreviation.NONE) {
+                    throw new IllegalStateException("Unknown characteristic tag: '" + token.trim() + "'.");
+                }
+                preferences.add(abbreviation);
             }
         }
         return preferences;

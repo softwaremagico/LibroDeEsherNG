@@ -136,16 +136,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	3</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>In</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Fu</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>STRENGTH</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Conocimiento de los Artefactos, Meditación, Ritual Mágico, Sentido del Tiempo, Canalización</commonSkillsRaw>
     <id>alchemistOfChanneling</id>
@@ -547,16 +547,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	3/7
 Urbana	3</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Em</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>In</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>INTUITION</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Conocimiento de los Artefactos, Meditación, Ritual Mágico, Sentido del Tiempo</commonSkillsRaw>
     <id>alchemistOfEssence</id>
@@ -958,16 +958,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	3</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Pr</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Em</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>EMPATHY</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Conocimiento de los Artefactos, Meditación, Ritual Mágico, Sentido del Tiempo, Detectar Mentiras</commonSkillsRaw>
     <id>alchemistOfMentalism</id>

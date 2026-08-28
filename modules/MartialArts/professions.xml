@@ -128,16 +128,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	3/7</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Ad</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>In</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>INTUITION</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Sentido del Tiempo, Artes Marciales·Maniobras de Combate#1</commonSkillsRaw>
     <id>monkTaoist</id>
@@ -553,16 +553,16 @@ Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/12
 Urbana	3/7</categoryCostsRaw>
     <characteristicPreferences>
-      <characteristic>Ad</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Em</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>EMPATHY</characteristic>
     </characteristicPreferences>
     <commonSkillsRaw>Sentido del Tiempo, Artes Marciales·Maniobras de Combate#1</commonSkillsRaw>
     <id>monkZen</id>

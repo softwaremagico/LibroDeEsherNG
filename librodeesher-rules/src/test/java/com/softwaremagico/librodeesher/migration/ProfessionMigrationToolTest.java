@@ -1,6 +1,7 @@
 package com.softwaremagico.librodeesher.migration;
 
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
+import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.ProfessionBonus;
 import com.softwaremagico.librodeesher.profession.ProfessionTrainingCost;
@@ -79,7 +80,8 @@ public class ProfessionMigrationToolTest {
             final Profession mago = professions.get(0);
 
             Assert.assertEquals(mago.getId(), "wizard");
-            Assert.assertEquals(mago.getCharacteristicPreferences(), List.of("Em", "Ra", "Ad"));
+            Assert.assertEquals(mago.getCharacteristicPreferences(),
+                    List.of(CharacteristicAbbreviation.EMPATHY, CharacteristicAbbreviation.REASONING, CharacteristicAbbreviation.SELF_DISCIPLINE));
             Assert.assertFalse(mago.isIndifferentToCharacteristics());
             Assert.assertEquals(mago.getMagicRealms(), List.of(RealmOfMagic.ESSENCE));
             Assert.assertTrue(mago.isSpellCaster());
