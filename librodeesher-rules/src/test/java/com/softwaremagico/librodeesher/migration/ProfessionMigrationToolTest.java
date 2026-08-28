@@ -28,6 +28,11 @@ public class ProfessionMigrationToolTest {
         final Path sourceRoot = Files.createTempDirectory("librodeesher-profession-migration-source");
         final Path targetRoot = Files.createTempDirectory("librodeesher-profession-migration-target");
         try {
+            Files.createDirectories(sourceRoot.resolve("rolemaster"));
+            Files.writeString(sourceRoot.resolve("rolemaster/categorias.txt"), String.join("\n",
+                    "Armadura·Ligera(ArdL)\tAg/Fu/Ag\tEstándar\tCuero Blando",
+                    ""), StandardCharsets.UTF_8);
+
             final Path professionsDir = sourceRoot.resolve("rolemaster/modulos/Basico/profesiones");
             Files.createDirectories(professionsDir);
             Files.writeString(professionsDir.resolve("Mago.txt"), String.join("\n",
@@ -93,7 +98,10 @@ public class ProfessionMigrationToolTest {
             Assert.assertEquals(knowledgeBonus.getName(), "loreArcane");
             Assert.assertEquals(knowledgeBonus.getBonus(), Integer.valueOf(10));
 
-            Assert.assertTrue(mago.getCategoryCostsRaw().contains("Armadura·Ligera"));
+            Assert.assertEquals(mago.getCategoryCosts().size(), 1);
+            Assert.assertEquals(mago.getCategoryCost("armorLight").getRankCosts(), List.of(9));
+            Assert.assertNull(mago.getCategoryCost("armorMiddle"));
+            Assert.assertTrue(mago.getWeaponCategoryCostTiers().isEmpty());
             Assert.assertEquals(mago.getCommonSkillIds(), List.of("senseOfTiempo", "meditation"));
             Assert.assertTrue(mago.getCommonSkillChoices().isEmpty());
             Assert.assertTrue(mago.getProfessionalSkillIds().isEmpty());

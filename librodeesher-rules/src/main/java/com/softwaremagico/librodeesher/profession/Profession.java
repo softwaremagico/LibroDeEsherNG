@@ -17,12 +17,13 @@ import java.util.List;
  * flat category/skill bonuses, and per-training background point costs. HABILIDADES COMUNES/
  * PROFESIONALES/RESTRINGIDAS (skills a profession makes available, either outright or as a "choose N
  * from a category/list" pick, see {@link #getCommonSkillIds()}/{@link #getCommonSkillChoices()} and
- * their PROFESSIONAL/RESTRICTED siblings) are fully modeled too. One section lists per-category skill
- * development costs with special-cased weapon category handling (HABILIDADES Y CATEGORÍAS DE
- * HABILIDADES), and one lists spell list development costs by character level range (DESARROLLO DE
- * HECHIZOS); these two are significant enough scope on their own (and depend on further
- * {@code Category}/magic-list cross-references) that they are preserved verbatim for now, the same
- * trade-off already applied to {@code Perk#getBonusesRaw()}.</p>
+ * their PROFESSIONAL/RESTRICTED siblings) are fully modeled too, as is HABILIDADES Y CATEGORÍAS DE
+ * HABILIDADES (per-category development costs, see {@link #getCategoryCosts()}/{@link
+ * #getWeaponCategoryCostTiers()}) as data, though the player-facing "assign a weapon cost tier to a
+ * weapon category" decision it enables is not modeled yet. One section lists spell list development
+ * costs by character level range (DESARROLLO DE HECHIZOS); this is significant enough scope on its
+ * own (it depends on magic-list cross-references not modeled yet) that it is preserved verbatim for
+ * now, the same trade-off already applied to {@code Perk#getBonusesRaw()}.</p>
  */
 public class Profession extends Element {
 
@@ -42,9 +43,28 @@ public class Profession extends Element {
     @JacksonXmlProperty(localName = "bonus")
     private List<ProfessionBonus> bonuses;
 
-    /** Verbatim "HABILIDADES Y CATEGORÍAS DE HABILIDADES" section; see the class javadoc. */
-    @JsonProperty("categoryCostsRaw")
-    private String categoryCostsRaw;
+    /**
+     * Per-category background point costs from "HABILIDADES Y CATEGORÍAS DE HABILIDADES" for every
+     * real, named category (i.e. every one that does not start with "Armas·", see {@link
+     * #getWeaponCategoryCostTiers()} for those).
+     */
+    @JacksonXmlElementWrapper(localName = "categoryCosts")
+    @JacksonXmlProperty(localName = "categoryCost")
+    private List<ProfessionCategoryCost> categoryCosts;
+
+    /**
+     * The "Armas·Categoría1" through "Armas·Categoría7" cost tiers, sorted cheapest-to-priciest
+     * exactly like the legacy {@code Profession.CategoryCostComparator} did (more rank slots first,
+     * then ascending by each rank's cost). Unlike {@link #categoryCosts}, these do not name a
+     * specific weapon category by themselves: the legacy application let the player freely assign
+     * each tier to one of their available weapon categories at character creation (cheapest tier to
+     * their favourite weapon, and so on), a decision-tracking mechanic ({@code
+     * ProfessionDecisions#setWeaponCost}) that is not modeled yet and is significant scope on its own
+     * (left as future work, the same trade-off as {@link #getMagicCostsRaw()}).
+     */
+    @JacksonXmlElementWrapper(localName = "weaponCategoryCostTiers")
+    @JacksonXmlProperty(localName = "tier")
+    private List<ProfessionWeaponCostTier> weaponCategoryCostTiers;
 
     /** Skill ids granted outright by "HABILIDADES COMUNES" (no choice involved). */
     @JacksonXmlElementWrapper(localName = "commonSkillIds")
@@ -150,12 +170,24 @@ public class Profession extends Element {
         return 0;
     }
 
-    public String getCategoryCostsRaw() {
-        return categoryCostsRaw;
-    }
+    public List<ProfessionCategoryCost> getCategoryCosts() { return categoryCosts == null ? Collections.emptyList() : categoryCosts; }
+    public void setCategoryCosts(List<ProfessionCategoryCost> categoryCosts) { this.categoryCosts = categoryCosts; }
 
-    public void setCategoryCostsRaw(String categoryCostsRaw) {
-        this.categoryCostsRaw = categoryCostsRaw;
+    public List<ProfessionWeaponCostTier> getWeaponCategoryCostTiers() { return weaponCategoryCostTiers == null ? Collections.emptyList() : weaponCategoryCostTiers; }
+    public void setWeaponCategoryCostTiers(List<ProfessionWeaponCostTier> weaponCategoryCostTiers) { this.weaponCategoryCostTiers = weaponCategoryCostTiers; }
+
+    /**
+     * The background point cost of developing {@code categoryId} (see {@link ProfessionCategoryCost}),
+     * or {@code null} if this profession does not mention that category at all (it is a weapon
+     * category, handled by {@link #getWeaponCategoryCostTiers()} instead, or simply not developable).
+     */
+    public ProfessionCategoryCost getCategoryCost(String categoryId) {
+        for (final ProfessionCategoryCost cost : getCategoryCosts()) {
+            if (cost.getCategoryId().equals(categoryId)) {
+                return cost;
+            }
+        }
+        return null;
     }
 
     public List<String> getCommonSkillIds() { return commonSkillIds == null ? Collections.emptyList() : commonSkillIds; }

@@ -6,8 +6,10 @@ import com.softwaremagico.librodeesher.file.ModuleManager;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.ProfessionBonus;
+import com.softwaremagico.librodeesher.profession.ProfessionCategoryCost;
 import com.softwaremagico.librodeesher.profession.ProfessionSkillGrant;
 import com.softwaremagico.librodeesher.profession.ProfessionTrainingCost;
+import com.softwaremagico.librodeesher.profession.ProfessionWeaponCostTier;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.training.TrainingType;
 
@@ -16,6 +18,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -98,7 +101,9 @@ public final class ProfessionMigrationTool {
         profession.setCharacteristicPreferences(parseCharacteristicPreferences(cursor.nextSection()));
         profession.setMagicRealms(parseMagicRealms(cursor.nextSection()));
         profession.setBonuses(parseBonuses(cursor.nextSection()));
-        profession.setCategoryCostsRaw(String.join("\n", cursor.nextSection()));
+        final ParsedCategoryCosts categoryCosts = parseCategoryCosts(cursor.nextSection(), categoryIndex);
+        profession.setCategoryCosts(categoryCosts.categoryCosts());
+        profession.setWeaponCategoryCostTiers(categoryCosts.weaponCostTiers());
         final ParsedSkillSection common = parseSkillSection(cursor.nextSection(), categoryIndex);
         profession.setCommonSkillIds(common.fixedSkillIds());
         profession.setCommonSkillChoices(common.choices());
@@ -290,6 +295,55 @@ public final class ProfessionMigrationTool {
             bonuses.add(new ProfessionBonus(Translations.toEnglishId(columns[0].trim()), Integer.valueOf(columns[1].trim())));
         }
         return bonuses;
+    }
+
+    private static final String WEAPON_CATEGORY_PREFIX = "Armas·";
+
+    /**
+     * Parses "HABILIDADES Y CATEGORÍAS DE HABILIDADES": every line names a real category (resolved
+     * via {@code categoryIndex}) except the "Armas·CategoríaN" ones, which are collected separately
+     * and sorted cheapest-to-priciest, matching the legacy {@code CategoryCostComparator} (more rank
+     * slots first, then ascending by each rank's cost in turn).
+     */
+    private static ParsedCategoryCosts parseCategoryCosts(List<String> sectionLines, Map<String, String> categoryIndex) {
+        final List<ProfessionCategoryCost> categoryCosts = new ArrayList<>();
+        final List<List<Integer>> weaponCostTiers = new ArrayList<>();
+        for (final String line : sectionLines) {
+            final String[] columns = line.split("\t");
+            final String name = columns[0].trim();
+            final List<Integer> rankCosts = parseRankCosts(columns[1].trim());
+            if (name.startsWith(WEAPON_CATEGORY_PREFIX)) {
+                weaponCostTiers.add(rankCosts);
+            } else {
+                final String categoryId = categoryIndex.get(name);
+                if (categoryId == null) {
+                    throw new IllegalStateException("Unknown category name in profession category costs: '" + name + "'.");
+                }
+                categoryCosts.add(new ProfessionCategoryCost(categoryId, rankCosts));
+            }
+        }
+        weaponCostTiers.sort(Comparator
+                .<List<Integer>>comparingInt(List::size).reversed()
+                .thenComparingInt(costs -> costs.get(0))
+                .thenComparingInt(costs -> costs.size() > 1 ? costs.get(1) : 0)
+                .thenComparingInt(costs -> costs.size() > 2 ? costs.get(2) : 0));
+        final List<ProfessionWeaponCostTier> tiers = new ArrayList<>();
+        for (final List<Integer> costs : weaponCostTiers) {
+            tiers.add(new ProfessionWeaponCostTier(costs));
+        }
+        return new ParsedCategoryCosts(categoryCosts, tiers);
+    }
+
+    private static List<Integer> parseRankCosts(String costString) {
+        final List<Integer> costs = new ArrayList<>();
+        for (final String cost : costString.split("/")) {
+            costs.add(Integer.valueOf(cost.trim()));
+        }
+        return costs;
+    }
+
+    /** The result of {@link #parseCategoryCosts(List, Map)}. */
+    private record ParsedCategoryCosts(List<ProfessionCategoryCost> categoryCosts, List<ProfessionWeaponCostTier> weaponCostTiers) {
     }
 
     private static List<ProfessionTrainingCost> parseTrainingCosts(List<String> sectionLines) {
