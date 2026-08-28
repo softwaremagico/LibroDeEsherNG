@@ -4,16 +4,21 @@ import com.softwaremagico.librodeesher.age.AgeModification;
 import com.softwaremagico.librodeesher.background.Background;
 import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.characteristic.Appearance;
+import com.softwaremagico.librodeesher.characteristic.Characteristic;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
+import com.softwaremagico.librodeesher.characteristic.CharacteristicRoll;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.decision.Decision;
 import com.softwaremagico.librodeesher.decision.Decisions;
+import com.softwaremagico.librodeesher.dice.Roll;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
+import com.softwaremagico.librodeesher.training.ChoiceGroup;
+import com.softwaremagico.librodeesher.training.Training;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
 import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
 
@@ -344,6 +349,68 @@ public class CharacterPlayer {
             // skill's category), see LevelUp#setSkillRanks; future work.
             getCurrentLevel().addSkillRanks(skillDecision.getSelectedOption(), skillGrant.getRanksToDistribute(), false);
         }
+    }
+
+    /**
+     * Applies every category grant of {@code training} to the current level, keying each one's
+     * decision as {@code "training:" + training.getId() + ":category:" + <index>} (and its nested
+     * skill grants as {@code ":skill:" + <index>} under that), reusing {@link #applyCategoryGrant}.
+     *
+     * @param categorySelections the category to use for each grant (by its index in {@link
+     *                           Training#getCategories()}) that offers a choice and has not been
+     *                           decided yet; entries for grants that are fixed or already decided are
+     *                           ignored. May be {@code null} if no grant needs a fresh selection.
+     * @param skillSelections    same, but for each grant's nested skill choices, keyed the same way.
+     */
+    public void applyTrainingCategories(Training training, Map<Integer, String> categorySelections,
+                                         Map<Integer, List<String>> skillSelections) {
+        applyCategoryGrants("training:" + training.getId() + ":category", training.getCategories(), categorySelections, skillSelections);
+    }
+
+    /**
+     * Applies every adolescence-rank category grant of {@code culture} to the current level, keying
+     * each one's decision as {@code "culture:" + culture.getId() + ":adolescence:" + <index>}; see
+     * {@link #applyTrainingCategories} for the selection map semantics.
+     */
+    public void applyCultureAdolescenceRanks(Culture culture, Map<Integer, String> categorySelections,
+                                              Map<Integer, List<String>> skillSelections) {
+        applyCategoryGrants("culture:" + culture.getId() + ":adolescence", culture.getAdolescenceRanks(), categorySelections, skillSelections);
+    }
+
+    private void applyCategoryGrants(String keyPrefix, List<TrainingCategoryGrant> grants, Map<Integer, String> categorySelections,
+                                      Map<Integer, List<String>> skillSelections) {
+        for (int i = 0; i < grants.size(); i++) {
+            final String selectedCategoryId = categorySelections == null ? null : categorySelections.get(i);
+            final List<String> selectedSkillIds = skillSelections == null ? null : skillSelections.get(i);
+            applyCategoryGrant(keyPrefix + ":" + i, grants.get(i), selectedCategoryId, selectedSkillIds);
+        }
+    }
+
+    /**
+     * Applies one of a training's "AUMENTOS CARACTERÍSTICAS" choices: resolves which characteristic
+     * it applies to (reusing an already-made decision if {@code key} was decided before), rolls 2d10
+     * and increases that characteristic's temporal value by {@link Characteristic#getCharacteristicUpgrade},
+     * recording the roll in the current level.
+     *
+     * @param key                   a caller-chosen id identifying this specific choice uniquely for
+     *                              this character (e.g. {@code "training:scout:characteristic:0"}).
+     * @param group                 the characteristic choice to apply.
+     * @param selectedCharacteristic the characteristic to use if {@code group} offers a choice and
+     *                              {@code key} has not been decided yet; ignored otherwise.
+     * @return the recorded roll.
+     */
+    public CharacteristicRoll applyCharacteristicUpgrade(String key, ChoiceGroup group, CharacteristicAbbreviation selectedCharacteristic) {
+        final String selectedOption = selectedCharacteristic == null ? null : selectedCharacteristic.name();
+        final Decision decision = decideOrReuse(key, () -> group.resolve(selectedOption));
+        final CharacteristicAbbreviation abbreviation = CharacteristicAbbreviation.valueOf(decision.getSelectedOption());
+
+        final Integer temporalValue = getCharacteristicTemporalValue(abbreviation);
+        final Integer potentialValue = getCharacteristicPotentialValue(abbreviation);
+        final Roll roll = new Roll();
+        final Integer upgrade = Characteristic.getCharacteristicUpgrade(temporalValue, potentialValue, roll);
+        setCharacteristicTemporalValue(abbreviation, temporalValue + upgrade);
+
+        return getCurrentLevel().addCharacteristicUpdate(abbreviation, temporalValue, potentialValue, roll);
     }
 
     /** Returns the existing decision for {@code key}, or resolves it via {@code resolver} and records it. */

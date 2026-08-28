@@ -3,16 +3,23 @@ package com.softwaremagico.librodeesher.character;
 import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.category.CategoryType;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
+import com.softwaremagico.librodeesher.characteristic.CharacteristicRoll;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
+import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.decision.InvalidDecisionException;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
+import com.softwaremagico.librodeesher.rules.RulesCatalog;
+import com.softwaremagico.librodeesher.training.ChoiceGroup;
+import com.softwaremagico.librodeesher.training.Training;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
 import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /** Verifies {@link CharacterPlayer}'s identity, characteristic and level bookkeeping. */
 @Test(groups = "character")
@@ -239,5 +246,73 @@ public class CharacterPlayerTest {
 
         Assert.assertEquals(character.getCategoryTotalRanks("weaponsEdged"), Integer.valueOf(2));
         Assert.assertEquals(character.getDecisions().getSelectedOption("training:soldier:category:1"), "weaponsEdged");
+    }
+
+    @Test
+    public void applyTrainingCategoriesAppliesEveryGrantOfARealTraining() throws InvalidXmlElementException {
+        final Training soldier = RulesCatalog.getInstance().getTraining("soldier");
+        final CharacterPlayer character = new CharacterPlayer();
+
+        final Map<Integer, String> categorySelections = new HashMap<>();
+        for (int i = 0; i < soldier.getCategories().size(); i++) {
+            final TrainingCategoryGrant grant = soldier.getCategories().get(i);
+            if (grant.isChoice()) {
+                categorySelections.put(i, grant.getCategoryOptions().get(0));
+            }
+        }
+        character.applyTrainingCategories(soldier, categorySelections, null);
+
+        // Every grant got a decision recorded, and every decided category actually has ranks.
+        for (int i = 0; i < soldier.getCategories().size(); i++) {
+            final String key = "training:soldier:category:" + i;
+            Assert.assertTrue(character.getDecisions().isDecided(key));
+            Assert.assertTrue(character.getCategoryTotalRanks(character.getDecisions().getSelectedOption(key)) >= 0);
+        }
+    }
+
+    @Test
+    public void applyCultureAdolescenceRanksAppliesEveryGrantOfARealCulture() throws InvalidXmlElementException {
+        final Culture culture = RulesCatalog.getInstance().getCulture("aquaticMilitarista");
+        final CharacterPlayer character = new CharacterPlayer();
+
+        character.applyCultureAdolescenceRanks(culture, null, null);
+
+        for (int i = 0; i < culture.getAdolescenceRanks().size(); i++) {
+            Assert.assertTrue(character.getDecisions().isDecided("culture:aquaticMilitarista:adolescence:" + i));
+        }
+    }
+
+    @Test
+    public void applyCharacteristicUpgradeRollsAndIncreasesTheChosenCharacteristic() throws InvalidXmlElementException {
+        final Training adventurer = RulesCatalog.getInstance().getTraining("adventurer");
+        final CharacterPlayer character = new CharacterPlayer();
+        final Integer before = character.getCharacteristicTemporalValue(CharacteristicAbbreviation.STRENGTH);
+
+        final CharacteristicRoll roll = character.applyCharacteristicUpgrade("training:adventurer:characteristic:0",
+                adventurer.getCharacteristicUpgrades().get(0), CharacteristicAbbreviation.STRENGTH);
+
+        Assert.assertEquals(roll.getCharacteristicAbbreviation(), CharacteristicAbbreviation.STRENGTH);
+        Assert.assertEquals(roll.getCharacteristicTemporalValue(), before);
+        Assert.assertEquals(character.getDecisions().getSelectedOption("training:adventurer:characteristic:0"), "STRENGTH");
+    }
+
+    @Test(expectedExceptions = InvalidDecisionException.class)
+    public void applyCharacteristicUpgradeRejectsACharacteristicNotOffered() throws InvalidXmlElementException {
+        final Training adventurer = RulesCatalog.getInstance().getTraining("adventurer");
+        final CharacterPlayer character = new CharacterPlayer();
+        character.applyCharacteristicUpgrade("training:adventurer:characteristic:0",
+                adventurer.getCharacteristicUpgrades().get(0), CharacteristicAbbreviation.NONE);
+    }
+
+    @Test
+    public void applyCharacteristicUpgradeReusesTheFirstDecision() throws InvalidXmlElementException {
+        final Training adventurer = RulesCatalog.getInstance().getTraining("adventurer");
+        final CharacterPlayer character = new CharacterPlayer();
+        final ChoiceGroup group = adventurer.getCharacteristicUpgrades().get(0);
+
+        character.applyCharacteristicUpgrade("training:adventurer:characteristic:0", group, CharacteristicAbbreviation.STRENGTH);
+        character.applyCharacteristicUpgrade("training:adventurer:characteristic:0", group, CharacteristicAbbreviation.AGILITY);
+
+        Assert.assertEquals(character.getDecisions().getSelectedOption("training:adventurer:characteristic:0"), "STRENGTH");
     }
 }
