@@ -13,7 +13,7 @@ import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
  *
  * <p>Jackson XML (not JAXB, DOM or SAX) is used on purpose: it lets the domain classes stay plain
  * annotated POJOs, keeps the module free of code generation steps, and is fully compatible with
- * Android. This mirrors the approach used by the sibling project ThinkMachine-4E.</p>
+ * Android.</p>
  */
 public final class ObjectMapperFactory {
 

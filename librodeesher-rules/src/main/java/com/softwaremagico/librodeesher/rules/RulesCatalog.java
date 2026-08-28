@@ -26,10 +26,10 @@ import java.util.List;
 /**
  * Public read-only entry point for the migrated Rolemaster rule catalog.
  *
- * <p>The lower-level {@code *Factory} classes mirror ThinkMachine-4E and remain available, but this
- * class provides a single cohesive API for code that wants to consume the rule data without knowing
- * which XML file/factory owns each concept. It is intentionally stateless and Android-safe: all data
- * is still read via classpath resources by the underlying factories.</p>
+ * <p>The lower-level {@code *Factory} classes remain available individually, but this class provides
+ * a single cohesive API for code that wants to consume the rule data without knowing which XML
+ * file/factory owns each concept. It is intentionally stateless and Android-safe: all data is still
+ * read via classpath resources by the underlying factories.</p>
  */
 public final class RulesCatalog {
 

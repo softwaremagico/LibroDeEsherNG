@@ -22,10 +22,10 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * the two is kept only by the migration tools (see {@code com.softwaremagico.librodeesher.migration.LegacyModules}),
  * which are the sole readers of the original Spanish-named folders.</p>
  *
- * <p>Unlike ThinkMachine-4E, where {@code ModuleManager#resetModules()} hard-codes the list of every
- * factory to reset, factories here register themselves (see {@link #registerResettable(Runnable)}),
- * which is called once from every {@code XmlFactory} constructor. This avoids having to keep a
- * manually maintained list in sync as new factories are added.</p>
+ * <p>Factories register themselves to be reset when the enabled module set changes (see
+ * {@link #registerResettable(Runnable)}), which is called once from every {@code XmlFactory}
+ * constructor. This avoids having to keep a manually maintained list in sync as new factories are
+ * added.</p>
  */
 public final class ModuleManager {
 

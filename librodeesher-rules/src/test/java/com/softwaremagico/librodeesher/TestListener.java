@@ -11,8 +11,7 @@ import org.testng.ITestResult;
  * through SLF4J, so a human reviewing the CI/console output can follow what was executed without
  * opening the surefire XML reports.
  *
- * <p>Registered in each module's {@code src/test/resources/testng.xml}. Mirrors the listener used in
- * ThinkMachine-4E so both projects behave consistently.</p>
+ * <p>Registered in each module's {@code src/test/resources/testng.xml}.</p>
  */
 public class TestListener implements ITestListener {
 

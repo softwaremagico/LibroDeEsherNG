@@ -9,8 +9,7 @@ import java.util.regex.Pattern;
 /**
  * Produces an English translation for the Spanish-only text found in every legacy rulebook file.
  *
- * <p>None of the original "LibroDeEsher" data ever had an English version (unlike ThinkMachine-4E,
- * whose XML always carries both {@code <es>}/{@code <en>} from the start): every English string in
+ * <p>None of the original "LibroDeEsher" data ever had an English version: every English string in
  * the migrated XML is produced once, by this class, when the {@code *MigrationTool}s run.</p>
  *
  * <p>Translation strategy, in order:</p>

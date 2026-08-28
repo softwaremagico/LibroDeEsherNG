@@ -1,8 +1,7 @@
 package com.softwaremagico.librodeesher.language;
 
 /**
- * Selects which language {@link TranslatedText#getTranslatedText()} returns. Mirrors
- * ThinkMachine-4E's {@code com.softwaremagico.tm.language.Translator}.
+ * Selects which language {@link TranslatedText#getTranslatedText()} returns.
  */
 public final class Translator {
 

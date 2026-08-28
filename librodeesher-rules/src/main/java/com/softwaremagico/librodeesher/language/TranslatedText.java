@@ -8,7 +8,7 @@ import java.util.Objects;
 
 /**
  * A piece of text (a name, a description...) available in Spanish and English, as
- * {@code <es>...</es><en>...</en>}. Mirrors ThinkMachine-4E's {@code com.softwaremagico.tm.TranslatedText}.
+ * {@code <es>...</es><en>...</en>}.
  *
  * <p>Every rulebook text file is originally Spanish-only; the English translation is produced by the
  * migration tools (see {@code com.softwaremagico.librodeesher.language.Translations}) since the

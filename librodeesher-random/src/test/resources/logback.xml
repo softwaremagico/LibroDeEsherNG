@@ -1,6 +1,6 @@
 <configuration>
     <!--
-        Console-only logging for automated tests (mirrors ThinkMachine-4E): no file appender, no log
+        Console-only logging for automated tests: no file appender, no log
         rotation. Test output must stay readable in CI logs, so only the console appender is defined.
     -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
