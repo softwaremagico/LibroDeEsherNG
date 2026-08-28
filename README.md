@@ -138,7 +138,4 @@ Two additional modules are scaffolded for future work:
 
 ## Notes
 
-- Original application icons from the Gartoon Gnome Icon Theme, under the GNU license.
-- The original desktop application used the iText library for PDF character sheet generation.
-- Original Pulp Adventures sheet templates created by Daniel Cordellat.
 - Rolemaster is a trademark owned by Iron Crown Enterprises / Aurigas Aldebaron.
