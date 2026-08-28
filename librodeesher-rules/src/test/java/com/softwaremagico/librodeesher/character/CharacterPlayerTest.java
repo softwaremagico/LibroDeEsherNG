@@ -854,4 +854,29 @@ public class CharacterPlayerTest {
         // Reusing the same key/index does not ask again.
         Assert.assertEquals(character.applyPerkChoiceGrant("experiencedCatMaximum", 0, grant, "crafts"), "athleticsGymnastics");
     }
+
+    @Test
+    public void selectedPerkAppliesItsPerRankSkillBonusMultipliedByRealRanks() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.addPerk("aura");
+        character.getCurrentLevel().setSkillRanks("powerPointDevelopment", 5, false);
+
+        Assert.assertEquals(character.getPerkSkillRankBonus("powerPointDevelopment"), Integer.valueOf(4));
+
+        final Skill skill = RulesCatalog.getInstance().getSkill("powerPointDevelopment");
+        final Category category = RulesCatalog.getInstance().getCategory("powerPointDevelopment");
+        Assert.assertEquals(character.getSkillRealRanks(skill), 5);
+
+        final Integer expected = category.getSkillRankBonus(character.getSkillTotalRanks("powerPointDevelopment"))
+                + 4 * 5;
+        Assert.assertEquals(character.getSkillDevelopmentBonus(category, "powerPointDevelopment"), expected);
+    }
+
+    @Test
+    public void perkConditionalBonusIsQueryableButNotAutoApplied() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+
+        Assert.assertEquals(character.getPerkSkillConditionalBonus("climbing"), Integer.valueOf(0));
+        Assert.assertEquals(character.getPerkCategoryConditionalBonus("athleticsGymnastics"), Integer.valueOf(0));
+    }
 }

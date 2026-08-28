@@ -358,34 +358,47 @@ public class CharacterPlayer {
 	 * categories) plus its flat bonus (only non-zero for
 	 * {@link com.softwaremagico.librodeesher.category.CategoryType#PD}) plus the
 	 * flat bonus the selected profession grants this category, if any, plus every
-	 * selected perk's flat bonus to it (see {@link #getPerkCategoryBonus(String)}).
+	 * selected perk's flat bonus to it (see {@link #getPerkCategoryBonus(String)})
+	 * plus its per-rank perk bonus (see {@link #getPerkCategoryRankBonus(String)})
+	 * times the ranks bought in it.
 	 *
 	 * <p>
-	 * Race/background bonuses and perks' per-rank bonuses (see
-	 * {@link #getPerkCategoryRankBonus(String)}) are future work.
+	 * Race/background bonuses are future work. A perk's
+	 * {@link PerkBonusKind#CONDITIONAL} bonus (see
+	 * {@link #getPerkCategoryConditionalBonus(String)}) is deliberately not
+	 * included: it only applies under some condition described in the perk's
+	 * free-text description, which is not modeled.
 	 * </p>
 	 */
 	public Integer getCategoryDevelopmentBonus(Category category) throws InvalidXmlElementException {
-		return category.getCategoryRankBonus(this.getCategoryTotalRanks(category.getId())) + category.getFixedBonus()
-				+ this.getProfessionBonus(category.getId()) + this.getPerkCategoryBonus(category.getId());
+		final int ranks = this.getCategoryTotalRanks(category.getId());
+		return category.getCategoryRankBonus(ranks) + category.getFixedBonus()
+				+ this.getProfessionBonus(category.getId()) + this.getPerkCategoryBonus(category.getId())
+				+ this.getPerkCategoryRankBonus(category.getId()) * ranks;
 	}
 
 	/**
 	 * A skill's bonus from its own ranks, using its category's progression table,
 	 * plus the flat bonus the selected profession grants this skill, if any, plus
-	 * every selected perk's flat bonus to it (see {@link #getPerkSkillBonus(String)}).
+	 * every selected perk's flat bonus to it (see {@link #getPerkSkillBonus(String)})
+	 * plus its per-rank perk bonus (see {@link #getPerkSkillRankBonus(String)})
+	 * times its "real ranks" (see {@link #getSkillRealRanks(Skill)}), matching the
+	 * legacy {@code getPerkBonus(Skill)} exactly.
 	 *
 	 * <p>
-	 * Race/background bonuses, the "real ranks" multiplier
-	 * (restricted/common/ professional/generalized skills cost and count
-	 * differently), perks' per-rank bonuses (see
-	 * {@link #getPerkSkillRankBonus(String)}) and the characteristic bonus are
-	 * future work.
+	 * Race/background bonuses and the characteristic bonus are future work. A
+	 * perk's {@link PerkBonusKind#CONDITIONAL} bonus (see
+	 * {@link #getPerkSkillConditionalBonus(String)}) is deliberately not
+	 * included, for the same reason as {@link #getCategoryDevelopmentBonus}.
 	 * </p>
 	 */
 	public Integer getSkillDevelopmentBonus(Category category, String skillId) throws InvalidXmlElementException {
+		final Integer perkSkillRankBonus = this.getPerkSkillRankBonus(skillId);
+		final int perkRankTerm = perkSkillRankBonus == 0
+				? 0
+				: perkSkillRankBonus * this.getSkillRealRanks(RulesCatalog.getInstance().getSkill(skillId));
 		return category.getSkillRankBonus(this.getSkillTotalRanks(skillId)) + this.getProfessionBonus(skillId)
-				+ this.getPerkSkillBonus(skillId);
+				+ this.getPerkSkillBonus(skillId) + perkRankTerm;
 	}
 
 	/**
@@ -1499,6 +1512,34 @@ public class CharacterPlayer {
 		int total = 0;
 		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
 			if (categoryId.equals(bonus.getCategoryId()) && bonus.getKind() == PerkBonusKind.PER_RANK) {
+				total += bonus.getValue();
+			}
+		}
+		return total;
+	}
+
+	/**
+	 * The sum of every {@link PerkBonusKind#CONDITIONAL} bonus a selected perk grants skill
+	 * {@code skillId}: not included in {@link #getSkillDevelopmentBonus}, matching the legacy
+	 * {@code getConditionalPerkBonus(Skill)} being a separate query from {@code getPerkBonus(Skill)}
+	 * (it only applies under some condition described in the perk's free-text description, which
+	 * consuming code must check itself).
+	 */
+	public Integer getPerkSkillConditionalBonus(String skillId) throws InvalidXmlElementException {
+		int total = 0;
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (skillId.equals(bonus.getSkillId()) && bonus.getKind() == PerkBonusKind.CONDITIONAL) {
+				total += bonus.getValue();
+			}
+		}
+		return total;
+	}
+
+	/** Same as {@link #getPerkSkillConditionalBonus(String)}, for {@link PerkBonus#getCategoryId()}. */
+	public Integer getPerkCategoryConditionalBonus(String categoryId) throws InvalidXmlElementException {
+		int total = 0;
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (categoryId.equals(bonus.getCategoryId()) && bonus.getKind() == PerkBonusKind.CONDITIONAL) {
 				total += bonus.getValue();
 			}
 		}
