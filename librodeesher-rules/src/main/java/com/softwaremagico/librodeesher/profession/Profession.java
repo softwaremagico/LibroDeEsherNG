@@ -14,14 +14,15 @@ import java.util.List;
  *
  * <p>The legacy {@code Profession} constructor parsed 8 sections from its text file. The most
  * regular ones are modeled as plain data here: characteristic preferences, available magic realms,
- * flat category/skill bonuses, and per-training background point costs. Three sections mix plain
- * skill names with a "choose N from {a;b;c}" / "choose N from category#N" syntax
- * (HABILIDADES COMUNES/PROFESIONALES/RESTRINGIDAS), one lists per-category skill development costs
- * with special-cased weapon category handling (HABILIDADES Y CATEGORÍAS DE HABILIDADES), and one
- * lists spell list development costs by character level range (DESARROLLO DE HECHIZOS); these are
- * significant enough scope on their own (and depend on {@code Category}/{@code Skill}/magic-list
- * cross-references) that they are preserved verbatim for now, the same trade-off already applied to
- * {@code Perk#getBonusesRaw()}.</p>
+ * flat category/skill bonuses, and per-training background point costs. HABILIDADES COMUNES/
+ * PROFESIONALES/RESTRINGIDAS (skills a profession makes available, either outright or as a "choose N
+ * from a category/list" pick, see {@link #getCommonSkillIds()}/{@link #getCommonSkillChoices()} and
+ * their PROFESSIONAL/RESTRICTED siblings) are fully modeled too. One section lists per-category skill
+ * development costs with special-cased weapon category handling (HABILIDADES Y CATEGORÍAS DE
+ * HABILIDADES), and one lists spell list development costs by character level range (DESARROLLO DE
+ * HECHIZOS); these two are significant enough scope on their own (and depend on further
+ * {@code Category}/magic-list cross-references) that they are preserved verbatim for now, the same
+ * trade-off already applied to {@code Perk#getBonusesRaw()}.</p>
  */
 public class Profession extends Element {
 
@@ -45,17 +46,35 @@ public class Profession extends Element {
     @JsonProperty("categoryCostsRaw")
     private String categoryCostsRaw;
 
-    /** Verbatim "HABILIDADES COMUNES" section; see the class javadoc. */
-    @JsonProperty("commonSkillsRaw")
-    private String commonSkillsRaw;
+    /** Skill ids granted outright by "HABILIDADES COMUNES" (no choice involved). */
+    @JacksonXmlElementWrapper(localName = "commonSkillIds")
+    @JacksonXmlProperty(localName = "commonSkillId")
+    private List<String> commonSkillIds;
 
-    /** Verbatim "HABILIDADES PROFESIONALES" section; see the class javadoc. */
-    @JsonProperty("professionalSkillsRaw")
-    private String professionalSkillsRaw;
+    /** "Choose N from a category/list" entries of "HABILIDADES COMUNES"; see {@link ProfessionSkillGrant}. */
+    @JacksonXmlElementWrapper(localName = "commonSkillChoices")
+    @JacksonXmlProperty(localName = "commonSkillGrant")
+    private List<ProfessionSkillGrant> commonSkillChoices;
 
-    /** Verbatim "HABILIDADES RESTRINGIDAS" section; see the class javadoc. */
-    @JsonProperty("restrictedSkillsRaw")
-    private String restrictedSkillsRaw;
+    /** Same as {@link #commonSkillIds}, for "HABILIDADES PROFESIONALES". */
+    @JacksonXmlElementWrapper(localName = "professionalSkillIds")
+    @JacksonXmlProperty(localName = "professionalSkillId")
+    private List<String> professionalSkillIds;
+
+    /** Same as {@link #commonSkillChoices}, for "HABILIDADES PROFESIONALES". */
+    @JacksonXmlElementWrapper(localName = "professionalSkillChoices")
+    @JacksonXmlProperty(localName = "professionalSkillGrant")
+    private List<ProfessionSkillGrant> professionalSkillChoices;
+
+    /** Same as {@link #commonSkillIds}, for "HABILIDADES RESTRINGIDAS". */
+    @JacksonXmlElementWrapper(localName = "restrictedSkillIds")
+    @JacksonXmlProperty(localName = "restrictedSkillId")
+    private List<String> restrictedSkillIds;
+
+    /** Same as {@link #commonSkillChoices}, for "HABILIDADES RESTRINGIDAS". */
+    @JacksonXmlElementWrapper(localName = "restrictedSkillChoices")
+    @JacksonXmlProperty(localName = "restrictedSkillGrant")
+    private List<ProfessionSkillGrant> restrictedSkillChoices;
 
     /** Verbatim "DESARROLLO DE HECHIZOS" section (only present for spell-casting professions). */
     @JsonProperty("magicCostsRaw")
@@ -139,28 +158,38 @@ public class Profession extends Element {
         this.categoryCostsRaw = categoryCostsRaw;
     }
 
-    public String getCommonSkillsRaw() {
-        return commonSkillsRaw;
+    public List<String> getCommonSkillIds() { return commonSkillIds == null ? Collections.emptyList() : commonSkillIds; }
+    public void setCommonSkillIds(List<String> commonSkillIds) { this.commonSkillIds = commonSkillIds; }
+    public List<ProfessionSkillGrant> getCommonSkillChoices() { return commonSkillChoices == null ? Collections.emptyList() : commonSkillChoices; }
+    public void setCommonSkillChoices(List<ProfessionSkillGrant> commonSkillChoices) { this.commonSkillChoices = commonSkillChoices; }
+
+    public List<String> getProfessionalSkillIds() { return professionalSkillIds == null ? Collections.emptyList() : professionalSkillIds; }
+    public void setProfessionalSkillIds(List<String> professionalSkillIds) { this.professionalSkillIds = professionalSkillIds; }
+    public List<ProfessionSkillGrant> getProfessionalSkillChoices() { return professionalSkillChoices == null ? Collections.emptyList() : professionalSkillChoices; }
+    public void setProfessionalSkillChoices(List<ProfessionSkillGrant> professionalSkillChoices) { this.professionalSkillChoices = professionalSkillChoices; }
+
+    public List<String> getRestrictedSkillIds() { return restrictedSkillIds == null ? Collections.emptyList() : restrictedSkillIds; }
+    public void setRestrictedSkillIds(List<String> restrictedSkillIds) { this.restrictedSkillIds = restrictedSkillIds; }
+    public List<ProfessionSkillGrant> getRestrictedSkillChoices() { return restrictedSkillChoices == null ? Collections.emptyList() : restrictedSkillChoices; }
+    public void setRestrictedSkillChoices(List<ProfessionSkillGrant> restrictedSkillChoices) { this.restrictedSkillChoices = restrictedSkillChoices; }
+
+    /**
+     * Whether this profession grants {@code skillId} outright as one of its "HABILIDADES COMUNES"
+     * (only the fixed {@link #getCommonSkillIds()}, not the "choose N" {@link #getCommonSkillChoices()}
+     * entries, matching the legacy {@code Profession#isCommon(Skill)} exactly).
+     */
+    public boolean isCommonSkill(String skillId) {
+        return getCommonSkillIds().contains(skillId);
     }
 
-    public void setCommonSkillsRaw(String commonSkillsRaw) {
-        this.commonSkillsRaw = commonSkillsRaw;
+    /** Same as {@link #isCommonSkill(String)}, for "HABILIDADES RESTRINGIDAS" ({@code Profession#isRestricted(Skill)}). */
+    public boolean isRestrictedSkill(String skillId) {
+        return getRestrictedSkillIds().contains(skillId);
     }
 
-    public String getProfessionalSkillsRaw() {
-        return professionalSkillsRaw;
-    }
-
-    public void setProfessionalSkillsRaw(String professionalSkillsRaw) {
-        this.professionalSkillsRaw = professionalSkillsRaw;
-    }
-
-    public String getRestrictedSkillsRaw() {
-        return restrictedSkillsRaw;
-    }
-
-    public void setRestrictedSkillsRaw(String restrictedSkillsRaw) {
-        this.restrictedSkillsRaw = restrictedSkillsRaw;
+    /** Same as {@link #isCommonSkill(String)}, for "HABILIDADES PROFESIONALES" ({@code Profession#isProfessional(Skill)}). */
+    public boolean isProfessionalSkill(String skillId) {
+        return getProfessionalSkillIds().contains(skillId);
     }
 
     public String getMagicCostsRaw() {

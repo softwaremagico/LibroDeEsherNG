@@ -119,8 +119,26 @@ Urbana	4</categoryCostsRaw>
       <characteristic>MEMORY</characteristic>
       <characteristic>PRESENCE</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>{Supervivencia; Supervivencia (Montañas); Supervivencia (Bosques); Supervivencia (Desiertos); Supervivencia (Llanuras)}
-{Montar; Forrajear; Predicción del Clima}</commonSkillsRaw>
+    <commonSkillChoices>
+      <commonSkillGrant>
+        <ranksToChoose>1</ranksToChoose>
+        <skillOptions>
+          <skillId>supervivencia</skillId>
+          <skillId>supervivenciaMountains</skillId>
+          <skillId>supervivenciaBosques</skillId>
+          <skillId>supervivenciaDesiertos</skillId>
+          <skillId>supervivenciaPlains</skillId>
+        </skillOptions>
+      </commonSkillGrant>
+      <commonSkillGrant>
+        <ranksToChoose>1</ranksToChoose>
+        <skillOptions>
+          <skillId>montar</skillId>
+          <skillId>forrajear</skillId>
+          <skillId>predictionOfTheClima</skillId>
+        </skillOptions>
+      </commonSkillGrant>
+    </commonSkillChoices>
     <id>barbarian</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	28
@@ -172,7 +190,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <en>Barbarian</en>
       <es>Bárbaro</es>
     </name>
-    <professionalSkillsRaw>Religión</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>religion</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -193,7 +213,13 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Canalización, Agenciar, Callejeo, Disimulo, Instinto Urbano</restrictedSkillsRaw>
+    <restrictedSkillIds>
+      <restrictedSkillId>channeling</restrictedSkillId>
+      <restrictedSkillId>agenciar</restrictedSkillId>
+      <restrictedSkillId>streetSmarts</restrictedSkillId>
+      <restrictedSkillId>disimulo</restrictedSkillId>
+      <restrictedSkillId>instintoUrbano</restrictedSkillId>
+    </restrictedSkillIds>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>

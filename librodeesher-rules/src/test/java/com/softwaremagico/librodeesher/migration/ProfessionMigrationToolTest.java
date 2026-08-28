@@ -94,8 +94,10 @@ public class ProfessionMigrationToolTest {
             Assert.assertEquals(knowledgeBonus.getBonus(), Integer.valueOf(10));
 
             Assert.assertTrue(mago.getCategoryCostsRaw().contains("Armadura·Ligera"));
-            Assert.assertTrue(mago.getCommonSkillsRaw().contains("Meditación"));
-            Assert.assertEquals(mago.getProfessionalSkillsRaw(), "Ninguna");
+            Assert.assertEquals(mago.getCommonSkillIds(), List.of("senseOfTiempo", "meditation"));
+            Assert.assertTrue(mago.getCommonSkillChoices().isEmpty());
+            Assert.assertTrue(mago.getProfessionalSkillIds().isEmpty());
+            Assert.assertTrue(mago.getProfessionalSkillChoices().isEmpty());
             Assert.assertTrue(mago.getMagicCostsRaw().contains("Lista Básica"));
 
             Assert.assertEquals(mago.getTrainingCosts().size(), 2);
@@ -108,6 +110,81 @@ public class ProfessionMigrationToolTest {
             Assert.assertEquals(forbiddenTraining.getType(), TrainingType.FORBIDDEN);
             Assert.assertEquals(forbiddenTraining.getCost(), Integer.valueOf(37));
             Assert.assertEquals(forbiddenTraining.getCostNotMagic(), Integer.valueOf(40));
+        } finally {
+            deleteRecursively(sourceRoot);
+            deleteRecursively(targetRoot);
+        }
+    }
+
+    @Test
+    public void migratesSkillChoiceSyntax() throws IOException {
+        final Path sourceRoot = Files.createTempDirectory("librodeesher-profession-choice-source");
+        final Path targetRoot = Files.createTempDirectory("librodeesher-profession-choice-target");
+        try {
+            Files.createDirectories(sourceRoot.resolve("rolemaster"));
+            Files.writeString(sourceRoot.resolve("rolemaster/categorias.txt"), String.join("\n",
+                    "Oficios(Ofi)\tAg/Ra/Ag\tEstándar\tCocina, Costura",
+                    ""), StandardCharsets.UTF_8);
+
+            final Path professionsDir = sourceRoot.resolve("rolemaster/modulos/Basico/profesiones");
+            Files.createDirectories(professionsDir);
+            Files.writeString(professionsDir.resolve("Explorador.txt"), String.join("\n",
+                    "#CARACTERÍSTICAS POR ORDEN",
+                    "####################################",
+                    "Indiferente",
+                    "",
+                    "#REINOS DE MAGIA",
+                    "####################################",
+                    "Esencia",
+                    "",
+                    "#BONIFICACIÓN POR PROFESIÓN",
+                    "####################################",
+                    "Oficios\t5",
+                    "",
+                    "#HABILIDADES Y CATEGORÍAS DE HABILIDADES",
+                    "####################################",
+                    "Oficios\t2/5",
+                    "",
+                    "# HABILIDADES COMUNES",
+                    "####################################",
+                    "Sentido del Tiempo, Oficios#1, {Boxeo; Lucha Libre}#1, {Percepción del Entorno}#1",
+                    "",
+                    "#HABILIDADES PROFESIONALES",
+                    "####################################",
+                    "{Montar; Forrajear; Predicción del Clima}",
+                    "",
+                    "#HABILIDADES RESTRINGIDAS",
+                    "####################################",
+                    "Ninguna",
+                    "",
+                    "#DESARROLLO DE HECHIZOS",
+                    "####################################",
+                    "",
+                    "#ADIESTRAMIENTO",
+                    "####################################",
+                    "",
+                    "### FIN PROFESION ###",
+                    ""), StandardCharsets.UTF_8);
+
+            final int written = ProfessionMigrationTool.migrate(sourceRoot, targetRoot);
+            Assert.assertEquals(written, 1);
+
+            final Profession explorador = readGeneratedFile(targetRoot.resolve("Core/professions.xml")).get(0);
+
+            Assert.assertEquals(explorador.getCommonSkillIds(), List.of("senseOfTiempo"));
+            Assert.assertEquals(explorador.getCommonSkillChoices().size(), 3);
+            Assert.assertEquals(explorador.getCommonSkillChoices().get(0).getCategoryId(), "crafts");
+            Assert.assertEquals(explorador.getCommonSkillChoices().get(0).getRanksToChoose(), Integer.valueOf(1));
+            Assert.assertEquals(explorador.getCommonSkillChoices().get(1).getSkillOptions(), List.of("boxeo", "luchaLibre"));
+            Assert.assertEquals(explorador.getCommonSkillChoices().get(2).getSkillOptions(),
+                    List.of("perceptionOfTheEnvironmentCiudades", "perceptionOfTheEnvironmentCombat",
+                            "perceptionOfTheEnvironmentDurmiendo", "perceptionOfTheEnvironmentExploration"));
+
+            Assert.assertTrue(explorador.getProfessionalSkillIds().isEmpty());
+            Assert.assertEquals(explorador.getProfessionalSkillChoices().size(), 1);
+            Assert.assertEquals(explorador.getProfessionalSkillChoices().get(0).getRanksToChoose(), Integer.valueOf(1));
+            Assert.assertEquals(explorador.getProfessionalSkillChoices().get(0).getSkillOptions(),
+                    List.of("montar", "forrajear", "predictionOfTheClima"));
         } finally {
             deleteRecursively(sourceRoot);
             deleteRecursively(targetRoot);

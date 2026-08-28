@@ -127,7 +127,10 @@ Urbana	2/5</categoryCostsRaw>
       <characteristic>STRENGTH</characteristic>
       <characteristic>CONSTITUTION</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Sentido del Tiempo, Conocimiento de los Planos</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+      <commonSkillId>loreOfPlanes</commonSkillId>
+    </commonSkillIds>
     <id>elementalist</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -194,7 +197,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Elementalist</en>
       <es>Elementalista</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -203,7 +205,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
+    <restrictedSkillIds>
+      <restrictedSkillId>channeling</restrictedSkillId>
+    </restrictedSkillIds>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>

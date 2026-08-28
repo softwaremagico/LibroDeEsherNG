@@ -135,7 +135,9 @@ Urbana	3/7</categoryCostsRaw>
       <characteristic>INTUITION</characteristic>
       <characteristic>PRESENCE</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Sentido del Tiempo</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+    </commonSkillIds>
     <id>monk</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
@@ -192,7 +194,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       <en>Monk</en>
       <es>Monje</es>
     </name>
-    <professionalSkillsRaw>Meditación</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>meditation</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -201,7 +205,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
+    <restrictedSkillIds>
+      <restrictedSkillId>channeling</restrictedSkillId>
+    </restrictedSkillIds>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>

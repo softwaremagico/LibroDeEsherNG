@@ -139,7 +139,15 @@ Urbana	3</categoryCostsRaw>
       <characteristic>EMPATHY</characteristic>
       <characteristic>REASONING</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>MNatemáticas Basícas, Canalización, Sentido de la Dirección, Adivinación, Conocimiento de la Advinación, Meditación, Sentido del Tiempo</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>mathematicsBasic</commonSkillId>
+      <commonSkillId>channeling</commonSkillId>
+      <commonSkillId>senseOfDirection</commonSkillId>
+      <commonSkillId>divination</commonSkillId>
+      <commonSkillId>loreOfDivination</commonSkillId>
+      <commonSkillId>meditation</commonSkillId>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+    </commonSkillIds>
     <id>astrologer</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -196,7 +204,11 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Astrologer</en>
       <es>Astrólogo</es>
     </name>
-    <professionalSkillsRaw>Astronomía, Orientación Celeste, Predicción del Clima</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>astronomy</professionalSkillId>
+      <professionalSkillId>orientationCeleste</professionalSkillId>
+      <professionalSkillId>predictionOfTheClima</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>true</choice>
@@ -206,7 +218,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -574,7 +585,13 @@ Urbana	2/4</categoryCostsRaw>
       <characteristic>STRENGTH</characteristic>
       <characteristic>INTUITION</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Meditación, Sentido del Tiempo, Detectar Mentiras, Maestría de los Hechizos, Hipnosi</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>meditation</commonSkillId>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+      <commonSkillId>detectingLies</commonSkillId>
+      <commonSkillId>masteryOfSpells</commonSkillId>
+      <commonSkillId>hipnosi</commonSkillId>
+    </commonSkillIds>
     <id>encantador</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -631,7 +648,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Encantador</en>
       <es>Encantador</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>true</choice>
@@ -641,7 +657,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -989,7 +1004,10 @@ Urbana	4</categoryCostsRaw>
       <characteristic>SELF_DISCIPLINE</characteristic>
       <characteristic>INTUITION</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Táctica, Ingeniería de Asedio</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>tactics</commonSkillId>
+      <commonSkillId>engineeringOfAsedio</commonSkillId>
+    </commonSkillIds>
     <id>maestroOfWeapons</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
@@ -1046,7 +1064,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       <en>Maestro of Weapons</en>
       <es>Maestro de Armas</es>
     </name>
-    <professionalSkillsRaw>Organización Militar</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>organizationMilitar</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -1055,7 +1075,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
+    <restrictedSkillIds>
+      <restrictedSkillId>channeling</restrictedSkillId>
+    </restrictedSkillIds>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -1415,7 +1437,14 @@ Urbana	3/5</categoryCostsRaw>
       <characteristic>CONSTITUTION</characteristic>
       <characteristic>STRENGTH</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Conocimiento de los Artefactos, Historia, Conocimiento de las Advincaciones, Detectar Mentiras, Orientación Celeste, Sentido del Tiempo</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>loreOfArtifacts</commonSkillId>
+      <commonSkillId>history</commonSkillId>
+      <commonSkillId>loreOfAdvincaciones</commonSkillId>
+      <commonSkillId>detectingLies</commonSkillId>
+      <commonSkillId>orientationCeleste</commonSkillId>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+    </commonSkillIds>
     <id>vidente</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -1472,7 +1501,10 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Vidente</en>
       <es>Vidente</es>
     </name>
-    <professionalSkillsRaw>Advinación, Meditación</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>divination</professionalSkillId>
+      <professionalSkillId>meditation</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -1481,7 +1513,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
+    <restrictedSkillIds>
+      <restrictedSkillId>channeling</restrictedSkillId>
+    </restrictedSkillIds>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>

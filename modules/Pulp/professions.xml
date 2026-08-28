@@ -86,9 +86,21 @@ Urbana	3/8</categoryCostsRaw>
       <characteristic>AGILITY</characteristic>
       <characteristic>QUICKNESS</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Administración
-Investigación
-{Percepción del Entorno}#1</commonSkillsRaw>
+    <commonSkillChoices>
+      <commonSkillGrant>
+        <ranksToChoose>1</ranksToChoose>
+        <skillOptions>
+          <skillId>perceptionOfTheEnvironmentCiudades</skillId>
+          <skillId>perceptionOfTheEnvironmentCombat</skillId>
+          <skillId>perceptionOfTheEnvironmentDurmiendo</skillId>
+          <skillId>perceptionOfTheEnvironmentExploration</skillId>
+        </skillOptions>
+      </commonSkillGrant>
+    </commonSkillChoices>
+    <commonSkillIds>
+      <commonSkillId>administration</commonSkillId>
+      <commonSkillId>investigation</commonSkillId>
+    </commonSkillIds>
     <id>academicPulp</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	35
@@ -140,7 +152,12 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <en>Academic (Pulp)</en>
       <es>Académico (Pulp)</es>
     </name>
-    <professionalSkillsRaw>Conocimiento·Académico#1</professionalSkillsRaw>
+    <professionalSkillChoices>
+      <professionalSkillGrant>
+        <categoryId>loreAcademic</categoryId>
+        <ranksToChoose>1</ranksToChoose>
+      </professionalSkillGrant>
+    </professionalSkillChoices>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -161,7 +178,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -572,7 +588,12 @@ Urbana	2/5</categoryCostsRaw>
       <characteristic>REASONING</characteristic>
       <characteristic>CONSTITUTION</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Influencia#1</commonSkillsRaw>
+    <commonSkillChoices>
+      <commonSkillGrant>
+        <categoryId>influence</categoryId>
+        <ranksToChoose>1</ranksToChoose>
+      </commonSkillGrant>
+    </commonSkillChoices>
     <id>bardPulp</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	12/12
@@ -629,7 +650,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       <en>Bard (Pulp)</en>
       <es>Bardo (Pulp)</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -638,7 +658,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -1081,7 +1100,32 @@ Urbana	1/3</categoryCostsRaw>
       <characteristic>EMPATHY</characteristic>
       <characteristic>PRESENCE</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Embaucar, {Conocimiento·Técnico}#1, {Boxeo; Placaje; Lucha Libre}#1, {Percepción del Entorno}#1</commonSkillsRaw>
+    <commonSkillChoices>
+      <commonSkillGrant>
+        <categoryId>loreTechnical</categoryId>
+        <ranksToChoose>1</ranksToChoose>
+      </commonSkillGrant>
+      <commonSkillGrant>
+        <ranksToChoose>1</ranksToChoose>
+        <skillOptions>
+          <skillId>boxeo</skillId>
+          <skillId>placaje</skillId>
+          <skillId>luchaLibre</skillId>
+        </skillOptions>
+      </commonSkillGrant>
+      <commonSkillGrant>
+        <ranksToChoose>1</ranksToChoose>
+        <skillOptions>
+          <skillId>perceptionOfTheEnvironmentCiudades</skillId>
+          <skillId>perceptionOfTheEnvironmentCombat</skillId>
+          <skillId>perceptionOfTheEnvironmentDurmiendo</skillId>
+          <skillId>perceptionOfTheEnvironmentExploration</skillId>
+        </skillOptions>
+      </commonSkillGrant>
+    </commonSkillChoices>
+    <commonSkillIds>
+      <commonSkillId>embaucar</commonSkillId>
+    </commonSkillIds>
     <id>roguePulp</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	30
@@ -1133,7 +1177,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <en>Rogue (Pulp)</en>
       <es>Bribón (Pulp)</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -1154,7 +1197,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -1597,7 +1639,12 @@ Técnica/Comercio·General	2/5
 Técnica/Comercio·Profesional	6
 Técnica/Comercio·Vocacional	3/9
 Urbana	2/5</categoryCostsRaw>
-    <commonSkillsRaw>Oficios#1</commonSkillsRaw>
+    <commonSkillChoices>
+      <commonSkillGrant>
+        <categoryId>crafts</categoryId>
+        <ranksToChoose>1</ranksToChoose>
+      </commonSkillGrant>
+    </commonSkillChoices>
     <id>legoPulp</id>
     <indifferentToCharacteristics>true</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	20
@@ -1649,7 +1696,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <en>Lego (Pulp)</en>
       <es>Lego (Pulp)</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -1670,7 +1716,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
+    <restrictedSkillIds>
+      <restrictedSkillId>channeling</restrictedSkillId>
+    </restrictedSkillIds>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -2089,12 +2137,19 @@ Urbana	2/4</categoryCostsRaw>
       <characteristic>REASONING</characteristic>
       <characteristic>PRESENCE</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Percepción del Entorno: Combate
-Frenesí
-Liderazgo
-Boxeo
-Placaje
-Maniobras de Combate#1</commonSkillsRaw>
+    <commonSkillChoices>
+      <commonSkillGrant>
+        <categoryId>combatManeuvers</categoryId>
+        <ranksToChoose>1</ranksToChoose>
+      </commonSkillGrant>
+    </commonSkillChoices>
+    <commonSkillIds>
+      <commonSkillId>perceptionOfTheEnvironmentCombat</commonSkillId>
+      <commonSkillId>frenzy</commonSkillId>
+      <commonSkillId>liderazgo</commonSkillId>
+      <commonSkillId>boxeo</commonSkillId>
+      <commonSkillId>placaje</commonSkillId>
+    </commonSkillIds>
     <id>fighterPulp</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	50
@@ -2146,7 +2201,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <en>Fighter (Pulp)</en>
       <es>Luchador (Pulp)</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -2167,7 +2221,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -2546,9 +2599,21 @@ Urbana	3/8</categoryCostsRaw>
       <characteristic>AGILITY</characteristic>
       <characteristic>QUICKNESS</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Administración
-Investigación
-{Percepción del Entorno}#1</commonSkillsRaw>
+    <commonSkillChoices>
+      <commonSkillGrant>
+        <ranksToChoose>1</ranksToChoose>
+        <skillOptions>
+          <skillId>perceptionOfTheEnvironmentCiudades</skillId>
+          <skillId>perceptionOfTheEnvironmentCombat</skillId>
+          <skillId>perceptionOfTheEnvironmentDurmiendo</skillId>
+          <skillId>perceptionOfTheEnvironmentExploration</skillId>
+        </skillOptions>
+      </commonSkillGrant>
+    </commonSkillChoices>
+    <commonSkillIds>
+      <commonSkillId>administration</commonSkillId>
+      <commonSkillId>investigation</commonSkillId>
+    </commonSkillIds>
     <id>technicalPulp</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	35
@@ -2600,7 +2665,12 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <en>Technical (Pulp)</en>
       <es>Técnico (Pulp)</es>
     </name>
-    <professionalSkillsRaw>Conocimiento·Académico#1</professionalSkillsRaw>
+    <professionalSkillChoices>
+      <professionalSkillGrant>
+        <categoryId>loreAcademic</categoryId>
+        <ranksToChoose>1</ranksToChoose>
+      </professionalSkillGrant>
+    </professionalSkillChoices>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -2621,7 +2691,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>

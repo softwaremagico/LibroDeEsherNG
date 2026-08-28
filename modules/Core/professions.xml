@@ -143,7 +143,9 @@ Urbana	2/4</categoryCostsRaw>
       <characteristic>REASONING</characteristic>
       <characteristic>CONSTITUTION</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Sentido del Tiempo</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+    </commonSkillIds>
     <id>bard</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
@@ -200,7 +202,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       <en>Bard</en>
       <es>Bardo</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -209,7 +210,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -575,7 +575,12 @@ Urbana	1/3</categoryCostsRaw>
       <characteristic>EMPATHY</characteristic>
       <characteristic>PRESENCE</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Embaucar, Abrir Cerraduras, Boxeo, Percepción del Entorno: Ciudades</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>embaucar</commonSkillId>
+      <commonSkillId>abrirLocks</commonSkillId>
+      <commonSkillId>boxeo</commonSkillId>
+      <commonSkillId>perceptionOfTheEnvironmentCiudades</commonSkillId>
+    </commonSkillIds>
     <id>rogue</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	15
@@ -627,7 +632,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <en>Rogue</en>
       <es>Bribón</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -648,7 +652,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -1034,7 +1037,10 @@ Urbana	3</categoryCostsRaw>
       <characteristic>AGILITY</characteristic>
       <characteristic>QUICKNESS</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Sentido del Tiempo, Meditación</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+      <commonSkillId>meditation</commonSkillId>
+    </commonSkillIds>
     <id>cleric</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -1091,7 +1097,11 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Cleric</en>
       <es>Clérigo</es>
     </name>
-    <professionalSkillsRaw>Religión, Adivinación, Percepción del Poder</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>religion</professionalSkillId>
+      <professionalSkillId>divination</professionalSkillId>
+      <professionalSkillId>perceptionOfThePower</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -1100,7 +1110,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -1462,7 +1471,12 @@ Urbana	2/4</categoryCostsRaw>
       <characteristic>CONSTITUTION</characteristic>
       <characteristic>PRESENCE</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Detectar Emboscadas, Sentido del Tiempo, Detectar Trampas, Buscar</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>detectingEmboscadas</commonSkillId>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+      <commonSkillId>detectingTrampas</commonSkillId>
+      <commonSkillId>buscar</commonSkillId>
+    </commonSkillIds>
     <id>seeker</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
@@ -1519,7 +1533,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       <en>Seeker</en>
       <es>Indagador</es>
     </name>
-    <professionalSkillsRaw>Abrir Cerraduras</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>abrirLocks</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -1528,7 +1544,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -1882,7 +1897,21 @@ Urbana	1/2</categoryCostsRaw>
       <characteristic>INTUITION</characteristic>
       <characteristic>CONSTITUTION</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Embaucar, Maquinaria, {Percepción del Entorno: Ciudades; Percepción del Entorno: Combate; Percepción del Entorno: Durmiendo; Percepción del Entorno: Exploración}</commonSkillsRaw>
+    <commonSkillChoices>
+      <commonSkillGrant>
+        <ranksToChoose>1</ranksToChoose>
+        <skillOptions>
+          <skillId>perceptionOfTheEnvironmentCiudades</skillId>
+          <skillId>perceptionOfTheEnvironmentCombat</skillId>
+          <skillId>perceptionOfTheEnvironmentDurmiendo</skillId>
+          <skillId>perceptionOfTheEnvironmentExploration</skillId>
+        </skillOptions>
+      </commonSkillGrant>
+    </commonSkillChoices>
+    <commonSkillIds>
+      <commonSkillId>embaucar</commonSkillId>
+      <commonSkillId>maquinaria</commonSkillId>
+    </commonSkillIds>
     <id>thief</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	18
@@ -1934,7 +1963,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <en>Thief</en>
       <es>Ladrón</es>
     </name>
-    <professionalSkillsRaw>Abrir Cerraduras</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>abrirLocks</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -1955,7 +1986,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -2293,12 +2323,19 @@ Urbana	2/4</categoryCostsRaw>
       <characteristic>REASONING</characteristic>
       <characteristic>PRESENCE</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Percepción del Entorno: Combate
-Frenesí
-Liderazgo
-Boxeo
-Placaje
-Maniobras de Combate#1</commonSkillsRaw>
+    <commonSkillChoices>
+      <commonSkillGrant>
+        <categoryId>combatManeuvers</categoryId>
+        <ranksToChoose>1</ranksToChoose>
+      </commonSkillGrant>
+    </commonSkillChoices>
+    <commonSkillIds>
+      <commonSkillId>perceptionOfTheEnvironmentCombat</commonSkillId>
+      <commonSkillId>frenzy</commonSkillId>
+      <commonSkillId>liderazgo</commonSkillId>
+      <commonSkillId>boxeo</commonSkillId>
+      <commonSkillId>placaje</commonSkillId>
+    </commonSkillIds>
     <id>fighter</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	25
@@ -2350,7 +2387,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <en>Fighter</en>
       <es>Luchador</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -2371,7 +2407,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -2709,7 +2744,10 @@ Urbana	3</categoryCostsRaw>
       <characteristic>STRENGTH</characteristic>
       <characteristic>CONSTITUTION</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Sentido del Tiempo, Meditación</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+      <commonSkillId>meditation</commonSkillId>
+    </commonSkillIds>
     <id>wizard</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -2766,7 +2804,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Wizard</en>
       <es>Mago</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -2775,7 +2812,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -3133,7 +3169,11 @@ Urbana	3</categoryCostsRaw>
       <characteristic>CONSTITUTION</characteristic>
       <characteristic>STRENGTH</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Detectar Mentiras, Sentido del Tiempo, Seducción</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>detectingLies</commonSkillId>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+      <commonSkillId>seduction</commonSkillId>
+    </commonSkillIds>
     <id>mentalista</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -3190,7 +3230,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Mentalista</en>
       <es>Mentalista</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -3199,7 +3238,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -3557,7 +3595,6 @@ Urbana	3/6</categoryCostsRaw>
       <characteristic>MEMORY</characteristic>
       <characteristic>PRESENCE</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Ninguna</commonSkillsRaw>
     <id>montaraz</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
@@ -3614,7 +3651,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Montaraz</en>
       <es>Montaraz</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -3623,7 +3659,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>

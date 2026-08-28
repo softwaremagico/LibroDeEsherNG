@@ -139,7 +139,15 @@ Urbana	3/7</categoryCostsRaw>
       <characteristic>MEMORY</characteristic>
       <characteristic>INTUITION</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Sentido del Tiempo, Artes Marciales·Maniobras de Combate#1</commonSkillsRaw>
+    <commonSkillChoices>
+      <commonSkillGrant>
+        <categoryId>martialArtsCombatManeuvers</categoryId>
+        <ranksToChoose>1</ranksToChoose>
+      </commonSkillGrant>
+    </commonSkillChoices>
+    <commonSkillIds>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+    </commonSkillIds>
     <id>monkTaoist</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
@@ -196,7 +204,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       <en>Monk Taoist</en>
       <es>Monje Taoísta</es>
     </name>
-    <professionalSkillsRaw>Meditación</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>meditation</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -205,7 +215,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
+    <restrictedSkillIds>
+      <restrictedSkillId>channeling</restrictedSkillId>
+    </restrictedSkillIds>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -569,7 +581,15 @@ Urbana	3/7</categoryCostsRaw>
       <characteristic>INTUITION</characteristic>
       <characteristic>EMPATHY</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Sentido del Tiempo, Artes Marciales·Maniobras de Combate#1</commonSkillsRaw>
+    <commonSkillChoices>
+      <commonSkillGrant>
+        <categoryId>martialArtsCombatManeuvers</categoryId>
+        <ranksToChoose>1</ranksToChoose>
+      </commonSkillGrant>
+    </commonSkillChoices>
+    <commonSkillIds>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+    </commonSkillIds>
     <id>monkZen</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
@@ -626,7 +646,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       <en>Monk Zen</en>
       <es>Monje Zen</es>
     </name>
-    <professionalSkillsRaw>Meditación</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>meditation</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -635,7 +657,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
+    <restrictedSkillIds>
+      <restrictedSkillId>channeling</restrictedSkillId>
+    </restrictedSkillIds>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>

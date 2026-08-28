@@ -119,7 +119,14 @@ Urbana	3</categoryCostsRaw>
       <characteristic>CONSTITUTION</characteristic>
       <characteristic>STRENGTH</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Sentido del Tiempo, Ritual Mágico, Maestría de los Hechizos, Meditación, Canalización, Conocimiento de lod Círculos</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+      <commonSkillId>ritualArcane</commonSkillId>
+      <commonSkillId>masteryOfSpells</commonSkillId>
+      <commonSkillId>meditation</commonSkillId>
+      <commonSkillId>channeling</commonSkillId>
+      <commonSkillId>loreOfLodCircles</commonSkillId>
+    </commonSkillIds>
     <id>invocador</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -176,7 +183,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Invocador</en>
       <es>Invocador</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>true</choice>
@@ -186,7 +192,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -542,7 +547,6 @@ Urbana	2/4</categoryCostsRaw>
       <characteristic>EMPATHY</characteristic>
       <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Ninguna</commonSkillsRaw>
     <id>mythic</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
@@ -599,7 +603,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       <en>Mythic</en>
       <es>Mítico</es>
     </name>
-    <professionalSkillsRaw>Religión</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>religion</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -608,7 +614,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -964,7 +969,13 @@ Urbana	3</categoryCostsRaw>
       <characteristic>STRENGTH</characteristic>
       <characteristic>EMPATHY</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Sentido del Tiempo, Meditación, Canalización, Adivinación, Religion</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+      <commonSkillId>meditation</commonSkillId>
+      <commonSkillId>channeling</commonSkillId>
+      <commonSkillId>divination</commonSkillId>
+      <commonSkillId>religion</commonSkillId>
+    </commonSkillIds>
     <id>nefando</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -1021,7 +1032,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Nefando</en>
       <es>Nefando</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>true</choice>
@@ -1031,7 +1041,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>

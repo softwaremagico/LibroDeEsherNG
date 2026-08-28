@@ -131,7 +131,13 @@ Urbana	4</categoryCostsRaw>
       <characteristic>REASONING</characteristic>
       <characteristic>PRESENCE</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Adivinación, Canalización, Meditación, Religión, Sentido del Tiempo</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>divination</commonSkillId>
+      <commonSkillId>channeling</commonSkillId>
+      <commonSkillId>meditation</commonSkillId>
+      <commonSkillId>religion</commonSkillId>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+    </commonSkillIds>
     <id>animista</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -188,7 +194,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Animista</en>
       <es>Animista</es>
     </name>
-    <professionalSkillsRaw>Conocimiento de las Hierbas</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>loreOfHerbs</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -197,7 +205,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -583,7 +590,10 @@ Urbana	3</categoryCostsRaw>
       <characteristic>AGILITY</characteristic>
       <characteristic>QUICKNESS</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Sentido del Tiempo, Meditación</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+      <commonSkillId>meditation</commonSkillId>
+    </commonSkillIds>
     <id>curandero</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -640,7 +650,11 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Curandero</en>
       <es>Curandero</es>
     </name>
-    <professionalSkillsRaw>Religión, Adivinación, Percepción del Poder</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>religion</professionalSkillId>
+      <professionalSkillId>divination</professionalSkillId>
+      <professionalSkillId>perceptionOfThePower</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -649,7 +663,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -991,7 +1004,14 @@ Urbana	3</categoryCostsRaw>
       <characteristic>CONSTITUTION</characteristic>
       <characteristic>STRENGTH</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Adivinación, Canalización, Maestría de los Hechizos, Meditación, Ritual Mágico, Sentido del Tiempo</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>divination</commonSkillId>
+      <commonSkillId>channeling</commonSkillId>
+      <commonSkillId>masteryOfSpells</commonSkillId>
+      <commonSkillId>meditation</commonSkillId>
+      <commonSkillId>ritualArcane</commonSkillId>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+    </commonSkillIds>
     <id>sorcerer</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -1048,7 +1068,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Sorcerer</en>
       <es>Hechicero</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>true</choice>
@@ -1058,7 +1077,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -1412,7 +1430,11 @@ Urbana	3</categoryCostsRaw>
       <characteristic>STRENGTH</characteristic>
       <characteristic>CONSTITUTION</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Maestría de los Hechizos, Meditación, Sentido del Tiempo</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>masteryOfSpells</commonSkillId>
+      <commonSkillId>meditation</commonSkillId>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+    </commonSkillIds>
     <id>illusionist</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -1469,7 +1491,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Illusionist</en>
       <es>Ilusionista</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -1478,7 +1499,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
+    <restrictedSkillIds>
+      <restrictedSkillId>channeling</restrictedSkillId>
+    </restrictedSkillIds>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -1848,7 +1871,12 @@ Técnica/Comercio·General	3/7
 Técnica/Comercio·Profesional	8
 Técnica/Comercio·Vocacional	5/2
 Urbana	2/5</categoryCostsRaw>
-    <commonSkillsRaw>Oficios#1</commonSkillsRaw>
+    <commonSkillChoices>
+      <commonSkillGrant>
+        <categoryId>crafts</categoryId>
+        <ranksToChoose>1</ranksToChoose>
+      </commonSkillGrant>
+    </commonSkillChoices>
     <id>lego</id>
     <indifferentToCharacteristics>true</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	10
@@ -1900,7 +1928,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <en>Lego</en>
       <es>Lego</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -1921,7 +1948,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
+    <restrictedSkillIds>
+      <restrictedSkillId>channeling</restrictedSkillId>
+    </restrictedSkillIds>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -2283,7 +2312,6 @@ Urbana	1/4</categoryCostsRaw>
       <characteristic>INTUITION</characteristic>
       <characteristic>CONSTITUTION</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Ninguna</commonSkillsRaw>
     <id>magente</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
@@ -2340,7 +2368,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       <en>Magente</en>
       <es>Magente</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -2349,7 +2376,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
+    <restrictedSkillIds>
+      <restrictedSkillId>channeling</restrictedSkillId>
+    </restrictedSkillIds>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -2679,7 +2708,15 @@ Urbana	3/6</categoryCostsRaw>
       <characteristic>MEMORY</characteristic>
       <characteristic>REASONING</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Detectar Emboscadas, Maniobras de Combate#1</commonSkillsRaw>
+    <commonSkillChoices>
+      <commonSkillGrant>
+        <categoryId>combatManeuvers</categoryId>
+        <ranksToChoose>1</ranksToChoose>
+      </commonSkillGrant>
+    </commonSkillChoices>
+    <commonSkillIds>
+      <commonSkillId>detectingEmboscadas</commonSkillId>
+    </commonSkillIds>
     <id>monkWarrior</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	20
@@ -2731,7 +2768,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <en>Monk Warrior</en>
       <es>Monje Guerrero</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -2752,7 +2788,11 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Boxeo, Lucha Libre, Canalización</restrictedSkillsRaw>
+    <restrictedSkillIds>
+      <restrictedSkillId>boxeo</restrictedSkillId>
+      <restrictedSkillId>luchaLibre</restrictedSkillId>
+      <restrictedSkillId>channeling</restrictedSkillId>
+    </restrictedSkillIds>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -3118,7 +3158,9 @@ Urbana	3</categoryCostsRaw>
       <characteristic>MEMORY</characteristic>
       <characteristic>REASONING</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Sentido del Tiempo</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+    </commonSkillIds>
     <id>monk</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
@@ -3175,7 +3217,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       <en>Monk</en>
       <es>Monje</es>
     </name>
-    <professionalSkillsRaw>Meditación</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>meditation</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -3184,7 +3228,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
+    <restrictedSkillIds>
+      <restrictedSkillId>channeling</restrictedSkillId>
+    </restrictedSkillIds>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -3554,7 +3600,13 @@ Urbana	2/5</categoryCostsRaw>
       <characteristic>STRENGTH</characteristic>
       <characteristic>INTUITION</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Estabilización Adreanl, Maestría de los Hechizo, Meditación, Ritual Mágica, Sentido del Tiempo</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>stabilizationAdreanl</commonSkillId>
+      <commonSkillId>masteryOfSpell</commonSkillId>
+      <commonSkillId>meditation</commonSkillId>
+      <commonSkillId>ritualMagical</commonSkillId>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+    </commonSkillIds>
     <id>mystic</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -3611,7 +3663,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Mystic</en>
       <es>Místico</es>
     </name>
-    <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
       <realmGrant>
         <choice>true</choice>
@@ -3621,7 +3672,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
+    <restrictedSkillIds>
+      <restrictedSkillId>channeling</restrictedSkillId>
+    </restrictedSkillIds>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -3987,7 +4040,9 @@ Urbana	4</categoryCostsRaw>
       <characteristic>AGILITY</characteristic>
       <characteristic>EMPATHY</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Justar</commonSkillsRaw>
+    <commonSkillIds>
+      <commonSkillId>justar</commonSkillId>
+    </commonSkillIds>
     <id>paladin</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
@@ -4044,7 +4099,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       <en>Paladin</en>
       <es>Paladín</es>
     </name>
-    <professionalSkillsRaw>Religión</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>religion</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -4053,7 +4110,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>
@@ -4411,8 +4467,22 @@ Urbana	3</categoryCostsRaw>
       <characteristic>AGILITY</characteristic>
       <characteristic>QUICKNESS</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Sentido del Tiempo, Estabilización Adrenal, Conocimiento de las Hierbas, Forrajear
-{Cirugía; Cuidados Médicos; Partería}#1</commonSkillsRaw>
+    <commonSkillChoices>
+      <commonSkillGrant>
+        <ranksToChoose>1</ranksToChoose>
+        <skillOptions>
+          <skillId>surgery</skillId>
+          <skillId>cuidadosMedical</skillId>
+          <skillId>midwifery</skillId>
+        </skillOptions>
+      </commonSkillGrant>
+    </commonSkillChoices>
+    <commonSkillIds>
+      <commonSkillId>senseOfTiempo</commonSkillId>
+      <commonSkillId>stabilizationAdrenal</commonSkillId>
+      <commonSkillId>loreOfHerbs</commonSkillId>
+      <commonSkillId>forrajear</commonSkillId>
+    </commonSkillIds>
     <id>healing</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	3/3/3
@@ -4469,7 +4539,10 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
       <en>Healing</en>
       <es>Sanador</es>
     </name>
-    <professionalSkillsRaw>Curación de Animales, Primerio Auxilios</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>healingOfAnimals</professionalSkillId>
+      <professionalSkillId>primerioAuxilios</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>true</choice>
@@ -4479,7 +4552,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>

@@ -6,6 +6,7 @@ import com.softwaremagico.librodeesher.file.ModuleManager;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.ProfessionBonus;
+import com.softwaremagico.librodeesher.profession.ProfessionSkillGrant;
 import com.softwaremagico.librodeesher.profession.ProfessionTrainingCost;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.training.TrainingType;
@@ -16,6 +17,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 /**
@@ -33,7 +35,8 @@ import java.util.stream.Stream;
  *     <li>HABILIDADES Y CATEGORÍAS DE HABILIDADES: category development costs, with special-cased
  *     weapon category handling; kept verbatim, see {@link Profession}'s javadoc.</li>
  *     <li>HABILIDADES COMUNES / PROFESIONALES / RESTRINGIDAS: three sections mixing plain skill names
- *     with a "choose N from {a;b;c}" / "choose N from category#N" syntax; kept verbatim.</li>
+ *     (granted outright) with a "choose N from {a;b;c}" / "choose N from category#N" syntax; fully
+ *     parsed, see {@link Profession#getCommonSkillIds()}/{@link Profession#getCommonSkillChoices()}.</li>
  *     <li>DESARROLLO DE HECHIZOS: spell list development costs by character level range; kept
  *     verbatim.</li>
  *     <li>ADIESTRAMIENTO: "Nombre\tCoste[\tCosteSinMagia]" per-training background point costs, with
@@ -59,6 +62,7 @@ public final class ProfessionMigrationTool {
     public static int migrate(Path sourceRoot, Path modulesTarget) throws IOException {
         final Path modulosDir = sourceRoot.resolve("rolemaster").resolve("modulos");
         final IdAllocator idAllocator = new IdAllocator();
+        final Map<String, String> categoryIndex = CategoryMigrationTool.buildCategoryIndex(sourceRoot);
 
         int written = 0;
         for (final String module : ModuleManager.getAllModules()) {
@@ -70,7 +74,7 @@ public final class ProfessionMigrationTool {
             try (Stream<Path> files = Files.list(professionsDir)) {
                 for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
                         .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
-                    professions.add(readProfessionFile(file, idAllocator));
+                    professions.add(readProfessionFile(file, idAllocator, categoryIndex));
                 }
             }
             if (professions.isEmpty()) {
@@ -83,7 +87,8 @@ public final class ProfessionMigrationTool {
         return written;
     }
 
-    private static Profession readProfessionFile(Path file, IdAllocator idAllocator) throws IOException {
+    private static Profession readProfessionFile(Path file, IdAllocator idAllocator, Map<String, String> categoryIndex)
+            throws IOException {
         final String fileName = file.getFileName().toString();
         final String professionName = fileName.substring(0, fileName.length() - ".txt".length());
         final SectionCursor cursor = new SectionCursor(Files.readAllLines(file, StandardCharsets.UTF_8));
@@ -94,12 +99,140 @@ public final class ProfessionMigrationTool {
         profession.setMagicRealms(parseMagicRealms(cursor.nextSection()));
         profession.setBonuses(parseBonuses(cursor.nextSection()));
         profession.setCategoryCostsRaw(String.join("\n", cursor.nextSection()));
-        profession.setCommonSkillsRaw(String.join("\n", cursor.nextSection()));
-        profession.setProfessionalSkillsRaw(String.join("\n", cursor.nextSection()));
-        profession.setRestrictedSkillsRaw(String.join("\n", cursor.nextSection()));
+        final ParsedSkillSection common = parseSkillSection(cursor.nextSection(), categoryIndex);
+        profession.setCommonSkillIds(common.fixedSkillIds());
+        profession.setCommonSkillChoices(common.choices());
+        final ParsedSkillSection professional = parseSkillSection(cursor.nextSection(), categoryIndex);
+        profession.setProfessionalSkillIds(professional.fixedSkillIds());
+        profession.setProfessionalSkillChoices(professional.choices());
+        final ParsedSkillSection restricted = parseSkillSection(cursor.nextSection(), categoryIndex);
+        profession.setRestrictedSkillIds(restricted.fixedSkillIds());
+        profession.setRestrictedSkillChoices(restricted.choices());
         profession.setMagicCostsRaw(String.join("\n", cursor.nextSectionOrEmpty()));
         profession.setTrainingCosts(parseTrainingCosts(cursor.nextSectionOrEmpty()));
         return profession;
+    }
+
+    /**
+     * A small, fixed set of skill-name prefixes used by the "HABILIDADES COMUNES/PROFESIONALES/
+     * RESTRINGIDAS" sections' {@code "{<prefix>}#N"} syntax that do not name an actual category
+     * (unlike e.g. {@code "Oficios#1"} or {@code "{Conocimiento·Técnico}#1"}): the legacy application
+     * resolved these against every skill whose name starts with {@code <prefix>} ({@code
+     * SkillFactory#getSkills(String, String)}). Building the full cross-module skill index this would
+     * need in general is significant scope on its own (see {@code SkillMigrationTool}), so this
+     * hardcodes the one prefix actually used across every shipped profession instead.
+     */
+    private static final Map<String, List<String>> SKILL_PREFIX_GROUPS = Map.of(
+            "Percepción del Entorno", List.of(
+                    "perceptionOfTheEnvironmentCiudades", "perceptionOfTheEnvironmentCombat",
+                    "perceptionOfTheEnvironmentDurmiendo", "perceptionOfTheEnvironmentExploration"));
+
+    /**
+     * Known typos in the "HABILIDADES COMUNES/PROFESIONALES/RESTRINGIDAS" skill names, fixed before
+     * translation (rather than left to translate into an accented, un-migratable id): {@code
+     * "Advinación"} (twice, in "GuiaMentalismo/Vidente.txt" and "Astrólogo.txt") for "Adivinación",
+     * and {@code "MNatemáticas Basícas"} (a doubly-mistyped "Matemáticas Básicas", also in
+     * "Astrólogo.txt").
+     *
+     * <p>A handful of other typos/nonexistent skill names are left untouched instead (e.g. "Conocimiento
+     * de lod Círculos", "Hipnosi", "Ritual Mágica", "Estabilización Adreanl", "Primerio Auxilios",
+     * "Maestría de los Hechizo", none of which name a real migrated skill even once corrected, since
+     * "Círculos"/"Hipnosis"/etc. are not skills anywhere in the shipped data): the resulting ids
+     * (already non-accented, so safe to keep) match no real {@code Skill}, which is a faithful match
+     * for the legacy behaviour here (its {@code SkillFactory#getSkill(String)} silently created a new,
+     * standalone "skill" for any never-before-seen name instead of failing, so these grants were
+     * already effectively inert there too).</p>
+     */
+    private static final Map<String, String> SKILL_NAME_TYPO_FIXES = Map.of(
+            "Advinación", "Adivinación",
+            "Conocimiento de la Advinación", "Conocimiento de la Adivinación",
+            "MNatemáticas Basícas", "Matemáticas Básicas");
+
+    private static String translateSkillName(String rawName) {
+        return Translations.toEnglishId(SKILL_NAME_TYPO_FIXES.getOrDefault(rawName, rawName));
+    }
+
+    /**
+     * Parses a "HABILIDADES COMUNES"/"PROFESIONALES"/"RESTRINGIDAS" section: comma-separated tokens,
+     * each either a plain skill name (granted outright) or a choice (a {@code "<X>#N"} entry, or a
+     * bracketed {@code "{alt1;alt2}"} group with no explicit {@code "#N"}, defaulting to {@code N=1}
+     * like {@link ChoiceGroup} does), where {@code <X>} is a category name (with or without
+     * surrounding braces), an explicit {@code {alt1;alt2}} alternative list, or one of {@link
+     * #SKILL_PREFIX_GROUPS}.
+     */
+    private static ParsedSkillSection parseSkillSection(List<String> sectionLines, Map<String, String> categoryIndex) {
+        final List<String> fixedSkillIds = new ArrayList<>();
+        final List<ProfessionSkillGrant> choices = new ArrayList<>();
+        for (final String line : sectionLines) {
+            if (isNone(line)) {
+                continue;
+            }
+            for (final String token : splitTopLevelComma(line)) {
+                if (token.contains("#") || token.startsWith("{")) {
+                    choices.add(parseSkillChoice(token, categoryIndex));
+                } else {
+                    fixedSkillIds.add(translateSkillName(token));
+                }
+            }
+        }
+        return new ParsedSkillSection(fixedSkillIds, choices);
+    }
+
+    private static ProfessionSkillGrant parseSkillChoice(String token, Map<String, String> categoryIndex) {
+        final int hashIndex = token.lastIndexOf('#');
+        final String content = (hashIndex >= 0 ? token.substring(0, hashIndex) : token)
+                .replace("{", "").replace("}", "").trim();
+        final Integer ranksToChoose = hashIndex >= 0 ? Integer.valueOf(token.substring(hashIndex + 1).trim()) : 1;
+
+        final String categoryId = categoryIndex.get(content);
+        if (categoryId != null) {
+            return ProfessionSkillGrant.ofCategory(ranksToChoose, categoryId);
+        }
+        if (content.contains(";")) {
+            final List<String> options = new ArrayList<>();
+            for (final String option : content.split(";")) {
+                options.add(translateSkillName(option.trim()));
+            }
+            return ProfessionSkillGrant.ofSkillOptions(ranksToChoose, options);
+        }
+        final List<String> prefixGroup = SKILL_PREFIX_GROUPS.get(content);
+        if (prefixGroup != null) {
+            return ProfessionSkillGrant.ofSkillOptions(ranksToChoose, prefixGroup);
+        }
+        throw new IllegalStateException("Unknown category/skill-prefix in profession skill section: '" + content + "'.");
+    }
+
+    private static boolean isNone(String line) {
+        final String lower = line.toLowerCase();
+        return lower.contains("ninguna") || lower.contains("ninguno") || lower.contains("nothing");
+    }
+
+    /** Splits on {@code ", "} like the legacy parser did, without splitting inside a {@code {...}} group. */
+    private static List<String> splitTopLevelComma(String line) {
+        final List<String> tokens = new ArrayList<>();
+        int depth = 0;
+        final StringBuilder current = new StringBuilder();
+        for (final char c : line.toCharArray()) {
+            if (c == '{') {
+                depth++;
+            } else if (c == '}') {
+                depth--;
+            }
+            if (c == ',' && depth == 0) {
+                tokens.add(current.toString().trim());
+                current.setLength(0);
+            } else {
+                current.append(c);
+            }
+        }
+        if (!current.isEmpty()) {
+            tokens.add(current.toString().trim());
+        }
+        return tokens;
+    }
+
+    /** The result of {@link #parseSkillSection(List, Map)}. */
+    private record ParsedSkillSection(List<String> fixedSkillIds, List<ProfessionSkillGrant> choices) {
     }
 
     private static List<CharacteristicAbbreviation> parseCharacteristicPreferences(List<String> sectionLines) {

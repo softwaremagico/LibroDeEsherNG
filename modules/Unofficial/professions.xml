@@ -115,7 +115,6 @@ Urbana	4</categoryCostsRaw>
       <characteristic>AGILITY</characteristic>
       <characteristic>MEMORY</characteristic>
     </characteristicPreferences>
-    <commonSkillsRaw>Ninguna</commonSkillsRaw>
     <id>lordOfTheChaos</id>
     <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCostsRaw>Lista Básica (1-5)	6/6/6
@@ -172,7 +171,9 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       <en>Lord of the Chaos</en>
       <es>Lord del Caos</es>
     </name>
-    <professionalSkillsRaw>Demonología</professionalSkillsRaw>
+    <professionalSkillIds>
+      <professionalSkillId>demonology</professionalSkillId>
+    </professionalSkillIds>
     <magicRealms>
       <realmGrant>
         <choice>false</choice>
@@ -181,7 +182,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
         </options>
       </realmGrant>
     </magicRealms>
-    <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
     <trainingCosts>
       <trainingCost>

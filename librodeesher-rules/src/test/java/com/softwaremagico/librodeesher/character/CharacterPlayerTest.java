@@ -467,6 +467,18 @@ public class CharacterPlayerTest {
     }
 
     @Test
+    public void professionGrantedCommonSkillCountsAsCommonEvenIfStandardByItself() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("fighter");
+
+        final Skill skill = new Skill("frenzy");
+        skill.setName("Frenesí", "Frenzy");
+
+        Assert.assertTrue(character.isSkillCommon(skill));
+        Assert.assertEquals(character.getSkillRankMultiplier(skill), 2.0);
+    }
+
+    @Test
     public void realRanksAppliesTheMultiplierToBoughtRanks() throws InvalidXmlElementException {
         final CharacterPlayer character = new CharacterPlayer();
         final Skill skill = new Skill("test");
