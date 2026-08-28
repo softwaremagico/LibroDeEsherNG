@@ -30,7 +30,8 @@ public class CultureTest {
     @Test
     public void excludeMarkerWinsOverTheAllMarker() {
         final Culture culture = new Culture("test");
-        culture.setHobbyIds(List.of("all", "exclude:stalking"));
+        culture.setHobbyIds(List.of("all"));
+        culture.setExcludedHobbyIds(List.of("stalking"));
 
         Assert.assertTrue(culture.isHobbySkillAllowed("hunting"));
         Assert.assertFalse(culture.isHobbySkillAllowed("stalking"));

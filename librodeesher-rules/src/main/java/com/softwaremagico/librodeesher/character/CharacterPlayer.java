@@ -1722,14 +1722,80 @@ public class CharacterPlayer {
 	 * Whether the selected race restricts profession {@code professionId} (the "PROFESIONES
 	 * PROHIBIDAS" section), or {@code false} if no race is selected.
 	 */
+	private static final String GROUP_TOKEN_PREFIX = "group:";
+
+	/**
+	 * Whether {@code professionId} matches reference {@code token} from a race's "PROFESIONES
+	 * PROHIBIDAS" section: a plain token matches by id; a {@code "group:"} token matches every
+	 * profession that casts in that magic realm (matching the legacy {@code
+	 * MagicFactory#getSpellCasters(RealmOfMagic)}, resolved here through {@link
+	 * Profession#getMagicRealms()} instead, since no magic-list catalog exists).
+	 */
+	/**
+	 * Whether {@code professionId} matches reference {@code token} from a race's "PROFESIONES
+	 * PROHIBIDAS" section: a plain token matches by id (even if {@code professionId} does not name a
+	 * real, migrated profession - a handful of real race files list one that does not, e.g. a
+	 * training name by mistake, always inert); a {@code "group:"} token matches every profession
+	 * that casts in that magic realm (matching the legacy {@code
+	 * MagicFactory#getSpellCasters(RealmOfMagic)}, resolved here through {@link
+	 * Profession#getMagicRealms()} instead, since no magic-list catalog exists), which needs
+	 * {@code professionId} to actually resolve (never true otherwise).
+	 */
+	private boolean professionMatchesReference(String professionId, String token) throws InvalidXmlElementException {
+		if (!token.startsWith(GROUP_TOKEN_PREFIX)) {
+			return professionId.equals(token);
+		}
+		final RealmOfMagic realm;
+		try {
+			realm = RealmOfMagic.valueOf(token.substring(GROUP_TOKEN_PREFIX.length()).toUpperCase());
+		} catch (final IllegalArgumentException e) {
+			return false;
+		}
+		final Profession profession;
+		try {
+			profession = RulesCatalog.getInstance().getProfession(professionId);
+		} catch (final InvalidXmlElementException e) {
+			return false;
+		}
+		for (final RealmOfMagicGrant grant : profession.getMagicRealms()) {
+			if (grant.getOptions().contains(realm)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Whether {@code professionId} is restricted by the selected race's "PROFESIONES PROHIBIDAS"
+	 * section, or {@code false} if no race is selected. Once {@link Race#getExcludedProfessionIds()}
+	 * is non-empty the section's meaning flips (matching the legacy per-file "exception" flag): the
+	 * union of {@link Race#getRestrictedProfessionIds()} and {@link Race#getExcludedProfessionIds()}
+	 * becomes the only professions the race is <em>allowed</em> to take, everything else restricted.
+	 */
 	public boolean isProfessionRestrictedByRace(String professionId) throws InvalidXmlElementException {
 		final Race race = this.getRace();
-		return race != null && race.getRestrictedProfessionIds().contains(professionId);
+		if (race == null) {
+			return false;
+		}
+		if (!race.getExcludedProfessionIds().isEmpty()) {
+			for (final String token : concat(race.getRestrictedProfessionIds(), race.getExcludedProfessionIds())) {
+				if (this.professionMatchesReference(professionId, token)) {
+					return false;
+				}
+			}
+			return true;
+		}
+		for (final String token : race.getRestrictedProfessionIds()) {
+			if (this.professionMatchesReference(professionId, token)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
 	 * Every profession id the selected race allows (every profession {@link RulesCatalog} knows about,
-	 * minus {@link Race#getRestrictedProfessionIds()}), or every known profession if no race is
+	 * minus {@link #isProfessionRestrictedByRace(String)}), or every known profession if no race is
 	 * selected, matching the legacy {@code Race#getAvailableProfessions()}.
 	 */
 	public List<String> getAvailableProfessionIds() throws InvalidXmlElementException {
@@ -1743,12 +1809,51 @@ public class CharacterPlayer {
 	}
 
 	/**
-	 * Whether the selected race allows culture {@code cultureId} (its "CULTURAS DISPONIBLES"
-	 * section, {@link Race#getCultureIds()}), or {@code false} if no race is selected.
+	 * Whether {@code cultureId} matches reference {@code token} from a race's "CULTURAS DISPONIBLES"
+	 * section: {@code "all"} matches every culture; a plain token matches by id; a {@code "group:"}
+	 * token matches every culture whose id contains it (case-insensitively), matching the legacy
+	 * {@code CultureFactory#getAvailableCulturesSubString(String)}.
+	 */
+	private boolean cultureMatchesReference(String cultureId, String token) {
+		if (token.startsWith(GROUP_TOKEN_PREFIX)) {
+			return cultureId.toLowerCase().contains(token.substring(GROUP_TOKEN_PREFIX.length()).toLowerCase());
+		}
+		return cultureId.equals(token);
+	}
+
+	/**
+	 * Whether the selected race allows culture {@code cultureId} (its "CULTURAS DISPONIBLES" section,
+	 * {@link Race#getCultureIds()}), or {@code false} if no race is selected. Once {@link
+	 * Race#getExcludedCultureIds()} is non-empty the section's meaning flips (matching the legacy
+	 * per-file "exception" flag): the union of {@link Race#getCultureIds()} and {@link
+	 * Race#getExcludedCultureIds()} becomes the cultures <em>excluded</em> from "every culture is
+	 * available", instead of being the only ones available.
 	 */
 	public boolean isCultureAvailableForRace(String cultureId) throws InvalidXmlElementException {
 		final Race race = this.getRace();
-		return race != null && race.getCultureIds().contains(cultureId);
+		if (race == null) {
+			return false;
+		}
+		if (!race.getExcludedCultureIds().isEmpty()) {
+			for (final String token : concat(race.getCultureIds(), race.getExcludedCultureIds())) {
+				if (this.cultureMatchesReference(cultureId, token)) {
+					return false;
+				}
+			}
+			return true;
+		}
+		for (final String token : race.getCultureIds()) {
+			if ("all".equals(token) || this.cultureMatchesReference(cultureId, token)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private static List<String> concat(List<String> first, List<String> second) {
+		final List<String> combined = new ArrayList<>(first);
+		combined.addAll(second);
+		return combined;
 	}
 
 	/**
@@ -1763,7 +1868,7 @@ public class CharacterPlayer {
 		}
 		final List<String> ids = new ArrayList<>();
 		for (final Culture culture : RulesCatalog.getInstance().getCultures()) {
-			if (race.getCultureIds().contains(culture.getId())) {
+			if (this.isCultureAvailableForRace(culture.getId())) {
 				ids.add(culture.getId());
 			}
 		}

@@ -107,7 +107,9 @@ public final class RaceMigrationTool {
         race.setExpectedLifeYears(parseLifeExpectation(cursor.nextSection()));
         race.setResistanceBonuses(parseResistanceBonuses(cursor.nextSection()));
         race.setProgressionRankValues(parseStringMap(cursor.nextSection()));
-        race.setRestrictedProfessionIds(parseReferenceIds(cursor.nextSection(), ReferenceKind.PROFESSION));
+        final ParsedReferenceIds restrictedProfessions = parseReferenceIds(cursor.nextSection());
+        race.setRestrictedProfessionIds(restrictedProfessions.ids());
+        race.setExcludedProfessionIds(restrictedProfessions.excluded());
         parseOtherRaceInformation(cursor, race);
         final ParsedLanguages raceLanguages = parseLanguages(cursor.nextSection());
         race.setRaceLanguages(raceLanguages.languages());
@@ -117,7 +119,9 @@ public final class RaceMigrationTool {
         race.setOptionalBackgroundLanguages(backgroundLanguages.optionalLanguages());
         parseSpecialSkillSection(cursor.nextSection(), knownCategoryNames, race.getCommonSkillIds(), race.getCommonCategoryIds());
         parseSpecialSkillSection(cursor.nextSection(), knownCategoryNames, race.getRestrictedSkillIds(), race.getRestrictedCategoryIds());
-        race.setCultureIds(parseCultureIds(cursor.nextSection()));
+        final ParsedReferenceIds cultures = parseCultureIds(cursor.nextSection());
+        race.setCultureIds(cultures.ids());
+        race.setExcludedCultureIds(cultures.excluded());
         race.setSpecials(parseSpecials(cursor.nextSection(), race));
         race.setMaleNames(parseNames(cursor.nextSectionOrEmpty()));
         race.setFemaleNames(parseNames(cursor.nextSectionOrEmpty()));
@@ -249,10 +253,18 @@ public final class RaceMigrationTool {
         return new int[] {Integer.parseInt(parts[0].trim()), Integer.parseInt(parts[1].trim())};
     }
 
-    private enum ReferenceKind { PROFESSION, CULTURE }
-
-    private static List<String> parseReferenceIds(List<String> lines, ReferenceKind kind) {
-        final List<String> references = new ArrayList<>();
+    /**
+     * Parses a comma-separated race/culture-profession reference section ("PROFESIONES PROHIBIDAS"/
+     * "CULTURAS DISPONIBLES"): a plain token resolves to a real id, a {@code "{Group}"} token to a
+     * {@code "group:"}-prefixed marker (resolved against the live catalog at runtime, e.g. every
+     * culture whose id contains it, or every profession of that magic realm), and a leading "-"
+     * moves the (otherwise identically resolved) token to {@link ParsedReferenceIds#excluded()}
+     * instead of {@link ParsedReferenceIds#ids()}, matching the legacy per-file "exception" flag
+     * that flips the whole section's meaning once any entry uses it.
+     */
+    private static ParsedReferenceIds parseReferenceIds(List<String> lines) {
+        final List<String> ids = new ArrayList<>();
+        final List<String> excluded = new ArrayList<>();
         for (final String line : lines) {
             if (isNoneOrBlank(line)) {
                 continue;
@@ -262,17 +274,21 @@ public final class RaceMigrationTool {
                 if (value.isEmpty()) {
                     continue;
                 }
-                if (value.startsWith("-")) {
+                final boolean isExcluded = value.startsWith("-");
+                if (isExcluded) {
                     value = value.substring(1).trim();
-                    references.add("exclude:" + Translations.toEnglishId(stripBraces(value)));
-                } else if (value.contains("{")) {
-                    references.add("group:" + Translations.toEnglishId(stripBraces(value)));
-                } else {
-                    references.add(Translations.toEnglishId(value));
                 }
+                final String resolved = value.contains("{")
+                        ? "group:" + Translations.toEnglishId(stripBraces(value))
+                        : Translations.toEnglishId(value);
+                (isExcluded ? excluded : ids).add(resolved);
             }
         }
-        return references;
+        return new ParsedReferenceIds(ids, excluded);
+    }
+
+    /** The result of {@link #parseReferenceIds(List)}: normal mentions, and "-"-marked ones. */
+    private record ParsedReferenceIds(List<String> ids, List<String> excluded) {
     }
 
     private static void parseSpecialSkillSection(List<String> lines, Set<String> knownCategoryNames,
@@ -295,11 +311,11 @@ public final class RaceMigrationTool {
         }
     }
 
-    private static List<String> parseCultureIds(List<String> lines) {
+    private static ParsedReferenceIds parseCultureIds(List<String> lines) {
         if (lines.stream().anyMatch(line -> line.equalsIgnoreCase("Todas"))) {
-            return List.of("all");
+            return new ParsedReferenceIds(List.of("all"), List.of());
         }
-        return parseReferenceIds(lines, ReferenceKind.CULTURE);
+        return parseReferenceIds(lines);
     }
 
     private static List<RaceSpecial> parseSpecials(List<String> lines, Race race) {

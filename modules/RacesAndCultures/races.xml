@@ -3459,9 +3459,9 @@
       <commonSkillId>mining</commonSkillId>
       <commonSkillId>trabajarTheMetal</commonSkillId>
     </commonSkills>
-    <cultures>
-      <cultureId>exclude:aquatic</cultureId>
-    </cultures>
+    <excludedCultures>
+      <excludedCultureId>aquatic</excludedCultureId>
+    </excludedCultures>
     <expectedLifeYears>95</expectedLifeYears>
     <familyNames>
       <familyName>Uruk-Hai</familyName>
@@ -4612,11 +4612,11 @@
       <QUICKNESS>-2</QUICKNESS>
       <STRENGTH>4</STRENGTH>
     </characteristicBonuses>
-    <cultures>
-      <cultureId>exclude:underground</cultureId>
-      <cultureId>exclude:woodland</cultureId>
-      <cultureId>exclude:barbarian</cultureId>
-    </cultures>
+    <excludedCultures>
+      <excludedCultureId>underground</excludedCultureId>
+      <excludedCultureId>woodland</excludedCultureId>
+      <excludedCultureId>group:barbarian</excludedCultureId>
+    </excludedCultures>
     <expectedLifeYears>300</expectedLifeYears>
     <familyNames>
       <familyName>De Acastre</familyName>
@@ -5478,10 +5478,10 @@
       <QUICKNESS>0</QUICKNESS>
       <STRENGTH>2</STRENGTH>
     </characteristicBonuses>
-    <cultures>
-      <cultureId>exclude:underground</cultureId>
-      <cultureId>exclude:barbarian</cultureId>
-    </cultures>
+    <excludedCultures>
+      <excludedCultureId>underground</excludedCultureId>
+      <excludedCultureId>group:barbarian</excludedCultureId>
+    </excludedCultures>
     <expectedLifeYears>150</expectedLifeYears>
     <familyNames>
       <familyName>Stark</familyName>
@@ -9613,9 +9613,9 @@
       <commonCategoryId>weaponsTwoHanded</commonCategoryId>
       <commonCategoryId>weaponsPolearm</commonCategoryId>
     </commonCategories>
-    <cultures>
-      <cultureId>exclude:woodland</cultureId>
-    </cultures>
+    <excludedCultures>
+      <excludedCultureId>woodland</excludedCultureId>
+    </excludedCultures>
     <expectedLifeYears>100</expectedLifeYears>
     <familyNames>
       <familyName>Manthrower</familyName>

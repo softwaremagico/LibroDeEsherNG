@@ -1053,4 +1053,45 @@ public class CharacterPlayerTest {
         rightRace.setRaceId("grayOrc");
         Assert.assertTrue(rightRace.isTrainingAvailableForRace(rukleftakSher));
     }
+
+    @Test
+    public void raceCultureGroupTokenMatchesEveryCultureContainingIt() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("dwarf");
+
+        Assert.assertTrue(character.isCultureAvailableForRace("mining"));
+        Assert.assertTrue(character.isCultureAvailableForRace("aquaticUrbanClassHigh"));
+        Assert.assertTrue(character.isCultureAvailableForRace("desertUrbanClassLow"));
+        Assert.assertFalse(character.isCultureAvailableForRace("rural"));
+        Assert.assertTrue(character.getAvailableCultureIds().contains("mining"));
+        Assert.assertFalse(character.getAvailableCultureIds().contains("rural"));
+    }
+
+    @Test
+    public void raceCultureExclusionFlipsAvailabilityToEveryoneElse() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("highMen");
+
+        Assert.assertTrue(character.getRace().getExcludedCultureIds().contains("underground"));
+        Assert.assertFalse(character.isCultureAvailableForRace("underground"));
+        Assert.assertFalse(character.isCultureAvailableForRace("woodland"));
+        // "group:barbarian" is also excluded.
+        Assert.assertFalse(character.isCultureAvailableForRace("aerialBarbarian"));
+        // Everything else remains available.
+        Assert.assertTrue(character.isCultureAvailableForRace("rural"));
+        Assert.assertTrue(character.isCultureAvailableForRace("aquatic"));
+    }
+
+    @Test
+    public void raceProfessionGroupTokenMatchesEveryProfessionOfThatRealm() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("lugrôkiMenores");
+
+        Assert.assertTrue(character.isProfessionRestrictedByRace("paladin"));
+        // "group:essence" restricts every essence spellcaster, e.g. the wizard.
+        Assert.assertTrue(character.isProfessionRestrictedByRace("wizard"));
+        Assert.assertFalse(character.isProfessionRestrictedByRace("unmentionedProfession"));
+        Assert.assertFalse(character.getAvailableProfessionIds().contains("paladin"));
+        Assert.assertFalse(character.getAvailableProfessionIds().contains("wizard"));
+    }
 }

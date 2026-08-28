@@ -3385,14 +3385,16 @@
         </skills>
       </categoryGrant>
     </adolescenceRanks>
+    <excludedHobbies>
+      <excludedHobbyId>heavyCrossbow</excludedHobbyId>
+      <excludedHobbyId>lightCrossbow</excludedHobbyId>
+    </excludedHobbies>
     <hobbies>
       <hobbyId>acrobatics</hobbyId>
       <hobbyId>armorLight</hobbyId>
       <hobbyId>weaponsEdged</hobbyId>
       <hobbyId>weaponsTwoHanded</hobbyId>
       <hobbyId>weaponsMissile</hobbyId>
-      <hobbyId>exclude:heavyCrossbow</hobbyId>
-      <hobbyId>exclude:lightCrossbow</hobbyId>
       <hobbyId>weaponsBlunt</hobbyId>
       <hobbyId>weaponsThrown</hobbyId>
       <hobbyId>walkingByTheRopeSlack</hobbyId>
@@ -19845,6 +19847,10 @@
         </skills>
       </categoryGrant>
     </adolescenceRanks>
+    <excludedHobbies>
+      <excludedHobbyId>lightCrossbow</excludedHobbyId>
+      <excludedHobbyId>heavyCrossbow</excludedHobbyId>
+    </excludedHobbies>
     <hobbies>
       <hobbyId>acrobatics</hobbyId>
       <hobbyId>camuflaje</hobbyId>
@@ -19854,8 +19860,6 @@
       <hobbyId>weaponsMissile</hobbyId>
       <hobbyId>weaponsThrown</hobbyId>
       <hobbyId>weaponsBlunt</hobbyId>
-      <hobbyId>exclude:lightCrossbow</hobbyId>
-      <hobbyId>exclude:heavyCrossbow</hobbyId>
       <hobbyId>physicalDevelopment</hobbyId>
       <hobbyId>forrajear</hobbyId>
       <hobbyId>predictionOfTheClima</hobbyId>

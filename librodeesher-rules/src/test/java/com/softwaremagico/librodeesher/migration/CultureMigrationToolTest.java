@@ -48,7 +48,8 @@ public class CultureMigrationToolTest {
             Assert.assertEquals(rural.getAdolescenceRanks().size(), 1);
             Assert.assertEquals(rural.getAdolescenceRanks().get(0).getCategoryOptions(), List.of("outdoorEnvironment"));
             Assert.assertEquals(rural.getHobbyRanks(), Integer.valueOf(10));
-            Assert.assertEquals(rural.getHobbyIds(), List.of("tracking", "exclude:stalking"));
+            Assert.assertEquals(rural.getHobbyIds(), List.of("tracking"));
+            Assert.assertEquals(rural.getExcludedHobbyIds(), List.of("stalking"));
             Assert.assertEquals(rural.getLanguageMaxRanks().get(0).getLanguageId(), "commonSpeech");
             Assert.assertEquals(rural.getLanguageMaxRanks().get(0).getMaxSpeakingRanks(), Integer.valueOf(8));
             Assert.assertEquals(rural.getOptionalLanguages().size(), 1);

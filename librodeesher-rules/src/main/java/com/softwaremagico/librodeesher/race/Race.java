@@ -63,6 +63,17 @@ public class Race extends Element {
     @JacksonXmlProperty(localName = "professionId")
     private List<String> restrictedProfessionIds;
 
+    /**
+     * Profession ids/{@code "group:"} tokens explicitly marked with a "-" in the "PROFESIONES
+     * PROHIBIDAS" section: when this is non-empty, the whole section flips meaning (matching the
+     * legacy {@code Race#setRestrictedProfessions}'s per-file "exception" flag) - every profession
+     * matching {@link #getRestrictedProfessionIds()} or this list becomes the only ones the race is
+     * allowed to take, instead of the ones it forbids.
+     */
+    @JacksonXmlElementWrapper(localName = "excludedRestrictedProfessions")
+    @JacksonXmlProperty(localName = "excludedProfessionId")
+    private List<String> excludedProfessionIds;
+
     @JacksonXmlElementWrapper(localName = "raceLanguages")
     @JacksonXmlProperty(localName = "raceLanguage")
     private List<RaceLanguage> raceLanguages;
@@ -106,6 +117,17 @@ public class Race extends Element {
     @JacksonXmlElementWrapper(localName = "cultures")
     @JacksonXmlProperty(localName = "cultureId")
     private List<String> cultureIds;
+
+    /**
+     * Culture ids/{@code "group:"} tokens explicitly marked with a "-" in the "CULTURAS DISPONIBLES"
+     * section: when this is non-empty, the whole section flips meaning (matching the legacy {@code
+     * Race#setCultures}'s per-file "exception" flag) - every culture matching {@link
+     * #getCultureIds()} or this list becomes excluded from "every culture is available", instead of
+     * being the only ones available.
+     */
+    @JacksonXmlElementWrapper(localName = "excludedCultures")
+    @JacksonXmlProperty(localName = "excludedCultureId")
+    private List<String> excludedCultureIds;
 
     @JacksonXmlElementWrapper(localName = "specials")
     @JacksonXmlProperty(localName = "special")
@@ -157,6 +179,8 @@ public class Race extends Element {
     public void setProgressionRankValues(Map<String, String> progressionRankValues) { this.progressionRankValues = progressionRankValues; }
     public List<String> getRestrictedProfessionIds() { return restrictedProfessionIds == null ? Collections.emptyList() : restrictedProfessionIds; }
     public void setRestrictedProfessionIds(List<String> restrictedProfessionIds) { this.restrictedProfessionIds = restrictedProfessionIds; }
+    public List<String> getExcludedProfessionIds() { return excludedProfessionIds == null ? Collections.emptyList() : excludedProfessionIds; }
+    public void setExcludedProfessionIds(List<String> excludedProfessionIds) { this.excludedProfessionIds = excludedProfessionIds; }
     public List<RaceLanguage> getRaceLanguages() { return raceLanguages == null ? Collections.emptyList() : raceLanguages; }
     public void setRaceLanguages(List<RaceLanguage> raceLanguages) { this.raceLanguages = raceLanguages; }
     public List<LanguageSlot> getOptionalRaceLanguages() { return optionalRaceLanguages == null ? Collections.emptyList() : optionalRaceLanguages; }
@@ -175,6 +199,8 @@ public class Race extends Element {
     public void setRestrictedCategoryIds(List<String> restrictedCategoryIds) { this.restrictedCategoryIds = restrictedCategoryIds; }
     public List<String> getCultureIds() { return cultureIds == null ? Collections.emptyList() : cultureIds; }
     public void setCultureIds(List<String> cultureIds) { this.cultureIds = cultureIds; }
+    public List<String> getExcludedCultureIds() { return excludedCultureIds == null ? Collections.emptyList() : excludedCultureIds; }
+    public void setExcludedCultureIds(List<String> excludedCultureIds) { this.excludedCultureIds = excludedCultureIds; }
     public List<RaceSpecial> getSpecials() { return specials == null ? Collections.emptyList() : specials; }
     public void setSpecials(List<RaceSpecial> specials) { this.specials = specials; }
     public List<String> getMaleNames() { return maleNames == null ? Collections.emptyList() : maleNames; }

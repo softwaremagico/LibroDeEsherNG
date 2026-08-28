@@ -73,7 +73,9 @@ public final class CultureMigrationTool {
         culture.setTypicalArmorIds(parseArmorIds(cursor.nextSection()));
         culture.setAdolescenceRanks(parseAdolescenceRanks(cursor.nextSection(), categoryIndex));
         culture.setHobbyRanks(parseOptionalInteger(cursor.nextSection()));
-        culture.setHobbyIds(parseHobbyIds(cursor.nextSection()));
+        final ParsedHobbyIds hobbies = parseHobbyIds(cursor.nextSection());
+        culture.setHobbyIds(hobbies.hobbyIds());
+        culture.setExcludedHobbyIds(hobbies.excluded());
         final ParsedCultureLanguages languages = parseLanguageRanks(cursor.nextSection());
         culture.setLanguageMaxRanks(languages.ranks());
         culture.setOptionalLanguages(languages.optionalLanguages());
@@ -179,8 +181,10 @@ public final class CultureMigrationTool {
      * Spanish.CULTURE_LANGUAGE_TAG}) but never actually implemented spending hobby points on a
      * language ({@code "// TODO select a language"}), so it was silently a no-op there too.
      */
-    private static List<String> parseHobbyIds(List<String> lines) {
+    /** Parses the "AFICIONES" section, splitting explicitly excluded ("-Skill") entries into {@link ParsedHobbyIds#excluded()}. */
+    private static ParsedHobbyIds parseHobbyIds(List<String> lines) {
         final List<String> ids = new ArrayList<>();
+        final List<String> excluded = new ArrayList<>();
         for (final String line : lines) {
             if (isAll(line)) {
                 ids.add("all");
@@ -194,10 +198,19 @@ public final class CultureMigrationTool {
                 if (cleaned.equalsIgnoreCase("idiomas")) {
                     continue;
                 }
-                ids.add((token.startsWith("-") ? "exclude:" : "") + Translations.toEnglishId(cleaned));
+                final String resolved = Translations.toEnglishId(cleaned);
+                if (token.startsWith("-")) {
+                    excluded.add(resolved);
+                } else {
+                    ids.add(resolved);
+                }
             }
         }
-        return ids;
+        return new ParsedHobbyIds(ids, excluded);
+    }
+
+    /** The result of {@link #parseHobbyIds(List)}. */
+    private record ParsedHobbyIds(List<String> hobbyIds, List<String> excluded) {
     }
 
     /**
