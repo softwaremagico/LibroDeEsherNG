@@ -288,11 +288,29 @@ public final class ProfessionMigrationTool {
         return grants;
     }
 
+    /**
+     * Known typos in the "BONIFICACIÓN POR PROFESIÓN" category/skill names, fixed before translation:
+     * "Desarollo Físico"/"Desarrolo Físico" and "Manupulación del Poder" would otherwise translate
+     * into an accented, un-migratable id ("desarolloFísico", "manupulaciónOfThePower"); "Suterfugio·
+     * Sigilio" is fixed too even though it stays accent-free, since the fix is just as cheap and it
+     * lets the bonus actually resolve to a real category instead of being silently inert.
+     */
+    private static final Map<String, String> BONUS_NAME_TYPO_FIXES = Map.of(
+            "Desarollo Físico", "Desarrollo Físico",
+            "Desarrolo Físico", "Desarrollo Físico",
+            "Manupulación del Poder", "Manipulación del Poder",
+            "Suterfugio·Sigilio", "Subterfugio·Sigilo");
+
     private static List<ProfessionBonus> parseBonuses(List<String> sectionLines) {
         final List<ProfessionBonus> bonuses = new ArrayList<>();
         for (final String line : sectionLines) {
             final String[] columns = line.split("\t");
-            bonuses.add(new ProfessionBonus(Translations.toEnglishId(columns[0].trim()), Integer.valueOf(columns[1].trim())));
+            // A handful of real entries append a redundant "(AmB)"/"(AmG)"-style abbreviation
+            // (already implicit in the category's own abbreviation column); stripping it lets the
+            // bonus resolve to the real category instead of a nonexistent "...(AmB)" id.
+            String name = columns[0].trim().replaceAll("\\([^)]*\\)$", "").trim();
+            name = BONUS_NAME_TYPO_FIXES.getOrDefault(name, name);
+            bonuses.add(new ProfessionBonus(Translations.toEnglishId(name), Integer.valueOf(columns[1].trim())));
         }
         return bonuses;
     }

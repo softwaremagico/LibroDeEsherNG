@@ -4193,15 +4193,15 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>desarolloFísico</name>
+        <name>physicalDevelopment</name>
       </bonus>
       <bonus>
         <bonus>15</bonus>
-        <name>martialArtsSweepsAmb</name>
+        <name>martialArtsSweeps</name>
       </bonus>
       <bonus>
         <bonus>15</bonus>
-        <name>martialArtsStrikesAmg</name>
+        <name>martialArtsStrikes</name>
       </bonus>
       <bonus>
         <bonus>15</bonus>
@@ -6999,7 +6999,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
       </bonus>
       <bonus>
         <bonus>10</bonus>
-        <name>desarroloFísico</name>
+        <name>physicalDevelopment</name>
       </bonus>
       <bonus>
         <bonus>5</bonus>
