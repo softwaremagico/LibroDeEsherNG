@@ -173,6 +173,12 @@ public final class CultureMigrationTool {
         return ids;
     }
 
+    /**
+     * Parses the "AFICIONES" section into hobby ids. Note that a bare {@code "Idiomas"} token is
+     * dropped, not translated into a marker: the legacy application recognized it (as {@code
+     * Spanish.CULTURE_LANGUAGE_TAG}) but never actually implemented spending hobby points on a
+     * language ({@code "// TODO select a language"}), so it was silently a no-op there too.
+     */
     private static List<String> parseHobbyIds(List<String> lines) {
         final List<String> ids = new ArrayList<>();
         for (final String line : lines) {
@@ -185,6 +191,9 @@ public final class CultureMigrationTool {
             }
             for (final String token : splitComma(line)) {
                 final String cleaned = token.startsWith("-") ? token.substring(1).trim() : token;
+                if (cleaned.equalsIgnoreCase("idiomas")) {
+                    continue;
+                }
                 ids.add((token.startsWith("-") ? "exclude:" : "") + Translations.toEnglishId(cleaned));
             }
         }
