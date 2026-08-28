@@ -1,4 +1,4 @@
-# Libro de Esher
+# Libro de Esher NG
 
 [![GNU GPL 3.0 License](https://img.shields.io/badge/license-GNU_GPL_3.0-brightgreen.svg)](https://github.com/softwaremagico/librodeesher/blob/master/license/gnugpl/license.txt)
 [![Powered by](https://img.shields.io/badge/powered%20by%20java-orange.svg?logo=OpenJDK&logoColor=white)]()
@@ -19,7 +19,7 @@
 > some entertainment and delay them by an hour or so. Perhaps the evening would be over before the
 > intruders reached him, and by night he'd have time enough to better fortify whatever chambers
 > remained intact, move his savings somewhere safer, and find more select minions; or perhaps, at
-> least, this defeat wouldn't be a total disgrace and he could die with what little honor he had
+> least, this defeat wouldn't be a total disgrace, and he could die with what little honor he had
 > left. "Centaur, no...". Nothing he found pleased him. "Laan, no...". A scream in the distance
 > told him the last of his minions had fallen. "Fairy, no...", he had already gone through half
 > the book's pages and still had nothing to his liking. "Gratar, no..." his fingers kept turning
@@ -30,7 +30,7 @@
 > terrifying as what he was looking for. Together, these two words had the flavor of the solution
 > he needed. "War Troll" he said again, each time louder, as if savoring the words. He stopped
 > running and turned toward where the sounds of looting and death were coming from. If he had
-> enough power to summon one or two big enough to block this corridor, maybe he had a chance, and
+> enough time to summon one or two big enough to block this corridor, maybe he had a chance, and
 > the evening wouldn't be a disaster after all...
 
 ## About Libro de Esher
@@ -41,9 +41,23 @@ and add their own races and professions, giving all the flexibility needed for a
 
 Libro de Esher was originally developed by Jorge Hortelano Otero as a free-software desktop
 application, distributed under the GNU license, hoping it would spare game masters the tedious
-work of building a PC or help them out with their NPCs. This repository is a full modernization of
-that original application: the same Rolemaster rules engine and character-creation model, rebuilt
-from scratch as a library.
+work of building a PC or help them out with their NPCs. This repository, **Libro de Esher NG**, is
+a full modernization of the [original application](https://github.com/softwaremagico/LibroDeEsher):
+the same Rolemaster rules engine and character-creation model, rebuilt from scratch as a library.
+
+Highlights of the modernization:
+
+- **XML rule data instead of legacy text templates.** Every rulebook/supplement used to be a set of
+  custom tab-separated `.txt` files with their own ad-hoc parsing quirks. All of it has been
+  migrated into structured, bilingual (Spanish/English) XML, read through Jackson instead of
+  hand-rolled parsers, with ids and enums consistently in English and every cross-reference between
+  rule elements validated instead of failing silently.
+- **A modernized, tested codebase.** The domain model, rule catalog, migration tools and
+  character-creation logic are new code, covered by unit tests down to the migration fixtures and
+  the real generated data, replacing the original application's Swing UI-coupled, untested classes.
+- **Library-first architecture.** No AWT/Swing/JPA dependencies: the rules engine is a plain,
+  Android-safe Java library, ready to be consumed by different front-ends instead of being tied to
+  one desktop UI.
 
 Libro de Esher is a Java library for the **Rolemaster** character system. It provides a fully
 data-driven rules engine covering every rulebook/supplement of the original desktop application,
@@ -84,16 +98,16 @@ character-creation model built on top of it.
 - XML-based modular content loading system: every rulebook/supplement lives under its own folder in
   `modules/`, and can be enabled or disabled independently.
 - Built-in support for the full Rolemaster catalog, including:
-  - Character Law and Core rules
-  - Spell Law (Channeling, Essence, Mentalism)
-  - Arms Law &amp; Claw Law (Firearms, The Armory)
-  - Companions (Channeling, Essence, Mentalism, Skill, Treasure)
-  - Martial Arts Companion
-  - Fire &amp; Ice: The Elemental Companion
-  - Races and Cultures (including Underground Races)
-  - Shadow World setting material
-  - Pulp Adventures
-  - House rules / non-official content
+    - Character Law and Core rules
+    - Spell Law (Channeling, Essence, Mentalism)
+    - Arms Law &amp; Claw Law (Firearms, The Armory)
+    - Companions (Channeling, Essence, Mentalism, Skill, Treasure)
+    - Martial Arts Companion
+    - Fire &amp; Ice: The Elemental Companion
+    - Races and Cultures (including Underground Races)
+    - Shadow World setting material
+    - Pulp Adventures
+    - House rules / non-official content
 
 ### Migration tooling
 
