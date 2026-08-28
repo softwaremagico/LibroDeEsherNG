@@ -6,6 +6,7 @@ import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.race.RaceLanguage;
 import com.softwaremagico.librodeesher.race.RaceSpecial;
+import com.softwaremagico.librodeesher.resistance.ResistanceType;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -100,7 +101,7 @@ public final class RaceMigrationTool {
         race.setRestrictedCategoryIds(new ArrayList<>());
         parseCharacteristics(cursor.nextSection(), race);
         race.setExpectedLifeYears(parseLifeExpectation(cursor.nextSection()));
-        race.setResistanceBonuses(parseNumberMap(cursor.nextSection()));
+        race.setResistanceBonuses(parseResistanceBonuses(cursor.nextSection()));
         race.setProgressionRankValues(parseStringMap(cursor.nextSection()));
         race.setRestrictedProfessionIds(parseReferenceIds(cursor.nextSection(), ReferenceKind.PROFESSION));
         parseOtherRaceInformation(cursor, race);
@@ -145,12 +146,22 @@ public final class RaceMigrationTool {
         return Integer.valueOf(value);
     }
 
-    private static Map<String, Integer> parseNumberMap(List<String> lines) {
+    /**
+     * Parses the "MODIFICACIÓN A LA TR" section into resistance bonuses, keyed by {@link
+     * ResistanceType} constant name instead of a translated Spanish column name (unlike a generic
+     * {@code parseNumberMap}, since a resistance type is a fixed, already-known set of values, not
+     * free text to translate).
+     */
+    private static Map<String, Integer> parseResistanceBonuses(List<String> lines) {
         final Map<String, Integer> result = new LinkedHashMap<>();
         for (final String line : lines) {
             final String[] columns = line.split("\t");
             if (columns.length >= 2) {
-                result.put(Translations.toEnglishId(columns[0].trim()), Integer.valueOf(columns[1].trim()));
+                final ResistanceType type = ResistanceType.fromTag(columns[0].trim());
+                if (type == null) {
+                    throw new IllegalStateException("Unknown resistance type: '" + columns[0].trim() + "'.");
+                }
+                result.put(type.name(), Integer.valueOf(columns[1].trim()));
             }
         }
         return result;

@@ -33,7 +33,7 @@ public class RaceMigrationToolTest {
             Assert.assertEquals(elf.getExpectedLifeYears(), Integer.valueOf(500));
             Assert.assertEquals(elf.getAppearanceBonus(), Integer.valueOf(10));
             Assert.assertEquals(elf.getCharacteristicBonuses().get("Ag"), Integer.valueOf(2));
-            Assert.assertEquals(elf.getResistanceBonuses().get("essence"), Integer.valueOf(5));
+            Assert.assertEquals(elf.getResistanceBonuses().get("ESSENCE"), Integer.valueOf(5));
             Assert.assertEquals(elf.getProgressionRankValues().get("physicalDevelopment"), "0/6/4/2/1");
             Assert.assertEquals(elf.getSoulDepartTime(), Integer.valueOf(12));
             Assert.assertEquals(elf.getRaceType(), Integer.valueOf(3));

@@ -1564,15 +1564,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>40</essence>
-      <mentalism>40</mentalism>
-      <veneno>20</veneno>
-      <enfermedad>15</enfermedad>
-      <psionic>0</psionic>
-      <cold>30</cold>
-      <heat>30</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>40</ESSENCE>
+      <MENTALISM>40</MENTALISM>
+      <POISON>20</POISON>
+      <DISEASE>15</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>30</COLD>
+      <HEAT>30</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
     <size>M</size>

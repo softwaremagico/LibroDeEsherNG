@@ -145,15 +145,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>15</enfermedad>
-      <psionic>-5</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>15</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <restrictedCategories>
@@ -316,15 +316,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>15</enfermedad>
-      <psionic>-5</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>15</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <restrictedCategories>
@@ -539,15 +539,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>15</veneno>
-      <enfermedad>20</enfermedad>
-      <psionic>-10</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>15</POISON>
+      <DISEASE>20</DISEASE>
+      <PSIONIC>-10</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <restrictedCategories>
@@ -670,15 +670,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>-10</veneno>
-      <enfermedad>-15</enfermedad>
-      <psionic>0</psionic>
-      <cold>20</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>-10</POISON>
+      <DISEASE>-15</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>20</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.5</restorationTime>
     <size>Normal</size>
@@ -888,15 +888,15 @@
     </raceLanguages>
     <raceType>4</raceType>
     <resistanceBonuses>
-      <channeling>-20</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>150</enfermedad>
-      <psionic>-5</psionic>
-      <cold>10</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-20</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>150</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>10</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
     <size>Normal</size>
@@ -1042,15 +1042,15 @@
     </raceLanguages>
     <raceType>5</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>100</enfermedad>
-      <psionic>-5</psionic>
-      <cold>20</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>100</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>20</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Normal</size>
@@ -1320,15 +1320,15 @@
     </raceLanguages>
     <raceType>4</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>100</enfermedad>
-      <psionic>-5</psionic>
-      <cold>15</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>100</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>15</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
     <size>Normal</size>
@@ -1520,15 +1520,15 @@
     </raceLanguages>
     <raceType>3</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>100</enfermedad>
-      <psionic>50</psionic>
-      <cold>10</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>100</DISEASE>
+      <PSIONIC>50</PSIONIC>
+      <COLD>10</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Normal</size>
@@ -2156,15 +2156,15 @@
     </raceLanguages>
     <raceType>1</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>40</essence>
-      <mentalism>40</mentalism>
-      <veneno>20</veneno>
-      <enfermedad>15</enfermedad>
-      <psionic>50</psionic>
-      <cold>30</cold>
-      <heat>30</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>40</ESSENCE>
+      <MENTALISM>40</MENTALISM>
+      <POISON>20</POISON>
+      <DISEASE>15</DISEASE>
+      <PSIONIC>50</PSIONIC>
+      <COLD>30</COLD>
+      <HEAT>30</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
     <restrictedSkills>
@@ -2301,15 +2301,15 @@
     </raceLanguages>
     <raceType>5</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>100</enfermedad>
-      <psionic>-5</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>100</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
     <size>Normal</size>
@@ -2483,15 +2483,15 @@
     </raceLanguages>
     <raceType>3</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>10</mentalism>
-      <veneno>20</veneno>
-      <enfermedad>60</enfermedad>
-      <psionic>0</psionic>
-      <cold>0</cold>
-      <heat>5</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>10</MENTALISM>
+      <POISON>20</POISON>
+      <DISEASE>60</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>5</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Medium</size>
@@ -2888,15 +2888,15 @@
     </raceLanguages>
     <raceType>3</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>100</enfermedad>
-      <psionic>-5</psionic>
-      <cold>10</cold>
-      <heat>10</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>100</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>10</COLD>
+      <HEAT>10</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.5</restorationTime>
     <size>Normal</size>
@@ -2975,8 +2975,8 @@
     <cultures>
       <cultureId>arctic</cultureId>
       <cultureId>arcticMilitarista</cultureId>
-      <cultureId>woodlandBárbara</cultureId>
-      <cultureId>aerialBárbara</cultureId>
+      <cultureId>woodlandBarbarian</cultureId>
+      <cultureId>aerialBarbarian</cultureId>
     </cultures>
     <expectedLifeYears>30</expectedLifeYears>
     <familyNames>
@@ -3139,15 +3139,15 @@
     </raceLanguages>
     <raceType>1</raceType>
     <resistanceBonuses>
-      <channeling>5</channeling>
-      <essence>20</essence>
-      <mentalism>20</mentalism>
-      <veneno>20</veneno>
-      <enfermedad>5</enfermedad>
-      <psionic>25</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>5</CHANNELING>
+      <ESSENCE>20</ESSENCE>
+      <MENTALISM>20</MENTALISM>
+      <POISON>20</POISON>
+      <DISEASE>5</DISEASE>
+      <PSIONIC>25</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.6</restorationTime>
     <size>Normal</size>
@@ -3397,15 +3397,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>30</channeling>
-      <essence>30</essence>
-      <mentalism>20</mentalism>
-      <veneno>0</veneno>
-      <enfermedad>0</enfermedad>
-      <psionic>10</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>30</CHANNELING>
+      <ESSENCE>30</ESSENCE>
+      <MENTALISM>20</MENTALISM>
+      <POISON>0</POISON>
+      <DISEASE>0</DISEASE>
+      <PSIONIC>10</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
     <size>Normal</size>
@@ -3605,15 +3605,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>10</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>5</enfermedad>
-      <psionic>0</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>10</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>5</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
     <size>Medium</size>
@@ -3746,15 +3746,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>0</veneno>
-      <enfermedad>10</enfermedad>
-      <psionic>-5</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>0</POISON>
+      <DISEASE>10</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Medium</size>
@@ -3874,15 +3874,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>-10</channeling>
-      <essence>-10</essence>
-      <mentalism>-10</mentalism>
-      <veneno>0</veneno>
-      <enfermedad>0</enfermedad>
-      <psionic>-10</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-10</CHANNELING>
+      <ESSENCE>-10</ESSENCE>
+      <MENTALISM>-10</MENTALISM>
+      <POISON>0</POISON>
+      <DISEASE>0</DISEASE>
+      <PSIONIC>-10</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Medium</size>
@@ -4011,15 +4011,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>10</enfermedad>
-      <psionic>0</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>10</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Medium</size>
@@ -4166,15 +4166,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>-10</channeling>
-      <essence>-10</essence>
-      <mentalism>-10</mentalism>
-      <veneno>0</veneno>
-      <enfermedad>0</enfermedad>
-      <psionic>-10</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-10</CHANNELING>
+      <ESSENCE>-10</ESSENCE>
+      <MENTALISM>-10</MENTALISM>
+      <POISON>0</POISON>
+      <DISEASE>0</DISEASE>
+      <PSIONIC>-10</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.5</restorationTime>
     <size>Medium</size>
@@ -4366,15 +4366,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>-5</veneno>
-      <enfermedad>-10</enfermedad>
-      <psionic>-5</psionic>
-      <cold>20</cold>
-      <heat>20</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>-5</POISON>
+      <DISEASE>-10</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>20</COLD>
+      <HEAT>20</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Medium</size>
@@ -4539,15 +4539,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>-10</veneno>
-      <enfermedad>-20</enfermedad>
-      <psionic>-5</psionic>
-      <cold>20</cold>
-      <heat>20</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>-10</POISON>
+      <DISEASE>-20</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>20</COLD>
+      <HEAT>20</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.2</restorationTime>
     <size>Medium</size>
@@ -4608,7 +4608,7 @@
     <cultures>
       <cultureId>exclude:underground</cultureId>
       <cultureId>exclude:woodland</cultureId>
-      <cultureId>exclude:bárbara</cultureId>
+      <cultureId>exclude:barbarian</cultureId>
     </cultures>
     <expectedLifeYears>300</expectedLifeYears>
     <familyNames>
@@ -5235,15 +5235,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>0</veneno>
-      <enfermedad>0</enfermedad>
-      <psionic>-5</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>0</POISON>
+      <DISEASE>0</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.7</restorationTime>
     <size>Medium</size>
@@ -5405,15 +5405,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>0</veneno>
-      <enfermedad>0</enfermedad>
-      <psionic>0</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>0</POISON>
+      <DISEASE>0</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Medium</size>
@@ -5473,7 +5473,7 @@
     </characteristicBonuses>
     <cultures>
       <cultureId>exclude:underground</cultureId>
-      <cultureId>exclude:bárbara</cultureId>
+      <cultureId>exclude:barbarian</cultureId>
     </cultures>
     <expectedLifeYears>150</expectedLifeYears>
     <familyNames>
@@ -5641,15 +5641,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>0</veneno>
-      <enfermedad>0</enfermedad>
-      <psionic>-5</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>0</POISON>
+      <DISEASE>0</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.8</restorationTime>
     <size>Medium</size>
@@ -5778,15 +5778,15 @@
     </raceLanguages>
     <raceType>3</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>20</enfermedad>
-      <psionic>-5</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>20</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>M</size>
@@ -5989,15 +5989,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>20</mentalism>
-      <veneno>0</veneno>
-      <enfermedad>10</enfermedad>
-      <psionic>10</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>20</MENTALISM>
+      <POISON>0</POISON>
+      <DISEASE>10</DISEASE>
+      <PSIONIC>10</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Medium</size>
@@ -6219,15 +6219,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>0</mentalism>
-      <veneno>0</veneno>
-      <enfermedad>-5</enfermedad>
-      <psionic>0</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>0</POISON>
+      <DISEASE>-5</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.5</restorationTime>
     <size>Medium</size>
@@ -6448,15 +6448,15 @@
     </raceLanguages>
     <raceType>3</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>10</mentalism>
-      <veneno>20</veneno>
-      <enfermedad>80</enfermedad>
-      <psionic>0</psionic>
-      <cold>100</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>10</MENTALISM>
+      <POISON>20</POISON>
+      <DISEASE>80</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>100</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Normal</size>
@@ -7145,15 +7145,15 @@
     </raceLanguages>
     <raceType>3</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>50</enfermedad>
-      <psionic>-5</psionic>
-      <cold>5</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>50</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>5</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.5</restorationTime>
     <size>Medium</size>
@@ -7382,15 +7382,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>5</channeling>
-      <essence>10</essence>
-      <mentalism>15</mentalism>
-      <veneno>15</veneno>
-      <enfermedad>100</enfermedad>
-      <psionic>-5</psionic>
-      <cold>20</cold>
-      <heat>20</heat>
-      <fear>0</fear>
+      <CHANNELING>5</CHANNELING>
+      <ESSENCE>10</ESSENCE>
+      <MENTALISM>15</MENTALISM>
+      <POISON>15</POISON>
+      <DISEASE>100</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>20</COLD>
+      <HEAT>20</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Medium</size>
@@ -7682,15 +7682,15 @@
     </raceLanguages>
     <raceType>5</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>150</enfermedad>
-      <psionic>-5</psionic>
-      <cold>10</cold>
-      <heat>10</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>150</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>10</COLD>
+      <HEAT>10</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>3.0</restorationTime>
     <size>Normal</size>
@@ -8001,15 +8001,15 @@
     </raceLanguages>
     <raceType>4</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>150</enfermedad>
-      <psionic>-5</psionic>
-      <cold>10</cold>
-      <heat>10</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>150</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>10</COLD>
+      <HEAT>10</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
     <size>Normal</size>
@@ -8225,15 +8225,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>5</veneno>
-      <enfermedad>10</enfermedad>
-      <psionic>-5</psionic>
-      <cold>30</cold>
-      <heat>30</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>5</POISON>
+      <DISEASE>10</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>30</COLD>
+      <HEAT>30</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
     <size>Medium</size>
@@ -8437,15 +8437,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>0</veneno>
-      <enfermedad>5</enfermedad>
-      <psionic>-5</psionic>
-      <cold>30</cold>
-      <heat>30</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>0</POISON>
+      <DISEASE>5</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>30</COLD>
+      <HEAT>30</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
     <restrictedSkills>
@@ -8638,15 +8638,15 @@
     </raceLanguages>
     <raceType>1</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>50</essence>
-      <mentalism>40</mentalism>
-      <veneno>30</veneno>
-      <enfermedad>15</enfermedad>
-      <psionic>0</psionic>
-      <cold>30</cold>
-      <heat>30</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>50</ESSENCE>
+      <MENTALISM>40</MENTALISM>
+      <POISON>30</POISON>
+      <DISEASE>15</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>30</COLD>
+      <HEAT>30</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.8</restorationTime>
     <size>Medium</size>
@@ -8840,15 +8840,15 @@
     </raceLanguages>
     <raceType>3</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>0</veneno>
-      <enfermedad>50</enfermedad>
-      <psionic>0</psionic>
-      <cold>5</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>0</POISON>
+      <DISEASE>50</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>5</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Normal</size>
@@ -8895,7 +8895,7 @@
     </characteristicBonuses>
     <cultures>
       <cultureId>highlands</cultureId>
-      <cultureId>group:bárbara</cultureId>
+      <cultureId>group:barbarian</cultureId>
       <cultureId>group:militarista</cultureId>
     </cultures>
     <expectedLifeYears>500</expectedLifeYears>
@@ -9018,15 +9018,15 @@
     </raceLanguages>
     <raceType>3</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>5</veneno>
-      <enfermedad>5</enfermedad>
-      <psionic>0</psionic>
-      <cold>15</cold>
-      <heat>15</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>5</POISON>
+      <DISEASE>5</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>15</COLD>
+      <HEAT>15</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Medium</size>
@@ -9273,15 +9273,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>5</veneno>
-      <enfermedad>5</enfermedad>
-      <psionic>0</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>5</POISON>
+      <DISEASE>5</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
     <size>Medium</size>
@@ -9506,15 +9506,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>0</veneno>
-      <enfermedad>5</enfermedad>
-      <psionic>-5</psionic>
-      <cold>30</cold>
-      <heat>30</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>0</POISON>
+      <DISEASE>5</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>30</COLD>
+      <HEAT>30</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
     <restrictedSkills>
@@ -9762,15 +9762,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>5</veneno>
-      <enfermedad>10</enfermedad>
-      <psionic>0</psionic>
-      <cold>30</cold>
-      <heat>30</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>5</POISON>
+      <DISEASE>10</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>30</COLD>
+      <HEAT>30</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
     <size>Medium</size>
@@ -10003,15 +10003,15 @@
     </raceLanguages>
     <raceType>5</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>100</enfermedad>
-      <psionic>-5</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>100</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>3.0</restorationTime>
     <size>small</size>
@@ -10396,15 +10396,15 @@
     </raceLanguages>
     <raceType>3</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>5</mentalism>
-      <veneno>20</veneno>
-      <enfermedad>60</enfermedad>
-      <psionic>0</psionic>
-      <cold>5</cold>
-      <heat>5</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>5</MENTALISM>
+      <POISON>20</POISON>
+      <DISEASE>60</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>5</COLD>
+      <HEAT>5</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Normal</size>
@@ -10464,7 +10464,7 @@
     </characteristicBonuses>
     <cultures>
       <cultureId>highlands</cultureId>
-      <cultureId>plainsNómadas</cultureId>
+      <cultureId>plainsNomadic</cultureId>
     </cultures>
     <expectedLifeYears>10000</expectedLifeYears>
     <familyNames>
@@ -10570,15 +10570,15 @@
     </raceLanguages>
     <raceType>4</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>100</enfermedad>
-      <psionic>-5</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>100</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Normal</size>
@@ -10818,15 +10818,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>50</enfermedad>
-      <psionic>0</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>50</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Medium</size>
@@ -10994,15 +10994,15 @@
     </raceLanguages>
     <raceType>3</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>5</veneno>
-      <enfermedad>5</enfermedad>
-      <psionic>0</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>5</POISON>
+      <DISEASE>5</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Normal</size>
@@ -11160,15 +11160,15 @@
     </raceLanguages>
     <raceType>3</raceType>
     <resistanceBonuses>
-      <channeling>5</channeling>
-      <essence>-10</essence>
-      <mentalism>10</mentalism>
-      <veneno>30</veneno>
-      <enfermedad>100</enfermedad>
-      <psionic>-10</psionic>
-      <cold>10</cold>
-      <heat>10</heat>
-      <fear>0</fear>
+      <CHANNELING>5</CHANNELING>
+      <ESSENCE>-10</ESSENCE>
+      <MENTALISM>10</MENTALISM>
+      <POISON>30</POISON>
+      <DISEASE>100</DISEASE>
+      <PSIONIC>-10</PSIONIC>
+      <COLD>10</COLD>
+      <HEAT>10</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
     <size>Normal</size>
@@ -11390,15 +11390,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>0</veneno>
-      <enfermedad>0</enfermedad>
-      <psionic>0</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>0</POISON>
+      <DISEASE>0</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Normal</size>
@@ -11622,15 +11622,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>50</enfermedad>
-      <psionic>0</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>50</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Medium</size>
@@ -12015,15 +12015,15 @@
     </raceLanguages>
     <raceType>3</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>10</mentalism>
-      <veneno>20</veneno>
-      <enfermedad>60</enfermedad>
-      <psionic>0</psionic>
-      <cold>5</cold>
-      <heat>5</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>10</MENTALISM>
+      <POISON>20</POISON>
+      <DISEASE>60</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>5</COLD>
+      <HEAT>5</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Normal</size>
@@ -12162,15 +12162,15 @@
     </raceLanguages>
     <raceType>5</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>100</enfermedad>
-      <psionic>-5</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>100</DISEASE>
+      <PSIONIC>-5</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>3.0</restorationTime>
     <size>Medium</size>
@@ -12384,15 +12384,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>5</veneno>
-      <enfermedad>0</enfermedad>
-      <psionic>0</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>5</POISON>
+      <DISEASE>0</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Medium</size>
@@ -12607,15 +12607,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>20</channeling>
-      <essence>10</essence>
-      <mentalism>20</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>10</enfermedad>
-      <psionic>10</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>20</CHANNELING>
+      <ESSENCE>10</ESSENCE>
+      <MENTALISM>20</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>10</DISEASE>
+      <PSIONIC>10</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
     <size>Medium</size>
@@ -12865,15 +12865,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>20</channeling>
-      <essence>10</essence>
-      <mentalism>20</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>10</enfermedad>
-      <psionic>10</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>20</CHANNELING>
+      <ESSENCE>10</ESSENCE>
+      <MENTALISM>20</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>10</DISEASE>
+      <PSIONIC>10</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
     <size>Medium</size>
@@ -12981,7 +12981,7 @@
     </commonSkills>
     <cultures>
       <cultureId>arctic</cultureId>
-      <cultureId>group:nómada</cultureId>
+      <cultureId>group:nomadic</cultureId>
     </cultures>
     <expectedLifeYears>70</expectedLifeYears>
     <familyNames>
@@ -13136,15 +13136,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>20</enfermedad>
-      <psionic>0</psionic>
-      <cold>30</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>20</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>30</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.5</restorationTime>
     <size>Normal</size>
@@ -13382,15 +13382,15 @@
     </raceLanguages>
     <raceType>4</raceType>
     <resistanceBonuses>
-      <channeling>-5</channeling>
-      <essence>-5</essence>
-      <mentalism>-5</mentalism>
-      <veneno>10</veneno>
-      <enfermedad>100</enfermedad>
-      <psionic>0</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>-5</CHANNELING>
+      <ESSENCE>-5</ESSENCE>
+      <MENTALISM>-5</MENTALISM>
+      <POISON>10</POISON>
+      <DISEASE>100</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
     <size>Normal</size>
@@ -13575,15 +13575,15 @@
     </raceLanguages>
     <raceType>3</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>20</veneno>
-      <enfermedad>5</enfermedad>
-      <psionic>0</psionic>
-      <cold>5</cold>
-      <heat>5</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>20</POISON>
+      <DISEASE>5</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>5</COLD>
+      <HEAT>5</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Normal</size>
@@ -13765,15 +13765,15 @@
     </raceLanguages>
     <raceType>2</raceType>
     <resistanceBonuses>
-      <channeling>0</channeling>
-      <essence>0</essence>
-      <mentalism>0</mentalism>
-      <veneno>0</veneno>
-      <enfermedad>10</enfermedad>
-      <psionic>0</psionic>
-      <cold>0</cold>
-      <heat>0</heat>
-      <fear>0</fear>
+      <CHANNELING>0</CHANNELING>
+      <ESSENCE>0</ESSENCE>
+      <MENTALISM>0</MENTALISM>
+      <POISON>0</POISON>
+      <DISEASE>10</DISEASE>
+      <PSIONIC>0</PSIONIC>
+      <COLD>0</COLD>
+      <HEAT>0</HEAT>
+      <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>Normal</size>
