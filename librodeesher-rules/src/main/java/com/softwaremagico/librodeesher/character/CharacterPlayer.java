@@ -1731,4 +1731,45 @@ public class CharacterPlayer {
 		}
 		return ids;
 	}
+
+	private static final String ENABLE_SKILL_KEY_PREFIX = "skill:enables:";
+
+	/**
+	 * Resolves which of {@code enablingSkillId}'s {@link Skill#getEnableSkills()} gets unlocked once
+	 * it has ranks bought in it, when {@link Skill#isAllEnabled()} is {@code false} (an "or" choice,
+	 * e.g. a martial arts style unlocking one of several Chi Powers): matches the legacy {@code
+	 * enableSkillOption(Skill, Skill)}/{@code SkillForEnablingMustBeSelected} requirement. Not needed
+	 * when {@link Skill#isAllEnabled()} is {@code true} (every listed skill unlocks at once, see
+	 * {@link #isSkillEnabled(Skill)}).
+	 */
+	public void enableSkillOption(String enablingSkillId, String selectedEnabledSkillId) throws InvalidXmlElementException {
+		final Skill enablingSkill = RulesCatalog.getInstance().getSkill(enablingSkillId);
+		this.decideOrReuse(ENABLE_SKILL_KEY_PREFIX + enablingSkillId,
+				() -> Decision.select(enablingSkill.getEnableSkills(), selectedEnabledSkillId));
+	}
+
+	/**
+	 * Whether {@code skill} may be developed at all: either it is
+	 * {@link Skill#isEnabledByDefault()}, or some other skill that lists it in its own {@link
+	 * Skill#getEnableSkills()} has ranks bought in it and either {@link Skill#isAllEnabled()} (every
+	 * listed skill unlocks) or {@code skill} is the one {@link #enableSkillOption} resolved for it.
+	 */
+	public boolean isSkillEnabled(Skill skill) throws InvalidXmlElementException {
+		if (skill.isEnabledByDefault()) {
+			return true;
+		}
+		for (final Skill candidate : RulesCatalog.getInstance().getSkills()) {
+			if (!candidate.getEnableSkills().contains(skill.getId()) || this.getSkillTotalRanks(candidate.getId()) <= 0) {
+				continue;
+			}
+			if (candidate.isAllEnabled()) {
+				return true;
+			}
+			final String key = ENABLE_SKILL_KEY_PREFIX + candidate.getId();
+			if (this.decisions.isDecided(key) && skill.getId().equals(this.decisions.getSelectedOption(key))) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

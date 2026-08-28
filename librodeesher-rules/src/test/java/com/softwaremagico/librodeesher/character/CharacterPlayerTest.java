@@ -987,4 +987,33 @@ public class CharacterPlayerTest {
             Assert.assertNotEquals(character.getCharacteristicTemporalValue(affected), Characteristics.INITIAL_CHARACTERISTIC_VALUE);
         }
     }
+
+    @Test
+    public void skillWithNoEnableSkillsIsAlwaysEnabled() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final Skill skill = RulesCatalog.getInstance().getSkill("climbing");
+        Assert.assertTrue(character.isSkillEnabled(skill));
+    }
+
+    @Test
+    public void disabledSkillStaysDisabledUntilUnlocked() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final Skill chiPower = RulesCatalog.getInstance().getSkill("chiPowerShadowlessAttack");
+        Assert.assertFalse(chiPower.isEnabledByDefault());
+        Assert.assertFalse(character.isSkillEnabled(chiPower));
+
+        character.getCurrentLevel().setSkillRanks("styleOfTheCrane", 2, false);
+        Assert.assertFalse(character.isSkillEnabled(chiPower));
+
+        character.enableSkillOption("styleOfTheCrane", "chiPowerShadowlessAttack");
+        Assert.assertTrue(character.isSkillEnabled(chiPower));
+
+        final Skill otherChiPower = RulesCatalog.getInstance().getSkill("chiPowerStrikesContinuous");
+        Assert.assertFalse(character.isSkillEnabled(otherChiPower));
+
+        // Reusing the same enabling skill does not ask again.
+        character.enableSkillOption("styleOfTheCrane", "chiPowerStrikesContinuous");
+        Assert.assertTrue(character.isSkillEnabled(chiPower));
+        Assert.assertFalse(character.isSkillEnabled(otherChiPower));
+    }
 }
