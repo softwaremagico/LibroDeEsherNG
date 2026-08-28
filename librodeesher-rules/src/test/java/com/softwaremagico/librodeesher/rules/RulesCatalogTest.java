@@ -24,6 +24,7 @@ public class RulesCatalogTest {
         Assert.assertFalse(catalog.getProfessions().isEmpty());
         Assert.assertFalse(catalog.getSpellLists().isEmpty());
         Assert.assertFalse(catalog.getRaces().isEmpty());
+        Assert.assertFalse(catalog.getCultures().isEmpty());
     }
 
     @Test

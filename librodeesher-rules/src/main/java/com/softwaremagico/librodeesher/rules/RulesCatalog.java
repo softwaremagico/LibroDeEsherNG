@@ -2,6 +2,8 @@ package com.softwaremagico.librodeesher.rules;
 
 import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.category.CategoryFactory;
+import com.softwaremagico.librodeesher.culture.Culture;
+import com.softwaremagico.librodeesher.culture.CultureFactory;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.magic.MagicSpellList;
 import com.softwaremagico.librodeesher.magic.MagicSpellListFactory;
@@ -107,5 +109,13 @@ public final class RulesCatalog {
 
     public Race getRace(String id) throws InvalidXmlElementException {
         return RaceFactory.getInstance().getElement(id);
+    }
+
+    public List<Culture> getCultures() throws InvalidXmlElementException {
+        return CultureFactory.getInstance().getElements();
+    }
+
+    public Culture getCulture(String id) throws InvalidXmlElementException {
+        return CultureFactory.getInstance().getElement(id);
     }
 }
