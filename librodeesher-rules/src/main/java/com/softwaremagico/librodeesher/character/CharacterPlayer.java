@@ -2,6 +2,7 @@ package com.softwaremagico.librodeesher.character;
 
 import com.softwaremagico.librodeesher.age.AgeModification;
 import com.softwaremagico.librodeesher.background.Background;
+import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.characteristic.Appearance;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
@@ -57,7 +58,7 @@ public class CharacterPlayer {
     private static List<CharacteristicAbbreviation> allRealCharacteristics() {
         final List<CharacteristicAbbreviation> abbreviations = new ArrayList<>();
         for (final CharacteristicAbbreviation abbreviation : CharacteristicAbbreviation.values()) {
-            if (abbreviation != CharacteristicAbbreviation.NONE) {
+            if (abbreviation != CharacteristicAbbreviation.NONE && abbreviation != CharacteristicAbbreviation.REALM_OF_MAGIC) {
                 abbreviations.add(abbreviation);
             }
         }
@@ -158,10 +159,13 @@ public class CharacterPlayer {
     /**
      * The characteristic's total bonus: its temporal bonus plus the race's fixed bonus.
      *
-     * <p>Background/perk/special bonuses are future work, to be added here once ported.</p>
+     * <p>Background/perk/special bonuses are future work, to be added here once ported.
+     * {@link CharacteristicAbbreviation#REALM_OF_MAGIC} (used by spell categories) is not resolved
+     * here yet either: it requires knowing the caster's current realm of magic, which is future
+     * (magic) work; it returns 0 for now.</p>
      */
     public Integer getCharacteristicTotalBonus(CharacteristicAbbreviation abbreviation) throws InvalidXmlElementException {
-        if (abbreviation == CharacteristicAbbreviation.NONE) {
+        if (abbreviation == CharacteristicAbbreviation.NONE || abbreviation == CharacteristicAbbreviation.REALM_OF_MAGIC) {
             return 0;
         }
         return getCharacteristicTemporalBonus(abbreviation) + getCharacteristicRaceBonus(abbreviation);
@@ -214,6 +218,58 @@ public class CharacterPlayer {
         final LevelUp levelUp = new LevelUp();
         levels.add(levelUp);
         return levelUp;
+    }
+
+    /**
+     * Total ranks bought directly in a category (as opposed to in one of its skills), across every
+     * level so far.
+     *
+     * <p>This only sums {@link LevelUp#getCategoryRanks(String)}; ranks granted by culture/training
+     * selections are future work (they require a decision-resolution layer that does not exist yet,
+     * since a grant may offer a choice of categories/skills).</p>
+     */
+    public Integer getCategoryTotalRanks(String categoryId) {
+        int total = 0;
+        for (final LevelUp levelUp : levels) {
+            total += levelUp.getCategoryRanks(categoryId);
+        }
+        return total;
+    }
+
+    /**
+     * Total ranks bought in a skill, across every level so far.
+     *
+     * <p>Same limitation as {@link #getCategoryTotalRanks(String)}: only sums {@link
+     * LevelUp#getSkillRanks(String)}.</p>
+     */
+    public Integer getSkillTotalRanks(String skillId) {
+        int total = 0;
+        for (final LevelUp levelUp : levels) {
+            total += levelUp.getSkillRanks(skillId);
+        }
+        return total;
+    }
+
+    /**
+     * The bonus a category grants from ranks bought directly in it (only non-zero for {@link
+     * com.softwaremagico.librodeesher.category.CategoryType#STANDARD} categories) plus its flat bonus
+     * (only non-zero for {@link com.softwaremagico.librodeesher.category.CategoryType#PD}).
+     *
+     * <p>Profession/race/background/perk/item bonuses are future work.</p>
+     */
+    public Integer getCategoryDevelopmentBonus(Category category) {
+        return category.getCategoryRankBonus(getCategoryTotalRanks(category.getId())) + category.getFixedBonus();
+    }
+
+    /**
+     * A skill's bonus from its own ranks, using its category's progression table.
+     *
+     * <p>Profession/race/background/perk/item bonuses, the "real ranks" multiplier (restricted/
+     * common/professional/generalized skills cost and count differently) and the characteristic
+     * bonus are future work.</p>
+     */
+    public Integer getSkillDevelopmentBonus(Category category, String skillId) {
+        return category.getSkillRankBonus(getSkillTotalRanks(skillId));
     }
 
     public Background getBackground() {

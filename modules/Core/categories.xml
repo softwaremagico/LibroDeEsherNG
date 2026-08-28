@@ -3,9 +3,9 @@
   <category>
     <abbreviation>ArdL</abbreviation>
     <characteristics>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
     </characteristics>
     <id>armorLight</id>
     <name>
@@ -24,9 +24,9 @@
   <category>
     <abbreviation>ArdM</abbreviation>
     <characteristics>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
     </characteristics>
     <id>armorMiddle</id>
     <name>
@@ -44,9 +44,9 @@
   <category>
     <abbreviation>ArdP</abbreviation>
     <characteristics>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
     </characteristics>
     <id>armorHeavy</id>
     <name>
@@ -62,9 +62,9 @@
   <category>
     <abbreviation>Arm2M</abbreviation>
     <characteristics>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
     </characteristics>
     <id>weaponsTwoHanded</id>
     <name>
@@ -77,9 +77,9 @@
   <category>
     <abbreviation>ArmAj</abbreviation>
     <characteristics>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
     </characteristics>
     <id>weaponsThrown</id>
     <name>
@@ -92,9 +92,9 @@
   <category>
     <abbreviation>ArmAt</abbreviation>
     <characteristics>
-      <characteristic>In</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Ra</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>REASONING</characteristic>
     </characteristics>
     <id>weaponsSiege</id>
     <name>
@@ -107,9 +107,9 @@
   <category>
     <abbreviation>ArmC</abbreviation>
     <characteristics>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
     </characteristics>
     <id>weaponsBlunt</id>
     <name>
@@ -122,9 +122,9 @@
   <category>
     <abbreviation>ArmAs</abbreviation>
     <characteristics>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
     </characteristics>
     <id>weaponsPolearm</id>
     <name>
@@ -137,9 +137,9 @@
   <category>
     <abbreviation>ArmF</abbreviation>
     <characteristics>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
     </characteristics>
     <id>weaponsEdged</id>
     <name>
@@ -152,9 +152,9 @@
   <category>
     <abbreviation>ArmFue1</abbreviation>
     <characteristics>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
     </characteristics>
     <id>weaponsFirearmOneHanded</id>
     <name>
@@ -167,9 +167,9 @@
   <category>
     <abbreviation>ArmFue2</abbreviation>
     <characteristics>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
     </characteristics>
     <id>weaponsFirearmTwoHanded</id>
     <name>
@@ -182,9 +182,9 @@
   <category>
     <abbreviation>ArmPr</abbreviation>
     <characteristics>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
     </characteristics>
     <id>weaponsMissile</id>
     <name>
@@ -197,9 +197,9 @@
   <category>
     <abbreviation>ArtA</abbreviation>
     <characteristics>
-      <characteristic>Pr</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>Ag</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>AGILITY</characteristic>
     </characteristics>
     <id>artPerforming</id>
     <name>
@@ -223,9 +223,9 @@
   <category>
     <abbreviation>ArtP</abbreviation>
     <characteristics>
-      <characteristic>Em</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Pr</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>PRESENCE</characteristic>
     </characteristics>
     <id>artCreative</id>
     <name>
@@ -245,9 +245,9 @@
   <category>
     <abbreviation>AmB</abbreviation>
     <characteristics>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
-      <characteristic>Fu</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>STRENGTH</characteristic>
     </characteristics>
     <id>martialArtsSweeps</id>
     <name>
@@ -266,9 +266,9 @@
   <category>
     <abbreviation>AmG</abbreviation>
     <characteristics>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
     </characteristics>
     <id>martialArtsStrikes</id>
     <name>
@@ -287,9 +287,9 @@
   <category>
     <abbreviation>AmMC</abbreviation>
     <characteristics>
-      <characteristic>Ag</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>Ag</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>AGILITY</characteristic>
     </characteristics>
     <id>martialArtsCombatManeuvers</id>
     <name>
@@ -337,9 +337,9 @@
   <category>
     <abbreviation>AtaEsp</abbreviation>
     <characteristics>
-      <characteristic>Fu</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Ad</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristics>
     <id>specialAttacks</id>
     <name>
@@ -377,9 +377,9 @@
   <category>
     <abbreviation>AtlG</abbreviation>
     <characteristics>
-      <characteristic>Ag</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>Ag</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>AGILITY</characteristic>
     </characteristics>
     <id>athleticsGymnastics</id>
     <name>
@@ -411,9 +411,9 @@
   <category>
     <abbreviation>AtlP</abbreviation>
     <characteristics>
-      <characteristic>Fu</characteristic>
-      <characteristic>Co</characteristic>
-      <characteristic>Ag</characteristic>
+      <characteristic>STRENGTH</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>AGILITY</characteristic>
     </characteristics>
     <id>athleticsPower</id>
     <name>
@@ -433,9 +433,9 @@
   <category>
     <abbreviation>AtlR</abbreviation>
     <characteristics>
-      <characteristic>Co</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Fu</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>STRENGTH</characteristic>
     </characteristics>
     <id>athleticsEndurance</id>
     <name>
@@ -457,9 +457,9 @@
   <category>
     <abbreviation>Autoc</abbreviation>
     <characteristics>
-      <characteristic>Ad</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Ad</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristics>
     <id>selfControl</id>
     <name>
@@ -502,9 +502,9 @@
   <category>
     <abbreviation>CienB</abbreviation>
     <characteristics>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ra</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>REASONING</characteristic>
     </characteristics>
     <id>scienceAnalyticBasic</id>
     <name>
@@ -521,9 +521,9 @@
   <category>
     <abbreviation>CienE</abbreviation>
     <characteristics>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ra</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>REASONING</characteristic>
     </characteristics>
     <id>scienceAnalyticSpecialized</id>
     <name>
@@ -547,9 +547,9 @@
   <category>
     <abbreviation>Comun</abbreviation>
     <characteristics>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Em</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>EMPATHY</characteristic>
     </characteristics>
     <id>communication</id>
     <name>
@@ -663,9 +663,9 @@
   <category>
     <abbreviation>ConGen</abbreviation>
     <characteristics>
-      <characteristic>Me</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
     </characteristics>
     <id>loreGeneral</id>
     <name>
@@ -689,9 +689,9 @@
   <category>
     <abbreviation>ConMag</abbreviation>
     <characteristics>
-      <characteristic>Me</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
     </characteristics>
     <id>loreArcane</id>
     <name>
@@ -712,9 +712,9 @@
   <category>
     <abbreviation>ConOsc</abbreviation>
     <characteristics>
-      <characteristic>Me</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
     </characteristics>
     <id>loreDark</id>
     <name>
@@ -735,9 +735,9 @@
   <category>
     <abbreviation>ConTec</abbreviation>
     <characteristics>
-      <characteristic>Me</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
     </characteristics>
     <id>loreTechnical</id>
     <name>
@@ -757,9 +757,6 @@
   </category>
   <category>
     <abbreviation>DefEsp</abbreviation>
-    <characteristics>
-      <characteristic>Ninguna</characteristic>
-    </characteristics>
     <id>specialDefenses</id>
     <name>
       <en>Special Defenses</en>
@@ -785,7 +782,7 @@
   <category>
     <abbreviation>DesPP</abbreviation>
     <characteristics>
-      <characteristic>*</characteristic>
+      <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
     <id>powerPointDevelopment</id>
     <name>
@@ -801,9 +798,9 @@
   <category>
     <abbreviation>DesFis</abbreviation>
     <characteristics>
-      <characteristic>Co</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Co</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>CONSTITUTION</characteristic>
     </characteristics>
     <id>physicalDevelopment</id>
     <name>
@@ -819,9 +816,9 @@
   <category>
     <abbreviation>ExtAni</abbreviation>
     <characteristics>
-      <characteristic>Em</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Em</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>EMPATHY</characteristic>
     </characteristics>
     <id>outdoorAnimals</id>
     <name>
@@ -849,9 +846,9 @@
   <category>
     <abbreviation>ExtEnt</abbreviation>
     <characteristics>
-      <characteristic>Ad</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Me</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>MEMORY</characteristic>
     </characteristics>
     <id>outdoorEnvironment</id>
     <name>
@@ -878,9 +875,9 @@
   <category>
     <abbreviation>HecDir</abbreviation>
     <characteristics>
-      <characteristic>Ag</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>Ag</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>AGILITY</characteristic>
     </characteristics>
     <id>directedSpells</id>
     <name>
@@ -913,7 +910,7 @@
   <category>
     <abbreviation>ListBas</abbreviation>
     <characteristics>
-      <characteristic>*</characteristic>
+      <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
     <id>listsBasicOfSpells</id>
     <name>
@@ -929,7 +926,7 @@
   <category>
     <abbreviation>ListAb</abbreviation>
     <characteristics>
-      <characteristic>*</characteristic>
+      <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
     <id>listsAbiertasOfSpells</id>
     <name>
@@ -945,7 +942,7 @@
   <category>
     <abbreviation>ListCerr</abbreviation>
     <characteristics>
-      <characteristic>*</characteristic>
+      <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
     <id>listsCerradasOfSpells</id>
     <name>
@@ -961,7 +958,7 @@
   <category>
     <abbreviation>ListBasOt</abbreviation>
     <characteristics>
-      <characteristic>*</characteristic>
+      <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
     <id>listsBasicOfOtrasProfesiones</id>
     <name>
@@ -977,7 +974,7 @@
   <category>
     <abbreviation>ListAbOt</abbreviation>
     <characteristics>
-      <characteristic>*</characteristic>
+      <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
     <id>listsAbiertasOfOtrosRealms</id>
     <name>
@@ -993,7 +990,7 @@
   <category>
     <abbreviation>ListCerrOt</abbreviation>
     <characteristics>
-      <characteristic>*</characteristic>
+      <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
     <id>listsCerradasOfOtrosRealms</id>
     <name>
@@ -1009,7 +1006,7 @@
   <category>
     <abbreviation>ListBasOtR</abbreviation>
     <characteristics>
-      <characteristic>*</characteristic>
+      <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
     <id>listsBasicOfOtrosRealms</id>
     <name>
@@ -1025,7 +1022,7 @@
   <category>
     <abbreviation>ListAbArc</abbreviation>
     <characteristics>
-      <characteristic>*</characteristic>
+      <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
     <id>listsAbiertasArcanas</id>
     <name>
@@ -1041,7 +1038,7 @@
   <category>
     <abbreviation>ListAd</abbreviation>
     <characteristics>
-      <characteristic>*</characteristic>
+      <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
     <id>listsSpellsOfTraining</id>
     <name>
@@ -1057,7 +1054,7 @@
   <category>
     <abbreviation>ListAdOtR</abbreviation>
     <characteristics>
-      <characteristic>*</characteristic>
+      <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
     <id>listsSpellsOfTrainingsOfOtrosRealms</id>
     <name>
@@ -1073,7 +1070,7 @@
   <category>
     <abbreviation>ListTri</abbreviation>
     <characteristics>
-      <characteristic>*</characteristic>
+      <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
     <id>listsBasicOfTheTriad</id>
     <name>
@@ -1089,7 +1086,7 @@
   <category>
     <abbreviation>ListElCom</abbreviation>
     <characteristics>
-      <characteristic>*</characteristic>
+      <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
     <id>listsBasicElementalesComplementarias</id>
     <name>
@@ -1105,9 +1102,9 @@
   <category>
     <abbreviation>Infl</abbreviation>
     <characteristics>
-      <characteristic>Pr</characteristic>
-      <characteristic>Em</characteristic>
-      <characteristic>In</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>INTUITION</characteristic>
     </characteristics>
     <id>influence</id>
     <name>
@@ -1133,9 +1130,9 @@
   <category>
     <abbreviation>ManCom</abbreviation>
     <characteristics>
-      <characteristic>Ag</characteristic>
-      <characteristic>Rp</characteristic>
-      <characteristic>Ad</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>QUICKNESS</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristics>
     <id>combatManeuvers</id>
     <name>
@@ -1167,9 +1164,9 @@
   <category>
     <abbreviation>ManPod</abbreviation>
     <characteristics>
-      <characteristic>Em</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Ad</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristics>
     <id>powerManipulation</id>
     <name>
@@ -1192,9 +1189,9 @@
   <category>
     <abbreviation>Ofi</abbreviation>
     <characteristics>
-      <characteristic>Ag</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ad</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristics>
     <id>crafts</id>
     <name>
@@ -1227,9 +1224,9 @@
   <category>
     <abbreviation>PerBus</abbreviation>
     <characteristics>
-      <characteristic>In</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Ad</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristics>
     <id>perceptionSearching</id>
     <name>
@@ -1251,9 +1248,9 @@
   <category>
     <abbreviation>PerPers</abbreviation>
     <characteristics>
-      <characteristic>In</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>In</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>INTUITION</characteristic>
     </characteristics>
     <id>perceptionInsight</id>
     <name>
@@ -1270,9 +1267,9 @@
   <category>
     <abbreviation>PerSen</abbreviation>
     <characteristics>
-      <characteristic>In</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>In</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>INTUITION</characteristic>
     </characteristics>
     <id>perceptionSenses</id>
     <name>
@@ -1302,9 +1299,9 @@
   <category>
     <abbreviation>PerPod</abbreviation>
     <characteristics>
-      <characteristic>Em</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Pr</characteristic>
+      <characteristic>EMPATHY</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>PRESENCE</characteristic>
     </characteristics>
     <id>powerAwareness</id>
     <name>
@@ -1323,9 +1320,9 @@
   <category>
     <abbreviation>SubAta</abbreviation>
     <characteristics>
-      <characteristic>Ag</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>In</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>INTUITION</characteristic>
     </characteristics>
     <id>subterfugeAttack</id>
     <name>
@@ -1342,9 +1339,9 @@
   <category>
     <abbreviation>SubMec</abbreviation>
     <characteristics>
-      <characteristic>In</characteristic>
-      <characteristic>Ag</characteristic>
-      <characteristic>Ra</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>REASONING</characteristic>
     </characteristics>
     <id>subterfugeMechanics</id>
     <name>
@@ -1372,9 +1369,9 @@
   <category>
     <abbreviation>SubSig</abbreviation>
     <characteristics>
-      <characteristic>Ag</characteristic>
-      <characteristic>Ad</characteristic>
-      <characteristic>In</characteristic>
+      <characteristic>AGILITY</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
+      <characteristic>INTUITION</characteristic>
     </characteristics>
     <id>subterfugeStealth</id>
     <name>
@@ -1393,9 +1390,9 @@
   <category>
     <abbreviation>TecGen</abbreviation>
     <characteristics>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ad</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristics>
     <id>technicalTradeGeneral</id>
     <name>
@@ -1424,9 +1421,9 @@
   <category>
     <abbreviation>TecPro</abbreviation>
     <characteristics>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>In</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>INTUITION</characteristic>
     </characteristics>
     <id>technicalTradeProfessional</id>
     <name>
@@ -1453,9 +1450,9 @@
   <category>
     <abbreviation>TecVoc</abbreviation>
     <characteristics>
-      <characteristic>Me</characteristic>
-      <characteristic>In</characteristic>
-      <characteristic>Ra</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>REASONING</characteristic>
     </characteristics>
     <id>technicalTradeVocational</id>
     <name>
@@ -1486,9 +1483,9 @@
   <category>
     <abbreviation>Urb</abbreviation>
     <characteristics>
-      <characteristic>In</characteristic>
-      <characteristic>Pr</characteristic>
-      <characteristic>Ra</characteristic>
+      <characteristic>INTUITION</characteristic>
+      <characteristic>PRESENCE</characteristic>
+      <characteristic>REASONING</characteristic>
     </characteristics>
     <id>urban</id>
     <name>

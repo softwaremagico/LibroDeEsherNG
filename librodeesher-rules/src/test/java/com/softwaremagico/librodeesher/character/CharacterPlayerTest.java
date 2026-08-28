@@ -1,5 +1,7 @@
 package com.softwaremagico.librodeesher.character;
 
+import com.softwaremagico.librodeesher.category.Category;
+import com.softwaremagico.librodeesher.category.CategoryType;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
@@ -15,7 +17,7 @@ public class CharacterPlayerTest {
     public void everyCharacteristicStartsAtTheInitialValue() {
         final CharacterPlayer character = new CharacterPlayer();
         for (final CharacteristicAbbreviation abbreviation : CharacteristicAbbreviation.values()) {
-            if (abbreviation == CharacteristicAbbreviation.NONE) {
+            if (abbreviation == CharacteristicAbbreviation.NONE || abbreviation == CharacteristicAbbreviation.REALM_OF_MAGIC) {
                 continue;
             }
             Assert.assertEquals(character.getCharacteristicTemporalValue(abbreviation),
@@ -99,5 +101,50 @@ public class CharacterPlayerTest {
         final CharacterPlayer character = new CharacterPlayer();
         character.setCharacteristicPotentialValue(CharacteristicAbbreviation.PRESENCE, 90);
         Assert.assertEquals(character.getAppearanceTotal(), character.getAppearance().getTotal(90));
+    }
+
+    @Test
+    public void categoryAndSkillRanksAccumulateAcrossEveryLevel() {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.getCurrentLevel().setCategoryRanks("outdoorEnvironment", 3);
+        character.getCurrentLevel().setSkillRanks("tracking", 2, false);
+        character.increaseLevel();
+        character.getCurrentLevel().setCategoryRanks("outdoorEnvironment", 1);
+        character.getCurrentLevel().setSkillRanks("tracking", 1, false);
+
+        Assert.assertEquals(character.getCategoryTotalRanks("outdoorEnvironment"), Integer.valueOf(4));
+        Assert.assertEquals(character.getSkillTotalRanks("tracking"), Integer.valueOf(3));
+        Assert.assertEquals(character.getCategoryTotalRanks("unrelatedCategory"), Integer.valueOf(0));
+    }
+
+    @Test
+    public void categoryDevelopmentBonusUsesTheCategoryTypeProgressionTable() {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.getCurrentLevel().setCategoryRanks("weaponsEdged", 10);
+
+        final Category category = new Category("weaponsEdged");
+        category.setType(CategoryType.STANDARD);
+
+        Assert.assertEquals(character.getCategoryDevelopmentBonus(category), CategoryType.STANDARD.getCategoryRankBonus(10));
+    }
+
+    @Test
+    public void physicalDevelopmentCategoryGrantsItsFixedBonusRegardlessOfRanks() {
+        final CharacterPlayer character = new CharacterPlayer();
+        final Category category = new Category("physicalDevelopment");
+        category.setType(CategoryType.PD);
+
+        Assert.assertEquals(character.getCategoryDevelopmentBonus(category), Integer.valueOf(10));
+    }
+
+    @Test
+    public void skillDevelopmentBonusUsesItsCategorysProgressionTable() {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.getCurrentLevel().setSkillRanks("tracking", 10, false);
+
+        final Category category = new Category("outdoorEnvironment");
+        category.setType(CategoryType.STANDARD);
+
+        Assert.assertEquals(character.getSkillDevelopmentBonus(category, "tracking"), CategoryType.STANDARD.getSkillRankBonus(10));
     }
 }

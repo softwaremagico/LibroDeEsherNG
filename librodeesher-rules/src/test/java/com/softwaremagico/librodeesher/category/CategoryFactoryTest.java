@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.category;
 
+import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -29,7 +30,8 @@ public class CategoryFactoryTest {
         final Category lightArmor = CategoryFactory.getInstance().getElement("armorLight");
 
         Assert.assertEquals(lightArmor.getAbbreviation(), "ArdL");
-        Assert.assertEquals(lightArmor.getCharacteristics(), List.of("Ag", "Fu", "Ag"));
+        Assert.assertEquals(lightArmor.getCharacteristics(),
+                List.of(CharacteristicAbbreviation.AGILITY, CharacteristicAbbreviation.STRENGTH, CharacteristicAbbreviation.AGILITY));
         Assert.assertEquals(lightArmor.getType(), CategoryType.STANDARD);
         Assert.assertTrue(lightArmor.getSkills().contains("Cuero Endurecido"));
         Assert.assertTrue(lightArmor.getSkills().contains("Cuero Blando"));

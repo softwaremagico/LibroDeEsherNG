@@ -22,7 +22,7 @@ public class CultureMigrationToolTest {
             final Path cultureDir = sourceRoot.resolve("rolemaster/modulos/RazasYCulturas/culturas");
             Files.createDirectories(cultureDir);
             Files.writeString(sourceRoot.resolve("rolemaster/categorias.txt"), String.join("\n",
-                    "Exteriores·Entorno(ExtE)\tCn/In\tEstándar\tRastrear, Acechar",
+                    "Exteriores·Entorno(ExtE)\tAg/In\tEstándar\tRastrear, Acechar",
                     ""), StandardCharsets.UTF_8);
             Files.writeString(cultureDir.resolve("Rural.txt"), String.join("\n",
                     "# ARMAS TÍPICAS", "####################", "Filo, Arco Largo", "",

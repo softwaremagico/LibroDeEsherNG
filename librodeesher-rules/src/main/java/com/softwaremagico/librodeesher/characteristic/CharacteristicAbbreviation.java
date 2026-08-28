@@ -23,7 +23,14 @@ public enum CharacteristicAbbreviation {
     PRESENCE("Pr", "PR"),
     QUICKNESS("Rp", "QU"),
     STRENGTH("Fu", "ST"),
-    APPEARANCE("Ap", "AP");
+    APPEARANCE("Ap", "AP"),
+    /**
+     * Placeholder used by spell categories instead of a fixed characteristic: the actual
+     * characteristic is whichever one governs the caster's current realm of magic (see
+     * {@code RealmOfMagic}), resolved by {@code CharacterPlayer} rather than being a real,
+     * fixed characteristic itself.
+     */
+    REALM_OF_MAGIC("*", "*");
 
     private final String tag;
     private final String code;

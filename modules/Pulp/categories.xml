@@ -3,9 +3,9 @@
   <category>
     <abbreviation>CienM</abbreviation>
     <characteristics>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>In</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>INTUITION</characteristic>
     </characteristics>
     <id>scienceAnalyticMedical</id>
     <name>
@@ -25,9 +25,9 @@
   <category>
     <abbreviation>CienT</abbreviation>
     <characteristics>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
-      <characteristic>Ag</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>AGILITY</characteristic>
     </characteristics>
     <id>scienceAnalyticTechnique</id>
     <name>
@@ -48,9 +48,9 @@
   <category>
     <abbreviation>ConAca</abbreviation>
     <characteristics>
-      <characteristic>Me</characteristic>
-      <characteristic>Ra</characteristic>
-      <characteristic>Me</characteristic>
+      <characteristic>MEMORY</characteristic>
+      <characteristic>REASONING</characteristic>
+      <characteristic>MEMORY</characteristic>
     </characteristics>
     <id>loreAcademic</id>
     <name>

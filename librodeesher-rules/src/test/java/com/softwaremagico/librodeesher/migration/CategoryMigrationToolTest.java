@@ -2,6 +2,7 @@ package com.softwaremagico.librodeesher.migration;
 
 import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.category.CategoryType;
+import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -35,7 +36,8 @@ public class CategoryMigrationToolTest {
 
             final Category armaduraLigera = findById(basicoCategories, "armorLight");
             Assert.assertEquals(armaduraLigera.getAbbreviation(), "ArdL");
-            Assert.assertEquals(armaduraLigera.getCharacteristics(), List.of("Ag", "Fu", "Ag"));
+            Assert.assertEquals(armaduraLigera.getCharacteristics(),
+                    List.of(CharacteristicAbbreviation.AGILITY, CharacteristicAbbreviation.STRENGTH, CharacteristicAbbreviation.AGILITY));
             Assert.assertEquals(armaduraLigera.getType(), CategoryType.STANDARD);
             Assert.assertEquals(armaduraLigera.getSkills(), List.of("Cuero Endurecido", "Cuero Blando"));
 

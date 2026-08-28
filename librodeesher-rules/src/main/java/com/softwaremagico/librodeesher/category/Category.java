@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.softwaremagico.librodeesher.Element;
+import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -36,7 +36,7 @@ public class Category extends Element {
 
     @JacksonXmlElementWrapper(localName = "characteristics")
     @JacksonXmlProperty(localName = "characteristic")
-    private List<String> characteristics;
+    private List<CharacteristicAbbreviation> characteristics;
 
     @JsonProperty("type")
     private CategoryType type;
@@ -66,26 +66,52 @@ public class Category extends Element {
         this.abbreviation = abbreviation;
     }
 
-    public List<String> getCharacteristics() {
+    public List<CharacteristicAbbreviation> getCharacteristics() {
         return characteristics == null ? Collections.emptyList() : characteristics;
     }
 
-    public void setCharacteristics(List<String> characteristics) {
+    public void setCharacteristics(List<CharacteristicAbbreviation> characteristics) {
         this.characteristics = characteristics;
     }
 
     /**
-     * Convenience method parsing the legacy "Ag/Fu/Ag" characteristics tag into {@link #characteristics}.
-     * Deliberately not named {@code setCharacteristics} to avoid a same-name overload with a
-     * different argument type, which confuses Jackson's property-setter resolution during XML
-     * deserialization.
+     * Convenience method parsing the legacy "Ag/Fu/Ag" characteristics tag into {@link #characteristics},
+     * resolving each two-letter Spanish tag to its {@link CharacteristicAbbreviation} instead of
+     * keeping the raw tag, so the generated XML never embeds Spanish text. Deliberately not named
+     * {@code setCharacteristics} to avoid a same-name overload with a different argument type, which
+     * confuses Jackson's property-setter resolution during XML deserialization.
      */
     public void setCharacteristicsTag(String characteristicsTag) {
-        this.characteristics = Arrays.asList(characteristicsTag.split("/"));
+        final List<CharacteristicAbbreviation> resolved = new ArrayList<>();
+        if (!"Ninguna".equalsIgnoreCase(characteristicsTag.trim()) && !"Ninguno".equalsIgnoreCase(characteristicsTag.trim())) {
+            for (final String tag : characteristicsTag.split("/")) {
+                final CharacteristicAbbreviation abbreviation = CharacteristicAbbreviation.fromTag(tag);
+                if (abbreviation == CharacteristicAbbreviation.NONE) {
+                    throw new IllegalStateException("Unknown characteristic tag: '" + tag + "'.");
+                }
+                resolved.add(abbreviation);
+            }
+        }
+        this.characteristics = resolved;
     }
 
     public CategoryType getType() {
         return type;
+    }
+
+    /** The skill bonus granted by having {@code ranks} ranks in a skill of this category; see {@link CategoryType}. */
+    public Integer getSkillRankBonus(int ranks) {
+        return type.getSkillRankBonus(ranks);
+    }
+
+    /** The category's own bonus granted by having {@code ranks} ranks directly in it; see {@link CategoryType}. */
+    public Integer getCategoryRankBonus(int ranks) {
+        return type.getCategoryRankBonus(ranks);
+    }
+
+    /** A flat bonus granted regardless of ranks (only {@link CategoryType#PD} has one); see {@link CategoryType}. */
+    public Integer getFixedBonus() {
+        return type.getFixedBonus();
     }
 
     public void setType(CategoryType type) {
