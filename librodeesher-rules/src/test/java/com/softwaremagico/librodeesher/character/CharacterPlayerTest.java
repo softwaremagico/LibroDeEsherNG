@@ -722,4 +722,32 @@ public class CharacterPlayerTest {
         Assert.assertEquals(character.getCultureLanguageMaxWritingRanks("elvish"), 8);
         Assert.assertEquals(character.getCultureLanguageMaxSpeakingRanks("dwarvish"), 0);
     }
+
+    @Test
+    public void backgroundLanguageRankWithinTheCapIsAccepted() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setCultureId("aquaticMilitarista");
+
+        character.setBackgroundLanguageRank("commonSpeech", 8);
+
+        Assert.assertEquals(character.getBackground().getHistoryLanguageRank("commonSpeech"), 8);
+    }
+
+    @Test
+    public void backgroundLanguageRankAboveTheCapIsRejected() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setCultureId("aquaticMilitarista");
+
+        // aquaticMilitarista caps commonSpeech at 8.
+        character.setBackgroundLanguageRank("commonSpeech", 9);
+
+        Assert.assertEquals(character.getBackground().getHistoryLanguageRank("commonSpeech"), 0);
+    }
+
+    @Test
+    public void backgroundLanguageRankForAnUnmentionedLanguageIsAlwaysRejected() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setBackgroundLanguageRank("dwarvish", 1);
+        Assert.assertEquals(character.getBackground().getHistoryLanguageRank("dwarvish"), 0);
+    }
 }

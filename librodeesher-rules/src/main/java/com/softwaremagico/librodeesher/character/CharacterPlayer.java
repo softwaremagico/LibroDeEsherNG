@@ -990,8 +990,8 @@ public class CharacterPlayer {
      * and culture allow (the legacy rule takes the highest value offered by any source that mentions
      * a language, including any assigned optional-language slot). 0 if neither mentions it.
      *
-     * <p>Validating Background's spent language points against this cap is not folded in here yet;
-     * future work.</p>
+     * <p>See {@link #setBackgroundLanguageRank(String, int)} for validating background points spent
+     * on a language against this cap.</p>
      */
     public int getLanguageMaxSpeakingRanks(String languageId) throws InvalidXmlElementException {
         return Math.max(getRaceLanguageMaxSpeakingRanks(languageId), getCultureLanguageMaxSpeakingRanks(languageId));
@@ -1000,5 +1000,17 @@ public class CharacterPlayer {
     /** Same as {@link #getLanguageMaxSpeakingRanks(String)}, for writing ranks. */
     public int getLanguageMaxWritingRanks(String languageId) throws InvalidXmlElementException {
         return Math.max(getRaceLanguageMaxWritingRanks(languageId), getCultureLanguageMaxWritingRanks(languageId));
+    }
+
+    /**
+     * Sets how many background points' worth of ranks were spent on {@code languageId} (see {@link
+     * Background#setHistoryLanguageRank}), rejecting the change (leaving it at 0) if {@code ranks}
+     * alone would exceed {@link #getLanguageMaxSpeakingRanks(String)}, matching the legacy rule.
+     */
+    public void setBackgroundLanguageRank(String languageId, int ranks) throws InvalidXmlElementException {
+        background.setHistoryLanguageRank(languageId, ranks);
+        if (background.getHistoryLanguageRank(languageId) > getLanguageMaxSpeakingRanks(languageId)) {
+            background.setHistoryLanguageRank(languageId, 0);
+        }
     }
 }
