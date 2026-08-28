@@ -1239,9 +1239,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>weaponsFirearmOneHanded</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>revolverJapaneisType26</id>
+    <id>revolverJapaneseType26</id>
     <name>
-      <en>Revolver: Japaneis Type 26</en>
+      <en>Revolver: Japanese Type 26</en>
       <es>Revolver: Japanese Type 26</es>
     </name>
     <rare>false</rare>
@@ -1577,9 +1577,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>weaponsFirearmOneHanded</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>automaticPistolJapanisModel94</id>
+    <id>automaticPistolJapanseModel94</id>
     <name>
-      <en>Automatic Pistol: Japanis Model 94</en>
+      <en>Automatic Pistol: Japanse Model 94</en>
       <es>Pistola Automática: Japanse Model 94</es>
     </name>
     <rare>false</rare>
@@ -2097,9 +2097,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>weaponsFirearmTwoHanded</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>rifleJapaneisType38</id>
+    <id>rifleJapaneseType38</id>
     <name>
-      <en>Rifle: Japaneis Type 38</en>
+      <en>Rifle: Japanese Type 38</en>
       <es>Rifle: Japanese Type 38</es>
     </name>
     <rare>false</rare>
@@ -2357,9 +2357,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>weaponsFirearmTwoHanded</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>machineGunJapaneisType11</id>
+    <id>machineGunJapaneseType11</id>
     <name>
-      <en>Machine Gun: Japaneis Type 11</en>
+      <en>Machine Gun: Japanese Type 11</en>
       <es>Ametralladora: Japanese Type 11</es>
     </name>
     <rare>false</rare>
@@ -2370,9 +2370,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>weaponsFirearmTwoHanded</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>machineGunJapaneisType92</id>
+    <id>machineGunJapaneseType92</id>
     <name>
-      <en>Machine Gun: Japaneis Type 92</en>
+      <en>Machine Gun: Japanese Type 92</en>
       <es>Ametralladora: Japanese Type 92</es>
     </name>
     <rare>false</rare>

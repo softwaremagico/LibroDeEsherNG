@@ -96,13 +96,14 @@ public class TrainingMigrationToolTest {
 
             Assert.assertEquals(explorador.getSpecialItems().size(), 2);
             final TrainingSpecialItem meleeWeapon = explorador.getSpecialItems().get(0);
-            Assert.assertEquals(meleeWeapon.getName(), "Arma cuerpo a cuerpo");
+            Assert.assertEquals(meleeWeapon.getName().getSpanish(), "Arma cuerpo a cuerpo");
+            Assert.assertEquals(meleeWeapon.getName().getEnglish(), "Weapon Body to Body");
             Assert.assertEquals(meleeWeapon.getProbability(), Integer.valueOf(30));
             Assert.assertEquals(meleeWeapon.getBonus(), Integer.valueOf(10));
-            Assert.assertEquals(meleeWeapon.getSkillName(), "Arma Cuerpo a Cuerpo");
+            Assert.assertEquals(meleeWeapon.getSkillId(), "weaponBodyToBody");
             final TrainingSpecialItem friends = explorador.getSpecialItems().get(1);
             Assert.assertNull(friends.getBonus());
-            Assert.assertNull(friends.getSkillName());
+            Assert.assertNull(friends.getSkillId());
 
             Assert.assertEquals(explorador.getCategories().size(), 2);
             final TrainingCategoryGrant trackingCategory = explorador.getCategories().get(0);
@@ -134,7 +135,7 @@ public class TrainingMigrationToolTest {
             Assert.assertFalse(explorador.getCharacteristicUpgrades().get(0).isFixed());
 
             Assert.assertEquals(explorador.getRequirements().size(), 1);
-            Assert.assertEquals(explorador.getRequirements().get(0).getName(), "Religión");
+            Assert.assertEquals(explorador.getRequirements().get(0).getName(), "religion");
             Assert.assertEquals(explorador.getRequirements().get(0).getValue(), Integer.valueOf(10));
             Assert.assertEquals(explorador.getRequirements().get(0).getCostModification(), Integer.valueOf(-3));
 

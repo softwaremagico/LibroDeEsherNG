@@ -138,41 +138,62 @@
     </limitedRaces>
     <specialItems>
       <specialItem>
-        <name>Caballo de guerra (entrenamiento especial)</name>
+        <name>
+          <en>Caballo of guerra (entrenamiento Special)</en>
+          <es>Caballo de guerra (entrenamiento especial)</es>
+        </name>
         <probability>10</probability>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Arma de proyectiles (no mágica)</name>
+        <name>
+          <en>Weapon of Missile (not Magical)</en>
+          <es>Arma de proyectiles (no mágica)</es>
+        </name>
         <probability>10</probability>
-        <skillName>Arma Proyectiles</skillName>
+        <skillId>weaponMissile</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>20 Virotes (no mágicos)</name>
+        <name>
+          <en>20 Virotes (not Magical)</en>
+          <es>20 Virotes (no mágicos)</es>
+        </name>
         <probability>80</probability>
-        <skillName>Arma Proyectiles</skillName>
+        <skillId>weaponMissile</skillId>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Arma cuerpo a cuerpo (no mágica)</name>
+        <name>
+          <en>Weapon Body to Body (not Magical)</en>
+          <es>Arma cuerpo a cuerpo (no mágica)</es>
+        </name>
         <probability>40</probability>
-        <skillName>Arma Cuerpo a Cuerpo</skillName>
+        <skillId>weaponBodyToBody</skillId>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Escudo (no mágico)</name>
+        <name>
+          <en>Shield (not Arcane)</en>
+          <es>Escudo (no mágico)</es>
+        </name>
         <probability>30</probability>
-        <skillName>Armadura</skillName>
+        <skillId>armor</skillId>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Caballo</name>
+        <name>
+          <en>Caballo</en>
+          <es>Caballo</es>
+        </name>
         <probability>50</probability>
-        <skillName>Montar</skillName>
+        <skillId>montar</skillId>
       </specialItem>
       <specialItem>
-        <name>Amuleto con símbolo de amazona</name>
+        <name>
+          <en>Amuleto with Symbol of amazona</en>
+          <es>Amuleto con símbolo de amazona</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>
@@ -224,12 +245,18 @@
     <specialItems>
       <specialItem>
         <bonus>10</bonus>
-        <name>Escoba de calidad</name>
+        <name>
+          <en>Escoba of calidad</en>
+          <es>Escoba de calidad</es>
+        </name>
         <probability>30</probability>
-        <skillName>Barrer</skillName>
+        <skillId>barrer</skillId>
       </specialItem>
       <specialItem>
-        <name>Escoba</name>
+        <name>
+          <en>Escoba</en>
+          <es>Escoba</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>

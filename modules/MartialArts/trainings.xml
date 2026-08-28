@@ -134,40 +134,67 @@
     <specialItems>
       <specialItem>
         <bonus>10</bonus>
-        <name>Equipo de Disfraz</name>
+        <name>
+          <en>Equipo of Disfraz</en>
+          <es>Equipo de Disfraz</es>
+        </name>
         <probability>40</probability>
-        <skillName>Disfrazarse</skillName>
+        <skillId>disguising</skillId>
       </specialItem>
       <specialItem>
-        <name>Arma Disimulada</name>
+        <name>
+          <en>Weapon Disimulada</en>
+          <es>Arma Disimulada</es>
+        </name>
         <probability>60</probability>
       </specialItem>
       <specialItem>
-        <name>Contrato en Vigor</name>
+        <name>
+          <en>Contrato in Vigor</en>
+          <es>Contrato en Vigor</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Identidad Secreta (mercader)</name>
+        <name>
+          <en>Identidad Secreta (Merchant)</en>
+          <es>Identidad Secreta (mercader)</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>Veneno Común</name>
+        <name>
+          <en>Veneno Common</en>
+          <es>Veneno Común</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Identidad Secreta (peregrino)</name>
+        <name>
+          <en>Identidad Secreta (peregrino)</en>
+          <es>Identidad Secreta (peregrino)</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Identidad Secreta (mendigo)</name>
+        <name>
+          <en>Identidad Secreta (mendigo)</en>
+          <es>Identidad Secreta (mendigo)</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Contacto Útil en los bajos fondos</name>
+        <name>
+          <en>Contacto Useful in the bajos fondos</en>
+          <es>Contacto Útil en los bajos fondos</es>
+        </name>
         <probability>80</probability>
       </specialItem>
       <specialItem>
-        <name>Vestimenta tradicional de Espía</name>
+        <name>
+          <en>Vestimenta tradicional of Spy</en>
+          <es>Vestimenta tradicional de Espía</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>
@@ -290,29 +317,47 @@
     </name>
     <specialItems>
       <specialItem>
-        <name>Avance reciente dentro de la orden</name>
+        <name>
+          <en>Avance reciente dentro of the orden</en>
+          <es>Avance reciente dentro de la orden</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Rosario para rezar (a meditación)</name>
+        <name>
+          <en>Rosario for rezar (to Meditation)</en>
+          <es>Rosario para rezar (a meditación)</es>
+        </name>
         <probability>70</probability>
       </specialItem>
       <specialItem>
-        <name>Pergamino de oraciones (a una habilidad)</name>
+        <name>
+          <en>Pergamino of oraciones (to a Skill)</en>
+          <es>Pergamino de oraciones (a una habilidad)</es>
+        </name>
         <probability>10</probability>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Arma (no mágica)</name>
+        <name>
+          <en>Weapon (not Magical)</en>
+          <es>Arma (no mágica)</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Hierbas (D10 curativas comunes)</name>
+        <name>
+          <en>Herbs (D10 curativas comunes)</en>
+          <es>Hierbas (D10 curativas comunes)</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Reputación como guerrero sagrado</name>
+        <name>
+          <en>Reputation como Warrior sagrado</en>
+          <es>Reputación como guerrero sagrado</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>

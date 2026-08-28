@@ -94,12 +94,12 @@ public final class Translations {
                 .replace("the Spells", "the spells")
                 .replace("of the libro", "of the book")
                 .replace("of personajes", "of characters")
-                .replace("tus ", "your ")
-                .replace("tu ", "your ")
-                .replace("te ", "you ")
-                .replace("se ", "is ")
-                .replace(" al ", " to the ")
-                .replace(" del ", " of the ")
+                .replaceAll("(?i)\\btus\\b", "your")
+                .replaceAll("(?i)\\btu\\b", "your")
+                .replaceAll("(?i)\\bte\\b", "you")
+                .replaceAll("(?i)\\bse\\b", "is")
+                .replaceAll("(?i)\\bal\\b", "to the")
+                .replaceAll("(?i)\\bdel\\b", "of the")
                 .replace(" of the Caos", " of Chaos")
                 .replace(" of the Alma", " of the Soul")
                 .replace(" of the Carne", " of the Flesh")
@@ -1006,6 +1006,44 @@ public final class Translations {
 
     private static void registerWords() {
         final Map<String, String> m = WORDS;
+        // Training "ESPECIAL" (background item) vocabulary.
+        put(m, "administración", "administration");
+        put(m, "admistración", "administration");
+        put(m, "Analítica", "Analytical");
+        put(m, "Antídotos", "Antidotes");
+        put(m, "Automóvil", "Automobile");
+        put(m, "Búho", "Owl");
+        put(m, "científicas", "scientific");
+        put(m, "Compañero", "Companion");
+        put(m, "compañía", "company");
+        put(m, "discreción", "discretion");
+        put(m, "doméstico", "domestic");
+        put(m, "dueño", "owner");
+        put(m, "específica", "specific");
+        put(m, "específico", "specific");
+        put(m, "específicos", "specific");
+        put(m, "éxito", "success");
+        put(m, "ganzúas", "lockpicks");
+        put(m, "Ganzúas", "Lockpicks");
+        put(m, "Hurón", "Ferret");
+        put(m, "Identificación", "Identification");
+        put(m, "Inversión", "Investment");
+        put(m, "Joyería", "Jewelry");
+        put(m, "límite", "limit");
+        put(m, "médico", "medical");
+        put(m, "Mercancía", "Merchandise");
+        put(m, "Muñequeras", "Wristbands");
+        put(m, "Patrón", "Patron");
+        put(m, "Poción", "Potion");
+        put(m, "Promoción", "Promotion");
+        put(m, "región", "region");
+        put(m, "Reparación", "Repair");
+        put(m, "Reparacíon", "Repair");
+        put(m, "Reputación", "Reputation");
+        put(m, "seña", "sign");
+        put(m, "señas", "signs");
+        put(m, "Útil", "Useful");
+        put(m, "útiles", "useful");
         // Perk/training grade suffixes, e.g. "Piel Gruesa (Máximo)".
         put(m, "Máximo", "Maximum");
         put(m, "Mayor", "Major");

@@ -3,6 +3,7 @@ package com.softwaremagico.librodeesher.migration;
 import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.file.ModuleManager;
+import com.softwaremagico.librodeesher.language.TranslatedText;
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
 import com.softwaremagico.librodeesher.training.Training;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
@@ -253,8 +254,10 @@ public final class TrainingMigrationTool {
         for (final String line : sectionLines) {
             final String[] columns = line.split("\t");
             final Integer bonus = columns.length > 2 ? Integer.valueOf(columns[2].trim()) : null;
-            final String skillName = columns.length > 3 ? columns[3].trim() : null;
-            items.add(new TrainingSpecialItem(columns[0].trim(), Integer.valueOf(columns[1].trim()), bonus, skillName));
+            final String skillId = columns.length > 3 ? Translations.toEnglishId(columns[3].trim()) : null;
+            final String name = columns[0].trim();
+            items.add(new TrainingSpecialItem(new TranslatedText(name, Translations.toEnglish(name)),
+                    Integer.valueOf(columns[1].trim()), bonus, skillId));
         }
         return items;
     }
@@ -346,6 +349,11 @@ public final class TrainingMigrationTool {
         return groups;
     }
 
+    /**
+     * Parses "REQUISITOS PROFESIONALES" (always "Ninguno" in every shipped training, so this never
+     * actually produces a requirement in practice, but is still translated properly in case a future
+     * module ever uses it).
+     */
     private static List<TrainingRequirement> parseRequirements(List<String> sectionLines) {
         final List<TrainingRequirement> requirements = new ArrayList<>();
         for (final String line : sectionLines) {
@@ -355,7 +363,7 @@ public final class TrainingMigrationTool {
             for (final String entry : line.split(",\\s*")) {
                 // "Religión (10) (-3)"
                 final String[] parts = entry.trim().split("\\(");
-                final String name = parts[0].trim();
+                final String name = Translations.toEnglishId(parts[0].trim());
                 final Integer value = Integer.valueOf(parts[1].replace(")", "").trim());
                 final Integer costModification = Integer.valueOf(parts[2].replace(")", "").trim());
                 requirements.add(new TrainingRequirement(name, value, costModification));

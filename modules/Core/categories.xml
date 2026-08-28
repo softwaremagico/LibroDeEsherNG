@@ -7,6 +7,7 @@
       <characteristic>STRENGTH</characteristic>
       <characteristic>AGILITY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>armorLight</id>
     <name>
       <en>Armor: Light</en>
@@ -28,6 +29,7 @@
       <characteristic>AGILITY</characteristic>
       <characteristic>STRENGTH</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>armorMiddle</id>
     <name>
       <en>Armor: Middle</en>
@@ -48,6 +50,7 @@
       <characteristic>AGILITY</characteristic>
       <characteristic>STRENGTH</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>armorHeavy</id>
     <name>
       <en>Armor: Heavy</en>
@@ -66,6 +69,7 @@
       <characteristic>AGILITY</characteristic>
       <characteristic>STRENGTH</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>weaponsTwoHanded</id>
     <name>
       <en>Weapons: Two-Handed</en>
@@ -81,6 +85,7 @@
       <characteristic>STRENGTH</characteristic>
       <characteristic>AGILITY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>weaponsThrown</id>
     <name>
       <en>Weapons: Thrown</en>
@@ -96,6 +101,7 @@
       <characteristic>AGILITY</characteristic>
       <characteristic>REASONING</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>weaponsSiege</id>
     <name>
       <en>Weapons: Siege</en>
@@ -111,6 +117,7 @@
       <characteristic>AGILITY</characteristic>
       <characteristic>STRENGTH</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>weaponsBlunt</id>
     <name>
       <en>Weapons: Blunt</en>
@@ -126,6 +133,7 @@
       <characteristic>AGILITY</characteristic>
       <characteristic>STRENGTH</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>weaponsPolearm</id>
     <name>
       <en>Weapons: Polearm</en>
@@ -141,6 +149,7 @@
       <characteristic>AGILITY</characteristic>
       <characteristic>STRENGTH</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>weaponsEdged</id>
     <name>
       <en>Weapons: Edged</en>
@@ -156,6 +165,7 @@
       <characteristic>STRENGTH</characteristic>
       <characteristic>AGILITY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>weaponsFirearmOneHanded</id>
     <name>
       <en>Weapons: Firearm (One-Handed)</en>
@@ -171,6 +181,7 @@
       <characteristic>STRENGTH</characteristic>
       <characteristic>AGILITY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>weaponsFirearmTwoHanded</id>
     <name>
       <en>Weapons: Firearm (Two-Handed)</en>
@@ -186,6 +197,7 @@
       <characteristic>STRENGTH</characteristic>
       <characteristic>AGILITY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>weaponsMissile</id>
     <name>
       <en>Weapons: Missile</en>
@@ -201,6 +213,7 @@
       <characteristic>EMPATHY</characteristic>
       <characteristic>AGILITY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>artPerforming</id>
     <name>
       <en>Art: Performing</en>
@@ -227,6 +240,7 @@
       <characteristic>INTUITION</characteristic>
       <characteristic>PRESENCE</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>artCreative</id>
     <name>
       <en>Art: Creative</en>
@@ -249,6 +263,7 @@
       <characteristic>STRENGTH</characteristic>
       <characteristic>STRENGTH</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>martialArtsSweeps</id>
     <name>
       <en>Martial Arts: Sweeps</en>
@@ -270,6 +285,7 @@
       <characteristic>AGILITY</characteristic>
       <characteristic>STRENGTH</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>martialArtsStrikes</id>
     <name>
       <en>Martial Arts: Strikes</en>
@@ -291,6 +307,7 @@
       <characteristic>QUICKNESS</characteristic>
       <characteristic>AGILITY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>martialArtsCombatManeuvers</id>
     <name>
       <en>Martial Arts: Combat Maneuvers</en>
@@ -341,6 +358,7 @@
       <characteristic>AGILITY</characteristic>
       <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>specialAttacks</id>
     <name>
       <en>Special Attacks</en>
@@ -381,6 +399,7 @@
       <characteristic>QUICKNESS</characteristic>
       <characteristic>AGILITY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>athleticsGymnastics</id>
     <name>
       <en>Athletics: Gymnastics</en>
@@ -415,6 +434,7 @@
       <characteristic>CONSTITUTION</characteristic>
       <characteristic>AGILITY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>athleticsPower</id>
     <name>
       <en>Athletics: Power</en>
@@ -437,6 +457,7 @@
       <characteristic>AGILITY</characteristic>
       <characteristic>STRENGTH</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>athleticsEndurance</id>
     <name>
       <en>Athletics: Endurance</en>
@@ -461,6 +482,7 @@
       <characteristic>PRESENCE</characteristic>
       <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>selfControl</id>
     <name>
       <en>Self Control</en>
@@ -506,6 +528,7 @@
       <characteristic>MEMORY</characteristic>
       <characteristic>REASONING</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>scienceAnalyticBasic</id>
     <name>
       <en>Science/Analytic: Basic</en>
@@ -525,6 +548,7 @@
       <characteristic>MEMORY</characteristic>
       <characteristic>REASONING</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>scienceAnalyticSpecialized</id>
     <name>
       <en>Science/Analytic: Specialized</en>
@@ -551,6 +575,7 @@
       <characteristic>MEMORY</characteristic>
       <characteristic>EMPATHY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>communication</id>
     <name>
       <en>Communication</en>
@@ -667,6 +692,7 @@
       <characteristic>REASONING</characteristic>
       <characteristic>MEMORY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>loreGeneral</id>
     <name>
       <en>Lore: General</en>
@@ -693,6 +719,7 @@
       <characteristic>REASONING</characteristic>
       <characteristic>MEMORY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>loreArcane</id>
     <name>
       <en>Lore: Arcane</en>
@@ -716,6 +743,7 @@
       <characteristic>REASONING</characteristic>
       <characteristic>MEMORY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>loreDark</id>
     <name>
       <en>Lore: Dark</en>
@@ -739,6 +767,7 @@
       <characteristic>REASONING</characteristic>
       <characteristic>MEMORY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>loreTechnical</id>
     <name>
       <en>Lore: Technical</en>
@@ -757,6 +786,7 @@
   </category>
   <category>
     <abbreviation>DefEsp</abbreviation>
+    <fixedBonus>0</fixedBonus>
     <id>specialDefenses</id>
     <name>
       <en>Special Defenses</en>
@@ -784,6 +814,7 @@
     <characteristics>
       <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>powerPointDevelopment</id>
     <name>
       <en>Power Point Development</en>
@@ -802,6 +833,7 @@
       <characteristic>SELF_DISCIPLINE</characteristic>
       <characteristic>CONSTITUTION</characteristic>
     </characteristics>
+    <fixedBonus>10</fixedBonus>
     <id>physicalDevelopment</id>
     <name>
       <en>Physical Development</en>
@@ -820,6 +852,7 @@
       <characteristic>AGILITY</characteristic>
       <characteristic>EMPATHY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>outdoorAnimals</id>
     <name>
       <en>Outdoor: Animals</en>
@@ -850,6 +883,7 @@
       <characteristic>INTUITION</characteristic>
       <characteristic>MEMORY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>outdoorEnvironment</id>
     <name>
       <en>Outdoor: Environment</en>
@@ -879,6 +913,7 @@
       <characteristic>SELF_DISCIPLINE</characteristic>
       <characteristic>AGILITY</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>directedSpells</id>
     <name>
       <en>Directed Spells</en>
@@ -912,6 +947,7 @@
     <characteristics>
       <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>listsBasicOfSpells</id>
     <name>
       <en>Lists Basic of Spells</en>
@@ -928,6 +964,7 @@
     <characteristics>
       <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>listsAbiertasOfSpells</id>
     <name>
       <en>Lists Abiertas of Spells</en>
@@ -944,6 +981,7 @@
     <characteristics>
       <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>listsCerradasOfSpells</id>
     <name>
       <en>Lists Cerradas of Spells</en>
@@ -960,6 +998,7 @@
     <characteristics>
       <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>listsBasicOfOtrasProfesiones</id>
     <name>
       <en>Lists Basic of Otras Profesiones</en>
@@ -976,6 +1015,7 @@
     <characteristics>
       <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>listsAbiertasOfOtrosRealms</id>
     <name>
       <en>Lists Abiertas of Otros Realms</en>
@@ -992,6 +1032,7 @@
     <characteristics>
       <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>listsCerradasOfOtrosRealms</id>
     <name>
       <en>Lists Cerradas of Otros Realms</en>
@@ -1008,6 +1049,7 @@
     <characteristics>
       <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>listsBasicOfOtrosRealms</id>
     <name>
       <en>Lists Basic of Otros Realms</en>
@@ -1024,6 +1066,7 @@
     <characteristics>
       <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>listsAbiertasArcanas</id>
     <name>
       <en>Lists Abiertas Arcanas</en>
@@ -1040,6 +1083,7 @@
     <characteristics>
       <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>listsSpellsOfTraining</id>
     <name>
       <en>Lists Spells of Training</en>
@@ -1056,6 +1100,7 @@
     <characteristics>
       <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>listsSpellsOfTrainingsOfOtrosRealms</id>
     <name>
       <en>Lists Spells of Trainings of Otros Realms</en>
@@ -1072,6 +1117,7 @@
     <characteristics>
       <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>listsBasicOfTheTriad</id>
     <name>
       <en>Lists Basic of the Triad</en>
@@ -1088,6 +1134,7 @@
     <characteristics>
       <characteristic>REALM_OF_MAGIC</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>listsBasicElementalesComplementarias</id>
     <name>
       <en>Lists Basic Elementales Complementarias</en>
@@ -1106,6 +1153,7 @@
       <characteristic>EMPATHY</characteristic>
       <characteristic>INTUITION</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>influence</id>
     <name>
       <en>Influence</en>
@@ -1134,6 +1182,7 @@
       <characteristic>QUICKNESS</characteristic>
       <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>combatManeuvers</id>
     <name>
       <en>Combat Maneuvers</en>
@@ -1168,6 +1217,7 @@
       <characteristic>INTUITION</characteristic>
       <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>powerManipulation</id>
     <name>
       <en>Power Manipulation</en>
@@ -1193,6 +1243,7 @@
       <characteristic>MEMORY</characteristic>
       <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>crafts</id>
     <name>
       <en>Crafts</en>
@@ -1228,6 +1279,7 @@
       <characteristic>REASONING</characteristic>
       <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>perceptionSearching</id>
     <name>
       <en>Perception: Searching</en>
@@ -1252,6 +1304,7 @@
       <characteristic>SELF_DISCIPLINE</characteristic>
       <characteristic>INTUITION</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>perceptionInsight</id>
     <name>
       <en>Perception: Insight</en>
@@ -1271,6 +1324,7 @@
       <characteristic>SELF_DISCIPLINE</characteristic>
       <characteristic>INTUITION</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>perceptionSenses</id>
     <name>
       <en>Perception: Senses</en>
@@ -1303,6 +1357,7 @@
       <characteristic>INTUITION</characteristic>
       <characteristic>PRESENCE</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>powerAwareness</id>
     <name>
       <en>Power Awareness</en>
@@ -1324,6 +1379,7 @@
       <characteristic>SELF_DISCIPLINE</characteristic>
       <characteristic>INTUITION</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>subterfugeAttack</id>
     <name>
       <en>Subterfuge: Attack</en>
@@ -1343,6 +1399,7 @@
       <characteristic>AGILITY</characteristic>
       <characteristic>REASONING</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>subterfugeMechanics</id>
     <name>
       <en>Subterfuge: Mechanics</en>
@@ -1373,6 +1430,7 @@
       <characteristic>SELF_DISCIPLINE</characteristic>
       <characteristic>INTUITION</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>subterfugeStealth</id>
     <name>
       <en>Subterfuge: Stealth</en>
@@ -1394,6 +1452,7 @@
       <characteristic>MEMORY</characteristic>
       <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>technicalTradeGeneral</id>
     <name>
       <en>Technical/Trade: General</en>
@@ -1425,6 +1484,7 @@
       <characteristic>MEMORY</characteristic>
       <characteristic>INTUITION</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>technicalTradeProfessional</id>
     <name>
       <en>Technical/Trade: Professional</en>
@@ -1454,6 +1514,7 @@
       <characteristic>INTUITION</characteristic>
       <characteristic>REASONING</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>technicalTradeVocational</id>
     <name>
       <en>Technical/Trade: Vocational</en>
@@ -1487,6 +1548,7 @@
       <characteristic>PRESENCE</characteristic>
       <characteristic>REASONING</characteristic>
     </characteristics>
+    <fixedBonus>0</fixedBonus>
     <id>urban</id>
     <name>
       <en>Urban</en>

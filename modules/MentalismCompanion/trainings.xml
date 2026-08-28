@@ -123,35 +123,59 @@
     </name>
     <specialItems>
       <specialItem>
-        <name>Ropa del alta calidad y muy elegante</name>
+        <name>
+          <en>Ropa of the High calidad and muy elegante</en>
+          <es>Ropa del alta calidad y muy elegante</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>Joyería (valor 10D10mp)</name>
+        <name>
+          <en>Jewelry (valor 10D10mp)</en>
+          <es>Joyería (valor 10D10mp)</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>Regalo del amante (valor 5D10mp)</name>
+        <name>
+          <en>Regalo of the amante (valor 5D10mp)</en>
+          <es>Regalo del amante (valor 5D10mp)</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>Contacto en alta sociedad (una región)</name>
+        <name>
+          <en>Contacto in High sociedad (a region)</en>
+          <es>Contacto en alta sociedad (una región)</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Amistad con una persona importante</name>
+        <name>
+          <en>Amistad with a persona importante</en>
+          <es>Amistad con una persona importante</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Rival celoso (de igual o superior estatus)</name>
+        <name>
+          <en>Rival celoso (of igual or superior estatus)</en>
+          <es>Rival celoso (de igual o superior estatus)</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Ex-amante despechado (enemigo)</name>
+        <name>
+          <en>Ex-amante despechado (enemigo)</en>
+          <es>Ex-amante despechado (enemigo)</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Símbolo especial del amante</name>
+        <name>
+          <en>Symbol Special of the amante</en>
+          <es>Símbolo especial del amante</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>

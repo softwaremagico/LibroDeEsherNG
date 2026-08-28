@@ -116,35 +116,59 @@
     </name>
     <specialItems>
       <specialItem>
-        <name>Lobo amigo</name>
+        <name>
+          <en>Lobo amigo</en>
+          <es>Lobo amigo</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Gato salvaje amigo</name>
+        <name>
+          <en>Gato salvaje amigo</en>
+          <es>Gato salvaje amigo</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Mapache amigo</name>
+        <name>
+          <en>Mapache amigo</en>
+          <es>Mapache amigo</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Hurón amigo</name>
+        <name>
+          <en>Ferret amigo</en>
+          <es>Hurón amigo</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Búho amigo</name>
+        <name>
+          <en>Owl amigo</en>
+          <es>Búho amigo</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Paloma amiga</name>
+        <name>
+          <en>Paloma amiga</en>
+          <es>Paloma amiga</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>Serpiente amiga</name>
+        <name>
+          <en>Snake amiga</en>
+          <es>Serpiente amiga</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Perro domesticado amigo</name>
+        <name>
+          <en>Dog domesticado amigo</en>
+          <es>Perro domesticado amigo</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>
@@ -210,33 +234,51 @@
     <specialItems>
       <specialItem>
         <bonus>15</bonus>
-        <name>Material para disfrazarse (no mágico)</name>
+        <name>
+          <en>Material for Disguising (not Arcane)</en>
+          <es>Material para disfrazarse (no mágico)</es>
+        </name>
         <probability>50</probability>
-        <skillName>Disfrazarse</skillName>
+        <skillId>disguising</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Artilugios de entretenimiento (no mágicos)</name>
+        <name>
+          <en>Devices of entretenimiento (not Magical)</en>
+          <es>Artilugios de entretenimiento (no mágicos)</es>
+        </name>
         <probability>50</probability>
-        <skillName>Malabarismos</skillName>
+        <skillId>juggling</skillId>
       </specialItem>
       <specialItem>
-        <name>Amistad con un tabernero</name>
+        <name>
+          <en>Amistad with a tabernero</en>
+          <es>Amistad con un tabernero</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Amistad con un tabernero</name>
+        <name>
+          <en>Amistad with a tabernero</en>
+          <es>Amistad con un tabernero</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Amistad con un artista famoso</name>
+        <name>
+          <en>Amistad with a Artist famoso</en>
+          <es>Amistad con un artista famoso</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Material de maquillaje (no mágico)</name>
+        <name>
+          <en>Material of maquillaje (not Arcane)</en>
+          <es>Material de maquillaje (no mágico)</es>
+        </name>
         <probability>100</probability>
-        <skillName>Disfrazarse</skillName>
+        <skillId>disguising</skillId>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>40</trainingTimeInMonths>
@@ -402,31 +444,46 @@
     <specialItems>
       <specialItem>
         <bonus>10</bonus>
-        <name>Arma (no mágica)</name>
+        <name>
+          <en>Weapon (not Magical)</en>
+          <es>Arma (no mágica)</es>
+        </name>
         <probability>30</probability>
-        <skillName>Arma</skillName>
+        <skillId>weapon</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Armadura (no mágica)</name>
+        <name>
+          <en>Armor (not Magical)</en>
+          <es>Armadura (no mágica)</es>
+        </name>
         <probability>30</probability>
-        <skillName>Armadura</skillName>
+        <skillId>armor</skillId>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Otro equipo (no mágico)</name>
+        <name>
+          <en>Otro equipo (not Arcane)</en>
+          <es>Otro equipo (no mágico)</es>
+        </name>
         <probability>30</probability>
-        <skillName>Cualquier habilidad</skillName>
+        <skillId>cualquierSkill</skillId>
       </specialItem>
       <specialItem>
-        <name>Sumando de hechizos (+1) u Objeto con Hechizo Diario I (hechizo de nivel 1)</name>
+        <name>
+          <en>Sumando of Spells (+1) u Objeto with Spell Diario I (Spell of nivel 1)</en>
+          <es>Sumando de hechizos (+1) u Objeto con Hechizo Diario I (hechizo de nivel 1)</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Elige un arma o armadura (no mágica)</name>
+        <name>
+          <en>Elige a Weapon or Armor (not Magical)</en>
+          <es>Elige un arma o armadura (no mágica)</es>
+        </name>
         <probability>100</probability>
-        <skillName>Arma/Armadura</skillName>
+        <skillId>weaponArmor</skillId>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>24</trainingTimeInMonths>
@@ -564,61 +621,91 @@
     <specialItems>
       <specialItem>
         <bonus>10</bonus>
-        <name>Caballo de guerra</name>
+        <name>
+          <en>Caballo of guerra</en>
+          <es>Caballo de guerra</es>
+        </name>
         <probability>30</probability>
-        <skillName>Montar</skillName>
+        <skillId>montar</skillId>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Caballo de guerra</name>
+        <name>
+          <en>Caballo of guerra</en>
+          <es>Caballo de guerra</es>
+        </name>
         <probability>30</probability>
-        <skillName>Montar</skillName>
+        <skillId>montar</skillId>
       </specialItem>
       <specialItem>
-        <name>Caballo de guerra</name>
+        <name>
+          <en>Caballo of guerra</en>
+          <es>Caballo de guerra</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Arma (no mágica)</name>
+        <name>
+          <en>Weapon (not Magical)</en>
+          <es>Arma (no mágica)</es>
+        </name>
         <probability>40</probability>
-        <skillName>Arma</skillName>
+        <skillId>weapon</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Armadura (no mágica)</name>
+        <name>
+          <en>Armor (not Magical)</en>
+          <es>Armadura (no mágica)</es>
+        </name>
         <probability>40</probability>
-        <skillName>Armadura</skillName>
+        <skillId>armor</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Escudo (no mágico)</name>
+        <name>
+          <en>Shield (not Arcane)</en>
+          <es>Escudo (no mágico)</es>
+        </name>
         <probability>50</probability>
-        <skillName>Armadura</skillName>
+        <skillId>armor</skillId>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Arma (no mágica)</name>
+        <name>
+          <en>Weapon (not Magical)</en>
+          <es>Arma (no mágica)</es>
+        </name>
         <probability>30</probability>
-        <skillName>Arma</skillName>
+        <skillId>weapon</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Armadura (no mágica)</name>
+        <name>
+          <en>Armor (not Magical)</en>
+          <es>Armadura (no mágica)</es>
+        </name>
         <probability>30</probability>
-        <skillName>Armadura</skillName>
+        <skillId>armor</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Escudo (no mágico)</name>
+        <name>
+          <en>Shield (not Arcane)</en>
+          <es>Escudo (no mágico)</es>
+        </name>
         <probability>40</probability>
-        <skillName>Armadura</skillName>
+        <skillId>armor</skillId>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Caballo</name>
+        <name>
+          <en>Caballo</en>
+          <es>Caballo</es>
+        </name>
         <probability>100</probability>
-        <skillName>Montar</skillName>
+        <skillId>montar</skillId>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>69</trainingTimeInMonths>
@@ -768,32 +855,50 @@
     </name>
     <specialItems>
       <specialItem>
-        <name>d10 Pieles de animales (10mp cada una)</name>
+        <name>
+          <en>d10 Pieles of Animals (10mp cada a)</en>
+          <es>d10 Pieles de animales (10mp cada una)</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>d10 Pieles de animales (10mp cada una)</name>
+        <name>
+          <en>d10 Pieles of Animals (10mp cada a)</en>
+          <es>d10 Pieles de animales (10mp cada una)</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>d10 Pieles de animales (10mp cada una)</name>
+        <name>
+          <en>d10 Pieles of Animals (10mp cada a)</en>
+          <es>d10 Pieles de animales (10mp cada una)</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
         <bonus>15</bonus>
-        <name>Trampas de calidad (no mágicas)</name>
+        <name>
+          <en>Trampas of calidad (not Magical)</en>
+          <es>Trampas de calidad (no mágicas)</es>
+        </name>
         <probability>30</probability>
-        <skillName>Construir Trampas</skillName>
+        <skillId>construirTrampas</skillId>
       </specialItem>
       <specialItem>
-        <name>Comprador de Pieles de fiar</name>
+        <name>
+          <en>Comprador of Pieles of fiar</en>
+          <es>Comprador de Pieles de fiar</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Trampas(no mágicas)</name>
+        <name>
+          <en>Trampas(not Magical)</en>
+          <es>Trampas(no mágicas)</es>
+        </name>
         <probability>100</probability>
-        <skillName>Construir Trampas</skillName>
+        <skillId>construirTrampas</skillId>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>18</trainingTimeInMonths>
@@ -907,38 +1012,59 @@
     </name>
     <specialItems>
       <specialItem>
-        <name>joyas robadas (10d10 mp)</name>
+        <name>
+          <en>joyas robadas (10d10 mp)</en>
+          <es>joyas robadas (10d10 mp)</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>gemas robadas (10d10 mp)</name>
+        <name>
+          <en>gemas robadas (10d10 mp)</en>
+          <es>gemas robadas (10d10 mp)</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>pieza de arte robada (10d10 mp)</name>
+        <name>
+          <en>pieza of Art robada (10d10 mp)</en>
+          <es>pieza de arte robada (10d10 mp)</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>ganzúas (no mágicas)</name>
+        <name>
+          <en>Lockpicks (not Magical)</en>
+          <es>ganzúas (no mágicas)</es>
+        </name>
         <probability>30</probability>
-        <skillName>Abrir Cerraduras</skillName>
+        <skillId>abrirLocks</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>herramientas para desactivar trampas (no mágicas)</name>
+        <name>
+          <en>herramientas for desactivar trampas (not Magical)</en>
+          <es>herramientas para desactivar trampas (no mágicas)</es>
+        </name>
         <probability>30</probability>
-        <skillName>Desactivar Trampas</skillName>
+        <skillId>desactivarTrampas</skillId>
       </specialItem>
       <specialItem>
-        <name>contactos de fiar</name>
+        <name>
+          <en>contactos of fiar</en>
+          <es>contactos de fiar</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>ganzúas y herramientas para desactivar trampas (no mágicas)</name>
+        <name>
+          <en>Lockpicks and herramientas for desactivar trampas (not Magical)</en>
+          <es>ganzúas y herramientas para desactivar trampas (no mágicas)</es>
+        </name>
         <probability>100</probability>
-        <skillName>Desactivar Trampas, Abrir Cerraduras</skillName>
+        <skillId>desactivarTrampasAbrirLocks</skillId>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>33</trainingTimeInMonths>
@@ -1006,36 +1132,57 @@
     </name>
     <specialItems>
       <specialItem>
-        <name>2d10 hierbas de Alivio de Conmociones</name>
+        <name>
+          <en>2d10 Herbs of Alivio of Conmociones</en>
+          <es>2d10 hierbas de Alivio de Conmociones</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>1d10 Antídotos de Venenos</name>
+        <name>
+          <en>1d10 Antidotes of Poisons</en>
+          <es>1d10 Antídotos de Venenos</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>1d10 hierbas de Alivio de Quemaduras/Congelaciones</name>
+        <name>
+          <en>1d10 Herbs of Alivio of Quemaduras/Congelaciones</en>
+          <es>1d10 hierbas de Alivio de Quemaduras/Congelaciones</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>1d10 hierbas de Reparación de Hemorragias</name>
+        <name>
+          <en>1d10 Herbs of Repair of Hemorragias</en>
+          <es>1d10 hierbas de Reparación de Hemorragias</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>1d10 hierbas Generales</name>
+        <name>
+          <en>1d10 Herbs Generales</en>
+          <es>1d10 hierbas Generales</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
         <bonus>15</bonus>
-        <name>Equipo médico superior (no mágico)</name>
+        <name>
+          <en>Equipo medical superior (not Arcane)</en>
+          <es>Equipo médico superior (no mágico)</es>
+        </name>
         <probability>30</probability>
-        <skillName>Medicina</skillName>
+        <skillId>medicine</skillId>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Equipo médico (no mágico)</name>
+        <name>
+          <en>Equipo medical (not Arcane)</en>
+          <es>Equipo médico (no mágico)</es>
+        </name>
         <probability>100</probability>
-        <skillName>Medicina</skillName>
+        <skillId>medicine</skillId>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>18</trainingTimeInMonths>
@@ -1092,27 +1239,42 @@
     <specialItems>
       <specialItem>
         <bonus>20</bonus>
-        <name>Libro (Habilidad de conocimiento específica)</name>
+        <name>
+          <en>Libro (Skill of Lore specific)</en>
+          <es>Libro (Habilidad de conocimiento específica)</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
         <bonus>15</bonus>
-        <name>Libro (Habilidad de conocimiento específica)</name>
+        <name>
+          <en>Libro (Skill of Lore specific)</en>
+          <es>Libro (Habilidad de conocimiento específica)</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Libro (Categoría de conocimiento específica)</name>
+        <name>
+          <en>Libro (Category of Lore specific)</en>
+          <es>Libro (Categoría de conocimiento específica)</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>1 a 5 Libros (Habilidad de conocimiento especifica)</name>
+        <name>
+          <en>1 to 5 Libros (Skill of Lore especifica)</en>
+          <es>1 a 5 Libros (Habilidad de conocimiento especifica)</es>
+        </name>
         <probability>10</probability>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Libro (Categoría de conocimiento específica)</name>
+        <name>
+          <en>Libro (Category of Lore specific)</en>
+          <es>Libro (Categoría de conocimiento específica)</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>
@@ -1198,25 +1360,40 @@
     </name>
     <specialItems>
       <specialItem>
-        <name>Un mapa detallado de una región</name>
+        <name>
+          <en>A mapa detallado of a region</en>
+          <es>Un mapa detallado de una región</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>1d10 Esbozos de varias regiones</name>
+        <name>
+          <en>1d10 Esbozos of varias regiones</en>
+          <es>1d10 Esbozos de varias regiones</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Una buena bestia de monta</name>
+        <name>
+          <en>A buena bestia of monta</en>
+          <es>Una buena bestia de monta</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Arma de Proyectil (no mágica)</name>
+        <name>
+          <en>Weapon of Proyectil (not Magical)</en>
+          <es>Arma de Proyectil (no mágica)</es>
+        </name>
         <probability>20</probability>
-        <skillName>Arma Proyectiles</skillName>
+        <skillId>weaponMissile</skillId>
       </specialItem>
       <specialItem>
-        <name>Bestia de Monta (a discreción del DJ)</name>
+        <name>
+          <en>Bestia of Monta (to discretion of the DJ)</en>
+          <es>Bestia de Monta (a discreción del DJ)</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>
@@ -1344,36 +1521,57 @@
     </name>
     <specialItems>
       <specialItem>
-        <name>Contactos útiles en la ciudad</name>
+        <name>
+          <en>Contactos useful in the ciudad</en>
+          <es>Contactos útiles en la ciudad</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Contactos útiles en los barrios bajos</name>
+        <name>
+          <en>Contactos useful in the barrios bajos</en>
+          <es>Contactos útiles en los barrios bajos</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Promoción</name>
+        <name>
+          <en>Promotion</en>
+          <es>Promoción</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>Promoción</name>
+        <name>
+          <en>Promotion</en>
+          <es>Promoción</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Promoción</name>
+        <name>
+          <en>Promotion</en>
+          <es>Promoción</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Arma (no mágica)</name>
+        <name>
+          <en>Weapon (not Magical)</en>
+          <es>Arma (no mágica)</es>
+        </name>
         <probability>10</probability>
-        <skillName>Arma</skillName>
+        <skillId>weapon</skillId>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Arma (no mágica)</name>
+        <name>
+          <en>Weapon (not Magical)</en>
+          <es>Arma (no mágica)</es>
+        </name>
         <probability>100</probability>
-        <skillName>Arma</skillName>
+        <skillId>weapon</skillId>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>25</trainingTimeInMonths>
@@ -1465,55 +1663,94 @@
     </name>
     <specialItems>
       <specialItem>
-        <name>3 Antídotos de Veneno</name>
+        <name>
+          <en>3 Antidotes of Veneno</en>
+          <es>3 Antídotos de Veneno</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>4 Hierbas de Reparación de Huesos</name>
+        <name>
+          <en>4 Herbs of Repair of Huesos</en>
+          <es>4 Hierbas de Reparación de Huesos</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>10 Hierbas de Alivio de quemaduras/congelaciones</name>
+        <name>
+          <en>10 Herbs of Alivio of quemaduras/congelaciones</en>
+          <es>10 Hierbas de Alivio de quemaduras/congelaciones</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>2 Hierbas de Reparación de Hemorragias</name>
+        <name>
+          <en>2 Herbs of Repair of Hemorragias</en>
+          <es>2 Hierbas de Reparación de Hemorragias</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>10 Hierbas de Alivio de Conmociones</name>
+        <name>
+          <en>10 Herbs of Alivio of Conmociones</en>
+          <es>10 Hierbas de Alivio de Conmociones</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>1d10 Hierbas de efectos Generales</name>
+        <name>
+          <en>1d10 Herbs of efectos Generales</en>
+          <es>1d10 Hierbas de efectos Generales</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>5 Hierbas de Reparación de Tendones,Músculos y Cartilagos</name>
+        <name>
+          <en>5 Herbs of Repair of Tendones,Muscles and Cartilagos</en>
+          <es>5 Hierbas de Reparación de Tendones,Músculos y Cartilagos</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>1 Hierba de Preservación de la Vida</name>
+        <name>
+          <en>1 Hierba of Preservation of the Life</en>
+          <es>1 Hierba de Preservación de la Vida</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>3 Hierbas de Reparacíon del sistema nervioso</name>
+        <name>
+          <en>3 Herbs of Repair of the sistema nervioso</en>
+          <es>3 Hierbas de Reparacíon del sistema nervioso</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>4 Hierbas de Reparación de Órganos</name>
+        <name>
+          <en>4 Herbs of Repair of Organs</en>
+          <es>4 Hierbas de Reparación de Órganos</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>1d10 Intoxicantes</name>
+        <name>
+          <en>1d10 Intoxicantes</en>
+          <es>1d10 Intoxicantes</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>1d10 Venenos</name>
+        <name>
+          <en>1d10 Poisons</en>
+          <es>1d10 Venenos</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>1d10 Hierbas de Alivio de Conmociones</name>
+        <name>
+          <en>1d10 Herbs of Alivio of Conmociones</en>
+          <es>1d10 Hierbas de Alivio de Conmociones</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>
@@ -1586,23 +1823,38 @@
     </name>
     <specialItems>
       <specialItem>
-        <name>Sumando de Hechizo (+2)</name>
+        <name>
+          <en>Sumando of Spell (+2)</en>
+          <es>Sumando de Hechizo (+2)</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>Objeto con Hechizo diario II (hechizo nvl 3)</name>
+        <name>
+          <en>Objeto with Spell diario II (Spell nvl 3)</en>
+          <es>Objeto con Hechizo diario II (hechizo nvl 3)</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>Objeto con Hechizo diario I (hechizo nvl 5)</name>
+        <name>
+          <en>Objeto with Spell diario I (Spell nvl 5)</en>
+          <es>Objeto con Hechizo diario I (hechizo nvl 5)</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Multiplicador x2</name>
+        <name>
+          <en>Multiplicador x2</en>
+          <es>Multiplicador x2</es>
+        </name>
         <probability>10</probability>
       </specialItem>
       <specialItem>
-        <name>Sumando de Hechizo (+1)</name>
+        <name>
+          <en>Sumando of Spell (+1)</en>
+          <es>Sumando de Hechizo (+1)</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>
@@ -1675,31 +1927,52 @@
     </name>
     <specialItems>
       <specialItem>
-        <name>Amistad con un mercader</name>
+        <name>
+          <en>Amistad with a Merchant</en>
+          <es>Amistad con un mercader</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Amistad con un mercader</name>
+        <name>
+          <en>Amistad with a Merchant</en>
+          <es>Amistad con un mercader</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Amistad con un mercader</name>
+        <name>
+          <en>Amistad with a Merchant</en>
+          <es>Amistad con un mercader</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Balanza y pesas de mercader</name>
+        <name>
+          <en>Balanza and pesas of Merchant</en>
+          <es>Balanza y pesas de mercader</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Material para vender (10D10 mp)</name>
+        <name>
+          <en>Material for vender (10D10 mp)</en>
+          <es>Material para vender (10D10 mp)</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Material para vender (10D10 mp)</name>
+        <name>
+          <en>Material for vender (10D10 mp)</en>
+          <es>Material para vender (10D10 mp)</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Material para vender (1D10 mp)</name>
+        <name>
+          <en>Material for vender (1D10 mp)</en>
+          <es>Material para vender (1D10 mp)</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>
@@ -1797,63 +2070,99 @@
     <specialItems>
       <specialItem>
         <bonus>10</bonus>
-        <name>Arma cuerpo a cuerpo (no mágica)</name>
+        <name>
+          <en>Weapon Body to Body (not Magical)</en>
+          <es>Arma cuerpo a cuerpo (no mágica)</es>
+        </name>
         <probability>30</probability>
-        <skillName>Arma Cuerpo a Cuerpo</skillName>
+        <skillId>weaponBodyToBody</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Arma de proyectil (no mágica)</name>
+        <name>
+          <en>Weapon of proyectil (not Magical)</en>
+          <es>Arma de proyectil (no mágica)</es>
+        </name>
         <probability>30</probability>
-        <skillName>Arma Proyectiles</skillName>
+        <skillId>weaponMissile</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Escudo (no mágico)</name>
+        <name>
+          <en>Shield (not Arcane)</en>
+          <es>Escudo (no mágico)</es>
+        </name>
         <probability>40</probability>
-        <skillName>Armadura</skillName>
+        <skillId>armor</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Yelmo (no mágico)</name>
+        <name>
+          <en>Helm (not Arcane)</en>
+          <es>Yelmo (no mágico)</es>
+        </name>
         <probability>50</probability>
-        <skillName>Armadura</skillName>
+        <skillId>armor</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Armadura (no mágica)</name>
+        <name>
+          <en>Armor (not Magical)</en>
+          <es>Armadura (no mágica)</es>
+        </name>
         <probability>10</probability>
-        <skillName>Armadura</skillName>
+        <skillId>armor</skillId>
       </specialItem>
       <specialItem>
-        <name>Amigos con rango de oficial</name>
+        <name>
+          <en>Amigos with Rank of oficial</en>
+          <es>Amigos con rango de oficial</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Promoción</name>
+        <name>
+          <en>Promotion</en>
+          <es>Promoción</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Promoción</name>
+        <name>
+          <en>Promotion</en>
+          <es>Promoción</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Promoción</name>
+        <name>
+          <en>Promotion</en>
+          <es>Promoción</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Promoción</name>
+        <name>
+          <en>Promotion</en>
+          <es>Promoción</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Promoción</name>
+        <name>
+          <en>Promotion</en>
+          <es>Promoción</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Arma de cuerpo a cuerpo (no mágica)</name>
+        <name>
+          <en>Weapon of Body to Body (not Magical)</en>
+          <es>Arma de cuerpo a cuerpo (no mágica)</es>
+        </name>
         <probability>100</probability>
-        <skillName>Arma Cuerpo a Cuerpo</skillName>
+        <skillId>weaponBodyToBody</skillId>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>26</trainingTimeInMonths>
@@ -1957,15 +2266,24 @@
     </name>
     <specialItems>
       <specialItem>
-        <name>Ropa resistente al clima adverso</name>
+        <name>
+          <en>Ropa resistente to the clima adverso</en>
+          <es>Ropa resistente al clima adverso</es>
+        </name>
         <probability>80</probability>
       </specialItem>
       <specialItem>
-        <name>Bestia de monta</name>
+        <name>
+          <en>Bestia of monta</en>
+          <es>Bestia de monta</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Mapa sencillo de la región local</name>
+        <name>
+          <en>Mapa sencillo of the region local</en>
+          <es>Mapa sencillo de la región local</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>

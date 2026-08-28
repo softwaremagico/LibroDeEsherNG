@@ -82,9 +82,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>weaponsFirearmTwoHanded</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>muzzleloaderRifleMosqueyouFrenchOf1600</id>
+    <id>muzzleloaderRifleMosqueteFrenchOf1600</id>
     <name>
-      <en>Muzzleloader Rifle: Mosqueyou French of 1600</en>
+      <en>Muzzleloader Rifle: Mosquete French of 1600</en>
       <es>Rifle de Avancarga: Mosquete Francés de 1600</es>
     </name>
     <rare>false</rare>

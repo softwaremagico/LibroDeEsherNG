@@ -108,27 +108,45 @@
     </limitedRaces>
     <specialItems>
       <specialItem>
-        <name>Símbolo religioso</name>
+        <name>
+          <en>Symbol religioso</en>
+          <es>Símbolo religioso</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>Iglesia</name>
+        <name>
+          <en>Iglesia</en>
+          <es>Iglesia</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>Favor de un personaje importante</name>
+        <name>
+          <en>Favor of a personaje importante</en>
+          <es>Favor de un personaje importante</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Contactos en al administración de la ciudad</name>
+        <name>
+          <en>Contactos in to the Administration of the ciudad</en>
+          <es>Contactos en al administración de la ciudad</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Favor de un personaje de mayor rango</name>
+        <name>
+          <en>Favor of a personaje of Major Rank</en>
+          <es>Favor de un personaje de mayor rango</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Símbolo religioso lujoso</name>
+        <name>
+          <en>Symbol religioso lujoso</en>
+          <es>Símbolo religioso lujoso</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>
@@ -242,31 +260,52 @@
     </limitedRaces>
     <specialItems>
       <specialItem>
-        <name>Contacto en la administración de empresas en la ciudad</name>
+        <name>
+          <en>Contacto in the Administration of empresas in the ciudad</en>
+          <es>Contacto en la administración de empresas en la ciudad</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>Contacto en la administración de empresas en la ciudad</name>
+        <name>
+          <en>Contacto in the Administration of empresas in the ciudad</en>
+          <es>Contacto en la administración de empresas en la ciudad</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Contacto en la administración de la ciudad</name>
+        <name>
+          <en>Contacto in the Administration of the ciudad</en>
+          <es>Contacto en la administración de la ciudad</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Inversión ($1d10x100/año)</name>
+        <name>
+          <en>Investment ($1d10x100/year)</en>
+          <es>Inversión ($1d10x100/año)</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Favor de un personaje importante</name>
+        <name>
+          <en>Favor of a personaje importante</en>
+          <es>Favor de un personaje importante</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Presidente de una compañía</name>
+        <name>
+          <en>Presidente of a company</en>
+          <es>Presidente de una compañía</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Favor de un personaje importante</name>
+        <name>
+          <en>Favor of a personaje importante</en>
+          <es>Favor de un personaje importante</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>
@@ -365,27 +404,45 @@
     </limitedRaces>
     <specialItems>
       <specialItem>
-        <name>Joyería cara</name>
+        <name>
+          <en>Jewelry cara</en>
+          <es>Joyería cara</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>Contactos útiles en los bajos fondos</name>
+        <name>
+          <en>Contactos useful in the bajos fondos</en>
+          <es>Contactos útiles en los bajos fondos</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Contactos útiles en la ciudad</name>
+        <name>
+          <en>Contactos useful in the ciudad</en>
+          <es>Contactos útiles en la ciudad</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Favor de una persona de alto rango</name>
+        <name>
+          <en>Favor of a persona of alto Rank</en>
+          <es>Favor de una persona de alto rango</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Pintalabios envenenado</name>
+        <name>
+          <en>Pintalabios envenenado</en>
+          <es>Pintalabios envenenado</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Vestidor caro</name>
+        <name>
+          <en>Vestidor caro</en>
+          <es>Vestidor caro</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>
@@ -502,30 +559,48 @@
     <specialItems>
       <specialItem>
         <bonus>10</bonus>
-        <name>Arma de mano</name>
+        <name>
+          <en>Weapon of Hand</en>
+          <es>Arma de mano</es>
+        </name>
         <probability>50</probability>
-        <skillName>No mágica</skillName>
+        <skillId>notMagical</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Arma de fuego</name>
+        <name>
+          <en>Weapon of Fire</en>
+          <es>Arma de fuego</es>
+        </name>
         <probability>40</probability>
-        <skillName>No mágica</skillName>
+        <skillId>notMagical</skillId>
       </specialItem>
       <specialItem>
-        <name>Automóvil</name>
+        <name>
+          <en>Automobile</en>
+          <es>Automóvil</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Contactos en los bajos fondos</name>
+        <name>
+          <en>Contactos in the bajos fondos</en>
+          <es>Contactos en los bajos fondos</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Favor debido de alguien de los bajos fondos</name>
+        <name>
+          <en>Favor debido of alguien of the bajos fondos</en>
+          <es>Favor debido de alguien de los bajos fondos</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Objeto de contrabando</name>
+        <name>
+          <en>Objeto of contrabando</en>
+          <es>Objeto de contrabando</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>
@@ -747,31 +822,52 @@
     </limitedRaces>
     <specialItems>
       <specialItem>
-        <name>Contactos útiles en la ciudad</name>
+        <name>
+          <en>Contactos useful in the ciudad</en>
+          <es>Contactos útiles en la ciudad</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>Contactos útiles en el gobierno</name>
+        <name>
+          <en>Contactos useful in the gobierno</en>
+          <es>Contactos útiles en el gobierno</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
-        <name>Arma de fuego</name>
+        <name>
+          <en>Weapon of Fire</en>
+          <es>Arma de fuego</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Esposas</name>
+        <name>
+          <en>Esposas</en>
+          <es>Esposas</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Favor de un oficial de alto rango</name>
+        <name>
+          <en>Favor of a oficial of alto Rank</en>
+          <es>Favor de un oficial de alto rango</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Automóvil</name>
+        <name>
+          <en>Automobile</en>
+          <es>Automóvil</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
-        <name>Reputación de éxito</name>
+        <name>
+          <en>Reputation of success</en>
+          <es>Reputación de éxito</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>

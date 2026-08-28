@@ -1482,9 +1482,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>specialDefenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>aguanyouAdrenal</id>
+    <id>aguanteAdrenal</id>
     <name>
-      <en>Aguanyou Adrenal</en>
+      <en>Aguante Adrenal</en>
       <es>Aguante Adrenal</es>
     </name>
     <rare>false</rare>
@@ -1495,9 +1495,9 @@
     <allEnabled>false</allEnabled>
     <categoryId>specialDefenses</categoryId>
     <enabledByDefault>true</enabledByDefault>
-    <id>defenisAdrenal</id>
+    <id>defenseAdrenal</id>
     <name>
-      <en>Defenis Adrenal</en>
+      <en>Defense Adrenal</en>
       <es>Defensa Adrenal</es>
     </name>
     <rare>false</rare>

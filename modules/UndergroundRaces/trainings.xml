@@ -102,45 +102,69 @@
     <specialItems>
       <specialItem>
         <bonus>20</bonus>
-        <name>Arma cuerpo a cuerpo (no mágica)</name>
+        <name>
+          <en>Weapon Body to Body (not Magical)</en>
+          <es>Arma cuerpo a cuerpo (no mágica)</es>
+        </name>
         <probability>50</probability>
-        <skillName>Arma</skillName>
+        <skillId>weapon</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Armadura (no mágica)</name>
+        <name>
+          <en>Armor (not Magical)</en>
+          <es>Armadura (no mágica)</es>
+        </name>
         <probability>50</probability>
-        <skillName>Armadura</skillName>
+        <skillId>armor</skillId>
       </specialItem>
       <specialItem>
-        <name>Multiplicador PPs (x2)</name>
+        <name>
+          <en>Multiplicador PPs (x2)</en>
+          <es>Multiplicador PPs (x2)</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Escudo (no mágico)</name>
+        <name>
+          <en>Shield (not Arcane)</en>
+          <es>Escudo (no mágico)</es>
+        </name>
         <probability>40</probability>
-        <skillName>Armadura</skillName>
+        <skillId>armor</skillId>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Arma (no mágica)</name>
+        <name>
+          <en>Weapon (not Magical)</en>
+          <es>Arma (no mágica)</es>
+        </name>
         <probability>30</probability>
-        <skillName>Arma</skillName>
+        <skillId>weapon</skillId>
       </specialItem>
       <specialItem>
-        <name>Objeto diario II</name>
+        <name>
+          <en>Objeto diario II</en>
+          <es>Objeto diario II</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
-        <name>Sumando de hechizos (+1)</name>
+        <name>
+          <en>Sumando of Spells (+1)</en>
+          <es>Sumando de hechizos (+1)</es>
+        </name>
         <probability>20</probability>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <name>Arma (no magica)</name>
+        <name>
+          <en>Weapon (not magica)</en>
+          <es>Arma (no magica)</es>
+        </name>
         <probability>100</probability>
-        <skillName>Arma</skillName>
+        <skillId>weapon</skillId>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>70</trainingTimeInMonths>
@@ -313,35 +337,56 @@
     </limitedRaces>
     <specialItems>
       <specialItem>
-        <name>Multiplicador PPs (x2)</name>
+        <name>
+          <en>Multiplicador PPs (x2)</en>
+          <es>Multiplicador PPs (x2)</es>
+        </name>
         <probability>50</probability>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Arma cuerpo a cuerpo (no mágica)</name>
+        <name>
+          <en>Weapon Body to Body (not Magical)</en>
+          <es>Arma cuerpo a cuerpo (no mágica)</es>
+        </name>
         <probability>40</probability>
-        <skillName>Arma Cuerpo a Cuerpo</skillName>
+        <skillId>weaponBodyToBody</skillId>
       </specialItem>
       <specialItem>
-        <name>1-2 Ulogat-Toram</name>
+        <name>
+          <en>1-2 Ulogat-Toram</en>
+          <es>1-2 Ulogat-Toram</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Objeto diario III</name>
+        <name>
+          <en>Objeto diario III</en>
+          <es>Objeto diario III</es>
+        </name>
         <probability>30</probability>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <name>Libro</name>
+        <name>
+          <en>Libro</en>
+          <es>Libro</es>
+        </name>
         <probability>30</probability>
-        <skillName>Conocimiento de los No-Muertos</skillName>
+        <skillId>loreOfUndead</skillId>
       </specialItem>
       <specialItem>
-        <name>Zombi sin manos</name>
+        <name>
+          <en>Zombi without Hands</en>
+          <es>Zombi sin manos</es>
+        </name>
         <probability>40</probability>
       </specialItem>
       <specialItem>
-        <name>Sumando de hechizos (+1)</name>
+        <name>
+          <en>Sumando of Spells (+1)</en>
+          <es>Sumando de hechizos (+1)</es>
+        </name>
         <probability>100</probability>
       </specialItem>
     </specialItems>
