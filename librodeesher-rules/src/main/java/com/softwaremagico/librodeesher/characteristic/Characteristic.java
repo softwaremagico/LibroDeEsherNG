@@ -60,7 +60,7 @@ public class Characteristic {
 
     @Override
     public String toString() {
-        return abbreviation.name() + " (" + abbreviation.getTag() + ")";
+        return abbreviation.name() + " (" + abbreviation.getCode() + ")";
     }
 
     @Override

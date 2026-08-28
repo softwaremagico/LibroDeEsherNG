@@ -3,7 +3,7 @@ package com.softwaremagico.librodeesher.resistance;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-/** Verifies {@link ResistanceType#fromTag} and abbreviation lookup. */
+/** Verifies {@link ResistanceType#fromTag} and code lookup. */
 @Test(groups = "resistance")
 public class ResistanceTypeTest {
 
@@ -20,8 +20,8 @@ public class ResistanceTypeTest {
     }
 
     @Test
-    public void abbreviationLookupOnlyMatchesKnownAbbreviations() {
-        Assert.assertTrue(ResistanceType.isResistanceAbbreviation("Vn"));
-        Assert.assertFalse(ResistanceType.isResistanceAbbreviation("Xx"));
+    public void codeLookupOnlyMatchesKnownCodes() {
+        Assert.assertTrue(ResistanceType.isResistanceCode("PO"));
+        Assert.assertFalse(ResistanceType.isResistanceCode("Xx"));
     }
 }

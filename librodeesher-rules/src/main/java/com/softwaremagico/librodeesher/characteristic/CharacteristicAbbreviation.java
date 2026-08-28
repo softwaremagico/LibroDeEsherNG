@@ -2,36 +2,40 @@ package com.softwaremagico.librodeesher.characteristic;
 
 /**
  * The ten characteristics used by every character (plus the {@link #NONE} placeholder for "not
- * applicable" fields), each with its two-letter abbreviation as printed on the character sheet.
+ * applicable" fields).
  *
- * <p>Serialized to XML/JSON using the plain (English) enum constant name; {@link #fromTag(String)}
- * is only used by migration tools that need to parse the original two-letter abbreviation column
- * (e.g. a category's "Ag/Fu" characteristics column).</p>
+ * <p>Serialized to XML/JSON using the plain (English) enum constant name. The Spanish {@code tag}
+ * (e.g. "Ag", "Fu") is only used by {@link #fromTag(String)}, which migration tools call to parse
+ * the original two-letter abbreviation column (e.g. a category's "Ag/Fu" characteristics column);
+ * it is never used at runtime otherwise. {@link #getCode()} returns the standard English two-letter
+ * abbreviation instead (e.g. "AG", "ST"), used wherever a characteristic is displayed.</p>
  */
 public enum CharacteristicAbbreviation {
 
-    NONE(""),
-    AGILITY("Ag"),
-    CONSTITUTION("Co"),
-    MEMORY("Me"),
-    REASONING("Ra"),
-    SELF_DISCIPLINE("Ad"),
-    EMPATHY("Em"),
-    INTUITION("In"),
-    PRESENCE("Pr"),
-    QUICKNESS("Rp"),
-    STRENGTH("Fu"),
-    APPEARANCE("Ap");
+    NONE("", ""),
+    AGILITY("Ag", "AG"),
+    CONSTITUTION("Co", "CO"),
+    MEMORY("Me", "MM"),
+    REASONING("Ra", "RE"),
+    SELF_DISCIPLINE("Ad", "SD"),
+    EMPATHY("Em", "EM"),
+    INTUITION("In", "IN"),
+    PRESENCE("Pr", "PR"),
+    QUICKNESS("Rp", "QU"),
+    STRENGTH("Fu", "ST"),
+    APPEARANCE("Ap", "AP");
 
     private final String tag;
+    private final String code;
 
-    CharacteristicAbbreviation(String tag) {
+    CharacteristicAbbreviation(String tag, String code) {
         this.tag = tag;
+        this.code = code;
     }
 
-    /** The two-letter abbreviation printed on the character sheet (e.g. "Ag" for Agility). */
-    public String getTag() {
-        return tag;
+    /** The standard English two-letter abbreviation (e.g. "AG" for Agility), used for display. */
+    public String getCode() {
+        return code;
     }
 
     /** Resolves the abbreviation used by the legacy {@code categorias.txt}/{@code razas/*.txt} files. */

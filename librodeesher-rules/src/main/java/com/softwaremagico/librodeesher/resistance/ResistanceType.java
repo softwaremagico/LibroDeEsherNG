@@ -1,35 +1,37 @@
 package com.softwaremagico.librodeesher.resistance;
 
 /**
- * The nine resistance rolls (RR) a character can have, each with its two-letter abbreviation as
- * printed on the character sheet.
+ * The nine resistance rolls (RR) a character can have.
  *
- * <p>Serialized to XML/JSON using the plain (English) enum constant name; {@link #fromTag(String)}
- * is only used by migration tools that need to parse the original Spanish column name (e.g. a race's
- * "MODIFICACIÓN A LA TR" section).</p>
+ * <p>Serialized to XML/JSON using the plain (English) enum constant name. The Spanish {@code tag}
+ * (e.g. "Veneno") is only used by {@link #fromTag(String)}, which migration tools call to parse the
+ * original column name (e.g. a race's "MODIFICACIÓN A LA TR" section); it is never used at runtime
+ * otherwise. {@link #getCode()} returns our own English two-letter code instead (e.g. "PO" for
+ * Poison), used wherever a resistance type is displayed.</p>
  */
 public enum ResistanceType {
 
-    CHANNELING("Canalización", "Cn"),
-    ESSENCE("Esencia", "Es"),
-    MENTALISM("Mentalismo", "Me"),
-    PSIONIC("Psiónico", "Ps"),
-    POISON("Veneno", "Vn"),
-    DISEASE("Enfermedad", "Ef"),
-    COLD("Frío", "Fr"),
-    HEAT("Calor", "Ca"),
-    FEAR("Miedo", "Mi");
+    CHANNELING("Canalización", "CH"),
+    ESSENCE("Esencia", "ES"),
+    MENTALISM("Mentalismo", "MN"),
+    PSIONIC("Psiónico", "PS"),
+    POISON("Veneno", "PO"),
+    DISEASE("Enfermedad", "DI"),
+    COLD("Frío", "CO"),
+    HEAT("Calor", "HE"),
+    FEAR("Miedo", "FE");
 
     private final String tag;
-    private final String abbreviation;
+    private final String code;
 
-    ResistanceType(String tag, String abbreviation) {
+    ResistanceType(String tag, String code) {
         this.tag = tag;
-        this.abbreviation = abbreviation;
+        this.code = code;
     }
 
-    public String getAbbreviation() {
-        return abbreviation;
+    /** Our own English two-letter code (e.g. "PO" for Poison), used for display. */
+    public String getCode() {
+        return code;
     }
 
     /** Resolves the resistance type from the original Spanish column name (e.g. "Veneno"). */
@@ -46,9 +48,9 @@ public enum ResistanceType {
         return null;
     }
 
-    public static boolean isResistanceAbbreviation(String abbreviation) {
+    public static boolean isResistanceCode(String code) {
         for (final ResistanceType type : values()) {
-            if (type.abbreviation.equals(abbreviation)) {
+            if (type.code.equals(code)) {
                 return true;
             }
         }
