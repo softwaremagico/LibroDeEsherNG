@@ -9,6 +9,8 @@ import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.decision.InvalidDecisionException;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
+import com.softwaremagico.librodeesher.magic.RealmOfMagic;
+import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.skill.Skill;
 import com.softwaremagico.librodeesher.skill.SkillType;
@@ -544,5 +546,38 @@ public class CharacterPlayerTest {
 
         final int raceBackgroundPoints = character.getRace().getBackgroundPoints();
         Assert.assertEquals(character.getRemainingBackgroundPoints(), raceBackgroundPoints - 1 - 3);
+    }
+
+    @Test
+    public void applyProfessionMagicRealmsResolvesAHybridProfessionsChoice() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("sorcerer");
+
+        final List<RealmOfMagic> realms = character.applyProfessionMagicRealms(Map.of(0, RealmOfMagic.CANALIZATION));
+
+        Assert.assertEquals(realms, List.of(RealmOfMagic.CANALIZATION));
+        Assert.assertEquals(character.getDecisions().getSelectedOption("profession:sorcerer:realm:0"), "CANALIZATION");
+    }
+
+    @Test(expectedExceptions = InvalidDecisionException.class)
+    public void applyProfessionMagicRealmsRejectsARealmNotOffered() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("sorcerer");
+
+        character.applyProfessionMagicRealms(Map.of(0, RealmOfMagic.MENTALISM));
+    }
+
+    @Test
+    public void applyProfessionMagicRealmsReturnsEmptyWithoutAProfessionSelected() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        Assert.assertTrue(character.applyProfessionMagicRealms(null).isEmpty());
+    }
+
+    @Test
+    public void applyMagicRealmChoiceAutoResolvesAFixedGrant() {
+        final CharacterPlayer character = new CharacterPlayer();
+        final RealmOfMagicGrant grant = new RealmOfMagicGrant(List.of(RealmOfMagic.ESSENCE));
+
+        Assert.assertEquals(character.applyMagicRealmChoice("profession:wizard:realm:0", grant, null), RealmOfMagic.ESSENCE);
     }
 }

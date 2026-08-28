@@ -83,7 +83,9 @@ public class ProfessionMigrationToolTest {
             Assert.assertEquals(mago.getCharacteristicPreferences(),
                     List.of(CharacteristicAbbreviation.EMPATHY, CharacteristicAbbreviation.REASONING, CharacteristicAbbreviation.SELF_DISCIPLINE));
             Assert.assertFalse(mago.isIndifferentToCharacteristics());
-            Assert.assertEquals(mago.getMagicRealms(), List.of(RealmOfMagic.ESSENCE));
+            Assert.assertEquals(mago.getMagicRealms().size(), 1);
+            Assert.assertEquals(mago.getMagicRealms().get(0).getOptions(), List.of(RealmOfMagic.ESSENCE));
+            Assert.assertFalse(mago.getMagicRealms().get(0).isChoice());
             Assert.assertTrue(mago.isSpellCaster());
 
             Assert.assertEquals(mago.getBonuses().size(), 2);

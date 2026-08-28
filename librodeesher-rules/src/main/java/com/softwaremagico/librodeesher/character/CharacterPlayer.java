@@ -14,12 +14,14 @@ import com.softwaremagico.librodeesher.decision.Decisions;
 import com.softwaremagico.librodeesher.dice.Roll;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
+import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.perk.Perk;
 import com.softwaremagico.librodeesher.perk.PerkGrade;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
+import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.skill.Skill;
 import com.softwaremagico.librodeesher.skill.SkillType;
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
@@ -723,5 +725,53 @@ public class CharacterPlayer {
         final Race race = getRace();
         final int totalBackgroundPoints = race == null || race.getBackgroundPoints() == null ? 0 : race.getBackgroundPoints();
         return totalBackgroundPoints - background.getSpentBackgroundPoints() - getPerksBackgroundPointsCost();
+    }
+
+    /**
+     * Resolves one of the selected profession's realm-of-magic grants: for a fixed grant, {@code
+     * selectedRealm} is ignored and its single realm is used; for a hybrid choice (e.g.
+     * "Esencia/Canalización"), {@code selectedRealm} must be one of {@link RealmOfMagicGrant#getOptions()}.
+     *
+     * @param key           a caller-chosen id identifying this specific grant uniquely for this
+     *                      character (e.g. {@code "profession:sorcerer:realm:0"}), reused as-is on
+     *                      subsequent calls once a choice has been made.
+     * @param grant         the realm grant to resolve.
+     * @param selectedRealm the realm to use if {@code grant} offers a choice and {@code key} has not
+     *                      been decided yet; ignored otherwise.
+     */
+    public RealmOfMagic applyMagicRealmChoice(String key, RealmOfMagicGrant grant, RealmOfMagic selectedRealm) {
+        final List<String> offeredRealms = new ArrayList<>();
+        for (final RealmOfMagic realm : grant.getOptions()) {
+            offeredRealms.add(realm.name());
+        }
+        final String selectedOption = selectedRealm == null ? null : selectedRealm.name();
+        final Decision decision = decideOrReuse(key,
+                () -> grant.isChoice() ? Decision.select(offeredRealms, selectedOption) : Decision.fixed(offeredRealms));
+        return RealmOfMagic.valueOf(decision.getSelectedOption());
+    }
+
+    /**
+     * Resolves every one of the selected profession's realm-of-magic grants (see {@link
+     * #applyMagicRealmChoice}), keying each one's decision as {@code "profession:" +
+     * profession.getId() + ":realm:" + <index>}, and returns every resolved realm: the character is a
+     * caster of all of them at once (as opposed to the alternatives within a single hybrid grant,
+     * which are mutually exclusive). Returns an empty list if no profession is selected.
+     *
+     * @param realmSelections the realm to use for each grant (by its index in {@link
+     *                        Profession#getMagicRealms()}) that offers a choice and has not been
+     *                        decided yet. May be {@code null} if no grant needs a fresh selection.
+     */
+    public List<RealmOfMagic> applyProfessionMagicRealms(Map<Integer, RealmOfMagic> realmSelections) throws InvalidXmlElementException {
+        final Profession profession = getProfession();
+        if (profession == null) {
+            return List.of();
+        }
+        final List<RealmOfMagic> realms = new ArrayList<>();
+        final List<RealmOfMagicGrant> grants = profession.getMagicRealms();
+        for (int i = 0; i < grants.size(); i++) {
+            final RealmOfMagic selectedRealm = realmSelections == null ? null : realmSelections.get(i);
+            realms.add(applyMagicRealmChoice("profession:" + profession.getId() + ":realm:" + i, grants.get(i), selectedRealm));
+        }
+        return realms;
     }
 }

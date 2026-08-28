@@ -202,7 +202,12 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
-      <realm>MENTALISM</realm>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>MENTALISM</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -624,9 +629,24 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
-      <realm>ESSENCE</realm>
-      <realm>CANALIZATION</realm>
-      <realm>MENTALISM</realm>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>ESSENCE</realm>
+        </options>
+      </realmGrant>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>CANALIZATION</realm>
+        </options>
+      </realmGrant>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>MENTALISM</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -1073,7 +1093,12 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Religión, Adivinación, Percepción del Poder</professionalSkillsRaw>
     <magicRealms>
-      <realm>CANALIZATION</realm>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>CANALIZATION</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -1496,7 +1521,12 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Abrir Cerraduras</professionalSkillsRaw>
     <magicRealms>
-      <realm>ESSENCE</realm>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>ESSENCE</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -1906,9 +1936,24 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Abrir Cerraduras</professionalSkillsRaw>
     <magicRealms>
-      <realm>ESSENCE</realm>
-      <realm>CANALIZATION</realm>
-      <realm>MENTALISM</realm>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>ESSENCE</realm>
+        </options>
+      </realmGrant>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>CANALIZATION</realm>
+        </options>
+      </realmGrant>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>MENTALISM</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -2307,9 +2352,24 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
-      <realm>ESSENCE</realm>
-      <realm>CANALIZATION</realm>
-      <realm>MENTALISM</realm>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>ESSENCE</realm>
+        </options>
+      </realmGrant>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>CANALIZATION</realm>
+        </options>
+      </realmGrant>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>MENTALISM</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -2708,7 +2768,12 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
-      <realm>ESSENCE</realm>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>ESSENCE</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -3127,7 +3192,12 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
-      <realm>MENTALISM</realm>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>MENTALISM</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -3546,7 +3616,12 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
-      <realm>CANALIZATION</realm>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>CANALIZATION</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>

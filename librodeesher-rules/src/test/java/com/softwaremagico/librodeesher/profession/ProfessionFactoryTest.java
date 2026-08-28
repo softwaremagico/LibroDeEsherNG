@@ -26,7 +26,9 @@ public class ProfessionFactoryTest {
         final Profession mago = ProfessionFactory.getInstance().getElement("wizard");
 
         Assert.assertTrue(mago.isSpellCaster());
-        Assert.assertEquals(mago.getMagicRealms(), java.util.List.of(RealmOfMagic.ESSENCE));
+        Assert.assertEquals(mago.getMagicRealms().size(), 1);
+        Assert.assertEquals(mago.getMagicRealms().get(0).getOptions(), java.util.List.of(RealmOfMagic.ESSENCE));
+        Assert.assertFalse(mago.getMagicRealms().get(0).isChoice());
         Assert.assertFalse(mago.isIndifferentToCharacteristics());
         Assert.assertFalse(mago.getBonuses().isEmpty());
         Assert.assertFalse(mago.getMagicCostsRaw().isBlank());

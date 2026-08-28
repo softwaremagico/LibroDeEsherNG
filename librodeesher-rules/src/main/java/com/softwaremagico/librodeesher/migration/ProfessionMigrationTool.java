@@ -7,6 +7,7 @@ import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.ProfessionBonus;
 import com.softwaremagico.librodeesher.profession.ProfessionTrainingCost;
+import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.training.TrainingType;
 
 import java.io.IOException;
@@ -124,18 +125,29 @@ public final class ProfessionMigrationTool {
      * involved, losing the original "choose one of" semantics of that hybrid, which is not modeled
      * yet (left as future work alongside {@code Profession}'s other simplifications).
      */
-    private static List<RealmOfMagic> parseMagicRealms(List<String> sectionLines) {
-        final List<RealmOfMagic> realms = new ArrayList<>();
+    /**
+     * Parses the "REINOS DE MAGIA" section: a comma-separated list of realm grants, each either a
+     * single, fixed realm or a {@code "Realm1/Realm2"} choice between several (a "hybrid" profession),
+     * matching {@link RealmOfMagicGrant}'s semantics exactly (unlike the previous flattened
+     * representation, which lost the distinction between "grants both of these realms" and "grants
+     * one of these realms, player's choice").
+     */
+    private static List<RealmOfMagicGrant> parseMagicRealms(List<String> sectionLines) {
+        final List<RealmOfMagicGrant> grants = new ArrayList<>();
         for (final String line : sectionLines) {
             for (final String token : line.split(",\\s*")) {
+                final List<RealmOfMagic> options = new ArrayList<>();
                 for (final String realmTag : token.split("/")) {
                     if (!realmTag.isBlank()) {
-                        realms.add(RealmOfMagic.fromTag(realmTag.trim()));
+                        options.add(RealmOfMagic.fromTag(realmTag.trim()));
                     }
+                }
+                if (!options.isEmpty()) {
+                    grants.add(new RealmOfMagicGrant(options));
                 }
             }
         }
-        return realms;
+        return grants;
     }
 
     private static List<ProfessionBonus> parseBonuses(List<String> sectionLines) {

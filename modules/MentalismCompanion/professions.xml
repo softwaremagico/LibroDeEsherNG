@@ -198,8 +198,13 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Astronomía, Orientación Celeste, Predicción del Clima</professionalSkillsRaw>
     <magicRealms>
-      <realm>ESSENCE</realm>
-      <realm>MENTALISM</realm>
+      <realmGrant>
+        <choice>true</choice>
+        <options>
+          <realm>ESSENCE</realm>
+          <realm>MENTALISM</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -628,8 +633,13 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Ninguna</professionalSkillsRaw>
     <magicRealms>
-      <realm>MENTALISM</realm>
-      <realm>ESSENCE</realm>
+      <realmGrant>
+        <choice>true</choice>
+        <options>
+          <realm>MENTALISM</realm>
+          <realm>ESSENCE</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Ninguna</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -1038,7 +1048,12 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Organización Militar</professionalSkillsRaw>
     <magicRealms>
-      <realm>MENTALISM</realm>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>MENTALISM</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
@@ -1459,7 +1474,12 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Advinación, Meditación</professionalSkillsRaw>
     <magicRealms>
-      <realm>MENTALISM</realm>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>MENTALISM</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>

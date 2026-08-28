@@ -174,9 +174,24 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Religión</professionalSkillsRaw>
     <magicRealms>
-      <realm>ESSENCE</realm>
-      <realm>CANALIZATION</realm>
-      <realm>MENTALISM</realm>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>ESSENCE</realm>
+        </options>
+      </realmGrant>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>CANALIZATION</realm>
+        </options>
+      </realmGrant>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>MENTALISM</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Canalización, Agenciar, Callejeo, Disimulo, Instinto Urbano</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>

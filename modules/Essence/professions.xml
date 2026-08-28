@@ -194,7 +194,12 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
     </name>
     <professionalSkillsRaw>Meditación</professionalSkillsRaw>
     <magicRealms>
-      <realm>ESSENCE</realm>
+      <realmGrant>
+        <choice>false</choice>
+        <options>
+          <realm>ESSENCE</realm>
+        </options>
+      </realmGrant>
     </magicRealms>
     <restrictedSkillsRaw>Canalización</restrictedSkillsRaw>
     <spellCaster>true</spellCaster>
