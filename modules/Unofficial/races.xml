@@ -4,9 +4,9 @@
     <appearanceBonus>-5</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -117,16 +117,16 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>scorpionCentaur</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Scorpion Centaur</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheDesert</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Desert</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -193,9 +193,9 @@
     <appearanceBonus>0</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -281,16 +281,16 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -315,16 +315,16 @@
     <appearanceBonus>30</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>faerie</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Faerie</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -437,16 +437,16 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>10</startingSpeakingRanks>
         <startingWritingRanks>10</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>8</startingWritingRanks>
       </raceLanguage>
@@ -532,23 +532,23 @@
     <appearanceBonus>20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>0</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>0</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>habaUnderground</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>0</maxWritingRanks>
-        <name>Haba Underground</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -719,9 +719,9 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>fúnguido</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>0</maxWritingRanks>
-        <name>Fúnguido</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -758,16 +758,16 @@
     <appearanceBonus>20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>elven</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -922,16 +922,16 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>

@@ -4,16 +4,16 @@
     <appearanceBonus>-5</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -122,23 +122,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>centauro</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Centauro</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -172,16 +172,16 @@
     <appearanceBonus>-10</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -293,23 +293,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>centauro</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Centauro</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaAquatic</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla Aquatic</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -343,16 +343,16 @@
     <appearanceBonus>-5</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -509,30 +509,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>centauro</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Centauro</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -566,16 +566,16 @@
     <appearanceBonus>-20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>charón</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Charón</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>murlogi</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Murlogi</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -654,16 +654,16 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>droloi</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Droloi</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
@@ -696,58 +696,58 @@
     <appearanceBonus>10</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>aldari</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Aldari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>charon</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Charon</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>erlini</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Erlini</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>jinteni</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Jinteni</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>linaeri</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Linaeri</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>murlogi</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Murlogi</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>loari</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Loari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>shuluri</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Shuluri</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -872,16 +872,16 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>dyari</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Dyari</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
@@ -932,23 +932,23 @@
     <appearanceBonus>30</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>elven</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -1019,23 +1019,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>10</startingSpeakingRanks>
         <startingWritingRanks>10</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>elvenGris</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Elven Gris</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
@@ -1086,30 +1086,30 @@
     <appearanceBonus>20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaOfTheSur</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Sur</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfTheMares</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Mares</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -1269,51 +1269,51 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>elvenGris</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Elven Gris</name>
         <startingSpeakingRanks>10</startingSpeakingRanks>
         <startingWritingRanks>10</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>elven</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Elven</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>10</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -1358,23 +1358,23 @@
     <appearanceBonus>10</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfTheSur</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Sur</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -1469,51 +1469,51 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>elven</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Elven</name>
         <startingSpeakingRanks>10</startingSpeakingRanks>
         <startingWritingRanks>10</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>4</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>elvenGris</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Elven Gris</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -1576,16 +1576,16 @@
     <appearanceBonus>-20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>charón</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Charón</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>murlogi</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Murlogi</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -2112,44 +2112,44 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>dwarf</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Dwarf</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>5</startingSpeakingRanks>
         <startingWritingRanks>5</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>elven</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Elven</name>
         <startingSpeakingRanks>4</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheColinas</languageId>
         <maxSpeakingRanks>2</maxSpeakingRanks>
         <maxWritingRanks>2</maxWritingRanks>
-        <name>Habla of the Colinas</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -2185,30 +2185,30 @@
     <appearanceBonus>0</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>elven</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaDiminuta</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla Diminuta</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -2285,16 +2285,16 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -2319,23 +2319,23 @@
     <appearanceBonus>10</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>erlini</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Erlini</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>loari</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Loari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>thesiano</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Thesiano</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -2460,23 +2460,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>eritari</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Eritari</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>thesiano</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Thesiano</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -2515,51 +2515,51 @@
     <appearanceBonus>30</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>centauro</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Centauro</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>dyari</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Dyari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>loari</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Loari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>linaeri</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Linaeri</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>orhan</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Orhan</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>shuluri</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Shuluri</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>wôrin</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Wôrin</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -2865,23 +2865,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>erlini</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Erlini</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>linaeri</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Linaeri</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -2938,23 +2938,23 @@
     <appearanceBonus>-40</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>common</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>charón</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Charón</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -3095,44 +3095,44 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>4</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheColinas</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Colinas</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>8</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>gark</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Gark</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
@@ -3157,37 +3157,37 @@
     <appearanceBonus>-5</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>dwarf</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Dwarf</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>elvenGris</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Elven Gris</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>lenguaHigh</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Lengua High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -3367,30 +3367,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>gnomish</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Gnomish</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>8</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -3423,16 +3423,16 @@
     <appearanceBonus>-50</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -3582,23 +3582,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>goblin</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Goblin</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -3637,16 +3637,16 @@
     <appearanceBonus>-20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>lenguaNegra</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Lengua Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -3716,30 +3716,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>hablaOfTheMares</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla of the Mares</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheSur</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Sur</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -3772,16 +3772,16 @@
     <appearanceBonus>-30</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>lenguaNegra</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Lengua Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -3844,30 +3844,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>hablaOfTheMares</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla of the Mares</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheSur</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Sur</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -3900,16 +3900,16 @@
     <appearanceBonus>-20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>lenguaNegra</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Lengua Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -3981,30 +3981,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>hablaOfTheMares</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla of the Mares</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheSur</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Sur</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -4037,16 +4037,16 @@
     <appearanceBonus>-30</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>lenguaNegra</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Lengua Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -4136,30 +4136,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>hablaOfTheMares</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla of the Mares</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheSur</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Sur</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -4192,23 +4192,23 @@
     <appearanceBonus>-5</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaOfTheColinas</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Colinas</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -4336,30 +4336,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheColinas</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Colinas</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheSur</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla of the Sur</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -4384,16 +4384,16 @@
     <appearanceBonus>0</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hirazi</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Hirazi</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -4523,16 +4523,16 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>hirazi</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Hirazi</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>2</startingWritingRanks>
       </raceLanguage>
@@ -4557,37 +4557,37 @@
     <appearanceBonus>5</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfTheColinas</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Colinas</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -5177,58 +5177,58 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>2</startingSpeakingRanks>
         <startingWritingRanks>2</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>elvenGris</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Elven Gris</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheColinas</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Colinas</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheMares</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Mares</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaPequeña</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla Pequeña</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -5253,23 +5253,23 @@
     <appearanceBonus>0</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaPequeña</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla Pequeña</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfTheColinas</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Colinas</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -5382,23 +5382,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaPequeña</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla Pequeña</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -5423,37 +5423,37 @@
     <appearanceBonus>0</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfTheColinas</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Colinas</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -5583,58 +5583,58 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>elvenGris</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Elven Gris</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>2</maxSpeakingRanks>
         <maxWritingRanks>2</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheColinas</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Colinas</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheMares</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Mares</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaPequeña</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla Pequeña</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -5659,23 +5659,23 @@
     <appearanceBonus>0</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -5755,23 +5755,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -5804,9 +5804,9 @@
     <appearanceBonus>5</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>thuul</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Thuul</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -5980,9 +5980,9 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>thuul</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Thuul</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -6015,16 +6015,16 @@
     <appearanceBonus>-80</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -6196,23 +6196,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>goblin</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Goblin</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -6251,51 +6251,51 @@
     <appearanceBonus>10</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>dyari</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Dyari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>fustir</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Fustir</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>linaeri</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Linaeri</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>loari</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Loari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>syrkakar</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Syrkakar</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>udahir</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Udahir</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>umli</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Umli</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -6418,30 +6418,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>kyTaari</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Ky'taari</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>syrkakar</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Syrkakar</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>umli</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Umli</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -6486,37 +6486,37 @@
     <appearanceBonus>10</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>aldari</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Aldari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>jinteni</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Jinteni</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>punkari</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Punkari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>worim</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Worim</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>idiomaRacial</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Idioma Racial</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -7115,30 +7115,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>laan</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Laan</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>emeriano</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Emeriano</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRacial</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Idioma Racial</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -7163,44 +7163,44 @@
     <appearanceBonus>20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>aldari</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Aldari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>dryad</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Dryad</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>elini</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Elini</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>jinteni</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Jinteni</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>orhan</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Orhan</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>wôrim</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Wôrim</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -7359,23 +7359,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>lennai</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Lennai</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>dryad</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Dryad</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -7408,51 +7408,51 @@
     <appearanceBonus>30</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>centauro</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Centauro</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>dyari</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Dyari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>loari</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Loari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>ninfa</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Ninfa</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>orhan</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Orhan</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>shuluri</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Shuluri</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>wôeim</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Wôeim</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -7652,30 +7652,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>lineari</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Lineari</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>loari</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Loari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>dyari</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Dyari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -7732,58 +7732,58 @@
     <appearanceBonus>20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>aldari</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Aldari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>dwarf</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Dwarf</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>dyari</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Dyari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>erlini</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Erlini</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>jinteni</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Jinteni</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>linaeri</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Linaeri</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>orhan</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Orhan</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>shuluri</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Shuluri</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -7964,37 +7964,37 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>loari</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Loari</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>dwarf</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Dwarf</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>dyari</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Dyari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>linaeri</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Linaeri</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -8051,9 +8051,9 @@
     <appearanceBonus>-80</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>idiomaRacial</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Idioma Racial</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -8209,16 +8209,16 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>lugrôki</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Lugrôki</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>3</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>3</startingWritingRanks>
       </raceLanguage>
@@ -8257,9 +8257,9 @@
     <appearanceBonus>-80</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>idiomaRacial</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Idioma Racial</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -8421,16 +8421,16 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>lugrôki</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Lugrôki</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>3</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>3</startingWritingRanks>
       </raceLanguage>
@@ -8480,23 +8480,23 @@
     <appearanceBonus>-5</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaOfTheColinas</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla of the Colinas</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>2</maxSpeakingRanks>
         <maxWritingRanks>2</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>elven</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -8608,30 +8608,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>hablaPequeña</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla Pequeña</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>elvenGris</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Elven Gris</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -8664,23 +8664,23 @@
     <appearanceBonus>10</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -8803,37 +8803,37 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>elvenGris</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Elven Gris</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>5</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>elven</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -8866,16 +8866,16 @@
     <appearanceBonus>-20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfTheBosque</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Bosque</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -8988,30 +8988,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>4</startingSpeakingRanks>
         <startingWritingRanks>3</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheColinas</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Colinas</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -9062,23 +9062,23 @@
     <appearanceBonus>-60</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>dwarf</languageId>
         <maxSpeakingRanks>2</maxSpeakingRanks>
         <maxWritingRanks>2</maxWritingRanks>
-        <name>Dwarf</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>dyari</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Dyari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>lugrôki</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Lugrôki</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -9250,23 +9250,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>murlogi</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Murlogi</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>lugrôki</languageId>
         <maxSpeakingRanks>2</maxSpeakingRanks>
         <maxWritingRanks>2</maxWritingRanks>
-        <name>Lugrôki</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -9305,23 +9305,23 @@
     <appearanceBonus>-80</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaOfTheBosque</languageId>
         <maxSpeakingRanks>5</maxSpeakingRanks>
         <maxWritingRanks>5</maxWritingRanks>
-        <name>Habla of the Bosque</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -9483,23 +9483,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>3</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>5</startingSpeakingRanks>
         <startingWritingRanks>2</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -9555,30 +9555,30 @@
     <appearanceBonus>-80</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaOfTheBosque</languageId>
         <maxSpeakingRanks>5</maxSpeakingRanks>
         <maxWritingRanks>5</maxWritingRanks>
-        <name>Habla of the Bosque</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -9732,30 +9732,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>2</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>2</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>4</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheBosque</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>3</maxWritingRanks>
-        <name>Habla of the Bosque</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -9806,30 +9806,30 @@
     <appearanceBonus>20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>elven</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaPequeña</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla Pequeña</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -9987,16 +9987,16 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -10029,37 +10029,37 @@
     <appearanceBonus>10</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>dyari</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Dyari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>erlini</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Erlini</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>laan</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Laan</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>loari</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Loari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>yNari</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Y'nari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -10359,37 +10359,37 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>punkari</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Punkari</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>erlini</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Erlini</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>laan</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Laan</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>yNari</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Y'nari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -10428,23 +10428,23 @@
     <appearanceBonus>-20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -10540,30 +10540,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>urloc</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Urloc</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablasOfLoMares</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Hablas of lo Mares</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -10596,37 +10596,37 @@
     <appearanceBonus>-20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>surkur</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Surkur</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>jinteni</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Jinteni</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>sirénido</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Sirénido</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>shuluri</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>5</maxWritingRanks>
-        <name>Shuluri</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>submarino</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Submarino</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -10795,23 +10795,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>saurkur</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Saurkur</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>islasAbarquan</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Islas Abarquan</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaSubmarina</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla Submarina</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -10850,30 +10850,30 @@
     <appearanceBonus>-2</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>elvenGris</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Elven Gris</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -10971,23 +10971,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>hablasOfTheMares</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Hablas of the Mares</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>8</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -11020,44 +11020,44 @@
     <appearanceBonus>5</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>sirénido</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Sirénido</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>dyari</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Dyari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>erlini</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Erlini</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>loari</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Loari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>orhan</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Orhan</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>saurkur</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Saurkur</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -11137,23 +11137,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>shuluri</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Shuluri</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>sirénido</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Sirénido</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -11216,44 +11216,44 @@
     <appearanceBonus>15</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>elvenGris</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Elven Gris</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>saurkur</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Saurkur</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>shuluri</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Shuluri</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -11332,58 +11332,58 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>hablasOfTheMares</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Hablas of the Mares</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>elvenGris</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Elven Gris</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>sirénido</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Sirénido</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaSubmarina</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla Submarina</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>shuluri</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Shuluri</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -11416,23 +11416,23 @@
     <appearanceBonus>-20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>elvenGris</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Elven Gris</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -11599,23 +11599,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>hablaOfTheMares</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla of the Mares</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>8</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -11654,30 +11654,30 @@
     <appearanceBonus>10</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>erlini</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Erlini</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>lennai</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Lennai</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>lydiano</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Lydiano</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>talath</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Talath</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -11978,37 +11978,37 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>suluni</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Suluni</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>erlini</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Erlini</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>lydiano</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Lydiano</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>talath</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Talath</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -12047,30 +12047,30 @@
     <appearanceBonus>30</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>elvenGris</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Elven Gris</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -12132,30 +12132,30 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>elvenOfTheBosques</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Elven of the Bosques</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -12180,16 +12180,16 @@
     <appearanceBonus>-60</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -12361,23 +12361,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>goblin</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Goblin</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -12416,30 +12416,30 @@
     <appearanceBonus>-70</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>dwarf</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Dwarf</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>dyari</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Dyari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>murlogi</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Murlogi</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>wôrim</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Wôrim</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -12584,23 +12584,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>trogli</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Trogli</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>wôrim</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Wôrim</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -12681,23 +12681,23 @@
     <appearanceBonus>-70</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>dwarf</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Dwarf</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfTheColinas</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla of the Colinas</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -12842,23 +12842,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -12939,23 +12939,23 @@
     <appearanceBonus>5</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>kyTaari</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Ky'taari</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>jameri</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Jameri</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>lydiano</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Lydiano</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -13120,16 +13120,16 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>umli</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Umli</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
@@ -13162,30 +13162,30 @@
     <appearanceBonus>-30</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>highElven</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>High Elven</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaHigh</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla High</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfTheTheMares</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla of the the Mares</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -13359,23 +13359,23 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>urloc</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Urloc</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>8</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablasOfLoMares</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Hablas of lo Mares</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -13400,23 +13400,23 @@
     <appearanceBonus>5</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>centauro</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Centauro</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>erlini</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Erlini</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>ninfa</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Ninfa</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -13559,16 +13559,16 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>vorloi</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Vorloi</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>idiomaRegional</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Idioma Regional</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
@@ -13607,30 +13607,30 @@
     <appearanceBonus>-20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfTheSur</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Sur</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaNegra</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla Negra</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -13728,37 +13728,37 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>6</startingSpeakingRanks>
         <startingWritingRanks>6</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheNorte</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Norte</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheSur</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Sur</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>

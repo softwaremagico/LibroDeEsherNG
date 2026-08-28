@@ -22,6 +22,8 @@ import com.softwaremagico.librodeesher.perk.Perk;
 import com.softwaremagico.librodeesher.perk.PerkGrade;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
+import com.softwaremagico.librodeesher.race.RaceLanguage;
+import com.softwaremagico.librodeesher.culture.CultureLanguageRank;
 import com.softwaremagico.librodeesher.skill.Skill;
 import com.softwaremagico.librodeesher.skill.SkillType;
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
@@ -801,5 +803,96 @@ public class CharacterPlayer {
             realms.add(applyMagicRealmChoice("profession:" + profession.getId() + ":realm:" + i, grants.get(i), selectedRealm));
         }
         return realms;
+    }
+
+    /**
+     * The fixed speaking ranks a race grants at creation for a language (0 if no race is selected or
+     * it does not grant that language at creation).
+     */
+    public int getRaceLanguageStartingSpeakingRanks(String languageId) throws InvalidXmlElementException {
+        final RaceLanguage language = findRaceLanguage(languageId, false);
+        return language == null || language.getStartingSpeakingRanks() == null ? 0 : language.getStartingSpeakingRanks();
+    }
+
+    /** Same as {@link #getRaceLanguageStartingSpeakingRanks(String)}, for writing ranks. */
+    public int getRaceLanguageStartingWritingRanks(String languageId) throws InvalidXmlElementException {
+        final RaceLanguage language = findRaceLanguage(languageId, false);
+        return language == null || language.getStartingWritingRanks() == null ? 0 : language.getStartingWritingRanks();
+    }
+
+    /**
+     * The maximum speaking ranks a language can reach for the selected race, checking both the
+     * languages granted at creation and those only available through background points; the legacy
+     * default of 10 if the race does not mention that language at all (no race selected returns 0
+     * instead, since there is no race to ask).
+     */
+    public int getRaceLanguageMaxSpeakingRanks(String languageId) throws InvalidXmlElementException {
+        if (getRace() == null) {
+            return 0;
+        }
+        final RaceLanguage language = findRaceLanguage(languageId, true);
+        return language == null || language.getMaxSpeakingRanks() == null ? 10 : language.getMaxSpeakingRanks();
+    }
+
+    /** Same as {@link #getRaceLanguageMaxSpeakingRanks(String)}, for writing ranks. */
+    public int getRaceLanguageMaxWritingRanks(String languageId) throws InvalidXmlElementException {
+        if (getRace() == null) {
+            return 0;
+        }
+        final RaceLanguage language = findRaceLanguage(languageId, true);
+        return language == null || language.getMaxWritingRanks() == null ? 10 : language.getMaxWritingRanks();
+    }
+
+    private RaceLanguage findRaceLanguage(String languageId, boolean includeBackgroundLanguages) throws InvalidXmlElementException {
+        final Race race = getRace();
+        if (race == null) {
+            return null;
+        }
+        for (final RaceLanguage language : race.getRaceLanguages()) {
+            if (language.getLanguageId().equals(languageId)) {
+                return language;
+            }
+        }
+        if (includeBackgroundLanguages) {
+            for (final RaceLanguage language : race.getBackgroundLanguages()) {
+                if (language.getLanguageId().equals(languageId)) {
+                    return language;
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     * The maximum speaking ranks a language can reach for the selected culture, resolving the {@code
+     * "all"} marker (a culture that caps every language the same way) as a fallback when the language
+     * is not mentioned by name; 0 if no culture is selected or it does not mention that language.
+     */
+    public int getCultureLanguageMaxSpeakingRanks(String languageId) throws InvalidXmlElementException {
+        final CultureLanguageRank rank = findCultureLanguageRank(languageId);
+        return rank == null || rank.getMaxSpeakingRanks() == null ? 0 : rank.getMaxSpeakingRanks();
+    }
+
+    /** Same as {@link #getCultureLanguageMaxSpeakingRanks(String)}, for writing ranks. */
+    public int getCultureLanguageMaxWritingRanks(String languageId) throws InvalidXmlElementException {
+        final CultureLanguageRank rank = findCultureLanguageRank(languageId);
+        return rank == null || rank.getMaxWritingRanks() == null ? 0 : rank.getMaxWritingRanks();
+    }
+
+    private CultureLanguageRank findCultureLanguageRank(String languageId) throws InvalidXmlElementException {
+        final Culture culture = getCulture();
+        if (culture == null) {
+            return null;
+        }
+        CultureLanguageRank allLanguagesRank = null;
+        for (final CultureLanguageRank rank : culture.getLanguageMaxRanks()) {
+            if (rank.getLanguageId().equals(languageId)) {
+                return rank;
+            }
+            if ("all".equals(rank.getLanguageId())) {
+                allLanguagesRank = rank;
+            }
+        }
+        return allLanguagesRank;
     }
 }

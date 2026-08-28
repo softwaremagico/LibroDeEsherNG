@@ -624,4 +624,48 @@ public class CharacterPlayerTest {
         staff.setName("Bastón", "Staff");
         Assert.assertTrue(character.isSkillCommon(staff));
     }
+
+    @Test
+    public void raceLanguageStartingAndMaxRanksAreExposed() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("horseCentaur");
+
+        Assert.assertEquals(character.getRaceLanguageStartingSpeakingRanks("centauro"), 8);
+        Assert.assertEquals(character.getRaceLanguageStartingWritingRanks("centauro"), 6);
+        Assert.assertEquals(character.getRaceLanguageMaxSpeakingRanks("centauro"), 10);
+        Assert.assertEquals(character.getRaceLanguageMaxWritingRanks("centauro"), 10);
+    }
+
+    @Test
+    public void raceLanguageRanksAreZeroWithoutARaceSelected() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        Assert.assertEquals(character.getRaceLanguageStartingSpeakingRanks("centauro"), 0);
+        Assert.assertEquals(character.getRaceLanguageMaxSpeakingRanks("centauro"), 0);
+    }
+
+    @Test
+    public void raceLanguageMaxRanksDefaultsToTenForAnUnmentionedLanguage() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("horseCentaur");
+
+        Assert.assertEquals(character.getRaceLanguageMaxSpeakingRanks("someLanguageThisRaceNeverMentions"), 10);
+    }
+
+    @Test
+    public void cultureLanguageMaxRanksAreExposed() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setCultureId("aquaticMilitarista");
+
+        Assert.assertEquals(character.getCultureLanguageMaxSpeakingRanks("commonSpeech"), 8);
+        Assert.assertEquals(character.getCultureLanguageMaxWritingRanks("commonSpeech"), 8);
+    }
+
+    @Test
+    public void cultureLanguageMaxRanksAreZeroWithoutACultureSelectedOrLanguageMentioned() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        Assert.assertEquals(character.getCultureLanguageMaxSpeakingRanks("commonSpeech"), 0);
+
+        character.setCultureId("aquaticMilitarista");
+        Assert.assertEquals(character.getCultureLanguageMaxSpeakingRanks("someLanguageThisCultureNeverMentions"), 0);
+    }
 }

@@ -217,7 +217,7 @@ public final class RaceMigrationTool {
             }
             final int[] initial = parseRankPair(columns[1]);
             final int[] max = parseRankPair(columns[2]);
-            languages.add(new RaceLanguage(Translations.toEnglish(columns[0].trim()), initial[0], initial[1], max[0], max[1]));
+            languages.add(new RaceLanguage(Translations.toEnglishId(columns[0].trim()), initial[0], initial[1], max[0], max[1]));
         }
         return languages;
     }

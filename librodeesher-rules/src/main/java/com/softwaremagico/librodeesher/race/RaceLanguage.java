@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /** Language ranks granted by a race at creation or available through background points. */
 public class RaceLanguage {
 
-    @JsonProperty("name")
-    private String name;
+    @JsonProperty("languageId")
+    private String languageId;
 
     @JsonProperty("startingSpeakingRanks")
     private Integer startingSpeakingRanks;
@@ -24,21 +24,21 @@ public class RaceLanguage {
         // Required by Jackson.
     }
 
-    public RaceLanguage(String name, Integer startingSpeakingRanks, Integer startingWritingRanks,
+    public RaceLanguage(String languageId, Integer startingSpeakingRanks, Integer startingWritingRanks,
                         Integer maxSpeakingRanks, Integer maxWritingRanks) {
-        this.name = name;
+        this.languageId = languageId;
         this.startingSpeakingRanks = startingSpeakingRanks;
         this.startingWritingRanks = startingWritingRanks;
         this.maxSpeakingRanks = maxSpeakingRanks;
         this.maxWritingRanks = maxWritingRanks;
     }
 
-    public String getName() {
-        return name;
+    public String getLanguageId() {
+        return languageId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLanguageId(String languageId) {
+        this.languageId = languageId;
     }
 
     public Integer getStartingSpeakingRanks() {

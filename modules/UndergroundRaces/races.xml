@@ -4,9 +4,9 @@
     <appearanceBonus>0</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaOfThePlains</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Plains</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -1527,37 +1527,37 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>lenguaNegra</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Lengua Negra</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>3</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>orco</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Orco</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>5</startingSpeakingRanks>
         <startingWritingRanks>2</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>woodlandSpeech</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Woodland Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>hablaOfTheColinas</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla of the Colinas</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>

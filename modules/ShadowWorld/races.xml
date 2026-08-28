@@ -4,30 +4,30 @@
     <appearanceBonus>-20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaGigante</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla Gigante</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfTheColinas</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Habla of the Colinas</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>hablaOfTheMountains</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla of the Mountains</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -87,9 +87,9 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>hablaGigante</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
-        <name>Habla Gigante</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -114,9 +114,9 @@
     <appearanceBonus>0</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -229,16 +229,16 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>ilouriano</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Ilouriano</name>
         <startingSpeakingRanks>8</startingSpeakingRanks>
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>5</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
@@ -263,16 +263,16 @@
     <appearanceBonus>-70</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
+        <languageId>hablaTroll</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
-        <name>Habla Troll</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
+        <languageId>commonSpeech</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
-        <name>Common Speech</name>
         <startingSpeakingRanks>0</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
@@ -351,9 +351,9 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
+        <languageId>hablaTroll</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>0</maxWritingRanks>
-        <name>Habla Troll</name>
         <startingSpeakingRanks>5</startingSpeakingRanks>
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
