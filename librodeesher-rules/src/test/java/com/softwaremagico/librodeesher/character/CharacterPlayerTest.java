@@ -12,6 +12,7 @@ import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.perk.PerkChoiceGrant;
+import com.softwaremagico.librodeesher.profession.ProfessionSkillGrant;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.resistance.ResistanceType;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
@@ -1093,5 +1094,55 @@ public class CharacterPlayerTest {
         Assert.assertFalse(character.isProfessionRestrictedByRace("unmentionedProfession"));
         Assert.assertFalse(character.getAvailableProfessionIds().contains("paladin"));
         Assert.assertFalse(character.getAvailableProfessionIds().contains("wizard"));
+    }
+
+    @Test
+    public void professionSkillGrantResolvesAChoiceOfSkillOptions() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("thief");
+        final ProfessionSkillGrant grant = character.getProfession().getCommonSkillChoices().get(0);
+        Assert.assertEquals(grant.getRanksToChoose(), Integer.valueOf(1));
+
+        final List<String> resolved = character.applyProfessionSkillGrant("thief",
+                CharacterPlayer.PROFESSION_COMMON_SKILLS_SECTION, 0, grant, List.of("perceptionOfTheEnvironmentCombat"));
+
+        Assert.assertEquals(resolved, List.of("perceptionOfTheEnvironmentCombat"));
+
+        final Skill chosenSkill = RulesCatalog.getInstance().getSkill("perceptionOfTheEnvironmentCombat");
+        Assert.assertTrue(character.isSkillCommon(chosenSkill));
+        final Skill otherOption = RulesCatalog.getInstance().getSkill("perceptionOfTheEnvironmentCiudades");
+        Assert.assertFalse(character.isSkillCommon(otherOption));
+
+        // Reusing the same key/index does not ask again.
+        Assert.assertEquals(character.applyProfessionSkillGrant("thief", CharacterPlayer.PROFESSION_COMMON_SKILLS_SECTION, 0,
+                grant, List.of("perceptionOfTheEnvironmentCiudades")), List.of("perceptionOfTheEnvironmentCombat"));
+    }
+
+    @Test
+    public void professionSkillGrantResolvesChoosingNSkillsFromACategory() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("alchemistOfMentalism");
+        final ProfessionSkillGrant grant = character.getProfession().getProfessionalSkillChoices().get(0);
+        Assert.assertEquals(grant.getCategoryId(), "crafts");
+        Assert.assertEquals(grant.getRanksToChoose(), Integer.valueOf(6));
+
+        final List<String> chosen = List.of("cocinar", "manejoOfCuerdas", "trabajarTheLeather", "trabajarTheMetal",
+                "trabajarTheMadera", "trabajarTheStone");
+        final List<String> resolved = character.applyProfessionSkillGrant("alchemistOfMentalism",
+                CharacterPlayer.PROFESSION_PROFESSIONAL_SKILLS_SECTION, 0, grant, chosen);
+
+        Assert.assertEquals(resolved, chosen);
+        Assert.assertTrue(character.isSkillProfessional(RulesCatalog.getInstance().getSkill("cocinar")));
+        Assert.assertFalse(character.isSkillProfessional(RulesCatalog.getInstance().getSkill("coserTejer")));
+    }
+
+    @Test(expectedExceptions = InvalidDecisionException.class)
+    public void professionSkillGrantRejectsTheWrongNumberOfSelections() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("alchemistOfMentalism");
+        final ProfessionSkillGrant grant = character.getProfession().getProfessionalSkillChoices().get(0);
+
+        character.applyProfessionSkillGrant("alchemistOfMentalism", CharacterPlayer.PROFESSION_PROFESSIONAL_SKILLS_SECTION, 0,
+                grant, List.of("cocinar"));
     }
 }

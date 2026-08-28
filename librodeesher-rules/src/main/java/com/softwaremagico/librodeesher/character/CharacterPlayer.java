@@ -26,6 +26,7 @@ import com.softwaremagico.librodeesher.perk.PerkChoiceScope;
 import com.softwaremagico.librodeesher.perk.PerkGrade;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.profession.Profession;
+import com.softwaremagico.librodeesher.profession.ProfessionSkillGrant;
 import com.softwaremagico.librodeesher.profession.ProfessionTrainingCost;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.race.Race;
@@ -831,6 +832,8 @@ public class CharacterPlayer {
 				|| this.isSkillGrantedByAnyTraining(skill.getId(), this::getTrainingRestrictedSkills)
 				|| this.isSkillRestrictedByRace(skill.getId())
 				|| (profession != null && profession.isRestrictedSkill(skill.getId()))
+				|| (profession != null && this.isSkillGrantedByProfessionChoice(skill.getId(),
+						PROFESSION_RESTRICTED_SKILLS_SECTION, profession.getRestrictedSkillChoices()))
 				|| this.isSkillRestrictedByPerk(skill.getId());
 	}
 
@@ -844,6 +847,8 @@ public class CharacterPlayer {
 				|| this.isSkillGrantedByAnyTraining(skill.getId(), this::getTrainingCommonSkills)
 				|| this.isSkillCommonByRace(skill.getId())
 				|| (profession != null && profession.isCommonSkill(skill.getId()))
+				|| (profession != null && this.isSkillGrantedByProfessionChoice(skill.getId(),
+						PROFESSION_COMMON_SKILLS_SECTION, profession.getCommonSkillChoices()))
 				|| this.isSkillCommonByPerk(skill.getId());
 	}
 
@@ -855,7 +860,9 @@ public class CharacterPlayer {
 		final Profession profession = getProfession();
 		return skill.getSkillType() == SkillType.PROFESSIONAL
 				|| this.isSkillGrantedByAnyTraining(skill.getId(), this::getTrainingProfessionalSkills)
-				|| (profession != null && profession.isProfessionalSkill(skill.getId()));
+				|| (profession != null && profession.isProfessionalSkill(skill.getId()))
+				|| (profession != null && this.isSkillGrantedByProfessionChoice(skill.getId(),
+						PROFESSION_PROFESSIONAL_SKILLS_SECTION, profession.getProfessionalSkillChoices()));
 	}
 
 	/**
@@ -1873,6 +1880,83 @@ public class CharacterPlayer {
 			}
 		}
 		return ids;
+	}
+
+	private static final String PROFESSION_SKILL_CHOICE_KEY_PREFIX = "profession:";
+
+	/** Section names used to namespace {@link #applyProfessionSkillGrant} decisions; see there. */
+	public static final String PROFESSION_COMMON_SKILLS_SECTION = "commonSkill";
+	public static final String PROFESSION_PROFESSIONAL_SKILLS_SECTION = "professionalSkill";
+	public static final String PROFESSION_RESTRICTED_SKILLS_SECTION = "restrictedSkill";
+
+	/**
+	 * Resolves one of the selected profession's "choose N skills from a category/list" grants
+	 * ({@link ProfessionSkillGrant}, one of {@link Profession#getCommonSkillChoices()}/{@link
+	 * Profession#getProfessionalSkillChoices()}/{@link Profession#getRestrictedSkillChoices()}):
+	 * validates {@code selectedSkillIds} is exactly {@link ProfessionSkillGrant#getRanksToChoose()}
+	 * distinct skill ids, all from the grant's pool (every skill of {@link
+	 * ProfessionSkillGrant#getCategoryId()} if set, otherwise {@link
+	 * ProfessionSkillGrant#getSkillOptions()}), and records the choice; a skill this resolves
+	 * classifies the same way as one of {@link Profession#getCommonSkillIds()}/etc. (see {@link
+	 * #isSkillCommon}/{@link #isSkillRestricted}/{@link #isSkillProfessional}).
+	 *
+	 * @param professionId the selected profession this grant belongs to.
+	 * @param section       which of the three sections {@code grant} came from: {@link
+	 *                      #PROFESSION_COMMON_SKILLS_SECTION}/{@link
+	 *                      #PROFESSION_PROFESSIONAL_SKILLS_SECTION}/{@link
+	 *                      #PROFESSION_RESTRICTED_SKILLS_SECTION}.
+	 * @param grantIndex    the grant's index within that section's list.
+	 */
+	public List<String> applyProfessionSkillGrant(String professionId, String section, int grantIndex,
+												   ProfessionSkillGrant grant, List<String> selectedSkillIds)
+			throws InvalidXmlElementException {
+		final String key = PROFESSION_SKILL_CHOICE_KEY_PREFIX + professionId + ":" + section + ":" + grantIndex;
+		final List<String> pool = this.getProfessionSkillGrantPool(grant);
+		final Decision decision = this.decideOrReuse(key,
+				() -> Decision.selectMultiple(pool, selectedSkillIds, grant.getRanksToChoose()));
+		return decision.getSelectedOptions();
+	}
+
+	/** Every skill {@code grant} lets the player pick from: its category's skills, or its explicit list. */
+	private List<String> getProfessionSkillGrantPool(ProfessionSkillGrant grant) throws InvalidXmlElementException {
+		if (grant.getCategoryId() == null) {
+			return grant.getSkillOptions();
+		}
+		final List<String> ids = new ArrayList<>();
+		for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
+			if (grant.getCategoryId().equals(skill.getCategoryId())) {
+				ids.add(skill.getId());
+			}
+		}
+		return ids;
+	}
+
+	/**
+	 * Whether an already-resolved {@link #applyProfessionSkillGrant} choice, from {@code section} of
+	 * the selected profession, granted {@code skillId}; {@code false} if no profession is selected,
+	 * it has no such grants, or none of them have been resolved yet.
+	 */
+	private boolean isSkillGrantedByProfessionChoice(String skillId, String section, List<ProfessionSkillGrant> grants) {
+		final Profession profession = this.tryGetSelectedProfession();
+		if (profession == null) {
+			return false;
+		}
+		for (int i = 0; i < grants.size(); i++) {
+			final String key = PROFESSION_SKILL_CHOICE_KEY_PREFIX + profession.getId() + ":" + section + ":" + i;
+			if (this.decisions.isDecided(key) && this.decisions.get(key).getSelectedOptions().contains(skillId)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/** {@link #getProfession()} without the checked exception, {@code null} on failure (used where a boolean query cannot fail on a bad selection). */
+	private Profession tryGetSelectedProfession() {
+		try {
+			return this.getProfession();
+		} catch (final InvalidXmlElementException e) {
+			return null;
+		}
 	}
 
 	private static final String ENABLE_SKILL_KEY_PREFIX = "skill:enables:";

@@ -1,10 +1,12 @@
 package com.softwaremagico.librodeesher.decision;
 
+import java.util.LinkedHashSet;
 import java.util.List;
 
 /**
- * A resolved "choose one of {@code offeredOptions}" grant (e.g. a training's category choice, or one
- * of its nested skill choices), validated against what was actually offered.
+ * A resolved "choose one (or N) of {@code offeredOptions}" grant (e.g. a training's category choice,
+ * or a profession's "choose N skills from this category" grant), validated against what was actually
+ * offered.
  *
  * <p>Used to resolve any of the {@code {alt1; alt2; ...}} choose-one constructs found throughout the
  * migrated rule data: {@code ChoiceGroup} (a training's characteristic upgrades and common/
@@ -13,15 +15,20 @@ import java.util.List;
  * that only ever offered a single, fixed option is also represented as a {@code Decision} (via
  * {@link #fixed(List)}), so calling code can treat every grant uniformly instead of special-casing
  * "not really a choice".</p>
+ *
+ * <p>{@link #selectMultiple(List, List, int)} additionally supports "choose N of M" grants (e.g.
+ * {@code ProfessionSkillGrant}, where {@code N} may be greater than 1); {@link #getSelectedOption()}
+ * remains the single-selection accessor (every existing choose-one caller keeps working unchanged),
+ * while {@link #getSelectedOptions()} exposes the full list for "choose N" callers.</p>
  */
 public final class Decision {
 
     private final List<String> offeredOptions;
-    private final String selectedOption;
+    private final List<String> selectedOptions;
 
-    private Decision(List<String> offeredOptions, String selectedOption) {
+    private Decision(List<String> offeredOptions, List<String> selectedOptions) {
         this.offeredOptions = offeredOptions;
-        this.selectedOption = selectedOption;
+        this.selectedOptions = selectedOptions;
     }
 
     /**
@@ -39,7 +46,37 @@ public final class Decision {
             throw new InvalidDecisionException(
                     "'" + selectedOption + "' is not one of the offered options " + offeredOptions + ".");
         }
-        return new Decision(List.copyOf(offeredOptions), selectedOption);
+        return new Decision(List.copyOf(offeredOptions), List.of(selectedOption));
+    }
+
+    /**
+     * Resolves a "choose {@code count} of {@code offeredOptions}" grant: {@code selectedOptions} must
+     * have exactly {@code count} distinct entries, every one of them among {@code offeredOptions}.
+     *
+     * @throws InvalidDecisionException if {@code offeredOptions} is empty, {@code selectedOptions} is
+     *                                  null, does not have exactly {@code count} distinct entries, or
+     *                                  any of them is not one of {@code offeredOptions}.
+     */
+    public static Decision selectMultiple(List<String> offeredOptions, List<String> selectedOptions, int count) {
+        requireNonEmptyOptions(offeredOptions);
+        if (selectedOptions == null) {
+            throw new InvalidDecisionException("A selection of " + count + " is required among " + offeredOptions + ".");
+        }
+        final List<String> distinct = List.copyOf(new LinkedHashSet<>(selectedOptions));
+        if (distinct.size() != selectedOptions.size()) {
+            throw new InvalidDecisionException("Duplicate selections are not allowed: " + selectedOptions + ".");
+        }
+        if (distinct.size() != count) {
+            throw new InvalidDecisionException(
+                    "Expected " + count + " selection(s), got " + distinct.size() + ": " + selectedOptions + ".");
+        }
+        for (final String selected : distinct) {
+            if (!offeredOptions.contains(selected)) {
+                throw new InvalidDecisionException(
+                        "'" + selected + "' is not one of the offered options " + offeredOptions + ".");
+            }
+        }
+        return new Decision(List.copyOf(offeredOptions), distinct);
     }
 
     /**
@@ -53,7 +90,7 @@ public final class Decision {
             throw new InvalidDecisionException(
                     "Not a fixed grant, a selection is required among " + offeredOptions + ".");
         }
-        return new Decision(List.copyOf(offeredOptions), offeredOptions.get(0));
+        return new Decision(List.copyOf(offeredOptions), List.of(offeredOptions.get(0)));
     }
 
     private static void requireNonEmptyOptions(List<String> offeredOptions) {
@@ -62,8 +99,14 @@ public final class Decision {
         }
     }
 
+    /** The single selected option; the first one, if this decision actually holds several (see {@link #getSelectedOptions()}). */
     public String getSelectedOption() {
-        return selectedOption;
+        return selectedOptions.get(0);
+    }
+
+    /** Every selected option, in selection order (a single-element list for an ordinary choose-one decision). */
+    public List<String> getSelectedOptions() {
+        return selectedOptions;
     }
 
     public List<String> getOfferedOptions() {
@@ -77,6 +120,6 @@ public final class Decision {
 
     @Override
     public String toString() {
-        return selectedOption + " (of " + offeredOptions + ")";
+        return selectedOptions + " (of " + offeredOptions + ")";
     }
 }

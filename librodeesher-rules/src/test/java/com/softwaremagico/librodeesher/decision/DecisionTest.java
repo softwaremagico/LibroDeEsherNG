@@ -48,4 +48,32 @@ public class DecisionTest {
     public void fixedRejectsNoOptions() {
         Decision.fixed(List.of());
     }
+
+    @Test
+    public void selectMultipleValidatesCountAndMembership() {
+        final Decision decision = Decision.selectMultiple(List.of("sword", "axe", "bow"), List.of("axe", "sword"), 2);
+        Assert.assertEquals(decision.getSelectedOptions(), List.of("axe", "sword"));
+        Assert.assertEquals(decision.getSelectedOption(), "axe");
+        Assert.assertTrue(decision.isChoice());
+    }
+
+    @Test(expectedExceptions = InvalidDecisionException.class)
+    public void selectMultipleRejectsTheWrongCount() {
+        Decision.selectMultiple(List.of("sword", "axe", "bow"), List.of("axe"), 2);
+    }
+
+    @Test(expectedExceptions = InvalidDecisionException.class)
+    public void selectMultipleRejectsDuplicates() {
+        Decision.selectMultiple(List.of("sword", "axe", "bow"), List.of("axe", "axe"), 2);
+    }
+
+    @Test(expectedExceptions = InvalidDecisionException.class)
+    public void selectMultipleRejectsAnOptionThatWasNotOffered() {
+        Decision.selectMultiple(List.of("sword", "axe", "bow"), List.of("axe", "spear"), 2);
+    }
+
+    @Test(expectedExceptions = InvalidDecisionException.class)
+    public void selectMultipleRejectsANullSelection() {
+        Decision.selectMultiple(List.of("sword", "axe"), null, 1);
+    }
 }
