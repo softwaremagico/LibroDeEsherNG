@@ -3,6 +3,48 @@
 [![GNU GPL 3.0 License](https://img.shields.io/badge/license-GNU_GPL_3.0-brightgreen.svg)](https://github.com/softwaremagico/librodeesher/blob/master/license/gnugpl/license.txt)
 [![Powered by](https://img.shields.io/badge/powered%20by%20java-orange.svg?logo=OpenJDK&logoColor=white)]()
 
+> His heartbeat pounded in his ears as he ran through the long corridors. "Pixie, no...
+> sylph, no... gnome, no..." his lips mouthed in a low voice as he turned the pages of that old
+> book he had found long ago and now held in his hands. He knew these corridors like the back of
+> his hand, which let him find what he needed while fleeing toward the heart of his lair, or
+> perhaps toward some place far from here. He had to hurry, since they must be very close by now.
+> The echo carried to him the laughter and excitement of those intruders in search of riches.
+> "Goblin, no... orc, maybe, though I need something bigger...". He couldn't understand how such
+> a disparate band of races — elves, humans, dwarves — could join together to sack his home. They
+> had come in unannounced, and his poorly paid minions had died quickly. Perhaps he should have
+> prepared his defenses better instead of spending these last few days on his personal pleasures.
+> Adventurers are known for their unpredictable whims. They had a thirst for blood this evening
+> and no other, and of course, they never give much warning. It was too late for regrets now, and
+> his only chance was to summon something big or terrifying enough to at least give the intruders
+> some entertainment and delay them by an hour or so. Perhaps the evening would be over before the
+> intruders reached him, and by night he'd have time enough to better fortify whatever chambers
+> remained intact, move his savings somewhere safer, and find more select minions; or perhaps, at
+> least, this defeat wouldn't be a total disgrace and he could die with what little honor he had
+> left. "Centaur, no...". Nothing he found pleased him. "Laan, no...". A scream in the distance
+> told him the last of his minions had fallen. "Fairy, no...", he had already gone through half
+> the book's pages and still had nothing to his liking. "Gratar, no..." his fingers kept turning
+> until, finally, they stopped on one page: "War troll". His lips repeated it again, "War troll",
+> and again, and again, as if trying to make the idea real through the sound of his own voice
+> alone. Meanwhile, his fingers drummed on the book and his steps grew slower. His mind began to
+> see a way out. "War troll", yes, that could work — "troll" sounded big enough, and "war" was as
+> terrifying as what he was looking for. Together, these two words had the flavor of the solution
+> he needed. "War Troll" he said again, each time louder, as if savoring the words. He stopped
+> running and turned toward where the sounds of looting and death were coming from. If he had
+> enough power to summon one or two big enough to block this corridor, maybe he had a chance, and
+> the evening wouldn't be a disaster after all...
+
+## About Libro de Esher
+
+Libro de Esher is an application that makes it easy to create character sheets for your players,
+or to create non-player characters in just a few seconds. It also lets each user quickly customize
+and add their own races and professions, giving all the flexibility needed for any kind of game.
+
+Libro de Esher was originally developed by Jorge Hortelano Otero as a free-software desktop
+application, distributed under the GNU license, hoping it would spare game masters the tedious
+work of building a PC or help them out with their NPCs. This repository is a full modernization of
+that original application: the same Rolemaster rules engine and character-creation model, rebuilt
+from scratch as a library.
+
 Libro de Esher is a Java library for the **Rolemaster** character system. It provides a fully
 data-driven rules engine covering every rulebook/supplement of the original desktop application,
 migrated from legacy tab-separated text files into bilingual (Spanish/English) XML, plus the
@@ -81,4 +123,7 @@ Two additional modules are scaffolded for future work:
 
 ## Notes
 
+- Original application icons from the Gartoon Gnome Icon Theme, under the GNU license.
+- The original desktop application used the iText library for PDF character sheet generation.
+- Original Pulp Adventures sheet templates created by Daniel Cordellat.
 - Rolemaster is a trademark owned by Iron Crown Enterprises / Aurigas Aldebaron.
