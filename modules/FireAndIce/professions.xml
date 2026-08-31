@@ -839,66 +839,6 @@
         </rankCosts>
       </magicCost>
     </magicCosts>
-    <magicCostsRaw>Lista Básica (1-5)	3/3/3
-Lista Básica (6-10)	3/3/3
-Lista Básica (11-15)	3/3/3
-Lista Básica (16-20)	3/3/3
-Lista Básica (21+)	3/3/3
-Listas Básicas de la Tríada (1-5)	6/6/6
-Listas Básicas de la Tríada (6-10)	6/6/6
-Listas Básicas de la Tríada (11-15)	6/6/6
-Listas Básicas de la Tríada (16-20)	6/6/6
-Listas Básicas de la Tríada (21+)	6/6/6
-Listas Básicas Elementales Complementarias (1-5)	8/8
-Listas Básicas Elementales Complementarias (6-10)	8/8
-Listas Básicas Elementales Complementarias (11-15)	8/8
-Listas Básicas Elementales Complementarias (16-20)	8/8
-Listas Básicas Elementales Complementarias (21+)	8/8
-Lista Abierta (1-5)	4/4/4
-Lista Abierta (6-10)	4/4/4
-Lista Abierta (11-15)	4/4/4
-Lista Abierta (16-20)	4/4/4
-Lista Abierta (21+)	6/6/6
-Lista Cerrada (1-5)	4/4/4
-Lista Cerrada (6-10)	4/4/4
-Lista Cerrada (11-15)	4/4/4
-Lista Cerrada (16-20)	4/4/4
-Lista Cerrada (21+)	8/8
-Listas Básicas de Otras Profesiones (1-5)	8/8
-Listas Básicas de Otras Profesiones (6-10)	10/10
-Listas Básicas de Otras Profesiones (11-15)	12
-Listas Básicas de Otras Profesiones (16-20)	25
-Listas Básicas de Otras Profesiones (21+)	40
-Listas Abiertas de Otros Reinos (1-5)	10/10
-Listas Abiertas de Otros Reinos (6-10)	12
-Listas Abiertas de Otros Reinos (11-15)	25
-Listas Abiertas de Otros Reinos (16-20)	40
-Listas Abiertas de Otros Reinos (21+)	60
-Listas Cerradas de Otros Reinos (1-5)	20
-Listas Cerradas de Otros Reinos (6-10)	25
-Listas Cerradas de Otros Reinos (11-15)	40
-Listas Cerradas de Otros Reinos (16-20)	60
-Listas Cerradas de Otros Reinos (21+)	80
-Listas Básicas de Otros Reinos (1-5)	50
-Listas Básicas de Otros Reinos (6-10)	70
-Listas Básicas de Otros Reinos (11-15)	90
-Listas Básicas de Otros Reinos (16-20)	110
-Listas Básicas de Otros Reinos (21+)	130
-Listas Abiertas Arcanas (1-5)	6/6
-Listas Abiertas Arcanas (6-10)	8/8
-Listas Abiertas Arcanas (11-15)	10/10
-Listas Abiertas Arcanas (16-20)	12
-Listas Abiertas Arcanas (21+)	25
-Listas Hechizos de Adiestramiento (1-5)	4/4/4
-Listas Hechizos de Adiestramiento (6-10)	4/4/4
-Listas Hechizos de Adiestramiento (11-15)	4/4/4
-Listas Hechizos de Adiestramiento (16-20)	4/4/4
-Listas Hechizos de Adiestramiento (21+)	4/4/4
-Listas Hechizos de Adiestramientos de Otros Reinos (1-5)	8/8
-Listas Hechizos de Adiestramientos de Otros Reinos (6-10)	8/8
-Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	8/8
-Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	8/8
-Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
     <name>
       <en>Elementalist</en>
       <es>Elementalista</es>

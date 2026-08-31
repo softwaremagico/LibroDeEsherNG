@@ -106,7 +106,7 @@ public class ProfessionMigrationToolTest {
             Assert.assertTrue(mago.getCommonSkillChoices().isEmpty());
             Assert.assertTrue(mago.getProfessionalSkillIds().isEmpty());
             Assert.assertTrue(mago.getProfessionalSkillChoices().isEmpty());
-            Assert.assertTrue(mago.getMagicCostsRaw().contains("Lista Básica"));
+            Assert.assertFalse(mago.getMagicCosts().isEmpty());
 
             Assert.assertEquals(mago.getTrainingCosts().size(), 2);
             final ProfessionTrainingCost favouredTraining = mago.getTrainingCosts().get(0);

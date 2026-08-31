@@ -150,7 +150,6 @@ public final class ProfessionMigrationTool {
         profession.setRestrictedSkillIds(restricted.fixedSkillIds());
         profession.setRestrictedSkillChoices(restricted.choices());
         final List<String> magicCostLines = cursor.nextSectionOrEmpty();
-        profession.setMagicCostsRaw(String.join("\n", magicCostLines));
         profession.setMagicCosts(parseMagicCosts(magicCostLines));
         profession.setTrainingCosts(parseTrainingCosts(cursor.nextSectionOrEmpty(), trainingIndex));
         return profession;

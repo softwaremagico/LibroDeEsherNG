@@ -31,7 +31,7 @@ public class ProfessionFactoryTest {
         Assert.assertFalse(mago.getMagicRealms().get(0).isChoice());
         Assert.assertFalse(mago.isIndifferentToCharacteristics());
         Assert.assertFalse(mago.getBonuses().isEmpty());
-        Assert.assertFalse(mago.getMagicCostsRaw().isBlank());
+        Assert.assertFalse(mago.getMagicCosts().isEmpty());
     }
 
     @Test(expectedExceptions = InvalidXmlElementException.class)

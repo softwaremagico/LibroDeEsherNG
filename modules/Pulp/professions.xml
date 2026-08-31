@@ -680,51 +680,6 @@
         </rankCosts>
       </magicCost>
     </magicCosts>
-    <magicCostsRaw>Lista Abierta (1-5)	35
-Lista Abierta (6-10)	70
-Lista Abierta (11-15)	115
-Lista Abierta (16-20)	140
-Lista Abierta (21+)	175
-Lista Cerrada (1-5)	50
-Lista Cerrada (6-10)	100
-Lista Cerrada (11-15)	150
-Lista Cerrada (16-20)	200
-Lista Cerrada (21+)	250
-Listas Básicas de Otras Profesiones (1-5)	160
-Listas Básicas de Otras Profesiones (6-10)	320
-Listas Básicas de Otras Profesiones (11-15)	480
-Listas Básicas de Otras Profesiones (16-20)	640
-Listas Básicas de Otras Profesiones (21+)	800
-Listas Abiertas de Otros Reinos (1-5)	140
-Listas Abiertas de Otros Reinos (6-10)	280
-Listas Abiertas de Otros Reinos (11-15)	420
-Listas Abiertas de Otros Reinos (16-20)	560
-Listas Abiertas de Otros Reinos (21+)	700
-Listas Cerradas de Otros Reinos (1-5)	200
-Listas Cerradas de Otros Reinos (6-10)	400
-Listas Cerradas de Otros Reinos (11-15)	600
-Listas Cerradas de Otros Reinos (16-20)	800
-Listas Cerradas de Otros Reinos (21+)	1000
-Listas Básicas de Otros Reinos (1-5)	200
-Listas Básicas de Otros Reinos (6-10)	400
-Listas Básicas de Otros Reinos (11-15)	600
-Listas Básicas de Otros Reinos (16-20)	800
-Listas Básicas de Otros Reinos (21+)	1000
-Listas Abiertas Arcanas (1-5)	40
-Listas Abiertas Arcanas (6-10)	80
-Listas Abiertas Arcanas (11-15)	120
-Listas Abiertas Arcanas (16-20)	160
-Listas Abiertas Arcanas (21+)	200
-Listas Hechizos de Adiestramiento (1-5)	8/8/8
-Listas Hechizos de Adiestramiento (6-10)	8/8/8
-Listas Hechizos de Adiestramiento (11-15)	8/8/8
-Listas Hechizos de Adiestramiento (16-20)	8/8/8
-Listas Hechizos de Adiestramiento (21+)	8/8/8
-Listas Hechizos de Adiestramientos de Otros Reinos (1-5)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (6-10)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
     <name>
       <en>Academic (Pulp)</en>
       <es>Académico (Pulp)</es>
@@ -1830,56 +1785,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </rankCosts>
       </magicCost>
     </magicCosts>
-    <magicCostsRaw>Lista Básica (1-5)	12/12
-Lista Básica (6-10)	12/12
-Lista Básica (11-15)	12/12
-Lista Básica (16-20)	12/12
-Lista Básica (21+)	12/12
-Lista Abierta (1-5)	816
-Lista Abierta (6-10)	16
-Lista Abierta (11-15)	24
-Lista Abierta (16-20)	36
-Lista Abierta (21+)	50
-Lista Cerrada (1-5)	20
-Lista Cerrada (6-10)	24
-Lista Cerrada (11-15)	50
-Lista Cerrada (16-20)	80
-Lista Cerrada (21+)	120
-Listas Básicas de Otras Profesiones (1-5)	50
-Listas Básicas de Otras Profesiones (6-10)	80
-Listas Básicas de Otras Profesiones (11-15)	120
-Listas Básicas de Otras Profesiones (16-20)	160
-Listas Básicas de Otras Profesiones (21+)	200
-Listas Abiertas de Otros Reinos (1-5)	60
-Listas Abiertas de Otros Reinos (6-10)	120
-Listas Abiertas de Otros Reinos (11-15)	160
-Listas Abiertas de Otros Reinos (16-20)	200
-Listas Abiertas de Otros Reinos (21+)	240
-Listas Cerradas de Otros Reinos (1-5)	90
-Listas Cerradas de Otros Reinos (6-10)	120
-Listas Cerradas de Otros Reinos (11-15)	160
-Listas Cerradas de Otros Reinos (16-20)	200
-Listas Cerradas de Otros Reinos (21+)	240
-Listas Básicas de Otros Reinos (1-5)	160
-Listas Básicas de Otros Reinos (6-10)	200
-Listas Básicas de Otros Reinos (11-15)	240
-Listas Básicas de Otros Reinos (16-20)	280
-Listas Básicas de Otros Reinos (21+)	320
-Listas Abiertas Arcanas (1-5)	24
-Listas Abiertas Arcanas (6-10)	50
-Listas Abiertas Arcanas (11-15)	80
-Listas Abiertas Arcanas (16-20)	120
-Listas Abiertas Arcanas (21+)	160
-Listas Hechizos de Adiestramiento (1-5)	6/6/6
-Listas Hechizos de Adiestramiento (6-10)	6/6/6
-Listas Hechizos de Adiestramiento (11-15)	6/6/6
-Listas Hechizos de Adiestramiento (16-20)	6/6/6
-Listas Hechizos de Adiestramiento (21+)	6/6/6
-Listas Hechizos de Adiestramientos de Otros Reinos (1-5)	12/12
-Listas Hechizos de Adiestramientos de Otros Reinos (6-10)	12/12
-Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	12/12
-Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	12/12
-Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
     <name>
       <en>Bard (Pulp)</en>
       <es>Bardo (Pulp)</es>
@@ -2984,51 +2889,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	12/12</magicCostsRaw>
         </rankCosts>
       </magicCost>
     </magicCosts>
-    <magicCostsRaw>Lista Abierta (1-5)	30
-Lista Abierta (6-10)	60
-Lista Abierta (11-15)	90
-Lista Abierta (16-20)	120
-Lista Abierta (21+)	150
-Lista Cerrada (1-5)	50
-Lista Cerrada (6-10)	100
-Lista Cerrada (11-15)	150
-Lista Cerrada (16-20)	200
-Lista Cerrada (21+)	250
-Listas Básicas de Otras Profesiones (1-5)	100
-Listas Básicas de Otras Profesiones (6-10)	200
-Listas Básicas de Otras Profesiones (11-15)	300
-Listas Básicas de Otras Profesiones (16-20)	400
-Listas Básicas de Otras Profesiones (21+)	500
-Listas Abiertas de Otros Reinos (1-5)	120
-Listas Abiertas de Otros Reinos (6-10)	180
-Listas Abiertas de Otros Reinos (11-15)	240
-Listas Abiertas de Otros Reinos (16-20)	300
-Listas Abiertas de Otros Reinos (21+)	360
-Listas Cerradas de Otros Reinos (1-5)	180
-Listas Cerradas de Otros Reinos (6-10)	270
-Listas Cerradas de Otros Reinos (11-15)	360
-Listas Cerradas de Otros Reinos (16-20)	450
-Listas Cerradas de Otros Reinos (21+)	540
-Listas Básicas de Otros Reinos (1-5)	100
-Listas Básicas de Otros Reinos (6-10)	150
-Listas Básicas de Otros Reinos (11-15)	200
-Listas Básicas de Otros Reinos (16-20)	250
-Listas Básicas de Otros Reinos (21+)	300
-Listas Abiertas Arcanas (1-5)	40
-Listas Abiertas Arcanas (6-10)	80
-Listas Abiertas Arcanas (11-15)	120
-Listas Abiertas Arcanas (16-20)	160
-Listas Abiertas Arcanas (21+)	200
-Listas Hechizos de Adiestramiento (1-5)	8/8/8
-Listas Hechizos de Adiestramiento (6-10)	8/8/8
-Listas Hechizos de Adiestramiento (11-15)	8/8/8
-Listas Hechizos de Adiestramiento (16-20)	8/8/8
-Listas Hechizos de Adiestramiento (21+)	8/8/8
-Listas Hechizos de Adiestramientos de Otros Reinos (1-5)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (6-10)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
     <name>
       <en>Rogue (Pulp)</en>
       <es>Bribón (Pulp)</es>
@@ -4127,51 +3987,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </rankCosts>
       </magicCost>
     </magicCosts>
-    <magicCostsRaw>Lista Abierta (1-5)	20
-Lista Abierta (6-10)	40
-Lista Abierta (11-15)	60
-Lista Abierta (16-20)	80
-Lista Abierta (21+)	100
-Lista Cerrada (1-5)	30
-Lista Cerrada (6-10)	60
-Lista Cerrada (11-15)	90
-Lista Cerrada (16-20)	120
-Lista Cerrada (21+)	150
-Listas Básicas de Otras Profesiones (1-5)	60
-Listas Básicas de Otras Profesiones (6-10)	120
-Listas Básicas de Otras Profesiones (11-15)	180
-Listas Básicas de Otras Profesiones (16-20)	240
-Listas Básicas de Otras Profesiones (21+)	300
-Listas Abiertas de Otros Reinos (1-5)	80
-Listas Abiertas de Otros Reinos (6-10)	160
-Listas Abiertas de Otros Reinos (11-15)	240
-Listas Abiertas de Otros Reinos (16-20)	320
-Listas Abiertas de Otros Reinos (21+)	400
-Listas Cerradas de Otros Reinos (1-5)	160
-Listas Cerradas de Otros Reinos (6-10)	320
-Listas Cerradas de Otros Reinos (11-15)	480
-Listas Cerradas de Otros Reinos (16-20)	640
-Listas Cerradas de Otros Reinos (21+)	720
-Listas Básicas de Otros Reinos (1-5)	200
-Listas Básicas de Otros Reinos (6-10)	400
-Listas Básicas de Otros Reinos (11-15)	600
-Listas Básicas de Otros Reinos (16-20)	800
-Listas Básicas de Otros Reinos (21+)	1000
-Listas Abiertas Arcanas (1-5)	30
-Listas Abiertas Arcanas (6-10)	60
-Listas Abiertas Arcanas (11-15)	90
-Listas Abiertas Arcanas (16-20)	120
-Listas Abiertas Arcanas (21+)	150
-Listas Hechizos de Adiestramiento (1-5)	8/8/8
-Listas Hechizos de Adiestramiento (6-10)	8/8/8
-Listas Hechizos de Adiestramiento (11-15)	8/8/8
-Listas Hechizos de Adiestramiento (16-20)	8/8/8
-Listas Hechizos de Adiestramiento (21+)	8/8/8
-Listas Hechizos de Adiestramientos de Otros Reinos (1-5)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (6-10)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
     <name>
       <en>Layman (Pulp)</en>
       <es>Lego (Pulp)</es>
@@ -5256,51 +5071,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </rankCosts>
       </magicCost>
     </magicCosts>
-    <magicCostsRaw>Lista Abierta (1-5)	50
-Lista Abierta (6-10)	100
-Lista Abierta (11-15)	150
-Lista Abierta (16-20)	200
-Lista Abierta (21+)	250
-Lista Cerrada (1-5)	80
-Lista Cerrada (6-10)	160
-Lista Cerrada (11-15)	240
-Lista Cerrada (16-20)	320
-Lista Cerrada (21+)	400
-Listas Básicas de Otras Profesiones (1-5)	160
-Listas Básicas de Otras Profesiones (6-10)	320
-Listas Básicas de Otras Profesiones (11-15)	480
-Listas Básicas de Otras Profesiones (16-20)	640
-Listas Básicas de Otras Profesiones (21+)	800
-Listas Abiertas de Otros Reinos (1-5)	180
-Listas Abiertas de Otros Reinos (6-10)	360
-Listas Abiertas de Otros Reinos (11-15)	540
-Listas Abiertas de Otros Reinos (16-20)	720
-Listas Abiertas de Otros Reinos (21+)	900
-Listas Cerradas de Otros Reinos (1-5)	210
-Listas Cerradas de Otros Reinos (6-10)	420
-Listas Cerradas de Otros Reinos (11-15)	630
-Listas Cerradas de Otros Reinos (16-20)	840
-Listas Cerradas de Otros Reinos (21+)	1050
-Listas Básicas de Otros Reinos (1-5)	160
-Listas Básicas de Otros Reinos (6-10)	320
-Listas Básicas de Otros Reinos (11-15)	480
-Listas Básicas de Otros Reinos (16-20)	640
-Listas Básicas de Otros Reinos (21+)	800
-Listas Abiertas Arcanas (1-5)	60
-Listas Abiertas Arcanas (6-10)	120
-Listas Abiertas Arcanas (11-15)	180
-Listas Abiertas Arcanas (16-20)	240
-Listas Abiertas Arcanas (21+)	300
-Listas Hechizos de Adiestramiento (1-5)	8/8/8
-Listas Hechizos de Adiestramiento (6-10)	8/8/8
-Listas Hechizos de Adiestramiento (11-15)	8/8/8
-Listas Hechizos de Adiestramiento (16-20)	8/8/8
-Listas Hechizos de Adiestramiento (21+)	8/8/8
-Listas Hechizos de Adiestramientos de Otros Reinos (1-5)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (6-10)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
     <name>
       <en>Fighter (Pulp)</en>
       <es>Luchador (Pulp)</es>
@@ -6339,51 +6109,6 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         </rankCosts>
       </magicCost>
     </magicCosts>
-    <magicCostsRaw>Lista Abierta (1-5)	35
-Lista Abierta (6-10)	70
-Lista Abierta (11-15)	115
-Lista Abierta (16-20)	140
-Lista Abierta (21+)	175
-Lista Cerrada (1-5)	50
-Lista Cerrada (6-10)	100
-Lista Cerrada (11-15)	150
-Lista Cerrada (16-20)	200
-Lista Cerrada (21+)	250
-Listas Básicas de Otras Profesiones (1-5)	160
-Listas Básicas de Otras Profesiones (6-10)	320
-Listas Básicas de Otras Profesiones (11-15)	480
-Listas Básicas de Otras Profesiones (16-20)	640
-Listas Básicas de Otras Profesiones (21+)	800
-Listas Abiertas de Otros Reinos (1-5)	140
-Listas Abiertas de Otros Reinos (6-10)	280
-Listas Abiertas de Otros Reinos (11-15)	420
-Listas Abiertas de Otros Reinos (16-20)	560
-Listas Abiertas de Otros Reinos (21+)	700
-Listas Cerradas de Otros Reinos (1-5)	200
-Listas Cerradas de Otros Reinos (6-10)	400
-Listas Cerradas de Otros Reinos (11-15)	600
-Listas Cerradas de Otros Reinos (16-20)	800
-Listas Cerradas de Otros Reinos (21+)	1000
-Listas Básicas de Otros Reinos (1-5)	200
-Listas Básicas de Otros Reinos (6-10)	400
-Listas Básicas de Otros Reinos (11-15)	600
-Listas Básicas de Otros Reinos (16-20)	800
-Listas Básicas de Otros Reinos (21+)	1000
-Listas Abiertas Arcanas (1-5)	40
-Listas Abiertas Arcanas (6-10)	80
-Listas Abiertas Arcanas (11-15)	120
-Listas Abiertas Arcanas (16-20)	160
-Listas Abiertas Arcanas (21+)	200
-Listas Hechizos de Adiestramiento (1-5)	8/8/8
-Listas Hechizos de Adiestramiento (6-10)	8/8/8
-Listas Hechizos de Adiestramiento (11-15)	8/8/8
-Listas Hechizos de Adiestramiento (16-20)	8/8/8
-Listas Hechizos de Adiestramiento (21+)	8/8/8
-Listas Hechizos de Adiestramientos de Otros Reinos (1-5)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (6-10)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	16/16
-Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
     <name>
       <en>Technical (Pulp)</en>
       <es>Técnico (Pulp)</es>

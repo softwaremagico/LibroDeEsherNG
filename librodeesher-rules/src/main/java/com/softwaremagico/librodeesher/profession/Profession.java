@@ -96,11 +96,8 @@ public class Profession extends Element {
     @JacksonXmlProperty(localName = "restrictedSkillGrant")
     private List<ProfessionSkillGrant> restrictedSkillChoices;
 
-    /** Verbatim "DESARROLLO DE HECHIZOS" section (only present for spell-casting professions). */
-    @JsonProperty("magicCostsRaw")
-    private String magicCostsRaw;
-
-    /** Structured version of {@link #magicCostsRaw}, resolved by {@code ProfessionMigrationTool}. */
+    /** The "DESARROLLO DE HECHIZOS" section, per-(list type, level range) rank cost table (only
+     * present for spell-casting professions). */
     @JacksonXmlElementWrapper(localName = "magicCosts")
     @JacksonXmlProperty(localName = "magicCost")
     private List<ProfessionMagicCost> magicCosts;
@@ -235,14 +232,6 @@ public class Profession extends Element {
     /** Same as {@link #isCommonSkill(String)}, for "HABILIDADES PROFESIONALES" ({@code Profession#isProfessional(Skill)}). */
     public boolean isProfessionalSkill(String skillId) {
         return getProfessionalSkillIds().contains(skillId);
-    }
-
-    public String getMagicCostsRaw() {
-        return magicCostsRaw;
-    }
-
-    public void setMagicCostsRaw(String magicCostsRaw) {
-        this.magicCostsRaw = magicCostsRaw;
     }
 
     public List<ProfessionMagicCost> getMagicCosts() {
