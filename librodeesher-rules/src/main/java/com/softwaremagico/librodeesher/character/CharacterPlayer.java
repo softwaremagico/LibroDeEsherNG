@@ -17,6 +17,7 @@ import com.softwaremagico.librodeesher.dice.Roll;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.language.LanguageSlot;
 import com.softwaremagico.librodeesher.level.LevelUp;
+import com.softwaremagico.librodeesher.magic.ElementalTriad;
 import com.softwaremagico.librodeesher.magic.MagicListType;
 import com.softwaremagico.librodeesher.magic.MagicSpellList;
 import com.softwaremagico.librodeesher.magic.MagicSpellListFactory;
@@ -1309,29 +1310,58 @@ public class CharacterPlayer {
 
 	/**
 	 * Every spell list of one of the character's {@link #getRealmsOfMagic()} directly owned by the
-	 * selected profession (its "basic lists"; matching the legacy {@code
-	 * MagicFactory#getListOfProfession}, restricted to the profession's own name - the "hybrid realm
-	 * shares the other realm's lists" and "elementalist training"/"dark spell" special cases are
-	 * future work); empty if no profession is selected.
+	 * selected profession, or by the character's own elementalist training if any (its "basic lists";
+	 * matching the legacy {@code MagicFactory#getListOfProfession}/{@code
+	 * MagicSpellLists#orderSpellListsByCategory}'s own {@code elementalistList} addition to {@code
+	 * basicSpells}; the "dark spell" special case is still future work); empty if no profession is
+	 * selected and the character has no elementalist training either.
 	 */
 	public List<MagicSpellList> getBasicSpellLists() throws InvalidXmlElementException {
 		final Profession profession = this.getProfession();
-		if (profession == null) {
+		final String ownProfessionId = profession == null ? null : profession.getId();
+		final String ownElementalistTrainingId = this.getElementalistTrainingId();
+		if (ownProfessionId == null && ownElementalistTrainingId == null) {
 			return List.of();
 		}
-		return this.getSpellListsMatching(list -> list.getOwners().contains(profession.getId()));
+		return this.getSpellListsMatching(list -> list.getOwners().contains(ownProfessionId)
+				|| list.getOwners().contains(ownElementalistTrainingId));
 	}
 
 	/**
 	 * Every spell list of one of the character's {@link #getRealmsOfMagic()} directly owned by one of
-	 * the character's selected trainings (matching the legacy {@code MagicFactory#getListOfTraining};
-	 * the "elementalist training" special case - see {@link MagicListType}'s javadoc - is not excluded
-	 * here like the legacy version does, so an elementalist training's own lists are classified as
-	 * {@link MagicListType#TRAINING} instead of the more specific {@link MagicListType#TRIAD}).
+	 * the character's selected trainings, other than an elementalist one (see {@link
+	 * ElementalTriad#isElementalistTraining(String)}: those are classified as {@link
+	 * MagicListType#TRIAD}/{@link MagicListType#COMPLEMENTARY_TRIAD} instead, see {@link
+	 * #getTriadSpellLists()}/{@link #getComplementaryTriadSpellLists()}), matching the legacy {@code
+	 * MagicFactory#getListOfTraining} exactly.
 	 */
 	public List<MagicSpellList> getTrainingSpellLists() throws InvalidXmlElementException {
-		final List<String> trainingIds = this.getSelectedTrainingIds();
+		final List<String> trainingIds = this.getNonElementalistTrainingIds();
 		return this.getSpellListsMatching(list -> containsAny(list.getOwners(), trainingIds));
+	}
+
+	/**
+	 * Every spell list of one of the character's {@link #getRealmsOfMagic()} directly owned by an
+	 * elementalist training of the same "elemental triad" (see {@link ElementalTriad}) as one of the
+	 * character's selected trainings (excluding the character's own training itself, matching the
+	 * legacy {@code MagicFactory#getListOfOwnTriad}); empty if the character has no elementalist
+	 * training selected.
+	 */
+	public List<MagicSpellList> getTriadSpellLists() throws InvalidXmlElementException {
+		final List<String> sameTriadTrainingIds = this.getSameTriadTrainingIds();
+		return this.getSpellListsMatching(list -> containsAny(list.getOwners(), sameTriadTrainingIds));
+	}
+
+	/**
+	 * Every spell list of one of the character's {@link #getRealmsOfMagic()} directly owned by an
+	 * elementalist training of the "elemental triad" (see {@link ElementalTriad}) other than the one
+	 * of the character's own selected training (matching the legacy {@code
+	 * MagicFactory#getListOfOtherTriad}); empty if the character has no elementalist training
+	 * selected.
+	 */
+	public List<MagicSpellList> getComplementaryTriadSpellLists() throws InvalidXmlElementException {
+		final List<String> otherTriadTrainingIds = this.getOtherTriadTrainingIds();
+		return this.getSpellListsMatching(list -> containsAny(list.getOwners(), otherTriadTrainingIds));
 	}
 
 	/**
@@ -1364,12 +1394,12 @@ public class CharacterPlayer {
 
 	/**
 	 * Every spell list of a realm other than any of the character's {@link #getRealmsOfMagic()},
-	 * directly owned by one of the character's selected trainings (matching the legacy {@code
-	 * MagicFactory#getListOfTrainingOtherRealms}; same elementalist-training simplification as {@link
-	 * #getTrainingSpellLists()}).
+	 * directly owned by one of the character's selected trainings, other than an elementalist one
+	 * (matching the legacy {@code MagicFactory#getListOfTrainingOtherRealms}; same simplification as
+	 * {@link #getTrainingSpellLists()}).
 	 */
 	public List<MagicSpellList> getOtherRealmTrainingSpellLists() throws InvalidXmlElementException {
-		final List<String> trainingIds = this.getSelectedTrainingIds();
+		final List<String> trainingIds = this.getNonElementalistTrainingIds();
 		return this.getOtherRealmSpellListsMatching(list -> containsAny(list.getOwners(), trainingIds));
 	}
 
@@ -1463,6 +1493,39 @@ public class CharacterPlayer {
 		return ids;
 	}
 
+	/** Every selected training id (see {@link #getSelectedTrainingIds()}) that is not an elementalist training. */
+	private List<String> getNonElementalistTrainingIds() {
+		final List<String> ids = new ArrayList<>();
+		for (final String trainingId : this.getSelectedTrainingIds()) {
+			if (!ElementalTriad.isElementalistTraining(trainingId)) {
+				ids.add(trainingId);
+			}
+		}
+		return ids;
+	}
+
+	/** The character's own elementalist training (see {@link ElementalTriad}), or {@code null} if none is selected. */
+	private String getElementalistTrainingId() {
+		for (final String trainingId : this.getSelectedTrainingIds()) {
+			if (ElementalTriad.isElementalistTraining(trainingId)) {
+				return trainingId;
+			}
+		}
+		return null;
+	}
+
+	/** {@link ElementalTriad#getSameTriadTrainings}, applied to {@link #getElementalistTrainingId()}. */
+	private List<String> getSameTriadTrainingIds() {
+		final String own = this.getElementalistTrainingId();
+		return own == null ? List.of() : ElementalTriad.getSameTriadTrainings(own);
+	}
+
+	/** {@link ElementalTriad#getOtherTriadTrainings}, applied to {@link #getElementalistTrainingId()}. */
+	private List<String> getOtherTriadTrainingIds() {
+		final String own = this.getElementalistTrainingId();
+		return own == null ? List.of() : ElementalTriad.getOtherTriadTrainings(own);
+	}
+
 	private static boolean containsAny(List<String> haystack, List<String> needles) {
 		return haystack.stream().anyMatch(needles::contains);
 	}
@@ -1500,9 +1563,13 @@ public class CharacterPlayer {
 		}
 		final Profession profession = this.getProfession();
 		final String ownProfessionId = profession == null ? null : profession.getId();
-		final List<String> trainingIds = this.getSelectedTrainingIds();
+		final List<String> sameTriadTrainingIds = this.getSameTriadTrainingIds();
+		final List<String> otherTriadTrainingIds = this.getOtherTriadTrainingIds();
+		final List<String> trainingIds = this.getNonElementalistTrainingIds();
+		final String ownElementalistTrainingId = this.getElementalistTrainingId();
 		if (this.getRealmsOfMagic().contains(spellList.getRealm())) {
-			if (ownProfessionId != null && spellList.getOwners().contains(ownProfessionId)) {
+			if ((ownProfessionId != null && spellList.getOwners().contains(ownProfessionId))
+					|| (ownElementalistTrainingId != null && spellList.getOwners().contains(ownElementalistTrainingId))) {
 				return MagicListType.BASIC;
 			}
 			if (spellList.isOpenList()) {
@@ -1510,6 +1577,12 @@ public class CharacterPlayer {
 			}
 			if (spellList.isClosedList()) {
 				return MagicListType.CLOSED;
+			}
+			if (containsAny(spellList.getOwners(), sameTriadTrainingIds)) {
+				return MagicListType.TRIAD;
+			}
+			if (containsAny(spellList.getOwners(), otherTriadTrainingIds)) {
+				return MagicListType.COMPLEMENTARY_TRIAD;
 			}
 			if (containsAny(spellList.getOwners(), trainingIds)) {
 				return MagicListType.TRAINING;

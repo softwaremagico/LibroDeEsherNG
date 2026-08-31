@@ -1292,4 +1292,33 @@ public class CharacterPlayerTest {
         final List<String> otherRealmOpenListIds = wizard.getOtherRealmOpenSpellLists().stream().map(list -> list.getId()).toList();
         Assert.assertTrue(otherRealmOpenListIds.contains("mentalismSelfHealing"));
     }
+
+    @Test
+    public void elementalistTrainingUnlocksItsOwnAndItsTriadsSpellLists() throws InvalidXmlElementException {
+        // "wizardOfTheAir" ("Mago del Aire") is one of the 3 shipped elementalist trainings, part of
+        // the "second triad" (with "lightWizard"); "fireWizard" is the lone shipped member of the
+        // "first" (complementary) triad. See ElementalTriad.
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("wizard");
+        character.applyProfessionMagicRealms(null);
+        final LevelUp firstLevel = new LevelUp();
+        firstLevel.addTraining("wizardOfTheAir");
+        character.getLevels().add(firstLevel);
+
+        // The elementalist training's own exclusive list is one of the character's basic lists.
+        Assert.assertEquals(character.classifySpellList("essenceLawOfWind"), MagicListType.BASIC);
+        final List<String> basicListIds = character.getBasicSpellLists().stream().map(list -> list.getId()).toList();
+        Assert.assertTrue(basicListIds.contains("essenceLawOfWind"));
+
+        // "lightWizard"'s exclusive list is of the same ("second") triad.
+        Assert.assertEquals(character.classifySpellList("essenceMasteryOfLight"), MagicListType.TRIAD);
+        final List<String> triadListIds = character.getTriadSpellLists().stream().map(list -> list.getId()).toList();
+        Assert.assertTrue(triadListIds.contains("essenceMasteryOfLight"));
+
+        // "fireWizard"'s exclusive list is of the complementary ("first") triad.
+        Assert.assertEquals(character.classifySpellList("essencePathOfFlames"), MagicListType.COMPLEMENTARY_TRIAD);
+        final List<String> complementaryTriadListIds = character.getComplementaryTriadSpellLists().stream()
+                .map(list -> list.getId()).toList();
+        Assert.assertTrue(complementaryTriadListIds.contains("essencePathOfFlames"));
+    }
 }
