@@ -34,6 +34,7 @@ import com.softwaremagico.librodeesher.profession.ProfessionCategoryCost;
 import com.softwaremagico.librodeesher.profession.ProfessionMagicCost;
 import com.softwaremagico.librodeesher.profession.ProfessionSkillGrant;
 import com.softwaremagico.librodeesher.profession.ProfessionTrainingCost;
+import com.softwaremagico.librodeesher.profession.ProfessionWeaponCostTier;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.race.RaceLanguage;
@@ -1951,6 +1952,61 @@ public class CharacterPlayer {
 	public Integer getCategoryDevelopmentCost(String categoryId, int rankIndexThisLevel) throws InvalidXmlElementException {
 		final ProfessionCategoryCost cost = this.getProfessionCategoryCost(categoryId);
 		return cost == null ? null : cost.getRankCost(rankIndexThisLevel);
+	}
+
+	private static final String WEAPON_COST_TIER_KEY_PREFIX = "weaponCostTier:";
+
+	/**
+	 * Assigns the selected profession's {@code tierIndex}-th weapon-category cost tier (see {@link
+	 * Profession#getWeaponCategoryCostTiers()}, cheapest first) to {@code weaponCategoryId}: the
+	 * player freely picks which of their available weapon categories gets the cheapest tier, the
+	 * second-cheapest, and so on, matching the legacy {@code ProfessionDecisions#setWeaponCost}
+	 * exactly (a plain assignment, freely overwritable; {@link #isWeaponCategoryCostTierAssigned}
+	 * mirrors the legacy {@code isWeaponCostUsed} query the caller is expected to check first, to
+	 * avoid assigning the same tier to two different categories at once).
+	 *
+	 * @throws IllegalStateException if no profession is selected.
+	 * @throws IllegalArgumentException if {@code tierIndex} is out of range, or {@code
+	 *             weaponCategoryId} is not a real weapon category.
+	 */
+	public void assignWeaponCategoryCostTier(int tierIndex, String weaponCategoryId) throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		if (profession == null) {
+			throw new IllegalStateException("No profession selected.");
+		}
+		final List<ProfessionWeaponCostTier> tiers = profession.getWeaponCategoryCostTiers();
+		if (tierIndex < 0 || tierIndex >= tiers.size()) {
+			throw new IllegalArgumentException(
+					"'" + tierIndex + "' is not one of '" + profession.getId() + "''s weapon cost tiers.");
+		}
+		if (!this.getWeaponCategoryIds().contains(weaponCategoryId)) {
+			throw new IllegalArgumentException("'" + weaponCategoryId + "' is not a real weapon category.");
+		}
+		this.decisions.set(WEAPON_COST_TIER_KEY_PREFIX + tierIndex, Decision.fixed(List.of(weaponCategoryId)));
+	}
+
+	/** Whether {@code tierIndex} has already been assigned to some weapon category (see {@link #assignWeaponCategoryCostTier}). */
+	public boolean isWeaponCategoryCostTierAssigned(int tierIndex) {
+		return this.decisions.isDecided(WEAPON_COST_TIER_KEY_PREFIX + tierIndex);
+	}
+
+	/**
+	 * The weapon-category cost tier assigned so far to {@code weaponCategoryId} (see {@link
+	 * #assignWeaponCategoryCostTier}), or {@code null} if no profession is selected, or none of its
+	 * tiers have been assigned to it yet.
+	 */
+	public ProfessionWeaponCostTier getAssignedWeaponCategoryCostTier(String weaponCategoryId) throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		if (profession == null) {
+			return null;
+		}
+		final List<ProfessionWeaponCostTier> tiers = profession.getWeaponCategoryCostTiers();
+		for (int i = 0; i < tiers.size(); i++) {
+			if (weaponCategoryId.equals(this.decisions.getSelectedOption(WEAPON_COST_TIER_KEY_PREFIX + i))) {
+				return tiers.get(i);
+			}
+		}
+		return null;
 	}
 
 	/**

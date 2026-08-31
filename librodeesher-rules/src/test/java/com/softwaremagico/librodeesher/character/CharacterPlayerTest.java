@@ -1089,6 +1089,31 @@ public class CharacterPlayerTest {
     }
 
     @Test
+    public void weaponCategoryCostTiersAreFreelyAssignedByThePlayer() throws InvalidXmlElementException {
+        final CharacterPlayer fighter = new CharacterPlayer();
+        fighter.setProfessionId("fighter");
+        Assert.assertNull(fighter.getAssignedWeaponCategoryCostTier("weaponsEdged"));
+
+        // Cheapest tier ("1/5") to the player's favourite weapon category.
+        Assert.assertFalse(fighter.isWeaponCategoryCostTierAssigned(0));
+        fighter.assignWeaponCategoryCostTier(0, "weaponsEdged");
+        Assert.assertTrue(fighter.isWeaponCategoryCostTierAssigned(0));
+        Assert.assertEquals(fighter.getAssignedWeaponCategoryCostTier("weaponsEdged").getRankCosts(), List.of(1, 5));
+
+        // A different tier ("2/5") to a different category.
+        fighter.assignWeaponCategoryCostTier(1, "weaponsBlunt");
+        Assert.assertEquals(fighter.getAssignedWeaponCategoryCostTier("weaponsBlunt").getRankCosts(), List.of(2, 5));
+
+        // Not a real weapon category, and an out-of-range tier index.
+        Assert.assertThrows(IllegalArgumentException.class, () -> fighter.assignWeaponCategoryCostTier(2, "armorLight"));
+        Assert.assertThrows(IllegalArgumentException.class, () -> fighter.assignWeaponCategoryCostTier(99, "weaponsThrown"));
+
+        // No profession selected at all.
+        final CharacterPlayer withoutProfession = new CharacterPlayer();
+        Assert.assertThrows(IllegalStateException.class, () -> withoutProfession.assignWeaponCategoryCostTier(0, "weaponsEdged"));
+    }
+
+    @Test
     public void trainingRaceRestrictionIsHonoured() throws InvalidXmlElementException {
         final Training scholar = RulesCatalog.getInstance().getTraining("scholar");
         Assert.assertTrue(scholar.isAvailableToEveryRace());
