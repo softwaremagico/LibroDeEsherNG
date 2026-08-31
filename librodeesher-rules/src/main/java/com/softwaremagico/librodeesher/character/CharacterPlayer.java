@@ -38,6 +38,7 @@ import com.softwaremagico.librodeesher.skill.SkillType;
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
 import com.softwaremagico.librodeesher.training.Training;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
+import com.softwaremagico.librodeesher.training.TrainingProfessionCost;
 import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
 import com.softwaremagico.librodeesher.training.TrainingType;
 import com.softwaremagico.librodeesher.weapon.Weapon;
@@ -1552,16 +1553,40 @@ public class CharacterPlayer {
 		return profession == null ? null : profession.getTrainingCost(trainingId);
 	}
 
-	/** Whether the selected profession forbids {@code trainingId}, or {@code false} if no profession is selected or it does not mention it. */
+	/**
+	 * Whether the selected profession forbids {@code trainingId}: either the profession's own
+	 * {@link #getProfessionTrainingCost} says so, or {@code trainingId}'s own {@link
+	 * Training#getProfessionCost(String)} override does (either side can forbid it, matching legacy's
+	 * {@code CharacterPlayer#getAvailableTrainings()}); {@code false} if no profession is selected or
+	 * neither side mentions it.
+	 */
 	public boolean isTrainingForbiddenByProfession(String trainingId) throws InvalidXmlElementException {
-		final ProfessionTrainingCost cost = this.getProfessionTrainingCost(trainingId);
-		return cost != null && cost.getType() == TrainingType.FORBIDDEN;
+		return this.trainingProfessionPreference(trainingId) == TrainingType.FORBIDDEN;
 	}
 
-	/** Whether the selected profession favours {@code trainingId}, or {@code false} if no profession is selected or it does not mention it. */
+	/** Same as {@link #isTrainingForbiddenByProfession(String)}, for {@link TrainingType#FAVOURITE}. */
 	public boolean isTrainingFavouredByProfession(String trainingId) throws InvalidXmlElementException {
-		final ProfessionTrainingCost cost = this.getProfessionTrainingCost(trainingId);
-		return cost != null && cost.getType() == TrainingType.FAVOURITE;
+		return this.trainingProfessionPreference(trainingId) == TrainingType.FAVOURITE;
+	}
+
+	/**
+	 * The selected profession's preference for {@code trainingId} (see {@link
+	 * #isTrainingForbiddenByProfession}/{@link #isTrainingFavouredByProfession}): the profession's own
+	 * side takes priority, falling back to {@code trainingId}'s own override; {@code null} if no
+	 * profession is selected or neither side mentions it.
+	 */
+	private TrainingType trainingProfessionPreference(String trainingId) throws InvalidXmlElementException {
+		final ProfessionTrainingCost professionSide = this.getProfessionTrainingCost(trainingId);
+		if (professionSide != null) {
+			return professionSide.getType();
+		}
+		final Profession profession = this.getProfession();
+		if (profession == null) {
+			return null;
+		}
+		final TrainingProfessionCost trainingSide = RulesCatalog.getInstance().getTraining(trainingId)
+				.getProfessionCost(profession.getId());
+		return trainingSide == null ? null : trainingSide.getType();
 	}
 
 	/**

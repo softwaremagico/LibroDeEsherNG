@@ -1008,6 +1008,8 @@ public final class Translations {
         final Map<String, String> m = WORDS;
         // Training "ESPECIAL" (background item) vocabulary.
         put(m, "administración", "administration");
+        put(m, "Barrendero", "Street Sweeper");
+        put(m, "Lego", "Layman");
         put(m, "admistración", "administration");
         put(m, "Analítica", "Analytical");
         put(m, "Antídotos", "Antidotes");

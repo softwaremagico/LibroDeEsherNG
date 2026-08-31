@@ -1045,7 +1045,23 @@ public class CharacterPlayerTest {
         Assert.assertTrue(character.isTrainingFavouredByProfession("knight"));
         Assert.assertFalse(character.isTrainingForbiddenByProfession("knight"));
         Assert.assertEquals(character.getProfessionTrainingCost("knight").getCost(), Integer.valueOf(25));
-        Assert.assertFalse(character.isTrainingFavouredByProfession("unmentionedTraining"));
+        Assert.assertFalse(character.isTrainingFavouredByProfession("soldier"));
+    }
+
+    @Test
+    public void trainingsOwnProfessionCostIsUsedWhenTheProfessionDoesNotMentionIt() throws InvalidXmlElementException {
+        // "streetSweeper" is the only shipped training with its own "REQUISITOS PROFESIONALES"-like
+        // trailing section (see TrainingProfessionCost); "layman" does not mention it on its own side.
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("layman");
+
+        Assert.assertNull(character.getProfessionTrainingCost("streetSweeper"));
+        Assert.assertFalse(character.isTrainingFavouredByProfession("streetSweeper"));
+        Assert.assertFalse(character.isTrainingForbiddenByProfession("streetSweeper"));
+
+        final CharacterPlayer otherProfession = new CharacterPlayer();
+        otherProfession.setProfessionId("fighter");
+        Assert.assertFalse(otherProfession.isTrainingFavouredByProfession("streetSweeper"));
     }
 
     @Test

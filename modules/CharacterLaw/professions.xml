@@ -3140,7 +3140,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	8/8</magicCostsRaw>
         <ranksToChoose>1</ranksToChoose>
       </commonSkillGrant>
     </commonSkillChoices>
-    <id>lego</id>
+    <id>layman</id>
     <indifferentToCharacteristics>true</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	10
 Lista Abierta (6-10)	20
@@ -3188,7 +3188,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	16/16
 Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	16/16
 Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
     <name>
-      <en>Lego</en>
+      <en>Layman</en>
       <es>Lego</es>
     </name>
     <magicRealms>

@@ -165,4 +165,14 @@ public class Training extends Element {
     public void setProfessionCosts(List<TrainingProfessionCost> professionCosts) {
         this.professionCosts = professionCosts;
     }
+
+    /** This training's own cost/preference override for {@code professionId}, if any (see {@link #getProfessionCosts()}). */
+    public TrainingProfessionCost getProfessionCost(String professionId) {
+        for (final TrainingProfessionCost cost : this.getProfessionCosts()) {
+            if (cost.getProfession().equals(professionId)) {
+                return cost;
+            }
+        }
+        return null;
+    }
 }

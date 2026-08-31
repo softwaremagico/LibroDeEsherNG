@@ -4,9 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Background point cost (and preference) of a training for a specific profession, as printed in the
- * optional trailing section of a {@code adiestramientos/*.txt} file. In practice, none of the real
- * "LibroDeEsher" training files use this section (profession-specific training costs are handled
- * elsewhere), but it is still parsed for completeness/fidelity with the legacy format.
+ * optional trailing section of a {@code adiestramientos/*.txt} file. Only one shipped training uses
+ * this section ("Barrendero"/Sweeper, in the Unofficial module); {@link #getProfession()} is resolved
+ * to a real profession id by {@code TrainingMigrationTool}, the same way as every other
+ * profession/skill/category cross-reference in this package.
  */
 public class TrainingProfessionCost {
 

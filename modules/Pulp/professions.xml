@@ -2757,7 +2757,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
         <ranksToChoose>1</ranksToChoose>
       </commonSkillGrant>
     </commonSkillChoices>
-    <id>legoPulp</id>
+    <id>laymanPulp</id>
     <indifferentToCharacteristics>true</indifferentToCharacteristics>
     <magicCostsRaw>Lista Abierta (1-5)	20
 Lista Abierta (6-10)	40
@@ -2805,7 +2805,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (11-15)	16/16
 Listas Hechizos de Adiestramientos de Otros Reinos (16-20)	16/16
 Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
     <name>
-      <en>Lego (Pulp)</en>
+      <en>Layman (Pulp)</en>
       <es>Lego (Pulp)</es>
     </name>
     <magicRealms>

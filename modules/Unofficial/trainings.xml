@@ -230,15 +230,15 @@
         </skills>
       </categoryGrant>
     </categories>
-    <id>barrendero</id>
+    <id>streetSweeper</id>
     <name>
-      <en>Barrendero</en>
+      <en>Street Sweeper</en>
       <es>Barrendero</es>
     </name>
     <professionCosts>
       <professionCost>
         <cost>15</cost>
-        <profession>Lego</profession>
+        <profession>layman</profession>
         <type>STANDARD</type>
       </professionCost>
     </professionCosts>

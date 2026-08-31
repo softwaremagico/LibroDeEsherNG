@@ -75,6 +75,7 @@ public final class TrainingMigrationTool {
         final IdAllocator idAllocator = new IdAllocator();
         final Map<String, String> categoryIndex = CategoryMigrationTool.buildCategoryIndex(sourceRoot);
         final Map<String, String> skillIndex = SkillMigrationTool.buildSkillIndex(sourceRoot);
+        final Map<String, String> professionIndex = ProfessionMigrationTool.buildProfessionIndex(sourceRoot);
 
         int written = 0;
         for (final String module : ModuleManager.getAllModules()) {
@@ -86,7 +87,7 @@ public final class TrainingMigrationTool {
             try (Stream<Path> files = Files.list(trainingsDir)) {
                 for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
                         .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
-                    trainings.add(readTrainingFile(file, idAllocator, categoryIndex, skillIndex));
+                    trainings.add(readTrainingFile(file, idAllocator, categoryIndex, skillIndex, professionIndex));
                 }
             }
             if (trainings.isEmpty()) {
@@ -100,7 +101,8 @@ public final class TrainingMigrationTool {
     }
 
     private static Training readTrainingFile(Path file, IdAllocator idAllocator, Map<String, String> categoryIndex,
-                                              Map<String, String> skillIndex) throws IOException {
+                                              Map<String, String> skillIndex, Map<String, String> professionIndex)
+            throws IOException {
         final String fileName = file.getFileName().toString();
         final String trainingName = fileName.substring(0, fileName.length() - ".txt".length());
         final SectionCursor cursor = new SectionCursor(Files.readAllLines(file, StandardCharsets.UTF_8));
@@ -117,7 +119,7 @@ public final class TrainingMigrationTool {
         training.setCommonSkills(parseSkillChoiceGroups(cursor.nextSection()));
         training.setProfessionalSkills(parseSkillChoiceGroups(cursor.nextSection()));
         training.setRestrictedSkills(parseSkillChoiceGroups(cursor.nextSection()));
-        training.setProfessionCosts(parseProfessionCosts(cursor.nextSectionOrEmpty()));
+        training.setProfessionCosts(parseProfessionCosts(cursor.nextSectionOrEmpty(), professionIndex));
         return training;
     }
 
@@ -417,7 +419,8 @@ public final class TrainingMigrationTool {
         return requirements;
     }
 
-    private static List<TrainingProfessionCost> parseProfessionCosts(List<String> sectionLines) {
+    private static List<TrainingProfessionCost> parseProfessionCosts(List<String> sectionLines,
+                                                                       Map<String, String> professionIndex) {
         final List<TrainingProfessionCost> costs = new ArrayList<>();
         for (final String line : sectionLines) {
             if (isNothingMarker(line)) {
@@ -432,11 +435,31 @@ public final class TrainingMigrationTool {
             } else {
                 type = TrainingType.STANDARD;
             }
-            final String profession = columns[0].replace("+", "").replace("-", "").trim();
+            final String professionName = columns[0].replace("+", "").replace("-", "").trim();
             final Integer cost = Integer.valueOf(columns[1].replace("+", "").replace("-", "").trim());
-            costs.add(new TrainingProfessionCost(profession, cost, type));
+            costs.add(new TrainingProfessionCost(resolveProfessionId(professionName, professionIndex), cost, type));
         }
         return costs;
+    }
+
+    /**
+     * Resolves a "REQUISITOS PROFESIONALES"/trailing-profession-cost-section profession name to its
+     * real profession id via {@code professionIndex} (see {@link
+     * ProfessionMigrationTool#buildProfessionIndex}), trying a case-insensitive match before falling
+     * back to {@link Translations#toEnglishId} (only ever needed for a name that turns out not to
+     * match any real profession, which does not currently happen in any shipped training).
+     */
+    private static String resolveProfessionId(String professionName, Map<String, String> professionIndex) {
+        final String id = professionIndex.get(professionName);
+        if (id != null) {
+            return id;
+        }
+        for (final Map.Entry<String, String> entry : professionIndex.entrySet()) {
+            if (entry.getKey().equalsIgnoreCase(professionName)) {
+                return entry.getValue();
+            }
+        }
+        return Translations.toEnglishId(professionName);
     }
 
     private static boolean isNothingMarker(String line) {
