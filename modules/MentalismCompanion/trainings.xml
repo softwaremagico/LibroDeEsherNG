@@ -27,14 +27,14 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Besos del Houri</skill>
+              <skill>kissesOfHouri</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Engaños del Houri</skill>
+              <skill>deceptionsOfHouri</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -53,7 +53,7 @@
             <choice>false</choice>
             <ranksToDistribute>3</ranksToDistribute>
             <skillOptions>
-              <skill>Seducción</skill>
+              <skill>seduction</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -72,7 +72,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Detectar Mentiras</skill>
+              <skill>detectingLies</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -91,7 +91,7 @@
             <choice>false</choice>
             <ranksToDistribute>3</ranksToDistribute>
             <skillOptions>
-              <skill>Disfrazarse</skill>
+              <skill>disguising</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -110,7 +110,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Callejeo</skill>
+              <skill>streetSmarts</skill>
             </skillOptions>
           </skillGrant>
         </skills>

@@ -27,14 +27,14 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Liderazgo</skill>
+              <skill>liderazgo</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Oratoria</skill>
+              <skill>oratoria</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -53,7 +53,7 @@
             <choice>false</choice>
             <ranksToDistribute>8</ranksToDistribute>
             <skillOptions>
-              <skill>Religión</skill>
+              <skill>religion</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -92,7 +92,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Adivinación</skill>
+              <skill>divination</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -177,14 +177,14 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Percepción del Entorno: Ciudades</skill>
+              <skill>perceptionOfTheEnvironmentCiudades</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Sentido del Tiempo</skill>
+              <skill>senseOfTiempo</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -358,7 +358,7 @@
             <choice>false</choice>
             <ranksToDistribute>4</ranksToDistribute>
             <skillOptions>
-              <skill>Seducción</skill>
+              <skill>seduction</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -512,7 +512,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Pelea</skill>
+              <skill>pelea</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -634,8 +634,8 @@
             <choice>true</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Armadura Tipo I</skill>
-              <skill>Armadura Tipo II</skill>
+              <skill>armorTipoI</skill>
+              <skill>armorTipoIi</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -674,7 +674,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Percepción del Entorno: Ciudades</skill>
+              <skill>perceptionOfTheEnvironmentCiudades</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -693,7 +693,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Desarrollo Físico</skill>
+              <skill>physicalDevelopment</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -722,14 +722,14 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Interrogar</skill>
+              <skill>interrogar</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Liderazgo</skill>
+              <skill>liderazgo</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -748,7 +748,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Criminología</skill>
+              <skill>criminology</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -777,7 +777,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Conducir (Vehículo Mecánico)</skill>
+              <skill>conducirVehicleMechanical</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -796,7 +796,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Administración</skill>
+              <skill>administration</skill>
             </skillOptions>
           </skillGrant>
         </skills>

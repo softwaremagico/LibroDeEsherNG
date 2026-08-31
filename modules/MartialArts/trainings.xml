@@ -80,7 +80,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Desarrollo Físico</skill>
+              <skill>physicalDevelopment</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -304,7 +304,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Desarrollo Físico</skill>
+              <skill>physicalDevelopment</skill>
             </skillOptions>
           </skillGrant>
         </skills>

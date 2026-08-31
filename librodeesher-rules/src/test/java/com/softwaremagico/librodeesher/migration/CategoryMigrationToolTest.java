@@ -39,12 +39,12 @@ public class CategoryMigrationToolTest {
             Assert.assertEquals(armaduraLigera.getCharacteristics(),
                     List.of(CharacteristicAbbreviation.AGILITY, CharacteristicAbbreviation.STRENGTH, CharacteristicAbbreviation.AGILITY));
             Assert.assertEquals(armaduraLigera.getType(), CategoryType.STANDARD);
-            Assert.assertEquals(armaduraLigera.getSkills(), List.of("Cuero Endurecido", "Cuero Blando"));
+            Assert.assertEquals(armaduraLigera.getSkills(), List.of("hardenedLeather", "softLeather"));
 
             final Category ataquesEspeciales = findById(basicoCategories, "specialAttacks");
             Assert.assertEquals(ataquesEspeciales.getType(), CategoryType.COMBINED);
             // The base "AtaquesEspeciales" skill plus the one contributed later by the "Esencia" module.
-            Assert.assertEquals(ataquesEspeciales.getSkills(), List.of("Pelea", "Ataque Mágico"));
+            Assert.assertEquals(ataquesEspeciales.getSkills(), List.of("pelea", "attackArcane"));
 
             final List<Category> esenciaCategories = readGeneratedFile(targetRoot.resolve("Essence/categories.xml"));
             Assert.assertEquals(esenciaCategories.size(), 1, "'AtaquesEspeciales' was merged into Basico, "

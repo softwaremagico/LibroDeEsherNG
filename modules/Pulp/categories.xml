@@ -14,11 +14,11 @@
       <es>Ciencia/Analítica·Médica</es>
     </name>
     <skills>
-      <skill>Autópsia</skill>
-      <skill>Práctica Médica</skill>
-      <skill>Ciencia Médica</skill>
-      <skill>Fármacos</skill>
-      <skill>Terapia con Drogas</skill>
+      <skill>autopsy</skill>
+      <skill>practiceMedical</skill>
+      <skill>cienciaMedical</skill>
+      <skill>drugs</skill>
+      <skill>terapiaWithDrogas</skill>
     </skills>
     <skillsRaw>Autópsia, Práctica Médica, Ciencia Médica, Fármacos, Terapia con Drogas</skillsRaw>
     <type>STANDARD</type>
@@ -37,12 +37,12 @@
       <es>Ciencia/Analítica·Técnica</es>
     </name>
     <skills>
-      <skill>Tecnología Criminal</skill>
-      <skill>Tecnología Electrónica</skill>
-      <skill>Tecnología Genética</skill>
-      <skill>Tecnología Mecánica</skill>
-      <skill>Tecnología Armamentística</skill>
-      <skill>Creación de Artilugios</skill>
+      <skill>technologyCriminal</skill>
+      <skill>technologyElectronics</skill>
+      <skill>technologyGenetics</skill>
+      <skill>technologyMechanics</skill>
+      <skill>technologyWeaponry</skill>
+      <skill>creationOfDevices</skill>
     </skills>
     <skillsRaw>Tecnología Criminal, Tecnología Electrónica, Tecnología Genética, Tecnología Mecánica, Tecnología Armamentística, Creación de Artilugios</skillsRaw>
     <type>STANDARD</type>
@@ -61,20 +61,20 @@
       <es>Conocimiento·Académico</es>
     </name>
     <skills>
-      <skill>Historia del Arte</skill>
-      <skill>Filosofía</skill>
-      <skill>Periodismo</skill>
-      <skill>Ciencias Políticas</skill>
-      <skill>Derecho</skill>
-      <skill>Historia de la Religión</skill>
-      <skill>Artes Gráficas</skill>
-      <skill>Canon</skill>
-      <skill>Comparación de Religiones</skill>
-      <skill>Doctrina Filosófica/Religiosa</skill>
-      <skill>Sociología</skill>
-      <skill>Arqueología</skill>
-      <skill>Teología</skill>
-      <skill>Geografía</skill>
+      <skill>historyOfTheArt</skill>
+      <skill>philosophy</skill>
+      <skill>periodismo</skill>
+      <skill>cienciasPolitical</skill>
+      <skill>derecho</skill>
+      <skill>historyOfTheReligion</skill>
+      <skill>artesGraphic</skill>
+      <skill>canon</skill>
+      <skill>comparisonOfReligions</skill>
+      <skill>doctrinaPhilosophicalReligiosa</skill>
+      <skill>sociology</skill>
+      <skill>archaeology</skill>
+      <skill>theology</skill>
+      <skill>geography</skill>
     </skills>
     <skillsRaw>Historia del Arte, Filosofía, Periodismo, Ciencias Políticas, Derecho, Historia de la Religión, Artes Gráficas, Canon, Comparación de Religiones, Doctrina Filosófica/Religiosa, Sociología, Arqueología, Teología, Geografía</skillsRaw>
     <type>STANDARD</type>

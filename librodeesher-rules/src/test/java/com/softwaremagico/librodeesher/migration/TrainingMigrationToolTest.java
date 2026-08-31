@@ -115,7 +115,7 @@ public class TrainingMigrationToolTest {
             Assert.assertEquals(trackingCategory.getRanksToDistribute(), Integer.valueOf(2));
             Assert.assertEquals(trackingCategory.getSkills().size(), 1);
             final TrainingSkillGrant trackingSkill = trackingCategory.getSkills().get(0);
-            Assert.assertEquals(trackingSkill.getSkillOptions(), List.of("Rastrear"));
+            Assert.assertEquals(trackingSkill.getSkillOptions(), List.of("tracking"));
             Assert.assertFalse(trackingSkill.isChoice());
             Assert.assertEquals(trackingSkill.getRanksToDistribute(), Integer.valueOf(2));
 
@@ -125,7 +125,7 @@ public class TrainingMigrationToolTest {
             Assert.assertEquals(weaponCategory.getRanksGranted(), Integer.valueOf(1));
             Assert.assertEquals(weaponCategory.getRanksToDistribute(), Integer.valueOf(3));
             final TrainingSkillGrant weaponSkillChoice = weaponCategory.getSkills().get(0);
-            Assert.assertEquals(weaponSkillChoice.getSkillOptions(), List.of("Espada", "Hacha"));
+            Assert.assertEquals(weaponSkillChoice.getSkillOptions(), List.of("sword", "axe"));
             Assert.assertTrue(weaponSkillChoice.isChoice());
             Assert.assertEquals(weaponSkillChoice.getRanksToDistribute(), Integer.valueOf(3));
 

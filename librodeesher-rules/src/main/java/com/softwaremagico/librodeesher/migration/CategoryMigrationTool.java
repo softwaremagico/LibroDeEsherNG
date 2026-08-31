@@ -65,6 +65,7 @@ public final class CategoryMigrationTool {
         // Module name -> categories first defined by that module, in the order that will be written.
         final Map<String, List<Category>> categoriesByModule = new LinkedHashMap<>();
         readAllCategories(sourceRoot, categoriesByModule);
+        resolveSkillIds(sourceRoot, categoriesByModule.values());
 
         int written = 0;
         for (final Map.Entry<String, List<Category>> entry : categoriesByModule.entrySet()) {
@@ -73,6 +74,30 @@ public final class CategoryMigrationTool {
             written++;
         }
         return written;
+    }
+
+    /**
+     * Populates every category's {@link Category#getSkills()} (empty until now: {@link
+     * Category#setSkillsRaw} no longer derives it automatically, see its javadoc) with the real
+     * skill id for each plain Spanish name in {@link Category#getSkillsRaw()} (via {@link
+     * Category#namesFromRaw}), resolved through {@link SkillMigrationTool#buildSkillIndex} (the same
+     * index other migration tools use to resolve a skill referenced by name elsewhere, e.g. {@code
+     * TrainingMigrationTool}); {@link TrainingMigrationTool#resolveSkillId} is reused for the same
+     * fallback behaviour (a handful of category skill lines, mostly special-attack lore/style skills,
+     * are worded slightly differently than their real {@code Skill} entry, see {@code
+     * SKILL_NAME_ALIASES}).
+     */
+    private static void resolveSkillIds(Path sourceRoot, Iterable<List<Category>> categoriesByModule) throws IOException {
+        final Map<String, String> skillIndex = SkillMigrationTool.buildSkillIndex(sourceRoot);
+        for (final List<Category> categories : categoriesByModule) {
+            for (final Category category : categories) {
+                final List<String> resolved = new ArrayList<>();
+                for (final String skillName : Category.namesFromRaw(category.getSkillsRaw())) {
+                    resolved.add(TrainingMigrationTool.resolveSkillId(skillName, skillIndex));
+                }
+                category.setSkills(resolved);
+            }
+        }
     }
 
     /**

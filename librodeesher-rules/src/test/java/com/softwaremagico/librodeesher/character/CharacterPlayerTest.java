@@ -208,7 +208,7 @@ public class CharacterPlayerTest {
         grant.setRanksGranted(2);
         grant.getSkills().add(new TrainingSkillGrant(List.of("tracking"), 2));
 
-        character.applyCategoryGrant("training:scout:category:0", grant, null, null);
+        character.applyCategoryGrant("training:scout:category:0", grant, null, null, null);
 
         Assert.assertEquals(character.getCategoryTotalRanks("outdoorEnvironment"), Integer.valueOf(2));
         Assert.assertEquals(character.getSkillTotalRanks("tracking"), Integer.valueOf(2));
@@ -223,7 +223,7 @@ public class CharacterPlayerTest {
         grant.setCategoryOptions(List.of("weaponsTwoHanded", "weaponsEdged"));
         grant.setRanksGranted(1);
 
-        character.applyCategoryGrant("training:soldier:category:1", grant, "weaponsEdged", null);
+        character.applyCategoryGrant("training:soldier:category:1", grant, "weaponsEdged", null, null);
 
         Assert.assertEquals(character.getCategoryTotalRanks("weaponsEdged"), Integer.valueOf(1));
         Assert.assertEquals(character.getCategoryTotalRanks("weaponsTwoHanded"), Integer.valueOf(0));
@@ -237,7 +237,7 @@ public class CharacterPlayerTest {
         grant.setCategoryOptions(List.of("weaponsTwoHanded", "weaponsEdged"));
         grant.setRanksGranted(1);
 
-        character.applyCategoryGrant("training:soldier:category:1", grant, "weaponsMissile", null);
+        character.applyCategoryGrant("training:soldier:category:1", grant, "weaponsMissile", null, null);
     }
 
     @Test
@@ -247,10 +247,10 @@ public class CharacterPlayerTest {
         grant.setCategoryOptions(List.of("weaponsTwoHanded", "weaponsEdged"));
         grant.setRanksGranted(1);
 
-        character.applyCategoryGrant("training:soldier:category:1", grant, "weaponsEdged", null);
+        character.applyCategoryGrant("training:soldier:category:1", grant, "weaponsEdged", null, null);
         // A different (and otherwise invalid, since it wasn't offered before) id is ignored because
         // the decision was already made.
-        character.applyCategoryGrant("training:soldier:category:1", grant, "somethingElse", null);
+        character.applyCategoryGrant("training:soldier:category:1", grant, "somethingElse", null, null);
 
         Assert.assertEquals(character.getCategoryTotalRanks("weaponsEdged"), Integer.valueOf(2));
         Assert.assertEquals(character.getDecisions().getSelectedOption("training:soldier:category:1"), "weaponsEdged");
@@ -262,13 +262,28 @@ public class CharacterPlayerTest {
         final CharacterPlayer character = new CharacterPlayer();
 
         final Map<Integer, String> categorySelections = new HashMap<>();
+        final Map<Integer, Map<String, Integer>> additionalSkillRanksSelections = new HashMap<>();
         for (int i = 0; i < soldier.getCategories().size(); i++) {
             final TrainingCategoryGrant grant = soldier.getCategories().get(i);
+            final String selectedCategoryId = grant.getCategoryOptions().get(0);
             if (grant.isChoice()) {
-                categorySelections.put(i, grant.getCategoryOptions().get(0));
+                categorySelections.put(i, selectedCategoryId);
+            }
+            // A grant with no named skills (see TrainingCategoryGrant's class doc) leaves the
+            // player free to pick which of the category's skills receive its ranksToDistribute:
+            // just pick the first one here (weapon categories list their skills dynamically, in
+            // WeaponFactory, rather than in the category itself, see Category#hasDynamicSkills).
+            if (grant.getSkills().isEmpty() && grant.getRanksToDistribute() > 0) {
+                final Category category = RulesCatalog.getInstance().getCategory(selectedCategoryId);
+                final String firstSkillId = category.hasDynamicSkills()
+                        ? RulesCatalog.getInstance().getWeapons().stream()
+                                .filter(weapon -> selectedCategoryId.equals(weapon.getCategoryId())).findFirst()
+                                .orElseThrow().getId()
+                        : category.getSkills().get(0);
+                additionalSkillRanksSelections.put(i, Map.of(firstSkillId, grant.getRanksToDistribute()));
             }
         }
-        character.applyTrainingCategories(soldier, categorySelections, null);
+        character.applyTrainingCategories(soldier, categorySelections, null, additionalSkillRanksSelections);
 
         // Every grant got a decision recorded, and every decided category actually has ranks.
         for (int i = 0; i < soldier.getCategories().size(); i++) {
@@ -283,7 +298,7 @@ public class CharacterPlayerTest {
         final Culture culture = RulesCatalog.getInstance().getCulture("aquaticMilitarista");
         final CharacterPlayer character = new CharacterPlayer();
 
-        character.applyCultureAdolescenceRanks(culture, null, null);
+        character.applyCultureAdolescenceRanks(culture, null, null, null);
 
         for (int i = 0; i < culture.getAdolescenceRanks().size(); i++) {
             Assert.assertTrue(character.getDecisions().isDecided("culture:aquaticMilitarista:adolescence:" + i));
@@ -355,7 +370,7 @@ public class CharacterPlayerTest {
         grant.setCategoryOptions(List.of(CharacterPlayer.ALL_WEAPON_CATEGORIES));
         grant.setRanksGranted(2);
 
-        character.applyCategoryGrant("training:berserker:category:0", grant, "weaponsEdged", null);
+        character.applyCategoryGrant("training:berserker:category:0", grant, "weaponsEdged", null, null);
 
         Assert.assertEquals(character.getCategoryTotalRanks("weaponsEdged"), Integer.valueOf(2));
         Assert.assertEquals(character.getDecisions().get("training:berserker:category:0").getOfferedOptions().contains("weaponsBlunt"), true);
@@ -368,7 +383,7 @@ public class CharacterPlayerTest {
         grant.setCategoryOptions(List.of(CharacterPlayer.ALL_WEAPON_CATEGORIES));
         grant.setRanksGranted(2);
 
-        character.applyCategoryGrant("training:berserker:category:0", grant, "outdoorEnvironment", null);
+        character.applyCategoryGrant("training:berserker:category:0", grant, "outdoorEnvironment", null, null);
     }
 
     @Test

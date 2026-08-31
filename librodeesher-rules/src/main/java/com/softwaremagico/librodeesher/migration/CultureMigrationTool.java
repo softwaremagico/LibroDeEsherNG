@@ -40,6 +40,7 @@ public final class CultureMigrationTool {
         final Path modulosDir = sourceRoot.resolve("rolemaster").resolve("modulos");
         final IdAllocator idAllocator = new IdAllocator();
         final Map<String, String> categoryIndex = CategoryMigrationTool.buildCategoryIndex(sourceRoot);
+        final Map<String, String> skillIndex = SkillMigrationTool.buildSkillIndex(sourceRoot);
         int written = 0;
         for (final String module : ModuleManager.getAllModules()) {
             final Path culturesDir = modulosDir.resolve(LegacyModules.sourceFolderFor(module)).resolve(CULTURES_FOLDER);
@@ -50,7 +51,7 @@ public final class CultureMigrationTool {
             try (Stream<Path> files = Files.list(culturesDir)) {
                 for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
                         .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
-                    cultures.add(readCultureFile(file, idAllocator, categoryIndex));
+                    cultures.add(readCultureFile(file, idAllocator, categoryIndex, skillIndex));
                 }
             }
             if (!cultures.isEmpty()) {
@@ -61,8 +62,8 @@ public final class CultureMigrationTool {
         return written;
     }
 
-    private static Culture readCultureFile(Path file, IdAllocator idAllocator, Map<String, String> categoryIndex)
-            throws IOException {
+    private static Culture readCultureFile(Path file, IdAllocator idAllocator, Map<String, String> categoryIndex,
+                                            Map<String, String> skillIndex) throws IOException {
         final String fileName = file.getFileName().toString();
         final String cultureName = fileName.substring(0, fileName.length() - ".txt".length());
         final SectionCursor cursor = new SectionCursor(Files.readAllLines(file, StandardCharsets.UTF_8));
@@ -71,7 +72,7 @@ public final class CultureMigrationTool {
         culture.setName(cultureName, Translations.toEnglish(cultureName));
         culture.setTypicalWeaponIds(parseWeaponIds(cursor.nextSection()));
         culture.setTypicalArmorIds(parseArmorIds(cursor.nextSection()));
-        culture.setAdolescenceRanks(parseAdolescenceRanks(cursor.nextSection(), categoryIndex));
+        culture.setAdolescenceRanks(parseAdolescenceRanks(cursor.nextSection(), categoryIndex, skillIndex));
         culture.setHobbyRanks(parseOptionalInteger(cursor.nextSection()));
         final ParsedHobbyIds hobbies = parseHobbyIds(cursor.nextSection());
         culture.setHobbyIds(hobbies.hobbyIds());
@@ -117,7 +118,8 @@ public final class CultureMigrationTool {
         return ids;
     }
 
-    private static List<TrainingCategoryGrant> parseAdolescenceRanks(List<String> lines, Map<String, String> categoryIndex) {
+    private static List<TrainingCategoryGrant> parseAdolescenceRanks(List<String> lines, Map<String, String> categoryIndex,
+                                                                       Map<String, String> skillIndex) {
         final List<TrainingCategoryGrant> categories = new ArrayList<>();
         TrainingCategoryGrant current = null;
         for (final String line : lines) {
@@ -146,7 +148,9 @@ public final class CultureMigrationTool {
                 categories.add(current);
             } else if (current != null) {
                 final String[] columns = line.replace("*", "").trim().split("\t");
-                current.getSkills().add(new TrainingSkillGrant(List.of(columns[0].trim()), Integer.valueOf(columns[1].trim())));
+                current.getSkills().add(new TrainingSkillGrant(
+                        List.of(TrainingMigrationTool.resolveSkillId(columns[0].trim(), skillIndex)),
+                        Integer.valueOf(columns[1].trim())));
             }
         }
         return categories;

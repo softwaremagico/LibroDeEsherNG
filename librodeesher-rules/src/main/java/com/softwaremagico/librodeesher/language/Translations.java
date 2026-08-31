@@ -1021,6 +1021,8 @@ public final class Translations {
         put(m, "dueño", "owner");
         put(m, "específica", "specific");
         put(m, "específico", "specific");
+        put(m, "fantástico", "fantastic");
+        put(m, "fantástica", "fantastic");
         put(m, "específicos", "specific");
         put(m, "éxito", "success");
         put(m, "ganzúas", "lockpicks");

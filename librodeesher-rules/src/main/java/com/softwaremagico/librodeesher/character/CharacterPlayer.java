@@ -40,12 +40,15 @@ import com.softwaremagico.librodeesher.training.Training;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
 import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
 import com.softwaremagico.librodeesher.training.TrainingType;
+import com.softwaremagico.librodeesher.weapon.Weapon;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -583,17 +586,35 @@ public class CharacterPlayer {
 	 *            that offers a choice and has not been decided yet, in the same
 	 *            order as {@link TrainingCategoryGrant#getSkills()}; ignored for
 	 *            grants that are not a choice or are already decided.
+	 * @param additionalSkillRanks
+	 *            how many ranks to grant each freely-chosen skill of the resolved
+	 *            category, on top of {@code grant}'s named skill grants (if any);
+	 *            only meaningful when {@code grant}'s named skill grants do not
+	 *            already add up to {@link TrainingCategoryGrant#getRanksToDistribute()}
+	 *            (the common case, e.g. "choose 1-3 skills of the Outdoor/Animal
+	 *            category and freely distribute 4 ranks among them" leaves no named
+	 *            skill grants at all). Ignored otherwise.
+	 * @throws IllegalArgumentException if a skill in {@code additionalSkillRanks} is
+	 *             not one of the resolved category's skills (or is already one of
+	 *             {@code grant}'s named skills), if its size is not between
+	 *             {@link TrainingCategoryGrant#getMinSkills()} and
+	 *             {@link TrainingCategoryGrant#getMaxSkills()} (discounting the named
+	 *             skills), or if its values do not add up to exactly the ranks left
+	 *             to distribute.
 	 */
 	public void applyCategoryGrant(String key, TrainingCategoryGrant grant, String selectedCategoryId,
-			List<String> selectedSkillIds) throws InvalidXmlElementException {
+			List<String> selectedSkillIds, Map<String, Integer> additionalSkillRanks) throws InvalidXmlElementException {
 		final List<String> offeredCategories = this.expandCategoryWildcards(grant.getCategoryOptions());
 		final Decision categoryDecision = this.decideOrReuse(key,
 				() -> offeredCategories.size() > 1
 						? Decision.select(offeredCategories, selectedCategoryId)
 						: Decision.fixed(offeredCategories));
-		this.getCurrentLevel().addCategoryRanks(categoryDecision.getSelectedOption(), grant.getRanksGranted());
+		final String categoryId = categoryDecision.getSelectedOption();
+		this.getCurrentLevel().addCategoryRanks(categoryId, grant.getRanksGranted());
 
 		final List<TrainingSkillGrant> skills = grant.getSkills();
+		final Set<String> namedSkillIds = new HashSet<>();
+		int namedRanks = 0;
 		for (int i = 0; i < skills.size(); i++) {
 			final TrainingSkillGrant skillGrant = skills.get(i);
 			final String skillKey = key + ":skill:" + i;
@@ -601,11 +622,53 @@ public class CharacterPlayer {
 					? selectedSkillIds.get(i)
 					: null;
 			final Decision skillDecision = this.decideOrReuse(skillKey, () -> skillGrant.resolve(selectedSkillId));
+			namedSkillIds.add(skillDecision.getSelectedOption());
+			namedRanks += skillGrant.getRanksToDistribute();
 			// Whether this is a spell skill is not resolved here (it requires
 			// cross-referencing the
 			// skill's category), see LevelUp#setSkillRanks; future work.
 			this.getCurrentLevel().addSkillRanks(skillDecision.getSelectedOption(), skillGrant.getRanksToDistribute(),
 					false);
+		}
+
+		final int remainingRanks = grant.getRanksToDistribute() == null ? 0 : grant.getRanksToDistribute() - namedRanks;
+		if (remainingRanks > 0) {
+			this.applyAdditionalCategorySkillRanks(grant, categoryId, namedSkillIds, remainingRanks,
+					additionalSkillRanks == null ? Map.of() : additionalSkillRanks);
+		}
+	}
+
+	/**
+	 * Validates and applies the "freely chosen" part of a category grant's skill
+	 * distribution (see {@link #applyCategoryGrant}'s {@code additionalSkillRanks}
+	 * parameter).
+	 */
+	private void applyAdditionalCategorySkillRanks(TrainingCategoryGrant grant, String categoryId,
+			Set<String> namedSkillIds, int remainingRanks, Map<String, Integer> additionalSkillRanks)
+			throws InvalidXmlElementException {
+		final int minAdditionalSkills = Math.max(0, grant.getMinSkills() - namedSkillIds.size());
+		final int maxAdditionalSkills = grant.getMaxSkills() - namedSkillIds.size();
+		if (additionalSkillRanks.size() < minAdditionalSkills || additionalSkillRanks.size() > maxAdditionalSkills) {
+			throw new IllegalArgumentException("Expected between " + minAdditionalSkills + " and " + maxAdditionalSkills
+					+ " additional skill(s) for category '" + categoryId + "', got " + additionalSkillRanks.size() + ".");
+		}
+		final Category category = RulesCatalog.getInstance().getCategory(categoryId);
+		final List<String> categorySkillIds = category.hasDynamicSkills() ? this.getWeaponSkillIds(categoryId)
+				: category.getSkills();
+		int sum = 0;
+		for (final Map.Entry<String, Integer> entry : additionalSkillRanks.entrySet()) {
+			if (namedSkillIds.contains(entry.getKey()) || !categorySkillIds.contains(entry.getKey())) {
+				throw new IllegalArgumentException(
+						"'" + entry.getKey() + "' is not one of category '" + categoryId + "''s remaining skills.");
+			}
+			sum += entry.getValue();
+		}
+		if (sum != remainingRanks) {
+			throw new IllegalArgumentException(
+					"Expected the additional skill ranks to add up to " + remainingRanks + ", got " + sum + ".");
+		}
+		for (final Map.Entry<String, Integer> entry : additionalSkillRanks.entrySet()) {
+			this.getCurrentLevel().addSkillRanks(entry.getKey(), entry.getValue(), false);
 		}
 	}
 
@@ -625,11 +688,15 @@ public class CharacterPlayer {
 	 * @param skillSelections
 	 *            same, but for each grant's nested skill choices, keyed the same
 	 *            way.
+	 * @param additionalSkillRanksSelections
+	 *            same, but for each grant's {@code additionalSkillRanks} (see
+	 *            {@link #applyCategoryGrant}), keyed the same way.
 	 */
 	public void applyTrainingCategories(Training training, Map<Integer, String> categorySelections,
-			Map<Integer, List<String>> skillSelections) throws InvalidXmlElementException {
+			Map<Integer, List<String>> skillSelections, Map<Integer, Map<String, Integer>> additionalSkillRanksSelections)
+			throws InvalidXmlElementException {
 		this.applyCategoryGrants("training:" + training.getId() + ":category", training.getCategories(),
-				categorySelections, skillSelections);
+				categorySelections, skillSelections, additionalSkillRanksSelections);
 	}
 
 	/**
@@ -639,18 +706,22 @@ public class CharacterPlayer {
 	 * {@link #applyTrainingCategories} for the selection map semantics.
 	 */
 	public void applyCultureAdolescenceRanks(Culture culture, Map<Integer, String> categorySelections,
-			Map<Integer, List<String>> skillSelections) throws InvalidXmlElementException {
+			Map<Integer, List<String>> skillSelections, Map<Integer, Map<String, Integer>> additionalSkillRanksSelections)
+			throws InvalidXmlElementException {
 		this.applyCategoryGrants("culture:" + culture.getId() + ":adolescence", culture.getAdolescenceRanks(),
-				categorySelections, skillSelections);
+				categorySelections, skillSelections, additionalSkillRanksSelections);
 	}
 
 	private void applyCategoryGrants(String keyPrefix, List<TrainingCategoryGrant> grants,
-			Map<Integer, String> categorySelections, Map<Integer, List<String>> skillSelections)
-			throws InvalidXmlElementException {
+			Map<Integer, String> categorySelections, Map<Integer, List<String>> skillSelections,
+			Map<Integer, Map<String, Integer>> additionalSkillRanksSelections) throws InvalidXmlElementException {
 		for (int i = 0; i < grants.size(); i++) {
 			final String selectedCategoryId = categorySelections == null ? null : categorySelections.get(i);
 			final List<String> selectedSkillIds = skillSelections == null ? null : skillSelections.get(i);
-			this.applyCategoryGrant(keyPrefix + ":" + i, grants.get(i), selectedCategoryId, selectedSkillIds);
+			final Map<String, Integer> additionalSkillRanks = additionalSkillRanksSelections == null ? null
+					: additionalSkillRanksSelections.get(i);
+			this.applyCategoryGrant(keyPrefix + ":" + i, grants.get(i), selectedCategoryId, selectedSkillIds,
+					additionalSkillRanks);
 		}
 	}
 
@@ -838,6 +909,17 @@ public class CharacterPlayer {
 		for (final Category category : RulesCatalog.getInstance().getCategories()) {
 			if (category.getId().startsWith("weapons")) {
 				ids.add(category.getId());
+			}
+		}
+		return ids;
+	}
+
+	/** The weapon (id, doubling as its skill id) of every {@link Weapon} belonging to {@code categoryId}. */
+	private List<String> getWeaponSkillIds(String categoryId) throws InvalidXmlElementException {
+		final List<String> ids = new ArrayList<>();
+		for (final Weapon weapon : RulesCatalog.getInstance().getWeapons()) {
+			if (categoryId.equals(weapon.getCategoryId())) {
+				ids.add(weapon.getId());
 			}
 		}
 		return ids;

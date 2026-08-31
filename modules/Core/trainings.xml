@@ -17,21 +17,21 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Conocimiento de la Fauna</skill>
+              <skill>loreOfFauna</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Conocimiento de la Flora</skill>
+              <skill>loreOfFlora</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Conocimiento Regional</skill>
+              <skill>loreRegional</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -70,14 +70,14 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Leer Huellas</skill>
+              <skill>readingHuellas</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Rastrear</skill>
+              <skill>tracking</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -96,14 +96,14 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Acechar</skill>
+              <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Esconderse</skill>
+              <skill>hiding</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -316,7 +316,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Trepar</skill>
+              <skill>climbing</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -335,7 +335,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Nadar</skill>
+              <skill>swimming</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -354,7 +354,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Desarrollo Físico</skill>
+              <skill>physicalDevelopment</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -373,7 +373,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Sintonización</skill>
+              <skill>attunement</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -392,7 +392,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Observación</skill>
+              <skill>observation</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -411,7 +411,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Alerta</skill>
+              <skill>alerta</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -430,7 +430,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Primeros Auxilios</skill>
+              <skill>primerosAuxilios</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -537,7 +537,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Coraza</skill>
+              <skill>breastplate</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -569,7 +569,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Heráldica</skill>
+              <skill>heraldry</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -588,7 +588,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Montar: Caballos</skill>
+              <skill>montarCaballos</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -607,7 +607,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Combate Montado</skill>
+              <skill>combatMontado</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -745,14 +745,14 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Conocimiento de la Fauna</skill>
+              <skill>loreOfFauna</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Conocimiento de la Flora</skill>
+              <skill>loreOfFlora</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -771,7 +771,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Cazar</skill>
+              <skill>hunting</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -790,7 +790,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Trabajar el Cuero</skill>
+              <skill>trabajarTheLeather</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -809,14 +809,14 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Leer Huellas</skill>
+              <skill>readingHuellas</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Rastrear</skill>
+              <skill>tracking</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -835,14 +835,14 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Acechar</skill>
+              <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Esconderse</skill>
+              <skill>hiding</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -944,7 +944,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Trepar</skill>
+              <skill>climbing</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -963,14 +963,14 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Conocimiento Cultural</skill>
+              <skill>loreCultural</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Heráldica</skill>
+              <skill>heraldry</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -989,7 +989,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Conocimiento de las Cerraduras</skill>
+              <skill>loreOfLocks</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1086,14 +1086,14 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Primeros Auxilios</skill>
+              <skill>primerosAuxilios</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Usar Hierbas</skill>
+              <skill>usarHerbs</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1112,14 +1112,14 @@
             <choice>false</choice>
             <ranksToDistribute>3</ranksToDistribute>
             <skillOptions>
-              <skill>Cuidados Médicos</skill>
+              <skill>cuidadosMedical</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>3</ranksToDistribute>
             <skillOptions>
-              <skill>Diagnosis</skill>
+              <skill>diagnosis</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1333,21 +1333,21 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Leer Huellas</skill>
+              <skill>readingHuellas</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Observación</skill>
+              <skill>observation</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Rastrear</skill>
+              <skill>tracking</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1432,7 +1432,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Heráldica</skill>
+              <skill>heraldry</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1451,7 +1451,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Desarrollo Físico</skill>
+              <skill>physicalDevelopment</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1470,7 +1470,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Observación</skill>
+              <skill>observation</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1489,7 +1489,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Primeros Auxilios</skill>
+              <skill>primerosAuxilios</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1508,7 +1508,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Instinto Urbano</skill>
+              <skill>instintoUrbano</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1593,7 +1593,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Conocimiento de la Flora</skill>
+              <skill>loreOfFlora</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1612,7 +1612,7 @@
             <choice>false</choice>
             <ranksToDistribute>3</ranksToDistribute>
             <skillOptions>
-              <skill>Forrajear</skill>
+              <skill>forrajear</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1631,7 +1631,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Horticultura</skill>
+              <skill>horticultura</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1650,7 +1650,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Usar Hierbas</skill>
+              <skill>usarHerbs</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1803,14 +1803,14 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Leer Runas</skill>
+              <skill>readingRunes</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Sintonización</skill>
+              <skill>attunement</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1885,7 +1885,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Matemáticas Básicas</skill>
+              <skill>mathematicsBasic</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -1914,7 +1914,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Tasar</skill>
+              <skill>tasar</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -2018,7 +2018,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Heráldica</skill>
+              <skill>heraldry</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -2037,7 +2037,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Desarrollo Físico</skill>
+              <skill>physicalDevelopment</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -2056,7 +2056,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Táctica</skill>
+              <skill>tactics</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -2184,7 +2184,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Trepar</skill>
+              <skill>climbing</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -2203,7 +2203,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Nadar</skill>
+              <skill>swimming</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -2222,9 +2222,9 @@
             <choice>true</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Montar: Lobos</skill>
-              <skill>Montar: Caballos</skill>
-              <skill>Montar: Osos</skill>
+              <skill>montarLobos</skill>
+              <skill>montarCaballos</skill>
+              <skill>montarOsos</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -2253,7 +2253,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Observación</skill>
+              <skill>observation</skill>
             </skillOptions>
           </skillGrant>
         </skills>

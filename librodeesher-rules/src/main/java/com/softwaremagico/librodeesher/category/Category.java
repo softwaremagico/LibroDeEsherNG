@@ -24,7 +24,8 @@ import java.util.List;
  * <pre>Cuero Endurecido [TA9; TA10; TA11], Cuero Blando [TA5; TA6; TA7]</pre>
  * <p>The part in brackets described which "hidden" skill ranks unlock which armor/weapon training
  * tables. That bracket syntax is not parsed yet: {@link #getSkillsRaw()} preserves it verbatim so no
- * information is lost, while {@link #getSkills()} exposes the plain skill names for immediate use.</p>
+ * information is lost, while {@link #getSkills()} exposes the real skill ids (resolved by {@code
+ * CategoryMigrationTool} via {@code SkillMigrationTool#buildSkillIndex}) for immediate use.</p>
  */
 public class Category extends Element {
 
@@ -130,10 +131,17 @@ public class Category extends Element {
         return skillsRaw;
     }
 
-    /** Sets the raw skills column and derives {@link #skills} from it. */
+    /**
+     * Sets the raw skills column. Does <strong>not</strong> derive {@link #getSkills()} from it (see
+     * {@link #namesFromRaw}/{@link #setSkills}, resolved separately by {@code CategoryMigrationTool}
+     * once a skill index is available): the two fields are independent, both read directly from the
+     * generated XML, so that Jackson's per-element deserialization order (this setter's old
+     * side-effect used to run after {@link #setSkills} deserialized the real ids from {@code
+     * <skills>}, silently overwriting them back to plain Spanish names) cannot resurrect the
+     * unresolved names.
+     */
     public void setSkillsRaw(String skillsRaw) {
         this.skillsRaw = skillsRaw;
-        this.skills = parseSkillNames(skillsRaw);
     }
 
     /** Whether this category's skills come from another data source (e.g. weapon files) instead of a fixed list. */
@@ -142,11 +150,12 @@ public class Category extends Element {
     }
 
     /**
-     * Splits the raw "Habilidades" column into plain skill names, dropping the "[...]" unlock hints.
-     * Top-level commas separate skills; brackets never contain a comma in the source data (they use
-     * semicolons), so a naive split on commas is safe here.
+     * Splits the raw "Habilidades" column into plain Spanish skill names, dropping the "[...]" unlock
+     * hints, so {@code CategoryMigrationTool} can resolve each one to a real skill id (see
+     * {@link #getSkills()}). Top-level commas separate skills; brackets never contain a comma in the
+     * source data (they use semicolons), so a naive split on commas is safe here.
      */
-    private static List<String> parseSkillNames(String raw) {
+    public static List<String> namesFromRaw(String raw) {
         final List<String> names = new ArrayList<>();
         if (raw == null || raw.isBlank() || DYNAMIC_SKILLS_MARKER.equalsIgnoreCase(raw.trim())) {
             return names;

@@ -17,7 +17,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Desarrollo Físico</skill>
+              <skill>physicalDevelopment</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -36,7 +36,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Trascender Armadura</skill>
+              <skill>trascenderArmor</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -203,7 +203,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Nigromancia</skill>
+              <skill>nigromancia</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -222,7 +222,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Primeros Auxilios</skill>
+              <skill>primerosAuxilios</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -241,14 +241,14 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Cuidados Médicos</skill>
+              <skill>cuidadosMedical</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Cirugía</skill>
+              <skill>surgery</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -267,7 +267,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Anatomía</skill>
+              <skill>anatomy</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -286,7 +286,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Conocimiento de los No-Muertos</skill>
+              <skill>loreOfUndead</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -305,7 +305,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Canalización</skill>
+              <skill>channeling</skill>
             </skillOptions>
           </skillGrant>
         </skills>

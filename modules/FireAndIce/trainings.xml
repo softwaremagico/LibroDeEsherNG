@@ -17,7 +17,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Esprintar</skill>
+              <skill>sprinting</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -36,7 +36,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Velocidad Adrenal</skill>
+              <skill>speedAdrenal</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -55,7 +55,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Conocimiento de los Planos</skill>
+              <skill>loreOfPlanes</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -74,42 +74,42 @@
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Maestría de la Oscuridad</skill>
+              <skill>masteryOfOscuridad</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Maestría de la Luz</skill>
+              <skill>masteryOfLight</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Defensas Elementales</skill>
+              <skill>defensesElementales</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Desvíos Elementales</skill>
+              <skill>deflectionsElementales</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Invocaciones Elementales</skill>
+              <skill>summoningsElementales</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Ley de la Luz</skill>
+              <skill>lawOfLight</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -128,14 +128,14 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Leer Runas</skill>
+              <skill>readingRunes</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Sintonización</skill>
+              <skill>attunement</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -238,7 +238,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Conocimiento de los Planos</skill>
+              <skill>loreOfPlanes</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -267,42 +267,42 @@
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Invocaciones Elementales</skill>
+              <skill>summoningsElementales</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Desvíos Elementales</skill>
+              <skill>deflectionsElementales</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Defensas Elementales</skill>
+              <skill>defensesElementales</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Control del Aire</skill>
+              <skill>controlOfAir</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Maestría del Viento</skill>
+              <skill>masteryOfWind</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Ley del Viento</skill>
+              <skill>lawOfWind</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -321,14 +321,14 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Leer Runas</skill>
+              <skill>readingRunes</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Sintonización</skill>
+              <skill>attunement</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -347,7 +347,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Acechar</skill>
+              <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -475,7 +475,7 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Conocimiento de los Planos</skill>
+              <skill>loreOfPlanes</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -494,42 +494,42 @@
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Invocaciones Elementales</skill>
+              <skill>summoningsElementales</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Desvíos Elementales</skill>
+              <skill>deflectionsElementales</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Defensas Elementales</skill>
+              <skill>defensesElementales</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Camino de las Llamas</skill>
+              <skill>pathOfFlames</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Sendas del Fuego</skill>
+              <skill>pathsOfFire</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
-              <skill>Ley del Fuego</skill>
+              <skill>lawOfFire</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -548,14 +548,14 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Leer Runas</skill>
+              <skill>readingRunes</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Sintonización</skill>
+              <skill>attunement</skill>
             </skillOptions>
           </skillGrant>
         </skills>

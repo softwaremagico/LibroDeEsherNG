@@ -33,8 +33,8 @@ public class CategoryFactoryTest {
         Assert.assertEquals(lightArmor.getCharacteristics(),
                 List.of(CharacteristicAbbreviation.AGILITY, CharacteristicAbbreviation.STRENGTH, CharacteristicAbbreviation.AGILITY));
         Assert.assertEquals(lightArmor.getType(), CategoryType.STANDARD);
-        Assert.assertTrue(lightArmor.getSkills().contains("Cuero Endurecido"));
-        Assert.assertTrue(lightArmor.getSkills().contains("Cuero Blando"));
+        Assert.assertTrue(lightArmor.getSkills().contains("hardenedLeather"));
+        Assert.assertTrue(lightArmor.getSkills().contains("softLeather"));
     }
 
     @Test

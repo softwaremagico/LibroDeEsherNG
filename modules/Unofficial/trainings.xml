@@ -50,14 +50,14 @@
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Acrobacias</skill>
+              <skill>acrobatics</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
-              <skill>Trepar</skill>
+              <skill>climbing</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -76,7 +76,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Montar: Caballos</skill>
+              <skill>montarCaballos</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -115,14 +115,14 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Acechar</skill>
+              <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>Esconderse</skill>
+              <skill>hiding</skill>
             </skillOptions>
           </skillGrant>
         </skills>
@@ -224,7 +224,7 @@
             <choice>false</choice>
             <ranksToDistribute>5</ranksToDistribute>
             <skillOptions>
-              <skill>Barrer</skill>
+              <skill>barrer</skill>
             </skillOptions>
           </skillGrant>
         </skills>
