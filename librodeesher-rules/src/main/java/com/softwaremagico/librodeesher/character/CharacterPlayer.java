@@ -41,6 +41,7 @@ import com.softwaremagico.librodeesher.race.RaceLanguage;
 import com.softwaremagico.librodeesher.resistance.ResistanceType;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.skill.Skill;
+import com.softwaremagico.librodeesher.skill.SkillGroup;
 import com.softwaremagico.librodeesher.skill.SkillType;
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
 import com.softwaremagico.librodeesher.training.Training;
@@ -98,6 +99,24 @@ public class CharacterPlayer {
 	private final Decisions decisions = new Decisions();
 	private final List<SelectedPerk> selectedPerks = new ArrayList<>();
 	private final Map<String, Integer> hobbySkillRanks = new LinkedHashMap<>();
+
+	/**
+	 * Per-character option toggles (matching the legacy {@code CharacterConfiguration}, a per-character
+	 * snapshot of the legacy global {@code Config} defaults, which a character could then override):
+	 * {@link #isFirearmsAllowed()}/{@link #isChiPowersAllowed()} gate the matching {@link
+	 * com.softwaremagico.librodeesher.skill.SkillGroup} (see {@link #isSkillDisabledByOptions(Skill)});
+	 * {@link #isOtherRealmTrainingSpellsAllowed()} gates {@link
+	 * com.softwaremagico.librodeesher.magic.MagicListType#OTHER_REALM_TRAINING} (see {@link
+	 * #classifySpellList(String)}); {@link #isMagicAllowed()} gates every spell list (see {@link
+	 * #getRealmsOfMagic()}). Every default here matches the legacy global {@code Config}'s own
+	 * hardcoded default (firearms/chi powers/other-realm-training-spells off, magic on); there is no
+	 * NG equivalent of the legacy global, persisted default (no single-user desktop app), so every new
+	 * character simply starts with these same hardcoded defaults instead of a snapshot of one.
+	 */
+	private boolean firearmsAllowed = false;
+	private boolean chiPowersAllowed = false;
+	private boolean otherRealmTrainingSpellsAllowed = false;
+	private boolean magicAllowed = true;
 
 	public CharacterPlayer() {
 		for (final CharacteristicAbbreviation abbreviation : allRealCharacteristics()) {
@@ -1044,6 +1063,51 @@ public class CharacterPlayer {
 						PROFESSION_PROFESSIONAL_SKILLS_SECTION, profession.getProfessionalSkillChoices()));
 	}
 
+	public boolean isFirearmsAllowed() {
+		return this.firearmsAllowed;
+	}
+
+	public void setFirearmsAllowed(boolean firearmsAllowed) {
+		this.firearmsAllowed = firearmsAllowed;
+	}
+
+	public boolean isChiPowersAllowed() {
+		return this.chiPowersAllowed;
+	}
+
+	public void setChiPowersAllowed(boolean chiPowersAllowed) {
+		this.chiPowersAllowed = chiPowersAllowed;
+	}
+
+	public boolean isOtherRealmTrainingSpellsAllowed() {
+		return this.otherRealmTrainingSpellsAllowed;
+	}
+
+	public void setOtherRealmTrainingSpellsAllowed(boolean otherRealmTrainingSpellsAllowed) {
+		this.otherRealmTrainingSpellsAllowed = otherRealmTrainingSpellsAllowed;
+	}
+
+	public boolean isMagicAllowed() {
+		return this.magicAllowed;
+	}
+
+	public void setMagicAllowed(boolean magicAllowed) {
+		this.magicAllowed = magicAllowed;
+	}
+
+	/**
+	 * Whether {@code skill} is hidden by one of the character's own option toggles (see this class'
+	 * fields' own javadoc), matching the legacy {@code CharacterPlayer#isSkillDisabled} (the "some
+	 * skills enable other skills that are disabled by default" half of that method is {@link
+	 * #isSkillEnabled(Skill)} instead, already wired separately).
+	 */
+	public boolean isSkillDisabledByOptions(Skill skill) {
+		if (skill.getSkillGroup() == SkillGroup.CHI && !this.isChiPowersAllowed()) {
+			return true;
+		}
+		return skill.getSkillGroup() == SkillGroup.FIREARM && !this.isFirearmsAllowed();
+	}
+
 	/**
 	 * The multiplier applied to a skill's bought ranks to get its "real ranks"
 	 * (used for skill bonus purposes, as opposed to category-bonus purposes):
@@ -1274,10 +1338,14 @@ public class CharacterPlayer {
 
 	/**
 	 * Every realm of magic the selected profession grants, already resolved (see {@link
-	 * #applyProfessionMagicRealms}); empty if no profession is selected, it is not a spell caster, or
-	 * a hybrid realm grant has not been resolved yet.
+	 * #applyProfessionMagicRealms}); empty if no profession is selected, it is not a spell caster, a
+	 * hybrid realm grant has not been resolved yet, or {@link #isMagicAllowed()} is {@code false}
+	 * (matching the legacy {@code isCategoryOptionEnabled}'s "Magic can be disabled" check).
 	 */
 	public List<RealmOfMagic> getRealmsOfMagic() throws InvalidXmlElementException {
+		if (!this.isMagicAllowed()) {
+			return List.of();
+		}
 		final Profession profession = this.getProfession();
 		if (profession == null) {
 			return List.of();
@@ -1398,9 +1466,13 @@ public class CharacterPlayer {
 	 * Every spell list of a realm other than any of the character's {@link #getRealmsOfMagic()},
 	 * directly owned by one of the character's selected trainings, other than an elementalist one
 	 * (matching the legacy {@code MagicFactory#getListOfTrainingOtherRealms}; same simplification as
-	 * {@link #getTrainingSpellLists()}).
+	 * {@link #getTrainingSpellLists()}); empty if {@link #isOtherRealmTrainingSpellsAllowed()} is
+	 * {@code false} (matching the legacy {@code isCategoryOptionEnabled}'s own check).
 	 */
 	public List<MagicSpellList> getOtherRealmTrainingSpellLists() throws InvalidXmlElementException {
+		if (!this.isOtherRealmTrainingSpellsAllowed()) {
+			return List.of();
+		}
 		final List<String> trainingIds = this.getNonElementalistTrainingIds();
 		return this.getOtherRealmSpellListsMatching(list -> containsAny(list.getOwners(), trainingIds));
 	}
@@ -1594,7 +1666,7 @@ public class CharacterPlayer {
 			}
 			return null;
 		}
-		if (containsAny(spellList.getOwners(), trainingIds)) {
+		if (containsAny(spellList.getOwners(), trainingIds) && this.isOtherRealmTrainingSpellsAllowed()) {
 			return MagicListType.OTHER_REALM_TRAINING;
 		}
 		if (spellList.getOwners().stream().anyMatch(owner -> !owner.equals(ownProfessionId) && this.isRealProfessionId(owner))) {

@@ -1394,4 +1394,72 @@ public class CharacterPlayerTest {
                 .map(list -> list.getId()).toList();
         Assert.assertTrue(complementaryTriadListIds.contains("essencePathOfFlames"));
     }
+
+    @Test
+    public void perCharacterOptionTogglesAreIndependentAndDefaultLikeLegacy() throws InvalidXmlElementException {
+        // Matches the legacy ConfigTests: every toggle defaults like the legacy global Config's own
+        // hardcoded defaults (firearms/chi powers/other-realm-training-spells off, magic on), and two
+        // characters' toggles never affect each other.
+        final CharacterPlayer character1 = new CharacterPlayer();
+        Assert.assertFalse(character1.isFirearmsAllowed());
+        Assert.assertFalse(character1.isChiPowersAllowed());
+        Assert.assertFalse(character1.isOtherRealmTrainingSpellsAllowed());
+        Assert.assertTrue(character1.isMagicAllowed());
+
+        character1.setFirearmsAllowed(true);
+        Assert.assertTrue(character1.isFirearmsAllowed());
+
+        final CharacterPlayer character2 = new CharacterPlayer();
+        Assert.assertFalse(character2.isFirearmsAllowed());
+        character2.setFirearmsAllowed(false);
+        Assert.assertTrue(character1.isFirearmsAllowed());
+        Assert.assertFalse(character2.isFirearmsAllowed());
+    }
+
+    @Test
+    public void skillGroupTogglesDisableChiAndFirearmSkills() throws InvalidXmlElementException {
+        final Skill chiPower = RulesCatalog.getInstance().getSkill("chiPowerClothLance");
+        final Skill firearmSkill = RulesCatalog.getInstance().getSkill("suppressionFire");
+        final Skill standardSkill = RulesCatalog.getInstance().getSkill("climbing");
+
+        final CharacterPlayer character = new CharacterPlayer();
+        Assert.assertTrue(character.isSkillDisabledByOptions(chiPower));
+        Assert.assertTrue(character.isSkillDisabledByOptions(firearmSkill));
+        Assert.assertFalse(character.isSkillDisabledByOptions(standardSkill));
+
+        character.setChiPowersAllowed(true);
+        Assert.assertFalse(character.isSkillDisabledByOptions(chiPower));
+        Assert.assertTrue(character.isSkillDisabledByOptions(firearmSkill));
+
+        character.setFirearmsAllowed(true);
+        Assert.assertFalse(character.isSkillDisabledByOptions(firearmSkill));
+    }
+
+    @Test
+    public void magicAllowedToggleHidesEveryRealmOfMagic() throws InvalidXmlElementException {
+        final CharacterPlayer wizard = new CharacterPlayer();
+        wizard.setProfessionId("wizard");
+        wizard.applyProfessionMagicRealms(null);
+        Assert.assertEquals(wizard.getRealmsOfMagic(), List.of(RealmOfMagic.ESSENCE));
+        Assert.assertFalse(wizard.getBasicSpellLists().isEmpty());
+
+        wizard.setMagicAllowed(false);
+        Assert.assertTrue(wizard.getRealmsOfMagic().isEmpty());
+        Assert.assertTrue(wizard.getBasicSpellLists().isEmpty());
+    }
+
+    @Test
+    public void otherRealmTrainingSpellsToggleHidesThatClassification() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("wizard");
+        character.applyProfessionMagicRealms(null);
+        final LevelUp firstLevel = new LevelUp();
+        firstLevel.addTraining("wizardOfTheAir");
+        character.getLevels().add(firstLevel);
+
+        // Off by default (matching the legacy Config's own hardcoded default): other-realm lists
+        // owned by a selected training never classify, or show up in getOtherRealmTrainingSpellLists.
+        Assert.assertFalse(character.isOtherRealmTrainingSpellsAllowed());
+        Assert.assertTrue(character.getOtherRealmTrainingSpellLists().isEmpty());
+    }
 }
