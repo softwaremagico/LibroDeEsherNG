@@ -34,7 +34,7 @@ public class Race extends Element {
     private Integer raceType;
 
     @JsonProperty("size")
-    private String size;
+    private RaceSize size;
 
     @JsonProperty("restorationTime")
     private Double restorationTime;
@@ -161,8 +161,8 @@ public class Race extends Element {
     public void setSoulDepartTime(Integer soulDepartTime) { this.soulDepartTime = soulDepartTime; }
     public Integer getRaceType() { return raceType; }
     public void setRaceType(Integer raceType) { this.raceType = raceType; }
-    public String getSize() { return size; }
-    public void setSize(String size) { this.size = size; }
+    public RaceSize getSize() { return size; }
+    public void setSize(RaceSize size) { this.size = size; }
     public Double getRestorationTime() { return restorationTime; }
     public void setRestorationTime(Double restorationTime) { this.restorationTime = restorationTime; }
     public Integer getLanguagePoints() { return languagePoints; }

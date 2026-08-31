@@ -7,6 +7,7 @@ import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.race.RaceLanguage;
+import com.softwaremagico.librodeesher.race.RaceSize;
 import com.softwaremagico.librodeesher.race.RaceSpecial;
 import com.softwaremagico.librodeesher.resistance.ResistanceType;
 
@@ -229,7 +230,7 @@ public final class RaceMigrationTool {
     private static void parseOtherRaceInformation(SectionCursor cursor, Race race) {
         race.setSoulDepartTime(parseOptionalInteger(cursor.nextSection()));
         race.setRaceType(parseOptionalInteger(cursor.nextSection()));
-        race.setSize(cursor.nextSection().stream().findFirst().map(Translations::toEnglish).orElse(null));
+        race.setSize(RaceSize.fromTag(cursor.nextSection().stream().findFirst().orElse(null)));
         race.setRestorationTime(parseOptionalDouble(cursor.nextSection()));
         race.setLanguagePoints(parseOptionalInteger(cursor.nextSection()));
         race.setBackgroundPoints(parseOptionalInteger(cursor.nextSection()));

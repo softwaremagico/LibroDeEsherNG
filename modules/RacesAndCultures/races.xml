@@ -165,7 +165,7 @@
       <restrictedSkillId>montarCaballos</restrictedSkillId>
       <restrictedSkillId>montarOsos</restrictedSkillId>
     </restrictedSkills>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>10</soulDepartTime>
   </race>
   <race>
@@ -336,7 +336,7 @@
       <restrictedSkillId>montarCaballos</restrictedSkillId>
       <restrictedSkillId>montarOsos</restrictedSkillId>
     </restrictedSkills>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>10</soulDepartTime>
   </race>
   <race>
@@ -559,7 +559,7 @@
       <restrictedSkillId>montarCaballos</restrictedSkillId>
       <restrictedSkillId>montarOsos</restrictedSkillId>
     </restrictedSkills>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>10</soulDepartTime>
   </race>
   <race>
@@ -682,7 +682,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.5</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>10</soulDepartTime>
     <specials>
       <special>
@@ -901,7 +901,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>1</soulDepartTime>
     <specials>
       <special>
@@ -1055,7 +1055,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>1</soulDepartTime>
     <specials>
       <special>
@@ -1333,7 +1333,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>2</soulDepartTime>
     <specials>
       <special>
@@ -1533,7 +1533,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>3</soulDepartTime>
     <specials>
       <special>
@@ -2172,7 +2172,7 @@
     <restrictedSkills>
       <restrictedSkillId>swimming</restrictedSkillId>
     </restrictedSkills>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>18</soulDepartTime>
     <specials>
       <special>
@@ -2314,7 +2314,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>3</soulDepartTime>
   </race>
   <race>
@@ -2497,7 +2497,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>6</soulDepartTime>
     <specials>
       <special>
@@ -2903,7 +2903,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.5</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>3</soulDepartTime>
     <specials>
       <special>
@@ -3155,7 +3155,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.6</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>18</soulDepartTime>
   </race>
   <race>
@@ -3413,7 +3413,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>16</soulDepartTime>
     <specials>
       <special>
@@ -3621,7 +3621,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>8</soulDepartTime>
     <specials>
       <special>
@@ -3762,7 +3762,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>5</soulDepartTime>
     <specials>
       <special>
@@ -3890,7 +3890,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>9</soulDepartTime>
     <specials>
       <special>
@@ -4027,7 +4027,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>9</soulDepartTime>
     <specials>
       <special>
@@ -4182,7 +4182,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.5</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>3</soulDepartTime>
     <specials>
       <special>
@@ -4382,7 +4382,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>10</soulDepartTime>
   </race>
   <race>
@@ -4557,7 +4557,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.2</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>12</soulDepartTime>
   </race>
   <race>
@@ -5253,7 +5253,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.7</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>10</soulDepartTime>
   </race>
   <race>
@@ -5423,7 +5423,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>12</soulDepartTime>
   </race>
   <race>
@@ -5659,7 +5659,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.8</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>10</soulDepartTime>
   </race>
   <race>
@@ -6007,7 +6007,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>12</soulDepartTime>
     <specials>
       <special>
@@ -6237,7 +6237,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.5</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>4</soulDepartTime>
     <specials>
       <special>
@@ -6467,7 +6467,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>6</soulDepartTime>
     <specials>
       <special>
@@ -7165,7 +7165,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.5</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>8</soulDepartTime>
   </race>
   <race>
@@ -7403,7 +7403,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>10</soulDepartTime>
     <specials>
       <special>
@@ -7704,7 +7704,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>3.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>1</soulDepartTime>
     <specials>
       <special>
@@ -8024,7 +8024,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>2</soulDepartTime>
     <specials>
       <special>
@@ -8248,7 +8248,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>1</soulDepartTime>
     <specials>
       <special>
@@ -8465,7 +8465,7 @@
       <restrictedSkillId>seduction</restrictedSkillId>
       <restrictedSkillId>comerciar</restrictedSkillId>
     </restrictedSkills>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>1</soulDepartTime>
     <specials>
       <special>
@@ -8661,7 +8661,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.8</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>18</soulDepartTime>
     <specials>
       <special>
@@ -8863,7 +8863,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>6</soulDepartTime>
     <specials>
       <special>
@@ -9041,7 +9041,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>1</soulDepartTime>
     <specials>
       <special>
@@ -9297,7 +9297,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>6</soulDepartTime>
     <specials>
       <special>
@@ -9535,7 +9535,7 @@
       <restrictedSkillId>seduction</restrictedSkillId>
       <restrictedSkillId>comerciar</restrictedSkillId>
     </restrictedSkills>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>1</soulDepartTime>
     <specials>
       <special>
@@ -9786,7 +9786,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>1</soulDepartTime>
     <specials>
       <special>
@@ -10027,7 +10027,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>3.0</restorationTime>
-    <size>small</size>
+    <size>XS</size>
     <soulDepartTime>1</soulDepartTime>
     <specials>
       <special>
@@ -10421,7 +10421,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>6</soulDepartTime>
     <specials>
       <special>
@@ -10595,7 +10595,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>2</soulDepartTime>
     <specials>
       <special>
@@ -10843,7 +10843,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>9</soulDepartTime>
     <specials>
       <special>
@@ -11019,7 +11019,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>12</soulDepartTime>
     <specials>
       <special>
@@ -11186,7 +11186,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>3</soulDepartTime>
     <specials>
       <special>
@@ -11418,7 +11418,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>11</soulDepartTime>
     <specials>
       <special>
@@ -11650,7 +11650,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>9</soulDepartTime>
     <specials>
       <special>
@@ -12044,7 +12044,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>8</soulDepartTime>
     <specials>
       <special>
@@ -12191,7 +12191,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>3.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>1</soulDepartTime>
   </race>
   <race>
@@ -12413,7 +12413,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>6</soulDepartTime>
     <specials>
       <special>
@@ -12637,7 +12637,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>12</soulDepartTime>
     <specials>
       <special>
@@ -12895,7 +12895,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>12</soulDepartTime>
     <specials>
       <special>
@@ -13167,7 +13167,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.5</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>12</soulDepartTime>
     <specials>
       <special>
@@ -13413,7 +13413,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>6</soulDepartTime>
   </race>
   <race>
@@ -13607,7 +13607,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>6</soulDepartTime>
     <specials>
       <special>
@@ -13797,7 +13797,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Normal</size>
+    <size>M</size>
     <soulDepartTime>9</soulDepartTime>
     <specials>
       <special>

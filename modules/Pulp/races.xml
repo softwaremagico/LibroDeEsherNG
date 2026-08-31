@@ -354,7 +354,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>12</soulDepartTime>
   </race>
 </races>

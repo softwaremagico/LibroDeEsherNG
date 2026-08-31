@@ -37,7 +37,7 @@ public class RaceMigrationToolTest {
             Assert.assertEquals(elf.getProgressionRankValues().get("physicalDevelopment"), "0/6/4/2/1");
             Assert.assertEquals(elf.getSoulDepartTime(), Integer.valueOf(12));
             Assert.assertEquals(elf.getRaceType(), Integer.valueOf(3));
-            Assert.assertEquals(elf.getSize(), "Medium");
+            Assert.assertEquals(elf.getSize(), com.softwaremagico.librodeesher.race.RaceSize.M);
             Assert.assertEquals(elf.getLanguagePoints(), Integer.valueOf(3));
             Assert.assertEquals(elf.getBackgroundPoints(), Integer.valueOf(5));
             Assert.assertEquals(elf.getRaceLanguages().size(), 2);

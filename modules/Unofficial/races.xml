@@ -166,7 +166,7 @@
       <restrictedSkillId>strikesOfArtesMarciales</restrictedSkillId>
       <restrictedSkillId>sweepsOfArtesMarciales</restrictedSkillId>
     </restrictedSkills>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>10</soulDepartTime>
     <specials>
       <special>
@@ -308,7 +308,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>12</soulDepartTime>
   </race>
   <race>
@@ -474,7 +474,7 @@
       <restrictedCategoryId>weaponsMissile</restrictedCategoryId>
       <restrictedCategoryId>martialArtsSweeps</restrictedCategoryId>
     </restrictedCategories>
-    <size>small</size>
+    <size>XS</size>
     <soulDepartTime>1</soulDepartTime>
     <specials>
       <special>
@@ -742,7 +742,7 @@
     <restrictedSkills>
       <restrictedSkillId>frenzy</restrictedSkillId>
     </restrictedSkills>
-    <size>Medium</size>
+    <size>M</size>
     <soulDepartTime>1</soulDepartTime>
     <specials>
       <special>
@@ -949,7 +949,7 @@
       <FEAR>0</FEAR>
     </resistanceBonuses>
     <restorationTime>1.5</restorationTime>
-    <size>Muy Small</size>
+    <size>XXS</size>
     <soulDepartTime>1</soulDepartTime>
   </race>
 </races>
