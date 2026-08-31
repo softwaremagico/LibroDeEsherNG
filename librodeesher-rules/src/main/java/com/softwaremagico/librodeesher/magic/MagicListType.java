@@ -12,26 +12,39 @@ package com.softwaremagico.librodeesher.magic;
  *
  * <p><strong>Classified by {@code CharacterPlayer#classifySpellList}:</strong> every type, including
  * {@link #TRIAD}/{@link #COMPLEMENTARY_TRIAD} (see {@link ElementalTriad}).</p>
+ *
+ * <p>The legacy application also modeled each of these 12 types as a synthetic {@code Category} (see
+ * {@link #getCategoryId()}), purely so a {@code Perk}'s bonus could target "every spell list of this
+ * classification" the same way it targets a real category (e.g. the shipped "Capacidad Mágica" perk's
+ * +25 to every {@link #BASIC} list); {@code CharacterPlayer#getPerkCategoryBonus(String)} already
+ * resolves these bonuses when given {@link #getCategoryId()}.</p>
  */
 public enum MagicListType {
 
-    BASIC("Lista Básica"),
-    OPEN("Lista Abierta"),
-    CLOSED("Lista Cerrada"),
-    OTHER_PROFESSION("Listas Básicas de Otras Profesiones"),
-    OTHER_REALM_OPEN("Listas Abiertas de Otros Reinos"),
-    OTHER_REALM_CLOSED("Listas Cerradas de Otros Reinos"),
-    OTHER_REALM_OTHER_PROFESSION("Listas Básicas de Otros Reinos"),
-    ARCHANUM("Listas Abiertas Arcanas"),
-    TRIAD("Listas Básicas de la Tríada"),
-    COMPLEMENTARY_TRIAD("Listas Básicas Elementales Complementarias"),
-    TRAINING("Listas Hechizos de Adiestramiento"),
-    OTHER_REALM_TRAINING("Listas Hechizos de Adiestramientos de Otros Reinos");
+    BASIC("Lista Básica", "listsBasicOfSpells"),
+    OPEN("Lista Abierta", "listsAbiertasOfSpells"),
+    CLOSED("Lista Cerrada", "listsCerradasOfSpells"),
+    OTHER_PROFESSION("Listas Básicas de Otras Profesiones", "listsBasicOfOtrasProfesiones"),
+    OTHER_REALM_OPEN("Listas Abiertas de Otros Reinos", "listsAbiertasOfOtrosRealms"),
+    OTHER_REALM_CLOSED("Listas Cerradas de Otros Reinos", "listsCerradasOfOtrosRealms"),
+    OTHER_REALM_OTHER_PROFESSION("Listas Básicas de Otros Reinos", "listsBasicOfOtrosRealms"),
+    ARCHANUM("Listas Abiertas Arcanas", "listsAbiertasArcanas"),
+    TRIAD("Listas Básicas de la Tríada", "listsBasicOfTheTriad"),
+    COMPLEMENTARY_TRIAD("Listas Básicas Elementales Complementarias", "listsBasicElementalesComplementarias"),
+    TRAINING("Listas Hechizos de Adiestramiento", "listsSpellsOfTraining"),
+    OTHER_REALM_TRAINING("Listas Hechizos de Adiestramientos de Otros Reinos", "listsSpellsOfTrainingsOfOtrosRealms");
 
     private final String tag;
+    private final String categoryId;
 
-    MagicListType(String tag) {
+    MagicListType(String tag, String categoryId) {
         this.tag = tag;
+        this.categoryId = categoryId;
+    }
+
+    /** The synthetic category id a {@code Perk} bonus can target for this classification (see this enum's own javadoc). */
+    public String getCategoryId() {
+        return categoryId;
     }
 
     public static MagicListType fromTag(String tag) {

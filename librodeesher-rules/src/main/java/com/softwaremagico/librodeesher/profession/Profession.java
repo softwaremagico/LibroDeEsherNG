@@ -14,19 +14,17 @@ import java.util.List;
 /**
  * A character profession (e.g. "Mago", "Guerrero"), as defined in a rulebook's {@code profesiones.xml}.
  *
- * <p>The legacy {@code Profession} constructor parsed 8 sections from its text file. The most
- * regular ones are modeled as plain data here: characteristic preferences, available magic realms,
- * flat category/skill bonuses, and per-training background point costs. HABILIDADES COMUNES/
- * PROFESIONALES/RESTRINGIDAS (skills a profession makes available, either outright or as a "choose N
- * from a category/list" pick, see {@link #getCommonSkillIds()}/{@link #getCommonSkillChoices()} and
- * their PROFESSIONAL/RESTRICTED siblings) are fully modeled too, as is HABILIDADES Y CATEGORÍAS DE
- * HABILIDADES (per-category development costs, see {@link #getCategoryCosts()}/{@link
- * #getWeaponCategoryCostTiers()}) as data, though the player-facing "assign a weapon cost tier to a
- * weapon category" decision it enables is not modeled yet. One section lists spell list development
- * costs by character level range (DESARROLLO DE HECHIZOS); this is significant enough scope on its
- * own (it depends on magic-list cross-references not modeled yet) that it is preserved verbatim for
- * now, the same trade-off {@code Perk}'s unresolved spell-list bonus targets make (see {@code
- * PerkBonus#getUnresolvedTargetId()}).</p>
+ * <p>The legacy {@code Profession} constructor parsed 8 sections from its text file, every one now
+ * modeled as plain data here: characteristic preferences, available magic realms, flat category/skill
+ * bonuses, per-training background point costs, HABILIDADES COMUNES/PROFESIONALES/RESTRINGIDAS
+ * (skills a profession makes available, either outright or as a "choose N from a category/list" pick,
+ * see {@link #getCommonSkillIds()}/{@link #getCommonSkillChoices()} and their PROFESSIONAL/RESTRICTED
+ * siblings), HABILIDADES Y CATEGORÍAS DE HABILIDADES (per-category development costs, see {@link
+ * #getCategoryCosts()}/{@link #getWeaponCategoryCostTiers()}; see {@code
+ * CharacterPlayer#assignWeaponCategoryCostTier} for the player-facing "assign a weapon cost tier to a
+ * weapon category" decision it enables), and DESARROLLO DE HECHIZOS (spell list development costs by
+ * level range, see {@link #getMagicCost(com.softwaremagico.librodeesher.magic.MagicListType, int)},
+ * consumed through {@code CharacterPlayer#classifySpellList}).</p>
  */
 public class Profession extends Element {
 
@@ -59,11 +57,10 @@ public class Profession extends Element {
      * The "Armas·Categoría1" through "Armas·Categoría7" cost tiers, sorted cheapest-to-priciest
      * exactly like the legacy {@code Profession.CategoryCostComparator} did (more rank slots first,
      * then ascending by each rank's cost). Unlike {@link #categoryCosts}, these do not name a
-     * specific weapon category by themselves: the legacy application let the player freely assign
-     * each tier to one of their available weapon categories at character creation (cheapest tier to
-     * their favourite weapon, and so on), a decision-tracking mechanic ({@code
-     * ProfessionDecisions#setWeaponCost}) that is not modeled yet and is significant scope on its own
-     * (left as future work, the same trade-off as {@link #getMagicCostsRaw()}).
+     * specific weapon category by themselves: the player freely assigns each tier to one of their
+     * available weapon categories at character creation (cheapest tier to their favourite weapon,
+     * and so on), a decision-tracking mechanic matching the legacy {@code
+     * ProfessionDecisions#setWeaponCost} (see {@code CharacterPlayer#assignWeaponCategoryCostTier}).
      */
     @JacksonXmlElementWrapper(localName = "weaponCategoryCostTiers")
     @JacksonXmlProperty(localName = "tier")

@@ -39,10 +39,12 @@ public class PerkBonus {
 
     /**
      * A translated-but-not-cross-referenced id for a bonus target this tool could not resolve
-     * against a real skill/category (e.g. a spell list name like "Listas Básicas de Hechizos", or
-     * the generic "TR Reino" resistance-to-your-own-realm marker): the magic system these depend on
-     * is not modeled yet (see {@code Profession#getMagicCostsRaw()}), so no information is lost, but
-     * nothing resolves this to an actual game rule yet either.
+     * against a real skill/category: in practice, the only shipped value is {@code "realm"} (the
+     * generic "TR Reino" resistance-to-your-own-realm-of-magic marker), fully resolved by {@code
+     * CharacterPlayer#getResistanceTotalBonus(ResistanceType)}. A spell-list-classification target
+     * (e.g. "Listas Básicas de Hechizos") does <strong>not</strong> land here: it resolves as a
+     * regular {@link #getCategoryId()} instead, see {@code
+     * com.softwaremagico.librodeesher.magic.MagicListType}'s javadoc.
      */
     @JsonProperty("unresolvedTargetId")
     private String unresolvedTargetId;

@@ -947,6 +947,32 @@ public class CharacterPlayerTest {
     }
 
     @Test
+    public void magicalAbilityPerkBonusesApplyToOwnRealmResistanceAndSpellListTypes() throws InvalidXmlElementException {
+        // "magicalAbility" ("Capacidad Mágica") grants: +50 to the character's own realm's
+        // resistance (the "TR Reino" marker), and +25 to every spell list of several MagicListType
+        // classifications (through the legacy per-type synthetic Category).
+        final CharacterPlayer nonCaster = new CharacterPlayer();
+        nonCaster.setProfessionId("fighter");
+        nonCaster.addPerk("magicalAbility");
+        // "fighter" is not a real spell caster (see Profession#isSpellCaster), so it has no
+        // "own realm" for the resistance bonus to apply to.
+        Assert.assertEquals(nonCaster.getResistanceTotalBonus(ResistanceType.ESSENCE), Integer.valueOf(0));
+        // The spell list type bonus does not depend on having a realm at all.
+        Assert.assertEquals(nonCaster.getPerkSpellListTypeBonus(MagicListType.BASIC), Integer.valueOf(25));
+        Assert.assertEquals(nonCaster.getPerkSpellListTypeBonus(MagicListType.OPEN), Integer.valueOf(25));
+        Assert.assertEquals(nonCaster.getPerkSpellListTypeBonus(MagicListType.CLOSED), Integer.valueOf(25));
+
+        final CharacterPlayer wizard = new CharacterPlayer();
+        wizard.setProfessionId("wizard");
+        wizard.applyProfessionMagicRealms(null);
+        wizard.addPerk("magicalAbility");
+        Assert.assertEquals(wizard.getResistanceTotalBonus(ResistanceType.ESSENCE), Integer.valueOf(50));
+        // A resistance type that is not the character's own realm at all is unaffected.
+        Assert.assertEquals(wizard.getResistanceTotalBonus(ResistanceType.MENTALISM), Integer.valueOf(0));
+        Assert.assertEquals(wizard.getResistanceTotalBonus(ResistanceType.POISON), Integer.valueOf(0));
+    }
+
+    @Test
     public void raceRestrictedProfessionsAreExcludedFromAvailableProfessions() throws InvalidXmlElementException {
         final CharacterPlayer character = new CharacterPlayer();
         character.setRaceId("lionCentaur");

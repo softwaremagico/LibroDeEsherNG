@@ -1632,6 +1632,16 @@ public class CharacterPlayer {
 		return bracket == null ? null : bracket.getRankCost(ranksBoughtThisLevel);
 	}
 
+	/**
+	 * The flat bonus every selected perk grants to every spell list classified as {@code listType}
+	 * (see {@link #classifySpellList(String)}), through the legacy synthetic per-{@link
+	 * MagicListType} {@code Category} (see {@link MagicListType#getCategoryId()}'s javadoc); matches
+	 * {@link #getPerkCategoryBonus(String)} exactly, just resolved by magic list classification
+	 * instead of a real category id.
+	 */
+	public Integer getPerkSpellListTypeBonus(MagicListType listType) throws InvalidXmlElementException {
+		return this.getPerkCategoryBonus(listType.getCategoryId());
+	}
 
 	/**
 	 * The fixed speaking ranks a race grants at creation for a language (0 if no
@@ -2399,11 +2409,45 @@ public class CharacterPlayer {
 	}
 
 	/**
-	 * {@code resistanceType}'s total resistance bonus: the selected race's fixed bonus plus every
-	 * selected perk's flat bonus to it (see {@link #getPerkResistanceBonus(ResistanceType)}).
+	 * {@code resistanceType}'s total resistance bonus: the selected race's fixed bonus, every
+	 * selected perk's flat bonus to it (see {@link #getPerkResistanceBonus(ResistanceType)}), plus
+	 * every selected perk's flat "TR Reino" ("resistance to your own realm of magic") bonus (see
+	 * {@link PerkBonus#getUnresolvedTargetId()}) if {@code resistanceType} matches one of the
+	 * character's own {@link #getRealmsOfMagic()} ({@link ResistanceType#CHANNELING}/{@link
+	 * ResistanceType#ESSENCE}/{@link ResistanceType#MENTALISM}/{@link ResistanceType#PSIONIC} share
+	 * their name with the matching {@link RealmOfMagic}).
 	 */
 	public Integer getResistanceTotalBonus(ResistanceType resistanceType) throws InvalidXmlElementException {
-		return this.getResistanceRaceBonus(resistanceType) + this.getPerkResistanceBonus(resistanceType);
+		return this.getResistanceRaceBonus(resistanceType) + this.getPerkResistanceBonus(resistanceType)
+				+ this.getPerkOwnRealmResistanceBonus(resistanceType);
+	}
+
+	private static final String OWN_REALM_RESISTANCE_UNRESOLVED_TARGET_ID = "realm";
+
+	/**
+	 * The flat bonus every selected perk grants to {@code resistanceType} through the "TR Reino"
+	 * marker (see {@link #getResistanceTotalBonus}'s javadoc), or 0 if {@code resistanceType} does not
+	 * match the name of any of the character's own {@link #getRealmsOfMagic()}.
+	 */
+	private Integer getPerkOwnRealmResistanceBonus(ResistanceType resistanceType) throws InvalidXmlElementException {
+		boolean isOwnRealm = false;
+		for (final RealmOfMagic realm : this.getRealmsOfMagic()) {
+			if (realm.name().equals(resistanceType.name())) {
+				isOwnRealm = true;
+				break;
+			}
+		}
+		if (!isOwnRealm) {
+			return 0;
+		}
+		int total = 0;
+		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
+			if (OWN_REALM_RESISTANCE_UNRESOLVED_TARGET_ID.equals(bonus.getUnresolvedTargetId())
+					&& bonus.getKind() == PerkBonusKind.FLAT) {
+				total += bonus.getValue();
+			}
+		}
+		return total;
 	}
 
 	/**

@@ -20,9 +20,8 @@ import java.util.List;
  * information: fixed bonuses to a category/skill/characteristic/resistance/appearance/armor/movement
  * (see {@link #getBonuses()}, matching the legacy {@code PerkFactory#addDefinedBonus}), and "choose
  * one of these N options" groups (see {@link #getChoiceGrants()}, matching {@code
- * PerkFactory#addListToChooseBonus}). A few bonus targets are spell-list groupings the magic system
- * (not modeled yet) would need to resolve; see {@link PerkBonus#getUnresolvedTargetId()}/{@link
- * PerkChoiceGrant#getUnresolvedScopeId()}.</p>
+ * PerkFactory#addListToChooseBonus}). A handful of fixed bonus targets do not name a real
+ * skill/category at all; see {@link PerkBonus#getUnresolvedTargetId()}.</p>
  */
 public class Perk extends Element {
 
