@@ -1292,6 +1292,23 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * The character's own development point budget per level (the average of the temporal value of
+	 * 5 characteristics: Agility, Constitution, Memory, Reasoning and Self Discipline), matching the
+	 * legacy {@code CharacterPlayer#getTotalDevelopmentPoints()} exactly. Not to be confused with
+	 * {@link #getRemainingBackgroundPoints()}, a completely separate, one-off pool spent on perks/
+	 * extra starting skills instead of skill/category ranks.
+	 */
+	public Integer getTotalDevelopmentPoints() {
+		int total = 0;
+		total += this.getCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY);
+		total += this.getCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION);
+		total += this.getCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY);
+		total += this.getCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING);
+		total += this.getCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE);
+		return total / 5;
+	}
+
+	/**
 	 * Background points left to spend: the race's total
 	 * ({@link Race#getBackgroundPoints()}, 0 without a race selected) minus what
 	 * {@link Background} and the selected perks have spent so far.

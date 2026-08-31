@@ -1552,4 +1552,18 @@ public class CharacterPlayerTest {
         wizard.setCharacteristicInitialTemporalValue(nonPreferred, 45);
         Assert.assertEquals(wizard.getCharacteristicTemporalValue(nonPreferred), Integer.valueOf(45));
     }
+
+    @Test
+    public void totalDevelopmentPointsAveragesTheFiveGoverningCharacteristics() {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 100);
+        character.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 90);
+        character.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 80);
+        character.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 70);
+        character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 60);
+        // Other characteristics do not count towards this total.
+        character.setCharacteristicTemporalValue(CharacteristicAbbreviation.STRENGTH, 999);
+
+        Assert.assertEquals(character.getTotalDevelopmentPoints(), Integer.valueOf((100 + 90 + 80 + 70 + 60) / 5));
+    }
 }
