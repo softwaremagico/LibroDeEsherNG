@@ -16,9 +16,6 @@
       <en>Eres a Vampire. Consulta the reglas especiales to the respecto.</en>
       <es>Eres un vampiro. Consulta las reglas especiales al respecto.</es>
     </description>
-    <availableTo>
-      <entry>Everyone</entry>
-    </availableTo>
     <grade>MAXIMUM</grade>
     <id>vampire</id>
     <name>

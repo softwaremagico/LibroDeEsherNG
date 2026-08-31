@@ -7,15 +7,15 @@
       <en>Necesitas a turno menos for lanzar a Spell. Si the spell es instantaneous, tienes a +5 to the Throw of Spells. Consulta the Page 99 of razas underground par More Information.</en>
       <es>Necesitas un turno menos para lanzar un hechizo. Si el hechizo es instantáneo, tienes un +5 al lanzamiento de hechizos. Consulta la página 99 de razas subterráneas par más información.</es>
     </description>
-    <availableTo>
-      <entry>Gray Orc</entry>
-    </availableTo>
     <grade>MAJOR</grade>
     <id>anxious</id>
     <name>
       <en>Anxious</en>
       <es>Ansioso</es>
     </name>
+    <availableToRaces>
+      <raceId>grayOrc</raceId>
+    </availableToRaces>
     <type>OTHER</type>
     <weakness>false</weakness>
   </perk>
@@ -36,15 +36,15 @@
       <en>Also your Undead son considerados of a nivel superior to efectos of turning. Consulta the Page 99 of razas underground par More Information.</en>
       <es>Además tus no-muertos son considerados de un nivel superior a efectos de dispersión. Consulta la página 99 de razas subterráneas par más información.</es>
     </description>
-    <availableTo>
-      <entry>Gray Orc</entry>
-    </availableTo>
     <grade>MAJOR</grade>
     <id>deadlyGift</id>
     <name>
       <en>Deadly Gift</en>
       <es>Regalo Mortal</es>
     </name>
+    <availableToRaces>
+      <raceId>grayOrc</raceId>
+    </availableToRaces>
     <type>OTHER</type>
     <weakness>false</weakness>
   </perk>

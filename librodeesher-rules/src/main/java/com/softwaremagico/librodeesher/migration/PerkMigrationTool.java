@@ -56,6 +56,8 @@ public final class PerkMigrationTool {
         final IdAllocator idAllocator = new IdAllocator();
         final Map<String, String> categoryIndex = CategoryMigrationTool.buildCategoryIndex(sourceRoot);
         final Map<String, String> skillIndex = SkillMigrationTool.buildSkillIndex(sourceRoot);
+        final Map<String, String> raceIndex = RaceMigrationTool.buildRaceIndex(sourceRoot);
+        final Map<String, String> professionIndex = ProfessionMigrationTool.buildProfessionIndex(sourceRoot);
 
         int written = 0;
         for (final String module : ModuleManager.getAllModules()) {
@@ -63,7 +65,7 @@ public final class PerkMigrationTool {
             if (!Files.isRegularFile(file)) {
                 continue;
             }
-            final List<Perk> perks = readPerksFile(file, idAllocator, categoryIndex, skillIndex);
+            final List<Perk> perks = readPerksFile(file, idAllocator, categoryIndex, skillIndex, raceIndex, professionIndex);
             XmlMigrationWriter.write(modulesTarget.resolve(module).resolve(OUTPUT_FILE), "perks", "perk", perks);
             written++;
         }
@@ -71,7 +73,8 @@ public final class PerkMigrationTool {
     }
 
     private static List<Perk> readPerksFile(Path file, IdAllocator idAllocator, Map<String, String> categoryIndex,
-                                             Map<String, String> skillIndex) throws IOException {
+                                             Map<String, String> skillIndex, Map<String, String> raceIndex,
+                                             Map<String, String> professionIndex) throws IOException {
         final List<Perk> perks = new ArrayList<>();
         for (final String line : Files.readAllLines(file, StandardCharsets.UTF_8)) {
             if (line.isBlank() || line.startsWith("#")) {
@@ -89,7 +92,9 @@ public final class PerkMigrationTool {
             final Perk perk = new Perk(idAllocator.idFor(spanishName));
             perk.setName(spanishName, Translations.toEnglish(spanishName));
             perk.setCost(Integer.valueOf(columns[1].trim()));
-            perk.setAvailableTo(parseAvailableTo(columns[2]));
+            final ParsedAvailableTo availableTo = parseAvailableTo(columns[2], raceIndex, professionIndex);
+            perk.setAvailableToRaceIds(availableTo.raceIds());
+            perk.setAvailableToProfessionIds(availableTo.professionIds());
             perk.setGrade(PerkGrade.fromTag(columns[3].trim()));
             perk.setType(PerkType.fromTag(columns[4].trim()));
             final ParsedBonuses bonuses = parseBonuses(columns[5].trim(), categoryIndex, skillIndex);
@@ -104,16 +109,38 @@ public final class PerkMigrationTool {
         return perks;
     }
 
-    private static List<String> parseAvailableTo(String rawColumn) {
-        final String[] tokens = rawColumn.replace(";", ",").split(",");
-        final List<String> names = new ArrayList<>();
-        for (final String token : tokens) {
+    /**
+     * Parses the "Permitido" column, matching the legacy {@code PerkFactory#getPerkAvailableToRaces}/
+     * {@code #getPerkAvailableToProfessions} exactly: each token is checked against both the race and
+     * profession name indexes, and kept only if it actually matches one (or both); the {@code
+     * "Todos"} marker and every other non-matching token (e.g. the handful of real rows where a
+     * column-shift data error leaves a grade name here instead, see {@code PerkMigrationToolTest})
+     * are silently dropped, which is exactly how the legacy factories treated them too - neither list
+     * ever contained anything but a real race/profession name.
+     */
+    private static ParsedAvailableTo parseAvailableTo(String rawColumn, Map<String, String> raceIndex,
+                                                       Map<String, String> professionIndex) {
+        final List<String> raceIds = new ArrayList<>();
+        final List<String> professionIds = new ArrayList<>();
+        for (final String token : rawColumn.replace(";", ",").split(",")) {
             final String trimmed = token.trim();
-            if (!trimmed.isEmpty()) {
-                names.add(Translations.toEnglish(trimmed));
+            if (trimmed.isEmpty()) {
+                continue;
+            }
+            final String raceId = raceIndex.get(trimmed);
+            if (raceId != null) {
+                raceIds.add(raceId);
+            }
+            final String professionId = professionIndex.get(trimmed);
+            if (professionId != null) {
+                professionIds.add(professionId);
             }
         }
-        return Arrays.asList(names.toArray(new String[0]));
+        return new ParsedAvailableTo(raceIds, professionIds);
+    }
+
+    /** The result of {@link #parseAvailableTo(String, Map, Map)}. */
+    private record ParsedAvailableTo(List<String> raceIds, List<String> professionIds) {
     }
 
     /** The result of {@link #parseBonuses(String, Map, Map)}. */

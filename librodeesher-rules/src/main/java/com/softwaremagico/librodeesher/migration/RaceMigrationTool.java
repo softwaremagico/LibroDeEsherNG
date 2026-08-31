@@ -76,6 +76,33 @@ public final class RaceMigrationTool {
         return written;
     }
 
+    /**
+     * Builds a Spanish race name -&gt; id index the same way {@link #migrate(Path, Path)} builds the
+     * race catalog itself (one entry per {@code razas/*.txt} file, in the same module/file order, so
+     * the id matches exactly), so other migration tools (e.g. {@code PerkMigrationTool}) can resolve
+     * a race name referenced by another rulebook file to the real race id.
+     */
+    public static Map<String, String> buildRaceIndex(Path sourceRoot) throws IOException {
+        final Path modulosDir = sourceRoot.resolve("rolemaster").resolve("modulos");
+        final IdAllocator idAllocator = new IdAllocator();
+        final Map<String, String> index = new LinkedHashMap<>();
+        for (final String module : ModuleManager.getAllModules()) {
+            final Path racesDir = modulosDir.resolve(LegacyModules.sourceFolderFor(module)).resolve(RACES_FOLDER);
+            if (!Files.isDirectory(racesDir)) {
+                continue;
+            }
+            try (Stream<Path> files = Files.list(racesDir)) {
+                for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
+                        .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
+                    final String fileName = file.getFileName().toString();
+                    final String raceName = fileName.substring(0, fileName.length() - ".txt".length());
+                    index.put(raceName, idAllocator.idFor(raceName));
+                }
+            }
+        }
+        return index;
+    }
+
     private static Set<String> loadCategoryNames(Path rolemasterDir, Path modulosDir) throws IOException {
         final Set<String> names = new LinkedHashSet<>();
         for (final String module : ModuleManager.getAllModules()) {

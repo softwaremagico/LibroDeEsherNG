@@ -43,7 +43,8 @@ public class PerkFactoryTest {
         final Perk ansioso = PerkFactory.getInstance().getElement("anxious");
 
         Assert.assertFalse(ansioso.isAvailableToEveryone());
-        Assert.assertEquals(ansioso.getAvailableTo(), java.util.List.of("Gray Orc"));
+        Assert.assertEquals(ansioso.getAvailableToRaceIds(), java.util.List.of("grayOrc"));
+        Assert.assertTrue(ansioso.getAvailableToProfessionIds().isEmpty());
     }
 
     @Test(expectedExceptions = InvalidXmlElementException.class)

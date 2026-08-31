@@ -30,14 +30,18 @@ public class Perk extends Element {
     private Integer cost;
 
     /**
-     * "Permitido" column, translated: either the literal {@code "Everyone"} (the legacy "Todos"
-     * marker, available to every race/profession) or a list of race and/or profession names,
-     * translated to English but not resolved to a {@code Race}/{@code Profession} id at migration
-     * time, since races/professions/perks are migrated independently of each other.
+     * Race ids this perk is restricted to (the "Permitido" column); empty (alongside {@link
+     * #getAvailableToProfessionIds()}) means every race/profession can take it (the legacy "Todos"
+     * marker), matching the legacy {@code Perk#isPerkAllowed(String, String)}.
      */
-    @JacksonXmlElementWrapper(localName = "availableTo")
-    @JacksonXmlProperty(localName = "entry")
-    private List<String> availableTo;
+    @JacksonXmlElementWrapper(localName = "availableToRaces")
+    @JacksonXmlProperty(localName = "raceId")
+    private List<String> availableToRaceIds;
+
+    /** Same as {@link #availableToRaceIds}, for professions. */
+    @JacksonXmlElementWrapper(localName = "availableToProfessions")
+    @JacksonXmlProperty(localName = "professionId")
+    private List<String> availableToProfessionIds;
 
     @JsonProperty("grade")
     private PerkGrade grade;
@@ -79,17 +83,25 @@ public class Perk extends Element {
         return cost != null && cost < 0;
     }
 
-    public List<String> getAvailableTo() {
-        return availableTo == null ? Collections.emptyList() : availableTo;
+    public List<String> getAvailableToRaceIds() {
+        return availableToRaceIds == null ? Collections.emptyList() : availableToRaceIds;
     }
 
-    public void setAvailableTo(List<String> availableTo) {
-        this.availableTo = availableTo;
+    public void setAvailableToRaceIds(List<String> availableToRaceIds) {
+        this.availableToRaceIds = availableToRaceIds;
     }
 
-    /** Whether every race and profession can take this perk (the legacy "Todos" marker, translated to "Everyone"). */
+    public List<String> getAvailableToProfessionIds() {
+        return availableToProfessionIds == null ? Collections.emptyList() : availableToProfessionIds;
+    }
+
+    public void setAvailableToProfessionIds(List<String> availableToProfessionIds) {
+        this.availableToProfessionIds = availableToProfessionIds;
+    }
+
+    /** Whether every race and profession can take this perk (both restriction lists are empty), matching the legacy "Todos" marker. */
     public boolean isAvailableToEveryone() {
-        return getAvailableTo().size() == 1 && "Everyone".equalsIgnoreCase(getAvailableTo().get(0));
+        return getAvailableToRaceIds().isEmpty() && getAvailableToProfessionIds().isEmpty();
     }
 
     public PerkGrade getGrade() {

@@ -158,6 +158,51 @@ public class PerkMigrationToolTest {
         }
     }
 
+    @Test
+    public void migratesAvailableToRacesAndProfessions() throws IOException {
+        final Path sourceRoot = Files.createTempDirectory("librodeesher-perk-available-source");
+        final Path targetRoot = Files.createTempDirectory("librodeesher-perk-available-target");
+        try {
+            final Path racesDir = sourceRoot.resolve("rolemaster/modulos/RazasYCulturas/razas");
+            Files.createDirectories(racesDir);
+            Files.writeString(racesDir.resolve("Orco Gris.txt"), "", StandardCharsets.UTF_8);
+
+            final Path professionsDir = sourceRoot.resolve("rolemaster/modulos/ManualPersonajes/profesiones");
+            Files.createDirectories(professionsDir);
+            Files.writeString(professionsDir.resolve("Paladín.txt"), "", StandardCharsets.UTF_8);
+
+            final Path perksDir = sourceRoot.resolve("rolemaster/modulos/ManualPersonajes/talentos");
+            Files.createDirectories(perksDir);
+            Files.writeString(perksDir.resolve("talentos.txt"), String.join("\n",
+                    "# Nombre\tCoste\tPermitido\tGrado\tTipo\tBonus\tDescripcion",
+                    "#########\t#########\t#########\t#######\t#########\t#########\t#########",
+                    "Vista en la Oscuridad\t10\tOrco Gris, Paladín\tMenor\tFísico\tNinguno\tDescripcion.",
+                    // A real data quirk: a column-shift error leaves a grade name here instead of a
+                    // real race/profession name; it must resolve to 'available to everyone' exactly
+                    // like the legacy PerkFactory#getPerkAvailableToRaces/Professions did (neither
+                    // list ever contained anything that wasn't a real, known name).
+                    "Envejecimiento Anormal\t5\tMínimo\tTodos\tCapacidad Mágica\tNinguna\tDescripcion.",
+                    ""), StandardCharsets.UTF_8);
+
+            final int written = PerkMigrationTool.migrate(sourceRoot, targetRoot);
+            Assert.assertEquals(written, 1);
+            final List<Perk> perks = readGeneratedFile(targetRoot.resolve("CharacterLaw/perks.xml"));
+
+            final Perk darkvision = findById(perks, "vistaInTheOscuridad");
+            Assert.assertFalse(darkvision.isAvailableToEveryone());
+            Assert.assertEquals(darkvision.getAvailableToRaceIds(), List.of("grayOrc"));
+            Assert.assertEquals(darkvision.getAvailableToProfessionIds(), List.of("paladin"));
+
+            final Perk corruptedRow = findById(perks, "envejecimientoAnormal");
+            Assert.assertTrue(corruptedRow.isAvailableToEveryone());
+            Assert.assertTrue(corruptedRow.getAvailableToRaceIds().isEmpty());
+            Assert.assertTrue(corruptedRow.getAvailableToProfessionIds().isEmpty());
+        } finally {
+            deleteRecursively(sourceRoot);
+            deleteRecursively(targetRoot);
+        }
+    }
+
     private static List<Perk> readGeneratedFile(Path file) throws IOException {
         Assert.assertTrue(Files.isRegularFile(file), "expected generated file at " + file);
         try (var inputStream = Files.newInputStream(file)) {

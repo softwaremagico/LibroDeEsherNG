@@ -907,6 +907,36 @@ public class CharacterPlayer {
 		return this.findSelectedPerk(perkId) != null;
 	}
 
+	/**
+	 * Whether {@code perkId} is available to the selected race/profession (its "Permitido" column),
+	 * matching the legacy {@code Perk#isPerkAllowed(String, String)} exactly: available to everyone
+	 * if it names no race/profession at all, otherwise available if either the selected race or the
+	 * selected profession is one of the ones it names (not enforced by {@link #addPerk(String)},
+	 * same as every other "is this selection allowed" query in this class - consuming code decides
+	 * whether to act on it).
+	 */
+	public boolean isPerkAllowedForCharacter(String perkId) throws InvalidXmlElementException {
+		final Perk perk = RulesCatalog.getInstance().getPerk(perkId);
+		if (perk.isAvailableToEveryone()) {
+			return true;
+		}
+		final Race race = this.tryGetSelectedRace();
+		if (race != null && perk.getAvailableToRaceIds().contains(race.getId())) {
+			return true;
+		}
+		final Profession profession = this.tryGetSelectedProfession();
+		return profession != null && perk.getAvailableToProfessionIds().contains(profession.getId());
+	}
+
+	/** {@link #getRace()} without the checked exception, {@code null} on failure; see {@link #tryGetSelectedProfession()}. */
+	private Race tryGetSelectedRace() {
+		try {
+			return this.getRace();
+		} catch (final InvalidXmlElementException e) {
+			return null;
+		}
+	}
+
 	/** Selects {@code perkId}, if it was not already selected. */
 	public void addPerk(String perkId) {
 		if (!this.isPerkSelected(perkId)) {

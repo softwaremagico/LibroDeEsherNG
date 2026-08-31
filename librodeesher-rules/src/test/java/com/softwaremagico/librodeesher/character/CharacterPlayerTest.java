@@ -1145,4 +1145,21 @@ public class CharacterPlayerTest {
         character.applyProfessionSkillGrant("alchemistOfMentalism", CharacterPlayer.PROFESSION_PROFESSIONAL_SKILLS_SECTION, 0,
                 grant, List.of("cocinar"));
     }
+
+    @Test
+    public void perkAvailabilityIsRestrictedToItsRaceOrProfession() throws InvalidXmlElementException {
+        final CharacterPlayer withoutRace = new CharacterPlayer();
+        Assert.assertFalse(withoutRace.isPerkAllowedForCharacter("anxious"));
+
+        final CharacterPlayer wrongRace = new CharacterPlayer();
+        wrongRace.setRaceId("lionCentaur");
+        Assert.assertFalse(wrongRace.isPerkAllowedForCharacter("anxious"));
+
+        final CharacterPlayer rightRace = new CharacterPlayer();
+        rightRace.setRaceId("grayOrc");
+        Assert.assertTrue(rightRace.isPerkAllowedForCharacter("anxious"));
+
+        // Unrestricted perks are always allowed.
+        Assert.assertTrue(withoutRace.isPerkAllowedForCharacter("acrobat"));
+    }
 }

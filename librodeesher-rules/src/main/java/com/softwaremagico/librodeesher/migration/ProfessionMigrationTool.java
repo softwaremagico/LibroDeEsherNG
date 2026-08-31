@@ -19,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -88,6 +89,34 @@ public final class ProfessionMigrationTool {
             written++;
         }
         return written;
+    }
+
+    /**
+     * Builds a Spanish profession name -&gt; id index the same way {@link #migrate(Path, Path)}
+     * builds the profession catalog itself (one entry per {@code profesiones/*.txt} file, in the
+     * same module/file order, so the id matches exactly), so other migration tools (e.g. {@code
+     * PerkMigrationTool}) can resolve a profession name referenced by another rulebook file to the
+     * real profession id.
+     */
+    public static Map<String, String> buildProfessionIndex(Path sourceRoot) throws IOException {
+        final Path modulosDir = sourceRoot.resolve("rolemaster").resolve("modulos");
+        final IdAllocator idAllocator = new IdAllocator();
+        final Map<String, String> index = new LinkedHashMap<>();
+        for (final String module : ModuleManager.getAllModules()) {
+            final Path professionsDir = modulosDir.resolve(LegacyModules.sourceFolderFor(module)).resolve(PROFESSIONS_FOLDER);
+            if (!Files.isDirectory(professionsDir)) {
+                continue;
+            }
+            try (Stream<Path> files = Files.list(professionsDir)) {
+                for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
+                        .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
+                    final String fileName = file.getFileName().toString();
+                    final String professionName = fileName.substring(0, fileName.length() - ".txt".length());
+                    index.put(professionName, idAllocator.idFor(professionName));
+                }
+            }
+        }
+        return index;
     }
 
     private static Profession readProfessionFile(Path file, IdAllocator idAllocator, Map<String, String> categoryIndex)
