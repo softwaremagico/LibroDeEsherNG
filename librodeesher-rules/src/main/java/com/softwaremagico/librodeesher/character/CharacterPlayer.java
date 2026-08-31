@@ -1941,9 +1941,8 @@ public class CharacterPlayer {
 	/**
 	 * The selected profession's background point cost table for developing {@code categoryId} (see
 	 * {@link Profession#getCategoryCost(String)}), or {@code null} if no profession is selected, or it
-	 * does not mention that category at all (a weapon category - the player-facing "assign a cost
-	 * tier to a weapon category" decision it enables is future work, see {@link
-	 * Profession#getWeaponCategoryCostTiers()} - or simply not developable by this profession).
+	 * does not mention that category at all (a weapon category - see {@link
+	 * #assignWeaponCategoryCostTier} instead - or simply not developable by this profession).
 	 */
 	public ProfessionCategoryCost getProfessionCategoryCost(String categoryId) throws InvalidXmlElementException {
 		final Profession profession = this.getProfession();
