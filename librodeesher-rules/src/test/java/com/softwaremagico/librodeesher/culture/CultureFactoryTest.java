@@ -26,4 +26,11 @@ public class CultureFactoryTest {
     public void unknownCultureIdThrows() throws InvalidXmlElementException {
         CultureFactory.getInstance().getElement("doesNotExist");
     }
+
+    /** Matches the legacy {@code ReadFilesTest#readCulturalOptionalLanguages}. */
+    @Test
+    public void cultureExposesItsOptionalLanguageSlots() throws InvalidXmlElementException {
+        final Culture culture = CultureFactory.getInstance().getElement("undergroundUrbanClassHigh");
+        Assert.assertEquals(culture.getOptionalLanguages().size(), 1);
+    }
 }

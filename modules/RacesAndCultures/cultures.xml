@@ -17446,7 +17446,7 @@
       <hobbyId>vigilancia</hobbyId>
     </hobbies>
     <hobbyRanks>10</hobbyRanks>
-    <id>undergroundUrbanCalseHigh</id>
+    <id>undergroundUrbanClassHigh</id>
     <languageMaxRanks>
       <languageRank>
         <languageId>commonSpeech</languageId>
@@ -17488,7 +17488,7 @@
       </languageSlot>
     </optionalLanguages>
     <name>
-      <en>Underground Urban (Calse High)</en>
+      <en>Underground Urban (Class High)</en>
       <es>Subterránea Urbana (Calse Alta)</es>
     </name>
     <typicalWeapons>
