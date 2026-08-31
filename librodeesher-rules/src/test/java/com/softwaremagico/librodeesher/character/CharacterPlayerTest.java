@@ -10,8 +10,10 @@ import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.decision.InvalidDecisionException;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
+import com.softwaremagico.librodeesher.magic.MagicListType;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.perk.PerkChoiceGrant;
+import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.ProfessionSkillGrant;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.resistance.ResistanceType;
@@ -1240,5 +1242,45 @@ public class CharacterPlayerTest {
         character.addSkillSpecialization("softLeather", "TA6");
         Assert.assertFalse(character.isSkillGeneralized("softLeather"));
         Assert.assertEquals(character.getSkillSpecializations("softLeather"), List.of("TA6"));
+    }
+
+    @Test
+    public void spellCasterProfessionResolvesItsRealmAndSpellLists() throws InvalidXmlElementException {
+        final CharacterPlayer nonCaster = new CharacterPlayer();
+        nonCaster.setProfessionId("fighter");
+        Assert.assertFalse(nonCaster.isSpellCaster());
+        Assert.assertTrue(nonCaster.getRealmsOfMagic().isEmpty());
+        Assert.assertTrue(nonCaster.getBasicSpellLists().isEmpty());
+
+        final CharacterPlayer wizard = new CharacterPlayer();
+        wizard.setProfessionId("wizard");
+        Assert.assertTrue(wizard.isSpellCaster());
+
+        // "wizard" has a single, fixed realm: no choice needed.
+        final Profession profession = RulesCatalog.getInstance().getProfession("wizard");
+        final List<RealmOfMagic> realms = wizard.applyProfessionMagicRealms(null);
+        Assert.assertEquals(realms, List.of(RealmOfMagic.ESSENCE));
+        Assert.assertEquals(wizard.getRealmsOfMagic(), List.of(RealmOfMagic.ESSENCE));
+
+        // "Ley de la Luz" ("Law of Light") is one of wizard's own basic lists.
+        final List<String> basicListIds = wizard.getBasicSpellLists().stream().map(list -> list.getId()).toList();
+        Assert.assertTrue(basicListIds.contains("essenceLawOfLight"));
+        Assert.assertEquals(wizard.classifySpellList("essenceLawOfLight"), MagicListType.BASIC);
+        Assert.assertEquals(wizard.getSpellListDevelopmentCost("essenceLawOfLight", 0, 0),
+                profession.getMagicCost(MagicListType.BASIC, 0).getRankCost(0));
+
+        // "Barrera Contra Hechizos" is an open list of the Essence realm, not one of wizard's own.
+        Assert.assertFalse(basicListIds.contains("essenceBarrierAgainstSpells"));
+        Assert.assertEquals(wizard.classifySpellList("essenceBarrierAgainstSpells"), MagicListType.OPEN);
+        final List<String> openListIds = wizard.getOpenSpellLists().stream().map(list -> list.getId()).toList();
+        Assert.assertTrue(openListIds.contains("essenceBarrierAgainstSpells"));
+
+        // "Bridas de los Hechizos" is a closed list of the Essence realm.
+        Assert.assertEquals(wizard.classifySpellList("essenceReinsOfTheSpells"), MagicListType.CLOSED);
+        final List<String> closedListIds = wizard.getClosedSpellLists().stream().map(list -> list.getId()).toList();
+        Assert.assertTrue(closedListIds.contains("essenceReinsOfTheSpells"));
+
+        // A list of a different realm entirely does not classify for this character.
+        Assert.assertNull(wizard.classifySpellList("mentalismSelfHealing"));
     }
 }

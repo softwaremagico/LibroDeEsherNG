@@ -5,6 +5,8 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.softwaremagico.librodeesher.Element;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
+import com.softwaremagico.librodeesher.magic.MagicLevelRange;
+import com.softwaremagico.librodeesher.magic.MagicListType;
 
 import java.util.Collections;
 import java.util.List;
@@ -101,6 +103,11 @@ public class Profession extends Element {
     @JsonProperty("magicCostsRaw")
     private String magicCostsRaw;
 
+    /** Structured version of {@link #magicCostsRaw}, resolved by {@code ProfessionMigrationTool}. */
+    @JacksonXmlElementWrapper(localName = "magicCosts")
+    @JacksonXmlProperty(localName = "magicCost")
+    private List<ProfessionMagicCost> magicCosts;
+
     @JacksonXmlElementWrapper(localName = "trainingCosts")
     @JacksonXmlProperty(localName = "trainingCost")
     private List<ProfessionTrainingCost> trainingCosts;
@@ -145,9 +152,17 @@ public class Profession extends Element {
         this.magicRealms = magicRealms;
     }
 
-    /** Whether this profession can cast spells at all. */
+    /**
+     * Whether this profession can cast spells at all: matches the legacy {@code Profession#
+     * isSpellCaster()} exactly, which checks for a defined {@link MagicListType#BASIC} development
+     * cost rather than {@link #getMagicRealms()} (non-caster professions, e.g. a pure fighter, are
+     * still given a {@link RealmOfMagicGrant} of every realm plus an {@link MagicListType#OPEN}-only
+     * cost table, so they may occasionally splurge on an open list spell at exorbitant cost - see any
+     * shipped profession's own "DESARROLLO DE HECHIZOS" section - which would make {@code
+     * !getMagicRealms().isEmpty()} wrongly classify them as a real spell caster).
+     */
     public boolean isSpellCaster() {
-        return !getMagicRealms().isEmpty();
+        return getMagicCost(MagicListType.BASIC, 0) != null;
     }
 
     public List<ProfessionBonus> getBonuses() {
@@ -231,6 +246,40 @@ public class Profession extends Element {
 
     public void setMagicCostsRaw(String magicCostsRaw) {
         this.magicCostsRaw = magicCostsRaw;
+    }
+
+    public List<ProfessionMagicCost> getMagicCosts() {
+        return magicCosts == null ? Collections.emptyList() : magicCosts;
+    }
+
+    public void setMagicCosts(List<ProfessionMagicCost> magicCosts) {
+        this.magicCosts = magicCosts;
+    }
+
+    /**
+     * This profession's development cost bracket for a spell list classified as {@code listType},
+     * given it already has {@code currentListRanks} ranks bought (across every level): resolves via
+     * {@link com.softwaremagico.librodeesher.magic.MagicLevelRange#forRanks(int)} applied to {@code
+     * currentListRanks + 1} (the rank about to be bought), matching the legacy {@code
+     * Profession#getMagicCost(MagicListType, Integer)} exactly (including its own off-by-one quirk:
+     * the bracket boundary is one rank earlier than its "(1-5)"-style label suggests, e.g. the 5th
+     * rank of a list already falls under the "(6-10)" bracket's cost, not "(1-5)"'s).
+     *
+     * <p>Returns the bracket itself (as opposed to a single cost), since - like {@link
+     * ProfessionCategoryCost}/{@link ProfessionTrainingCost} - how much of it applies still depends on
+     * how many ranks of {@code listType} were already bought at the <em>current level</em> (see
+     * {@link ProfessionMagicCost#getRankCost(int)}). {@code null} if this profession's magic cost
+     * table has no row for that (type, bracket) pair (e.g. a non-caster profession querying a list
+     * type only casters develop).</p>
+     */
+    public ProfessionMagicCost getMagicCost(MagicListType listType, int currentListRanks) {
+        final MagicLevelRange levelRange = MagicLevelRange.forRanks(currentListRanks + 1);
+        for (final ProfessionMagicCost cost : getMagicCosts()) {
+            if (cost.getListType() == listType && cost.getLevelRange() == levelRange) {
+                return cost;
+            }
+        }
+        return null;
     }
 
     public List<ProfessionTrainingCost> getTrainingCosts() {

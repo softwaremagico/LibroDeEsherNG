@@ -17,6 +17,9 @@ import com.softwaremagico.librodeesher.dice.Roll;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.language.LanguageSlot;
 import com.softwaremagico.librodeesher.level.LevelUp;
+import com.softwaremagico.librodeesher.magic.MagicListType;
+import com.softwaremagico.librodeesher.magic.MagicSpellList;
+import com.softwaremagico.librodeesher.magic.MagicSpellListFactory;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.perk.Perk;
 import com.softwaremagico.librodeesher.perk.PerkBonus;
@@ -26,6 +29,7 @@ import com.softwaremagico.librodeesher.perk.PerkChoiceScope;
 import com.softwaremagico.librodeesher.perk.PerkGrade;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.profession.Profession;
+import com.softwaremagico.librodeesher.profession.ProfessionMagicCost;
 import com.softwaremagico.librodeesher.profession.ProfessionSkillGrant;
 import com.softwaremagico.librodeesher.profession.ProfessionTrainingCost;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
@@ -51,6 +55,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 /**
@@ -1257,6 +1262,148 @@ public class CharacterPlayer {
 		}
 		return realms;
 	}
+
+	/** Whether the selected profession can cast spells at all (see {@link Profession#isSpellCaster()}); {@code false} if none is selected. */
+	public boolean isSpellCaster() throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		return profession != null && profession.isSpellCaster();
+	}
+
+	/**
+	 * Every realm of magic the selected profession grants, already resolved (see {@link
+	 * #applyProfessionMagicRealms}); empty if no profession is selected, it is not a spell caster, or
+	 * a hybrid realm grant has not been resolved yet.
+	 */
+	public List<RealmOfMagic> getRealmsOfMagic() throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		if (profession == null) {
+			return List.of();
+		}
+		final List<RealmOfMagic> realms = new ArrayList<>();
+		for (final String tag : this.getDecidedOptions("profession:" + profession.getId() + ":realm",
+				profession.getMagicRealms().size())) {
+			realms.add(RealmOfMagic.valueOf(tag));
+		}
+		return realms;
+	}
+
+	/**
+	 * Every spell list marked as an "open list" (see {@link MagicSpellList#isOpenList()}) of one of
+	 * the character's {@link #getRealmsOfMagic()}: any spell-casting profession of that realm may
+	 * freely pick ranks in it (matching the legacy {@code MagicFactory#getOpenLists}).
+	 */
+	public List<MagicSpellList> getOpenSpellLists() throws InvalidXmlElementException {
+		return this.getSpellListsMatching(MagicSpellList::isOpenList);
+	}
+
+	/**
+	 * Every spell list marked as a "closed list" (see {@link MagicSpellList#isClosedList()}) of one of
+	 * the character's {@link #getRealmsOfMagic()}: restricted, must be specifically granted (matching
+	 * the legacy {@code MagicFactory#getClosedLists}; that specific grant itself is future work, same
+	 * as the general "spend development points on a spell list" mechanic, see {@link
+	 * LevelUp#getSpellRankMultiplier}).
+	 */
+	public List<MagicSpellList> getClosedSpellLists() throws InvalidXmlElementException {
+		return this.getSpellListsMatching(MagicSpellList::isClosedList);
+	}
+
+	/**
+	 * Every spell list of one of the character's {@link #getRealmsOfMagic()} directly owned by the
+	 * selected profession (its "basic lists"; matching the legacy {@code
+	 * MagicFactory#getListOfProfession}, restricted to the profession's own name - the "hybrid realm
+	 * shares the other realm's lists" and "elementalist training"/"dark spell" special cases are
+	 * future work); empty if no profession is selected.
+	 */
+	public List<MagicSpellList> getBasicSpellLists() throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		if (profession == null) {
+			return List.of();
+		}
+		return this.getSpellListsMatching(list -> list.getOwners().contains(profession.getId()));
+	}
+
+	/**
+	 * Every spell list of {@link RealmOfMagic#RACE} owned by the selected race (matching the legacy
+	 * {@code MagicFactory#getRaceLists}); empty if no race is selected.
+	 */
+	public List<MagicSpellList> getRaceSpellLists() throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		if (race == null) {
+			return List.of();
+		}
+		final List<MagicSpellList> lists = new ArrayList<>();
+		for (final MagicSpellList list : MagicSpellListFactory.getInstance().getSpellLists(RealmOfMagic.RACE)) {
+			if (list.getOwners().contains(race.getId())) {
+				lists.add(list);
+			}
+		}
+		return lists;
+	}
+
+	/** Every spell list of one of the character's {@link #getRealmsOfMagic()} matching {@code filter}. */
+	private List<MagicSpellList> getSpellListsMatching(Predicate<MagicSpellList> filter)
+			throws InvalidXmlElementException {
+		final List<MagicSpellList> lists = new ArrayList<>();
+		for (final RealmOfMagic realm : this.getRealmsOfMagic()) {
+			for (final MagicSpellList list : MagicSpellListFactory.getInstance().getSpellLists(realm)) {
+				if (filter.test(list)) {
+					lists.add(list);
+				}
+			}
+		}
+		return lists;
+	}
+
+	/**
+	 * Classifies {@code spellListId} for this character (see {@link
+	 * com.softwaremagico.librodeesher.magic.MagicListType}'s javadoc for which classifications are
+	 * currently resolved: {@link MagicListType#BASIC}, {@link MagicListType#OPEN}, {@link
+	 * MagicListType#CLOSED}, in that priority order - a list owned by the character's own profession
+	 * is always basic even if also marked open/closed), or {@code null} if it does not belong to any
+	 * of the character's {@link #getRealmsOfMagic()} (including {@link RealmOfMagic#RACE}'s own
+	 * lists, which this does not classify: see {@link #getRaceSpellLists()} instead).
+	 */
+	public MagicListType classifySpellList(String spellListId) throws InvalidXmlElementException {
+		final MagicSpellList spellList = MagicSpellListFactory.getInstance().getElement(spellListId);
+		if (!this.getRealmsOfMagic().contains(spellList.getRealm())) {
+			return null;
+		}
+		final Profession profession = this.getProfession();
+		if (profession != null && spellList.getOwners().contains(profession.getId())) {
+			return MagicListType.BASIC;
+		}
+		if (spellList.isOpenList()) {
+			return MagicListType.OPEN;
+		}
+		if (spellList.isClosedList()) {
+			return MagicListType.CLOSED;
+		}
+		return null;
+	}
+
+	/**
+	 * The background point cost of a rank bought in {@code spellListId} (see {@link
+	 * Profession#getMagicCost(MagicListType, int)}), given it already has {@code currentListRanks}
+	 * ranks bought across every level, and {@code ranksBoughtThisLevel} of them were bought at the
+	 * current level (0-based, so {@code ranksBoughtThisLevel=0} is the first rank bought this level in
+	 * this list); {@code null} if no profession is selected, {@link #classifySpellList(String)} cannot
+	 * classify it for this character yet, or the profession has no cost defined for that bracket/rank
+	 * index.
+	 */
+	public Integer getSpellListDevelopmentCost(String spellListId, int currentListRanks, int ranksBoughtThisLevel)
+			throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		if (profession == null) {
+			return null;
+		}
+		final MagicListType listType = this.classifySpellList(spellListId);
+		if (listType == null) {
+			return null;
+		}
+		final ProfessionMagicCost bracket = profession.getMagicCost(listType, currentListRanks);
+		return bracket == null ? null : bracket.getRankCost(ranksBoughtThisLevel);
+	}
+
 
 	/**
 	 * The fixed speaking ranks a race grants at creation for a language (0 if no

@@ -3,10 +3,13 @@ package com.softwaremagico.librodeesher.migration;
 import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.file.ModuleManager;
+import com.softwaremagico.librodeesher.magic.MagicLevelRange;
+import com.softwaremagico.librodeesher.magic.MagicListType;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.ProfessionBonus;
 import com.softwaremagico.librodeesher.profession.ProfessionCategoryCost;
+import com.softwaremagico.librodeesher.profession.ProfessionMagicCost;
 import com.softwaremagico.librodeesher.profession.ProfessionSkillGrant;
 import com.softwaremagico.librodeesher.profession.ProfessionTrainingCost;
 import com.softwaremagico.librodeesher.profession.ProfessionWeaponCostTier;
@@ -22,6 +25,8 @@ import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 /**
@@ -144,9 +149,35 @@ public final class ProfessionMigrationTool {
         final ParsedSkillSection restricted = parseSkillSection(cursor.nextSection(), categoryIndex);
         profession.setRestrictedSkillIds(restricted.fixedSkillIds());
         profession.setRestrictedSkillChoices(restricted.choices());
-        profession.setMagicCostsRaw(String.join("\n", cursor.nextSectionOrEmpty()));
+        final List<String> magicCostLines = cursor.nextSectionOrEmpty();
+        profession.setMagicCostsRaw(String.join("\n", magicCostLines));
+        profession.setMagicCosts(parseMagicCosts(magicCostLines));
         profession.setTrainingCosts(parseTrainingCosts(cursor.nextSectionOrEmpty(), trainingIndex));
         return profession;
+    }
+
+    /**
+     * Parses the "DESARROLLO DE HECHIZOS" section into a structured, per-(list type, level range)
+     * rank cost table (see {@link ProfessionMagicCost}): each line is {@code "<row label>
+     * (<range>)\t<cost>"}, e.g. {@code "Lista Básica (1-5)\t3/3/3"}.
+     */
+    private static List<ProfessionMagicCost> parseMagicCosts(List<String> sectionLines) {
+        final List<ProfessionMagicCost> costs = new ArrayList<>();
+        final Pattern rowPattern = Pattern.compile("(.+?)\\s*\\(([^)]+)\\)");
+        for (final String line : sectionLines) {
+            if (line.isBlank()) {
+                continue;
+            }
+            final String[] columns = line.split("\t");
+            final Matcher matcher = rowPattern.matcher(columns[0].trim());
+            if (!matcher.matches()) {
+                throw new IllegalStateException("Malformed magic cost row label: '" + columns[0] + "'.");
+            }
+            final MagicListType listType = MagicListType.fromTag(matcher.group(1));
+            final MagicLevelRange levelRange = MagicLevelRange.fromTag(matcher.group(2));
+            costs.add(new ProfessionMagicCost(listType, levelRange, parseRankCosts(columns[1].trim())));
+        }
+        return costs;
     }
 
     /**
