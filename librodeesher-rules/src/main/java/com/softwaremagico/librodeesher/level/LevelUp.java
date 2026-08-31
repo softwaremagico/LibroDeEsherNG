@@ -165,6 +165,14 @@ public class LevelUp {
         return generalizedSkills;
     }
 
+    public void addGeneralizedSkill(String skillId) {
+        generalizedSkills.add(skillId);
+    }
+
+    public void removeGeneralizedSkill(String skillId) {
+        generalizedSkills.remove(skillId);
+    }
+
     public void setGeneralizedSkills(Set<String> generalizedSkills) {
         this.generalizedSkills = generalizedSkills;
     }
@@ -186,6 +194,10 @@ public class LevelUp {
 
     public void addSkillSpecialization(String specializationId) {
         skillSpecializations.add(specializationId);
+    }
+
+    public void removeSkillSpecialization(String specializationId) {
+        skillSpecializations.remove(specializationId);
     }
 
     public void setSkillSpecializations(Set<String> skillSpecializations) {

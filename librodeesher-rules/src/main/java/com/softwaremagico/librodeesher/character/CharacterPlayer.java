@@ -401,6 +401,8 @@ public class CharacterPlayer {
 	 * of a soft/hardened leather armor skill's {@code "TA9"}/{@code "TA10"}/{@code "TA11"} armor
 	 * training table numbers, see {@link Skill#getSpecialities()}), recorded on {@link
 	 * #getCurrentLevel()}; matches the legacy {@code addSkillSpecialization(Skill, String)}.
+	 * Mutually exclusive with {@link #generalizeSkill(String)}: also removes {@code skillId}'s
+	 * "generalized" mark, if any.
 	 *
 	 * @throws IllegalArgumentException if {@code specializationId} is not one of {@code skillId}'s
 	 *                                   specialities.
@@ -411,6 +413,7 @@ public class CharacterPlayer {
 			throw new IllegalArgumentException(
 					"'" + specializationId + "' is not one of '" + skillId + "''s specialities " + skill.getSpecialities() + ".");
 		}
+		this.removeSkillGeneralization(skillId);
 		this.getCurrentLevel().addSkillSpecialization(specializationId);
 	}
 
@@ -851,6 +854,36 @@ public class CharacterPlayer {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Marks {@code skillId} as "generalized" on {@link #getCurrentLevel()}: a generalized skill
+	 * counts fully for its rank multiplier only when it is also common or professional (half
+	 * otherwise, see {@link #getSkillRankMultiplier(Skill)}), but no longer distinguishes between its
+	 * specialities. Mutually exclusive with {@link #addSkillSpecialization(String, String)}: matches
+	 * the legacy {@code addGeneralized(Skill)}, which always calls {@code removeSpecialized(skill)}
+	 * first.
+	 */
+	public void generalizeSkill(String skillId) throws InvalidXmlElementException {
+		this.removeSkillSpecializations(skillId);
+		this.getCurrentLevel().addGeneralizedSkill(skillId);
+	}
+
+	/** Removes every selected specialization of {@code skillId}, across every level. */
+	public void removeSkillSpecializations(String skillId) throws InvalidXmlElementException {
+		final List<String> specialityIds = RulesCatalog.getInstance().getSkill(skillId).getSpecialities();
+		for (final LevelUp levelUp : this.levels) {
+			for (final String specialityId : specialityIds) {
+				levelUp.removeSkillSpecialization(specialityId);
+			}
+		}
+	}
+
+	/** Removes {@code skillId}'s "generalized" mark, across every level. */
+	public void removeSkillGeneralization(String skillId) {
+		for (final LevelUp levelUp : this.levels) {
+			levelUp.removeGeneralizedSkill(skillId);
+		}
 	}
 
 	/**

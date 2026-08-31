@@ -1189,4 +1189,25 @@ public class CharacterPlayerTest {
         Assert.assertEquals(character.getSkillTotalRanks("tracking"), Integer.valueOf(3));
         Assert.assertTrue(character.getSkillSpecializations("tracking").isEmpty());
     }
+
+    @Test
+    public void generalizingASkillIsMutuallyExclusiveWithSpecializingIt() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final LevelUp firstLevel = new LevelUp();
+        character.getLevels().add(firstLevel);
+
+        character.addSkillSpecialization("softLeather", "TA5");
+        Assert.assertEquals(character.getSkillSpecializations("softLeather"), List.of("TA5"));
+        Assert.assertFalse(character.isSkillGeneralized("softLeather"));
+
+        // Generalizing the same skill clears its previously selected specializations.
+        character.generalizeSkill("softLeather");
+        Assert.assertTrue(character.isSkillGeneralized("softLeather"));
+        Assert.assertTrue(character.getSkillSpecializations("softLeather").isEmpty());
+
+        // Specializing it again clears the "generalized" mark back.
+        character.addSkillSpecialization("softLeather", "TA6");
+        Assert.assertFalse(character.isSkillGeneralized("softLeather"));
+        Assert.assertEquals(character.getSkillSpecializations("softLeather"), List.of("TA6"));
+    }
 }
