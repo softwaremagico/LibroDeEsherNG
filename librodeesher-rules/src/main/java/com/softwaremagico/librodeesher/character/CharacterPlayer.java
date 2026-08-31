@@ -30,6 +30,7 @@ import com.softwaremagico.librodeesher.perk.PerkChoiceScope;
 import com.softwaremagico.librodeesher.perk.PerkGrade;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.profession.Profession;
+import com.softwaremagico.librodeesher.profession.ProfessionCategoryCost;
 import com.softwaremagico.librodeesher.profession.ProfessionMagicCost;
 import com.softwaremagico.librodeesher.profession.ProfessionSkillGrant;
 import com.softwaremagico.librodeesher.profession.ProfessionTrainingCost;
@@ -1924,6 +1925,32 @@ public class CharacterPlayer {
 	public ProfessionTrainingCost getProfessionTrainingCost(String trainingId) throws InvalidXmlElementException {
 		final Profession profession = this.getProfession();
 		return profession == null ? null : profession.getTrainingCost(trainingId);
+	}
+
+	/**
+	 * The selected profession's background point cost table for developing {@code categoryId} (see
+	 * {@link Profession#getCategoryCost(String)}), or {@code null} if no profession is selected, or it
+	 * does not mention that category at all (a weapon category - the player-facing "assign a cost
+	 * tier to a weapon category" decision it enables is future work, see {@link
+	 * Profession#getWeaponCategoryCostTiers()} - or simply not developable by this profession).
+	 */
+	public ProfessionCategoryCost getProfessionCategoryCost(String categoryId) throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		return profession == null ? null : profession.getCategoryCost(categoryId);
+	}
+
+	/**
+	 * The background point cost of the {@code rankIndexThisLevel}-th rank bought this level in {@code
+	 * categoryId} (0-based, so {@code rankIndexThisLevel=0} is the first rank bought this level in
+	 * this category), matching the legacy {@code CharacterPlayer#getNewRankCost(Category, Integer,
+	 * Integer)} exactly (unlike a spell list's development cost, a plain category's cost table has no
+	 * per-character-level bracket: the same {@link #getProfessionCategoryCost(String)} table applies
+	 * throughout); {@code null} if no profession is selected, {@link #getProfessionCategoryCost(String)}
+	 * is {@code null}, or it has no cost defined for that many ranks in a single level.
+	 */
+	public Integer getCategoryDevelopmentCost(String categoryId, int rankIndexThisLevel) throws InvalidXmlElementException {
+		final ProfessionCategoryCost cost = this.getProfessionCategoryCost(categoryId);
+		return cost == null ? null : cost.getRankCost(rankIndexThisLevel);
 	}
 
 	/**

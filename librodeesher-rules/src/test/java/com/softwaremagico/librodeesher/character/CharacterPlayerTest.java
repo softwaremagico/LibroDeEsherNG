@@ -1067,6 +1067,28 @@ public class CharacterPlayerTest {
     }
 
     @Test
+    public void professionCategoryDevelopmentCostIsQueryable() throws InvalidXmlElementException {
+        final CharacterPlayer withoutProfession = new CharacterPlayer();
+        Assert.assertNull(withoutProfession.getProfessionCategoryCost("armorLight"));
+        Assert.assertNull(withoutProfession.getCategoryDevelopmentCost("armorLight", 0));
+
+        final CharacterPlayer fighter = new CharacterPlayer();
+        fighter.setProfessionId("fighter");
+
+        Assert.assertEquals(fighter.getProfessionCategoryCost("armorLight").getRankCosts(), List.of(1, 1, 1));
+        Assert.assertEquals(fighter.getCategoryDevelopmentCost("armorLight", 0), Integer.valueOf(1));
+        // "artPerforming" only lists 2 rank costs ("2/5"): a 3rd rank bought in the same level has no
+        // defined cost.
+        Assert.assertEquals(fighter.getCategoryDevelopmentCost("artPerforming", 0), Integer.valueOf(2));
+        Assert.assertEquals(fighter.getCategoryDevelopmentCost("artPerforming", 1), Integer.valueOf(5));
+        Assert.assertNull(fighter.getCategoryDevelopmentCost("artPerforming", 2));
+
+        // A weapon category is not in a profession's plain categoryCosts table (see
+        // getWeaponCategoryCostTiers, future work).
+        Assert.assertNull(fighter.getProfessionCategoryCost("weaponsEdged"));
+    }
+
+    @Test
     public void trainingRaceRestrictionIsHonoured() throws InvalidXmlElementException {
         final Training scholar = RulesCatalog.getInstance().getTraining("scholar");
         Assert.assertTrue(scholar.isAvailableToEveryRace());
