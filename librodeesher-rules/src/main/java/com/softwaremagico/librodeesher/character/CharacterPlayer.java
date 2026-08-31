@@ -393,6 +393,61 @@ public class CharacterPlayer {
 		for (final LevelUp levelUp : this.levels) {
 			total += levelUp.getSkillRanks(skillId);
 		}
+		return total - this.getSkillSpecializationsRankCost(skillId);
+	}
+
+	/**
+	 * Selects {@code specializationId} as one of the "hidden" ranks {@code skillId} unlocks (e.g. one
+	 * of a soft/hardened leather armor skill's {@code "TA9"}/{@code "TA10"}/{@code "TA11"} armor
+	 * training table numbers, see {@link Skill#getSpecialities()}), recorded on {@link
+	 * #getCurrentLevel()}; matches the legacy {@code addSkillSpecialization(Skill, String)}.
+	 *
+	 * @throws IllegalArgumentException if {@code specializationId} is not one of {@code skillId}'s
+	 *                                   specialities.
+	 */
+	public void addSkillSpecialization(String skillId, String specializationId) throws InvalidXmlElementException {
+		final Skill skill = RulesCatalog.getInstance().getSkill(skillId);
+		if (!skill.getSpecialities().contains(specializationId)) {
+			throw new IllegalArgumentException(
+					"'" + specializationId + "' is not one of '" + skillId + "''s specialities " + skill.getSpecialities() + ".");
+		}
+		this.getCurrentLevel().addSkillSpecialization(specializationId);
+	}
+
+	/** Every one of {@code skillId}'s specialities (see {@link Skill#getSpecialities()}) selected so far, across every level. */
+	public List<String> getSkillSpecializations(String skillId) throws InvalidXmlElementException {
+		final List<String> specialityIds = RulesCatalog.getInstance().getSkill(skillId).getSpecialities();
+		if (specialityIds.isEmpty()) {
+			return List.of();
+		}
+		final List<String> selected = new ArrayList<>();
+		for (final LevelUp levelUp : this.levels) {
+			selected.addAll(levelUp.getSkillSpecializations(specialityIds));
+		}
+		return selected;
+	}
+
+	/**
+	 * How many of {@code skillId}'s "hidden" specialization ranks have been selected so far: these
+	 * count as ranks bought (they cost the same as a normal rank, see {@code Training}/{@code
+	 * Category}'s rank-cost tables) but are not counted towards {@link #getSkillTotalRanks(String)}
+	 * itself, matching the legacy {@code getTotalRanks(Skill)} exactly (ranks minus specialities
+	 * selected).
+	 */
+	private int getSkillSpecializationsRankCost(String skillId) {
+		final List<String> specialityIds;
+		try {
+			specialityIds = RulesCatalog.getInstance().getSkill(skillId).getSpecialities();
+		} catch (final InvalidXmlElementException e) {
+			return 0;
+		}
+		if (specialityIds.isEmpty()) {
+			return 0;
+		}
+		int total = 0;
+		for (final LevelUp levelUp : this.levels) {
+			total += levelUp.getRanksSpentInSpecializations(specialityIds);
+		}
 		return total;
 	}
 

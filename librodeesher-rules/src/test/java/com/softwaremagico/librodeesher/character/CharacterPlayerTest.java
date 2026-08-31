@@ -1162,4 +1162,31 @@ public class CharacterPlayerTest {
         // Unrestricted perks are always allowed.
         Assert.assertTrue(withoutRace.isPerkAllowedForCharacter("acrobat"));
     }
+
+    @Test
+    public void skillSpecializationsAreExcludedFromTotalRanksButRecorded() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final LevelUp firstLevel = new LevelUp();
+        firstLevel.setSkillRanks("softLeather", 5, false);
+        character.getLevels().add(firstLevel);
+
+        // Without any specialization selected, all bought ranks count.
+        Assert.assertEquals(character.getSkillTotalRanks("softLeather"), Integer.valueOf(5));
+        Assert.assertTrue(character.getSkillSpecializations("softLeather").isEmpty());
+
+        // Selecting one of "softLeather"'s specialities (TA5/TA6) removes it from the countable ranks:
+        // it was bought as one of the 5 ranks, but it unlocks a specific armor training number instead
+        // of contributing to the skill's plain bonus.
+        character.addSkillSpecialization("softLeather", "TA5");
+        Assert.assertEquals(character.getSkillTotalRanks("softLeather"), Integer.valueOf(4));
+        Assert.assertEquals(character.getSkillSpecializations("softLeather"), List.of("TA5"));
+
+        // A specialization that does not belong to the skill is rejected.
+        Assert.assertThrows(IllegalArgumentException.class, () -> character.addSkillSpecialization("softLeather", "TA9"));
+
+        // Skills without declared specialities are unaffected.
+        firstLevel.setSkillRanks("tracking", 3, false);
+        Assert.assertEquals(character.getSkillTotalRanks("tracking"), Integer.valueOf(3));
+        Assert.assertTrue(character.getSkillSpecializations("tracking").isEmpty());
+    }
 }
