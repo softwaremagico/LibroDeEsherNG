@@ -307,6 +307,43 @@ public class CharacterPlayerTest {
         }
     }
 
+    /**
+     * Matches the legacy {@code PulpTests#checkCultureRanks} exactly (same race/culture/category,
+     * same expected rank count); unlike the legacy application (which applied a culture's adolescence
+     * ranks automatically as a side effect of {@code setCulture}), NG requires an explicit {@link
+     * CharacterPlayer#applyCultureAdolescenceRanks} call - consistent with every other grant in this
+     * class (profession/training/perk choices are likewise never auto-applied on selection), so a
+     * caller (e.g. a chargen wizard UI) drives exactly when/how each decision gets made.
+     */
+    @Test
+    public void pulpIndustrializedCultureGrantsOneRankOfSearchingLikeLegacy() throws InvalidXmlElementException {
+        final Culture culture = RulesCatalog.getInstance().getCulture("industrializedUrbanClassHigh");
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setRaceId("modernMan");
+
+        final Map<Integer, String> categorySelections = new HashMap<>();
+        final Map<Integer, Map<String, Integer>> additionalSkillRanksSelections = new HashMap<>();
+        for (int i = 0; i < culture.getAdolescenceRanks().size(); i++) {
+            final TrainingCategoryGrant grant = culture.getAdolescenceRanks().get(i);
+            final String selectedCategoryId = grant.getCategoryOptions().get(0);
+            if (grant.isChoice()) {
+                categorySelections.put(i, selectedCategoryId);
+            }
+            if (grant.getSkills().isEmpty() && grant.getRanksToDistribute() > 0) {
+                final Category category = RulesCatalog.getInstance().getCategory(selectedCategoryId);
+                final String firstSkillId = category.hasDynamicSkills()
+                        ? RulesCatalog.getInstance().getWeapons().stream()
+                                .filter(weapon -> selectedCategoryId.equals(weapon.getCategoryId())).findFirst()
+                                .orElseThrow().getId()
+                        : category.getSkills().get(0);
+                additionalSkillRanksSelections.put(i, Map.of(firstSkillId, grant.getRanksToDistribute()));
+            }
+        }
+        character.applyCultureAdolescenceRanks(culture, categorySelections, null, additionalSkillRanksSelections);
+
+        Assert.assertEquals(character.getCategoryTotalRanks("perceptionSearching"), Integer.valueOf(1));
+    }
+
     @Test
     public void applyCharacteristicUpgradeRollsAndIncreasesTheChosenCharacteristic() throws InvalidXmlElementException {
         final Training adventurer = RulesCatalog.getInstance().getTraining("adventurer");

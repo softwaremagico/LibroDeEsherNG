@@ -1424,7 +1424,7 @@
       <hobbyId>all</hobbyId>
     </hobbies>
     <hobbyRanks>10</hobbyRanks>
-    <id>industrializedUrbanoClassHigh</id>
+    <id>industrializedUrbanClassHigh</id>
     <languageMaxRanks>
       <languageRank>
         <languageId>all</languageId>
@@ -1433,7 +1433,7 @@
       </languageRank>
     </languageMaxRanks>
     <name>
-      <en>Industrialized (Urbano Class High)</en>
+      <en>Industrialized (Urban Class High)</en>
       <es>Industrializado (Urbano Clase Alta)</es>
     </name>
     <typicalWeapons>
@@ -1781,7 +1781,7 @@
       <hobbyId>all</hobbyId>
     </hobbies>
     <hobbyRanks>12</hobbyRanks>
-    <id>industrializedUrbanoClassLow</id>
+    <id>industrializedUrbanClassLow</id>
     <languageMaxRanks>
       <languageRank>
         <languageId>all</languageId>
@@ -1790,7 +1790,7 @@
       </languageRank>
     </languageMaxRanks>
     <name>
-      <en>Industrialized (Urbano Class Low)</en>
+      <en>Industrialized (Urban Class Low)</en>
       <es>Industrializado (Urbano Clase Baja)</es>
     </name>
     <typicalWeapons>
@@ -2138,7 +2138,7 @@
       <hobbyId>all</hobbyId>
     </hobbies>
     <hobbyRanks>11</hobbyRanks>
-    <id>industrializedUrbanoClassMiddle</id>
+    <id>industrializedUrbanClassMiddle</id>
     <languageMaxRanks>
       <languageRank>
         <languageId>all</languageId>
@@ -2147,7 +2147,7 @@
       </languageRank>
     </languageMaxRanks>
     <name>
-      <en>Industrialized (Urbano Class Middle)</en>
+      <en>Industrialized (Urban Class Middle)</en>
       <es>Industrializado (Urbano Clase Media)</es>
     </name>
     <typicalWeapons>
@@ -3581,7 +3581,7 @@
       <hobbyId>all</hobbyId>
     </hobbies>
     <hobbyRanks>10</hobbyRanks>
-    <id>tercerMundoUrbanoClassHigh</id>
+    <id>tercerMundoUrbanClassHigh</id>
     <languageMaxRanks>
       <languageRank>
         <languageId>all</languageId>
@@ -3590,7 +3590,7 @@
       </languageRank>
     </languageMaxRanks>
     <name>
-      <en>Tercer Mundo (Urbano Class High)</en>
+      <en>Tercer Mundo (Urban Class High)</en>
       <es>Tercer Mundo (Urbano Clase Alta)</es>
     </name>
     <typicalWeapons>
@@ -3942,7 +3942,7 @@
       <hobbyId>all</hobbyId>
     </hobbies>
     <hobbyRanks>10</hobbyRanks>
-    <id>tercerMundoUrbanoClassLow</id>
+    <id>tercerMundoUrbanClassLow</id>
     <languageMaxRanks>
       <languageRank>
         <languageId>all</languageId>
@@ -3951,7 +3951,7 @@
       </languageRank>
     </languageMaxRanks>
     <name>
-      <en>Tercer Mundo (Urbano Class Low)</en>
+      <en>Tercer Mundo (Urban Class Low)</en>
       <es>Tercer Mundo (Urbano Clase Baja)</es>
     </name>
     <typicalWeapons>
@@ -4303,7 +4303,7 @@
       <hobbyId>all</hobbyId>
     </hobbies>
     <hobbyRanks>10</hobbyRanks>
-    <id>tercerMundoUrbanoClassMiddle</id>
+    <id>tercerMundoUrbanClassMiddle</id>
     <languageMaxRanks>
       <languageRank>
         <languageId>all</languageId>
@@ -4312,7 +4312,7 @@
       </languageRank>
     </languageMaxRanks>
     <name>
-      <en>Tercer Mundo (Urbano Class Middle)</en>
+      <en>Tercer Mundo (Urban Class Middle)</en>
       <es>Tercer Mundo (Urbano Clase Media)</es>
     </name>
     <typicalWeapons>

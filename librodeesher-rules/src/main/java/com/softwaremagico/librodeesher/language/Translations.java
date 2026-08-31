@@ -927,6 +927,7 @@ public final class Translations {
         put(m, "Litoral", "Coastal");
         put(m, "Minera", "Mining");
         put(m, "Rural", "Rural");
+        put(m, "Urbano", "Urban");
         put(m, "Industrializado", "Industrialized");
         put(m, "Clase", "Class");
         // Legacy data typo ("Calse" for "Clase") in one culture name.
