@@ -6,6 +6,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.softwaremagico.librodeesher.Element;
 import com.softwaremagico.librodeesher.language.LanguageSlot;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -176,6 +177,60 @@ public class Race extends Element {
     public Map<String, Integer> getResistanceBonuses() { return resistanceBonuses == null ? Collections.emptyMap() : resistanceBonuses; }
     public void setResistanceBonuses(Map<String, Integer> resistanceBonuses) { this.resistanceBonuses = resistanceBonuses; }
     public Map<String, String> getProgressionRankValues() { return progressionRankValues == null ? Collections.emptyMap() : progressionRankValues; }
+
+    /**
+     * The 5 raw numbers of {@code progressionKey}'s own progression cost string (e.g. {@code [0, 6,
+     * 5, 4, 3]} for {@code "0/6/5/4/3"}), matching the legacy {@code Race#getProgressionRankValues(
+     * ProgressionCostType)} exactly (used to average multiple realms' own progression tables, see
+     * {@code CharacterPlayer#getPowerPointsDevelopmentCost()}); {@link #getProgressionRankValue}
+     * applies this table to an actual rank count instead. {@code null} if {@code progressionKey} is
+     * not one of {@link #getProgressionRankValues()}'s keys.
+     */
+    public List<Float> getProgressionRankValueTable(String progressionKey) {
+        final String raw = getProgressionRankValues().get(progressionKey);
+        if (raw == null) {
+            return null;
+        }
+        final List<Float> result = new ArrayList<>();
+        for (final String part : raw.split("/")) {
+            result.add(Float.parseFloat(part.trim()));
+        }
+        return result;
+    }
+
+    /**
+     * The value of {@code ranks} ranks according to {@code progressionKey}'s own 5-number progression
+     * cost string (e.g. {@code "0/6/5/4/3"}, one of {@link #getProgressionRankValues()}'s values): a
+     * bracket-accumulation formula (0-10/11-20/21-30/31+, each bracket using the next of the 5
+     * numbers, the first being a flat value for 0 ranks) matching the legacy {@code
+     * Category#getSkillRankValues(Integer, List)} exactly (used for a race's own physical/magic
+     * development power point progression, see {@code CharacterPlayer#getPowerPoints()}). {@code
+     * null} if {@code progressionKey} is not one of {@link #getProgressionRankValues()}'s keys.
+     */
+    public Integer getProgressionRankValue(String progressionKey, int ranks) {
+        final List<Float> table = getProgressionRankValueTable(progressionKey);
+        if (table == null) {
+            return null;
+        }
+        final int v0 = table.get(0).intValue();
+        final int v1 = table.get(1).intValue();
+        final int v2 = table.get(2).intValue();
+        final int v3 = table.get(3).intValue();
+        final int v4 = table.get(4).intValue();
+        if (ranks <= 0) {
+            return v0;
+        } else if (ranks <= 10) {
+            return v1 * ranks;
+        } else if (ranks <= 20) {
+            return v1 * 10 + v2 * (ranks - 10);
+        } else if (ranks <= 30) {
+            return v1 * 10 + v2 * 10 + v3 * (ranks - 20);
+        } else {
+            return v1 * 10 + v2 * 10 + v3 * 10 + v4 * (ranks - 30);
+        }
+    }
+
+
     public void setProgressionRankValues(Map<String, String> progressionRankValues) { this.progressionRankValues = progressionRankValues; }
     public List<String> getRestrictedProfessionIds() { return restrictedProfessionIds == null ? Collections.emptyList() : restrictedProfessionIds; }
     public void setRestrictedProfessionIds(List<String> restrictedProfessionIds) { this.restrictedProfessionIds = restrictedProfessionIds; }

@@ -11,20 +11,22 @@ import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation
  */
 public enum RealmOfMagic {
 
-    CANALIZATION("Canalización", CharacteristicAbbreviation.INTUITION),
-    ESSENCE("Esencia", CharacteristicAbbreviation.EMPATHY),
-    MENTALISM("Mentalismo", CharacteristicAbbreviation.PRESENCE),
-    PSIONIC("Psiónico", CharacteristicAbbreviation.SELF_DISCIPLINE),
-    ARCHANUM("Arcano", CharacteristicAbbreviation.NONE),
+    CANALIZATION("Canalización", CharacteristicAbbreviation.INTUITION, "ppChanneling"),
+    ESSENCE("Esencia", CharacteristicAbbreviation.EMPATHY, "ppEssence"),
+    MENTALISM("Mentalismo", CharacteristicAbbreviation.PRESENCE, "ppMentalism"),
+    PSIONIC("Psiónico", CharacteristicAbbreviation.SELF_DISCIPLINE, "ppPsionic"),
+    ARCHANUM("Arcano", CharacteristicAbbreviation.NONE, "ppArcane"),
     /** Racial spell lists, granted by a race rather than a profession. */
-    RACE("Racial", CharacteristicAbbreviation.NONE);
+    RACE("Racial", CharacteristicAbbreviation.NONE, null);
 
     private final String tag;
     private final CharacteristicAbbreviation characteristic;
+    private final String powerPointProgressionKey;
 
-    RealmOfMagic(String tag, CharacteristicAbbreviation characteristic) {
+    RealmOfMagic(String tag, CharacteristicAbbreviation characteristic, String powerPointProgressionKey) {
         this.tag = tag;
         this.characteristic = characteristic;
+        this.powerPointProgressionKey = powerPointProgressionKey;
     }
 
     /** Original Spanish tag, e.g. matching the legacy {@code hechizos/<Reino>.txt} file name. */
@@ -39,6 +41,17 @@ public enum RealmOfMagic {
      */
     public CharacteristicAbbreviation getCharacteristic() {
         return characteristic;
+    }
+
+    /**
+     * This realm's own key into {@link com.softwaremagico.librodeesher.race.Race#getProgressionRankValues()}
+     * for looking up how many power points a rank of this realm's Power Point Development skill is
+     * worth (e.g. {@code "ppEssence"} for {@link #ESSENCE}), matching the legacy {@code
+     * ProgressionCostType#getProgressionCostType(RealmOfMagic)} exactly; {@code null} for {@link
+     * #RACE}, which has none (matching the legacy version's own {@code null} for that case).
+     */
+    public String getPowerPointProgressionKey() {
+        return powerPointProgressionKey;
     }
 
     public static RealmOfMagic fromTag(String tag) {

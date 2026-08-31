@@ -1566,4 +1566,43 @@ public class CharacterPlayerTest {
 
         Assert.assertEquals(character.getTotalDevelopmentPoints(), Integer.valueOf((100 + 90 + 80 + 70 + 60) / 5));
     }
+
+    @Test
+    public void powerPointsUsesTheRacesOwnProgressionForEachRealmOfMagic() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("wizard");
+        character.applyProfessionMagicRealms(null);
+        character.setRaceId("horseCentaur");
+        // horseCentaur's ppEssence is "0/6/5/4/3": 6 power points per rank up to 10.
+        character.getCurrentLevel().setSkillRanks("powerPointDevelopment", 4, false);
+
+        Assert.assertEquals(character.getPowerPoints(), 4 * 6);
+        Assert.assertEquals(character.getPowerPointsDevelopmentCost(), List.of(0f, 6f, 5f, 4f, 3f));
+    }
+
+    @Test
+    public void powerPointsIsZeroWithoutARaceOrProfessionSelected() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.getCurrentLevel().setSkillRanks("powerPointDevelopment", 4, false);
+
+        Assert.assertEquals(character.getPowerPoints(), 0);
+        Assert.assertTrue(character.getPowerPointsDevelopmentCost().isEmpty());
+    }
+
+    @Test
+    public void spentDevelopmentPointsSumsCategoryRanksSkillRanksAndTrainings() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("fighter");
+
+        final Category category = RulesCatalog.getInstance().getCategory("outdoorEnvironment");
+        Assert.assertNotNull(category);
+        character.getCurrentLevel().setCategoryRanks("outdoorEnvironment", 2);
+        final Integer categoryCost = character.getCategoryDevelopmentCost("outdoorEnvironment", 0)
+                + character.getCategoryDevelopmentCost("outdoorEnvironment", 1);
+
+        Assert.assertEquals(character.getSpentDevelopmentPoints(), categoryCost);
+
+        Assert.assertEquals(character.getRemainingDevelopmentPoints(),
+                Integer.valueOf(character.getTotalDevelopmentPoints() - categoryCost));
+    }
 }

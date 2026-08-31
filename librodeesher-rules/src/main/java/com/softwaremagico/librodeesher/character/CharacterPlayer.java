@@ -1309,6 +1309,60 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * {@link #getTotalDevelopmentPoints()} minus every development point spent so far at the current
+	 * level (see {@link #getSpentDevelopmentPoints()}), matching the legacy {@code
+	 * CharacterPlayer#getRemainingDevelopmentPoints()} exactly (a fresh {@link #getTotalDevelopmentPoints()}
+	 * budget every level, not accumulated across levels).
+	 */
+	public Integer getRemainingDevelopmentPoints() throws InvalidXmlElementException {
+		return this.getTotalDevelopmentPoints() - this.getSpentDevelopmentPoints();
+	}
+
+	/**
+	 * Every development point spent so far at the current level (see {@link #getCurrentLevel()}):
+	 * every category rank, every skill rank, and every training taken this level, each at its own
+	 * per-rank cost (see {@link #getCategoryDevelopmentCost}/{@link #getTrainingDevelopmentCost}),
+	 * matching the legacy {@code CharacterPlayer#getSpentDevelopmentPoints()} exactly.
+	 *
+	 * <p><strong>Known limitation:</strong> a spell list's own ranks are not included (unlike the
+	 * legacy version, which folds them into the same "skill ranks" bucket): {@link MagicSpellList}
+	 * ranks are not tracked by {@link LevelUp} at all yet (only real {@code Skill} ranks are, see
+	 * {@link LevelUp#getSkillRanks()}), so there is nothing to sum here for them; {@link
+	 * #getSpellListDevelopmentCost} exists as a "what would the next rank cost" query, but nothing
+	 * yet records a spell list rank as actually bought.</p>
+	 */
+	public Integer getSpentDevelopmentPoints() throws InvalidXmlElementException {
+		final LevelUp levelUp = this.getCurrentLevel();
+		int total = 0;
+		for (final String categoryId : levelUp.getCategoriesWithRanks()) {
+			final int ranksThisLevel = levelUp.getCategoryRanks(categoryId);
+			for (int i = 0; i < ranksThisLevel; i++) {
+				final Integer cost = this.getCategoryDevelopmentCost(categoryId, i);
+				if (cost != null) {
+					total += cost;
+				}
+			}
+		}
+		for (final String skillId : levelUp.getSkillsWithRanks()) {
+			final String categoryId = RulesCatalog.getInstance().getSkill(skillId).getCategoryId();
+			final int ranksThisLevel = levelUp.getSkillRanks(skillId);
+			for (int i = 0; i < ranksThisLevel; i++) {
+				final Integer cost = this.getCategoryDevelopmentCost(categoryId, i);
+				if (cost != null) {
+					total += cost;
+				}
+			}
+		}
+		for (final String trainingId : levelUp.getTrainings()) {
+			final Integer cost = this.getTrainingDevelopmentCost(trainingId);
+			if (cost != null) {
+				total += cost;
+			}
+		}
+		return total;
+	}
+
+	/**
 	 * Background points left to spend: the race's total
 	 * ({@link Race#getBackgroundPoints()}, 0 without a race selected) minus what
 	 * {@link Background} and the selected perks have spent so far.
@@ -2122,6 +2176,38 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * The background point cost of taking {@code trainingId}, matching the legacy {@code
+	 * CharacterPlayer#getTrainingCost(String)} exactly: the selected profession's own cost (see
+	 * {@link #getProfessionTrainingCost(String)}, {@link ProfessionTrainingCost#getCostNotMagic()}
+	 * instead if {@link #isMagicAllowed()} is {@code false}) if it mentions {@code trainingId} at
+	 * all, else {@code trainingId}'s own cost for the selected profession (see {@link
+	 * Training#getProfessionCost(String)}); either way, rounded up after multiplying by the selected
+	 * culture's own price percentage (see {@link #getCultureTrainingPricePercentage(String)}). The
+	 * legacy version's own skill/characteristic requirement cost reductions are not reproduced here:
+	 * every shipped training's "REQUISITOS PROFESIONALES" section is empty (see {@link
+	 * TrainingRequirement}'s own javadoc), so they are always 0 in practice anyway. {@code null} if
+	 * no profession is selected, or neither side has a cost for {@code trainingId}.
+	 */
+	public Integer getTrainingDevelopmentCost(String trainingId) throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		if (profession == null) {
+			return null;
+		}
+		final ProfessionTrainingCost professionSide = this.getProfessionTrainingCost(trainingId);
+		Integer baseCost = professionSide == null ? null
+				: this.isMagicAllowed() ? professionSide.getCost() : professionSide.getCostNotMagic();
+		if (baseCost == null) {
+			final TrainingProfessionCost trainingSide = RulesCatalog.getInstance().getTraining(trainingId)
+					.getProfessionCost(profession.getId());
+			baseCost = trainingSide == null ? null : trainingSide.getCost();
+		}
+		if (baseCost == null) {
+			return null;
+		}
+		return (int) Math.ceil(this.getCultureTrainingPricePercentage(trainingId) * baseCost);
+	}
+
+	/**
 	 * The selected profession's background point cost table for developing {@code categoryId} (see
 	 * {@link Profession#getCategoryCost(String)}), or {@code null} if no profession is selected, or it
 	 * does not mention that category at all (a weapon category - see {@link
@@ -2441,6 +2527,67 @@ public class CharacterPlayer {
 	 */
 	public int getDefensiveBonus() throws InvalidXmlElementException {
 		return this.getCharacteristicTotalBonus(CharacteristicAbbreviation.QUICKNESS) * 3;
+	}
+
+	/**
+	 * The character's own current power points: the selected race's own power point progression (see
+	 * {@link Race#getProgressionRankValue(String, int)}) for {@link #getSkillTotalRanks(String)}
+	 * ranks of {@code "powerPointDevelopment"}, averaged across every one of {@link
+	 * #getRealmsOfMagic()} that has one (see {@link RealmOfMagic#getPowerPointProgressionKey()};
+	 * {@link RealmOfMagic#RACE} does not), matching the legacy {@code CharacterPlayer#getPowerPoints()}
+	 * (by way of {@code Skill#getRankValue}'s {@code PPD} case) exactly. 0 without a race selected or
+	 * without any realm of magic.
+	 */
+	public int getPowerPoints() throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		final List<RealmOfMagic> realms = this.getRealmsOfMagic();
+		if (race == null || realms.isEmpty()) {
+			return 0;
+		}
+		final int ranks = this.getSkillTotalRanks("powerPointDevelopment");
+		int total = 0;
+		for (final RealmOfMagic realm : realms) {
+			final String key = realm.getPowerPointProgressionKey();
+			if (key != null) {
+				final Integer value = race.getProgressionRankValue(key, ranks);
+				if (value != null) {
+					total += value;
+				}
+			}
+		}
+		return total / realms.size();
+	}
+
+	/**
+	 * The averaged power point progression table itself (the 5 raw numbers of the progression cost
+	 * string, e.g. {@code [0, 6, 5, 4, 3]} for {@code "0/6/5/4/3"}: the flat value for 0 ranks, then
+	 * the per-rank value for each of the 1-10/11-20/21-30/31+ brackets), averaged the same way as
+	 * {@link #getPowerPoints()} (across every one of {@link #getRealmsOfMagic()} that has a
+	 * progression key, see {@link RealmOfMagic#getPowerPointProgressionKey()}), matching the legacy
+	 * {@code CharacterPlayer#getPowerPointsDevelopmentCost()} exactly. An empty list without a race
+	 * selected or without any realm of magic.
+	 */
+	public List<Float> getPowerPointsDevelopmentCost() throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		final List<RealmOfMagic> realms = this.getRealmsOfMagic();
+		final List<Float> result = new ArrayList<>();
+		if (race == null || realms.isEmpty()) {
+			return result;
+		}
+		for (int i = 0; i < 5; i++) {
+			float total = 0;
+			for (final RealmOfMagic realm : realms) {
+				final String key = realm.getPowerPointProgressionKey();
+				if (key != null) {
+					final List<Float> raw = race.getProgressionRankValueTable(key);
+					if (raw != null) {
+						total += raw.get(i);
+					}
+				}
+			}
+			result.add(total / realms.size());
+		}
+		return result;
 	}
 
 
