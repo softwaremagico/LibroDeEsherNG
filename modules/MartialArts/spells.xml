@@ -9,7 +9,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Taoist</owner>
+      <owner>monkTaoist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -22,8 +22,8 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Taoist</owner>
-      <owner>Monk</owner>
+      <owner>monkTaoist</owner>
+      <owner>monk</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -36,7 +36,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Taoist</owner>
+      <owner>monkTaoist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -49,21 +49,21 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Taoist</owner>
+      <owner>monkTaoist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essencePuenyouOfTheMonk</id>
+    <id>essencePuenteOfTheMonk</id>
     <name>
-      <en>Puenyou of the Monk</en>
+      <en>Puente of the Monk</en>
       <es>Puente del Monje</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Taoist</owner>
-      <owner>Monk</owner>
+      <owner>monkTaoist</owner>
+      <owner>monk</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -76,8 +76,8 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Taoist</owner>
-      <owner>Monk</owner>
+      <owner>monkTaoist</owner>
+      <owner>monk</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -90,7 +90,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Zen</owner>
+      <owner>monkZen</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -103,7 +103,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Zen</owner>
+      <owner>monkZen</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -116,7 +116,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Zen</owner>
+      <owner>monkZen</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -129,7 +129,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Zen</owner>
+      <owner>monkZen</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -142,7 +142,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Zen</owner>
+      <owner>monkZen</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -155,7 +155,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Monk Zen</owner>
+      <owner>monkZen</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>

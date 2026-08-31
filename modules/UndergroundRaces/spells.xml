@@ -9,20 +9,20 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Gray Orc</owner>
+      <owner>grayOrc</owner>
     </owners>
     <realm>RACE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>raceCurisOfTheDogPale</id>
+    <id>raceCurseOfTheDogPale</id>
     <name>
-      <en>Curis of the Dog Pale</en>
+      <en>Curse of the Dog Pale</en>
       <es>Maldición del Perro Pálido</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Gray Orc</owner>
+      <owner>grayOrc</owner>
     </owners>
     <realm>RACE</realm>
   </spellList>

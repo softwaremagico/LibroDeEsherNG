@@ -9,7 +9,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Invocador</owner>
+      <owner>invocador</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -22,7 +22,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Invocador</owner>
+      <owner>invocador</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -35,7 +35,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Invocador</owner>
+      <owner>invocador</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -48,7 +48,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Invocador</owner>
+      <owner>invocador</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -61,7 +61,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Invocador</owner>
+      <owner>invocador</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -74,7 +74,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Invocador</owner>
+      <owner>invocador</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -87,7 +87,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Nefando</owner>
+      <owner>nefando</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -100,7 +100,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Nefando</owner>
+      <owner>nefando</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -113,7 +113,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Nefando</owner>
+      <owner>nefando</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -126,20 +126,20 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Nefando</owner>
+      <owner>nefando</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationSemblanyouOfTheTerror</id>
+    <id>canalizationSemblanteOfTheTerror</id>
     <name>
-      <en>Semblanyou of the Terror</en>
+      <en>Semblante of the Terror</en>
       <es>Semblante del Terror</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Nefando</owner>
+      <owner>nefando</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -152,7 +152,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Nefando</owner>
+      <owner>nefando</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -165,7 +165,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mythic</owner>
+      <owner>mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -178,7 +178,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mythic</owner>
+      <owner>mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -191,7 +191,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mythic</owner>
+      <owner>mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -204,7 +204,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mythic</owner>
+      <owner>mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -217,7 +217,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mythic</owner>
+      <owner>mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -230,20 +230,20 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mythic</owner>
+      <owner>mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationArmaSagrada</id>
+    <id>canalizationWeaponSagrada</id>
     <name>
-      <en>Arma Sagrada</en>
+      <en>Weapon Sagrada</en>
       <es>Arma Sagrada</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -256,7 +256,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -269,7 +269,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -282,7 +282,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -295,7 +295,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -308,20 +308,20 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>canalizationDefenisSagrada</id>
+    <id>canalizationDefenseSagrada</id>
     <name>
-      <en>Defenis Sagrada</en>
+      <en>Defense Sagrada</en>
       <es>Defensa Sagrada</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -334,7 +334,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -347,7 +347,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -360,7 +360,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -373,7 +373,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -386,7 +386,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -399,7 +399,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -412,7 +412,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -425,7 +425,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -438,7 +438,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -451,7 +451,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -464,7 +464,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -477,7 +477,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -490,7 +490,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -503,7 +503,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -516,7 +516,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -529,7 +529,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -542,7 +542,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -555,7 +555,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -568,7 +568,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -581,7 +581,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -594,7 +594,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -607,7 +607,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -620,7 +620,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -633,7 +633,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -646,7 +646,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
@@ -659,7 +659,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest</owner>
+      <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>

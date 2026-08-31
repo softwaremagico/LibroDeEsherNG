@@ -56,7 +56,7 @@ public class MagicMigrationToolTest {
             Assert.assertTrue(closedList.isClosedList());
 
             final MagicSpellList fireLaw = findByName(lists, "Ley del Fuego");
-            Assert.assertEquals(fireLaw.getOwners(), List.of("Wizard", "Fire Wizard", "Fire Sorcerer"));
+            Assert.assertEquals(fireLaw.getOwners(), List.of("wizard", "fireWizard", "fireSorcerer"));
         } finally {
             deleteRecursively(sourceRoot);
             deleteRecursively(targetRoot);

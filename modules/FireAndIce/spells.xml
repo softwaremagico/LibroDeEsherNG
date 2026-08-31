@@ -9,12 +9,12 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Wizard of Light</owner>
-      <owner>Earth Wizard</owner>
-      <owner>Water Wizard</owner>
-      <owner>Fire Wizard</owner>
-      <owner>Wizard of the Ice</owner>
-      <owner>Wizard of the Air</owner>
+      <owner>wizardOfLight</owner>
+      <owner>earthWizard</owner>
+      <owner>waterWizard</owner>
+      <owner>fireWizard</owner>
+      <owner>wizardOfTheIce</owner>
+      <owner>wizardOfTheAir</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -27,12 +27,12 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Wizard of Light</owner>
-      <owner>Earth Wizard</owner>
-      <owner>Water Wizard</owner>
-      <owner>Fire Wizard</owner>
-      <owner>Wizard of the Ice</owner>
-      <owner>Wizard of the Air</owner>
+      <owner>wizardOfLight</owner>
+      <owner>earthWizard</owner>
+      <owner>waterWizard</owner>
+      <owner>fireWizard</owner>
+      <owner>wizardOfTheIce</owner>
+      <owner>wizardOfTheAir</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -45,12 +45,12 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Light Wizard</owner>
-      <owner>Earth Wizard</owner>
-      <owner>Water Wizard</owner>
-      <owner>Fire Wizard</owner>
-      <owner>Wizard of the Ice</owner>
-      <owner>Wizard of the Air</owner>
+      <owner>lightWizard</owner>
+      <owner>earthWizard</owner>
+      <owner>waterWizard</owner>
+      <owner>fireWizard</owner>
+      <owner>wizardOfTheIce</owner>
+      <owner>wizardOfTheAir</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -63,7 +63,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Wizard of the Air</owner>
+      <owner>wizardOfTheAir</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -76,7 +76,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Wizard of the Air</owner>
+      <owner>wizardOfTheAir</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -89,7 +89,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Earth Wizard</owner>
+      <owner>earthWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -102,7 +102,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Earth Wizard</owner>
+      <owner>earthWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -115,7 +115,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Fire Wizard</owner>
+      <owner>fireWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -128,7 +128,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Fire Wizard</owner>
+      <owner>fireWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -141,7 +141,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Wizard of the Ice</owner>
+      <owner>wizardOfTheIce</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -154,7 +154,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Wizard of the Ice</owner>
+      <owner>wizardOfTheIce</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -167,7 +167,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Light Wizard</owner>
+      <owner>lightWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -180,7 +180,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Light Wizard</owner>
+      <owner>lightWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -193,7 +193,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Water Wizard</owner>
+      <owner>waterWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -206,7 +206,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Water Wizard</owner>
+      <owner>waterWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -219,7 +219,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest Elemental</owner>
+      <owner>priestElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -232,7 +232,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest Elemental</owner>
+      <owner>priestElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -245,7 +245,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest Elemental</owner>
+      <owner>priestElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -258,7 +258,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest Elemental</owner>
+      <owner>priestElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -271,7 +271,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest Elemental</owner>
+      <owner>priestElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -284,20 +284,20 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Priest Elemental</owner>
+      <owner>priestElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceArmaElemental</id>
+    <id>essenceWeaponElemental</id>
     <name>
-      <en>Arma Elemental</en>
+      <en>Weapon Elemental</en>
       <es>Arma Elemental</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Campeón Elemental</owner>
+      <owner>campeonElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -310,7 +310,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Campeón Elemental</owner>
+      <owner>campeonElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -323,7 +323,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Campeón Elemental</owner>
+      <owner>campeonElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -336,7 +336,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Campeón Elemental</owner>
+      <owner>campeonElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -349,7 +349,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Campeón Elemental</owner>
+      <owner>campeonElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -362,7 +362,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Campeón Elemental</owner>
+      <owner>campeonElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -375,7 +375,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Wizard Arcane</owner>
+      <owner>wizardArcane</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -388,7 +388,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Wizard Arcane</owner>
+      <owner>wizardArcane</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -401,7 +401,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Elementalist Arcane</owner>
+      <owner>elementalistArcane</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -414,7 +414,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Elementalist Arcane</owner>
+      <owner>elementalistArcane</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -427,7 +427,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Elementalist Arcane</owner>
+      <owner>elementalistArcane</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -440,7 +440,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Elementalist Arcane</owner>
+      <owner>elementalistArcane</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -453,7 +453,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>OA</owner>
+      <owner>oa</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -466,7 +466,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>OA</owner>
+      <owner>oa</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>

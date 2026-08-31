@@ -269,7 +269,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Curandero</owner>
+      <owner>curandero</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -282,7 +282,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Curandero</owner>
+      <owner>curandero</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -295,7 +295,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Curandero</owner>
+      <owner>curandero</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -308,7 +308,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Curandero</owner>
+      <owner>curandero</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -321,7 +321,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Curandero</owner>
+      <owner>curandero</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -334,7 +334,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Curandero</owner>
+      <owner>curandero</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -347,7 +347,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mentalista</owner>
+      <owner>mentalista</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -360,7 +360,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mentalista</owner>
+      <owner>mentalista</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -373,7 +373,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mentalista</owner>
+      <owner>mentalista</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -386,7 +386,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mentalista</owner>
+      <owner>mentalista</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -399,7 +399,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mentalista</owner>
+      <owner>mentalista</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -412,7 +412,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mentalista</owner>
+      <owner>mentalista</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -425,7 +425,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Bard</owner>
+      <owner>bard</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -438,7 +438,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Bard</owner>
+      <owner>bard</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -451,7 +451,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Bard</owner>
+      <owner>bard</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -464,7 +464,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Bard</owner>
+      <owner>bard</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -477,7 +477,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Bard</owner>
+      <owner>bard</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -490,7 +490,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Bard</owner>
+      <owner>bard</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -503,7 +503,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Magente</owner>
+      <owner>magente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -516,7 +516,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Magente</owner>
+      <owner>magente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -529,7 +529,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Magente</owner>
+      <owner>magente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -542,7 +542,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Magente</owner>
+      <owner>magente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -555,7 +555,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Magente</owner>
+      <owner>magente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -568,7 +568,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Magente</owner>
+      <owner>magente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -581,7 +581,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Healing</owner>
+      <owner>healing</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -594,7 +594,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Healing</owner>
+      <owner>healing</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -607,7 +607,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Healing</owner>
+      <owner>healing</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -620,7 +620,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Healing</owner>
+      <owner>healing</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -633,7 +633,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Healing</owner>
+      <owner>healing</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -646,7 +646,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mystic</owner>
+      <owner>mystic</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -659,7 +659,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mystic</owner>
+      <owner>mystic</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -672,7 +672,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mystic</owner>
+      <owner>mystic</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -685,7 +685,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mystic</owner>
+      <owner>mystic</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -698,7 +698,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mystic</owner>
+      <owner>mystic</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -711,7 +711,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mystic</owner>
+      <owner>mystic</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -724,7 +724,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mentalism Maligno</owner>
+      <owner>mentalismMaligno</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -737,7 +737,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mentalism Maligno</owner>
+      <owner>mentalismMaligno</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -750,7 +750,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mentalism Maligno</owner>
+      <owner>mentalismMaligno</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -763,7 +763,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mentalism Maligno</owner>
+      <owner>mentalismMaligno</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -776,7 +776,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mentalism Maligno</owner>
+      <owner>mentalismMaligno</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
@@ -789,7 +789,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Mentalism Maligno</owner>
+      <owner>mentalismMaligno</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>

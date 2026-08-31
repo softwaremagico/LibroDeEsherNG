@@ -9,20 +9,20 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Lord of the Chaos</owner>
+      <owner>lordOfTheChaos</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
     <closedList>false</closedList>
-    <id>essenceArmaOfTheChaos</id>
+    <id>essenceWeaponOfTheChaos</id>
     <name>
-      <en>Arma of the Chaos</en>
+      <en>Weapon of the Chaos</en>
       <es>Arma del Caos</es>
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Lord of the Chaos</owner>
+      <owner>lordOfTheChaos</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
@@ -35,7 +35,7 @@
     </name>
     <openList>false</openList>
     <owners>
-      <owner>Lord of the Chaos</owner>
+      <owner>lordOfTheChaos</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>

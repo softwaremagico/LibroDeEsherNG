@@ -17,8 +17,10 @@ import java.util.List;
  * special pseudo-owner tags are used instead of a real profession/training name: {@value #OPEN_LIST_TAG}
  * (any spell-casting profession of this realm may pick from it freely) and {@value #CLOSED_LIST_TAG}
  * (restricted, must be specifically granted). {@link #isOpenList()} and {@link #isClosedList()}
- * recognize them. Real owner names are translated to English for readability but, unlike
- * {@link #getId()}, are not yet resolved to a {@code Profession}/{@code Training} id (future work).</p>
+ * recognize them. Real owner names are resolved to their real {@code Profession}/{@code Training} id
+ * by {@code MagicMigrationTool} (professions are tried first); the rare "dark spell"/"elementalist
+ * training" pseudo-owner tags that match neither are kept as a readable, non-accented placeholder
+ * instead (see {@code MagicMigrationTool#translateOwners}'s javadoc).</p>
  *
  * <p>Because {@link Element#getId()} must be unique across every enabled module for a given factory,
  * and the same list name is (rarely, but validly) reused across different realms, {@link #getId()}
