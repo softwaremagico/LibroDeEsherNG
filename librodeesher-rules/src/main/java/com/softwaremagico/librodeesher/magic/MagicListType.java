@@ -10,13 +10,14 @@ package com.softwaremagico.librodeesher.magic;
  * only used by {@code ProfessionMigrationTool} to parse the original Spanish row label (the level
  * range suffix, e.g. {@code "(1-5)"}, is stripped by the caller, see {@link MagicLevelRange}).</p>
  *
- * <p><strong>Currently classified by {@code CharacterPlayer}:</strong> {@link #BASIC} (a list owned
- * by the character's own profession), {@link #OPEN} and {@link #CLOSED} (any list of the character's
- * own realm(s) marked as such). The other 8 types (lists of another profession/realm, the
- * "tríada"/elementalist-training/dark-spell special cases) are not resolved yet: doing so requires
- * porting the legacy {@code MagicFactory}'s remaining classification helpers, which is significant
- * scope on its own (see {@code MagicSpellList}'s javadoc); {@code Profession#getMagicCost} still
- * exposes their cost table verbatim, in case a caller resolves the classification itself.</p>
+ * <p><strong>Currently classified by {@code CharacterPlayer}:</strong> every type except {@link
+ * #TRIAD}/{@link #COMPLEMENTARY_TRIAD} (see {@code CharacterPlayer#classifySpellList}). Those two
+ * require the legacy "elemental triad" reference table (which trainings share lists with which
+ * others, e.g. "Mago del Fuego"/"Mago del Hielo"/"Mago del Agua" forming one triad and "Mago de la
+ * Tierra"/"Mago del Aire"/"Mago de la Luz" the other) - a small, fully self-contained mechanic on its
+ * own, but only relevant to the 3 "elementalist" trainings actually shipped (of the 6 the legacy
+ * table defines), so implementing it is deferred; an elementalist training's own lists still resolve,
+ * just as {@link #TRAINING} instead of the more specific {@link #TRIAD}.</p>
  */
 public enum MagicListType {
 

@@ -1280,7 +1280,16 @@ public class CharacterPlayerTest {
         final List<String> closedListIds = wizard.getClosedSpellLists().stream().map(list -> list.getId()).toList();
         Assert.assertTrue(closedListIds.contains("essenceReinsOfTheSpells"));
 
-        // A list of a different realm entirely does not classify for this character.
-        Assert.assertNull(wizard.classifySpellList("mentalismSelfHealing"));
+        // "Destrucción de la Carne" is one of "sorcerer"'s own basic lists: for "wizard" it is just
+        // another real profession's list of the same (own) realm.
+        Assert.assertEquals(wizard.classifySpellList("essenceDestructionOfTheFlesh"), MagicListType.OTHER_PROFESSION);
+        final List<String> otherProfessionListIds = wizard.getOtherProfessionSpellLists().stream().map(list -> list.getId()).toList();
+        Assert.assertTrue(otherProfessionListIds.contains("essenceDestructionOfTheFlesh"));
+
+        // A Mentalism-realm open list, a realm "wizard" does not have: classified as belonging to
+        // another realm rather than left unclassified.
+        Assert.assertEquals(wizard.classifySpellList("mentalismSelfHealing"), MagicListType.OTHER_REALM_OPEN);
+        final List<String> otherRealmOpenListIds = wizard.getOtherRealmOpenSpellLists().stream().map(list -> list.getId()).toList();
+        Assert.assertTrue(otherRealmOpenListIds.contains("mentalismSelfHealing"));
     }
 }

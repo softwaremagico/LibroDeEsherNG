@@ -1323,6 +1323,88 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * Every spell list of one of the character's {@link #getRealmsOfMagic()} directly owned by one of
+	 * the character's selected trainings (matching the legacy {@code MagicFactory#getListOfTraining};
+	 * the "elementalist training" special case - see {@link MagicListType}'s javadoc - is not excluded
+	 * here like the legacy version does, so an elementalist training's own lists are classified as
+	 * {@link MagicListType#TRAINING} instead of the more specific {@link MagicListType#TRIAD}).
+	 */
+	public List<MagicSpellList> getTrainingSpellLists() throws InvalidXmlElementException {
+		final List<String> trainingIds = this.getSelectedTrainingIds();
+		return this.getSpellListsMatching(list -> containsAny(list.getOwners(), trainingIds));
+	}
+
+	/**
+	 * Every spell list of one of the character's {@link #getRealmsOfMagic()} directly owned by some
+	 * other real profession (neither the character's own, nor a training, nor the open/closed pseudo-
+	 * owner tags), matching the legacy {@code MagicFactory#getListOfOtherProfessions}.
+	 */
+	public List<MagicSpellList> getOtherProfessionSpellLists() throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		final String ownProfessionId = profession == null ? null : profession.getId();
+		return this.getSpellListsMatching(
+				list -> list.getOwners().stream().anyMatch(owner -> !owner.equals(ownProfessionId) && this.isRealProfessionId(owner)));
+	}
+
+	/**
+	 * Every spell list marked open, of a realm other than any of the character's {@link
+	 * #getRealmsOfMagic()} (matching the legacy {@code MagicFactory#getOtherRealmOpenLists}).
+	 */
+	public List<MagicSpellList> getOtherRealmOpenSpellLists() throws InvalidXmlElementException {
+		return this.getOtherRealmSpellListsMatching(MagicSpellList::isOpenList);
+	}
+
+	/**
+	 * Every spell list marked closed, of a realm other than any of the character's {@link
+	 * #getRealmsOfMagic()} (matching the legacy {@code MagicFactory#getOtherRealmClosedLists}).
+	 */
+	public List<MagicSpellList> getOtherRealmClosedSpellLists() throws InvalidXmlElementException {
+		return this.getOtherRealmSpellListsMatching(MagicSpellList::isClosedList);
+	}
+
+	/**
+	 * Every spell list of a realm other than any of the character's {@link #getRealmsOfMagic()},
+	 * directly owned by one of the character's selected trainings (matching the legacy {@code
+	 * MagicFactory#getListOfTrainingOtherRealms}; same elementalist-training simplification as {@link
+	 * #getTrainingSpellLists()}).
+	 */
+	public List<MagicSpellList> getOtherRealmTrainingSpellLists() throws InvalidXmlElementException {
+		final List<String> trainingIds = this.getSelectedTrainingIds();
+		return this.getOtherRealmSpellListsMatching(list -> containsAny(list.getOwners(), trainingIds));
+	}
+
+	/**
+	 * Every spell list of a realm other than any of the character's {@link #getRealmsOfMagic()},
+	 * directly owned by some other real profession (matching the legacy {@code
+	 * MagicFactory#getListOfOtherProfessionsOtherRealm}).
+	 */
+	public List<MagicSpellList> getOtherRealmOtherProfessionSpellLists() throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		final String ownProfessionId = profession == null ? null : profession.getId();
+		return this.getOtherRealmSpellListsMatching(
+				list -> list.getOwners().stream().anyMatch(owner -> !owner.equals(ownProfessionId) && this.isRealProfessionId(owner)));
+	}
+
+	/**
+	 * Every spell list marked open of {@link RealmOfMagic#ARCHANUM}: available to any spell caster
+	 * regardless of their own {@link #getRealmsOfMagic()} (matching the legacy {@code
+	 * MagicFactory#getArchanumOpenLists}, which is not filtered by the character's own realm(s)
+	 * either); empty if the character is not a spell caster at all.
+	 */
+	public List<MagicSpellList> getArchanumSpellLists() throws InvalidXmlElementException {
+		if (!this.isSpellCaster()) {
+			return List.of();
+		}
+		final List<MagicSpellList> lists = new ArrayList<>();
+		for (final MagicSpellList list : MagicSpellListFactory.getInstance().getSpellLists(RealmOfMagic.ARCHANUM)) {
+			if (list.isOpenList()) {
+				lists.add(list);
+			}
+		}
+		return lists;
+	}
+
+	/**
 	 * Every spell list of {@link RealmOfMagic#RACE} owned by the selected race (matching the legacy
 	 * {@code MagicFactory#getRaceLists}); empty if no race is selected.
 	 */
@@ -1354,29 +1436,100 @@ public class CharacterPlayer {
 		return lists;
 	}
 
+	/** Every spell list of a realm other than any of the character's {@link #getRealmsOfMagic()} matching {@code filter}. */
+	private List<MagicSpellList> getOtherRealmSpellListsMatching(Predicate<MagicSpellList> filter)
+			throws InvalidXmlElementException {
+		final List<RealmOfMagic> ownRealms = this.getRealmsOfMagic();
+		final List<MagicSpellList> lists = new ArrayList<>();
+		for (final RealmOfMagic realm : RealmOfMagic.values()) {
+			if (ownRealms.contains(realm)) {
+				continue;
+			}
+			for (final MagicSpellList list : MagicSpellListFactory.getInstance().getSpellLists(realm)) {
+				if (filter.test(list)) {
+					lists.add(list);
+				}
+			}
+		}
+		return lists;
+	}
+
+	/** Every training id selected so far (see {@link LevelUp#getTrainings()}), across every level. */
+	private List<String> getSelectedTrainingIds() {
+		final List<String> ids = new ArrayList<>();
+		for (final LevelUp levelUp : this.levels) {
+			ids.addAll(levelUp.getTrainings());
+		}
+		return ids;
+	}
+
+	private static boolean containsAny(List<String> haystack, List<String> needles) {
+		return haystack.stream().anyMatch(needles::contains);
+	}
+
+	private boolean isRealProfessionId(String id) {
+		try {
+			RulesCatalog.getInstance().getProfession(id);
+			return true;
+		} catch (final InvalidXmlElementException e) {
+			return false;
+		}
+	}
+
 	/**
 	 * Classifies {@code spellListId} for this character (see {@link
 	 * com.softwaremagico.librodeesher.magic.MagicListType}'s javadoc for which classifications are
-	 * currently resolved: {@link MagicListType#BASIC}, {@link MagicListType#OPEN}, {@link
-	 * MagicListType#CLOSED}, in that priority order - a list owned by the character's own profession
-	 * is always basic even if also marked open/closed), or {@code null} if it does not belong to any
-	 * of the character's {@link #getRealmsOfMagic()} (including {@link RealmOfMagic#RACE}'s own
-	 * lists, which this does not classify: see {@link #getRaceSpellLists()} instead).
+	 * currently resolved - every one except {@link MagicListType#TRIAD}/{@link
+	 * MagicListType#COMPLEMENTARY_TRIAD}), or {@code null} if none applies (including {@link
+	 * RealmOfMagic#RACE}'s own lists, which this does not classify: see {@link #getRaceSpellLists()}
+	 * instead).
+	 *
+	 * <p>Priority order (own realm first, then own profession/training before another real
+	 * profession's): {@link MagicListType#ARCHANUM} (realm-independent, see {@link
+	 * #getArchanumSpellLists()}) &gt; {@link MagicListType#BASIC} &gt; {@link MagicListType#OPEN}
+	 * &gt; {@link MagicListType#CLOSED} &gt; {@link MagicListType#TRAINING} &gt; {@link
+	 * MagicListType#OTHER_PROFESSION} for one of the character's own realms; {@link
+	 * MagicListType#OTHER_REALM_TRAINING} &gt; {@link MagicListType#OTHER_REALM_OTHER_PROFESSION}
+	 * &gt; {@link MagicListType#OTHER_REALM_OPEN} &gt; {@link MagicListType#OTHER_REALM_CLOSED} for
+	 * every other realm.</p>
 	 */
 	public MagicListType classifySpellList(String spellListId) throws InvalidXmlElementException {
 		final MagicSpellList spellList = MagicSpellListFactory.getInstance().getElement(spellListId);
-		if (!this.getRealmsOfMagic().contains(spellList.getRealm())) {
-			return null;
+		if (spellList.getRealm() == RealmOfMagic.ARCHANUM && spellList.isOpenList() && this.isSpellCaster()) {
+			return MagicListType.ARCHANUM;
 		}
 		final Profession profession = this.getProfession();
-		if (profession != null && spellList.getOwners().contains(profession.getId())) {
-			return MagicListType.BASIC;
+		final String ownProfessionId = profession == null ? null : profession.getId();
+		final List<String> trainingIds = this.getSelectedTrainingIds();
+		if (this.getRealmsOfMagic().contains(spellList.getRealm())) {
+			if (ownProfessionId != null && spellList.getOwners().contains(ownProfessionId)) {
+				return MagicListType.BASIC;
+			}
+			if (spellList.isOpenList()) {
+				return MagicListType.OPEN;
+			}
+			if (spellList.isClosedList()) {
+				return MagicListType.CLOSED;
+			}
+			if (containsAny(spellList.getOwners(), trainingIds)) {
+				return MagicListType.TRAINING;
+			}
+			if (spellList.getOwners().stream().anyMatch(owner -> !owner.equals(ownProfessionId) && this.isRealProfessionId(owner))) {
+				return MagicListType.OTHER_PROFESSION;
+			}
+			return null;
+		}
+		if (containsAny(spellList.getOwners(), trainingIds)) {
+			return MagicListType.OTHER_REALM_TRAINING;
+		}
+		if (spellList.getOwners().stream().anyMatch(owner -> !owner.equals(ownProfessionId) && this.isRealProfessionId(owner))) {
+			return MagicListType.OTHER_REALM_OTHER_PROFESSION;
 		}
 		if (spellList.isOpenList()) {
-			return MagicListType.OPEN;
+			return MagicListType.OTHER_REALM_OPEN;
 		}
 		if (spellList.isClosedList()) {
-			return MagicListType.CLOSED;
+			return MagicListType.OTHER_REALM_CLOSED;
 		}
 		return null;
 	}
