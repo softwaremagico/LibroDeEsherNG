@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.language;
 
+import java.text.Normalizer;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
@@ -148,10 +149,15 @@ public final class Translations {
         if (english == null) {
             return null;
         }
+        // Safety net for any word that reaches here without a dictionary entry (e.g. a made-up
+        // fantasy proper noun, see Translations#toEnglishId's callers): strip accents so no id ever
+        // embeds Spanish diacritics, even though the letters themselves are kept as-is otherwise.
+        final String withoutAccents = Normalizer.normalize(english, Normalizer.Form.NFD)
+                .replaceAll("\\p{M}", "");
         final StringBuilder id = new StringBuilder();
         boolean capitalizeNext = false;
         boolean first = true;
-        for (final char c : english.toCharArray()) {
+        for (final char c : withoutAccents.toCharArray()) {
             if (Character.isLetterOrDigit(c)) {
                 if (first) {
                     id.append(Character.toLowerCase(c));
@@ -1010,6 +1016,15 @@ public final class Translations {
         put(m, "administración", "administration");
         put(m, "Barrendero", "Street Sweeper");
         put(m, "Lego", "Layman");
+        put(m, "Acompañante", "Companion");
+        put(m, "Agente", "Agent");
+        put(m, "Policía", "Police");
+        put(m, "Chambelán", "Chamberlain");
+        put(m, "Charlatán", "Charlatan");
+        put(m, "Científico", "Scientist");
+        put(m, "Guía", "Guide");
+        put(m, "Leñador", "Woodcutter");
+        put(m, "Guadaña", "Scythe");
         put(m, "admistración", "administration");
         put(m, "Analítica", "Analytical");
         put(m, "Antídotos", "Antidotes");

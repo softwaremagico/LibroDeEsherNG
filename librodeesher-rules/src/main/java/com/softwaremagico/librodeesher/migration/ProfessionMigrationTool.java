@@ -67,6 +67,7 @@ public final class ProfessionMigrationTool {
         final Path modulosDir = sourceRoot.resolve("rolemaster").resolve("modulos");
         final IdAllocator idAllocator = new IdAllocator();
         final Map<String, String> categoryIndex = CategoryMigrationTool.buildCategoryIndex(sourceRoot);
+        final Map<String, String> trainingIndex = TrainingMigrationTool.buildTrainingIndex(sourceRoot);
 
         int written = 0;
         for (final String module : ModuleManager.getAllModules()) {
@@ -78,7 +79,7 @@ public final class ProfessionMigrationTool {
             try (Stream<Path> files = Files.list(professionsDir)) {
                 for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
                         .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
-                    professions.add(readProfessionFile(file, idAllocator, categoryIndex));
+                    professions.add(readProfessionFile(file, idAllocator, categoryIndex, trainingIndex));
                 }
             }
             if (professions.isEmpty()) {
@@ -119,7 +120,8 @@ public final class ProfessionMigrationTool {
         return index;
     }
 
-    private static Profession readProfessionFile(Path file, IdAllocator idAllocator, Map<String, String> categoryIndex)
+    private static Profession readProfessionFile(Path file, IdAllocator idAllocator, Map<String, String> categoryIndex,
+                                                   Map<String, String> trainingIndex)
             throws IOException {
         final String fileName = file.getFileName().toString();
         final String professionName = fileName.substring(0, fileName.length() - ".txt".length());
@@ -143,7 +145,7 @@ public final class ProfessionMigrationTool {
         profession.setRestrictedSkillIds(restricted.fixedSkillIds());
         profession.setRestrictedSkillChoices(restricted.choices());
         profession.setMagicCostsRaw(String.join("\n", cursor.nextSectionOrEmpty()));
-        profession.setTrainingCosts(parseTrainingCosts(cursor.nextSectionOrEmpty()));
+        profession.setTrainingCosts(parseTrainingCosts(cursor.nextSectionOrEmpty(), trainingIndex));
         return profession;
     }
 
@@ -393,7 +395,8 @@ public final class ProfessionMigrationTool {
     private record ParsedCategoryCosts(List<ProfessionCategoryCost> categoryCosts, List<ProfessionWeaponCostTier> weaponCostTiers) {
     }
 
-    private static List<ProfessionTrainingCost> parseTrainingCosts(List<String> sectionLines) {
+    private static List<ProfessionTrainingCost> parseTrainingCosts(List<String> sectionLines,
+                                                                     Map<String, String> trainingIndex) {
         final List<ProfessionTrainingCost> costs = new ArrayList<>();
         for (final String line : sectionLines) {
             final String[] columns = line.split("\t");
@@ -410,7 +413,8 @@ public final class ProfessionMigrationTool {
             final Integer costNotMagic = columns.length > 2
                     ? Integer.valueOf(columns[2].replace("+", "").replace("-", "").trim())
                     : null;
-            costs.add(new ProfessionTrainingCost(Translations.toEnglishId(trainingName), cost, costNotMagic, type));
+            costs.add(new ProfessionTrainingCost(TrainingMigrationTool.resolveTrainingId(trainingName, trainingIndex), cost,
+                    costNotMagic, type));
         }
         return costs;
     }

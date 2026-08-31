@@ -6,6 +6,10 @@ import com.softwaremagico.librodeesher.training.TrainingType;
 /**
  * Background point cost (and preference) of a specific training for a profession, as printed in the
  * "ADIESTRAMIENTO" section of a {@code profesiones/*.txt} file.
+ *
+ * <p>Despite its name, {@link #getTrainingName()} holds the real training id (resolved by {@code
+ * ProfessionMigrationTool} via {@code TrainingMigrationTool#buildTrainingIndex}), kept as-is to match
+ * the existing serialized field name.</p>
  */
 public class ProfessionTrainingCost {
 

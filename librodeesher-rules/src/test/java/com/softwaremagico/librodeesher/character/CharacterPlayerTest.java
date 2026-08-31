@@ -1117,7 +1117,7 @@ public class CharacterPlayerTest {
     @Test
     public void raceProfessionGroupTokenMatchesEveryProfessionOfThatRealm() throws InvalidXmlElementException {
         final CharacterPlayer character = new CharacterPlayer();
-        character.setRaceId("lugrôkiMenores");
+        character.setRaceId("lugrokiMenores");
 
         Assert.assertTrue(character.isProfessionRestrictedByRace("paladin"));
         // "group:essence" restricts every essence spellcaster, e.g. the wizard.

@@ -720,7 +720,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <trainingCost>
         <cost>24</cost>
         <costNotMagic>24</costNotMagic>
-        <trainingName>acompañante</trainingName>
+        <trainingName>companion</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
@@ -738,13 +738,13 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <trainingCost>
         <cost>27</cost>
         <costNotMagic>27</costNotMagic>
-        <trainingName>chambelán</trainingName>
+        <trainingName>chamberlain</trainingName>
         <type>FORBIDDEN</type>
       </trainingCost>
       <trainingCost>
         <cost>18</cost>
         <costNotMagic>18</costNotMagic>
-        <trainingName>charlatán</trainingName>
+        <trainingName>charlatan</trainingName>
         <type>STANDARD</type>
       </trainingCost>
       <trainingCost>
@@ -768,7 +768,7 @@ Listas Hechizos de Adiestramientos de Otros Reinos (21+)	16/16</magicCostsRaw>
       <trainingCost>
         <cost>18</cost>
         <costNotMagic>18</costNotMagic>
-        <trainingName>guía</trainingName>
+        <trainingName>guide</trainingName>
         <type>FAVOURITE</type>
       </trainingCost>
       <trainingCost>

@@ -460,7 +460,7 @@
         <maxWritingRanks>10</maxWritingRanks>
       </languageRank>
       <languageRank>
-        <languageId>sirénido</languageId>
+        <languageId>sirenido</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
       </languageRank>
@@ -962,7 +962,7 @@
         <maxWritingRanks>10</maxWritingRanks>
       </languageRank>
       <languageRank>
-        <languageId>sirénido</languageId>
+        <languageId>sirenido</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
       </languageRank>
@@ -1453,7 +1453,7 @@
         <maxWritingRanks>10</maxWritingRanks>
       </languageRank>
       <languageRank>
-        <languageId>sirénido</languageId>
+        <languageId>sirenido</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
       </languageRank>
@@ -1949,7 +1949,7 @@
         <maxWritingRanks>10</maxWritingRanks>
       </languageRank>
       <languageRank>
-        <languageId>sirénido</languageId>
+        <languageId>sirenido</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
       </languageRank>
@@ -2440,7 +2440,7 @@
         <maxWritingRanks>10</maxWritingRanks>
       </languageRank>
       <languageRank>
-        <languageId>sirénido</languageId>
+        <languageId>sirenido</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
       </languageRank>
@@ -2931,7 +2931,7 @@
         <maxWritingRanks>10</maxWritingRanks>
       </languageRank>
       <languageRank>
-        <languageId>sirénido</languageId>
+        <languageId>sirenido</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
       </languageRank>
@@ -3459,7 +3459,7 @@
       <weaponId>handAxe</weaponId>
       <weaponId>shortSword</weaponId>
       <weaponId>battleAxe</weaponId>
-      <weaponId>axeOfLeñador</weaponId>
+      <weaponId>axeOfWoodcutter</weaponId>
       <weaponId>sling</weaponId>
       <weaponId>shortBow</weaponId>
       <weaponId>compositeBow</weaponId>
@@ -3934,7 +3934,7 @@
         <maxWritingRanks>4</maxWritingRanks>
       </languageRank>
       <languageRank>
-        <languageId>titán</languageId>
+        <languageId>titan</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
       </languageRank>
@@ -3950,7 +3950,7 @@
       <weaponId>handAxe</weaponId>
       <weaponId>shortSword</weaponId>
       <weaponId>battleAxe</weaponId>
-      <weaponId>axeOfLeñador</weaponId>
+      <weaponId>axeOfWoodcutter</weaponId>
       <weaponId>sling</weaponId>
       <weaponId>shortBow</weaponId>
       <weaponId>compositeBow</weaponId>
@@ -13422,7 +13422,7 @@
         <maxWritingRanks>6</maxWritingRanks>
       </languageRank>
       <languageRank>
-        <languageId>hablaPequeña</languageId>
+        <languageId>hablaPequena</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
       </languageRank>
@@ -13463,7 +13463,7 @@
       <weaponId>staff</weaponId>
       <weaponId>javelin</weaponId>
       <weaponId>harpoon</weaponId>
-      <weaponId>guadaña</weaponId>
+      <weaponId>scythe</weaponId>
       <weaponId>sword</weaponId>
       <weaponId>battleAxe</weaponId>
       <weaponId>cavalryLance</weaponId>
@@ -13934,7 +13934,7 @@
         <maxWritingRanks>6</maxWritingRanks>
       </languageRank>
       <languageRank>
-        <languageId>hablaPequeña</languageId>
+        <languageId>hablaPequena</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
       </languageRank>
@@ -13961,7 +13961,7 @@
       <weaponId>staff</weaponId>
       <weaponId>javelin</weaponId>
       <weaponId>harpoon</weaponId>
-      <weaponId>guadaña</weaponId>
+      <weaponId>scythe</weaponId>
       <weaponId>sword</weaponId>
       <weaponId>battleAxe</weaponId>
       <weaponId>cavalryLance</weaponId>
@@ -14433,7 +14433,7 @@
         <maxWritingRanks>6</maxWritingRanks>
       </languageRank>
       <languageRank>
-        <languageId>hablaPequeña</languageId>
+        <languageId>hablaPequena</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
       </languageRank>
@@ -14460,7 +14460,7 @@
       <weaponId>staff</weaponId>
       <weaponId>javelin</weaponId>
       <weaponId>harpoon</weaponId>
-      <weaponId>guadaña</weaponId>
+      <weaponId>scythe</weaponId>
       <weaponId>sword</weaponId>
       <weaponId>battleAxe</weaponId>
       <weaponId>cavalryLance</weaponId>
@@ -17469,7 +17469,7 @@
         <maxWritingRanks>4</maxWritingRanks>
       </languageRank>
       <languageRank>
-        <languageId>lugrôki</languageId>
+        <languageId>lugroki</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
       </languageRank>
@@ -18934,7 +18934,7 @@
     <trainingPrices>
       <trainingPrice>
         <price>0.75</price>
-        <trainingId>sacerdoreChamánico</trainingId>
+        <trainingId>sacerdoreChamanico</trainingId>
       </trainingPrice>
       <trainingPrice>
         <price>0.75</price>
@@ -21438,7 +21438,7 @@
         <maxWritingRanks>4</maxWritingRanks>
       </languageRank>
       <languageRank>
-        <languageId>titán</languageId>
+        <languageId>titan</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
       </languageRank>
@@ -21948,7 +21948,7 @@
         <maxWritingRanks>4</maxWritingRanks>
       </languageRank>
       <languageRank>
-        <languageId>titán</languageId>
+        <languageId>titan</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
       </languageRank>
@@ -22472,7 +22472,7 @@
         <maxWritingRanks>4</maxWritingRanks>
       </languageRank>
       <languageRank>
-        <languageId>titán</languageId>
+        <languageId>titan</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
       </languageRank>

@@ -566,7 +566,7 @@
     <appearanceBonus>-20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
-        <languageId>charón</languageId>
+        <languageId>charon</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -1578,7 +1578,7 @@
     <appearanceBonus>-20</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
-        <languageId>charón</languageId>
+        <languageId>charon</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -2560,7 +2560,7 @@
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
-        <languageId>wôrin</languageId>
+        <languageId>worin</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -2956,7 +2956,7 @@
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
-        <languageId>charón</languageId>
+        <languageId>charon</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -5226,7 +5226,7 @@
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
-        <languageId>hablaPequeña</languageId>
+        <languageId>hablaPequena</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -5267,7 +5267,7 @@
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
-        <languageId>hablaPequeña</languageId>
+        <languageId>hablaPequena</languageId>
         <maxSpeakingRanks>8</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -5403,7 +5403,7 @@
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
-        <languageId>hablaPequeña</languageId>
+        <languageId>hablaPequena</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -5632,7 +5632,7 @@
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
-        <languageId>hablaPequeña</languageId>
+        <languageId>hablaPequena</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -7207,7 +7207,7 @@
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
-        <languageId>wôrim</languageId>
+        <languageId>worim</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -7460,7 +7460,7 @@
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
-        <languageId>wôeim</languageId>
+        <languageId>woeim</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -8140,7 +8140,7 @@
       <femaleName>Ghoulshooter</femaleName>
       <femaleName>Gretchinlover</femaleName>
     </femaleNames>
-    <id>lugrôkiMayores</id>
+    <id>lugrokiMayores</id>
     <languagePoints>1</languagePoints>
     <maleNames>
       <maleName>Eragdush</maleName>
@@ -8228,7 +8228,7 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
-        <languageId>lugrôki</languageId>
+        <languageId>lugroki</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -8349,7 +8349,7 @@
       <femaleName>Ghoulshooter</femaleName>
       <femaleName>Gretchinlover</femaleName>
     </femaleNames>
-    <id>lugrôkiMenores</id>
+    <id>lugrokiMenores</id>
     <languagePoints>1</languagePoints>
     <maleNames>
       <maleName>Eragdush</maleName>
@@ -8440,7 +8440,7 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
-        <languageId>lugrôki</languageId>
+        <languageId>lugroki</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -8620,7 +8620,7 @@
     </progressionRankValues>
     <raceLanguages>
       <raceLanguage>
-        <languageId>hablaPequeña</languageId>
+        <languageId>hablaPequena</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>10</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -9088,7 +9088,7 @@
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
-        <languageId>lugrôki</languageId>
+        <languageId>lugroki</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -9277,7 +9277,7 @@
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
-        <languageId>lugrôki</languageId>
+        <languageId>lugroki</languageId>
         <maxSpeakingRanks>2</maxSpeakingRanks>
         <maxWritingRanks>2</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -9833,7 +9833,7 @@
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
-        <languageId>hablaPequeña</languageId>
+        <languageId>hablaPequena</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -10624,7 +10624,7 @@
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
-        <languageId>sirénido</languageId>
+        <languageId>sirenido</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -11034,7 +11034,7 @@
     <appearanceBonus>5</appearanceBonus>
     <backgroundLanguages>
       <backgroundLanguage>
-        <languageId>sirénido</languageId>
+        <languageId>sirenido</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -11166,7 +11166,7 @@
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
-        <languageId>sirénido</languageId>
+        <languageId>sirenido</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -11384,7 +11384,7 @@
         <startingWritingRanks>0</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
-        <languageId>sirénido</languageId>
+        <languageId>sirenido</languageId>
         <maxSpeakingRanks>10</maxSpeakingRanks>
         <maxWritingRanks>8</maxWritingRanks>
         <startingSpeakingRanks>8</startingSpeakingRanks>
@@ -12455,7 +12455,7 @@
         <startingWritingRanks>0</startingWritingRanks>
       </backgroundLanguage>
       <backgroundLanguage>
-        <languageId>wôrim</languageId>
+        <languageId>worim</languageId>
         <maxSpeakingRanks>6</maxSpeakingRanks>
         <maxWritingRanks>6</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>
@@ -12617,7 +12617,7 @@
         <startingWritingRanks>4</startingWritingRanks>
       </raceLanguage>
       <raceLanguage>
-        <languageId>wôrim</languageId>
+        <languageId>worim</languageId>
         <maxSpeakingRanks>4</maxSpeakingRanks>
         <maxWritingRanks>4</maxWritingRanks>
         <startingSpeakingRanks>0</startingSpeakingRanks>

@@ -19,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -98,6 +99,34 @@ public final class TrainingMigrationTool {
             written++;
         }
         return written;
+    }
+
+    /**
+     * Builds a Spanish training name -&gt; id index the same way {@link #migrate(Path, Path)} builds
+     * the training catalog itself (one entry per {@code adiestramientos/*.txt} file, in the same
+     * module/file order, so the id matches exactly), so other migration tools (e.g. {@code
+     * ProfessionMigrationTool}) can resolve a training referenced by name in another rulebook file
+     * (e.g. a profession's "ADIESTRAMIENTO" per-training cost section) to the real training id.
+     */
+    public static Map<String, String> buildTrainingIndex(Path sourceRoot) throws IOException {
+        final Path modulosDir = sourceRoot.resolve("rolemaster").resolve("modulos");
+        final IdAllocator idAllocator = new IdAllocator();
+        final Map<String, String> index = new LinkedHashMap<>();
+        for (final String module : ModuleManager.getAllModules()) {
+            final Path trainingsDir = modulosDir.resolve(LegacyModules.sourceFolderFor(module)).resolve(TRAININGS_FOLDER);
+            if (!Files.isDirectory(trainingsDir)) {
+                continue;
+            }
+            try (Stream<Path> files = Files.list(trainingsDir)) {
+                for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
+                        .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
+                    final String fileName = file.getFileName().toString();
+                    final String trainingName = fileName.substring(0, fileName.length() - ".txt".length());
+                    index.put(trainingName, idAllocator.idFor(trainingName));
+                }
+            }
+        }
+        return index;
     }
 
     private static Training readTrainingFile(Path file, IdAllocator idAllocator, Map<String, String> categoryIndex,
@@ -263,6 +292,26 @@ public final class TrainingMigrationTool {
             }
         }
         return Translations.toEnglishId(skillName);
+    }
+
+    /**
+     * Resolves a training name referenced by another rulebook file (e.g. a profession's
+     * "ADIESTRAMIENTO" per-training cost section) to its real training id via {@code trainingIndex}
+     * (see {@link #buildTrainingIndex}), trying a case-insensitive match before falling back to
+     * {@link Translations#toEnglishId} (only ever needed for a name that turns out not to match any
+     * real training, which does not currently happen in any shipped profession).
+     */
+    static String resolveTrainingId(String trainingName, Map<String, String> trainingIndex) {
+        final String id = trainingIndex.get(trainingName);
+        if (id != null) {
+            return id;
+        }
+        for (final Map.Entry<String, String> entry : trainingIndex.entrySet()) {
+            if (entry.getKey().equalsIgnoreCase(trainingName)) {
+                return entry.getValue();
+            }
+        }
+        return Translations.toEnglishId(trainingName);
     }
 
     /** Splits a {@code "a; b"} or {@code "a, b"} choice list (without its surrounding braces) and trims each option. */
