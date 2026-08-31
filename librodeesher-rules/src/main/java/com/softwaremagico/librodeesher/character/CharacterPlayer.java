@@ -202,6 +202,23 @@ public class CharacterPlayer {
 		this.characteristicTemporalValues.put(abbreviation, value);
 	}
 
+	/**
+	 * Sets {@code abbreviation}'s initial temporal value at character creation to {@code value},
+	 * unless it is one of the selected profession's two preferred characteristics (see {@link
+	 * Profession#isPreferredCharacteristic}) and {@code value} is below 90, in which case it is
+	 * bumped up to 90 instead (a prime requisite is guaranteed to start reasonably high), matching the
+	 * legacy {@code CharacterPlayer#getCharacteristicInitialTemporalValue} exactly.
+	 */
+	public void setCharacteristicInitialTemporalValue(CharacteristicAbbreviation abbreviation, int value)
+			throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		if (profession != null && profession.isPreferredCharacteristic(abbreviation) && value < 90) {
+			this.setCharacteristicTemporalValue(abbreviation, 90);
+			return;
+		}
+		this.setCharacteristicTemporalValue(abbreviation, value);
+	}
+
 	public Integer getCharacteristicPotentialValue(CharacteristicAbbreviation abbreviation) {
 		return this.characteristicPotentialValues.getOrDefault(abbreviation, 0);
 	}
@@ -280,19 +297,37 @@ public class CharacterPlayer {
 	 *
 	 * <p>
 	 * Background/special bonuses are future work.
-	 * {@link CharacteristicAbbreviation#REALM_OF_MAGIC} (used by spell
-	 * categories) is not resolved here yet either: it requires knowing the caster's
-	 * current realm of magic, which is future (magic) work; it returns 0 for now.
 	 * </p>
 	 */
 	public Integer getCharacteristicTotalBonus(CharacteristicAbbreviation abbreviation)
 			throws InvalidXmlElementException {
-		if (abbreviation == CharacteristicAbbreviation.NONE
-				|| abbreviation == CharacteristicAbbreviation.REALM_OF_MAGIC) {
+		if (abbreviation == CharacteristicAbbreviation.NONE) {
 			return 0;
+		}
+		if (abbreviation == CharacteristicAbbreviation.REALM_OF_MAGIC) {
+			return this.getBonusCharacteristicOfRealmOfMagic();
 		}
 		return this.getCharacteristicTemporalBonus(abbreviation) + this.getCharacteristicRaceBonus(abbreviation)
 				+ this.getPerkCharacteristicBonus(abbreviation);
+	}
+
+	/**
+	 * The average, across every one of the character's own {@link #getRealmsOfMagic()}, of {@link
+	 * #getCharacteristicTotalBonus(CharacteristicAbbreviation)} for that realm's own "prime"
+	 * characteristic (see {@link RealmOfMagic#getCharacteristic()}), matching the legacy {@code
+	 * CharacterPlayer#getBonusCharacteristicOfRealmOfMagic()} exactly; 0 if the character has none
+	 * (legacy divides by zero instead).
+	 */
+	public Integer getBonusCharacteristicOfRealmOfMagic() throws InvalidXmlElementException {
+		final List<RealmOfMagic> realms = this.getRealmsOfMagic();
+		if (realms.isEmpty()) {
+			return 0;
+		}
+		int total = 0;
+		for (final RealmOfMagic realm : realms) {
+			total += this.getCharacteristicTotalBonus(realm.getCharacteristic());
+		}
+		return total / realms.size();
 	}
 
 	public Appearance getAppearance() {
@@ -1337,6 +1372,65 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * The selected profession's {@link MagicListType#BASIC} cost for its very first rank (0-based
+	 * index 0), or {@code null} if no profession is selected or it has none defined; the building
+	 * block {@link #isPureWizard()}/{@link #isHybridWizard()}/{@link #isSemiWizard()} classify a
+	 * profession's casting style from, matching the legacy {@code CharacterPlayer#isPureWizard}'s own
+	 * {@code getNewRankCost(getCategory(BASIC_LIST_TAG), 0, 0)} exactly.
+	 */
+	private Integer getBasicListFirstRankCost() throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		if (profession == null) {
+			return null;
+		}
+		final ProfessionMagicCost bracket = profession.getMagicCost(MagicListType.BASIC, 0);
+		return bracket == null ? null : bracket.getRankCost(0);
+	}
+
+	/**
+	 * Whether the selected profession is a "pure" spell caster (a single realm, at the cheapest
+	 * {@link MagicListType#BASIC} cost tier), matching the legacy {@code
+	 * CharacterPlayer#isPureWizard()} exactly.
+	 */
+	public boolean isPureWizard() throws InvalidXmlElementException {
+		return Integer.valueOf(3).equals(this.getBasicListFirstRankCost());
+	}
+
+	/**
+	 * Whether the selected profession is a "hybrid" spell caster (two realms at once, at the same
+	 * cheapest {@link MagicListType#BASIC} cost tier as {@link #isPureWizard()}), matching the legacy
+	 * {@code CharacterPlayer#isHybridWizard()} exactly.
+	 */
+	public boolean isHybridWizard() throws InvalidXmlElementException {
+		return Integer.valueOf(3).equals(this.getBasicListFirstRankCost()) && this.getRealmsOfMagic().size() == 2;
+	}
+
+	/**
+	 * Whether the selected profession is a "semi" spell caster (e.g. a Ranger/Bard-style hybrid class
+	 * that pays double for its spells), matching the legacy {@code CharacterPlayer#isSemiWizard()}
+	 * exactly.
+	 */
+	public boolean isSemiWizard() throws InvalidXmlElementException {
+		return Integer.valueOf(6).equals(this.getBasicListFirstRankCost());
+	}
+
+	/** Whether the selected profession can cast spells at all, matching the legacy {@code CharacterPlayer#isWizard()} exactly. */
+	public boolean isWizard() throws InvalidXmlElementException {
+		return this.isPureWizard() || this.isHybridWizard() || this.isSemiWizard();
+	}
+
+	/**
+	 * Whether the selected profession is a non-caster (matching the legacy {@code
+	 * CharacterPlayer#isFighter()} exactly: every profession, even a pure fighter, is given a
+	 * {@link com.softwaremagico.librodeesher.profession.RealmOfMagicGrant} of every realm - see
+	 * {@link Profession#isSpellCaster()}'s javadoc - so a real caster only ever has 1 or 2 realms,
+	 * while a non-caster has every one of them (3 or more)).
+	 */
+	public boolean isFighter() throws InvalidXmlElementException {
+		return this.getRealmsOfMagic().size() >= 3;
+	}
+
+	/**
 	 * Every realm of magic the selected profession grants, already resolved (see {@link
 	 * #applyProfessionMagicRealms}); empty if no profession is selected, it is not a spell caster, a
 	 * hybrid realm grant has not been resolved yet, or {@link #isMagicAllowed()} is {@code false}
@@ -2273,15 +2367,33 @@ public class CharacterPlayer {
 		return total;
 	}
 
-	/** Same as {@link #getPerkCharacteristicBonus}, for {@link PerkBonus#isArmor()}. */
-	public int getPerkArmorBonus() throws InvalidXmlElementException {
-		int total = 0;
+	/**
+	 * Same as {@link #getPerkCharacteristicBonus}, for {@link PerkBonus#isArmor()}: unlike every
+	 * other per-perk-bonus total, this is <strong>not</strong> the sum of every one (matching the
+	 * legacy {@code Perk#getArmourClass()}/{@code CharacterPlayer#getArmourClass()}): a perk's own
+	 * armor type bonus fully replaces the character's base armor type (1) instead of adding to it,
+	 * and only the single highest one among every selected perk applies. See {@link
+	 * #getArmourClass()} for the actual, ready-to-use total.
+	 */
+	private int getPerkArmorBonus() throws InvalidXmlElementException {
+		int highest = 0;
 		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
-			if (bonus.isArmor() && bonus.getKind() == PerkBonusKind.FLAT) {
-				total += bonus.getValue();
+			if (bonus.isArmor() && bonus.getKind() == PerkBonusKind.FLAT && bonus.getValue() > highest) {
+				highest = bonus.getValue();
 			}
 		}
-		return total;
+		return highest;
+	}
+
+	/**
+	 * The character's own armor type/class (1 by default; a suit of natural armor, or a perk like a
+	 * tough hide, can replace it with a higher one, but never lower), matching the legacy {@code
+	 * CharacterPlayer#getArmourClass()} exactly (which only looks at perks; a race's own natural
+	 * armor - see {@link Race#getNaturalArmorType()} - is not folded in here, matching legacy, where
+	 * it is a completely separate, unrelated field).
+	 */
+	public int getArmourClass() throws InvalidXmlElementException {
+		return Math.max(1, this.getPerkArmorBonus());
 	}
 
 	/** Same as {@link #getPerkCharacteristicBonus}, for {@link PerkBonus#isMovement()}. */
@@ -2294,6 +2406,26 @@ public class CharacterPlayer {
 		}
 		return total;
 	}
+
+	/**
+	 * The character's own movement rate in feet per round (15 base, plus 1 per point of {@link
+	 * CharacteristicAbbreviation#QUICKNESS} bonus, plus every selected perk's flat movement bonus),
+	 * matching the legacy {@code CharacterPlayer#getMovementCapacity()} exactly.
+	 */
+	public int getMovementCapacity() throws InvalidXmlElementException {
+		return 15 + this.getCharacteristicTotalBonus(CharacteristicAbbreviation.QUICKNESS) + this.getPerkMovementBonus();
+	}
+
+	/**
+	 * The character's own defensive bonus (3 times {@link CharacteristicAbbreviation#QUICKNESS}'s
+	 * total bonus), matching the legacy {@code CharacterPlayer#getDefensiveBonus()} - minus its own
+	 * {@code getItemBonus(BonusType.DEFENSIVE_BONUS)} term, an equipment-system bonus that is future
+	 * work, same as every other item/equipment concern.
+	 */
+	public int getDefensiveBonus() throws InvalidXmlElementException {
+		return this.getCharacteristicTotalBonus(CharacteristicAbbreviation.QUICKNESS) * 3;
+	}
+
 
 	/** Same as {@link #getPerkCharacteristicBonus}, for {@link PerkBonus#getResistanceType()}. */
 	public Integer getPerkResistanceBonus(ResistanceType resistanceType) throws InvalidXmlElementException {
@@ -2480,17 +2612,35 @@ public class CharacterPlayer {
 	}
 
 	/**
-	 * {@code resistanceType}'s total resistance bonus: the selected race's fixed bonus, every
-	 * selected perk's flat bonus to it (see {@link #getPerkResistanceBonus(ResistanceType)}), plus
-	 * every selected perk's flat "TR Reino" ("resistance to your own realm of magic") bonus (see
-	 * {@link PerkBonus#getUnresolvedTargetId()}) if {@code resistanceType} matches one of the
-	 * character's own {@link #getRealmsOfMagic()} ({@link ResistanceType#CHANNELING}/{@link
+	 * {@code resistanceType}'s total resistance bonus, matching the legacy {@code
+	 * CharacterPlayer#getResistanceBonus(ResistanceType)} exactly: 3 times {@link
+	 * #getCharacteristicTotalBonus(CharacteristicAbbreviation)} of that resistance's own governing
+	 * characteristic (e.g. {@link CharacteristicAbbreviation#EMPATHY} for {@link
+	 * ResistanceType#ESSENCE}; {@link ResistanceType#PSIONIC}/{@link ResistanceType#COLD}/{@link
+	 * ResistanceType#HEAT} have none), plus the selected race's fixed bonus, plus every selected
+	 * perk's flat bonus to it (see {@link #getPerkResistanceBonus(ResistanceType)}), plus every
+	 * selected perk's flat "TR Reino" ("resistance to your own realm of magic") bonus (see {@link
+	 * PerkBonus#getUnresolvedTargetId()}) if {@code resistanceType} matches one of the character's
+	 * own {@link #getRealmsOfMagic()} ({@link ResistanceType#CHANNELING}/{@link
 	 * ResistanceType#ESSENCE}/{@link ResistanceType#MENTALISM}/{@link ResistanceType#PSIONIC} share
 	 * their name with the matching {@link RealmOfMagic}).
 	 */
 	public Integer getResistanceTotalBonus(ResistanceType resistanceType) throws InvalidXmlElementException {
-		return this.getResistanceRaceBonus(resistanceType) + this.getPerkResistanceBonus(resistanceType)
-				+ this.getPerkOwnRealmResistanceBonus(resistanceType);
+		return this.getCharacteristicResistanceBonus(resistanceType) + this.getResistanceRaceBonus(resistanceType)
+				+ this.getPerkResistanceBonus(resistanceType) + this.getPerkOwnRealmResistanceBonus(resistanceType);
+	}
+
+	/** 3 times the resistance's own governing characteristic's total bonus, or 0 if it has none. */
+	private Integer getCharacteristicResistanceBonus(ResistanceType resistanceType) throws InvalidXmlElementException {
+		final CharacteristicAbbreviation characteristic = switch (resistanceType) {
+			case CHANNELING -> CharacteristicAbbreviation.INTUITION;
+			case ESSENCE -> CharacteristicAbbreviation.EMPATHY;
+			case MENTALISM -> CharacteristicAbbreviation.PRESENCE;
+			case POISON, DISEASE -> CharacteristicAbbreviation.CONSTITUTION;
+			case FEAR -> CharacteristicAbbreviation.SELF_DISCIPLINE;
+			case PSIONIC, COLD, HEAT -> CharacteristicAbbreviation.NONE;
+		};
+		return this.getCharacteristicTotalBonus(characteristic) * 3;
 	}
 
 	private static final String OWN_REALM_RESISTANCE_UNRESOLVED_TARGET_ID = "realm";

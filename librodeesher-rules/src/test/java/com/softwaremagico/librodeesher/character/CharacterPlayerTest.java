@@ -980,7 +980,10 @@ public class CharacterPlayerTest {
 
         Assert.assertEquals(character.getResistanceRaceBonus(ResistanceType.POISON), Integer.valueOf(15));
         Assert.assertEquals(character.getResistanceRaceBonus(ResistanceType.HEAT), Integer.valueOf(0));
-        Assert.assertEquals(character.getResistanceTotalBonus(ResistanceType.POISON), Integer.valueOf(15));
+        // POISON's own total also includes 3 times the race's own CONSTITUTION bonus (+4 for
+        // "lionCentaur"); HEAT has no governing characteristic at all, so it stays race-only.
+        Assert.assertEquals(character.getResistanceTotalBonus(ResistanceType.POISON), Integer.valueOf(15 + 4 * 3));
+        Assert.assertEquals(character.getResistanceTotalBonus(ResistanceType.HEAT), Integer.valueOf(0));
     }
 
     @Test
@@ -1498,5 +1501,55 @@ public class CharacterPlayerTest {
         // owned by a selected training never classify, or show up in getOtherRealmTrainingSpellLists.
         Assert.assertFalse(character.isOtherRealmTrainingSpellsAllowed());
         Assert.assertTrue(character.getOtherRealmTrainingSpellLists().isEmpty());
+    }
+
+    @Test
+    public void professionCastingStyleIsClassifiedLikeLegacy() throws InvalidXmlElementException {
+        final CharacterPlayer wizard = new CharacterPlayer();
+        wizard.setProfessionId("wizard");
+        wizard.applyProfessionMagicRealms(null);
+        Assert.assertTrue(wizard.isPureWizard());
+        Assert.assertFalse(wizard.isHybridWizard());
+        Assert.assertFalse(wizard.isSemiWizard());
+        Assert.assertTrue(wizard.isWizard());
+        Assert.assertFalse(wizard.isFighter());
+
+        final CharacterPlayer fighter = new CharacterPlayer();
+        fighter.setProfessionId("fighter");
+        fighter.applyProfessionMagicRealms(null);
+        Assert.assertFalse(fighter.isWizard());
+        Assert.assertTrue(fighter.isFighter());
+    }
+
+    @Test
+    public void movementArmourAndDefensiveBonusAreQueryable() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        // No perks, no race: base values only.
+        Assert.assertEquals(character.getMovementCapacity(), 15);
+        Assert.assertEquals(character.getArmourClass(), 1);
+        Assert.assertEquals(character.getDefensiveBonus(), 0);
+    }
+
+    @Test
+    public void primeCharacteristicIsBumpedToAMinimumOfNinetyAtCreation() throws InvalidXmlElementException {
+        final CharacterPlayer wizard = new CharacterPlayer();
+        wizard.setProfessionId("wizard");
+        final Profession profession = RulesCatalog.getInstance().getProfession("wizard");
+        final CharacteristicAbbreviation primary = profession.getCharacteristicPreferences().get(0);
+        final CharacteristicAbbreviation secondary = profession.getCharacteristicPreferences().get(1);
+        final CharacteristicAbbreviation nonPreferred = java.util.Arrays.stream(CharacteristicAbbreviation.values())
+                .filter(a -> a != primary && a != secondary
+                        && a != CharacteristicAbbreviation.NONE && a != CharacteristicAbbreviation.REALM_OF_MAGIC
+                        && a != CharacteristicAbbreviation.APPEARANCE)
+                .findFirst().orElseThrow();
+
+        wizard.setCharacteristicInitialTemporalValue(primary, 45);
+        Assert.assertEquals(wizard.getCharacteristicTemporalValue(primary), Integer.valueOf(90));
+
+        wizard.setCharacteristicInitialTemporalValue(primary, 95);
+        Assert.assertEquals(wizard.getCharacteristicTemporalValue(primary), Integer.valueOf(95));
+
+        wizard.setCharacteristicInitialTemporalValue(nonPreferred, 45);
+        Assert.assertEquals(wizard.getCharacteristicTemporalValue(nonPreferred), Integer.valueOf(45));
     }
 }
