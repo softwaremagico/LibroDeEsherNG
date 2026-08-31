@@ -47,6 +47,7 @@ public class TrainingMigrationToolTest {
                     "#ESPECIAL",
                     "####################################",
                     "Arma cuerpo a cuerpo\t30\t10\tArma Cuerpo a Cuerpo",
+                    "Anillo de espadas\t10\t5\tArmas·2manos",
                     "Amigos\t20",
                     "",
                     "#HABILIDADES",
@@ -94,16 +95,27 @@ public class TrainingMigrationToolTest {
             Assert.assertEquals(explorador.getTrainingTimeInMonths(), Integer.valueOf(12));
             Assert.assertTrue(explorador.isAvailableToEveryRace());
 
-            Assert.assertEquals(explorador.getSpecialItems().size(), 2);
+            Assert.assertEquals(explorador.getSpecialItems().size(), 3);
             final TrainingSpecialItem meleeWeapon = explorador.getSpecialItems().get(0);
             Assert.assertEquals(meleeWeapon.getName().getSpanish(), "Arma cuerpo a cuerpo");
             Assert.assertEquals(meleeWeapon.getName().getEnglish(), "Weapon Body to Body");
             Assert.assertEquals(meleeWeapon.getProbability(), Integer.valueOf(30));
             Assert.assertEquals(meleeWeapon.getBonus(), Integer.valueOf(10));
-            Assert.assertEquals(meleeWeapon.getSkillId(), "weaponBodyToBody");
-            final TrainingSpecialItem friends = explorador.getSpecialItems().get(1);
-            Assert.assertNull(friends.getBonus());
-            Assert.assertNull(friends.getSkillId());
+            // "Arma Cuerpo a Cuerpo" is a special marker (any close-combat weapon), not a real
+            // skill/category: there is no per-weapon-category item bonus mechanic, so it has no
+            // target id, even though it is still classified as magic (a non-zero bonus).
+            Assert.assertEquals(meleeWeapon.getType(), com.softwaremagico.librodeesher.training.TrainingItemType.WEAPON_CLOSE_COMBAT);
+            Assert.assertNull(meleeWeapon.getTargetId());
+            Assert.assertTrue(meleeWeapon.isMagic());
+            final TrainingSpecialItem swordRing = explorador.getSpecialItems().get(1);
+            Assert.assertEquals(swordRing.getBonus(), Integer.valueOf(5));
+            Assert.assertEquals(swordRing.getType(), com.softwaremagico.librodeesher.training.TrainingItemType.CATEGORY);
+            Assert.assertEquals(swordRing.getTargetId(), "weaponsTwoHanded");
+            Assert.assertTrue(swordRing.isMagic());
+            final TrainingSpecialItem friends = explorador.getSpecialItems().get(2);
+            Assert.assertEquals(friends.getBonus(), Integer.valueOf(0));
+            Assert.assertNull(friends.getTargetId());
+            Assert.assertFalse(friends.isMagic());
 
             Assert.assertEquals(explorador.getCategories().size(), 2);
             final TrainingCategoryGrant trackingCategory = explorador.getCategories().get(0);

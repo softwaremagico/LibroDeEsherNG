@@ -123,60 +123,104 @@
     </name>
     <specialItems>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Ropa of the High calidad and muy elegante</en>
           <es>Ropa del alta calidad y muy elegante</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>valor 10D10mp</en>
+          <es>valor 10D10mp</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Jewelry (valor 10D10mp)</en>
-          <es>Joyería (valor 10D10mp)</es>
+          <en>Jewelry</en>
+          <es>Joyería</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>valor 5D10mp</en>
+          <es>valor 5D10mp</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Regalo of the amante (valor 5D10mp)</en>
-          <es>Regalo del amante (valor 5D10mp)</es>
+          <en>Regalo of the amante</en>
+          <es>Regalo del amante</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>a region</en>
+          <es>una región</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Contacto in High sociedad (a region)</en>
-          <es>Contacto en alta sociedad (una región)</es>
+          <en>Contacto in High sociedad</en>
+          <es>Contacto en alta sociedad</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Amistad with a persona importante</en>
           <es>Amistad con una persona importante</es>
         </name>
         <probability>30</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>of igual or superior estatus</en>
+          <es>de igual o superior estatus</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Rival celoso (of igual or superior estatus)</en>
-          <es>Rival celoso (de igual o superior estatus)</es>
+          <en>Rival celoso</en>
+          <es>Rival celoso</es>
         </name>
         <probability>30</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>enemigo</en>
+          <es>enemigo</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Ex-amante despechado (enemigo)</en>
-          <es>Ex-amante despechado (enemigo)</es>
+          <en>Ex-amante despechado</en>
+          <es>Ex-amante despechado</es>
         </name>
         <probability>20</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Symbol Special of the amante</en>
           <es>Símbolo especial del amante</es>
         </name>
         <probability>100</probability>
+        <type>UNKNOWN</type>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>108</trainingTimeInMonths>

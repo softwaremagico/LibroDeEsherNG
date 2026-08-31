@@ -14,6 +14,9 @@ import com.softwaremagico.librodeesher.culture.CultureLanguageRank;
 import com.softwaremagico.librodeesher.decision.Decision;
 import com.softwaremagico.librodeesher.decision.Decisions;
 import com.softwaremagico.librodeesher.dice.Roll;
+import com.softwaremagico.librodeesher.equipment.BonusType;
+import com.softwaremagico.librodeesher.equipment.Equipment;
+import com.softwaremagico.librodeesher.equipment.MagicObject;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.language.LanguageSlot;
 import com.softwaremagico.librodeesher.level.LevelUp;
@@ -48,10 +51,13 @@ import com.softwaremagico.librodeesher.training.Training;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
 import com.softwaremagico.librodeesher.training.TrainingProfessionCost;
 import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
+import com.softwaremagico.librodeesher.training.TrainingSpecialItem;
+import com.softwaremagico.librodeesher.training.TrainingItemType;
 import com.softwaremagico.librodeesher.training.TrainingType;
 import com.softwaremagico.librodeesher.weapon.Weapon;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -99,6 +105,20 @@ public class CharacterPlayer {
 	private final Decisions decisions = new Decisions();
 	private final List<SelectedPerk> selectedPerks = new ArrayList<>();
 	private final Map<String, Integer> hobbySkillRanks = new LinkedHashMap<>();
+
+	/**
+	 * Magic items the character owns (see {@link #getAllMagicItems()}), matching the legacy {@code
+	 * CharacterPlayer#magicItems} - minus the legacy version's separate, per-{@code TrainingDecision}
+	 * bucket of magic items granted specifically by a training's own {@link TrainingSpecialItem}: both
+	 * buckets are folded into this single flat list here instead (a training's chosen special item is
+	 * simply added here too, see {@link #applyTrainingSpecialItem}), which loses only the ability to
+	 * automatically forget a training-granted item if that training selection is later undone (a
+	 * corner case with no NG equivalent of "undo a training" in the first place).
+	 */
+	private final List<MagicObject> magicItems = new ArrayList<>();
+	/** Non-magic equipment the character owns (see {@link #getAllNotMagicEquipment()}), matching the
+	 * legacy {@code CharacterPlayer#standardEquipment} (same simplification as {@link #magicItems}). */
+	private final Set<Equipment> standardEquipment = new HashSet<>();
 
 	/**
 	 * Per-character option toggles (matching the legacy {@code CharacterConfiguration}, a per-character
@@ -575,6 +595,24 @@ public class CharacterPlayer {
 		return category.getSkillRankBonus(this.getSkillTotalRanks(skillId)) + this.getProfessionBonus(skillId)
 				+ this.background.getSkillBonus(skillId) + this.getPerkSkillBonus(skillId)
 				+ this.getPerkSkillConditionalBonus(skillId) + perkRankTerm;
+	}
+
+	/**
+	 * {@link #getCategoryDevelopmentBonus(Category)} plus {@link #getItemBonus(BonusType, String)}
+	 * for {@link BonusType#CATEGORY}, matching the legacy {@code CharacterPlayer#getBonus(Category)}
+	 * exactly.
+	 */
+	public Integer getCategoryTotalBonus(Category category) throws InvalidXmlElementException {
+		return this.getCategoryDevelopmentBonus(category) + this.getItemBonus(BonusType.CATEGORY, category.getId());
+	}
+
+	/**
+	 * {@link #getSkillDevelopmentBonus(Category, String)} plus {@link #getItemBonus(BonusType,
+	 * String)} for {@link BonusType#SKILL}, matching the legacy {@code CharacterPlayer#getBonus(Skill)}
+	 * exactly.
+	 */
+	public Integer getSkillTotalBonus(Category category, String skillId) throws InvalidXmlElementException {
+		return this.getSkillDevelopmentBonus(category, skillId) + this.getItemBonus(BonusType.SKILL, skillId);
 	}
 
 	/**
@@ -2525,8 +2563,103 @@ public class CharacterPlayer {
 	 * {@code getItemBonus(BonusType.DEFENSIVE_BONUS)} term, an equipment-system bonus that is future
 	 * work, same as every other item/equipment concern.
 	 */
+	/**
+	 * The character's own defensive bonus (3 times {@link CharacteristicAbbreviation#QUICKNESS}'s
+	 * total bonus, plus {@link #getItemBonus(BonusType, String)} for {@link BonusType#DEFENSIVE_BONUS}),
+	 * matching the legacy {@code CharacterPlayer#getDefensiveBonus()} exactly.
+	 */
 	public int getDefensiveBonus() throws InvalidXmlElementException {
-		return this.getCharacteristicTotalBonus(CharacteristicAbbreviation.QUICKNESS) * 3;
+		return this.getCharacteristicTotalBonus(CharacteristicAbbreviation.QUICKNESS) * 3
+				+ this.getItemBonus(BonusType.DEFENSIVE_BONUS, null);
+	}
+
+	/**
+	 * Picks {@code training.getSpecialItems().get(itemIndex)} (one of the training's own "ESPECIAL"
+	 * background items, see {@link TrainingSpecialItem}), matching the legacy {@code
+	 * CharacterPlayer#addTrainingEquipment(Training, int)}: adds it as a {@link MagicObject} (see
+	 * {@link #addMagicItem(MagicObject)}) if it is magic (see {@link TrainingSpecialItem#isMagic()}
+	 * and {@link MagicObject#forTrainingSpecialItem}), or as plain {@link Equipment} (see {@link
+	 * #addStandardEquipment(Equipment)}) otherwise.
+	 *
+	 * <p><strong>Deliberate fix of a legacy bug:</strong> the legacy version only ever created a
+	 * {@code MagicObject} for a {@link TrainingItemType#SKILL} item, silently dropping any {@link
+	 * TrainingItemType#CATEGORY} item that had a real bonus/target (its {@code isMagic()} was {@code
+	 * true}, yet it was added to neither of the character's two equipment buckets at all). Here, both
+	 * {@link TrainingItemType#SKILL} and {@link TrainingItemType#CATEGORY} magic items are added as a
+	 * {@link MagicObject}, consistent with {@link TrainingSpecialItem#isMagic()} itself covering both.
+	 * A magic item of any other type (e.g. {@link TrainingItemType#WEAPON_CLOSE_COMBAT}, a "any
+	 * close-combat weapon" marker) still grants no actual bonus, matching legacy: there is no
+	 * per-weapon-category/per-armor item bonus mechanic at all.</p>
+	 */
+	public void applyTrainingSpecialItem(Training training, int itemIndex) {
+		final TrainingSpecialItem item = training.getSpecialItems().get(itemIndex);
+		this.decisions.set("training:" + training.getId() + ":specialItem:" + itemIndex,
+				Decision.fixed(List.of(String.valueOf(itemIndex))));
+		if (item.isMagic()) {
+			this.addMagicItem(MagicObject.forTrainingSpecialItem(item));
+		} else {
+			this.addStandardEquipment(new Equipment(item.getName(), item.getDescription()));
+		}
+	}
+
+	/** Every magic item the character owns, matching the legacy {@code getAllMagicItems()}. */
+	public List<MagicObject> getAllMagicItems() {
+		return Collections.unmodifiableList(this.magicItems);
+	}
+
+	/** Adds {@code magicObject} to {@link #getAllMagicItems()}, matching the legacy {@code addMagicItem(MagicObject)}. */
+	public void addMagicItem(MagicObject magicObject) {
+		if (magicObject != null) {
+			this.magicItems.add(magicObject);
+		}
+	}
+
+	/** Removes {@code magicObject} from {@link #getAllMagicItems()}, matching the legacy {@code removeMagicItem}. */
+	public void removeMagicItem(MagicObject magicObject) {
+		this.magicItems.remove(magicObject);
+	}
+
+	/** Every non-magic equipment the character owns, matching the legacy {@code getAllNotMagicEquipment()}. */
+	public Set<Equipment> getAllNotMagicEquipment() {
+		return Collections.unmodifiableSet(this.standardEquipment);
+	}
+
+	/** Same as {@link #getAllNotMagicEquipment()}, matching the legacy {@code getStandardEquipment()}. */
+	public Set<Equipment> getStandardEquipment() {
+		return this.getAllNotMagicEquipment();
+	}
+
+	/** Adds {@code equipment}, matching the legacy {@code addStandardEquipment(Equipment)}. */
+	public void addStandardEquipment(Equipment equipment) {
+		if (equipment != null) {
+			this.standardEquipment.add(equipment);
+		}
+	}
+
+	/** Removes {@code equipment}, matching the legacy {@code removeStandardEquipment(Equipment)}. */
+	public void removeStandardEquipment(Equipment equipment) {
+		this.standardEquipment.remove(equipment);
+	}
+
+	/**
+	 * The best (highest) bonus any of {@link #getAllMagicItems()} grants of {@code type} to {@code
+	 * targetId} (a skill/category id for {@link BonusType#SKILL}/{@link BonusType#CATEGORY}, {@code
+	 * null} for {@link BonusType#DEFENSIVE_BONUS}, which has no target), matching the legacy {@code
+	 * getItemBonus(Category)}/{@code getItemBonus(Skill)}/{@code getItemBonus(BonusType)} exactly:
+	 * <strong>the best single item wins, they do not stack</strong> (Rolemaster's rule that same-kind
+	 * magic items do not add up).
+	 */
+	public int getItemBonus(BonusType type, String targetId) {
+		int max = 0;
+		for (final MagicObject magicObject : this.getAllMagicItems()) {
+			final int value = type == BonusType.DEFENSIVE_BONUS ? magicObject.getObjectBonus(type)
+					: type == BonusType.CATEGORY ? magicObject.getCategoryBonus(targetId)
+					: magicObject.getSkillBonus(targetId);
+			if (value > max) {
+				max = value;
+			}
+		}
+		return max;
 	}
 
 	/**

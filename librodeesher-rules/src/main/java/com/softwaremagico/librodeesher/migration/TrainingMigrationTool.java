@@ -11,6 +11,7 @@ import com.softwaremagico.librodeesher.training.TrainingProfessionCost;
 import com.softwaremagico.librodeesher.training.TrainingRequirement;
 import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
 import com.softwaremagico.librodeesher.training.TrainingSpecialItem;
+import com.softwaremagico.librodeesher.training.TrainingItemType;
 import com.softwaremagico.librodeesher.training.TrainingType;
 
 import java.io.IOException;
@@ -140,7 +141,7 @@ public final class TrainingMigrationTool {
         training.setName(trainingName, Translations.toEnglish(trainingName));
         training.setTrainingTimeInMonths(Integer.valueOf(cursor.nextSection().get(0).trim()));
         training.setLimitedRaces(parseCommaList(cursor.nextSection()));
-        training.setSpecialItems(parseSpecialItems(cursor.nextSection()));
+        training.setSpecialItems(parseSpecialItems(cursor.nextSection(), categoryIndex, skillIndex));
         training.setCategories(parseCategories(cursor.nextSection(), categoryIndex, skillIndex));
         training.setCharacteristicUpgrades(parseCharacteristicChoiceGroups(cursor.nextSection()));
         training.setRequirements(parseRequirements(cursor.nextSection()));
@@ -345,17 +346,69 @@ public final class TrainingMigrationTool {
         return values;
     }
 
-    private static List<TrainingSpecialItem> parseSpecialItems(List<String> sectionLines) {
+    private static List<TrainingSpecialItem> parseSpecialItems(List<String> sectionLines, Map<String, String> categoryIndex,
+                                                                 Map<String, String> skillIndex) {
         final List<TrainingSpecialItem> items = new ArrayList<>();
         for (final String line : sectionLines) {
             final String[] columns = line.split("\t");
-            final Integer bonus = columns.length > 2 ? Integer.valueOf(columns[2].trim()) : null;
-            final String skillId = columns.length > 3 ? Translations.toEnglishId(columns[3].trim()) : null;
-            final String name = columns[0].trim();
-            items.add(new TrainingSpecialItem(new TranslatedText(name, Translations.toEnglish(name)),
-                    Integer.valueOf(columns[1].trim()), bonus, skillId));
+            final Integer bonus = columns.length > 2 ? Integer.valueOf(columns[2].trim()) : 0;
+            final String rawTag = columns.length > 3 ? columns[3].trim() : "";
+            final String rawName = columns[0].trim();
+
+            final TranslatedText name;
+            final TranslatedText description;
+            if (rawName.contains("(") && rawName.contains(")")) {
+                final String namePart = rawName.substring(0, rawName.indexOf('(')).trim();
+                final String descriptionPart = rawName.substring(rawName.indexOf('(') + 1, rawName.indexOf(')')).trim();
+                name = new TranslatedText(namePart, Translations.toEnglish(namePart));
+                description = new TranslatedText(descriptionPart, Translations.toEnglish(descriptionPart));
+            } else {
+                name = new TranslatedText(rawName, Translations.toEnglish(rawName));
+                description = null;
+            }
+
+            final String lowerTag = rawTag.toLowerCase();
+            final TrainingItemType type;
+            String targetId = null;
+            if (lowerTag.isEmpty()) {
+                type = TrainingItemType.UNKNOWN;
+            } else if (lowerTag.equals("arma") || lowerTag.equals("cualquier arma")) {
+                type = TrainingItemType.WEAPON;
+            } else if (lowerTag.equals("arma cuerpo a cuerpo")) {
+                type = TrainingItemType.WEAPON_CLOSE_COMBAT;
+            } else if (lowerTag.equals("arma proyectiles")) {
+                type = TrainingItemType.WEAPON_RANGED;
+            } else if (lowerTag.equals("armadura")) {
+                type = TrainingItemType.ARMOUR;
+            } else if (lowerTag.equals("cualquier habilidad")) {
+                type = TrainingItemType.ANY;
+            } else if (findId(rawTag, skillIndex) != null) {
+                type = TrainingItemType.SKILL;
+                targetId = findId(rawTag, skillIndex);
+            } else if (findId(rawTag, categoryIndex) != null) {
+                type = TrainingItemType.CATEGORY;
+                targetId = findId(rawTag, categoryIndex);
+            } else {
+                type = TrainingItemType.UNKNOWN;
+            }
+
+            items.add(new TrainingSpecialItem(name, description, Integer.valueOf(columns[1].trim()), bonus, type, targetId));
         }
         return items;
+    }
+
+    /** Exact then case-insensitive lookup of {@code rawTag} against a Spanish name -&gt; id index. */
+    private static String findId(String rawTag, Map<String, String> index) {
+        final String exact = index.get(rawTag);
+        if (exact != null) {
+            return exact;
+        }
+        for (final Map.Entry<String, String> entry : index.entrySet()) {
+            if (entry.getKey().equalsIgnoreCase(rawTag)) {
+                return entry.getValue();
+            }
+        }
+        return null;
     }
 
     /**

@@ -8,8 +8,13 @@ import com.softwaremagico.librodeesher.characteristic.CharacteristicRoll;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.decision.InvalidDecisionException;
+import com.softwaremagico.librodeesher.equipment.BonusType;
+import com.softwaremagico.librodeesher.equipment.Equipment;
+import com.softwaremagico.librodeesher.equipment.MagicObject;
+import com.softwaremagico.librodeesher.equipment.ObjectBonus;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
+import com.softwaremagico.librodeesher.language.TranslatedText;
 import com.softwaremagico.librodeesher.magic.MagicListType;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.perk.PerkChoiceGrant;
@@ -24,6 +29,8 @@ import com.softwaremagico.librodeesher.training.ChoiceGroup;
 import com.softwaremagico.librodeesher.training.Training;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
 import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
+import com.softwaremagico.librodeesher.training.TrainingSpecialItem;
+import com.softwaremagico.librodeesher.training.TrainingItemType;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -1604,5 +1611,71 @@ public class CharacterPlayerTest {
 
         Assert.assertEquals(character.getRemainingDevelopmentPoints(),
                 Integer.valueOf(character.getTotalDevelopmentPoints() - categoryCost));
+    }
+
+    @Test
+    public void itemBonusTakesTheBestSingleMagicItemNotTheSum() {
+        final CharacterPlayer character = new CharacterPlayer();
+        final MagicObject weakRing = new MagicObject(new TranslatedText("Anillo débil", "Weak ring"), null,
+                List.of(new ObjectBonus(BonusType.SKILL, "climbing", 5)));
+        final MagicObject strongRing = new MagicObject(new TranslatedText("Anillo fuerte", "Strong ring"), null,
+                List.of(new ObjectBonus(BonusType.SKILL, "climbing", 15)));
+        character.addMagicItem(weakRing);
+        character.addMagicItem(strongRing);
+
+        // Magic items of the same kind do not stack: only the best one counts.
+        Assert.assertEquals(character.getItemBonus(BonusType.SKILL, "climbing"), 15);
+        Assert.assertEquals(character.getItemBonus(BonusType.SKILL, "unrelatedSkill"), 0);
+        Assert.assertEquals(character.getAllMagicItems(), List.of(weakRing, strongRing));
+
+        character.removeMagicItem(strongRing);
+        Assert.assertEquals(character.getItemBonus(BonusType.SKILL, "climbing"), 5);
+    }
+
+    @Test
+    public void itemBonusIsAddedOnTopOfDevelopmentBonusForTotals() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final Category category = new Category("climbing");
+        category.setType(CategoryType.STANDARD);
+        character.addMagicItem(new MagicObject(new TranslatedText("Botas", "Boots"), null,
+                List.of(new ObjectBonus(BonusType.SKILL, "climbing", 10))));
+        character.addMagicItem(new MagicObject(new TranslatedText("Cuerda", "Rope"), null,
+                List.of(new ObjectBonus(BonusType.CATEGORY, "climbing", 20))));
+
+        Assert.assertEquals(character.getSkillTotalBonus(category, "climbing"),
+                Integer.valueOf(character.getSkillDevelopmentBonus(category, "climbing") + 10));
+        Assert.assertEquals(character.getCategoryTotalBonus(category),
+                Integer.valueOf(character.getCategoryDevelopmentBonus(category) + 20));
+    }
+
+    @Test
+    public void defensiveBonusIncludesTheBestDefensiveMagicItem() throws InvalidXmlElementException {
+        final CharacterPlayer character = new CharacterPlayer();
+        final int withoutItem = character.getDefensiveBonus();
+        character.addMagicItem(new MagicObject(new TranslatedText("Capa", "Cloak"), null,
+                List.of(new ObjectBonus(BonusType.DEFENSIVE_BONUS, null, 15))));
+
+        Assert.assertEquals(character.getDefensiveBonus(), withoutItem + 15);
+    }
+
+    @Test
+    public void applyingATrainingSpecialItemAddsAMagicObjectOrPlainEquipment() {
+        final Training training = new Training("scout");
+        training.setSpecialItems(List.of(
+                new TrainingSpecialItem(new TranslatedText("Botas buenas", "Good boots"), null, 30, 10,
+                        TrainingItemType.SKILL, "climbing"),
+                new TrainingSpecialItem(new TranslatedText("Amigos", "Friends"), null, 20, 0,
+                        TrainingItemType.UNKNOWN, null)));
+        final CharacterPlayer character = new CharacterPlayer();
+
+        character.applyTrainingSpecialItem(training, 0);
+        Assert.assertEquals(character.getAllMagicItems().size(), 1);
+        Assert.assertEquals(character.getAllMagicItems().get(0).getSkillBonus("climbing"), 10);
+        Assert.assertTrue(character.getAllNotMagicEquipment().isEmpty());
+
+        character.applyTrainingSpecialItem(training, 1);
+        Assert.assertEquals(character.getAllMagicItems().size(), 1);
+        Assert.assertEquals(character.getAllNotMagicEquipment().size(), 1);
+        Assert.assertEquals(character.getAllNotMagicEquipment().iterator().next().getName().getSpanish(), "Amigos");
     }
 }

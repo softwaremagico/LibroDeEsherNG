@@ -108,46 +108,64 @@
     </limitedRaces>
     <specialItems>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Symbol religioso</en>
           <es>Símbolo religioso</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Iglesia</en>
           <es>Iglesia</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Favor of a personaje importante</en>
           <es>Favor de un personaje importante</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Contactos in to the Administration of the ciudad</en>
           <es>Contactos en al administración de la ciudad</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Favor of a personaje of Major Rank</en>
           <es>Favor de un personaje de mayor rango</es>
         </name>
         <probability>30</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Symbol religioso lujoso</en>
           <es>Símbolo religioso lujoso</es>
         </name>
         <probability>100</probability>
+        <type>UNKNOWN</type>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>117</trainingTimeInMonths>
@@ -260,53 +278,78 @@
     </limitedRaces>
     <specialItems>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Contacto in the Administration of empresas in the ciudad</en>
           <es>Contacto en la administración de empresas en la ciudad</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Contacto in the Administration of empresas in the ciudad</en>
           <es>Contacto en la administración de empresas en la ciudad</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Contacto in the Administration of the ciudad</en>
           <es>Contacto en la administración de la ciudad</es>
         </name>
         <probability>30</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>$1d10x100/year</en>
+          <es>$1d10x100/año</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Investment ($1d10x100/year)</en>
-          <es>Inversión ($1d10x100/año)</es>
+          <en>Investment</en>
+          <es>Inversión</es>
         </name>
         <probability>30</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Favor of a personaje importante</en>
           <es>Favor de un personaje importante</es>
         </name>
         <probability>20</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Presidente of a company</en>
           <es>Presidente de una compañía</es>
         </name>
         <probability>20</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Favor of a personaje importante</en>
           <es>Favor de un personaje importante</es>
         </name>
         <probability>100</probability>
+        <type>UNKNOWN</type>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>85</trainingTimeInMonths>
@@ -404,46 +447,64 @@
     </limitedRaces>
     <specialItems>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Jewelry cara</en>
           <es>Joyería cara</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Contactos useful in the bajos fondos</en>
           <es>Contactos útiles en los bajos fondos</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Contactos useful in the ciudad</en>
           <es>Contactos útiles en la ciudad</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Favor of a persona of alto Rank</en>
           <es>Favor de una persona de alto rango</es>
         </name>
         <probability>30</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Pintalabios envenenado</en>
           <es>Pintalabios envenenado</es>
         </name>
         <probability>30</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Vestidor caro</en>
           <es>Vestidor caro</es>
         </name>
         <probability>100</probability>
+        <type>UNKNOWN</type>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>49</trainingTimeInMonths>
@@ -559,49 +620,63 @@
     <specialItems>
       <specialItem>
         <bonus>10</bonus>
+        <magic>false</magic>
         <name>
           <en>Weapon of Hand</en>
           <es>Arma de mano</es>
         </name>
         <probability>50</probability>
-        <skillId>notMagical</skillId>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
+        <magic>false</magic>
         <name>
           <en>Weapon of Fire</en>
           <es>Arma de fuego</es>
         </name>
         <probability>40</probability>
-        <skillId>notMagical</skillId>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Automobile</en>
           <es>Automóvil</es>
         </name>
         <probability>30</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Contactos in the bajos fondos</en>
           <es>Contactos en los bajos fondos</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Favor debido of alguien of the bajos fondos</en>
           <es>Favor debido de alguien de los bajos fondos</es>
         </name>
         <probability>20</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Objeto of contrabando</en>
           <es>Objeto de contrabando</es>
         </name>
         <probability>100</probability>
+        <type>UNKNOWN</type>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>42</trainingTimeInMonths>
@@ -822,53 +897,74 @@
     </limitedRaces>
     <specialItems>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Contactos useful in the ciudad</en>
           <es>Contactos útiles en la ciudad</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Contactos useful in the gobierno</en>
           <es>Contactos útiles en el gobierno</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Weapon of Fire</en>
           <es>Arma de fuego</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Esposas</en>
           <es>Esposas</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Favor of a oficial of alto Rank</en>
           <es>Favor de un oficial de alto rango</es>
         </name>
         <probability>30</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Automobile</en>
           <es>Automóvil</es>
         </name>
         <probability>30</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Reputation of success</en>
           <es>Reputación de éxito</es>
         </name>
         <probability>100</probability>
+        <type>UNKNOWN</type>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>135</trainingTimeInMonths>

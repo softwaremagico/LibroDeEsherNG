@@ -102,69 +102,111 @@
     <specialItems>
       <specialItem>
         <bonus>20</bonus>
+        <description>
+          <en>not Magical</en>
+          <es>no mágica</es>
+        </description>
+        <magic>true</magic>
         <name>
-          <en>Weapon Body to Body (not Magical)</en>
-          <es>Arma cuerpo a cuerpo (no mágica)</es>
+          <en>Weapon Body to Body</en>
+          <es>Arma cuerpo a cuerpo</es>
         </name>
         <probability>50</probability>
-        <skillId>weapon</skillId>
+        <type>WEAPON</type>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
+        <description>
+          <en>not Magical</en>
+          <es>no mágica</es>
+        </description>
+        <magic>true</magic>
         <name>
-          <en>Armor (not Magical)</en>
-          <es>Armadura (no mágica)</es>
+          <en>Armor</en>
+          <es>Armadura</es>
         </name>
         <probability>50</probability>
-        <skillId>armor</skillId>
+        <type>ARMOUR</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>x2</en>
+          <es>x2</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Multiplicador PPs (x2)</en>
-          <es>Multiplicador PPs (x2)</es>
+          <en>Multiplicador PPs</en>
+          <es>Multiplicador PPs</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
+        <description>
+          <en>not Arcane</en>
+          <es>no mágico</es>
+        </description>
+        <magic>true</magic>
         <name>
-          <en>Shield (not Arcane)</en>
-          <es>Escudo (no mágico)</es>
+          <en>Shield</en>
+          <es>Escudo</es>
         </name>
         <probability>40</probability>
-        <skillId>armor</skillId>
+        <type>ARMOUR</type>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
+        <description>
+          <en>not Magical</en>
+          <es>no mágica</es>
+        </description>
+        <magic>true</magic>
         <name>
-          <en>Weapon (not Magical)</en>
-          <es>Arma (no mágica)</es>
+          <en>Weapon</en>
+          <es>Arma</es>
         </name>
         <probability>30</probability>
-        <skillId>weapon</skillId>
+        <type>WEAPON</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Objeto diario II</en>
           <es>Objeto diario II</es>
         </name>
         <probability>20</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>+1</en>
+          <es>+1</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Sumando of Spells (+1)</en>
-          <es>Sumando de hechizos (+1)</es>
+          <en>Sumando of Spells</en>
+          <es>Sumando de hechizos</es>
         </name>
         <probability>20</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
+        <description>
+          <en>not magica</en>
+          <es>no magica</es>
+        </description>
+        <magic>true</magic>
         <name>
-          <en>Weapon (not magica)</en>
-          <es>Arma (no magica)</es>
+          <en>Weapon</en>
+          <es>Arma</es>
         </name>
         <probability>100</probability>
-        <skillId>weapon</skillId>
+        <type>WEAPON</type>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>70</trainingTimeInMonths>
@@ -337,57 +379,87 @@
     </limitedRaces>
     <specialItems>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>x2</en>
+          <es>x2</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Multiplicador PPs (x2)</en>
-          <es>Multiplicador PPs (x2)</es>
+          <en>Multiplicador PPs</en>
+          <es>Multiplicador PPs</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
+        <description>
+          <en>not Magical</en>
+          <es>no mágica</es>
+        </description>
+        <magic>true</magic>
         <name>
-          <en>Weapon Body to Body (not Magical)</en>
-          <es>Arma cuerpo a cuerpo (no mágica)</es>
+          <en>Weapon Body to Body</en>
+          <es>Arma cuerpo a cuerpo</es>
         </name>
         <probability>40</probability>
-        <skillId>weaponBodyToBody</skillId>
+        <type>WEAPON_CLOSE_COMBAT</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>1-2 Ulogat-Toram</en>
           <es>1-2 Ulogat-Toram</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Objeto diario III</en>
           <es>Objeto diario III</es>
         </name>
         <probability>30</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
+        <magic>true</magic>
         <name>
           <en>Libro</en>
           <es>Libro</es>
         </name>
         <probability>30</probability>
-        <skillId>loreOfUndead</skillId>
+        <targetId>loreOfUndead</targetId>
+        <type>SKILL</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Zombi without Hands</en>
           <es>Zombi sin manos</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>+1</en>
+          <es>+1</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Sumando of Spells (+1)</en>
-          <es>Sumando de hechizos (+1)</es>
+          <en>Sumando of Spells</en>
+          <es>Sumando de hechizos</es>
         </name>
         <probability>100</probability>
+        <type>UNKNOWN</type>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>69</trainingTimeInMonths>

@@ -134,68 +134,106 @@
     <specialItems>
       <specialItem>
         <bonus>10</bonus>
+        <magic>true</magic>
         <name>
           <en>Equipo of Disfraz</en>
           <es>Equipo de Disfraz</es>
         </name>
         <probability>40</probability>
-        <skillId>disguising</skillId>
+        <targetId>disguising</targetId>
+        <type>SKILL</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Weapon Disimulada</en>
           <es>Arma Disimulada</es>
         </name>
         <probability>60</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Contrato in Vigor</en>
           <es>Contrato en Vigor</es>
         </name>
         <probability>20</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>Merchant</en>
+          <es>mercader</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Identidad Secreta (Merchant)</en>
-          <es>Identidad Secreta (mercader)</es>
+          <en>Identidad Secreta</en>
+          <es>Identidad Secreta</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Veneno Common</en>
           <es>Veneno Común</es>
         </name>
         <probability>30</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>peregrino</en>
+          <es>peregrino</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Identidad Secreta (peregrino)</en>
-          <es>Identidad Secreta (peregrino)</es>
+          <en>Identidad Secreta</en>
+          <es>Identidad Secreta</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>mendigo</en>
+          <es>mendigo</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Identidad Secreta (mendigo)</en>
-          <es>Identidad Secreta (mendigo)</es>
+          <en>Identidad Secreta</en>
+          <es>Identidad Secreta</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Contacto Useful in the bajos fondos</en>
           <es>Contacto Útil en los bajos fondos</es>
         </name>
         <probability>80</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Vestimenta tradicional of Spy</en>
           <es>Vestimenta tradicional de Espía</es>
         </name>
         <probability>100</probability>
+        <type>UNKNOWN</type>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>170</trainingTimeInMonths>
@@ -317,48 +355,80 @@
     </name>
     <specialItems>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Avance reciente dentro of the orden</en>
           <es>Avance reciente dentro de la orden</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
+        <description>
+          <en>to Meditation</en>
+          <es>a meditación</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Rosario for rezar (to Meditation)</en>
-          <es>Rosario para rezar (a meditación)</es>
+          <en>Rosario for rezar</en>
+          <es>Rosario para rezar</es>
         </name>
         <probability>70</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>to a Skill</en>
+          <es>a una habilidad</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Pergamino of oraciones (to a Skill)</en>
-          <es>Pergamino de oraciones (a una habilidad)</es>
+          <en>Pergamino of oraciones</en>
+          <es>Pergamino de oraciones</es>
         </name>
         <probability>10</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
+        <description>
+          <en>not Magical</en>
+          <es>no mágica</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Weapon (not Magical)</en>
-          <es>Arma (no mágica)</es>
+          <en>Weapon</en>
+          <es>Arma</es>
         </name>
         <probability>30</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>D10 curativas comunes</en>
+          <es>D10 curativas comunes</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Herbs (D10 curativas comunes)</en>
-          <es>Hierbas (D10 curativas comunes)</es>
+          <en>Herbs</en>
+          <es>Hierbas</es>
         </name>
         <probability>20</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <magic>false</magic>
         <name>
           <en>Reputation como Warrior sagrado</en>
           <es>Reputación como guerrero sagrado</es>
         </name>
         <probability>100</probability>
+        <type>UNKNOWN</type>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>107</trainingTimeInMonths>

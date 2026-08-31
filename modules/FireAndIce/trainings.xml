@@ -170,39 +170,74 @@
     </name>
     <specialItems>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>+2</en>
+          <es>+2</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Sumando of Spells (+2)</en>
-          <es>Sumando de Hechizos (+2)</es>
+          <en>Sumando of Spells</en>
+          <es>Sumando de Hechizos</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>Nº3</en>
+          <es>Nº3</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Objeto Diario II (Nº3)</en>
-          <es>Objeto Diario II (Nº3)</es>
+          <en>Objeto Diario II</en>
+          <es>Objeto Diario II</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>Nº5</en>
+          <es>Nº5</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Objeto Diario I (Nº5)</en>
-          <es>Objeto Diario I (Nº5)</es>
+          <en>Objeto Diario I</en>
+          <es>Objeto Diario I</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>x2</en>
+          <es>x2</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Multiplicador of PPS (x2)</en>
-          <es>Multiplicador de PPS (x2)</es>
+          <en>Multiplicador of PPS</en>
+          <es>Multiplicador de PPS</es>
         </name>
         <probability>10</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>+1</en>
+          <es>+1</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Sumando of Spells (+1)</en>
-          <es>Sumando de Hechizos (+1)</es>
+          <en>Sumando of Spells</en>
+          <es>Sumando de Hechizos</es>
         </name>
         <probability>100</probability>
+        <type>UNKNOWN</type>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>53</trainingTimeInMonths>
@@ -407,39 +442,74 @@
     </restrictedSkills>
     <specialItems>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>+2</en>
+          <es>+2</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Sumando of Spells (+2)</en>
-          <es>Sumando de Hechizos (+2)</es>
+          <en>Sumando of Spells</en>
+          <es>Sumando de Hechizos</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>Nº3</en>
+          <es>Nº3</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Objeto Diario II (Nº3)</en>
-          <es>Objeto Diario II (Nº3)</es>
+          <en>Objeto Diario II</en>
+          <es>Objeto Diario II</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>Nº5</en>
+          <es>Nº5</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Objeto Diario I (Nº5)</en>
-          <es>Objeto Diario I (Nº5)</es>
+          <en>Objeto Diario I</en>
+          <es>Objeto Diario I</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>x2</en>
+          <es>x2</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Multiplicador of PPS (x2)</en>
-          <es>Multiplicador de PPS (x2)</es>
+          <en>Multiplicador of PPS</en>
+          <es>Multiplicador de PPS</es>
         </name>
         <probability>10</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>+1</en>
+          <es>+1</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Sumando of Spells (+1)</en>
-          <es>Sumando de Hechizos (+1)</es>
+          <en>Sumando of Spells</en>
+          <es>Sumando de Hechizos</es>
         </name>
         <probability>100</probability>
+        <type>UNKNOWN</type>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>53</trainingTimeInMonths>
@@ -599,39 +669,74 @@
     </restrictedSkills>
     <specialItems>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>+2</en>
+          <es>+2</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Sumando of Spells (+2)</en>
-          <es>Sumando de Hechizos (+2)</es>
+          <en>Sumando of Spells</en>
+          <es>Sumando de Hechizos</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>Nº3</en>
+          <es>Nº3</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Objeto Diario II (Nº3)</en>
-          <es>Objeto Diario II (Nº3)</es>
+          <en>Objeto Diario II</en>
+          <es>Objeto Diario II</es>
         </name>
         <probability>50</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>Nº5</en>
+          <es>Nº5</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Objeto Diario I (Nº5)</en>
-          <es>Objeto Diario I (Nº5)</es>
+          <en>Objeto Diario I</en>
+          <es>Objeto Diario I</es>
         </name>
         <probability>40</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>x2</en>
+          <es>x2</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Multiplicador of PPS (x2)</en>
-          <es>Multiplicador de PPS (x2)</es>
+          <en>Multiplicador of PPS</en>
+          <es>Multiplicador de PPS</es>
         </name>
         <probability>10</probability>
+        <type>UNKNOWN</type>
       </specialItem>
       <specialItem>
+        <bonus>0</bonus>
+        <description>
+          <en>+1</en>
+          <es>+1</es>
+        </description>
+        <magic>false</magic>
         <name>
-          <en>Sumando of Spells (+1)</en>
-          <es>Sumando de Hechizos (+1)</es>
+          <en>Sumando of Spells</en>
+          <es>Sumando de Hechizos</es>
         </name>
         <probability>100</probability>
+        <type>UNKNOWN</type>
       </specialItem>
     </specialItems>
     <trainingTimeInMonths>53</trainingTimeInMonths>
