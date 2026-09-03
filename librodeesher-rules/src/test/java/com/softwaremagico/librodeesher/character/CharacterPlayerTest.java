@@ -1482,6 +1482,19 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void darkSpellListsCanBeConfiguredAsBasicLists() throws InvalidXmlElementException {
+		final CharacterPlayer wizard = new CharacterPlayer();
+		wizard.setProfessionId("wizard");
+		wizard.applyProfessionMagicRealms(null);
+
+		Assert.assertFalse(wizard.getBasicSpellLists().stream().anyMatch(list -> list.isDarkList()));
+		wizard.setDarkSpellsAsBasicListsAllowed(true);
+		Assert.assertTrue(wizard.getBasicSpellLists().stream().anyMatch(list -> list.isDarkList()));
+		final String darkListId = wizard.getBasicSpellLists().stream().filter(list -> list.isDarkList()).findFirst().orElseThrow().getId();
+		Assert.assertEquals(wizard.classifySpellList(darkListId), MagicListType.BASIC);
+	}
+
+	@Test
 	public void spellListRanksAccumulateAndSpendDevelopmentPoints() throws InvalidXmlElementException {
 		final CharacterPlayer wizard = new CharacterPlayer();
 		wizard.setProfessionId("wizard");

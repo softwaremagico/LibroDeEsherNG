@@ -137,6 +137,7 @@ public class CharacterPlayer {
 	private boolean chiPowersAllowed = false;
 	private boolean otherRealmTrainingSpellsAllowed = false;
 	private boolean magicAllowed = true;
+	private boolean darkSpellsAsBasicListsAllowed = false;
 
 	public CharacterPlayer() {
 		for (final CharacteristicAbbreviation abbreviation : allRealCharacteristics()) {
@@ -1620,7 +1621,8 @@ public class CharacterPlayer {
 			return List.of();
 		}
 		return this.getSpellListsMatching(list -> list.getOwners().contains(ownProfessionId)
-				|| list.getOwners().contains(ownElementalistTrainingId));
+				|| list.getOwners().contains(ownElementalistTrainingId)
+				|| (this.darkSpellsAsBasicListsAllowed && list.isDarkList()));
 	}
 
 	/**
@@ -1869,7 +1871,8 @@ public class CharacterPlayer {
 		final String ownElementalistTrainingId = this.getElementalistTrainingId();
 		if (this.getRealmsOfMagic().contains(spellList.getRealm())) {
 			if ((ownProfessionId != null && spellList.getOwners().contains(ownProfessionId))
-					|| (ownElementalistTrainingId != null && spellList.getOwners().contains(ownElementalistTrainingId))) {
+					|| (ownElementalistTrainingId != null && spellList.getOwners().contains(ownElementalistTrainingId))
+					|| (this.darkSpellsAsBasicListsAllowed && spellList.isDarkList())) {
 				return MagicListType.BASIC;
 			}
 			if (spellList.isOpenList()) {
@@ -1905,6 +1908,16 @@ public class CharacterPlayer {
 			return MagicListType.OTHER_REALM_CLOSED;
 		}
 		return null;
+	}
+
+	/** Whether dark lists from the character's own realms count as basic lists. */
+	public boolean isDarkSpellsAsBasicListsAllowed() {
+		return darkSpellsAsBasicListsAllowed;
+	}
+
+	/** Configures the legacy "dark spells as basic lists" character option. */
+	public void setDarkSpellsAsBasicListsAllowed(boolean darkSpellsAsBasicListsAllowed) {
+		this.darkSpellsAsBasicListsAllowed = darkSpellsAsBasicListsAllowed;
 	}
 
 	/**
