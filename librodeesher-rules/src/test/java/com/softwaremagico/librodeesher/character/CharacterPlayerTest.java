@@ -1511,11 +1511,20 @@ public class CharacterPlayerTest {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.setRaceId("horseCentaur");
 		character.setProfessionId("fighter");
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 500);
 		Assert.assertTrue(character.getAvailableTrainingIds().contains("soldier"));
 
-		character.getCurrentLevel().setCategoryRanks("outdoorEnvironment", 100);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 1);
 
-		Assert.assertTrue(character.getRemainingDevelopmentPoints() < 0);
+		Assert.assertTrue(character.getRemainingDevelopmentPoints() < character.getTrainingDevelopmentCost("soldier"));
 		Assert.assertFalse(character.getAvailableTrainingIds().contains("soldier"));
 	}
 
