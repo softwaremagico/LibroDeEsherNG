@@ -3303,17 +3303,19 @@ public class CharacterPlayer {
 	}
 
 	/**
-	 * Whether {@code skill} may be developed at all: either it is
-	 * {@link Skill#isEnabledByDefault()}, or some other skill that lists it in its own {@link
-	 * Skill#getEnableSkills()} has ranks bought in it and either {@link Skill#isAllEnabled()} (every
-	 * listed skill unlocks) or {@code skill} is the one {@link #enableSkillOption} resolved for it.
+	 * Whether {@code skill} may be developed at all. It starts enabled when no skill in the currently
+	 * active catalog enables it; otherwise, an active enabling skill must have ranks and either unlock
+	 * all its dependants or select this skill explicitly. This derives availability from enabled modules
+	 * at runtime rather than relying on the migration-time {@link Skill#isEnabledByDefault()} snapshot.
 	 */
 	public boolean isSkillEnabled(Skill skill) throws InvalidXmlElementException {
-		if (skill.isEnabledByDefault()) {
-			return true;
-		}
+		boolean hasEnablingSkill = false;
 		for (final Skill candidate : RulesCatalog.getInstance().getSkills()) {
-			if (!candidate.getEnableSkills().contains(skill.getId()) || this.getSkillTotalRanks(candidate.getId()) <= 0) {
+			if (!candidate.getEnableSkills().contains(skill.getId())) {
+				continue;
+			}
+			hasEnablingSkill = true;
+			if (this.getSkillTotalRanks(candidate.getId()) <= 0) {
 				continue;
 			}
 			if (candidate.isAllEnabled()) {
@@ -3324,6 +3326,6 @@ public class CharacterPlayer {
 				return true;
 			}
 		}
-		return false;
+		return !hasEnablingSkill;
 	}
 }
