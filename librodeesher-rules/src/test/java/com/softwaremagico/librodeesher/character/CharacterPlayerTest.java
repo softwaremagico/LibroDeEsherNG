@@ -1493,6 +1493,33 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void availableTrainingsExcludeAlreadySelectedOnes() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("horseCentaur");
+		character.setProfessionId("fighter");
+
+		final List<String> available = character.getAvailableTrainingIds();
+		Assert.assertTrue(available.contains("soldier"));
+		Assert.assertEquals(available.stream().sorted().toList(), available);
+
+		character.getCurrentLevel().addTraining("soldier");
+		Assert.assertFalse(character.getAvailableTrainingIds().contains("soldier"));
+	}
+
+	@Test
+	public void availableTrainingsExcludeThoseOutsideTheDevelopmentPointBudget() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("horseCentaur");
+		character.setProfessionId("fighter");
+		Assert.assertTrue(character.getAvailableTrainingIds().contains("soldier"));
+
+		character.getCurrentLevel().setCategoryRanks("outdoorEnvironment", 100);
+
+		Assert.assertTrue(character.getRemainingDevelopmentPoints() < 0);
+		Assert.assertFalse(character.getAvailableTrainingIds().contains("soldier"));
+	}
+
+	@Test
 	public void spellCasterProfessionResolvesItsRealmAndSpellLists() throws InvalidXmlElementException {
 		final CharacterPlayer nonCaster = new CharacterPlayer();
 		nonCaster.setProfessionId("fighter");

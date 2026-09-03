@@ -2506,6 +2506,31 @@ public class CharacterPlayer {
 		return race != null && training.getLimitedRaces().contains(race.getId());
 	}
 
+	/**
+	 * Every training currently available to this character, ordered by id. A training is unavailable
+	 * when it was already selected, the selected race cannot take it, the selected profession forbids
+	 * it, or its development-point cost exceeds the remaining budget; this is the library equivalent
+	 * of the legacy training-selection list.
+	 */
+	public List<String> getAvailableTrainingIds() throws InvalidXmlElementException {
+		final List<String> available = new ArrayList<>();
+		final List<String> selected = this.getSelectedTrainingIds();
+		for (final Training training : RulesCatalog.getInstance().getTrainings()) {
+			if (!selected.contains(training.getId()) && this.isTrainingAvailableForRace(training)
+					&& !this.isTrainingForbiddenByProfession(training.getId())
+					&& this.canAffordTraining(training.getId())) {
+				available.add(training.getId());
+			}
+		}
+		available.sort(String::compareTo);
+		return available;
+	}
+
+	private boolean canAffordTraining(String trainingId) throws InvalidXmlElementException {
+		final Integer cost = this.getTrainingDevelopmentCost(trainingId);
+		return cost == null || cost <= this.getRemainingDevelopmentPoints();
+	}
+
 	private static final String PERK_CHOICE_KEY_PREFIX = "perk:";
 
 	/**

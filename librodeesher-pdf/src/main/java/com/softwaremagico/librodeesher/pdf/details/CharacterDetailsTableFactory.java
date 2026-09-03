@@ -33,7 +33,10 @@ public final class CharacterDetailsTableFactory extends BaseElement {
     private static void addTrainings(PdfPTable table, CharacterPlayer characterPlayer) throws InvalidXmlElementException {
         for (final String trainingId : characterPlayer.getSelectedTrainingIds()) {
             final Training training = RulesCatalog.getInstance().getTraining(trainingId);
-            addDetail(table, "Training", getText(training.getName()), "");
+            final Integer cost = characterPlayer.getTrainingDevelopmentCost(trainingId);
+            final String details = training.getTrainingTimeInMonths() + " months"
+                    + (cost == null ? "" : ", " + cost + " development points");
+            addDetail(table, "Training", getText(training.getName()), details);
         }
     }
 
