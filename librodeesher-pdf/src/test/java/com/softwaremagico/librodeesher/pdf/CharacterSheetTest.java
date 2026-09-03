@@ -21,6 +21,7 @@ public class CharacterSheetTest {
         character.setRaceId("horseCentaur");
         character.setProfessionId("wizard");
         character.applyProfessionMagicRealms(null);
+        character.getCurrentLevel().setSpellListRanks("essenceLawOfLight", 2);
 
         final byte[] pdf = new StandardCharacterSheet().generate(character);
 

@@ -67,6 +67,13 @@ public final class SkillsTableFactory extends BaseElement {
             table.addCell(getValueCell(index == 0 ? String.valueOf(characterPlayer.getCategoryTotalRanks(category.getId())) : ""));
             table.addCell(getValueCell(String.valueOf(characterPlayer.getSkillTotalRanks(skill.getId()))));
             table.addCell(getValueCell(String.valueOf(characterPlayer.getSkillTotalBonus(category, skill.getId()))));
+            for (final String specializationId : characterPlayer.getSkillSpecializations(skill.getId())) {
+                table.addCell(getPlainCell(""));
+                table.addCell(getPlainCell("  " + specializationId));
+                table.addCell(getValueCell(""));
+                table.addCell(getValueCell(""));
+                table.addCell(getValueCell(""));
+            }
         }
     }
 }

@@ -14,7 +14,7 @@ import java.util.Set;
 
 /** Builds the spell-list section from every list currently available to the character. */
 public final class MagicTableFactory extends BaseElement {
-    private static final float[] WIDTHS = {3f, 1f};
+    private static final float[] WIDTHS = {3f, 1f, 1f};
 
     private MagicTableFactory() {
         // Only static helpers.
@@ -26,6 +26,7 @@ public final class MagicTableFactory extends BaseElement {
         table.addCell(getTitleCell("Spell Lists", WIDTHS.length));
         table.addCell(getLabelCell("Spell list"));
         table.addCell(getLabelCell("Realm"));
+        table.addCell(getLabelCell("Ranks"));
 
         final Set<MagicSpellList> availableLists = new LinkedHashSet<>();
         availableLists.addAll(characterPlayer.getOpenSpellLists());
@@ -43,6 +44,7 @@ public final class MagicTableFactory extends BaseElement {
         for (final MagicSpellList spellList : spellLists) {
             table.addCell(getPlainCell(getText(spellList.getName())));
             table.addCell(getPlainCell(spellList.getRealm().name()));
+            table.addCell(getValueCell(String.valueOf(characterPlayer.getSpellListTotalRanks(spellList.getId()))));
         }
         return table;
     }
