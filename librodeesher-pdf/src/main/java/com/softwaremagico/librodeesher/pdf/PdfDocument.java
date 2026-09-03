@@ -55,8 +55,11 @@ public abstract class PdfDocument {
             throws DocumentException, InvalidXmlElementException {
         this.addMetaData(document);
         document.open();
-        this.createContent(document, characterPlayer);
-        document.close();
+        try {
+            this.createContent(document, characterPlayer);
+        } finally {
+            document.close();
+        }
     }
 
     /** The character sheet as a byte array. Be careful with very large PDFs. */
@@ -76,10 +79,6 @@ public abstract class PdfDocument {
         try (OutputStream outputStream = Files.newOutputStream(target)) {
             PdfWriter.getInstance(document, outputStream);
             this.generatePdf(document, characterPlayer);
-        } finally {
-            if (document.isOpen()) {
-                document.close();
-            }
         }
     }
 }
