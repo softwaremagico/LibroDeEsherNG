@@ -1529,6 +1529,18 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void addTrainingOnlySelectsAnAvailableTraining() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("horseCentaur");
+		character.setProfessionId("fighter");
+
+		Assert.assertTrue(character.addTraining("soldier"));
+		Assert.assertEquals(character.getSelectedTrainingIds(), List.of("soldier"));
+		Assert.assertFalse(character.addTraining("soldier"));
+		Assert.assertFalse(character.addTraining("does-not-exist"));
+	}
+
+	@Test
 	public void spellCasterProfessionResolvesItsRealmAndSpellLists() throws InvalidXmlElementException {
 		final CharacterPlayer nonCaster = new CharacterPlayer();
 		nonCaster.setProfessionId("fighter");

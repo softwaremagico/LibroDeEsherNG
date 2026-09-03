@@ -2526,6 +2526,19 @@ public class CharacterPlayer {
 		return available;
 	}
 
+	/**
+	 * Selects a training for the current level when it is currently available. Returns {@code false}
+	 * without changing the character for an unknown, forbidden, race-restricted, already selected, or
+	 * unaffordable training.
+	 */
+	public boolean addTraining(String trainingId) throws InvalidXmlElementException {
+		if (!this.getAvailableTrainingIds().contains(trainingId)) {
+			return false;
+		}
+		this.getCurrentLevel().addTraining(trainingId);
+		return true;
+	}
+
 	private boolean canAffordTraining(String trainingId) throws InvalidXmlElementException {
 		final Integer cost = this.getTrainingDevelopmentCost(trainingId);
 		return cost == null || cost <= this.getRemainingDevelopmentPoints();
