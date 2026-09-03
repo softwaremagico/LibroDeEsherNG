@@ -12,6 +12,7 @@ import com.softwaremagico.librodeesher.pdf.equipment.EquipmentTableFactory;
 import com.softwaremagico.librodeesher.pdf.info.CharacterBasicsTableFactory;
 import com.softwaremagico.librodeesher.pdf.info.DerivedStatsTableFactory;
 import com.softwaremagico.librodeesher.pdf.info.ResistancesTableFactory;
+import com.softwaremagico.librodeesher.pdf.info.RaceDetailsTableFactory;
 import com.softwaremagico.librodeesher.pdf.magic.MagicTableFactory;
 import com.softwaremagico.librodeesher.pdf.perks.PerksTableFactory;
 import com.softwaremagico.librodeesher.pdf.skills.SkillsTableFactory;
@@ -37,6 +38,7 @@ public class CombinedTwoColumnsCharacterSheet extends PdfDocument {
         details.addCell(contentCell(CharacteristicsTableFactory.getCharacteristicsTable(characterPlayer)));
         details.addCell(contentCell(DerivedStatsTableFactory.getDerivedStatsTable(characterPlayer)));
         details.addCell(contentCell(ResistancesTableFactory.getResistancesTable(characterPlayer)));
+        details.addCell(contentCell(RaceDetailsTableFactory.getRaceDetailsTable(characterPlayer)));
         details.addCell(contentCell(EquipmentTableFactory.getEquipmentTable(characterPlayer)));
         details.addCell(contentCell(PerksTableFactory.getPerksTable(characterPlayer)));
         details.addCell(contentCell(MagicTableFactory.getMagicTable(characterPlayer)));

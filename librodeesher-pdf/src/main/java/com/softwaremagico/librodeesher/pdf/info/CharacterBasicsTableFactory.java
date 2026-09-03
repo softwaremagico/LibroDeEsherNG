@@ -13,7 +13,7 @@ import com.softwaremagico.librodeesher.race.Race;
  */
 public class CharacterBasicsTableFactory extends BaseElement {
 
-    private static final float[] WIDTHS = {2f, 1f, 1f, 1f, 1f};
+    private static final float[] WIDTHS = {2f, 1f, 1f, 1f, 1f, 1f, 1f};
 
     private CharacterBasicsTableFactory() {
         // Only static helpers.
@@ -28,6 +28,8 @@ public class CharacterBasicsTableFactory extends BaseElement {
         table.addCell(getTitleCell("Culture", 1));
         table.addCell(getTitleCell("Profession", 1));
         table.addCell(getTitleCell("Level", 1));
+        table.addCell(getTitleCell("Sex", 1));
+        table.addCell(getTitleCell("Age", 1));
 
         final Race race = characterPlayer.getRace();
         final Culture culture = characterPlayer.getCulture();
@@ -38,6 +40,9 @@ public class CharacterBasicsTableFactory extends BaseElement {
         table.addCell(getPlainCell(culture == null ? "" : culture.getName().getEnglish()));
         table.addCell(getPlainCell(profession == null ? "" : profession.getName().getEnglish()));
         table.addCell(getPlainCell(String.valueOf(characterPlayer.getLevels().size())));
+        table.addCell(getPlainCell(characterPlayer.getSex().name()));
+        table.addCell(getPlainCell(race == null ? String.valueOf(characterPlayer.getCurrentAge())
+                : characterPlayer.getCurrentAge() + "/" + race.getExpectedLifeYears()));
 
         return table;
     }
