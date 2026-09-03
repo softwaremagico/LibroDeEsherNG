@@ -1761,6 +1761,23 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void categoryTotalBonusIncludesEachAssociatedCharacteristic() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 90);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.STRENGTH, 80);
+		final Category category = new Category("athletics");
+		category.setType(CategoryType.STANDARD);
+		category.setCharacteristics(List.of(CharacteristicAbbreviation.AGILITY, CharacteristicAbbreviation.STRENGTH,
+				CharacteristicAbbreviation.AGILITY));
+
+		final int characteristicBonus = character.getCharacteristicTotalBonus(CharacteristicAbbreviation.AGILITY) * 2
+				+ character.getCharacteristicTotalBonus(CharacteristicAbbreviation.STRENGTH);
+		Assert.assertEquals(character.getCategoryCharacteristicBonus(category), Integer.valueOf(characteristicBonus));
+		Assert.assertEquals(character.getCategoryTotalBonus(category),
+				Integer.valueOf(character.getCategoryDevelopmentBonus(category) + characteristicBonus));
+	}
+
+	@Test
 	public void defensiveBonusIncludesTheBestDefensiveMagicItem() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		final int withoutItem = character.getDefensiveBonus();

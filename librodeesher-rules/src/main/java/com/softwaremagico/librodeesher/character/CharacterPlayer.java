@@ -579,6 +579,15 @@ public class CharacterPlayer {
 				+ this.getPerkCategoryRankBonus(category.getId()) * ranks;
 	}
 
+	/** Sum of the character bonuses for every characteristic associated with {@code category}. */
+	public Integer getCategoryCharacteristicBonus(Category category) throws InvalidXmlElementException {
+		int total = 0;
+		for (final CharacteristicAbbreviation abbreviation : category.getCharacteristics()) {
+			total += this.getCharacteristicTotalBonus(abbreviation);
+		}
+		return total;
+	}
+
 	/**
 	 * A skill's bonus from its own ranks, using its category's progression table,
 	 * plus the flat bonus the selected profession grants this skill, if any, plus
@@ -612,7 +621,8 @@ public class CharacterPlayer {
 	 * exactly.
 	 */
 	public Integer getCategoryTotalBonus(Category category) throws InvalidXmlElementException {
-		return this.getCategoryDevelopmentBonus(category) + this.getItemBonus(BonusType.CATEGORY, category.getId());
+		return this.getCategoryDevelopmentBonus(category) + this.getCategoryCharacteristicBonus(category)
+				+ this.getItemBonus(BonusType.CATEGORY, category.getId());
 	}
 
 	/**
