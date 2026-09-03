@@ -28,6 +28,16 @@ import com.softwaremagico.librodeesher.pdf.skills.FavouriteSkillsTableFactory;
  * Each section is isolated in a factory, following ThinkMachine4E's modern PDF structure.</p>
  */
 public class CharacterSheet extends PdfDocument {
+    private final boolean alphabeticallySortedSkills;
+
+    public CharacterSheet() {
+        this(false);
+    }
+
+    /** @param alphabeticallySortedSkills whether to list skills globally by name instead of by category. */
+    public CharacterSheet(boolean alphabeticallySortedSkills) {
+        this.alphabeticallySortedSkills = alphabeticallySortedSkills;
+    }
 
     @Override
     protected void createContent(Document document, CharacterPlayer characterPlayer)
@@ -37,7 +47,7 @@ public class CharacterSheet extends PdfDocument {
         document.add(DerivedStatsTableFactory.getDerivedStatsTable(characterPlayer));
         document.add(ResistancesTableFactory.getResistancesTable(characterPlayer));
         document.add(RaceDetailsTableFactory.getRaceDetailsTable(characterPlayer));
-        document.add(SkillsTableFactory.getSkillsTable(characterPlayer));
+        document.add(SkillsTableFactory.getSkillsTable(characterPlayer, alphabeticallySortedSkills));
         document.add(FavouriteSkillsTableFactory.getFavouriteSkillsTable(characterPlayer));
         document.add(EquipmentTableFactory.getEquipmentTable(characterPlayer));
         document.add(PerksTableFactory.getPerksTable(characterPlayer));

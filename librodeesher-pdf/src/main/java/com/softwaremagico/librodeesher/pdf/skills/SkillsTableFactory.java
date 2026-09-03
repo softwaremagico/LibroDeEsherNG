@@ -21,6 +21,12 @@ public final class SkillsTableFactory extends BaseElement {
     }
 
     public static PdfPTable getSkillsTable(CharacterPlayer characterPlayer) throws InvalidXmlElementException {
+        return getSkillsTable(characterPlayer, false);
+    }
+
+    /** Builds skills grouped by category, or as one global alphabetical list when requested. */
+    public static PdfPTable getSkillsTable(CharacterPlayer characterPlayer, boolean alphabetically)
+            throws InvalidXmlElementException {
         final PdfPTable table = new PdfPTable(WIDTHS);
         setTableProperties(table);
         table.addCell(getTitleCell("Categories and Skills", WIDTHS.length));
@@ -32,10 +38,37 @@ public final class SkillsTableFactory extends BaseElement {
 
         final List<Category> categories = new ArrayList<>(RulesCatalog.getInstance().getCategories());
         categories.sort(Comparator.comparing(category -> getText(category.getName())));
+        if (alphabetically) {
+            addAlphabeticalSkills(table, characterPlayer, categories);
+            return table;
+        }
         for (final Category category : categories) {
             addCategorySkills(table, characterPlayer, category);
         }
         return table;
+    }
+
+    private static void addAlphabeticalSkills(PdfPTable table, CharacterPlayer characterPlayer, List<Category> categories)
+            throws InvalidXmlElementException {
+        final List<Skill> skills = new ArrayList<>();
+        for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
+            if (characterPlayer.isSkillEnabled(skill)) {
+                skills.add(skill);
+            }
+        }
+        skills.sort(Comparator.comparing(skill -> getText(skill.getName())));
+        for (final Skill skill : skills) {
+            final Category category = categories.stream().filter(candidate -> candidate.getId().equals(skill.getCategoryId()))
+                    .findFirst().orElse(null);
+            if (category == null) {
+                continue;
+            }
+            table.addCell(getPlainCell(getText(category.getName())));
+            table.addCell(getPlainCell(getText(skill.getName())));
+            table.addCell(getValueCell(String.valueOf(characterPlayer.getCategoryTotalRanks(category.getId()))));
+            table.addCell(getValueCell(String.valueOf(characterPlayer.getSkillTotalRanks(skill.getId()))));
+            table.addCell(getValueCell(String.valueOf(characterPlayer.getSkillTotalBonus(category, skill.getId()))));
+        }
     }
 
     private static void addCategorySkills(PdfPTable table, CharacterPlayer characterPlayer, Category category)

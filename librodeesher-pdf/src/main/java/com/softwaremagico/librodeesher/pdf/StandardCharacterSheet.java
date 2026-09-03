@@ -5,4 +5,11 @@ package com.softwaremagico.librodeesher.pdf;
  * a vertical, automatically paginated layout.
  */
 public final class StandardCharacterSheet extends CharacterSheet {
+    public StandardCharacterSheet() {
+        super();
+    }
+
+    public StandardCharacterSheet(boolean alphabeticallySortedSkills) {
+        super(alphabeticallySortedSkills);
+    }
 }
