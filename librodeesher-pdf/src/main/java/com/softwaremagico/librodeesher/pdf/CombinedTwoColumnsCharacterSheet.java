@@ -7,6 +7,7 @@ import com.lowagie.text.pdf.PdfPTable;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.pdf.characteristics.CharacteristicsTableFactory;
+import com.softwaremagico.librodeesher.pdf.details.CharacterDetailsTableFactory;
 import com.softwaremagico.librodeesher.pdf.equipment.EquipmentTableFactory;
 import com.softwaremagico.librodeesher.pdf.info.CharacterBasicsTableFactory;
 import com.softwaremagico.librodeesher.pdf.info.DerivedStatsTableFactory;
@@ -39,6 +40,7 @@ public class CombinedTwoColumnsCharacterSheet extends PdfDocument {
         details.addCell(contentCell(EquipmentTableFactory.getEquipmentTable(characterPlayer)));
         details.addCell(contentCell(PerksTableFactory.getPerksTable(characterPlayer)));
         details.addCell(contentCell(MagicTableFactory.getMagicTable(characterPlayer)));
+        details.addCell(contentCell(CharacterDetailsTableFactory.getCharacterDetailsTable(characterPlayer)));
         return details;
     }
 
