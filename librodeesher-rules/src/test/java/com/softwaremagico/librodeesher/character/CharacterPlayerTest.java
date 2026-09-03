@@ -369,6 +369,32 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void hobbyRanksAreFreeAndIncludedInSkillTotals() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setHobbySkillRank("climbing", 3);
+
+		Assert.assertEquals(character.getSkillTotalRanks("climbing"), Integer.valueOf(3));
+		Assert.assertEquals(character.getSpentDevelopmentPoints(), Integer.valueOf(0));
+		Assert.assertEquals(character.getTotalHobbySkillRanks(), 3);
+	}
+
+	@Test
+	public void cultureSpellListHobbyAllowsOpenAndRaceListsOnly() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setCultureId("aquaticMilitarista");
+		character.setRaceId("horseCentaur");
+
+		final Culture culture = character.getCulture();
+		culture.setHobbyIds(List.of("listOfSpells"));
+		Assert.assertTrue(character.isHobbySpellListAllowed("essenceBarrierAgainstSpells"));
+		Assert.assertFalse(character.isHobbySpellListAllowed("essenceLawOfLight"));
+
+		character.setHobbySpellListRank("essenceBarrierAgainstSpells", 2);
+		Assert.assertEquals(character.getSpellListTotalRanks("essenceBarrierAgainstSpells"), Integer.valueOf(2));
+		Assert.assertEquals(character.getTotalHobbySkillRanks(), 2);
+	}
+
+	@Test
 	public void applyCharacteristicUpgradeRollsAndIncreasesTheChosenCharacteristic() throws InvalidXmlElementException {
 		final Training adventurer = RulesCatalog.getInstance().getTraining("adventurer");
 		final CharacterPlayer character = new CharacterPlayer();

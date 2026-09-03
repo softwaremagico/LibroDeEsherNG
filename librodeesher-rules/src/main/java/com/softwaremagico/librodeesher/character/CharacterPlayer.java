@@ -105,6 +105,7 @@ public class CharacterPlayer {
 	private final Decisions decisions = new Decisions();
 	private final List<SelectedPerk> selectedPerks = new ArrayList<>();
 	private final Map<String, Integer> hobbySkillRanks = new LinkedHashMap<>();
+	private final Map<String, Integer> hobbySpellListRanks = new LinkedHashMap<>();
 
 	/**
 	 * Magic items the character owns (see {@link #getAllMagicItems()}), matching the legacy {@code
@@ -492,7 +493,7 @@ public class CharacterPlayer {
 		for (final LevelUp levelUp : this.levels) {
 			total += levelUp.getSkillRanks(skillId);
 		}
-		return total - this.getSkillSpecializationsRankCost(skillId);
+		return total + this.getHobbySkillRank(skillId) - this.getSkillSpecializationsRankCost(skillId);
 	}
 
 	/** Total ranks bought in a spell list across every character level. */
@@ -501,7 +502,7 @@ public class CharacterPlayer {
 		for (final LevelUp levelUp : this.levels) {
 			total += levelUp.getSpellListRanks(spellListId);
 		}
-		return total;
+		return total + this.getHobbySpellListRank(spellListId);
 	}
 
 	/**
@@ -2231,12 +2232,46 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * Sets free hobby ranks in a spell list. The caller can use {@link #isHobbySpellListAllowed(String)}
+	 * to validate the culture's list-of-spells option before applying the selection.
+	 */
+	public void setHobbySpellListRank(String spellListId, int ranks) {
+		if (ranks <= 0) {
+			this.hobbySpellListRanks.remove(spellListId);
+		} else {
+			this.hobbySpellListRanks.put(spellListId, ranks);
+		}
+	}
+
+	public int getHobbySpellListRank(String spellListId) {
+		return this.hobbySpellListRanks.getOrDefault(spellListId, 0);
+	}
+
+	/**
+	 * Whether a culture's {@code listOfSpells} hobby marker allows ranks in a spell list: every open
+	 * list plus every list granted by the selected race, matching the legacy expansion.
+	 */
+	public boolean isHobbySpellListAllowed(String spellListId) throws InvalidXmlElementException {
+		final Culture culture = this.getCulture();
+		if (culture == null || !culture.getHobbyIds().contains("listOfSpells")) {
+			return false;
+		}
+		final MagicSpellList spellList = RulesCatalog.getInstance().getSpellList(spellListId);
+		final Race race = this.getRace();
+		return spellList.isOpenList() || (race != null && spellList.getRealm() == RealmOfMagic.RACE
+				&& spellList.getOwners().contains(race.getId()));
+	}
+
+	/**
 	 * The sum of every hobby rank spent so far, to compare against the selected
 	 * culture's {@link Culture#getHobbyRanks()}.
 	 */
 	public int getTotalHobbySkillRanks() {
 		int total = 0;
 		for (final int ranks : this.hobbySkillRanks.values()) {
+			total += ranks;
+		}
+		for (final int ranks : this.hobbySpellListRanks.values()) {
 			total += ranks;
 		}
 		return total;
