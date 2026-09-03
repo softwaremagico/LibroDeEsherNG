@@ -281,6 +281,14 @@ public class LevelUp {
         return favouriteSkills;
     }
 
+    public void addFavouriteSkill(String skillId) {
+        favouriteSkills.add(skillId);
+    }
+
+    public void removeFavouriteSkill(String skillId) {
+        favouriteSkills.remove(skillId);
+    }
+
     public void setFavouriteSkills(Set<String> favouriteSkills) {
         this.favouriteSkills = favouriteSkills;
     }

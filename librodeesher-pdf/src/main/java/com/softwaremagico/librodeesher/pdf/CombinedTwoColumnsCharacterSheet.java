@@ -17,6 +17,7 @@ import com.softwaremagico.librodeesher.pdf.info.RaceDetailsTableFactory;
 import com.softwaremagico.librodeesher.pdf.magic.MagicTableFactory;
 import com.softwaremagico.librodeesher.pdf.perks.PerksTableFactory;
 import com.softwaremagico.librodeesher.pdf.skills.SkillsTableFactory;
+import com.softwaremagico.librodeesher.pdf.skills.FavouriteSkillsTableFactory;
 
 /** Modern two-column equivalent of the legacy {@code PdfCombinedSheet2Columns}. */
 public class CombinedTwoColumnsCharacterSheet extends PdfDocument {
@@ -37,6 +38,7 @@ public class CombinedTwoColumnsCharacterSheet extends PdfDocument {
         final PdfPTable details = new PdfPTable(1);
         details.setWidthPercentage(100);
         details.addCell(contentCell(CharacteristicsTableFactory.getCharacteristicsTable(characterPlayer)));
+        details.addCell(contentCell(FavouriteSkillsTableFactory.getFavouriteSkillsTable(characterPlayer)));
         details.addCell(contentCell(DerivedStatsTableFactory.getDerivedStatsTable(characterPlayer)));
         details.addCell(contentCell(ResistancesTableFactory.getResistancesTable(characterPlayer)));
         details.addCell(contentCell(RaceDetailsTableFactory.getRaceDetailsTable(characterPlayer)));

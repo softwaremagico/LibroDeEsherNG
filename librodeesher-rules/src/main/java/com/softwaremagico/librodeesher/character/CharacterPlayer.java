@@ -1818,6 +1818,29 @@ public class CharacterPlayer {
 		return ids;
 	}
 
+	/** Every manually selected favourite skill across all levels, in selection order by level. */
+	public List<String> getFavouriteSkillIds() {
+		final List<String> ids = new ArrayList<>();
+		for (final LevelUp levelUp : this.levels) {
+			for (final String skillId : levelUp.getFavouriteSkills()) {
+				if (!ids.contains(skillId)) {
+					ids.add(skillId);
+				}
+			}
+		}
+		return ids;
+	}
+
+	public void addFavouriteSkill(String skillId) {
+		this.getCurrentLevel().addFavouriteSkill(skillId);
+	}
+
+	public void removeFavouriteSkill(String skillId) {
+		for (final LevelUp levelUp : this.levels) {
+			levelUp.removeFavouriteSkill(skillId);
+		}
+	}
+
 	/** Every selected training id (see {@link #getSelectedTrainingIds()}) that is not an elementalist training. */
 	private List<String> getNonElementalistTrainingIds() {
 		final List<String> ids = new ArrayList<>();

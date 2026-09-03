@@ -15,6 +15,7 @@ import com.softwaremagico.librodeesher.pdf.info.RaceDetailsTableFactory;
 import com.softwaremagico.librodeesher.pdf.magic.MagicTableFactory;
 import com.softwaremagico.librodeesher.pdf.perks.PerksTableFactory;
 import com.softwaremagico.librodeesher.pdf.skills.SkillsTableFactory;
+import com.softwaremagico.librodeesher.pdf.skills.FavouriteSkillsTableFactory;
 
 /**
  * The character sheet: name/race/culture/profession/level, the ten characteristics, the derived
@@ -37,6 +38,7 @@ public class CharacterSheet extends PdfDocument {
         document.add(ResistancesTableFactory.getResistancesTable(characterPlayer));
         document.add(RaceDetailsTableFactory.getRaceDetailsTable(characterPlayer));
         document.add(SkillsTableFactory.getSkillsTable(characterPlayer));
+        document.add(FavouriteSkillsTableFactory.getFavouriteSkillsTable(characterPlayer));
         document.add(EquipmentTableFactory.getEquipmentTable(characterPlayer));
         document.add(PerksTableFactory.getPerksTable(characterPlayer));
         document.add(MagicTableFactory.getMagicTable(characterPlayer));
