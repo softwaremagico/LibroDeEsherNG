@@ -1482,6 +1482,44 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void spellListRanksAccumulateAndSpendDevelopmentPoints() throws InvalidXmlElementException {
+		final CharacterPlayer wizard = new CharacterPlayer();
+		wizard.setProfessionId("wizard");
+		wizard.applyProfessionMagicRealms(null);
+		wizard.getCurrentLevel().setSpellListRanks("essenceLawOfLight", 2);
+
+		final Profession profession = RulesCatalog.getInstance().getProfession("wizard");
+		final int expectedFirstLevelCost = profession.getMagicCost(MagicListType.BASIC, 0).getRankCost(0)
+				+ profession.getMagicCost(MagicListType.BASIC, 1).getRankCost(1);
+		Assert.assertEquals(wizard.getSpellListTotalRanks("essenceLawOfLight"), Integer.valueOf(2));
+		Assert.assertEquals(wizard.getSpentDevelopmentPoints(), Integer.valueOf(expectedFirstLevelCost));
+
+		wizard.increaseLevel();
+		wizard.getCurrentLevel().setSpellListRanks("essenceLawOfLight", 1);
+
+		Assert.assertEquals(wizard.getSpellListTotalRanks("essenceLawOfLight"), Integer.valueOf(3));
+		Assert.assertEquals(wizard.getSpentDevelopmentPoints(),
+				wizard.getSpellListDevelopmentCost("essenceLawOfLight", 2, 0));
+	}
+
+	@Test
+	public void sixthSpellListAcquiredInALevelDoublesItsDevelopmentCost() throws InvalidXmlElementException {
+		final CharacterPlayer wizard = new CharacterPlayer();
+		wizard.setProfessionId("wizard");
+		wizard.applyProfessionMagicRealms(null);
+		final List<String> lists = wizard.getOpenSpellLists().stream().map(list -> list.getId()).limit(6).toList();
+
+		for (int index = 0; index < 5; index++) {
+			wizard.getCurrentLevel().setSpellListRanks(lists.get(index), 1);
+		}
+
+		final Integer baseCost = RulesCatalog.getInstance().getProfession("wizard")
+				.getMagicCost(MagicListType.OPEN, 0).getRankCost(0);
+		Assert.assertEquals(wizard.getSpellListDevelopmentCost(lists.get(5), 0, 0),
+				Integer.valueOf(baseCost * 2));
+	}
+
+	@Test
 	public void elementalistTrainingUnlocksItsOwnAndItsTriadsSpellLists() throws InvalidXmlElementException {
 		// "wizardOfTheAir" ("Mago del Aire") is one of the 3 shipped elementalist
 		// trainings, part of
