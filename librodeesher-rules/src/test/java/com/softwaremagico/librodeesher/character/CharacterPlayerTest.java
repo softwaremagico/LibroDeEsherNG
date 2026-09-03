@@ -1021,6 +1021,17 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void specializedSkillRanksFollowTheLegacyCategoryRule() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		final Skill skill = RulesCatalog.getInstance().getSkill("softLeather");
+		character.getCurrentLevel().setSkillRanks(skill.getId(), 4, false);
+
+		Assert.assertEquals(character.getSpecializedSkillRanks(skill), 6);
+		character.getCurrentLevel().setCategoryRanks(skill.getCategoryId(), 1);
+		Assert.assertEquals(character.getSpecializedSkillRanks(skill), 8);
+	}
+
+	@Test
 	public void perkConditionalBonusIsQueryableAndIncludedInTheDevelopmentBonusTotal()
 			throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();

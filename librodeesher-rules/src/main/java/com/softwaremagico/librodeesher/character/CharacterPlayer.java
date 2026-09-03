@@ -1258,6 +1258,20 @@ public class CharacterPlayer {
 		return (int) (this.getSkillTotalRanks(skill.getId()) * this.getSkillRankMultiplier(skill));
 	}
 
+	/** Specialized ranks are doubled with category ranks, otherwise multiplied by 1.5. */
+	public int getSpecializedSkillRanks(Skill skill) {
+		final int ranks = this.getSkillTotalRanks(skill.getId());
+		return this.getCategoryTotalRanks(skill.getCategoryId()) > 0 ? ranks * 2 : (int) (ranks * 1.5);
+	}
+
+	/** Total bonus for a specialization, replacing normal rank progression with specialized ranks. */
+	public Integer getSpecializedSkillTotalBonus(Category category, String skillId) throws InvalidXmlElementException {
+		final Skill skill = RulesCatalog.getInstance().getSkill(skillId);
+		final int normalRankBonus = category.getSkillRankBonus(this.getSkillTotalRanks(skillId));
+		final int specializedRankBonus = category.getSkillRankBonus(this.getSpecializedSkillRanks(skill));
+		return this.getSkillTotalBonus(category, skillId) - normalRankBonus + specializedRankBonus;
+	}
+
 	public List<SelectedPerk> getSelectedPerks() {
 		return this.selectedPerks;
 	}

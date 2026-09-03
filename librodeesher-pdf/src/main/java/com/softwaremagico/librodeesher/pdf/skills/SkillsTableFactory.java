@@ -71,8 +71,8 @@ public final class SkillsTableFactory extends BaseElement {
                 table.addCell(getPlainCell(""));
                 table.addCell(getPlainCell("  " + specializationId));
                 table.addCell(getValueCell(""));
-                table.addCell(getValueCell(""));
-                table.addCell(getValueCell(""));
+                table.addCell(getValueCell(String.valueOf(characterPlayer.getSpecializedSkillRanks(skill))));
+                table.addCell(getValueCell(String.valueOf(characterPlayer.getSpecializedSkillTotalBonus(category, skill.getId()))));
             }
         }
     }
