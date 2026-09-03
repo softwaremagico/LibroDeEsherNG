@@ -173,6 +173,16 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void physicalDevelopmentRanksGrantRaceBasedHitPoints() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("grayOrc");
+		character.getCurrentLevel().setSkillRanks("physicalDevelopment", 3, false);
+
+		Assert.assertEquals(character.getHitPoints(), RulesCatalog.getInstance().getRace("grayOrc")
+				.getProgressionRankValue("physicalDevelopment", 3).intValue());
+	}
+
+	@Test
 	public void skillDevelopmentBonusUsesItsCategorysProgressionTable() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.getCurrentLevel().setSkillRanks("tracking", 10, false);

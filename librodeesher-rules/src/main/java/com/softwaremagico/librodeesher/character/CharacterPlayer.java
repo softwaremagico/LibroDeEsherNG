@@ -2822,6 +2822,17 @@ public class CharacterPlayer {
 		return total / realms.size();
 	}
 
+	/** Hit points granted by ranks in Physical Development according to the selected race. */
+	public int getHitPoints() throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		if (race == null) {
+			return 0;
+		}
+		final int ranks = this.getSkillTotalRanks("physicalDevelopment");
+		final Integer value = race.getProgressionRankValue("physicalDevelopment", ranks);
+		return value == null ? 0 : value;
+	}
+
 	/**
 	 * The averaged power point progression table itself (the 5 raw numbers of the progression cost
 	 * string, e.g. {@code [0, 6, 5, 4, 3]} for {@code "0/6/5/4/3"}: the flat value for 0 ranks, then
