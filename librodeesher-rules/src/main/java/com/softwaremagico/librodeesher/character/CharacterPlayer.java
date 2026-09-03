@@ -355,6 +355,18 @@ public class CharacterPlayer {
 		return this.appearance;
 	}
 
+	/**
+	 * Applies and records a background characteristic roll. Background rolls cost a background
+	 * point and use the same upgrade formula as training rolls.
+	 */
+	public CharacteristicRoll applyBackgroundCharacteristicUpdate(CharacteristicAbbreviation abbreviation, Roll roll) {
+		final Integer temporalValue = this.getCharacteristicTemporalValue(abbreviation);
+		final Integer potentialValue = this.getCharacteristicPotentialValue(abbreviation);
+		final Integer upgrade = Characteristic.getCharacteristicUpgrade(temporalValue, potentialValue, roll);
+		this.setCharacteristicTemporalValue(abbreviation, temporalValue + upgrade);
+		return this.background.addCharacteristicUpdate(abbreviation, temporalValue, potentialValue, roll);
+	}
+
 	public void setAppearance(Appearance appearance) {
 		this.appearance = appearance;
 	}

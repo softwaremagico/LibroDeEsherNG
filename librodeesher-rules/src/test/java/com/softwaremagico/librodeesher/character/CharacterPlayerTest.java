@@ -8,6 +8,7 @@ import com.softwaremagico.librodeesher.characteristic.CharacteristicRoll;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.decision.InvalidDecisionException;
+import com.softwaremagico.librodeesher.dice.Roll;
 import com.softwaremagico.librodeesher.equipment.BonusType;
 import com.softwaremagico.librodeesher.equipment.MagicObject;
 import com.softwaremagico.librodeesher.equipment.ObjectBonus;
@@ -403,6 +404,23 @@ public class CharacterPlayerTest {
 
 		Assert.assertEquals(character.getDecisions().getSelectedOption("training:adventurer:characteristic:0"),
 				"STRENGTH");
+	}
+
+	@Test
+	public void backgroundCharacteristicUpdateAppliesAndIsIncludedInBackgroundCost() {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 50);
+		character.setCharacteristicPotentialValue(CharacteristicAbbreviation.AGILITY, 90);
+		final Roll roll = new Roll(10);
+		roll.setFirstDice(4);
+		roll.setSecondDice(6);
+
+		final CharacteristicRoll update = character.applyBackgroundCharacteristicUpdate(CharacteristicAbbreviation.AGILITY, roll);
+
+		Assert.assertEquals(update.getCharacteristicAbbreviation(), CharacteristicAbbreviation.AGILITY);
+		Assert.assertEquals(character.getCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY), Integer.valueOf(60));
+		Assert.assertEquals(character.getBackground().getCharacteristicUpdates(CharacteristicAbbreviation.AGILITY).size(), 1);
+		Assert.assertEquals(character.getBackground().getSpentBackgroundPoints(), Integer.valueOf(1));
 	}
 
 	@Test
