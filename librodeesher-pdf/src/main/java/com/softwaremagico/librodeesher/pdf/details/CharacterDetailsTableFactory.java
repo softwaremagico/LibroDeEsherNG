@@ -9,6 +9,7 @@ import com.softwaremagico.librodeesher.pdf.elements.BaseElement;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.race.RaceSpecial;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
+import com.softwaremagico.librodeesher.training.Training;
 
 /** Detailed textual appendix for legacy perks, racial specials, and equipment notes. */
 public final class CharacterDetailsTableFactory extends BaseElement {
@@ -23,9 +24,17 @@ public final class CharacterDetailsTableFactory extends BaseElement {
         table.addCell(getTitleCell("Character Details", 1));
 
         addPerks(table, characterPlayer);
+        addTrainings(table, characterPlayer);
         addRaceSpecials(table, characterPlayer);
         addEquipment(table, characterPlayer);
         return table;
+    }
+
+    private static void addTrainings(PdfPTable table, CharacterPlayer characterPlayer) throws InvalidXmlElementException {
+        for (final String trainingId : characterPlayer.getSelectedTrainingIds()) {
+            final Training training = RulesCatalog.getInstance().getTraining(trainingId);
+            addDetail(table, "Training", getText(training.getName()), "");
+        }
     }
 
     private static void addPerks(PdfPTable table, CharacterPlayer characterPlayer) throws InvalidXmlElementException {

@@ -15,6 +15,7 @@ public class CharacterDetailsTableFactoryTest {
         final CharacterPlayer character = new CharacterPlayer();
         character.setRaceId("horseCentaur");
         character.addPerk("acrobat");
+        character.getCurrentLevel().addTraining("soldier");
         character.addStandardEquipment(new Equipment(new TranslatedText("Cuerda", "Rope"),
                 new TranslatedText("Escalada", "Climbing")));
 

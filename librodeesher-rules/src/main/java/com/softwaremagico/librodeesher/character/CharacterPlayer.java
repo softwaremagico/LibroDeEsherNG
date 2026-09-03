@@ -1800,7 +1800,7 @@ public class CharacterPlayer {
 	}
 
 	/** Every training id selected so far (see {@link LevelUp#getTrainings()}), across every level. */
-	private List<String> getSelectedTrainingIds() {
+	public List<String> getSelectedTrainingIds() {
 		final List<String> ids = new ArrayList<>();
 		for (final LevelUp levelUp : this.levels) {
 			ids.addAll(levelUp.getTrainings());
