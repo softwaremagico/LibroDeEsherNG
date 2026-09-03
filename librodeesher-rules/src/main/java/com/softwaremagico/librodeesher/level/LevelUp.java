@@ -31,6 +31,8 @@ public class LevelUp {
     private Map<String, Integer> categoryRanks = new HashMap<>();
     @JsonProperty("skillRanks")
     private Map<String, Integer> skillRanks = new HashMap<>();
+    @JsonProperty("spellListRanks")
+    private Map<String, Integer> spellListRanks = new HashMap<>();
     @JsonProperty("generalizedSkills")
     private Set<String> generalizedSkills = new HashSet<>();
     /** Spell skill ids leveled up this level, in the order they were first touched (see {@link #getSpellRankMultiplier}). */
@@ -114,6 +116,39 @@ public class LevelUp {
 
     public void setSkillRanks(Map<String, Integer> skillRanks) {
         this.skillRanks = skillRanks;
+    }
+
+    /** Ranks bought this level in a spell list, kept apart from ordinary skills. */
+    public Integer getSpellListRanks(String spellListId) {
+        return spellListRanks.getOrDefault(spellListId, 0);
+    }
+
+    public void setSpellListRanks(String spellListId, Integer ranks) {
+        if (ranks <= 0) {
+            spellListRanks.remove(spellListId);
+            spellsUpdated.remove(spellListId);
+        } else {
+            spellListRanks.put(spellListId, ranks);
+            if (!spellsUpdated.contains(spellListId)) {
+                spellsUpdated.add(spellListId);
+            }
+        }
+    }
+
+    public void addSpellListRanks(String spellListId, Integer ranks) {
+        setSpellListRanks(spellListId, getSpellListRanks(spellListId) + ranks);
+    }
+
+    public List<String> getSpellListsWithRanks() {
+        return new ArrayList<>(spellListRanks.keySet());
+    }
+
+    public Map<String, Integer> getSpellListRanks() {
+        return spellListRanks;
+    }
+
+    public void setSpellListRanks(Map<String, Integer> spellListRanks) {
+        this.spellListRanks = spellListRanks;
     }
 
     /**
