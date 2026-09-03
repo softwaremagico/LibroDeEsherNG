@@ -6,6 +6,7 @@ import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.pdf.characteristics.CharacteristicsTableFactory;
 import com.softwaremagico.librodeesher.pdf.details.CharacterDetailsTableFactory;
+import com.softwaremagico.librodeesher.pdf.details.HistoryTableFactory;
 import com.softwaremagico.librodeesher.pdf.equipment.EquipmentTableFactory;
 import com.softwaremagico.librodeesher.pdf.info.CharacterBasicsTableFactory;
 import com.softwaremagico.librodeesher.pdf.info.DerivedStatsTableFactory;
@@ -40,5 +41,6 @@ public class CharacterSheet extends PdfDocument {
         document.add(PerksTableFactory.getPerksTable(characterPlayer));
         document.add(MagicTableFactory.getMagicTable(characterPlayer));
         document.add(CharacterDetailsTableFactory.getCharacterDetailsTable(characterPlayer));
+        document.add(HistoryTableFactory.getHistoryTable(characterPlayer));
     }
 }

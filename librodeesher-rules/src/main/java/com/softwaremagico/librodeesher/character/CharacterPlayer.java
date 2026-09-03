@@ -90,6 +90,7 @@ public class CharacterPlayer {
 	private String raceId;
 	private String cultureId;
 	private String professionId;
+	private String historyText;
 
 	private final Map<CharacteristicAbbreviation, Integer> characteristicTemporalValues = new EnumMap<>(
 			CharacteristicAbbreviation.class);
@@ -207,6 +208,15 @@ public class CharacterPlayer {
 
 	public void setProfessionId(String professionId) {
 		this.professionId = professionId;
+	}
+
+	/** Free-form character history, kept separately from the rules-derived character data. */
+	public String getHistoryText() {
+		return historyText;
+	}
+
+	public void setHistoryText(String historyText) {
+		this.historyText = historyText;
 	}
 
 	/**
