@@ -482,6 +482,15 @@ public class CharacterPlayer {
 		return total - this.getSkillSpecializationsRankCost(skillId);
 	}
 
+	/** Total ranks bought in a spell list across every character level. */
+	public Integer getSpellListTotalRanks(String spellListId) {
+		int total = 0;
+		for (final LevelUp levelUp : this.levels) {
+			total += levelUp.getSpellListRanks(spellListId);
+		}
+		return total;
+	}
+
 	/**
 	 * Selects {@code specializationId} as one of the "hidden" ranks {@code skillId} unlocks (e.g. one
 	 * of a soft/hardened leather armor skill's {@code "TA9"}/{@code "TA10"}/{@code "TA11"} armor
@@ -1362,12 +1371,6 @@ public class CharacterPlayer {
 	 * per-rank cost (see {@link #getCategoryDevelopmentCost}/{@link #getTrainingDevelopmentCost}),
 	 * matching the legacy {@code CharacterPlayer#getSpentDevelopmentPoints()} exactly.
 	 *
-	 * <p><strong>Known limitation:</strong> a spell list's own ranks are not included (unlike the
-	 * legacy version, which folds them into the same "skill ranks" bucket): {@link MagicSpellList}
-	 * ranks are not tracked by {@link LevelUp} at all yet (only real {@code Skill} ranks are, see
-	 * {@link LevelUp#getSkillRanks()}), so there is nothing to sum here for them; {@link
-	 * #getSpellListDevelopmentCost} exists as a "what would the next rank cost" query, but nothing
-	 * yet records a spell list rank as actually bought.</p>
 	 */
 	public Integer getSpentDevelopmentPoints() throws InvalidXmlElementException {
 		final LevelUp levelUp = this.getCurrentLevel();
@@ -1386,6 +1389,16 @@ public class CharacterPlayer {
 			final int ranksThisLevel = levelUp.getSkillRanks(skillId);
 			for (int i = 0; i < ranksThisLevel; i++) {
 				final Integer cost = this.getCategoryDevelopmentCost(categoryId, i);
+				if (cost != null) {
+					total += cost;
+				}
+			}
+		}
+		for (final String spellListId : levelUp.getSpellListsWithRanks()) {
+			final int ranksThisLevel = levelUp.getSpellListRanks(spellListId);
+			final int ranksBeforeThisLevel = this.getSpellListTotalRanks(spellListId) - ranksThisLevel;
+			for (int i = 0; i < ranksThisLevel; i++) {
+				final Integer cost = this.getSpellListDevelopmentCost(spellListId, ranksBeforeThisLevel + i, i);
 				if (cost != null) {
 					total += cost;
 				}
@@ -1889,7 +1902,7 @@ public class CharacterPlayer {
 	 * Profession#getMagicCost(MagicListType, int)}), given it already has {@code currentListRanks}
 	 * ranks bought across every level, and {@code ranksBoughtThisLevel} of them were bought at the
 	 * current level (0-based, so {@code ranksBoughtThisLevel=0} is the first rank bought this level in
-	 * this list); {@code null} if no profession is selected, {@link #classifySpellList(String)} cannot
+	 * this list). The returned cost includes the per-level spell-list multiplier. {@code null} if no profession is selected, {@link #classifySpellList(String)} cannot
 	 * classify it for this character yet, or the profession has no cost defined for that bracket/rank
 	 * index.
 	 */
@@ -1904,7 +1917,8 @@ public class CharacterPlayer {
 			return null;
 		}
 		final ProfessionMagicCost bracket = profession.getMagicCost(listType, currentListRanks);
-		return bracket == null ? null : bracket.getRankCost(ranksBoughtThisLevel);
+		final Integer rankCost = bracket == null ? null : bracket.getRankCost(ranksBoughtThisLevel);
+		return rankCost == null ? null : rankCost * this.getCurrentLevel().getSpellRankMultiplier(spellListId);
 	}
 
 	/**
