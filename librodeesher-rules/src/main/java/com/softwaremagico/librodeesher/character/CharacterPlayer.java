@@ -2873,6 +2873,13 @@ public class CharacterPlayer {
 				total += bonus.getValue();
 			}
 		}
+		for (final Map.Entry<PerkChoiceGrant, String> resolved : this.getResolvedPerkChoiceGrants()) {
+			final PerkChoiceGrant grant = resolved.getKey();
+			if (isPerkChoiceGrantSkillTarget(grant) && skillId.equals(resolved.getValue())
+					&& grant.getKind() == PerkBonusKind.PER_RANK) {
+				total += grant.getValue();
+			}
+		}
 		return total;
 	}
 
@@ -2882,6 +2889,13 @@ public class CharacterPlayer {
 		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
 			if (categoryId.equals(bonus.getCategoryId()) && bonus.getKind() == PerkBonusKind.PER_RANK) {
 				total += bonus.getValue();
+			}
+		}
+		for (final Map.Entry<PerkChoiceGrant, String> resolved : this.getResolvedPerkChoiceGrants()) {
+			final PerkChoiceGrant grant = resolved.getKey();
+			if (isPerkChoiceGrantCategoryTarget(grant) && categoryId.equals(resolved.getValue())
+					&& grant.getKind() == PerkBonusKind.PER_RANK) {
+				total += grant.getValue();
 			}
 		}
 		return total;
