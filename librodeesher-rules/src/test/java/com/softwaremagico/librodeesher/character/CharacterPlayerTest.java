@@ -674,6 +674,17 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void availableWeaknessesFollowTheLegacyGradeAndUniquenessRules() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.addPerk("acrobat");
+
+		Assert.assertTrue(character.getAvailableWeaknessIds("acrobat").contains("slightAddiction"));
+		Assert.assertTrue(character.addWeakness("acrobat", "slightAddiction"));
+		Assert.assertTrue(character.getAvailableWeaknessIds("acrobat").isEmpty());
+		Assert.assertFalse(character.addWeakness("acrobat", "slightAddiction"));
+	}
+
+	@Test
 	public void perksBackgroundCostUsesTheGradeFormula() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.addPerk("acrobat");

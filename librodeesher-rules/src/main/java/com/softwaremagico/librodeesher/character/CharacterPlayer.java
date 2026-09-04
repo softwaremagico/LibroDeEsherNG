@@ -1375,6 +1375,42 @@ public class CharacterPlayer {
 		return selectedPerk != null && selectedPerk.getWeaknessId() != null;
 	}
 
+	/**
+	 * Weaknesses eligible to offset {@code perkId}, ordered by id. The legacy selector offered only a
+	 * weakness with the same grade or one grade lower, and excluded weaknesses already selected either
+	 * directly or as another perk's paired weakness.
+	 */
+	public List<String> getAvailableWeaknessIds(String perkId) throws InvalidXmlElementException {
+		final SelectedPerk selectedPerk = this.findSelectedPerk(perkId);
+		if (selectedPerk == null || selectedPerk.getWeaknessId() != null) {
+			return List.of();
+		}
+		final Perk perk = RulesCatalog.getInstance().getPerk(perkId);
+		final List<String> available = new ArrayList<>();
+		for (final Perk weakness : RulesCatalog.getInstance().getPerks()) {
+			if (weakness.isWeakness() && this.isEligibleWeakness(perk, weakness)) {
+				available.add(weakness.getId());
+			}
+		}
+		available.sort(String::compareTo);
+		return available;
+	}
+
+	private boolean isEligibleWeakness(Perk perk, Perk weakness) {
+		final int gradeDifference = perk.getGrade().getLevel() - weakness.getGrade().getLevel();
+		return gradeDifference >= 0 && gradeDifference <= 1 && !this.isPerkSelected(weakness.getId())
+				&& this.selectedPerks.stream().noneMatch(selected -> weakness.getId().equals(selected.getWeaknessId()));
+	}
+
+	/** Pairs an eligible weakness with a selected perk, returning whether the pairing was applied. */
+	public boolean addWeakness(String perkId, String weaknessPerkId) throws InvalidXmlElementException {
+		if (!this.getAvailableWeaknessIds(perkId).contains(weaknessPerkId)) {
+			return false;
+		}
+		this.findSelectedPerk(perkId).setWeaknessId(weaknessPerkId);
+		return true;
+	}
+
 	/** Removes {@code weaknessPerkId} from whichever selected perk it is paired with. */
 	public boolean removeWeakness(String weaknessPerkId) {
 		for (final SelectedPerk selectedPerk : this.selectedPerks) {
