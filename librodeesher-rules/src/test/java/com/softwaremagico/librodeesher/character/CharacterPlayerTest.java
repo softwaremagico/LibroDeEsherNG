@@ -1457,6 +1457,17 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void addAllowedPerkRespectsRaceRestrictionsAndRejectsDuplicates() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		Assert.assertFalse(character.addAllowedPerk("anxious"));
+
+		character.setRaceId("grayOrc");
+		Assert.assertTrue(character.addAllowedPerk("anxious"));
+		Assert.assertFalse(character.addAllowedPerk("anxious"));
+		Assert.assertEquals(character.getSelectedPerks().size(), 1);
+	}
+
+	@Test
 	public void skillSpecializationsAreExcludedFromTotalRanksButRecorded() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		final LevelUp firstLevel = new LevelUp();

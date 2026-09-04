@@ -1318,6 +1318,19 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * Selects a perk only when its race/profession restrictions allow it. This leaves {@link
+	 * #addPerk(String)} available for restoring persisted legacy characters, whose selections may
+	 * predate the currently enabled rule modules.
+	 */
+	public boolean addAllowedPerk(String perkId) throws InvalidXmlElementException {
+		if (this.isPerkSelected(perkId) || !this.isPerkAllowedForCharacter(perkId)) {
+			return false;
+		}
+		this.selectedPerks.add(new SelectedPerk(perkId));
+		return true;
+	}
+
+	/**
 	 * Unselects a player-selected perk and its paired weakness. Randomly selected perks are retained,
 	 * matching the legacy rule that random character generation choices cannot be removed by players.
 	 */
