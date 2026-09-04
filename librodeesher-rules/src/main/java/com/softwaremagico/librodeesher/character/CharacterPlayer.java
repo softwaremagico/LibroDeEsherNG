@@ -1317,9 +1317,12 @@ public class CharacterPlayer {
 		}
 	}
 
-	/** Unselects {@code perkId} and forgets any weakness paired with it. */
+	/**
+	 * Unselects a player-selected perk and its paired weakness. Randomly selected perks are retained,
+	 * matching the legacy rule that random character generation choices cannot be removed by players.
+	 */
 	public void removePerk(String perkId) {
-		this.selectedPerks.removeIf(selectedPerk -> selectedPerk.getPerkId().equals(perkId));
+		this.selectedPerks.removeIf(selectedPerk -> selectedPerk.getPerkId().equals(perkId) && !selectedPerk.isRandom());
 	}
 
 	/**
@@ -1336,6 +1339,17 @@ public class CharacterPlayer {
 	public boolean hasWeakness(String perkId) {
 		final SelectedPerk selectedPerk = this.findSelectedPerk(perkId);
 		return selectedPerk != null && selectedPerk.getWeaknessId() != null;
+	}
+
+	/** Removes {@code weaknessPerkId} from whichever selected perk it is paired with. */
+	public boolean removeWeakness(String weaknessPerkId) {
+		for (final SelectedPerk selectedPerk : this.selectedPerks) {
+			if (weaknessPerkId.equals(selectedPerk.getWeaknessId())) {
+				selectedPerk.setWeaknessId(null);
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**

@@ -659,6 +659,21 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void randomPerksCannotBeRemovedAndWeaknessesCanBeUnpaired() {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.addPerk("acrobat");
+		character.setWeakness("acrobat", "slightAddiction");
+
+		Assert.assertTrue(character.removeWeakness("slightAddiction"));
+		Assert.assertFalse(character.hasWeakness("acrobat"));
+		Assert.assertFalse(character.removeWeakness("slightAddiction"));
+
+		character.setPerkAsRandom("acrobat", true);
+		character.removePerk("acrobat");
+		Assert.assertTrue(character.isPerkSelected("acrobat"));
+	}
+
+	@Test
 	public void perksBackgroundCostUsesTheGradeFormula() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.addPerk("acrobat");
