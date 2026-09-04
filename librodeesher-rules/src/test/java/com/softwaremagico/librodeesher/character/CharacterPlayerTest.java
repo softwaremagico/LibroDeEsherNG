@@ -1468,6 +1468,20 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void availablePerksRespectRestrictionsSelectionsAndBackgroundPoints() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("grayOrc");
+		Assert.assertTrue(character.getAvailablePerkIds().contains("anxious"));
+		Assert.assertTrue(character.getAvailablePerkIds().contains("acrobat"));
+
+		character.addPerk("acrobat");
+		Assert.assertFalse(character.getAvailablePerkIds().contains("acrobat"));
+
+		character.getBackground().setCategoryPoint("outdoorEnvironment", true);
+		Assert.assertFalse(character.getAvailablePerkIds().contains("anxious"));
+	}
+
+	@Test
 	public void skillSpecializationsAreExcludedFromTotalRanksButRecorded() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		final LevelUp firstLevel = new LevelUp();

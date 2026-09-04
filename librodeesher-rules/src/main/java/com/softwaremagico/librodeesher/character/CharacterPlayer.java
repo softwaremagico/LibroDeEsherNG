@@ -1331,6 +1331,27 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * Every perk the character may currently select, ordered by id. The list excludes already selected
+	 * perks, race/profession-restricted perks, and perks that would exceed the remaining background
+	 * point budget. Weaknesses remain selectable because they cost no background points directly.
+	 */
+	public List<String> getAvailablePerkIds() throws InvalidXmlElementException {
+		final List<String> available = new ArrayList<>();
+		for (final Perk perk : RulesCatalog.getInstance().getPerks()) {
+			if (!this.isPerkSelected(perk.getId()) && this.isPerkAllowedForCharacter(perk.getId())
+					&& this.canAffordPerk(perk)) {
+				available.add(perk.getId());
+			}
+		}
+		available.sort(String::compareTo);
+		return available;
+	}
+
+	private boolean canAffordPerk(Perk perk) throws InvalidXmlElementException {
+		return perk.isWeakness() || perk.getGrade().getBackgroundCost(null, false) <= this.getRemainingBackgroundPoints();
+	}
+
+	/**
 	 * Unselects a player-selected perk and its paired weakness. Randomly selected perks are retained,
 	 * matching the legacy rule that random character generation choices cannot be removed by players.
 	 */
