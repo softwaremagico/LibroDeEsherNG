@@ -19,6 +19,18 @@ public class MagicTableFactoryTest {
 
         final var table = MagicTableFactory.getMagicTable(character);
 
-        Assert.assertTrue(table.size() > character.getOpenSpellLists().size() * 4 + 5);
+        Assert.assertTrue(table.size() > character.getOpenSpellLists().size() * 5 + 6);
+    }
+
+    @Test
+    public void magicTableIncludesPerkBonusForSpellListTypes() throws Exception {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setProfessionId("wizard");
+        character.applyProfessionMagicRealms(null);
+        character.addPerk("magicalAbility");
+
+        final var table = MagicTableFactory.getMagicTable(character);
+
+        Assert.assertTrue(table.size() > 6);
     }
 }
