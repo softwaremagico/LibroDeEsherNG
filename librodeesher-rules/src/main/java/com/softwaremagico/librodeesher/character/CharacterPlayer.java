@@ -2116,6 +2116,25 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * Sets ranks bought in a spell list at the current level when the active magic bracket permits
+	 * that many and the resulting development-point total remains affordable. Returns {@code false}
+	 * without changing the character for an invalid amount, unavailable list, or insufficient budget.
+	 */
+	public boolean setCurrentLevelSpellListRanks(String spellListId, int ranks) throws InvalidXmlElementException {
+		if (ranks < 0 || ranks > this.getMaximumSpellListRanksThisLevel(spellListId)) {
+			return false;
+		}
+		final LevelUp level = this.getCurrentLevel();
+		final int previousRanks = level.getSpellListRanks(spellListId);
+		level.setSpellListRanks(spellListId, ranks);
+		if (this.getRemainingDevelopmentPoints() < 0) {
+			level.setSpellListRanks(spellListId, previousRanks);
+			return false;
+		}
+		return true;
+	}
+
+	/**
 	 * The flat bonus every selected perk grants to every spell list classified as {@code listType}
 	 * (see {@link #classifySpellList(String)}), through the legacy synthetic per-{@link
 	 * MagicListType} {@code Category} (see {@link MagicListType#getCategoryId()}'s javadoc); matches

@@ -1721,6 +1721,30 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void settingSpellListRanksRespectsTheMagicLimitAndDevelopmentPointBudget() throws InvalidXmlElementException {
+		final CharacterPlayer wizard = new CharacterPlayer();
+		wizard.setProfessionId("wizard");
+		wizard.applyProfessionMagicRealms(null);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 500);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 500);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 500);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 500);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 500);
+
+		Assert.assertTrue(wizard.setCurrentLevelSpellListRanks("essenceLawOfLight", 3));
+		Assert.assertEquals(wizard.getCurrentLevel().getSpellListRanks("essenceLawOfLight"), Integer.valueOf(3));
+		Assert.assertFalse(wizard.setCurrentLevelSpellListRanks("essenceLawOfLight", 4));
+
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 1);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 1);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 1);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 1);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 1);
+		Assert.assertFalse(wizard.setCurrentLevelSpellListRanks("essenceLawOfLight", 1));
+		Assert.assertEquals(wizard.getCurrentLevel().getSpellListRanks("essenceLawOfLight"), Integer.valueOf(3));
+	}
+
+	@Test
 	public void elementalistTrainingUnlocksItsOwnAndItsTriadsSpellLists() throws InvalidXmlElementException {
 		// "wizardOfTheAir" ("Mago del Aire") is one of the 3 shipped elementalist
 		// trainings, part of
