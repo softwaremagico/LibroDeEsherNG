@@ -19,6 +19,7 @@ import com.softwaremagico.librodeesher.magic.MagicListType;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.perk.PerkChoiceGrant;
 import com.softwaremagico.librodeesher.profession.Profession;
+import com.softwaremagico.librodeesher.profession.ProfessionMagicCost;
 import com.softwaremagico.librodeesher.profession.ProfessionSkillGrant;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.resistance.ResistanceType;
@@ -1705,6 +1706,18 @@ public class CharacterPlayerTest {
 				.getMagicCost(MagicListType.OPEN, 0).getRankCost(0);
 		Assert.assertEquals(wizard.getSpellListDevelopmentCost(lists.get(5), 0, 0),
 				Integer.valueOf(baseCost * 2));
+	}
+
+	@Test
+	public void maximumSpellListRanksComeFromTheActiveMagicCostBracket() throws InvalidXmlElementException {
+		final CharacterPlayer wizard = new CharacterPlayer();
+		wizard.setProfessionId("wizard");
+		wizard.applyProfessionMagicRealms(null);
+
+		final ProfessionMagicCost firstBracket = wizard.getProfession().getMagicCost(MagicListType.BASIC, 0);
+		Assert.assertEquals(wizard.getMaximumSpellListRanksThisLevel("essenceLawOfLight"),
+				firstBracket.getRankCosts().size());
+		Assert.assertEquals(wizard.getMaximumSpellListRanksThisLevel("mentalismSelfHealing"), 0);
 	}
 
 	@Test

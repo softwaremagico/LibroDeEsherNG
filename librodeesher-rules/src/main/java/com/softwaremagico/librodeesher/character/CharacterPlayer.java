@@ -2102,6 +2102,20 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * Maximum ranks that may be bought this level in {@code spellListId} under the active profession
+	 * cost bracket. Returns 0 when the list is not developable by this character.
+	 */
+	public int getMaximumSpellListRanksThisLevel(String spellListId) throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		final MagicListType listType = this.classifySpellList(spellListId);
+		if (profession == null || listType == null) {
+			return 0;
+		}
+		final ProfessionMagicCost bracket = profession.getMagicCost(listType, this.getSpellListTotalRanks(spellListId));
+		return bracket == null ? 0 : bracket.getRankCosts().size();
+	}
+
+	/**
 	 * The flat bonus every selected perk grants to every spell list classified as {@code listType}
 	 * (see {@link #classifySpellList(String)}), through the legacy synthetic per-{@link
 	 * MagicListType} {@code Category} (see {@link MagicListType#getCategoryId()}'s javadoc); matches
