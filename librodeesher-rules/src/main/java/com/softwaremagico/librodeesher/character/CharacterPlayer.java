@@ -2123,13 +2123,21 @@ public class CharacterPlayer {
 	public List<String> getAvailableSpellListIds() throws InvalidXmlElementException {
 		final List<String> available = new ArrayList<>();
 		for (final MagicSpellList spellList : RulesCatalog.getInstance().getSpellLists()) {
-			if (this.getCurrentLevel().getSpellListRanks(spellList.getId())
-					< this.getMaximumSpellListRanksThisLevel(spellList.getId())) {
+			final int currentLevelRanks = this.getCurrentLevel().getSpellListRanks(spellList.getId());
+			if (currentLevelRanks < this.getMaximumSpellListRanksThisLevel(spellList.getId())
+					&& this.canAffordSpellListRank(spellList.getId(), currentLevelRanks)) {
 				available.add(spellList.getId());
 			}
 		}
 		available.sort(String::compareTo);
 		return available;
+	}
+
+	private boolean canAffordSpellListRank(String spellListId, int ranksBoughtThisLevel)
+			throws InvalidXmlElementException {
+		final int currentListRanks = this.getSpellListTotalRanks(spellListId);
+		final Integer cost = this.getSpellListDevelopmentCost(spellListId, currentListRanks, ranksBoughtThisLevel);
+		return cost != null && cost <= this.getRemainingDevelopmentPoints();
 	}
 
 	/**
