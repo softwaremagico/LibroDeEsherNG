@@ -2559,6 +2559,28 @@ public class CharacterPlayer {
 		return true;
 	}
 
+	/**
+	 * Sets ranks bought in a skill at the current level when its category permits that many, the skill
+	 * is currently enabled, and the resulting development-point total remains affordable. Returns
+	 * {@code false} without changing the character for an invalid amount, unavailable skill, disabled
+	 * skill, or insufficient budget.
+	 */
+	public boolean setCurrentLevelSkillRanks(String skillId, int ranks) throws InvalidXmlElementException {
+		final Skill skill = RulesCatalog.getInstance().getSkill(skillId);
+		if (ranks < 0 || !this.isSkillEnabled(skill) || this.isSkillDisabledByOptions(skill)
+				|| ranks > this.getMaximumCategoryRanksThisLevel(skill.getCategoryId())) {
+			return false;
+		}
+		final LevelUp level = this.getCurrentLevel();
+		final int previousRanks = level.getSkillRanks(skillId);
+		level.setSkillRanks(skillId, ranks, false);
+		if (this.getRemainingDevelopmentPoints() < 0) {
+			level.setSkillRanks(skillId, previousRanks, false);
+			return false;
+		}
+		return true;
+	}
+
 	private static final String WEAPON_COST_TIER_KEY_PREFIX = "weaponCostTier:";
 
 	/**

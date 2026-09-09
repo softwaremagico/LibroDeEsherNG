@@ -1983,6 +1983,30 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void settingSkillRanksRespectsEnablementLimitAndDevelopmentPointBudget() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 500);
+
+		Assert.assertTrue(character.setCurrentLevelSkillRanks("tracking", 3));
+		Assert.assertEquals(character.getCurrentLevel().getSkillRanks("tracking"), Integer.valueOf(3));
+		Assert.assertFalse(character.setCurrentLevelSkillRanks("tracking", 4));
+		Assert.assertFalse(character.setCurrentLevelSkillRanks("chiPowerOfTheCrane", 1));
+
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 1);
+		Assert.assertFalse(character.setCurrentLevelSkillRanks("tracking", 1));
+		Assert.assertEquals(character.getCurrentLevel().getSkillRanks("tracking"), Integer.valueOf(3));
+	}
+
+	@Test
 	public void itemBonusTakesTheBestSingleMagicItemNotTheSum() {
 		final CharacterPlayer character = new CharacterPlayer();
 		final MagicObject weakRing = new MagicObject(new TranslatedText("Anillo débil", "Weak ring"), null,
