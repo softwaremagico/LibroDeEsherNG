@@ -3618,4 +3618,22 @@ public class CharacterPlayer {
 		}
 		return !hasEnablingSkill;
 	}
+
+	/**
+	 * Every skill that may still receive a rank at the current level, ordered by id. A skill must be
+	 * enabled, allowed by the character options, and belong to a category with an unused rank slot in
+	 * the selected profession's development table.
+	 */
+	public List<String> getAvailableSkillIds() throws InvalidXmlElementException {
+		final List<String> available = new ArrayList<>();
+		for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
+			final int currentRanks = this.getCurrentLevel().getSkillRanks(skill.getId());
+			if (this.isSkillEnabled(skill) && !this.isSkillDisabledByOptions(skill)
+					&& currentRanks < this.getMaximumCategoryRanksThisLevel(skill.getCategoryId())) {
+				available.add(skill.getId());
+			}
+		}
+		available.sort(String::compareTo);
+		return available;
+	}
 }

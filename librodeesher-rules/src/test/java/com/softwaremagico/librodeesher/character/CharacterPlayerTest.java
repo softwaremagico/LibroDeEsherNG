@@ -2007,6 +2007,18 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void availableSkillsRespectEnablementOptionsAndRankLimits() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+		Assert.assertTrue(character.getAvailableSkillIds().contains("tracking"));
+		Assert.assertFalse(character.getAvailableSkillIds().contains("chiPowerOfTheCrane"));
+		Assert.assertEquals(character.getAvailableSkillIds().stream().sorted().toList(), character.getAvailableSkillIds());
+
+		character.getCurrentLevel().setSkillRanks("tracking", 3, false);
+		Assert.assertFalse(character.getAvailableSkillIds().contains("tracking"));
+	}
+
+	@Test
 	public void itemBonusTakesTheBestSingleMagicItemNotTheSum() {
 		final CharacterPlayer character = new CharacterPlayer();
 		final MagicObject weakRing = new MagicObject(new TranslatedText("Anillo débil", "Weak ring"), null,
