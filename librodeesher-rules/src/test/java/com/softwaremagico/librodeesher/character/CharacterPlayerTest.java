@@ -1322,6 +1322,10 @@ public class CharacterPlayerTest {
 		// A different tier ("2/5") to a different category.
 		fighter.assignWeaponCategoryCostTier(1, "weaponsBlunt");
 		Assert.assertEquals(fighter.getAssignedWeaponCategoryCostTier("weaponsBlunt").getRankCosts(), List.of(2, 5));
+		Assert.assertFalse(fighter.getAvailableWeaponCategoriesForCostTier(0).contains("weaponsBlunt"));
+		Assert.assertTrue(fighter.getAvailableWeaponCategoriesForCostTier(0).contains("weaponsEdged"));
+		Assert.assertEquals(fighter.getAvailableWeaponCategoriesForCostTier(0).stream().sorted().toList(),
+				fighter.getAvailableWeaponCategoriesForCostTier(0));
 
 		// Not a real weapon category, and an out-of-range tier index.
 		Assert.assertThrows(IllegalArgumentException.class,

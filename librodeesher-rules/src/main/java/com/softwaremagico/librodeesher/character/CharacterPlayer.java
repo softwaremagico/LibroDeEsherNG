@@ -2672,6 +2672,25 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * Weapon categories that may receive {@code tierIndex}. A category assigned to another tier is
+	 * excluded, while the current tier's existing selection remains available for reassignment.
+	 */
+	public List<String> getAvailableWeaponCategoriesForCostTier(int tierIndex) throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		if (profession == null || tierIndex < 0 || tierIndex >= profession.getWeaponCategoryCostTiers().size()) {
+			return List.of();
+		}
+		final List<String> available = new ArrayList<>(this.getWeaponCategoryIds());
+		for (int index = 0; index < profession.getWeaponCategoryCostTiers().size(); index++) {
+			if (index != tierIndex) {
+				available.remove(this.decisions.getSelectedOption(WEAPON_COST_TIER_KEY_PREFIX + index));
+			}
+		}
+		available.sort(String::compareTo);
+		return available;
+	}
+
+	/**
 	 * The weapon-category cost tier assigned so far to {@code weaponCategoryId} (see {@link
 	 * #assignWeaponCategoryCostTier}), or {@code null} if no profession is selected, or none of its
 	 * tiers have been assigned to it yet.
