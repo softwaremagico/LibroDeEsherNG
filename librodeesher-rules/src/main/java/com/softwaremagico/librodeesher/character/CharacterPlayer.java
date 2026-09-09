@@ -1347,6 +1347,19 @@ public class CharacterPlayer {
 		return available;
 	}
 
+	/**
+	 * Selects a perk only when it is currently present in {@link #getAvailablePerkIds()}, including
+	 * the remaining background-point budget. The lower-level {@link #addAllowedPerk(String)} remains
+	 * useful when a caller deliberately manages that budget independently.
+	 */
+	public boolean addAvailablePerk(String perkId) throws InvalidXmlElementException {
+		if (!this.getAvailablePerkIds().contains(perkId)) {
+			return false;
+		}
+		this.selectedPerks.add(new SelectedPerk(perkId));
+		return true;
+	}
+
 	private boolean canAffordPerk(Perk perk) throws InvalidXmlElementException {
 		return perk.isWeakness() || perk.getGrade().getBackgroundCost(null, false) <= this.getRemainingBackgroundPoints();
 	}
