@@ -14,7 +14,7 @@ import java.util.List;
 
 /** Builds the legacy sheet's category and skill values from the NG character state. */
 public final class SkillsTableFactory extends BaseElement {
-    private static final float[] WIDTHS = {2f, 3f, 1f, 1f, 1f};
+    private static final float[] WIDTHS = {2f, 3f, 1f, 1f, 1f, 1f, 1f};
 
     private SkillsTableFactory() {
         // Only static helpers.
@@ -35,6 +35,8 @@ public final class SkillsTableFactory extends BaseElement {
         table.addCell(getLabelCell("Category ranks"));
         table.addCell(getLabelCell("Skill ranks"));
         table.addCell(getLabelCell("Total bonus"));
+        table.addCell(getLabelCell("Next cost"));
+        table.addCell(getLabelCell("Max ranks"));
 
         final List<Category> categories = new ArrayList<>(RulesCatalog.getInstance().getCategories());
         categories.sort(Comparator.comparing(category -> getText(category.getName())));
@@ -68,6 +70,7 @@ public final class SkillsTableFactory extends BaseElement {
             table.addCell(getValueCell(String.valueOf(characterPlayer.getCategoryTotalRanks(category.getId()))));
             table.addCell(getValueCell(String.valueOf(characterPlayer.getSkillTotalRanks(skill.getId()))));
             table.addCell(getValueCell(String.valueOf(characterPlayer.getSkillTotalBonus(category, skill.getId()))));
+            addCategoryDevelopmentCells(table, characterPlayer, category, false);
         }
     }
 
@@ -90,6 +93,7 @@ public final class SkillsTableFactory extends BaseElement {
             table.addCell(getValueCell(String.valueOf(characterPlayer.getCategoryTotalRanks(category.getId()))));
             table.addCell(getValueCell(""));
             table.addCell(getValueCell(String.valueOf(characterPlayer.getCategoryTotalBonus(category))));
+            addCategoryDevelopmentCells(table, characterPlayer, category, true);
             return;
         }
 
@@ -100,13 +104,29 @@ public final class SkillsTableFactory extends BaseElement {
             table.addCell(getValueCell(index == 0 ? String.valueOf(characterPlayer.getCategoryTotalRanks(category.getId())) : ""));
             table.addCell(getValueCell(String.valueOf(characterPlayer.getSkillTotalRanks(skill.getId()))));
             table.addCell(getValueCell(String.valueOf(characterPlayer.getSkillTotalBonus(category, skill.getId()))));
+            addCategoryDevelopmentCells(table, characterPlayer, category, index == 0);
             for (final String specializationId : characterPlayer.getSkillSpecializations(skill.getId())) {
                 table.addCell(getPlainCell(""));
                 table.addCell(getPlainCell("  " + specializationId));
                 table.addCell(getValueCell(""));
                 table.addCell(getValueCell(String.valueOf(characterPlayer.getSpecializedSkillRanks(skill))));
                 table.addCell(getValueCell(String.valueOf(characterPlayer.getSpecializedSkillTotalBonus(category, skill.getId()))));
+                table.addCell(getValueCell(""));
+                table.addCell(getValueCell(""));
             }
         }
+    }
+
+    private static void addCategoryDevelopmentCells(PdfPTable table, CharacterPlayer characterPlayer, Category category,
+                                                     boolean includeValues) throws InvalidXmlElementException {
+        if (!includeValues) {
+            table.addCell(getValueCell(""));
+            table.addCell(getValueCell(""));
+            return;
+        }
+        final int currentRanks = characterPlayer.getCurrentLevel().getCategoryRanks(category.getId());
+        final Integer cost = characterPlayer.getCategoryDevelopmentCost(category.getId(), currentRanks);
+        table.addCell(getValueCell(cost == null ? "" : String.valueOf(cost)));
+        table.addCell(getValueCell(String.valueOf(characterPlayer.getMaximumCategoryRanksThisLevel(category.getId()))));
     }
 }

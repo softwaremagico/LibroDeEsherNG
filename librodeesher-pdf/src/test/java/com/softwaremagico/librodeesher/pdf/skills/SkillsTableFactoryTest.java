@@ -17,5 +17,8 @@ public class SkillsTableFactoryTest {
 
         Assert.assertTrue(grouped.size() > 1);
         Assert.assertTrue(alphabetical.size() > 1);
+
+        character.setProfessionId("fighter");
+        Assert.assertTrue(SkillsTableFactory.getSkillsTable(character, false).size() > 1);
     }
 }
