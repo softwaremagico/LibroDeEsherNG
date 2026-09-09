@@ -2691,6 +2691,19 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * Assigns a weapon cost tier only when the category is not already assigned to another tier.
+	 * Returns {@code false} without changing the character for an invalid tier or unavailable category.
+	 */
+	public boolean assignAvailableWeaponCategoryCostTier(int tierIndex, String weaponCategoryId)
+			throws InvalidXmlElementException {
+		if (!this.getAvailableWeaponCategoriesForCostTier(tierIndex).contains(weaponCategoryId)) {
+			return false;
+		}
+		this.assignWeaponCategoryCostTier(tierIndex, weaponCategoryId);
+		return true;
+	}
+
+	/**
 	 * The weapon-category cost tier assigned so far to {@code weaponCategoryId} (see {@link
 	 * #assignWeaponCategoryCostTier}), or {@code null} if no profession is selected, or none of its
 	 * tiers have been assigned to it yet.
