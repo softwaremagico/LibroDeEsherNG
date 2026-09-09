@@ -2521,6 +2521,25 @@ public class CharacterPlayer {
 		return cost == null ? 0 : cost.getRankCosts().size();
 	}
 
+	/**
+	 * Sets ranks bought in a category at the current level when the profession permits that many and
+	 * the resulting development-point total remains affordable. Returns {@code false} without changing
+	 * the character for an invalid amount, unavailable category, or insufficient budget.
+	 */
+	public boolean setCurrentLevelCategoryRanks(String categoryId, int ranks) throws InvalidXmlElementException {
+		if (ranks < 0 || ranks > this.getMaximumCategoryRanksThisLevel(categoryId)) {
+			return false;
+		}
+		final LevelUp level = this.getCurrentLevel();
+		final int previousRanks = level.getCategoryRanks(categoryId);
+		level.setCategoryRanks(categoryId, ranks);
+		if (this.getRemainingDevelopmentPoints() < 0) {
+			level.setCategoryRanks(categoryId, previousRanks);
+			return false;
+		}
+		return true;
+	}
+
 	private static final String WEAPON_COST_TIER_KEY_PREFIX = "weaponCostTier:";
 
 	/**

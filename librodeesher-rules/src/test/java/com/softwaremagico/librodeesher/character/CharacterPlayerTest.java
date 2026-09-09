@@ -1936,6 +1936,29 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void settingCategoryRanksRespectsTheLimitAndDevelopmentPointBudget() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 500);
+
+		Assert.assertTrue(character.setCurrentLevelCategoryRanks("outdoorEnvironment", 3));
+		Assert.assertEquals(character.getCurrentLevel().getCategoryRanks("outdoorEnvironment"), Integer.valueOf(3));
+		Assert.assertFalse(character.setCurrentLevelCategoryRanks("outdoorEnvironment", 4));
+
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 1);
+		Assert.assertFalse(character.setCurrentLevelCategoryRanks("outdoorEnvironment", 1));
+		Assert.assertEquals(character.getCurrentLevel().getCategoryRanks("outdoorEnvironment"), Integer.valueOf(3));
+	}
+
+	@Test
 	public void itemBonusTakesTheBestSingleMagicItemNotTheSum() {
 		final CharacterPlayer character = new CharacterPlayer();
 		final MagicObject weakRing = new MagicObject(new TranslatedText("Anillo débil", "Weak ring"), null,
