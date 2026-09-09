@@ -2026,6 +2026,26 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void availableCategoriesRespectRankLimitsAndDevelopmentPointBudget() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+		Assert.assertTrue(character.getAvailableCategoryIds().contains("outdoorEnvironment"));
+		Assert.assertEquals(character.getAvailableCategoryIds().stream().sorted().toList(), character.getAvailableCategoryIds());
+
+		character.getCurrentLevel().setCategoryRanks("outdoorEnvironment", 3);
+		Assert.assertFalse(character.getAvailableCategoryIds().contains("outdoorEnvironment"));
+
+		final CharacterPlayer unaffordable = new CharacterPlayer();
+		unaffordable.setProfessionId("fighter");
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 1);
+		Assert.assertFalse(unaffordable.getAvailableCategoryIds().contains("outdoorEnvironment"));
+	}
+
+	@Test
 	public void settingSkillRanksRespectsEnablementLimitAndDevelopmentPointBudget() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.setProfessionId("fighter");

@@ -2566,6 +2566,24 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * Every category that may still receive a direct rank at the current level, ordered by id. The
+	 * selected profession's rank-cost table supplies both the per-level limit and the next-rank cost.
+	 */
+	public List<String> getAvailableCategoryIds() throws InvalidXmlElementException {
+		final List<String> available = new ArrayList<>();
+		for (final Category category : RulesCatalog.getInstance().getCategories()) {
+			final int currentRanks = this.getCurrentLevel().getCategoryRanks(category.getId());
+			final Integer cost = this.getCategoryDevelopmentCost(category.getId(), currentRanks);
+			if (currentRanks < this.getMaximumCategoryRanksThisLevel(category.getId()) && cost != null
+					&& cost <= this.getRemainingDevelopmentPoints()) {
+				available.add(category.getId());
+			}
+		}
+		available.sort(String::compareTo);
+		return available;
+	}
+
+	/**
 	 * Sets ranks bought in a category at the current level when the profession permits that many and
 	 * the resulting development-point total remains affordable. Returns {@code false} without changing
 	 * the character for an invalid amount, unavailable category, or insufficient budget.
