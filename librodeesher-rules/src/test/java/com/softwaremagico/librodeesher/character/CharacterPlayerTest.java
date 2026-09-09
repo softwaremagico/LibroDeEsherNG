@@ -2054,6 +2054,15 @@ public class CharacterPlayerTest {
 
 		character.getCurrentLevel().setSkillRanks("tracking", 3, false);
 		Assert.assertFalse(character.getAvailableSkillIds().contains("tracking"));
+
+		final CharacterPlayer unaffordable = new CharacterPlayer();
+		unaffordable.setProfessionId("fighter");
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 1);
+		Assert.assertFalse(unaffordable.getAvailableSkillIds().contains("tracking"));
 	}
 
 	@Test

@@ -3658,11 +3658,17 @@ public class CharacterPlayer {
 		for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
 			final int currentRanks = this.getCurrentLevel().getSkillRanks(skill.getId());
 			if (this.isSkillEnabled(skill) && !this.isSkillDisabledByOptions(skill)
-					&& currentRanks < this.getMaximumCategoryRanksThisLevel(skill.getCategoryId())) {
+					&& currentRanks < this.getMaximumCategoryRanksThisLevel(skill.getCategoryId())
+					&& this.canAffordSkillRank(skill.getCategoryId(), currentRanks)) {
 				available.add(skill.getId());
 			}
 		}
 		available.sort(String::compareTo);
 		return available;
+	}
+
+	private boolean canAffordSkillRank(String categoryId, int rankIndexThisLevel) throws InvalidXmlElementException {
+		final Integer cost = this.getCategoryDevelopmentCost(categoryId, rankIndexThisLevel);
+		return cost != null && cost <= this.getRemainingDevelopmentPoints();
 	}
 }
