@@ -2046,6 +2046,16 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void assignedWeaponCategoriesAreAvailableForDevelopment() throws InvalidXmlElementException {
+		final CharacterPlayer fighter = new CharacterPlayer();
+		fighter.setProfessionId("fighter");
+		Assert.assertFalse(fighter.getAvailableCategoryIds().contains("weaponsEdged"));
+
+		fighter.assignWeaponCategoryCostTier(0, "weaponsEdged");
+		Assert.assertTrue(fighter.getAvailableCategoryIds().contains("weaponsEdged"));
+	}
+
+	@Test
 	public void settingSkillRanksRespectsEnablementLimitAndDevelopmentPointBudget() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.setProfessionId("fighter");

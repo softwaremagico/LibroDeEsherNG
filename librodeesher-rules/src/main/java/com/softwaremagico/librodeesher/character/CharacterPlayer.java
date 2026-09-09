@@ -2553,7 +2553,14 @@ public class CharacterPlayer {
 	 */
 	public Integer getCategoryDevelopmentCost(String categoryId, int rankIndexThisLevel) throws InvalidXmlElementException {
 		final ProfessionCategoryCost cost = this.getProfessionCategoryCost(categoryId);
-		return cost == null ? null : cost.getRankCost(rankIndexThisLevel);
+		if (cost != null) {
+			return cost.getRankCost(rankIndexThisLevel);
+		}
+		final ProfessionWeaponCostTier weaponTier = this.getAssignedWeaponCategoryCostTier(categoryId);
+		if (weaponTier == null || rankIndexThisLevel < 0 || rankIndexThisLevel >= weaponTier.getRankCosts().size()) {
+			return null;
+		}
+		return weaponTier.getRankCosts().get(rankIndexThisLevel);
 	}
 
 	/**
@@ -2562,7 +2569,11 @@ public class CharacterPlayer {
 	 */
 	public int getMaximumCategoryRanksThisLevel(String categoryId) throws InvalidXmlElementException {
 		final ProfessionCategoryCost cost = this.getProfessionCategoryCost(categoryId);
-		return cost == null ? 0 : cost.getRankCosts().size();
+		if (cost != null) {
+			return cost.getRankCosts().size();
+		}
+		final ProfessionWeaponCostTier weaponTier = this.getAssignedWeaponCategoryCostTier(categoryId);
+		return weaponTier == null ? 0 : weaponTier.getRankCosts().size();
 	}
 
 	/**
