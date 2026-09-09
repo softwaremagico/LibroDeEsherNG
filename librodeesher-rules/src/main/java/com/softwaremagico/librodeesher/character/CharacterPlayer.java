@@ -2138,11 +2138,11 @@ public class CharacterPlayer {
 	 * without changing the character for an invalid amount, unavailable list, or insufficient budget.
 	 */
 	public boolean setCurrentLevelSpellListRanks(String spellListId, int ranks) throws InvalidXmlElementException {
-		if (ranks < 0 || ranks > this.getMaximumSpellListRanksThisLevel(spellListId)) {
-			return false;
-		}
 		final LevelUp level = this.getCurrentLevel();
 		final int previousRanks = level.getSpellListRanks(spellListId);
+		if (ranks < 0 || (ranks > previousRanks && ranks > this.getMaximumSpellListRanksThisLevel(spellListId))) {
+			return false;
+		}
 		level.setSpellListRanks(spellListId, ranks);
 		if (this.getRemainingDevelopmentPoints() < 0) {
 			level.setSpellListRanks(spellListId, previousRanks);
@@ -2563,11 +2563,11 @@ public class CharacterPlayer {
 	 * the character for an invalid amount, unavailable category, or insufficient budget.
 	 */
 	public boolean setCurrentLevelCategoryRanks(String categoryId, int ranks) throws InvalidXmlElementException {
-		if (ranks < 0 || ranks > this.getMaximumCategoryRanksThisLevel(categoryId)) {
-			return false;
-		}
 		final LevelUp level = this.getCurrentLevel();
 		final int previousRanks = level.getCategoryRanks(categoryId);
+		if (ranks < 0 || (ranks > previousRanks && ranks > this.getMaximumCategoryRanksThisLevel(categoryId))) {
+			return false;
+		}
 		level.setCategoryRanks(categoryId, ranks);
 		if (this.getRemainingDevelopmentPoints() < 0) {
 			level.setCategoryRanks(categoryId, previousRanks);
@@ -2584,12 +2584,12 @@ public class CharacterPlayer {
 	 */
 	public boolean setCurrentLevelSkillRanks(String skillId, int ranks) throws InvalidXmlElementException {
 		final Skill skill = RulesCatalog.getInstance().getSkill(skillId);
-		if (ranks < 0 || !this.isSkillEnabled(skill) || this.isSkillDisabledByOptions(skill)
-				|| ranks > this.getMaximumCategoryRanksThisLevel(skill.getCategoryId())) {
-			return false;
-		}
 		final LevelUp level = this.getCurrentLevel();
 		final int previousRanks = level.getSkillRanks(skillId);
+		if (ranks < 0 || (ranks > previousRanks && (!this.isSkillEnabled(skill) || this.isSkillDisabledByOptions(skill)
+					|| ranks > this.getMaximumCategoryRanksThisLevel(skill.getCategoryId())))) {
+			return false;
+		}
 		level.setSkillRanks(skillId, ranks, false);
 		if (this.getRemainingDevelopmentPoints() < 0) {
 			level.setSkillRanks(skillId, previousRanks, false);

@@ -1749,6 +1749,10 @@ public class CharacterPlayerTest {
 
 		Assert.assertTrue(wizard.setCurrentLevelSpellListRanks("essenceLawOfLight", 3));
 		Assert.assertEquals(wizard.getCurrentLevel().getSpellListRanks("essenceLawOfLight"), Integer.valueOf(3));
+
+		wizard.setMagicAllowed(false);
+		Assert.assertTrue(wizard.setCurrentLevelSpellListRanks("essenceLawOfLight", 0));
+		Assert.assertEquals(wizard.getCurrentLevel().getSpellListRanks("essenceLawOfLight"), Integer.valueOf(0));
 		Assert.assertFalse(wizard.setCurrentLevelSpellListRanks("essenceLawOfLight", 4));
 
 		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 1);
@@ -2033,6 +2037,11 @@ public class CharacterPlayerTest {
 		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 1);
 		Assert.assertFalse(character.setCurrentLevelSkillRanks("tracking", 1));
 		Assert.assertEquals(character.getCurrentLevel().getSkillRanks("tracking"), Integer.valueOf(3));
+
+		character.setFirearmsAllowed(false);
+		character.getCurrentLevel().setSkillRanks("firearmsPistol", 1, false);
+		Assert.assertTrue(character.setCurrentLevelSkillRanks("firearmsPistol", 0));
+		Assert.assertEquals(character.getCurrentLevel().getSkillRanks("firearmsPistol"), Integer.valueOf(0));
 	}
 
 	@Test
