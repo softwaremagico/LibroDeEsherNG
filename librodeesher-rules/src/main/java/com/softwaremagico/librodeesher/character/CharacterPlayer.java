@@ -2498,6 +2498,15 @@ public class CharacterPlayer {
 		return cost == null ? null : cost.getRankCost(rankIndexThisLevel);
 	}
 
+	/**
+	 * Maximum ranks that may be bought this level in {@code categoryId}, as defined by the selected
+	 * profession's rank-cost table. Returns 0 when the category is unavailable to the profession.
+	 */
+	public int getMaximumCategoryRanksThisLevel(String categoryId) throws InvalidXmlElementException {
+		final ProfessionCategoryCost cost = this.getProfessionCategoryCost(categoryId);
+		return cost == null ? 0 : cost.getRankCosts().size();
+	}
+
 	private static final String WEAPON_COST_TIER_KEY_PREFIX = "weaponCostTier:";
 
 	/**

@@ -1914,6 +1914,15 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void maximumCategoryRanksComeFromTheProfessionCostTable() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+
+		Assert.assertEquals(character.getMaximumCategoryRanksThisLevel("outdoorEnvironment"), 3);
+		Assert.assertEquals(character.getMaximumCategoryRanksThisLevel("does-not-exist"), 0);
+	}
+
+	@Test
 	public void itemBonusTakesTheBestSingleMagicItemNotTheSum() {
 		final CharacterPlayer character = new CharacterPlayer();
 		final MagicObject weakRing = new MagicObject(new TranslatedText("Anillo débil", "Weak ring"), null,
