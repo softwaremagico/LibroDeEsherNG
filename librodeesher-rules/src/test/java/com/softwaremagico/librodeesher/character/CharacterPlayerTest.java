@@ -1745,6 +1745,19 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void availableSpellListsRespectActiveMagicCostsAndRankLimits() throws InvalidXmlElementException {
+		final CharacterPlayer wizard = new CharacterPlayer();
+		wizard.setProfessionId("wizard");
+		wizard.applyProfessionMagicRealms(null);
+		Assert.assertTrue(wizard.getAvailableSpellListIds().contains("essenceLawOfLight"));
+		Assert.assertEquals(wizard.getAvailableSpellListIds().stream().sorted().toList(), wizard.getAvailableSpellListIds());
+
+		wizard.getCurrentLevel().setSpellListRanks("essenceLawOfLight",
+				wizard.getMaximumSpellListRanksThisLevel("essenceLawOfLight"));
+		Assert.assertFalse(wizard.getAvailableSpellListIds().contains("essenceLawOfLight"));
+	}
+
+	@Test
 	public void elementalistTrainingUnlocksItsOwnAndItsTriadsSpellLists() throws InvalidXmlElementException {
 		// "wizardOfTheAir" ("Mago del Aire") is one of the 3 shipped elementalist
 		// trainings, part of

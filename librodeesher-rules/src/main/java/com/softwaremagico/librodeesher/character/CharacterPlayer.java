@@ -2116,6 +2116,23 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * Every spell list that may still receive a rank at the current level, ordered by id. The active
+	 * profession's magic cost table decides whether a classified list is developable and how many
+	 * ranks its current bracket permits.
+	 */
+	public List<String> getAvailableSpellListIds() throws InvalidXmlElementException {
+		final List<String> available = new ArrayList<>();
+		for (final MagicSpellList spellList : RulesCatalog.getInstance().getSpellLists()) {
+			if (this.getCurrentLevel().getSpellListRanks(spellList.getId())
+					< this.getMaximumSpellListRanksThisLevel(spellList.getId())) {
+				available.add(spellList.getId());
+			}
+		}
+		available.sort(String::compareTo);
+		return available;
+	}
+
+	/**
 	 * Sets ranks bought in a spell list at the current level when the active magic bracket permits
 	 * that many and the resulting development-point total remains affordable. Returns {@code false}
 	 * without changing the character for an invalid amount, unavailable list, or insufficient budget.
