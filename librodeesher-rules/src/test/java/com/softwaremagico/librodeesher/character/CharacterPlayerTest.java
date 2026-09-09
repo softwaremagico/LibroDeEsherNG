@@ -1604,6 +1604,22 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void removingTrainingOnlyAffectsTheCurrentLevel() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("horseCentaur");
+		character.setProfessionId("fighter");
+		Assert.assertTrue(character.addTraining("soldier"));
+
+		character.increaseLevel();
+		Assert.assertFalse(character.removeCurrentLevelTraining("soldier"));
+		Assert.assertEquals(character.getSelectedTrainingIds(), List.of("soldier"));
+
+		character.getCurrentLevel().addTraining("scout");
+		Assert.assertTrue(character.removeCurrentLevelTraining("scout"));
+		Assert.assertEquals(character.getSelectedTrainingIds(), List.of("soldier"));
+	}
+
+	@Test
 	public void spellCasterProfessionResolvesItsRealmAndSpellLists() throws InvalidXmlElementException {
 		final CharacterPlayer nonCaster = new CharacterPlayer();
 		nonCaster.setProfessionId("fighter");

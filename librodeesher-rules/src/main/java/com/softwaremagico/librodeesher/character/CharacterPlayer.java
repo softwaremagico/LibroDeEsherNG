@@ -2736,6 +2736,18 @@ public class CharacterPlayer {
 		return true;
 	}
 
+	/**
+	 * Removes a training selected at the current level. Earlier-level selections are immutable from
+	 * this operation, matching the legacy editor's current-level scope.
+	 */
+	public boolean removeCurrentLevelTraining(String trainingId) {
+		if (!this.getCurrentLevel().getTrainings().contains(trainingId)) {
+			return false;
+		}
+		this.getCurrentLevel().removeTraining(trainingId);
+		return true;
+	}
+
 	private boolean canAffordTraining(String trainingId) throws InvalidXmlElementException {
 		final Integer cost = this.getTrainingDevelopmentCost(trainingId);
 		return cost == null || cost <= this.getRemainingDevelopmentPoints();
