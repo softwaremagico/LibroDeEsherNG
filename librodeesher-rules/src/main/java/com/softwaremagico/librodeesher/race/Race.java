@@ -4,12 +4,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.softwaremagico.librodeesher.Element;
+import com.softwaremagico.librodeesher.character.SexType;
 import com.softwaremagico.librodeesher.language.LanguageSlot;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * A playable race/species (e.g. Human, Elf, Dwarf), migrated from the legacy one-file-per-race
@@ -264,4 +266,37 @@ public class Race extends Element {
     public void setFemaleNames(List<String> femaleNames) { this.femaleNames = femaleNames; }
     public List<String> getFamilyNames() { return familyNames == null ? Collections.emptyList() : familyNames; }
     public void setFamilyNames(List<String> familyNames) { this.familyNames = familyNames; }
+
+    /**
+     * A random full name for a character of this race: a given name matching {@code sex} plus the
+     * race's family name, mirroring the legacy {@code Race#getRandonName(SexType)}. A {@code null}
+     * sex is treated as {@code FEMALE}, matching the legacy branch semantics; races without names for
+     * the requested sex (or without family names) fall back to whichever list is available instead of
+     * failing.
+     */
+    public String getRandomName(SexType sex) {
+        return getRandomName(sex, new Random());
+    }
+
+    /** Same as {@link #getRandomName(SexType)}, but using the provided generator (seedable for tests). */
+    String getRandomName(SexType sex, Random random) {
+        final String firstName = randomFirstName(sex, random);
+        final String surname = getFamilyNames().isEmpty()
+                ? "" : getFamilyNames().get(random.nextInt(getFamilyNames().size()));
+        if (firstName.isEmpty()) {
+            return surname;
+        }
+        return surname.isEmpty() ? firstName : firstName + " " + surname;
+    }
+
+    private String randomFirstName(SexType sex, Random random) {
+        final boolean male = SexType.MALE == sex;
+        final List<String> names = male ? getMaleNames() : getFemaleNames();
+        if (!names.isEmpty()) {
+            return names.get(random.nextInt(names.size()));
+        }
+        // No name for the requested sex: fall back to the other list before giving up.
+        final List<String> otherNames = male ? getFemaleNames() : getMaleNames();
+        return otherNames.isEmpty() ? "" : otherNames.get(random.nextInt(otherNames.size()));
+    }
 }
