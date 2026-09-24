@@ -141,6 +141,14 @@ public class CharacterPlayer {
 	private boolean magicAllowed = true;
 	private boolean darkSpellsAsBasicListsAllowed = false;
 
+	/**
+	 * A category or skill rank whose next-rank development cost is under this amount is "cheap enough
+	 * to be worth investing in" for the random character generator, matching the legacy {@code
+	 * CharacterPlayer#MAX_REASONABLE_COST} (consulted by {@code CategoryProbability}/{@code
+	 * SkillProbability}).
+	 */
+	public static final int MAX_REASONABLE_COST = 40;
+
 	public CharacterPlayer() {
 		for (final CharacteristicAbbreviation abbreviation : allRealCharacteristics()) {
 			this.characteristicTemporalValues.put(abbreviation, Characteristics.INITIAL_CHARACTERISTIC_VALUE);
@@ -610,6 +618,52 @@ public class CharacterPlayer {
 			total += this.getCharacteristicTotalBonus(abbreviation);
 		}
 		return total;
+	}
+
+	/**
+	 * Ranks bought directly in {@code category}'s own development track at the
+	 * current level (see {@link LevelUp#getCategoryRanks(String)}), matching the legacy {@code
+	 * CharacterPlayer#getCurrentLevelRanks(Category)}.
+	 */
+	public Integer getCurrentLevelRanks(Category category) {
+		return this.getCurrentLevel().getCategoryRanks(category.getId());
+	}
+
+	/**
+	 * Every skill of {@code category} with at least one rank bought so far, matching the legacy
+	 * {@code CharacterPlayer#getSkillsWithRanks(Category)}. Used by the random character generator to
+	 * favour categories the character is already investing in.
+	 */
+	public List<String> getCategorySkillsWithRanks(Category category) {
+		final List<String> skillsWithRanks = new ArrayList<>();
+		for (final String skillId : category.getSkills()) {
+			if (this.getSkillTotalRanks(skillId) > 0) {
+				skillsWithRanks.add(skillId);
+			}
+		}
+		return skillsWithRanks;
+	}
+
+	/**
+	 * Whether any skill of {@code category} is common or professional to this character without also
+	 * being restricted to it, matching the legacy {@code CharacterPlayer#hasCommonOrProfessionalSkills(Category)}.
+	 * Used by the random character generator to favour categories the character is expected to master.
+	 */
+	public boolean hasCommonOrProfessionalSkills(Category category) throws InvalidXmlElementException {
+		for (final String skillId : category.getSkills()) {
+			final Skill skill;
+			try {
+				skill = RulesCatalog.getInstance().getSkill(skillId);
+			} catch (final InvalidXmlElementException e) {
+				// Dynamically-derived categories can reference skills no loaded module
+				// actually provides (see Category#hasDynamicSkills); skip the dangling id.
+				continue;
+			}
+			if ((this.isSkillCommon(skill) || this.isSkillProfessional(skill)) && !this.isSkillRestricted(skill)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**

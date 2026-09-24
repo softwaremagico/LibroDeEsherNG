@@ -2200,4 +2200,26 @@ public class CharacterPlayerTest {
 		Assert.assertEquals(character.getAllNotMagicEquipment().size(), 1);
 		Assert.assertEquals(character.getAllNotMagicEquipment().iterator().next().getName().getSpanish(), "Amigos");
 	}
+
+	@Test
+	public void randomGenerationCategoryHelpersReportRanksAndAcquaintedSkills() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+
+		final Category outdoorEnvironment = RulesCatalog.getInstance().getCategory("outdoorEnvironment");
+		final Category selfControl = RulesCatalog.getInstance().getCategory("selfControl");
+
+		Assert.assertEquals(character.getCurrentLevelRanks(outdoorEnvironment), Integer.valueOf(0));
+		Assert.assertTrue(character.getCategorySkillsWithRanks(outdoorEnvironment).isEmpty());
+		Assert.assertTrue(character.hasCommonOrProfessionalSkills(selfControl));
+
+		character.getCurrentLevel().setCategoryRanks("outdoorEnvironment", 2);
+		Assert.assertEquals(character.getCurrentLevelRanks(outdoorEnvironment), Integer.valueOf(2));
+		Assert.assertEquals(character.getCategoryTotalRanks("outdoorEnvironment"), Integer.valueOf(2));
+
+		character.getCurrentLevel().setSkillRanks("frenzy", 1, false);
+		Assert.assertEquals(character.getCategorySkillsWithRanks(selfControl), List.of("frenzy"));
+		Assert.assertFalse(character.hasCommonOrProfessionalSkills(
+				RulesCatalog.getInstance().getCategory("outdoorAnimals")));
+	}
 }
