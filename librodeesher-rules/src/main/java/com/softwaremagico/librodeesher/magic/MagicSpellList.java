@@ -31,6 +31,9 @@ public class MagicSpellList extends Element {
 
     public static final String OPEN_LIST_TAG = "OpenList";
     public static final String CLOSED_LIST_TAG = "ClosedList";
+    private static final String ESSENCE_DARK_LIST_TAG = "essenceMaligna";
+    private static final String CANALIZATION_DARK_LIST_TAG = "channelingMaligna";
+    private static final String MENTALISM_DARK_LIST_TAG = "mentalismMaligno";
 
     @JsonProperty("realm")
     private RealmOfMagic realm;
@@ -69,6 +72,16 @@ public class MagicSpellList extends Element {
 
     public boolean isClosedList() {
         return getOwners().contains(CLOSED_LIST_TAG);
+    }
+
+    /** Whether this list belongs to the legacy dark-magic owner for its realm. */
+    public boolean isDarkList() {
+        return switch (realm) {
+            case ESSENCE -> getOwners().contains(ESSENCE_DARK_LIST_TAG);
+            case CANALIZATION -> getOwners().contains(CANALIZATION_DARK_LIST_TAG);
+            case MENTALISM -> getOwners().contains(MENTALISM_DARK_LIST_TAG);
+            default -> false;
+        };
     }
 
     /**

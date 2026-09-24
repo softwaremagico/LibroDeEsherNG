@@ -6,6 +6,7 @@ import com.lowagie.text.FontFactory;
 import com.lowagie.text.Phrase;
 import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
+import com.softwaremagico.librodeesher.language.TranslatedText;
 
 import java.awt.Color;
 
@@ -76,5 +77,12 @@ public class BaseElement {
 
     public static Font labelFont() {
         return FontFactory.getFont(FontFactory.HELVETICA, LABEL_FONT_SIZE);
+    }
+
+    public static String getText(TranslatedText text) {
+        if (text == null) {
+            return "";
+        }
+        return text.getTranslatedText() == null ? "" : text.getTranslatedText();
     }
 }

@@ -3,6 +3,7 @@ package com.softwaremagico.librodeesher.pdf.info;
 import com.lowagie.text.pdf.PdfPTable;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
+import com.softwaremagico.librodeesher.level.Experience;
 import com.softwaremagico.librodeesher.pdf.elements.BaseElement;
 
 /**
@@ -23,9 +24,11 @@ public class DerivedStatsTableFactory extends BaseElement {
 
         table.addCell(getTitleCell("Stats", WIDTHS.length));
 
+        addStat(table, "Minimum Experience", Experience.getMinimumExperienceForLevel(characterPlayer.getLevel()));
         addStat(table, "Movement", characterPlayer.getMovementCapacity());
         addStat(table, "Defensive Bonus", characterPlayer.getDefensiveBonus());
         addStat(table, "Armour Class", characterPlayer.getArmourClass());
+        addStat(table, "Hit Points", characterPlayer.getHitPoints());
         addStat(table, "Power Points", characterPlayer.getPowerPoints());
         addStat(table, "Development Points Left", characterPlayer.getRemainingDevelopmentPoints());
         addStat(table, "Background Points Left", characterPlayer.getRemainingBackgroundPoints());

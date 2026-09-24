@@ -7,6 +7,7 @@ import com.lowagie.text.Rectangle;
 import com.lowagie.text.pdf.PdfWriter;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
+import com.softwaremagico.librodeesher.pdf.events.FooterEvent;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -55,15 +56,19 @@ public abstract class PdfDocument {
             throws DocumentException, InvalidXmlElementException {
         this.addMetaData(document);
         document.open();
-        this.createContent(document, characterPlayer);
-        document.close();
+        try {
+            this.createContent(document, characterPlayer);
+        } finally {
+            document.close();
+        }
     }
 
     /** The character sheet as a byte array. Be careful with very large PDFs. */
     public final byte[] generate(CharacterPlayer characterPlayer) throws DocumentException, InvalidXmlElementException {
         final Document document = new Document(this.getPageSize(), MARGIN, MARGIN, MARGIN, MARGIN);
         final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        PdfWriter.getInstance(document, outputStream);
+        final PdfWriter writer = PdfWriter.getInstance(document, outputStream);
+        writer.setPageEvent(new FooterEvent());
         this.generatePdf(document, characterPlayer);
         return outputStream.toByteArray();
     }
@@ -74,12 +79,9 @@ public abstract class PdfDocument {
         final Path target = path.toString().endsWith(".pdf") ? path : Path.of(path + ".pdf");
         final Document document = new Document(this.getPageSize(), MARGIN, MARGIN, MARGIN, MARGIN);
         try (OutputStream outputStream = Files.newOutputStream(target)) {
-            PdfWriter.getInstance(document, outputStream);
+            final PdfWriter writer = PdfWriter.getInstance(document, outputStream);
+            writer.setPageEvent(new FooterEvent());
             this.generatePdf(document, characterPlayer);
-        } finally {
-            if (document.isOpen()) {
-                document.close();
-            }
         }
     }
 }

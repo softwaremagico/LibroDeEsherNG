@@ -90,6 +90,7 @@ public class CharacterPlayer {
 	private String raceId;
 	private String cultureId;
 	private String professionId;
+	private String historyText;
 
 	private final Map<CharacteristicAbbreviation, Integer> characteristicTemporalValues = new EnumMap<>(
 			CharacteristicAbbreviation.class);
@@ -105,6 +106,7 @@ public class CharacterPlayer {
 	private final Decisions decisions = new Decisions();
 	private final List<SelectedPerk> selectedPerks = new ArrayList<>();
 	private final Map<String, Integer> hobbySkillRanks = new LinkedHashMap<>();
+	private final Map<String, Integer> hobbySpellListRanks = new LinkedHashMap<>();
 
 	/**
 	 * Magic items the character owns (see {@link #getAllMagicItems()}), matching the legacy {@code
@@ -137,6 +139,7 @@ public class CharacterPlayer {
 	private boolean chiPowersAllowed = false;
 	private boolean otherRealmTrainingSpellsAllowed = false;
 	private boolean magicAllowed = true;
+	private boolean darkSpellsAsBasicListsAllowed = false;
 
 	public CharacterPlayer() {
 		for (final CharacteristicAbbreviation abbreviation : allRealCharacteristics()) {
@@ -205,6 +208,15 @@ public class CharacterPlayer {
 
 	public void setProfessionId(String professionId) {
 		this.professionId = professionId;
+	}
+
+	/** Free-form character history, kept separately from the rules-derived character data. */
+	public String getHistoryText() {
+		return historyText;
+	}
+
+	public void setHistoryText(String historyText) {
+		this.historyText = historyText;
 	}
 
 	/**
@@ -354,6 +366,18 @@ public class CharacterPlayer {
 		return this.appearance;
 	}
 
+	/**
+	 * Applies and records a background characteristic roll. Background rolls cost a background
+	 * point and use the same upgrade formula as training rolls.
+	 */
+	public CharacteristicRoll applyBackgroundCharacteristicUpdate(CharacteristicAbbreviation abbreviation, Roll roll) {
+		final Integer temporalValue = this.getCharacteristicTemporalValue(abbreviation);
+		final Integer potentialValue = this.getCharacteristicPotentialValue(abbreviation);
+		final Integer upgrade = Characteristic.getCharacteristicUpgrade(temporalValue, potentialValue, roll);
+		this.setCharacteristicTemporalValue(abbreviation, temporalValue + upgrade);
+		return this.background.addCharacteristicUpdate(abbreviation, temporalValue, potentialValue, roll);
+	}
+
 	public void setAppearance(Appearance appearance) {
 		this.appearance = appearance;
 	}
@@ -479,7 +503,16 @@ public class CharacterPlayer {
 		for (final LevelUp levelUp : this.levels) {
 			total += levelUp.getSkillRanks(skillId);
 		}
-		return total - this.getSkillSpecializationsRankCost(skillId);
+		return total + this.getHobbySkillRank(skillId) - this.getSkillSpecializationsRankCost(skillId);
+	}
+
+	/** Total ranks bought in a spell list across every character level. */
+	public Integer getSpellListTotalRanks(String spellListId) {
+		int total = 0;
+		for (final LevelUp levelUp : this.levels) {
+			total += levelUp.getSpellListRanks(spellListId);
+		}
+		return total + this.getHobbySpellListRank(spellListId);
 	}
 
 	/**
@@ -570,6 +603,15 @@ public class CharacterPlayer {
 				+ this.getPerkCategoryRankBonus(category.getId()) * ranks;
 	}
 
+	/** Sum of the character bonuses for every characteristic associated with {@code category}. */
+	public Integer getCategoryCharacteristicBonus(Category category) throws InvalidXmlElementException {
+		int total = 0;
+		for (final CharacteristicAbbreviation abbreviation : category.getCharacteristics()) {
+			total += this.getCharacteristicTotalBonus(abbreviation);
+		}
+		return total;
+	}
+
 	/**
 	 * A skill's bonus from its own ranks, using its category's progression table,
 	 * plus the flat bonus the selected profession grants this skill, if any, plus
@@ -603,7 +645,8 @@ public class CharacterPlayer {
 	 * exactly.
 	 */
 	public Integer getCategoryTotalBonus(Category category) throws InvalidXmlElementException {
-		return this.getCategoryDevelopmentBonus(category) + this.getItemBonus(BonusType.CATEGORY, category.getId());
+		return this.getCategoryDevelopmentBonus(category) + this.getCategoryCharacteristicBonus(category)
+				+ this.getItemBonus(BonusType.CATEGORY, category.getId());
 	}
 
 	/**
@@ -1215,6 +1258,20 @@ public class CharacterPlayer {
 		return (int) (this.getSkillTotalRanks(skill.getId()) * this.getSkillRankMultiplier(skill));
 	}
 
+	/** Specialized ranks are doubled with category ranks, otherwise multiplied by 1.5. */
+	public int getSpecializedSkillRanks(Skill skill) {
+		final int ranks = this.getSkillTotalRanks(skill.getId());
+		return this.getCategoryTotalRanks(skill.getCategoryId()) > 0 ? ranks * 2 : (int) (ranks * 1.5);
+	}
+
+	/** Total bonus for a specialization, replacing normal rank progression with specialized ranks. */
+	public Integer getSpecializedSkillTotalBonus(Category category, String skillId) throws InvalidXmlElementException {
+		final Skill skill = RulesCatalog.getInstance().getSkill(skillId);
+		final int normalRankBonus = category.getSkillRankBonus(this.getSkillTotalRanks(skillId));
+		final int specializedRankBonus = category.getSkillRankBonus(this.getSpecializedSkillRanks(skill));
+		return this.getSkillTotalBonus(category, skillId) - normalRankBonus + specializedRankBonus;
+	}
+
 	public List<SelectedPerk> getSelectedPerks() {
 		return this.selectedPerks;
 	}
@@ -1260,9 +1317,59 @@ public class CharacterPlayer {
 		}
 	}
 
-	/** Unselects {@code perkId} and forgets any weakness paired with it. */
+	/**
+	 * Selects a perk only when its race/profession restrictions allow it. This leaves {@link
+	 * #addPerk(String)} available for restoring persisted legacy characters, whose selections may
+	 * predate the currently enabled rule modules.
+	 */
+	public boolean addAllowedPerk(String perkId) throws InvalidXmlElementException {
+		if (this.isPerkSelected(perkId) || !this.isPerkAllowedForCharacter(perkId)) {
+			return false;
+		}
+		this.selectedPerks.add(new SelectedPerk(perkId));
+		return true;
+	}
+
+	/**
+	 * Every perk the character may currently select, ordered by id. The list excludes already selected
+	 * perks, race/profession-restricted perks, and perks that would exceed the remaining background
+	 * point budget. Weaknesses remain selectable because they cost no background points directly.
+	 */
+	public List<String> getAvailablePerkIds() throws InvalidXmlElementException {
+		final List<String> available = new ArrayList<>();
+		for (final Perk perk : RulesCatalog.getInstance().getPerks()) {
+			if (!this.isPerkSelected(perk.getId()) && this.isPerkAllowedForCharacter(perk.getId())
+					&& this.canAffordPerk(perk)) {
+				available.add(perk.getId());
+			}
+		}
+		available.sort(String::compareTo);
+		return available;
+	}
+
+	/**
+	 * Selects a perk only when it is currently present in {@link #getAvailablePerkIds()}, including
+	 * the remaining background-point budget. The lower-level {@link #addAllowedPerk(String)} remains
+	 * useful when a caller deliberately manages that budget independently.
+	 */
+	public boolean addAvailablePerk(String perkId) throws InvalidXmlElementException {
+		if (!this.getAvailablePerkIds().contains(perkId)) {
+			return false;
+		}
+		this.selectedPerks.add(new SelectedPerk(perkId));
+		return true;
+	}
+
+	private boolean canAffordPerk(Perk perk) throws InvalidXmlElementException {
+		return perk.isWeakness() || perk.getGrade().getBackgroundCost(null, false) <= this.getRemainingBackgroundPoints();
+	}
+
+	/**
+	 * Unselects a player-selected perk and its paired weakness. Randomly selected perks are retained,
+	 * matching the legacy rule that random character generation choices cannot be removed by players.
+	 */
 	public void removePerk(String perkId) {
-		this.selectedPerks.removeIf(selectedPerk -> selectedPerk.getPerkId().equals(perkId));
+		this.selectedPerks.removeIf(selectedPerk -> selectedPerk.getPerkId().equals(perkId) && !selectedPerk.isRandom());
 	}
 
 	/**
@@ -1279,6 +1386,53 @@ public class CharacterPlayer {
 	public boolean hasWeakness(String perkId) {
 		final SelectedPerk selectedPerk = this.findSelectedPerk(perkId);
 		return selectedPerk != null && selectedPerk.getWeaknessId() != null;
+	}
+
+	/**
+	 * Weaknesses eligible to offset {@code perkId}, ordered by id. The legacy selector offered only a
+	 * weakness with the same grade or one grade lower, and excluded weaknesses already selected either
+	 * directly or as another perk's paired weakness.
+	 */
+	public List<String> getAvailableWeaknessIds(String perkId) throws InvalidXmlElementException {
+		final SelectedPerk selectedPerk = this.findSelectedPerk(perkId);
+		if (selectedPerk == null || selectedPerk.getWeaknessId() != null) {
+			return List.of();
+		}
+		final Perk perk = RulesCatalog.getInstance().getPerk(perkId);
+		final List<String> available = new ArrayList<>();
+		for (final Perk weakness : RulesCatalog.getInstance().getPerks()) {
+			if (weakness.isWeakness() && this.isEligibleWeakness(perk, weakness)) {
+				available.add(weakness.getId());
+			}
+		}
+		available.sort(String::compareTo);
+		return available;
+	}
+
+	private boolean isEligibleWeakness(Perk perk, Perk weakness) {
+		final int gradeDifference = perk.getGrade().getLevel() - weakness.getGrade().getLevel();
+		return gradeDifference >= 0 && gradeDifference <= 1 && !this.isPerkSelected(weakness.getId())
+				&& this.selectedPerks.stream().noneMatch(selected -> weakness.getId().equals(selected.getWeaknessId()));
+	}
+
+	/** Pairs an eligible weakness with a selected perk, returning whether the pairing was applied. */
+	public boolean addWeakness(String perkId, String weaknessPerkId) throws InvalidXmlElementException {
+		if (!this.getAvailableWeaknessIds(perkId).contains(weaknessPerkId)) {
+			return false;
+		}
+		this.findSelectedPerk(perkId).setWeaknessId(weaknessPerkId);
+		return true;
+	}
+
+	/** Removes {@code weaknessPerkId} from whichever selected perk it is paired with. */
+	public boolean removeWeakness(String weaknessPerkId) {
+		for (final SelectedPerk selectedPerk : this.selectedPerks) {
+			if (weaknessPerkId.equals(selectedPerk.getWeaknessId())) {
+				selectedPerk.setWeaknessId(null);
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -1362,12 +1516,6 @@ public class CharacterPlayer {
 	 * per-rank cost (see {@link #getCategoryDevelopmentCost}/{@link #getTrainingDevelopmentCost}),
 	 * matching the legacy {@code CharacterPlayer#getSpentDevelopmentPoints()} exactly.
 	 *
-	 * <p><strong>Known limitation:</strong> a spell list's own ranks are not included (unlike the
-	 * legacy version, which folds them into the same "skill ranks" bucket): {@link MagicSpellList}
-	 * ranks are not tracked by {@link LevelUp} at all yet (only real {@code Skill} ranks are, see
-	 * {@link LevelUp#getSkillRanks()}), so there is nothing to sum here for them; {@link
-	 * #getSpellListDevelopmentCost} exists as a "what would the next rank cost" query, but nothing
-	 * yet records a spell list rank as actually bought.</p>
 	 */
 	public Integer getSpentDevelopmentPoints() throws InvalidXmlElementException {
 		final LevelUp levelUp = this.getCurrentLevel();
@@ -1386,6 +1534,16 @@ public class CharacterPlayer {
 			final int ranksThisLevel = levelUp.getSkillRanks(skillId);
 			for (int i = 0; i < ranksThisLevel; i++) {
 				final Integer cost = this.getCategoryDevelopmentCost(categoryId, i);
+				if (cost != null) {
+					total += cost;
+				}
+			}
+		}
+		for (final String spellListId : levelUp.getSpellListsWithRanks()) {
+			final int ranksThisLevel = levelUp.getSpellListRanks(spellListId);
+			final int ranksBeforeThisLevel = this.getSpellListTotalRanks(spellListId) - ranksThisLevel;
+			for (int i = 0; i < ranksThisLevel; i++) {
+				final Integer cost = this.getSpellListDevelopmentCost(spellListId, ranksBeforeThisLevel + i, i);
 				if (cost != null) {
 					total += cost;
 				}
@@ -1597,7 +1755,8 @@ public class CharacterPlayer {
 			return List.of();
 		}
 		return this.getSpellListsMatching(list -> list.getOwners().contains(ownProfessionId)
-				|| list.getOwners().contains(ownElementalistTrainingId));
+				|| list.getOwners().contains(ownElementalistTrainingId)
+				|| (this.darkSpellsAsBasicListsAllowed && list.isDarkList()));
 	}
 
 	/**
@@ -1762,12 +1921,35 @@ public class CharacterPlayer {
 	}
 
 	/** Every training id selected so far (see {@link LevelUp#getTrainings()}), across every level. */
-	private List<String> getSelectedTrainingIds() {
+	public List<String> getSelectedTrainingIds() {
 		final List<String> ids = new ArrayList<>();
 		for (final LevelUp levelUp : this.levels) {
 			ids.addAll(levelUp.getTrainings());
 		}
 		return ids;
+	}
+
+	/** Every manually selected favourite skill across all levels, in selection order by level. */
+	public List<String> getFavouriteSkillIds() {
+		final List<String> ids = new ArrayList<>();
+		for (final LevelUp levelUp : this.levels) {
+			for (final String skillId : levelUp.getFavouriteSkills()) {
+				if (!ids.contains(skillId)) {
+					ids.add(skillId);
+				}
+			}
+		}
+		return ids;
+	}
+
+	public void addFavouriteSkill(String skillId) {
+		this.getCurrentLevel().addFavouriteSkill(skillId);
+	}
+
+	public void removeFavouriteSkill(String skillId) {
+		for (final LevelUp levelUp : this.levels) {
+			levelUp.removeFavouriteSkill(skillId);
+		}
 	}
 
 	/** Every selected training id (see {@link #getSelectedTrainingIds()}) that is not an elementalist training. */
@@ -1846,7 +2028,8 @@ public class CharacterPlayer {
 		final String ownElementalistTrainingId = this.getElementalistTrainingId();
 		if (this.getRealmsOfMagic().contains(spellList.getRealm())) {
 			if ((ownProfessionId != null && spellList.getOwners().contains(ownProfessionId))
-					|| (ownElementalistTrainingId != null && spellList.getOwners().contains(ownElementalistTrainingId))) {
+					|| (ownElementalistTrainingId != null && spellList.getOwners().contains(ownElementalistTrainingId))
+					|| (this.darkSpellsAsBasicListsAllowed && spellList.isDarkList())) {
 				return MagicListType.BASIC;
 			}
 			if (spellList.isOpenList()) {
@@ -1884,12 +2067,22 @@ public class CharacterPlayer {
 		return null;
 	}
 
+	/** Whether dark lists from the character's own realms count as basic lists. */
+	public boolean isDarkSpellsAsBasicListsAllowed() {
+		return darkSpellsAsBasicListsAllowed;
+	}
+
+	/** Configures the legacy "dark spells as basic lists" character option. */
+	public void setDarkSpellsAsBasicListsAllowed(boolean darkSpellsAsBasicListsAllowed) {
+		this.darkSpellsAsBasicListsAllowed = darkSpellsAsBasicListsAllowed;
+	}
+
 	/**
 	 * The background point cost of a rank bought in {@code spellListId} (see {@link
 	 * Profession#getMagicCost(MagicListType, int)}), given it already has {@code currentListRanks}
 	 * ranks bought across every level, and {@code ranksBoughtThisLevel} of them were bought at the
 	 * current level (0-based, so {@code ranksBoughtThisLevel=0} is the first rank bought this level in
-	 * this list); {@code null} if no profession is selected, {@link #classifySpellList(String)} cannot
+	 * this list). The returned cost includes the per-level spell-list multiplier. {@code null} if no profession is selected, {@link #classifySpellList(String)} cannot
 	 * classify it for this character yet, or the profession has no cost defined for that bracket/rank
 	 * index.
 	 */
@@ -1904,7 +2097,66 @@ public class CharacterPlayer {
 			return null;
 		}
 		final ProfessionMagicCost bracket = profession.getMagicCost(listType, currentListRanks);
-		return bracket == null ? null : bracket.getRankCost(ranksBoughtThisLevel);
+		final Integer rankCost = bracket == null ? null : bracket.getRankCost(ranksBoughtThisLevel);
+		return rankCost == null ? null : rankCost * this.getCurrentLevel().getSpellRankMultiplier(spellListId);
+	}
+
+	/**
+	 * Maximum ranks that may be bought this level in {@code spellListId} under the active profession
+	 * cost bracket. Returns 0 when the list is not developable by this character.
+	 */
+	public int getMaximumSpellListRanksThisLevel(String spellListId) throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		final MagicListType listType = this.classifySpellList(spellListId);
+		if (profession == null || listType == null) {
+			return 0;
+		}
+		final ProfessionMagicCost bracket = profession.getMagicCost(listType, this.getSpellListTotalRanks(spellListId));
+		return bracket == null ? 0 : bracket.getRankCosts().size();
+	}
+
+	/**
+	 * Every spell list that may still receive a rank at the current level, ordered by id. The active
+	 * profession's magic cost table decides whether a classified list is developable and how many
+	 * ranks its current bracket permits.
+	 */
+	public List<String> getAvailableSpellListIds() throws InvalidXmlElementException {
+		final List<String> available = new ArrayList<>();
+		for (final MagicSpellList spellList : RulesCatalog.getInstance().getSpellLists()) {
+			final int currentLevelRanks = this.getCurrentLevel().getSpellListRanks(spellList.getId());
+			if (currentLevelRanks < this.getMaximumSpellListRanksThisLevel(spellList.getId())
+					&& this.canAffordSpellListRank(spellList.getId(), currentLevelRanks)) {
+				available.add(spellList.getId());
+			}
+		}
+		available.sort(String::compareTo);
+		return available;
+	}
+
+	private boolean canAffordSpellListRank(String spellListId, int ranksBoughtThisLevel)
+			throws InvalidXmlElementException {
+		final int currentListRanks = this.getSpellListTotalRanks(spellListId);
+		final Integer cost = this.getSpellListDevelopmentCost(spellListId, currentListRanks, ranksBoughtThisLevel);
+		return cost != null && cost <= this.getRemainingDevelopmentPoints();
+	}
+
+	/**
+	 * Sets ranks bought in a spell list at the current level when the active magic bracket permits
+	 * that many and the resulting development-point total remains affordable. Returns {@code false}
+	 * without changing the character for an invalid amount, unavailable list, or insufficient budget.
+	 */
+	public boolean setCurrentLevelSpellListRanks(String spellListId, int ranks) throws InvalidXmlElementException {
+		final LevelUp level = this.getCurrentLevel();
+		final int previousRanks = level.getSpellListRanks(spellListId);
+		if (ranks < 0 || (ranks > previousRanks && ranks > this.getMaximumSpellListRanksThisLevel(spellListId))) {
+			return false;
+		}
+		level.setSpellListRanks(spellListId, ranks);
+		if (this.getRemainingDevelopmentPoints() < 0) {
+			level.setSpellListRanks(spellListId, previousRanks);
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -2182,12 +2434,46 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * Sets free hobby ranks in a spell list. The caller can use {@link #isHobbySpellListAllowed(String)}
+	 * to validate the culture's list-of-spells option before applying the selection.
+	 */
+	public void setHobbySpellListRank(String spellListId, int ranks) {
+		if (ranks <= 0) {
+			this.hobbySpellListRanks.remove(spellListId);
+		} else {
+			this.hobbySpellListRanks.put(spellListId, ranks);
+		}
+	}
+
+	public int getHobbySpellListRank(String spellListId) {
+		return this.hobbySpellListRanks.getOrDefault(spellListId, 0);
+	}
+
+	/**
+	 * Whether a culture's {@code listOfSpells} hobby marker allows ranks in a spell list: every open
+	 * list plus every list granted by the selected race, matching the legacy expansion.
+	 */
+	public boolean isHobbySpellListAllowed(String spellListId) throws InvalidXmlElementException {
+		final Culture culture = this.getCulture();
+		if (culture == null || !culture.getHobbyIds().contains("listOfSpells")) {
+			return false;
+		}
+		final MagicSpellList spellList = RulesCatalog.getInstance().getSpellList(spellListId);
+		final Race race = this.getRace();
+		return spellList.isOpenList() || (race != null && spellList.getRealm() == RealmOfMagic.RACE
+				&& spellList.getOwners().contains(race.getId()));
+	}
+
+	/**
 	 * The sum of every hobby rank spent so far, to compare against the selected
 	 * culture's {@link Culture#getHobbyRanks()}.
 	 */
 	public int getTotalHobbySkillRanks() {
 		int total = 0;
 		for (final int ranks : this.hobbySkillRanks.values()) {
+			total += ranks;
+		}
+		for (final int ranks : this.hobbySpellListRanks.values()) {
 			total += ranks;
 		}
 		return total;
@@ -2267,7 +2553,86 @@ public class CharacterPlayer {
 	 */
 	public Integer getCategoryDevelopmentCost(String categoryId, int rankIndexThisLevel) throws InvalidXmlElementException {
 		final ProfessionCategoryCost cost = this.getProfessionCategoryCost(categoryId);
-		return cost == null ? null : cost.getRankCost(rankIndexThisLevel);
+		if (cost != null) {
+			return cost.getRankCost(rankIndexThisLevel);
+		}
+		final ProfessionWeaponCostTier weaponTier = this.getAssignedWeaponCategoryCostTier(categoryId);
+		if (weaponTier == null || rankIndexThisLevel < 0 || rankIndexThisLevel >= weaponTier.getRankCosts().size()) {
+			return null;
+		}
+		return weaponTier.getRankCosts().get(rankIndexThisLevel);
+	}
+
+	/**
+	 * Maximum ranks that may be bought this level in {@code categoryId}, as defined by the selected
+	 * profession's rank-cost table. Returns 0 when the category is unavailable to the profession.
+	 */
+	public int getMaximumCategoryRanksThisLevel(String categoryId) throws InvalidXmlElementException {
+		final ProfessionCategoryCost cost = this.getProfessionCategoryCost(categoryId);
+		if (cost != null) {
+			return cost.getRankCosts().size();
+		}
+		final ProfessionWeaponCostTier weaponTier = this.getAssignedWeaponCategoryCostTier(categoryId);
+		return weaponTier == null ? 0 : weaponTier.getRankCosts().size();
+	}
+
+	/**
+	 * Every category that may still receive a direct rank at the current level, ordered by id. The
+	 * selected profession's rank-cost table supplies both the per-level limit and the next-rank cost.
+	 */
+	public List<String> getAvailableCategoryIds() throws InvalidXmlElementException {
+		final List<String> available = new ArrayList<>();
+		for (final Category category : RulesCatalog.getInstance().getCategories()) {
+			final int currentRanks = this.getCurrentLevel().getCategoryRanks(category.getId());
+			final Integer cost = this.getCategoryDevelopmentCost(category.getId(), currentRanks);
+			if (currentRanks < this.getMaximumCategoryRanksThisLevel(category.getId()) && cost != null
+					&& cost <= this.getRemainingDevelopmentPoints()) {
+				available.add(category.getId());
+			}
+		}
+		available.sort(String::compareTo);
+		return available;
+	}
+
+	/**
+	 * Sets ranks bought in a category at the current level when the profession permits that many and
+	 * the resulting development-point total remains affordable. Returns {@code false} without changing
+	 * the character for an invalid amount, unavailable category, or insufficient budget.
+	 */
+	public boolean setCurrentLevelCategoryRanks(String categoryId, int ranks) throws InvalidXmlElementException {
+		final LevelUp level = this.getCurrentLevel();
+		final int previousRanks = level.getCategoryRanks(categoryId);
+		if (ranks < 0 || (ranks > previousRanks && ranks > this.getMaximumCategoryRanksThisLevel(categoryId))) {
+			return false;
+		}
+		level.setCategoryRanks(categoryId, ranks);
+		if (this.getRemainingDevelopmentPoints() < 0) {
+			level.setCategoryRanks(categoryId, previousRanks);
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Sets ranks bought in a skill at the current level when its category permits that many, the skill
+	 * is currently enabled, and the resulting development-point total remains affordable. Returns
+	 * {@code false} without changing the character for an invalid amount, unavailable skill, disabled
+	 * skill, or insufficient budget.
+	 */
+	public boolean setCurrentLevelSkillRanks(String skillId, int ranks) throws InvalidXmlElementException {
+		final Skill skill = RulesCatalog.getInstance().getSkill(skillId);
+		final LevelUp level = this.getCurrentLevel();
+		final int previousRanks = level.getSkillRanks(skillId);
+		if (ranks < 0 || (ranks > previousRanks && (!this.isSkillEnabled(skill) || this.isSkillDisabledByOptions(skill)
+					|| ranks > this.getMaximumCategoryRanksThisLevel(skill.getCategoryId())))) {
+			return false;
+		}
+		level.setSkillRanks(skillId, ranks, false);
+		if (this.getRemainingDevelopmentPoints() < 0) {
+			level.setSkillRanks(skillId, previousRanks, false);
+			return false;
+		}
+		return true;
 	}
 
 	private static final String WEAPON_COST_TIER_KEY_PREFIX = "weaponCostTier:";
@@ -2304,6 +2669,38 @@ public class CharacterPlayer {
 	/** Whether {@code tierIndex} has already been assigned to some weapon category (see {@link #assignWeaponCategoryCostTier}). */
 	public boolean isWeaponCategoryCostTierAssigned(int tierIndex) {
 		return this.decisions.isDecided(WEAPON_COST_TIER_KEY_PREFIX + tierIndex);
+	}
+
+	/**
+	 * Weapon categories that may receive {@code tierIndex}. A category assigned to another tier is
+	 * excluded, while the current tier's existing selection remains available for reassignment.
+	 */
+	public List<String> getAvailableWeaponCategoriesForCostTier(int tierIndex) throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		if (profession == null || tierIndex < 0 || tierIndex >= profession.getWeaponCategoryCostTiers().size()) {
+			return List.of();
+		}
+		final List<String> available = new ArrayList<>(this.getWeaponCategoryIds());
+		for (int index = 0; index < profession.getWeaponCategoryCostTiers().size(); index++) {
+			if (index != tierIndex) {
+				available.remove(this.decisions.getSelectedOption(WEAPON_COST_TIER_KEY_PREFIX + index));
+			}
+		}
+		available.sort(String::compareTo);
+		return available;
+	}
+
+	/**
+	 * Assigns a weapon cost tier only when the category is not already assigned to another tier.
+	 * Returns {@code false} without changing the character for an invalid tier or unavailable category.
+	 */
+	public boolean assignAvailableWeaponCategoryCostTier(int tierIndex, String weaponCategoryId)
+			throws InvalidXmlElementException {
+		if (!this.getAvailableWeaponCategoriesForCostTier(tierIndex).contains(weaponCategoryId)) {
+			return false;
+		}
+		this.assignWeaponCategoryCostTier(tierIndex, weaponCategoryId);
+		return true;
 	}
 
 	/**
@@ -2373,6 +2770,56 @@ public class CharacterPlayer {
 		}
 		final Race race = this.getRace();
 		return race != null && training.getLimitedRaces().contains(race.getId());
+	}
+
+	/**
+	 * Every training currently available to this character, ordered by id. A training is unavailable
+	 * when it was already selected, the selected race cannot take it, the selected profession forbids
+	 * it, or its development-point cost exceeds the remaining budget; this is the library equivalent
+	 * of the legacy training-selection list.
+	 */
+	public List<String> getAvailableTrainingIds() throws InvalidXmlElementException {
+		final List<String> available = new ArrayList<>();
+		final List<String> selected = this.getSelectedTrainingIds();
+		for (final Training training : RulesCatalog.getInstance().getTrainings()) {
+			if (!selected.contains(training.getId()) && this.isTrainingAvailableForRace(training)
+					&& !this.isTrainingForbiddenByProfession(training.getId())
+					&& this.canAffordTraining(training.getId())) {
+				available.add(training.getId());
+			}
+		}
+		available.sort(String::compareTo);
+		return available;
+	}
+
+	/**
+	 * Selects a training for the current level when it is currently available. Returns {@code false}
+	 * without changing the character for an unknown, forbidden, race-restricted, already selected, or
+	 * unaffordable training.
+	 */
+	public boolean addTraining(String trainingId) throws InvalidXmlElementException {
+		if (!this.getAvailableTrainingIds().contains(trainingId)) {
+			return false;
+		}
+		this.getCurrentLevel().addTraining(trainingId);
+		return true;
+	}
+
+	/**
+	 * Removes a training selected at the current level. Earlier-level selections are immutable from
+	 * this operation, matching the legacy editor's current-level scope.
+	 */
+	public boolean removeCurrentLevelTraining(String trainingId) {
+		if (!this.getCurrentLevel().getTrainings().contains(trainingId)) {
+			return false;
+		}
+		this.getCurrentLevel().removeTraining(trainingId);
+		return true;
+	}
+
+	private boolean canAffordTraining(String trainingId) throws InvalidXmlElementException {
+		final Integer cost = this.getTrainingDevelopmentCost(trainingId);
+		return cost == null || cost <= this.getRemainingDevelopmentPoints();
 	}
 
 	private static final String PERK_CHOICE_KEY_PREFIX = "perk:";
@@ -2691,6 +3138,17 @@ public class CharacterPlayer {
 		return total / realms.size();
 	}
 
+	/** Hit points granted by ranks in Physical Development according to the selected race. */
+	public int getHitPoints() throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		if (race == null) {
+			return 0;
+		}
+		final int ranks = this.getSkillTotalRanks("physicalDevelopment");
+		final Integer value = race.getProgressionRankValue("physicalDevelopment", ranks);
+		return value == null ? 0 : value;
+	}
+
 	/**
 	 * The averaged power point progression table itself (the 5 raw numbers of the progression cost
 	 * string, e.g. {@code [0, 6, 5, 4, 3]} for {@code "0/6/5/4/3"}: the flat value for 0 ranks, then
@@ -2789,6 +3247,13 @@ public class CharacterPlayer {
 				total += bonus.getValue();
 			}
 		}
+		for (final Map.Entry<PerkChoiceGrant, String> resolved : this.getResolvedPerkChoiceGrants()) {
+			final PerkChoiceGrant grant = resolved.getKey();
+			if (isPerkChoiceGrantSkillTarget(grant) && skillId.equals(resolved.getValue())
+					&& grant.getKind() == PerkBonusKind.PER_RANK) {
+				total += grant.getValue();
+			}
+		}
 		return total;
 	}
 
@@ -2798,6 +3263,13 @@ public class CharacterPlayer {
 		for (final PerkBonus bonus : this.getSelectedPerkBonuses()) {
 			if (categoryId.equals(bonus.getCategoryId()) && bonus.getKind() == PerkBonusKind.PER_RANK) {
 				total += bonus.getValue();
+			}
+		}
+		for (final Map.Entry<PerkChoiceGrant, String> resolved : this.getResolvedPerkChoiceGrants()) {
+			final PerkChoiceGrant grant = resolved.getKey();
+			if (isPerkChoiceGrantCategoryTarget(grant) && categoryId.equals(resolved.getValue())
+					&& grant.getKind() == PerkBonusKind.PER_RANK) {
+				total += grant.getValue();
 			}
 		}
 		return total;
@@ -3219,17 +3691,19 @@ public class CharacterPlayer {
 	}
 
 	/**
-	 * Whether {@code skill} may be developed at all: either it is
-	 * {@link Skill#isEnabledByDefault()}, or some other skill that lists it in its own {@link
-	 * Skill#getEnableSkills()} has ranks bought in it and either {@link Skill#isAllEnabled()} (every
-	 * listed skill unlocks) or {@code skill} is the one {@link #enableSkillOption} resolved for it.
+	 * Whether {@code skill} may be developed at all. It starts enabled when no skill in the currently
+	 * active catalog enables it; otherwise, an active enabling skill must have ranks and either unlock
+	 * all its dependants or select this skill explicitly. This derives availability from enabled modules
+	 * at runtime rather than relying on the migration-time {@link Skill#isEnabledByDefault()} snapshot.
 	 */
 	public boolean isSkillEnabled(Skill skill) throws InvalidXmlElementException {
-		if (skill.isEnabledByDefault()) {
-			return true;
-		}
+		boolean hasEnablingSkill = false;
 		for (final Skill candidate : RulesCatalog.getInstance().getSkills()) {
-			if (!candidate.getEnableSkills().contains(skill.getId()) || this.getSkillTotalRanks(candidate.getId()) <= 0) {
+			if (!candidate.getEnableSkills().contains(skill.getId())) {
+				continue;
+			}
+			hasEnablingSkill = true;
+			if (this.getSkillTotalRanks(candidate.getId()) <= 0) {
 				continue;
 			}
 			if (candidate.isAllEnabled()) {
@@ -3240,6 +3714,30 @@ public class CharacterPlayer {
 				return true;
 			}
 		}
-		return false;
+		return !hasEnablingSkill;
+	}
+
+	/**
+	 * Every skill that may still receive a rank at the current level, ordered by id. A skill must be
+	 * enabled, allowed by the character options, and belong to a category with an unused rank slot in
+	 * the selected profession's development table.
+	 */
+	public List<String> getAvailableSkillIds() throws InvalidXmlElementException {
+		final List<String> available = new ArrayList<>();
+		for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
+			final int currentRanks = this.getCurrentLevel().getSkillRanks(skill.getId());
+			if (this.isSkillEnabled(skill) && !this.isSkillDisabledByOptions(skill)
+					&& currentRanks < this.getMaximumCategoryRanksThisLevel(skill.getCategoryId())
+					&& this.canAffordSkillRank(skill.getCategoryId(), currentRanks)) {
+				available.add(skill.getId());
+			}
+		}
+		available.sort(String::compareTo);
+		return available;
+	}
+
+	private boolean canAffordSkillRank(String categoryId, int rankIndexThisLevel) throws InvalidXmlElementException {
+		final Integer cost = this.getCategoryDevelopmentCost(categoryId, rankIndexThisLevel);
+		return cost != null && cost <= this.getRemainingDevelopmentPoints();
 	}
 }

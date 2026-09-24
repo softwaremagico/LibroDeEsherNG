@@ -9,29 +9,28 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 /**
- * Verifies {@link CharacterSheet} actually produces a well-formed, non-trivial PDF for a real
- * character (built from the shipped rulebook data, same as {@code CharacterPlayerTest}), both as a
- * byte array and as a file on disk.
+ * Verifies modern replacements for each legacy PDF export flow.
  */
 @Test(groups = "pdf")
 public class CharacterSheetTest {
 
     @Test
-    public void generatesAWellFormedPdfForAWizard() throws Exception {
+    public void standardPdfFlowGeneratesAWellFormedPdfForAWizard() throws Exception {
         final CharacterPlayer character = new CharacterPlayer();
         character.setName("Gandalf");
         character.setRaceId("horseCentaur");
         character.setProfessionId("wizard");
         character.applyProfessionMagicRealms(null);
+        character.getCurrentLevel().setSpellListRanks("essenceLawOfLight", 2);
 
-        final byte[] pdf = new CharacterSheet().generate(character);
+        final byte[] pdf = new StandardCharacterSheet().generate(character);
 
-        Assert.assertTrue(pdf.length > 1000, "Expected a non-trivial PDF, got " + pdf.length + " bytes.");
+        Assert.assertTrue(pdf.length > 3000, "Expected a complete PDF sheet, got " + pdf.length + " bytes.");
         Assert.assertEquals(new String(pdf, 0, 5, java.nio.charset.StandardCharsets.US_ASCII), "%PDF-");
     }
 
     @Test
-    public void createsAPdfFileOnDisk() throws Exception {
+    public void combinedPdfFlowCreatesAPdfFileOnDisk() throws Exception {
         final CharacterPlayer character = new CharacterPlayer();
         character.setName("Aragorn");
         character.setRaceId("horseCentaur");
@@ -40,7 +39,7 @@ public class CharacterSheetTest {
 
         final Path tempDir = Files.createTempDirectory("librodeesher-pdf-test");
         final Path target = tempDir.resolve("character-without-extension");
-        new CharacterSheet().createFile(character, target);
+        new StandardCharacterSheet().createFile(character, target);
 
         final Path expected = tempDir.resolve("character-without-extension.pdf");
         Assert.assertTrue(Files.exists(expected));

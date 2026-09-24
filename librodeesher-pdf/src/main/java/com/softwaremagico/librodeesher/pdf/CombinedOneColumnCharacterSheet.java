@@ -17,27 +17,8 @@ import com.softwaremagico.librodeesher.pdf.perks.PerksTableFactory;
 import com.softwaremagico.librodeesher.pdf.skills.SkillsTableFactory;
 import com.softwaremagico.librodeesher.pdf.skills.FavouriteSkillsTableFactory;
 
-/**
- * The character sheet: name/race/culture/profession/level, the ten characteristics, the derived
- * stats (movement/defensive bonus/armour class/power points/points left) and the nine resistance
- * rolls, one {@link com.lowagie.text.pdf.PdfPTable} per section (see {@link PdfDocument}'s own
- * javadoc for why this does not attempt to replicate the legacy hand-drawn sheet layout).
- *
- * <p>The sections intentionally use flow-layout tables instead of the old, image-overlay pages:
- * this preserves the data and lets OpenPDF paginate longer skill and spell-list collections.
- * Each section is isolated in a factory, following ThinkMachine4E's modern PDF structure.</p>
- */
-public class CharacterSheet extends PdfDocument {
-    private final boolean alphabeticallySortedSkills;
-
-    public CharacterSheet() {
-        this(false);
-    }
-
-    /** @param alphabeticallySortedSkills whether to list skills globally by name instead of by category. */
-    public CharacterSheet(boolean alphabeticallySortedSkills) {
-        this.alphabeticallySortedSkills = alphabeticallySortedSkills;
-    }
+/** Modern one-column equivalent of the legacy {@code PdfCombinedSheet1Column}. */
+public final class CombinedOneColumnCharacterSheet extends PdfDocument {
 
     @Override
     protected void createContent(Document document, CharacterPlayer characterPlayer)
@@ -47,7 +28,7 @@ public class CharacterSheet extends PdfDocument {
         document.add(DerivedStatsTableFactory.getDerivedStatsTable(characterPlayer));
         document.add(ResistancesTableFactory.getResistancesTable(characterPlayer));
         document.add(RaceDetailsTableFactory.getRaceDetailsTable(characterPlayer));
-        document.add(SkillsTableFactory.getSkillsTable(characterPlayer, alphabeticallySortedSkills));
+        document.add(SkillsTableFactory.getSkillsTable(characterPlayer));
         document.add(FavouriteSkillsTableFactory.getFavouriteSkillsTable(characterPlayer));
         document.add(EquipmentTableFactory.getEquipmentTable(characterPlayer));
         document.add(PerksTableFactory.getPerksTable(characterPlayer));

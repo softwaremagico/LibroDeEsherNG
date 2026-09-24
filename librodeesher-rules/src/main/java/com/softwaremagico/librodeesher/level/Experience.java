@@ -13,7 +13,7 @@ public final class Experience {
         // Utility class.
     }
 
-    public static int getMinExperienceForLevel(int level) {
+    public static int getMinimumExperienceForLevel(int level) {
         if (level < 5) {
             return level * COST_PER_LEVEL;
         }

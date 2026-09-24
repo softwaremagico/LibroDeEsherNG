@@ -59,12 +59,8 @@ public class Skill extends Element {
      * other skill's {@link #enableSkills}: a skill referenced there starts disabled until unlocked
      * by ranking the skill that grants it.
      *
-     * <p><strong>Known limitation:</strong> since this is computed once across the full, always-on
-     * rule set and stored as plain data, disabling a module whose skills were the only ones granting
-     * an "enableSkills" relationship will not re-enable the affected skill at runtime. Revisiting this
-     * would require computing the disabled set live from the skills of the currently enabled modules
-     * instead of baking it into the XML, left as future work alongside the equivalent limitation in
-     * {@code CategoryMigrationTool}.</p>
+     * <p>Consumers should prefer {@code CharacterPlayer#isSkillEnabled(Skill)}, which recomputes
+     * availability from the currently enabled rulebook modules at runtime.</p>
      */
     @JsonProperty("enabledByDefault")
     private boolean enabledByDefault = true;

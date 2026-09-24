@@ -8,6 +8,7 @@ import com.softwaremagico.librodeesher.characteristic.CharacteristicRoll;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.decision.InvalidDecisionException;
+import com.softwaremagico.librodeesher.dice.Roll;
 import com.softwaremagico.librodeesher.equipment.BonusType;
 import com.softwaremagico.librodeesher.equipment.MagicObject;
 import com.softwaremagico.librodeesher.equipment.ObjectBonus;
@@ -18,6 +19,7 @@ import com.softwaremagico.librodeesher.magic.MagicListType;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.perk.PerkChoiceGrant;
 import com.softwaremagico.librodeesher.profession.Profession;
+import com.softwaremagico.librodeesher.profession.ProfessionMagicCost;
 import com.softwaremagico.librodeesher.profession.ProfessionSkillGrant;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.resistance.ResistanceType;
@@ -169,6 +171,16 @@ public class CharacterPlayerTest {
 		category.setType(CategoryType.PD);
 
 		Assert.assertEquals(character.getCategoryDevelopmentBonus(category), Integer.valueOf(10));
+	}
+
+	@Test
+	public void physicalDevelopmentRanksGrantRaceBasedHitPoints() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("grayOrc");
+		character.getCurrentLevel().setSkillRanks("physicalDevelopment", 3, false);
+
+		Assert.assertEquals(character.getHitPoints(), RulesCatalog.getInstance().getRace("grayOrc")
+				.getProgressionRankValue("physicalDevelopment", 3).intValue());
 	}
 
 	@Test
@@ -368,6 +380,32 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void hobbyRanksAreFreeAndIncludedInSkillTotals() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setHobbySkillRank("climbing", 3);
+
+		Assert.assertEquals(character.getSkillTotalRanks("climbing"), Integer.valueOf(3));
+		Assert.assertEquals(character.getSpentDevelopmentPoints(), Integer.valueOf(0));
+		Assert.assertEquals(character.getTotalHobbySkillRanks(), 3);
+	}
+
+	@Test
+	public void cultureSpellListHobbyAllowsOpenAndRaceListsOnly() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setCultureId("aquaticMilitarista");
+		character.setRaceId("horseCentaur");
+
+		final Culture culture = character.getCulture();
+		culture.setHobbyIds(List.of("listOfSpells"));
+		Assert.assertTrue(character.isHobbySpellListAllowed("essenceBarrierAgainstSpells"));
+		Assert.assertFalse(character.isHobbySpellListAllowed("essenceLawOfLight"));
+
+		character.setHobbySpellListRank("essenceBarrierAgainstSpells", 2);
+		Assert.assertEquals(character.getSpellListTotalRanks("essenceBarrierAgainstSpells"), Integer.valueOf(2));
+		Assert.assertEquals(character.getTotalHobbySkillRanks(), 2);
+	}
+
+	@Test
 	public void applyCharacteristicUpgradeRollsAndIncreasesTheChosenCharacteristic() throws InvalidXmlElementException {
 		final Training adventurer = RulesCatalog.getInstance().getTraining("adventurer");
 		final CharacterPlayer character = new CharacterPlayer();
@@ -403,6 +441,23 @@ public class CharacterPlayerTest {
 
 		Assert.assertEquals(character.getDecisions().getSelectedOption("training:adventurer:characteristic:0"),
 				"STRENGTH");
+	}
+
+	@Test
+	public void backgroundCharacteristicUpdateAppliesAndIsIncludedInBackgroundCost() {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 50);
+		character.setCharacteristicPotentialValue(CharacteristicAbbreviation.AGILITY, 90);
+		final Roll roll = new Roll(10);
+		roll.setFirstDice(4);
+		roll.setSecondDice(6);
+
+		final CharacteristicRoll update = character.applyBackgroundCharacteristicUpdate(CharacteristicAbbreviation.AGILITY, roll);
+
+		Assert.assertEquals(update.getCharacteristicAbbreviation(), CharacteristicAbbreviation.AGILITY);
+		Assert.assertEquals(character.getCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY), Integer.valueOf(60));
+		Assert.assertEquals(character.getBackground().getCharacteristicUpdates(CharacteristicAbbreviation.AGILITY).size(), 1);
+		Assert.assertEquals(character.getBackground().getSpentBackgroundPoints(), Integer.valueOf(1));
 	}
 
 	@Test
@@ -602,6 +657,32 @@ public class CharacterPlayerTest {
 		character.removePerk("acrobat");
 
 		Assert.assertFalse(character.isPerkSelected("acrobat"));
+	}
+
+	@Test
+	public void randomPerksCannotBeRemovedAndWeaknessesCanBeUnpaired() {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.addPerk("acrobat");
+		character.setWeakness("acrobat", "slightAddiction");
+
+		Assert.assertTrue(character.removeWeakness("slightAddiction"));
+		Assert.assertFalse(character.hasWeakness("acrobat"));
+		Assert.assertFalse(character.removeWeakness("slightAddiction"));
+
+		character.setPerkAsRandom("acrobat", true);
+		character.removePerk("acrobat");
+		Assert.assertTrue(character.isPerkSelected("acrobat"));
+	}
+
+	@Test
+	public void availableWeaknessesFollowTheLegacyGradeAndUniquenessRules() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.addPerk("acrobat");
+
+		Assert.assertTrue(character.getAvailableWeaknessIds("acrobat").contains("slightAddiction"));
+		Assert.assertTrue(character.addWeakness("acrobat", "slightAddiction"));
+		Assert.assertTrue(character.getAvailableWeaknessIds("acrobat").isEmpty());
+		Assert.assertFalse(character.addWeakness("acrobat", "slightAddiction"));
 	}
 
 	@Test
@@ -977,6 +1058,17 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void specializedSkillRanksFollowTheLegacyCategoryRule() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		final Skill skill = RulesCatalog.getInstance().getSkill("softLeather");
+		character.getCurrentLevel().setSkillRanks(skill.getId(), 4, false);
+
+		Assert.assertEquals(character.getSpecializedSkillRanks(skill), 6);
+		character.getCurrentLevel().setCategoryRanks(skill.getCategoryId(), 1);
+		Assert.assertEquals(character.getSpecializedSkillRanks(skill), 8);
+	}
+
+	@Test
 	public void perkConditionalBonusIsQueryableAndIncludedInTheDevelopmentBonusTotal()
 			throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
@@ -1230,6 +1322,13 @@ public class CharacterPlayerTest {
 		// A different tier ("2/5") to a different category.
 		fighter.assignWeaponCategoryCostTier(1, "weaponsBlunt");
 		Assert.assertEquals(fighter.getAssignedWeaponCategoryCostTier("weaponsBlunt").getRankCosts(), List.of(2, 5));
+		Assert.assertFalse(fighter.getAvailableWeaponCategoriesForCostTier(0).contains("weaponsBlunt"));
+		Assert.assertTrue(fighter.getAvailableWeaponCategoriesForCostTier(0).contains("weaponsEdged"));
+		Assert.assertEquals(fighter.getAvailableWeaponCategoriesForCostTier(0).stream().sorted().toList(),
+				fighter.getAvailableWeaponCategoriesForCostTier(0));
+		Assert.assertFalse(fighter.assignAvailableWeaponCategoryCostTier(0, "weaponsBlunt"));
+		Assert.assertTrue(fighter.assignAvailableWeaponCategoryCostTier(0, "weaponsThrown"));
+		Assert.assertEquals(fighter.getAssignedWeaponCategoryCostTier("weaponsThrown").getRankCosts(), List.of(1, 5));
 
 		// Not a real weapon category, and an out-of-range tier index.
 		Assert.assertThrows(IllegalArgumentException.class,
@@ -1377,6 +1476,42 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void addAllowedPerkRespectsRaceRestrictionsAndRejectsDuplicates() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		Assert.assertFalse(character.addAllowedPerk("anxious"));
+
+		character.setRaceId("grayOrc");
+		Assert.assertTrue(character.addAllowedPerk("anxious"));
+		Assert.assertFalse(character.addAllowedPerk("anxious"));
+		Assert.assertEquals(character.getSelectedPerks().size(), 1);
+	}
+
+	@Test
+	public void availablePerksRespectRestrictionsSelectionsAndBackgroundPoints() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("grayOrc");
+		Assert.assertTrue(character.getAvailablePerkIds().contains("anxious"));
+		Assert.assertTrue(character.getAvailablePerkIds().contains("acrobat"));
+
+		character.addPerk("acrobat");
+		Assert.assertFalse(character.getAvailablePerkIds().contains("acrobat"));
+
+		character.getBackground().setCategoryPoint("outdoorEnvironment", true);
+		Assert.assertFalse(character.getAvailablePerkIds().contains("anxious"));
+	}
+
+	@Test
+	public void addAvailablePerkEnforcesTheCurrentBackgroundPointBudget() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("grayOrc");
+		Assert.assertTrue(character.addAvailablePerk("acrobat"));
+		Assert.assertFalse(character.addAvailablePerk("acrobat"));
+
+		character.getBackground().setCategoryPoint("outdoorEnvironment", true);
+		Assert.assertFalse(character.addAvailablePerk("anxious"));
+	}
+
+	@Test
 	public void skillSpecializationsAreExcludedFromTotalRanksButRecorded() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		final LevelUp firstLevel = new LevelUp();
@@ -1425,6 +1560,70 @@ public class CharacterPlayerTest {
 		character.addSkillSpecialization("softLeather", "TA6");
 		Assert.assertFalse(character.isSkillGeneralized("softLeather"));
 		Assert.assertEquals(character.getSkillSpecializations("softLeather"), List.of("TA6"));
+	}
+
+	@Test
+	public void availableTrainingsExcludeAlreadySelectedOnes() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("horseCentaur");
+		character.setProfessionId("fighter");
+
+		final List<String> available = character.getAvailableTrainingIds();
+		Assert.assertTrue(available.contains("soldier"));
+		Assert.assertEquals(available.stream().sorted().toList(), available);
+
+		character.getCurrentLevel().addTraining("soldier");
+		Assert.assertFalse(character.getAvailableTrainingIds().contains("soldier"));
+	}
+
+	@Test
+	public void availableTrainingsExcludeThoseOutsideTheDevelopmentPointBudget() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("horseCentaur");
+		character.setProfessionId("fighter");
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 500);
+		Assert.assertTrue(character.getAvailableTrainingIds().contains("soldier"));
+
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 1);
+
+		Assert.assertTrue(character.getRemainingDevelopmentPoints() < character.getTrainingDevelopmentCost("soldier"));
+		Assert.assertFalse(character.getAvailableTrainingIds().contains("soldier"));
+	}
+
+	@Test
+	public void addTrainingOnlySelectsAnAvailableTraining() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("horseCentaur");
+		character.setProfessionId("fighter");
+
+		Assert.assertTrue(character.addTraining("soldier"));
+		Assert.assertEquals(character.getSelectedTrainingIds(), List.of("soldier"));
+		Assert.assertFalse(character.addTraining("soldier"));
+		Assert.assertFalse(character.addTraining("does-not-exist"));
+	}
+
+	@Test
+	public void removingTrainingOnlyAffectsTheCurrentLevel() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("horseCentaur");
+		character.setProfessionId("fighter");
+		Assert.assertTrue(character.addTraining("soldier"));
+
+		character.increaseLevel();
+		Assert.assertFalse(character.removeCurrentLevelTraining("soldier"));
+		Assert.assertEquals(character.getSelectedTrainingIds(), List.of("soldier"));
+
+		character.getCurrentLevel().addTraining("scout");
+		Assert.assertTrue(character.removeCurrentLevelTraining("scout"));
+		Assert.assertEquals(character.getSelectedTrainingIds(), List.of("soldier"));
 	}
 
 	@Test
@@ -1479,6 +1678,121 @@ public class CharacterPlayerTest {
 		final List<String> otherRealmOpenListIds = wizard.getOtherRealmOpenSpellLists().stream()
 				.map(list -> list.getId()).toList();
 		Assert.assertTrue(otherRealmOpenListIds.contains("mentalismSelfHealing"));
+	}
+
+	@Test
+	public void darkSpellListsCanBeConfiguredAsBasicLists() throws InvalidXmlElementException {
+		final CharacterPlayer wizard = new CharacterPlayer();
+		wizard.setProfessionId("wizard");
+		wizard.applyProfessionMagicRealms(null);
+
+		Assert.assertFalse(wizard.getBasicSpellLists().stream().anyMatch(list -> list.isDarkList()));
+		wizard.setDarkSpellsAsBasicListsAllowed(true);
+		Assert.assertTrue(wizard.getBasicSpellLists().stream().anyMatch(list -> list.isDarkList()));
+		final String darkListId = wizard.getBasicSpellLists().stream().filter(list -> list.isDarkList()).findFirst().orElseThrow().getId();
+		Assert.assertEquals(wizard.classifySpellList(darkListId), MagicListType.BASIC);
+	}
+
+	@Test
+	public void spellListRanksAccumulateAndSpendDevelopmentPoints() throws InvalidXmlElementException {
+		final CharacterPlayer wizard = new CharacterPlayer();
+		wizard.setProfessionId("wizard");
+		wizard.applyProfessionMagicRealms(null);
+		wizard.getCurrentLevel().setSpellListRanks("essenceLawOfLight", 2);
+
+		final Profession profession = RulesCatalog.getInstance().getProfession("wizard");
+		final int expectedFirstLevelCost = profession.getMagicCost(MagicListType.BASIC, 0).getRankCost(0)
+				+ profession.getMagicCost(MagicListType.BASIC, 1).getRankCost(1);
+		Assert.assertEquals(wizard.getSpellListTotalRanks("essenceLawOfLight"), Integer.valueOf(2));
+		Assert.assertEquals(wizard.getSpentDevelopmentPoints(), Integer.valueOf(expectedFirstLevelCost));
+
+		wizard.increaseLevel();
+		wizard.getCurrentLevel().setSpellListRanks("essenceLawOfLight", 1);
+
+		Assert.assertEquals(wizard.getSpellListTotalRanks("essenceLawOfLight"), Integer.valueOf(3));
+		Assert.assertEquals(wizard.getSpentDevelopmentPoints(),
+				wizard.getSpellListDevelopmentCost("essenceLawOfLight", 2, 0));
+	}
+
+	@Test
+	public void sixthSpellListAcquiredInALevelDoublesItsDevelopmentCost() throws InvalidXmlElementException {
+		final CharacterPlayer wizard = new CharacterPlayer();
+		wizard.setProfessionId("wizard");
+		wizard.applyProfessionMagicRealms(null);
+		final List<String> lists = wizard.getOpenSpellLists().stream().map(list -> list.getId()).limit(6).toList();
+
+		for (int index = 0; index < 5; index++) {
+			wizard.getCurrentLevel().setSpellListRanks(lists.get(index), 1);
+		}
+
+		final Integer baseCost = RulesCatalog.getInstance().getProfession("wizard")
+				.getMagicCost(MagicListType.OPEN, 0).getRankCost(0);
+		Assert.assertEquals(wizard.getSpellListDevelopmentCost(lists.get(5), 0, 0),
+				Integer.valueOf(baseCost * 2));
+	}
+
+	@Test
+	public void maximumSpellListRanksComeFromTheActiveMagicCostBracket() throws InvalidXmlElementException {
+		final CharacterPlayer wizard = new CharacterPlayer();
+		wizard.setProfessionId("wizard");
+		wizard.applyProfessionMagicRealms(null);
+
+		final ProfessionMagicCost firstBracket = wizard.getProfession().getMagicCost(MagicListType.BASIC, 0);
+		Assert.assertEquals(wizard.getMaximumSpellListRanksThisLevel("essenceLawOfLight"),
+				firstBracket.getRankCosts().size());
+		Assert.assertEquals(wizard.getMaximumSpellListRanksThisLevel("mentalismSelfHealing"),
+				wizard.getProfession().getMagicCost(MagicListType.OTHER_REALM_OPEN, 0).getRankCosts().size());
+	}
+
+	@Test
+	public void settingSpellListRanksRespectsTheMagicLimitAndDevelopmentPointBudget() throws InvalidXmlElementException {
+		final CharacterPlayer wizard = new CharacterPlayer();
+		wizard.setProfessionId("wizard");
+		wizard.applyProfessionMagicRealms(null);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 500);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 500);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 500);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 500);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 500);
+
+		Assert.assertTrue(wizard.setCurrentLevelSpellListRanks("essenceLawOfLight", 3));
+		Assert.assertEquals(wizard.getCurrentLevel().getSpellListRanks("essenceLawOfLight"), Integer.valueOf(3));
+
+		wizard.setMagicAllowed(false);
+		Assert.assertTrue(wizard.setCurrentLevelSpellListRanks("essenceLawOfLight", 0));
+		Assert.assertEquals(wizard.getCurrentLevel().getSpellListRanks("essenceLawOfLight"), Integer.valueOf(0));
+		Assert.assertFalse(wizard.setCurrentLevelSpellListRanks("essenceLawOfLight", 4));
+
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 1);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 1);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 1);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 1);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 1);
+		Assert.assertFalse(wizard.setCurrentLevelSpellListRanks("essenceLawOfLight", 1));
+		Assert.assertEquals(wizard.getCurrentLevel().getSpellListRanks("essenceLawOfLight"), Integer.valueOf(0));
+	}
+
+	@Test
+	public void availableSpellListsRespectActiveMagicCostsAndRankLimits() throws InvalidXmlElementException {
+		final CharacterPlayer wizard = new CharacterPlayer();
+		wizard.setProfessionId("wizard");
+		wizard.applyProfessionMagicRealms(null);
+		Assert.assertTrue(wizard.getAvailableSpellListIds().contains("essenceLawOfLight"));
+		Assert.assertEquals(wizard.getAvailableSpellListIds().stream().sorted().toList(), wizard.getAvailableSpellListIds());
+
+		wizard.getCurrentLevel().setSpellListRanks("essenceLawOfLight",
+				wizard.getMaximumSpellListRanksThisLevel("essenceLawOfLight"));
+		Assert.assertFalse(wizard.getAvailableSpellListIds().contains("essenceLawOfLight"));
+
+		final CharacterPlayer unaffordable = new CharacterPlayer();
+		unaffordable.setProfessionId("wizard");
+		unaffordable.applyProfessionMagicRealms(null);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 1);
+		Assert.assertFalse(unaffordable.getAvailableSpellListIds().contains("essenceLawOfLight"));
 	}
 
 	@Test
@@ -1688,6 +2002,123 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void maximumCategoryRanksComeFromTheProfessionCostTable() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+
+		Assert.assertEquals(character.getMaximumCategoryRanksThisLevel("outdoorEnvironment"), 2);
+		Assert.assertEquals(character.getMaximumCategoryRanksThisLevel("does-not-exist"), 0);
+	}
+
+	@Test
+	public void settingCategoryRanksRespectsTheLimitAndDevelopmentPointBudget() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 500);
+
+		Assert.assertTrue(character.setCurrentLevelCategoryRanks("outdoorEnvironment", 2));
+		Assert.assertEquals(character.getCurrentLevel().getCategoryRanks("outdoorEnvironment"), Integer.valueOf(2));
+		Assert.assertFalse(character.setCurrentLevelCategoryRanks("outdoorEnvironment", 3));
+
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 1);
+		Assert.assertFalse(character.setCurrentLevelCategoryRanks("outdoorEnvironment", 1));
+		Assert.assertEquals(character.getCurrentLevel().getCategoryRanks("outdoorEnvironment"), Integer.valueOf(2));
+	}
+
+	@Test
+	public void availableCategoriesRespectRankLimitsAndDevelopmentPointBudget() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+		Assert.assertTrue(character.getAvailableCategoryIds().contains("outdoorEnvironment"));
+		Assert.assertEquals(character.getAvailableCategoryIds().stream().sorted().toList(), character.getAvailableCategoryIds());
+
+		character.getCurrentLevel().setCategoryRanks("outdoorEnvironment", 3);
+		Assert.assertFalse(character.getAvailableCategoryIds().contains("outdoorEnvironment"));
+
+		final CharacterPlayer unaffordable = new CharacterPlayer();
+		unaffordable.setProfessionId("fighter");
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 1);
+		Assert.assertFalse(unaffordable.getAvailableCategoryIds().contains("outdoorEnvironment"));
+	}
+
+	@Test
+	public void assignedWeaponCategoriesAreAvailableForDevelopment() throws InvalidXmlElementException {
+		final CharacterPlayer fighter = new CharacterPlayer();
+		fighter.setProfessionId("fighter");
+		Assert.assertFalse(fighter.getAvailableCategoryIds().contains("weaponsEdged"));
+
+		fighter.assignWeaponCategoryCostTier(0, "weaponsEdged");
+		Assert.assertTrue(fighter.getAvailableCategoryIds().contains("weaponsEdged"));
+	}
+
+	@Test
+	public void settingSkillRanksRespectsEnablementLimitAndDevelopmentPointBudget() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 500);
+
+		Assert.assertTrue(character.setCurrentLevelSkillRanks("tracking", 2));
+		Assert.assertEquals(character.getCurrentLevel().getSkillRanks("tracking"), Integer.valueOf(2));
+		Assert.assertFalse(character.setCurrentLevelSkillRanks("tracking", 3));
+		Assert.assertFalse(character.setCurrentLevelSkillRanks("chiPowerShadowlessAttack", 1));
+
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 1);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 1);
+		Assert.assertFalse(character.setCurrentLevelSkillRanks("tracking", 1));
+		Assert.assertEquals(character.getCurrentLevel().getSkillRanks("tracking"), Integer.valueOf(2));
+
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 500);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 500);
+		character.setFirearmsAllowed(false);
+		character.getCurrentLevel().setSkillRanks("automaticPistolSamuelCoutty", 1, false);
+		Assert.assertTrue(character.setCurrentLevelSkillRanks("automaticPistolSamuelCoutty", 0));
+		Assert.assertEquals(character.getCurrentLevel().getSkillRanks("automaticPistolSamuelCoutty"), Integer.valueOf(0));
+	}
+
+	@Test
+	public void availableSkillsRespectEnablementOptionsAndRankLimits() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+		Assert.assertTrue(character.getAvailableSkillIds().contains("tracking"));
+		Assert.assertFalse(character.getAvailableSkillIds().contains("chiPowerShadowlessAttack"));
+		Assert.assertEquals(character.getAvailableSkillIds().stream().sorted().toList(), character.getAvailableSkillIds());
+
+		character.getCurrentLevel().setSkillRanks("tracking", 3, false);
+		Assert.assertFalse(character.getAvailableSkillIds().contains("tracking"));
+
+		final CharacterPlayer unaffordable = new CharacterPlayer();
+		unaffordable.setProfessionId("fighter");
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 1);
+		unaffordable.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 1);
+		Assert.assertFalse(unaffordable.getAvailableSkillIds().contains("tracking"));
+	}
+
+	@Test
 	public void itemBonusTakesTheBestSingleMagicItemNotTheSum() {
 		final CharacterPlayer character = new CharacterPlayer();
 		final MagicObject weakRing = new MagicObject(new TranslatedText("Anillo débil", "Weak ring"), null,
@@ -1720,6 +2151,23 @@ public class CharacterPlayerTest {
 				Integer.valueOf(character.getSkillDevelopmentBonus(category, "climbing") + 10));
 		Assert.assertEquals(character.getCategoryTotalBonus(category),
 				Integer.valueOf(character.getCategoryDevelopmentBonus(category) + 20));
+	}
+
+	@Test
+	public void categoryTotalBonusIncludesEachAssociatedCharacteristic() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 90);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.STRENGTH, 80);
+		final Category category = new Category("athletics");
+		category.setType(CategoryType.STANDARD);
+		category.setCharacteristics(List.of(CharacteristicAbbreviation.AGILITY, CharacteristicAbbreviation.STRENGTH,
+				CharacteristicAbbreviation.AGILITY));
+
+		final int characteristicBonus = character.getCharacteristicTotalBonus(CharacteristicAbbreviation.AGILITY) * 2
+				+ character.getCharacteristicTotalBonus(CharacteristicAbbreviation.STRENGTH);
+		Assert.assertEquals(character.getCategoryCharacteristicBonus(category), Integer.valueOf(characteristicBonus));
+		Assert.assertEquals(character.getCategoryTotalBonus(category),
+				Integer.valueOf(character.getCategoryDevelopmentBonus(category) + characteristicBonus));
 	}
 
 	@Test
