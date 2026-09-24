@@ -50,4 +50,13 @@ public class CategoryFactoryTest {
     public void unknownCategoryIdThrows() throws InvalidXmlElementException {
         CategoryFactory.getInstance().getElement("does-not-exist");
     }
+
+    @Test
+    public void randomVetoFlagDefaultsToFalseAndIsSettable() throws InvalidXmlElementException {
+        final Category category = CategoryFactory.getInstance().getElement("armorLight");
+
+        Assert.assertFalse(category.isNotUsedInRandom());
+        category.setNotUsedInRandom(true);
+        Assert.assertTrue(category.isNotUsedInRandom());
+    }
 }

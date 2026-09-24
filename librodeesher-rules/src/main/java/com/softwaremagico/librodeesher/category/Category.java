@@ -51,6 +51,13 @@ public class Category extends Element {
     @JsonProperty("skillsRaw")
     private String skillsRaw;
 
+    /**
+     * Runtime flag consulted by the random character generator to veto a category (the legacy
+     * {@code Category#isNotUsedInRandom()}). Never serialized: it is a per-session toggle, not rule
+     * data.
+     */
+    private boolean notUsedInRandom;
+
     public Category() {
         super();
     }
@@ -129,6 +136,14 @@ public class Category extends Element {
 
     public String getSkillsRaw() {
         return skillsRaw;
+    }
+
+    public boolean isNotUsedInRandom() {
+        return notUsedInRandom;
+    }
+
+    public void setNotUsedInRandom(boolean notUsedInRandom) {
+        this.notUsedInRandom = notUsedInRandom;
     }
 
     /**
