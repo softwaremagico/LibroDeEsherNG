@@ -2,7 +2,15 @@ package com.softwaremagico.librodeesher.random;
 
 import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
+import com.softwaremagico.librodeesher.character.SexType;
+import com.softwaremagico.librodeesher.characteristic.Characteristic;
+import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
+import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
+import com.softwaremagico.librodeesher.magic.RealmOfMagic;
+import com.softwaremagico.librodeesher.profession.Profession;
+import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
+import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.skill.Skill;
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
@@ -30,18 +38,21 @@ import java.util.Set;
  * <p>
  * The wrapped character must already have its race, culture and profession selected (typically by a
  * caller building an archetype, or by {@code CharacterPlayer}'s own setters); this class does not
- * roll those, nor the characteristics, the culture ranks or the history points yet (those creation
- * steps belong to the next generation slices, see below).
+ * roll those, nor the culture ranks or the history points yet (those creation steps belong to the
+ * coming generation slices). It does skip no creation step upstream of the development points: the
+ * sex, the name, the spell-casting realm with the highest characteristic bonus (a deterministic
+ * choice, as in the legacy {@code setMagicRealm}) and the initial temporal values of the
+ * profession's preferred characteristics (the legacy {@code setCharacteristics}) are all filled in.
  * </p>
  *
  * <p>
  * Everything this class rolls goes through the seedable {@link RandomValues}, so two runs with the
  * same {@link RandomValues#setRandomSeed(long) seed} produce the exact same character (per-level
- * ranks and trainings, weapon-cost tiers, remaining development points and equipment), which the
- * accompanying test asserts. The one rule-driven exception is the training characteristic-upgrade
- * roll (legacy {@code TrainingProbability#setRandomCharacteristicsUpgrades}), which is applied by
- * the rules side as an ordinary 2d10 roll that is not seedable yet; it is therefore deferred to a
- * dedicated commit along with the remaining creation steps (characteristics spending, culture ranks,
+ * ranks and trainings, weapon-cost tiers, remaining development points, equipment, name and
+ * characteristics), which the accompanying test asserts. The one rule-driven exception is the
+ * training characteristic-upgrade roll (legacy {@code TrainingProbability#setRandomCharacteristicsUpgrades}),
+ * which is applied by the rules side as an ordinary 2d10 roll that is not seedable yet; it is
+ * therefore deferred to a dedicated commit along with the remaining creation steps (culture ranks,
  * apprenticeship/background points and perks).
  * </p>
  */
@@ -160,15 +171,131 @@ public class RandomCharacterPlayer {
     }
 
     /**
-     * Spends the current level's development points (assigning the profession's weapon-cost tiers
-     * first if not decided yet) and then advances the character to {@code finalLevel}.
+     * Builds the wrapped character up to {@code finalLevel}: assigns the profession's weapon-cost
+     * tiers first (if not decided yet), fills in the creation steps upstream of the development
+     * points (sex, name, magic realm and initial temporal characteristic values), then spends every
+     * level's development points. The race, culture and profession themselves must already be
+     * selected on the wrapped character.
      */
     public void createRandomValues() throws InvalidXmlElementException {
         if (!characterPlayer.isWeaponCategoryCostTierAssigned(0)) {
             setWeaponCosts(characterPlayer);
         }
+        setCharacterInfo();
+        setMagicRealm();
+        setRandomCharacteristics(characterPlayer, specializationLevel);
         setDevelopmentPoints();
         setLevels();
+    }
+
+    private void setCharacterInfo() throws InvalidXmlElementException {
+        final Race race = characterPlayer.getRace();
+        if (race == null) {
+            return;
+        }
+        if (characterPlayer.getSex() == null) {
+            characterPlayer.setSex(RandomValues.random() < 0.5 ? SexType.MALE : SexType.FEMALE);
+        }
+        if (characterPlayer.getName() == null) {
+            characterPlayer.setName(race.getRandomName(characterPlayer.getSex(), RandomValues.getRandom()));
+        }
+    }
+
+    /**
+     * Selects the spell-casting realm with the highest characteristic bonus, matching the legacy
+     * {@code setMagicRealm()} exactly: for every realm grant of the selected profession, the
+     * offered realm whose own characteristic sums the highest total bonus wins (ties keep the last
+     * one, as in the legacy {@code >=} comparison). This is a deterministic choice, so it never
+     * consumes randomness.
+     */
+    private void setMagicRealm() throws InvalidXmlElementException {
+        final Profession profession = characterPlayer.getProfession();
+        if (profession == null) {
+            return;
+        }
+        final List<RealmOfMagicGrant> grants = profession.getMagicRealms();
+        if (grants.isEmpty()) {
+            return;
+        }
+        final Map<Integer, RealmOfMagic> realmSelections = new HashMap<>();
+        for (int i = 0; i < grants.size(); i++) {
+            RealmOfMagic chosenRealm = null;
+            int maxCharValue = -100;
+            for (final RealmOfMagic realm : grants.get(i).getOptions()) {
+                final int charValue = characterPlayer.getCharacteristicTotalBonus(realm.getCharacteristic());
+                if (charValue >= maxCharValue) {
+                    maxCharValue = charValue;
+                    chosenRealm = realm;
+                }
+            }
+            if (chosenRealm != null) {
+                realmSelections.put(i, chosenRealm);
+            }
+        }
+        characterPlayer.applyProfessionMagicRealms(realmSelections);
+    }
+
+    /**
+     * Spends the creation temporal points into the profession's preferred characteristics, matching
+     * the legacy {@code setCharacteristics} heuristics exactly: preferred characteristics get a
+     * higher (index-driven) raise probability and, through {@code setCharacteristicInitialTemporalValue},
+     * are guaranteed to start at least at 90; the raise amount and the current-value cap follow the
+     * temporal cost tables defined by {@link Characteristic#getTemporalCost}. Everything is drawn
+     * from {@link RandomValues}, so the whole distribution is reproducible seed by seed. Freezes the
+     * result in as confirmed (see {@link CharacterPlayer#setCharacteristicsAsConfirmed()}).
+     */
+    public static void setRandomCharacteristics(CharacterPlayer characterPlayer, int specializationLevel)
+            throws InvalidXmlElementException {
+        final Profession profession = characterPlayer.getProfession();
+        if (profession == null) {
+            characterPlayer.setCharacteristicsAsConfirmed();
+            return;
+        }
+        final List<CharacteristicAbbreviation> preferences = profession.getCharacteristicPreferences();
+        if (preferences.isEmpty()) {
+            characterPlayer.setCharacteristicsAsConfirmed();
+            return;
+        }
+        final List<CharacteristicAbbreviation> reversedPreferences = new ArrayList<>(preferences);
+        Collections.reverse(reversedPreferences);
+        int loop = 0;
+        final int totalPoints = characterPlayer.getCharacteristicsTemporalTotalPoints();
+        while (characterPlayer.getCharacteristicsTemporalPointsSpent() < totalPoints && loop < totalPoints / 30) {
+            for (int i = 0; i < preferences.size(); i++) {
+                final CharacteristicAbbreviation abbreviation = preferences.get(i);
+                final int availablePoints = totalPoints - characterPlayer.getCharacteristicsTemporalPointsSpent();
+                final int temporalValue = characterPlayer.getCharacteristicTemporalValue(abbreviation);
+                // Max probability 90%, preferred characteristics with points.
+                final boolean probability = (int) (RandomValues.random() * 100 + 1) < reversedPreferences.indexOf(abbreviation) * 4
+                        + loop;
+                // Temporal values have a max limit.
+                final int temporalLimit = Math.min(Math.max(90 + (totalPoints - Characteristics.TOTAL_CHARACTERISTICS_POINTS) / 20,
+                        90 + (specializationLevel - 1) * 6), totalPoints <= Characteristics.TOTAL_CHARACTERISTICS_POINTS ? 101
+                        : 90 + totalPoints / 60);
+                // Cost affordable.
+                final int nextRankCost = Characteristic.getTemporalCost(temporalValue + 1) - Characteristic.getTemporalCost(temporalValue);
+                if (probability && temporalValue < temporalLimit && nextRankCost <= availablePoints) {
+                    // Increase more than one point depending on the value of the characteristic.
+                    int valueToAdd = 1;
+                    if (temporalValue < 50) {
+                        valueToAdd = Math.min(20 + (specializationLevel + 3) * 5, availablePoints);
+                    } else if (temporalValue < 70) {
+                        valueToAdd = Math.min(7 + (specializationLevel + 3) * 4, availablePoints);
+                    } else if (temporalValue < 83) {
+                        valueToAdd = Math.min(2 + (specializationLevel + 3), availablePoints);
+                    } else if (temporalValue < 90 - specializationLevel) {
+                        valueToAdd = Math.max(1, specializationLevel);
+                    }
+                    characterPlayer.setCharacteristicInitialTemporalValue(abbreviation, temporalValue + valueToAdd);
+                    // Add new points to the same characteristic.
+                    if (specializationLevel > 0) {
+                        i--;
+                    }
+                }
+            }
+            loop++;
+        }
+        characterPlayer.setCharacteristicsAsConfirmed();
     }
 
     /**

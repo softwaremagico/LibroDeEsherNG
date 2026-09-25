@@ -34,6 +34,15 @@ public final class RandomValues {
         RANDOM.setSeed(seed);
     }
 
+    /**
+     * The shared generator itself, for seedable helper methods that accept a {@link Random}
+     * (e.g. {@code Race#getRandomName(SexType, Random)}); because it is the very same instance the
+     * static helpers below draw from, the seed fixes its whole sequence too.
+     */
+    public static Random getRandom() {
+        return RANDOM;
+    }
+
     /** A uniformly distributed double in {@code [0, 1)}, equivalent to {@code Math.random()}. */
     public static double random() {
         return RANDOM.nextDouble();
