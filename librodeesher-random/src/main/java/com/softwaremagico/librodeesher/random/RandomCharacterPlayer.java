@@ -8,6 +8,8 @@ import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.culture.CultureLanguageRank;
+import com.softwaremagico.librodeesher.decision.Decision;
+import com.softwaremagico.librodeesher.dice.Roll;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.profession.Profession;
@@ -54,11 +56,9 @@ import java.util.Set;
  * Everything this class rolls goes through the seedable {@link RandomValues}, so two runs with the
  * same {@link RandomValues#setRandomSeed(long) seed} produce the exact same character (per-level
  * ranks and trainings, weapon-cost tiers, remaining development points, equipment, name and
- * characteristics), which the accompanying test asserts. The one rule-driven exception is the
- * training characteristic-upgrade roll (legacy {@code TrainingProbability#setRandomCharacteristicsUpgrades}),
- * which is applied by the rules side as an ordinary 2d10 roll that is not seedable yet; it is
- * therefore deferred to a dedicated commit along with the remaining creation steps (culture ranks,
- * apprenticeship/background points and perks).
+ * characteristics), which the accompanying test asserts. The training characteristic-upgrade rolls
+ * (legacy {@code TrainingProbability#setRandomCharacteristicsUpgrades}) draw their 2d10 through the
+ * same seedable stream (see {@link #addRandomTrainingCharacteristicUpgrades}).
  * </p>
  */
 public class RandomCharacterPlayer {
@@ -728,11 +728,10 @@ public class RandomCharacterPlayer {
     /**
      * Selects {@code trainingId} (when currently available) and randomly resolves every decision it
      * needs: its category grants (category alternative, named skill alternatives and freely
-     * distributed skill ranks), its life/common/professional/restricted skill choices, and each of
-     * its special background items (rolled against the item's own probability, the same "accepted"
-     * discount the legacy applied). The training characteristic upgrade rolls are deliberately not
-     * applied yet: they are a rules-side 2d10 roll that is not seedable, and are scheduled for the
-     * dedicated roll port (see class javadoc).
+     * distributed skill ranks), its life/common/professional/restricted skill choices, its special
+     * background items (rolled against the item's own probability, the same "accepted" discount the
+     * legacy applied), and its characteristic upgrades (see {@link
+     * #addRandomTrainingCharacteristicUpgrades}).
      */
     public static void setRandomTraining(CharacterPlayer characterPlayer, String trainingId, int specializationLevel)
             throws InvalidXmlElementException {
@@ -743,6 +742,7 @@ public class RandomCharacterPlayer {
         if (training == null) {
             return;
         }
+        characterPlayer.setRandomRollSupplier(RandomCharacterPlayer::randomRoll);
         final List<TrainingCategoryGrant> grants = training.getCategories();
         if (grants != null && !grants.isEmpty()) {
             // The granted category/skill ranks count against the current level's development budget
@@ -759,6 +759,59 @@ public class RandomCharacterPlayer {
         }
         addRandomTrainingSkillChoices(characterPlayer, training);
         addRandomTrainingSpecialItems(characterPlayer, training);
+        addRandomTrainingCharacteristicUpgrades(characterPlayer, training, trainingId);
+    }
+
+    /**
+     * Applies every characteristic-upgrade group of {@code training} by picking the preference the
+     * legacy {@code TrainingProbability#setRandomCharacteristicsUpgrades} would: iterate the
+     * profession's characteristic preferences, and upgrade the first available one that is "far
+     * enough" from its potential (the legacy {@code distance > 20 / > 10 at 70+ / > 5 at 85+}
+     * thresholds); when none qualifies the upgrade is still mandatory and falls back to the last
+     * available preference. The 2d10 result comes from the seedable {@link RandomValues} (installed
+     * on the character in {@link #setRandomTraining}), so a replayed seed reproduces it too.
+     */
+    private static void addRandomTrainingCharacteristicUpgrades(CharacterPlayer characterPlayer, Training training,
+            String trainingId) throws InvalidXmlElementException {
+        final List<ChoiceGroup> upgrades = training.getCharacteristicUpgrades();
+        if (upgrades == null || upgrades.isEmpty()) {
+            return;
+        }
+        final Profession profession = characterPlayer.getProfession();
+        for (int i = 0; i < upgrades.size(); i++) {
+            final ChoiceGroup group = upgrades.get(i);
+            CharacteristicAbbreviation lastChecked = null;
+            CharacteristicAbbreviation selected = null;
+            if (profession != null) {
+                for (final CharacteristicAbbreviation preference : profession.getCharacteristicPreferences()) {
+                    final String option = preference == null ? null : preference.name();
+                    if (option != null && group.getOptions().contains(option)) {
+                        lastChecked = preference;
+                        final int temporalValue = characterPlayer.getCharacteristicTemporalValue(preference);
+                        final int distance = temporalValue - characterPlayer.getCharacteristicPotentialValue(preference);
+                        if (distance > 20 || (distance > 10 && temporalValue > 70)
+                                || (distance > 5 && temporalValue > 85)) {
+                            selected = preference;
+                            break;
+                        }
+                    }
+                }
+            }
+            // Updates are mandatory: increase the least-preferred available characteristic when no
+            // preference is far enough from its potential yet.
+            if (selected == null) {
+                selected = lastChecked;
+            }
+            if (selected != null) {
+                characterPlayer.applyCharacteristicUpgrade("training:" + trainingId + ":characteristic:" + i, group,
+                        selected);
+            }
+        }
+    }
+
+    /** A two-d10 {@link Roll} drawn from the seedable {@link RandomValues} stream. */
+    private static Roll randomRoll() {
+        return Roll.of(RandomValues.nextInt(10) + 1, RandomValues.nextInt(10) + 1);
     }
 
     private static final class GrantPicks {

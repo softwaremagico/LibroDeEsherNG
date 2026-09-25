@@ -10,6 +10,7 @@ import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.skill.Skill;
+import com.softwaremagico.librodeesher.training.Training;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -301,6 +302,40 @@ public class RandomCharacterPlayerCreationTest {
 			}
 		}
 		return abbreviations;
+	}
+
+	@Test
+	public void trainingCharacteristicUpgradeRollsReplayForTheSameSeed() throws InvalidXmlElementException {
+		final CharacterPlayer probe = newCharacter("fighter");
+		String trainingId = null;
+		for (final Training training : RulesCatalog.getInstance().getTrainings()) {
+			if (training.getCharacteristicUpgrades() != null && !training.getCharacteristicUpgrades().isEmpty()
+					&& probe.getAvailableTrainingIds().contains(training.getId())) {
+				trainingId = training.getId();
+				break;
+			}
+		}
+		Assert.assertNotNull(trainingId, "Some affordable training must carry characteristic upgrades");
+
+		final List<Integer> first = trainingUpgradeStrengths(trainingId, 4242L);
+		final List<Integer> replayed = trainingUpgradeStrengths(trainingId, 4242L);
+		Assert.assertEquals(replayed, first, "The same seed must replay the same characteristic upgrade rolls");
+		int different = 0;
+		for (long seed = 4243; seed < 4263 && different == 0; seed++) {
+			if (!trainingUpgradeStrengths(trainingId, seed).equals(first)) {
+				different = 1;
+			}
+		}
+		Assert.assertTrue(different > 0,
+				"Passing a different seed to the characteristic upgrade rolls must change the result");
+	}
+
+	private static List<Integer> trainingUpgradeStrengths(String trainingId, long seed) throws InvalidXmlElementException {
+		final CharacterPlayer character = newCharacter("fighter");
+		RandomValues.setRandomSeed(seed);
+		RandomCharacterPlayer.setRandomCharacteristics(character, 0);
+		RandomCharacterPlayer.setRandomTraining(character, trainingId, 0);
+		return characteristicsOf(character);
 	}
 
 	private static CharacterPlayer newCharacter(String professionId) throws InvalidXmlElementException {
