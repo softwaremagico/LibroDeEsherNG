@@ -1281,12 +1281,23 @@ public class CharacterPlayer {
 
 		final Integer temporalValue = this.getCharacteristicTemporalValue(abbreviation);
 		final Integer potentialValue = this.getCharacteristicPotentialValue(abbreviation);
-		final Roll roll = new Roll();
+		final Roll roll = this.randomRollSupplier.get();
 		final Integer upgrade = Characteristic.getCharacteristicUpgrade(temporalValue, potentialValue, roll);
 		this.setCharacteristicTemporalValue(abbreviation, temporalValue + upgrade);
 
 		return this.getCurrentLevel().addCharacteristicUpdate(abbreviation, temporalValue, potentialValue, roll);
 	}
+
+	/**
+	 * Overrides where {@link #applyCharacteristicUpgrade} takes its 2d10 roll from (defaulting to a
+	 * fresh unseeded {@link Roll}), so the seeded random generator can replay the very same dice it
+	 * drew for the rest of the character.
+	 */
+	public void setRandomRollSupplier(Supplier<Roll> randomRollSupplier) {
+		this.randomRollSupplier = randomRollSupplier == null ? Roll::new : randomRollSupplier;
+	}
+
+	private Supplier<Roll> randomRollSupplier = Roll::new;
 
 	/**
 	 * Returns the existing decision for {@code key}, or resolves it via

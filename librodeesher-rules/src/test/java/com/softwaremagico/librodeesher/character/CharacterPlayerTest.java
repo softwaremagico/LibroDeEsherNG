@@ -444,6 +444,23 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void theRandomRollSupplierDrivesTheCharacteristicUpgradeRoll() throws InvalidXmlElementException {
+		final Training adventurer = RulesCatalog.getInstance().getTraining("adventurer");
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.STRENGTH, 50);
+		character.setCharacteristicPotentialValue(CharacteristicAbbreviation.STRENGTH, 90);
+		character.setRandomRollSupplier(() -> Roll.of(4, 6));
+
+		final CharacteristicRoll roll = character.applyCharacteristicUpgrade("training:adventurer:characteristic:0",
+				adventurer.getCharacteristicUpgrades().get(0), CharacteristicAbbreviation.STRENGTH);
+
+		Assert.assertEquals(roll.getRoll().getFirstDice(), Integer.valueOf(4));
+		Assert.assertEquals(roll.getRoll().getSecondDice(), Integer.valueOf(6));
+		Assert.assertEquals(character.getCharacteristicTemporalValue(CharacteristicAbbreviation.STRENGTH),
+				Integer.valueOf(60));
+	}
+
+	@Test
 	public void backgroundCharacteristicUpdateAppliesAndIsIncludedInBackgroundCost() {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 50);

@@ -32,6 +32,17 @@ public class Roll {
         this.secondDice = roll.getSecondDice();
     }
 
+    /**
+     * A roll with explicit dice results, used by the seeded random generator to replay its two-dice
+     * draws without touching the unseeded {@link Dice} stream.
+     */
+    public static Roll of(int firstDice, int secondDice) {
+        final Roll roll = new Roll();
+        roll.setFirstDice(firstDice);
+        roll.setSecondDice(secondDice);
+        return roll;
+    }
+
     public Integer getFirstDice() {
         return firstDice;
     }
