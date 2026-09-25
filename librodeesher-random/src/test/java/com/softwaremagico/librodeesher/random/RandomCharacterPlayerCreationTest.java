@@ -146,6 +146,46 @@ public class RandomCharacterPlayerCreationTest {
 				"Same seed must reproduce the development budget after the hobby ranks");
 	}
 
+	@Test
+	public void optionalLanguageSlotsAreFilledDuringCreation() throws InvalidXmlElementException {
+		final CharacterPlayer character = newCharacter("fighter");
+		character.setRaceId("dyari");
+		character.setCultureId("aquaticMilitarista");
+		RandomValues.setRandomSeed(7L);
+		new RandomCharacterPlayer(character, 3).createRandomValues();
+
+		final String raceSlot = character.getOptionalRaceLanguageAssignment(0);
+		final String cultureSlot = character.getOptionalCultureLanguageAssignment(0);
+		Assert.assertNotNull(raceSlot, "The dyari optional race language slot must be filled");
+		Assert.assertNotNull(cultureSlot, "The aquaticMilitarista optional culture language slot must be filled");
+		Assert.assertNotEquals(raceSlot, cultureSlot,
+				"Two optional slots must not be assigned the same language");
+		Assert.assertTrue(character.getRaceLanguageStartingSpeakingRanks(raceSlot) > 0,
+				"The assigned race language must receive its slot's starting ranks");
+	}
+
+	@Test
+	public void sameSeedProducesTheSameOptionalLanguageAssignments() throws InvalidXmlElementException {
+		final CharacterPlayer first = newCharacter("fighter");
+		first.setRaceId("dyari");
+		first.setCultureId("aquaticMilitarista");
+		RandomValues.setRandomSeed(4242L);
+		new RandomCharacterPlayer(first, 3).createRandomValues();
+
+		final CharacterPlayer second = newCharacter("fighter");
+		second.setRaceId("dyari");
+		second.setCultureId("aquaticMilitarista");
+		RandomValues.setRandomSeed(4242L);
+		new RandomCharacterPlayer(second, 3).createRandomValues();
+
+		Assert.assertEquals(second.getOptionalRaceLanguageAssignment(0),
+				first.getOptionalRaceLanguageAssignment(0),
+				"Same seed must reproduce the optional race language");
+		Assert.assertEquals(second.getOptionalCultureLanguageAssignment(0),
+				first.getOptionalCultureLanguageAssignment(0),
+				"Same seed must reproduce the optional culture language");
+	}
+
 	private static String hobbyRanksFingerprint(CharacterPlayer character) throws InvalidXmlElementException {
 		final List<String> entries = new ArrayList<>();
 		for (final Skill skill : RulesCatalog.getInstance().getSkills()) {

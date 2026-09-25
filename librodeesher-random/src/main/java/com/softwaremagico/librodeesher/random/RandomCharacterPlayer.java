@@ -7,11 +7,13 @@ import com.softwaremagico.librodeesher.characteristic.Characteristic;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.culture.Culture;
+import com.softwaremagico.librodeesher.culture.CultureLanguageRank;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.race.Race;
+import com.softwaremagico.librodeesher.race.RaceLanguage;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.skill.Skill;
 import com.softwaremagico.librodeesher.training.ChoiceGroup;
@@ -26,6 +28,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -307,8 +310,9 @@ public class RandomCharacterPlayer {
     /**
      * Rolls the currently selected culture's own creation ranks, mirroring the legacy {@code
      * setCulture}: the adolescence category grants first (through the same grant machinery a
-     * training uses), then the free hobby ranks. Cultures without a hobby/adolescence section (or
-     * characters without a culture selected) are left untouched.
+     * training uses), then the free hobby ranks, then every still-unfilled optional language slot.
+     * Cultures without a hobby/adolescence/language section (or characters without a culture
+     * selected) are left untouched.
      */
     private void setRandomCulture() throws InvalidXmlElementException {
         final Culture culture = characterPlayer.getCulture();
@@ -317,6 +321,7 @@ public class RandomCharacterPlayer {
         }
         setRandomCultureAdolescenceRanks(culture);
         setRandomCultureHobbyRanks();
+        setRandomCultureLanguages();
     }
 
     /**
@@ -436,6 +441,69 @@ public class RandomCharacterPlayer {
         return (skillRanks == null ? 0 : skillRanks) * (2 + specializationLevel + loop)
                 + categoryRanks * 5 + Math.min(firstCost == null ? 0 : firstCost, 15)
                 - skillsWithRanks * 5 + 5 + loop;
+    }
+
+    /**
+     * The language ids known to the migrated rule data (every race/culture language grant), in
+     * NG's equivalent of the legacy {@code getUnusedLanguages}: those that already grant starting
+     * ranks (through the race/culture static sections or an already-assigned optional slot) are
+     * considered "used" and left out.
+     */
+    private List<String> unusedKnownLanguageIds() throws InvalidXmlElementException {
+        final Set<String> known = new LinkedHashSet<>();
+        for (final Race race : RulesCatalog.getInstance().getRaces()) {
+            for (final RaceLanguage language : race.getRaceLanguages()) {
+                known.add(language.getLanguageId());
+            }
+            for (final RaceLanguage language : race.getBackgroundLanguages()) {
+                known.add(language.getLanguageId());
+            }
+        }
+        for (final Culture aCulture : RulesCatalog.getInstance().getCultures()) {
+            for (final CultureLanguageRank rank : aCulture.getLanguageMaxRanks()) {
+                if (!"all".equals(rank.getLanguageId())) {
+                    known.add(rank.getLanguageId());
+                }
+            }
+        }
+        final List<String> unused = new ArrayList<>();
+        for (final String languageId : known) {
+            if (characterPlayer.getRaceLanguageStartingSpeakingRanks(languageId) == 0
+                    && characterPlayer.getCultureLanguageMaxSpeakingRanks(languageId) == 0) {
+                unused.add(languageId);
+            }
+        }
+        return unused;
+    }
+
+    /**
+     * Fills every still-unassigned optional language slot — the race's ({@code Race#getOptionalRaceLanguages()})
+     * and the culture's ({@code Culture#getOptionalLanguages()}) — with a random unused language,
+     * mirroring the legacy {@code selectOptionalLanguages}. The per-language rank levels are fixed
+     * by the slot's own starting/max ranks, so assigning the slot is the whole move: the legacy
+     * point-by-point distribution that used to follow had no corresponding NG model (the culture's
+     * parsed-down {@code idiomas} adolescence grant feeds the language step instead, which this
+     * class covers through these slots).
+     */
+    private void setRandomCultureLanguages() throws InvalidXmlElementException {
+        final List<String> available = unusedKnownLanguageIds();
+        RandomValues.shuffle(available);
+        final Race race = characterPlayer.getRace();
+        if (race != null) {
+            for (int i = 0; i < race.getOptionalRaceLanguages().size(); i++) {
+                if (characterPlayer.getOptionalRaceLanguageAssignment(i) == null && !available.isEmpty()) {
+                    characterPlayer.assignOptionalRaceLanguage(i, available.remove(0));
+                }
+            }
+        }
+        final Culture culture = characterPlayer.getCulture();
+        if (culture != null) {
+            for (int i = 0; i < culture.getOptionalLanguages().size(); i++) {
+                if (characterPlayer.getOptionalCultureLanguageAssignment(i) == null && !available.isEmpty()) {
+                    characterPlayer.assignOptionalCultureLanguage(i, available.remove(0));
+                }
+            }
+        }
     }
 
     /**
