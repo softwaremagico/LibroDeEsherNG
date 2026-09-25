@@ -1837,7 +1837,15 @@ public class CharacterPlayer {
 			}
 		}
 		for (final String skillId : levelUp.getSkillsWithRanks()) {
-			final String categoryId = RulesCatalog.getInstance().getSkill(skillId).getCategoryId();
+			final Skill skill = resolveSkillOrNull(skillId);
+			if (skill == null) {
+				// Ranks granted in a skill id the catalog does not know (migrated data leftovers,
+				// e.g. "instintoUrban" instead of "instintoUrbano") cannot be priced: matching the
+				// legacy {@code getSpentDevelopmentPointsInSkillsRanks}, they cost nothing and are
+				// skipped.
+				continue;
+			}
+			final String categoryId = skill.getCategoryId();
 			final int ranksThisLevel = levelUp.getSkillRanks(skillId);
 			for (int i = 0; i < ranksThisLevel; i++) {
 				final Integer cost = this.getCategoryDevelopmentCost(categoryId, i);
@@ -1863,6 +1871,15 @@ public class CharacterPlayer {
 			}
 		}
 		return total;
+	}
+
+	/** The {@code Skill} for {@code skillId}, or {@code null} when the catalog does not know it. */
+	private Skill resolveSkillOrNull(String skillId) {
+		try {
+			return RulesCatalog.getInstance().getSkill(skillId);
+		} catch (final InvalidXmlElementException e) {
+			return null;
+		}
 	}
 
 	/**
