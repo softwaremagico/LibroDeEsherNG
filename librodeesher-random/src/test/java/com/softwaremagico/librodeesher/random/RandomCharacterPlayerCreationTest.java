@@ -186,6 +186,72 @@ public class RandomCharacterPlayerCreationTest {
 				"Same seed must reproduce the optional culture language");
 	}
 
+	@Test
+	public void backgroundPointsAreNeverOverspent() throws InvalidXmlElementException {
+		for (final String professionId : List.of("fighter", "bard", "cleric", "rogue", "thief")) {
+			final CharacterPlayer character = newCharacter(professionId);
+			RandomValues.setRandomSeed(11L);
+			new RandomCharacterPlayer(character, 1).createRandomValues();
+			Assert.assertTrue(character.getRemainingBackgroundPoints() >= 0,
+					"The background points of a " + professionId + " must never go below zero");
+		}
+	}
+
+	@Test
+	public void sameSeedProducesTheSamePerksAndBackgroundPoints() throws InvalidXmlElementException {
+		final CharacterPlayer first = newCharacter("fighter");
+		RandomValues.setRandomSeed(4242L);
+		new RandomCharacterPlayer(first, 3).createRandomValues();
+
+		final CharacterPlayer second = newCharacter("fighter");
+		RandomValues.setRandomSeed(4242L);
+		new RandomCharacterPlayer(second, 3).createRandomValues();
+
+		Assert.assertEquals(backgroundFingerprint(second), backgroundFingerprint(first),
+				"Same seed must reproduce the perks, weaknesses and background points");
+		Assert.assertEquals(second.getRemainingBackgroundPoints(), first.getRemainingBackgroundPoints(),
+				"Same seed must reproduce the leftover background points");
+	}
+
+	@Test
+	public void aPickedPerkResolvesItsRequestsAndStaysWithinTheBudget() throws InvalidXmlElementException {
+		// Scan a handful of seeds until one actually picks a perk, then pin its behaviour.
+		CharacterPlayer picked = null;
+		for (long seed = 100; seed < 1000 && picked == null; seed++) {
+			final CharacterPlayer character = newCharacter("fighter");
+			RandomValues.setRandomSeed(seed);
+			new RandomCharacterPlayer(character, 1).createRandomValues();
+			if (!character.getSelectedPerks().isEmpty() && character.getRemainingBackgroundPoints() >= 0) {
+				picked = character;
+			}
+		}
+		Assert.assertNotNull(picked, "Some seed must grant at least one perk to a fighter");
+		for (final var selectedPerk : picked.getSelectedPerks()) {
+			final var weaknessId = selectedPerk.getWeaknessId();
+			if (weaknessId != null) {
+				Assert.assertTrue(picked.hasWeakness(selectedPerk.getPerkId()),
+						"The paired weakness must be recorded on the perk");
+			}
+			Assert.assertTrue(picked.isPerkRandom(selectedPerk.getPerkId()),
+					"Every random-selected perk must be marked as randomly chosen");
+		}
+	}
+
+	private static String backgroundFingerprint(CharacterPlayer character) throws InvalidXmlElementException {
+		final List<String> entries = new ArrayList<>();
+		for (final var selectedPerk : character.getSelectedPerks()) {
+			entries.add("perk:" + selectedPerk.getPerkId()
+					+ (selectedPerk.getWeaknessId() == null ? "" : "->" + selectedPerk.getWeaknessId()));
+		}
+		entries.addAll(character.getBackground().getCategoryIds());
+		entries.addAll(character.getBackground().getSkillIds());
+		for (final var entry : character.getBackground().getLanguageRanks().entrySet()) {
+			entries.add("lang:" + entry.getKey() + ":" + entry.getValue());
+		}
+		entries.sort(String::compareTo);
+		return String.join(";", entries);
+	}
+
 	private static String hobbyRanksFingerprint(CharacterPlayer character) throws InvalidXmlElementException {
 		final List<String> entries = new ArrayList<>();
 		for (final Skill skill : RulesCatalog.getInstance().getSkills()) {

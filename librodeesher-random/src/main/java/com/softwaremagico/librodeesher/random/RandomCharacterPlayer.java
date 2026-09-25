@@ -165,7 +165,7 @@ public class RandomCharacterPlayer {
     }
 
     /**
-     * Reserved for the upcoming perk slice: the perk ids to grant first, in that order.
+     * The perk ids to grant first, in that order (the legacy suggested perks).
      */
     public void setSuggestedPerks(List<String> suggestedPerks) {
         this.suggestedPerks.clear();
@@ -193,6 +193,8 @@ public class RandomCharacterPlayer {
         setMagicRealm();
         setRandomCharacteristics(characterPlayer, specializationLevel);
         setRandomCulture();
+        setRandomPerks();
+        setRandomBackgroundPoints();
         setDevelopmentPoints();
         setLevels();
     }
@@ -242,6 +244,11 @@ public class RandomCharacterPlayer {
             }
         }
         characterPlayer.applyProfessionMagicRealms(realmSelections);
+        // A profession with an assigned realm casts spells: mirror the legacy rule that having a
+        // realm selected implies magic is allowed (the flag gates spell-list category/perk access).
+        if (!grants.isEmpty()) {
+            characterPlayer.setMagicAllowed(true);
+        }
     }
 
     /**
@@ -444,12 +451,168 @@ public class RandomCharacterPlayer {
     }
 
     /**
-     * The language ids known to the migrated rule data (every race/culture language grant), in
-     * NG's equivalent of the legacy {@code getUnusedLanguages}: those that already grant starting
-     * ranks (through the race/culture static sections or an already-assigned optional slot) are
-     * considered "used" and left out.
+     * Spends the leftover background points on perks, mirroring the legacy {@code setRandomPerks}:
+     * every perk (suggested ones first, then all others in random order) gets a probability score,
+     * a {@code 0..99} roll below it selects the perk, pairs it with a random eligible weakness,
+     * marks it as randomly chosen and resolves its "choose N of..." grants; a take that pushes the
+     * background budget negative is rolled back.
      */
-    private List<String> unusedKnownLanguageIds() throws InvalidXmlElementException {
+    private void setRandomPerks() throws InvalidXmlElementException {
+        final List<String> perks = PerkProbability.shufflePerks(characterPlayer, suggestedPerks);
+        if (characterPlayer.getRemainingBackgroundPoints() > 0) {
+            for (final String perkId : perks) {
+                final PerkProbability perkProbability = new PerkProbability(characterPlayer,
+                        RulesCatalog.getInstance().getPerk(perkId), specializationLevel, suggestedPerks);
+                final int probability = perkProbability.getProbability();
+                final int value = (int) (RandomValues.random() * 100);
+                if (value < probability) {
+                    String weaknessId = null;
+                    final List<String> weaknessesAvailable = characterPlayer.getAvailableWeaknessIds(perkId);
+                    if (!weaknessesAvailable.isEmpty()) {
+                        weaknessId = weaknessesAvailable.get((int) (RandomValues.random() * weaknessesAvailable.size()));
+                    }
+                    characterPlayer.addPerk(perkId);
+                    if (weaknessId != null) {
+                        characterPlayer.addWeakness(perkId, weaknessId);
+                    }
+                    characterPlayer.setPerkAsRandom(perkId, true);
+                    if (characterPlayer.getRemainingBackgroundPoints() < 0) {
+                        characterPlayer.removePerk(perkId);
+                    } else {
+                        perkProbability.selectOptions();
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Spends the leftover background points on history languages, category and skill points,
+     * mirroring the legacy {@code setBackgroundPoints}: while some background points remain, a
+     * random share of them goes to extra history language ranks (each 20 ranks costs 1 background
+     * point), then every category gets a chance at a category point (only when the character
+     * already has ranks there) and every interesting skill a chance at a skill point.
+     */
+    private void setRandomBackgroundPoints() throws InvalidXmlElementException {
+        int loops = 0;
+        while (characterPlayer.getRemainingBackgroundPoints() > 0) {
+            // 30%-ish share for extra languages, decreasing with specialization and past language
+            // spending, matching the legacy probability formula.
+            if ((int) (RandomValues.random() * 100) < 30 - specializationLevel * 10
+                    - characterPlayer.getBackground().getLanguagesTotalRanksAdded() * 10) {
+                spendBackgroundLanguagePoints();
+            }
+            final List<Category> shuffledCategoryList = new ArrayList<>(RulesCatalog.getInstance().getCategories());
+            shuffledCategoryList.sort(Comparator.comparingInt(
+                    (Category category) -> backgroundCategorySortKey(category)));
+            for (final Category category : shuffledCategoryList) {
+                if ("communication".equals(category.getId())) {
+                    continue;
+                }
+                if (!characterPlayer.getBackground().isCategoryPointSelected(category.getId())
+                        && characterPlayer.getRemainingBackgroundPoints() > 0
+                        && characterPlayer.getCategoryTotalRanks(category.getId()) > 0
+                        && characterPlayer.isCategoryEnabledByOptions(category)
+                        && category.getSkills().size() > 1
+                        && (int) (RandomValues.random() * 100) < backgroundCategoryProbability(category, loops)) {
+                    characterPlayer.getBackground().setCategoryPoint(category.getId(), true);
+                }
+                final List<Skill> shuffledSkillList = orderedSkillsBySpecialization(category);
+                for (final Skill skill : shuffledSkillList) {
+                    if (!characterPlayer.getBackground().isSkillPointSelected(skill.getId())
+                            && characterPlayer.getRemainingBackgroundPoints() > 0
+                            && characterPlayer.isSkillInteresting(skill)
+                            && (int) (RandomValues.random() * 100) < backgroundSkillProbability(skill, loops)) {
+                        characterPlayer.getBackground().setSkillPoint(skill.getId(), true);
+                    }
+                }
+            }
+            loops++;
+        }
+    }
+
+    private int backgroundCategorySortKey(Category category) {
+        try {
+            final Integer cost = characterPlayer.getCategoryDevelopmentCost(category.getId(), 0);
+            return cost == null ? Integer.MAX_VALUE : cost;
+        } catch (final InvalidXmlElementException e) {
+            return Integer.MAX_VALUE;
+        }
+    }
+
+    private int backgroundCategoryProbability(Category category, int loops) throws InvalidXmlElementException {
+        return (characterPlayer.getCategoryTotalRanks(category.getId())
+                + characterPlayer.getCategoryDevelopmentBonus(category)
+                + characterPlayer.getCategoryCharacteristicBonus(category) - 15 + loops) * 3;
+    }
+
+    private int backgroundSkillProbability(Skill skill, int loops) throws InvalidXmlElementException {
+        return (characterPlayer.getSkillTotalRanks(skill.getId())
+                + characterPlayer.getSkillTotalBonus(skill) - 25 + loops) * 3;
+    }
+
+    /**
+     * The skills of {@code category} ordered like the legacy {@code sortSkillsBySpecialization}:
+     * shuffled, then in ascending total-rank order, reversed for a positive specialization level.
+     */
+    private List<Skill> orderedSkillsBySpecialization(Category category) throws InvalidXmlElementException {
+        final List<Skill> skills = new ArrayList<>();
+        for (final String skillId : category.getSkills()) {
+            try {
+                skills.add(RulesCatalog.getInstance().getSkill(skillId));
+            } catch (final InvalidXmlElementException e) {
+                // Dynamic weapon categories reference skills that may not exist as such.
+            }
+        }
+        RandomValues.shuffle(skills);
+        skills.sort(Comparator.comparingInt((Skill skill) -> characterPlayer.getSkillTotalRanks(skill.getId())));
+        if (specializationLevel >= 0) {
+            Collections.reverse(skills);
+        }
+        return skills;
+    }
+
+    /**
+     * Spends 20 history language ranks (1 background point) across every language with a rank cap,
+     * mirroring the legacy {@code setBackgroundPoints}' language step: each language of a shuffled
+     * list receives a small random amount, bounded by its remaining cap.
+     */
+    private void spendBackgroundLanguagePoints() throws InvalidXmlElementException {
+        int communicationLanguagesPoints = 20;
+        final List<String> languages = new ArrayList<>();
+        for (final String languageId : knownLanguageIds()) {
+            if (characterPlayer.getLanguageMaxSpeakingRanks(languageId) > 0 && !languages.contains(languageId)) {
+                languages.add(languageId);
+            }
+        }
+        int tries = 0;
+        do {
+            RandomValues.shuffle(languages);
+            for (final String language : languages) {
+                if (characterPlayer.getRemainingBackgroundPoints() <= 0) {
+                    return;
+                }
+                final int maxRanks = characterPlayer.getLanguageMaxSpeakingRanks(language);
+                final int currentRanks = characterPlayer.getBackground().getHistoryLanguageRank(language);
+                final int cap = maxRanks - currentRanks;
+                final int ranksToAdd = Math.min(communicationLanguagesPoints,
+                        Math.min((int) Math.max(1, RandomValues.random() * ((specializationLevel + 2) * 5f)), cap));
+                if (ranksToAdd > 0) {
+                    characterPlayer.setBackgroundLanguageRank(language, currentRanks + ranksToAdd);
+                    communicationLanguagesPoints -= ranksToAdd;
+                    if (communicationLanguagesPoints < 1) {
+                        return;
+                    }
+                }
+            }
+            tries++;
+        } while (communicationLanguagesPoints > 0 && MAX_TRIES > tries);
+    }
+
+    /**
+     * The language ids known to the migrated rule data (every race/culture language grant).
+     */
+    private List<String> knownLanguageIds() throws InvalidXmlElementException {
         final Set<String> known = new LinkedHashSet<>();
         for (final Race race : RulesCatalog.getInstance().getRaces()) {
             for (final RaceLanguage language : race.getRaceLanguages()) {
@@ -466,8 +629,18 @@ public class RandomCharacterPlayer {
                 }
             }
         }
+        return new ArrayList<>(known);
+    }
+
+    /**
+     * The language ids known to the migrated rule data (every race/culture language grant), in
+     * NG's equivalent of the legacy {@code getUnusedLanguages}: those that already grant starting
+     * ranks (through the race/culture static sections or an already-assigned optional slot) are
+     * considered "used" and left out.
+     */
+    private List<String> unusedKnownLanguageIds() throws InvalidXmlElementException {
         final List<String> unused = new ArrayList<>();
-        for (final String languageId : known) {
+        for (final String languageId : knownLanguageIds()) {
             if (characterPlayer.getRaceLanguageStartingSpeakingRanks(languageId) == 0
                     && characterPlayer.getCultureLanguageMaxSpeakingRanks(languageId) == 0) {
                 unused.add(languageId);
