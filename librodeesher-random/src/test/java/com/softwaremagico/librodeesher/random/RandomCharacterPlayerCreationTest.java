@@ -3,10 +3,13 @@ package com.softwaremagico.librodeesher.random;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
+import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
+import com.softwaremagico.librodeesher.rules.RulesCatalog;
+import com.softwaremagico.librodeesher.skill.Skill;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -110,6 +113,49 @@ public class RandomCharacterPlayerCreationTest {
 				"Same seed must reproduce the culture adolescence selections");
 		Assert.assertEquals(second.getRemainingDevelopmentPoints(), first.getRemainingDevelopmentPoints(),
 				"Same seed must reproduce the development budget after the adolescence ranks");
+	}
+
+	@Test
+	public void cultureHobbyRanksStayWithinTheCultureCap() throws InvalidXmlElementException {
+		final Culture culture = RulesCatalog.getInstance().getCulture("aquaticMilitarista");
+		for (int seed = 1; seed <= 3; seed++) {
+			final CharacterPlayer character = newCharacter("fighter");
+			character.setCultureId("aquaticMilitarista");
+			RandomValues.setRandomSeed(seed);
+			new RandomCharacterPlayer(character, 3).createRandomValues();
+			Assert.assertTrue(character.getTotalHobbySkillRanks() <= culture.getHobbyRanks(),
+					"Hobby ranks must never exceed the culture cap (seed " + seed + ")");
+		}
+	}
+
+	@Test
+	public void sameSeedProducesTheSameCultureHobbyRanks() throws InvalidXmlElementException {
+		final CharacterPlayer first = newCharacter("fighter");
+		first.setCultureId("aquaticMilitarista");
+		RandomValues.setRandomSeed(4242L);
+		new RandomCharacterPlayer(first, 3).createRandomValues();
+
+		final CharacterPlayer second = newCharacter("fighter");
+		second.setCultureId("aquaticMilitarista");
+		RandomValues.setRandomSeed(4242L);
+		new RandomCharacterPlayer(second, 3).createRandomValues();
+
+		Assert.assertEquals(hobbyRanksFingerprint(second), hobbyRanksFingerprint(first),
+				"Same seed must reproduce the culture hobby ranks");
+		Assert.assertEquals(second.getRemainingDevelopmentPoints(), first.getRemainingDevelopmentPoints(),
+				"Same seed must reproduce the development budget after the hobby ranks");
+	}
+
+	private static String hobbyRanksFingerprint(CharacterPlayer character) throws InvalidXmlElementException {
+		final List<String> entries = new ArrayList<>();
+		for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
+			final int ranks = character.getHobbySkillRank(skill.getId());
+			if (ranks > 0) {
+				entries.add(skill.getId() + ":" + ranks);
+			}
+		}
+		entries.sort(String::compareTo);
+		return String.join(";", entries);
 	}
 
 	private static List<String> cultureAdolescenceDecisions(CharacterPlayer character) {

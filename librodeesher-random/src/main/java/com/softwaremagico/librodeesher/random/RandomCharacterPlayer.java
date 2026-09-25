@@ -23,6 +23,7 @@ import com.softwaremagico.librodeesher.weapon.Weapon;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -64,6 +65,9 @@ public class RandomCharacterPlayer {
 
     /** Categories whose next rank costs more than this are never rolled into. */
     private static final int MAX_RANDOM_COST = 20;
+
+    /** Culture hobby skills whose first rank costs more than this are never picked (legacy {@code MAX_HOBBY_COST}). */
+    private static final int MAX_HOBBY_COST = 40;
 
     private final CharacterPlayer characterPlayer;
     private final int finalLevel;
@@ -302,9 +306,8 @@ public class RandomCharacterPlayer {
 
     /**
      * Rolls the currently selected culture's own creation ranks, mirroring the legacy {@code
-     * setCulture}: the adolescence category grants (through the same grant machinery a training uses,
-     * {@link #applyCultureAdolescenceRanks} on the rules side), with the languages, hobbies and
-     * culture spell ranks still pending in the next slice. Cultures without adolescence grants (or
+     * setCulture}: the adolescence category grants first (through the same grant machinery a
+     * training uses), then the free hobby ranks. Cultures without a hobby/adolescence section (or
      * characters without a culture selected) are left untouched.
      */
     private void setRandomCulture() throws InvalidXmlElementException {
@@ -312,6 +315,15 @@ public class RandomCharacterPlayer {
         if (culture == null) {
             return;
         }
+        setRandomCultureAdolescenceRanks(culture);
+        setRandomCultureHobbyRanks();
+    }
+
+    /**
+     * The culture adolescence grants, only when the whole set stays within the current level's
+     * development budget (they count like any other grant, see {@code applyCultureAdolescenceRanks}).
+     */
+    private void setRandomCultureAdolescenceRanks(Culture culture) throws InvalidXmlElementException {
         // The rules side expands the "weapon"/"armor" markers of the migrated data into the
         // culture's typical weapons/armors (see {@code CharacterPlayer#getResolvedAdolescenceRanks}),
         // both here for the cost estimate and in {@code applyCultureAdolescenceRanks}; both sides
@@ -320,14 +332,110 @@ public class RandomCharacterPlayer {
         if (grants.isEmpty()) {
             return;
         }
-        // The adolescence ranks count against the current level's development budget like any other
-        // grant (see {@code applyCultureAdolescenceRanks}), so they are applied only when affordable.
         final GrantPicks picks = buildGrantPicks(characterPlayer, grants);
         if (characterPlayer.getRemainingDevelopmentPoints() - picks.estimatedGrantCost < 0) {
             return;
         }
         characterPlayer.applyCultureAdolescenceRanks(culture, picks.categorySelections, picks.skillSelections,
                 picks.additionalSkillRanks);
+    }
+
+    /**
+     * A skill is "hobby-eligible" for the current culture (see
+     * {@link Culture#isHobbySkillAllowed(String)}, which expands the migrated weapon/armor markers
+     * through the culture's typical weapons/armors) when its first-rank development cost — through
+     * the profession's weapon tier for weapon categories — is defined and no greater than
+     * {@link #MAX_HOBBY_COST}; matches the legacy
+     * {@code CharacterPlayer#getCultureStimatedCategoryCost} {@code <= MAX_HOBBY_COST} gate.
+     */
+    private boolean isHobbyEligibleSkill(String skillId) {
+        try {
+            if (!characterPlayer.getCulture().isHobbySkillAllowed(skillId)) {
+                return false;
+            }
+            final Integer firstCost = characterPlayer.getCategoryDevelopmentCost(
+                    RulesCatalog.getInstance().getSkill(skillId).getCategoryId(), 0);
+            return firstCost != null && firstCost <= MAX_HOBBY_COST;
+        } catch (final InvalidXmlElementException exception) {
+            return false;
+        }
+    }
+
+    /**
+     * The hobby-eligible skills, shuffled and ordered like the legacy {@code sortSkillsBySpecialization}
+     * (ascending by total ranks when specializing, descending otherwise), so the loop below keeps
+     * preferring the same skills the legacy generator would.
+     */
+    private List<String> orderedHobbySkills(int specializationLevel) throws InvalidXmlElementException {
+        final List<String> eligible = new ArrayList<>();
+        for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
+            if (isHobbyEligibleSkill(skill.getId())) {
+                eligible.add(skill.getId());
+            }
+        }
+        RandomValues.shuffle(eligible);
+        eligible.sort(Comparator.comparingInt(this::hobbySkillTotalRanks));
+        if (specializationLevel < 0) {
+            Collections.reverse(eligible);
+        }
+        return eligible;
+    }
+
+    private int hobbySkillTotalRanks(String skillId) {
+        final Integer ranks = characterPlayer.getSkillTotalRanks(skillId);
+        return ranks == null ? 0 : ranks;
+    }
+
+    /**
+     * The legacy {@code setRandomCultureHobbyRanks}: repeatedly pick the currently most probable
+     * hobby skill and add at most one rank — a hobby costs nothing, so the budget gate is the
+     * culture's {@code hobbyRanks} cap only. The weapon "penalization" counter of the legacy
+     * formula ({@code weaponsRanks * 5}) is dropped: it is reset on every iteration there, so it
+     * never actually grew (a faithful port keeps the plain 1d100 roll).
+     */
+    private void setRandomCultureHobbyRanks() throws InvalidXmlElementException {
+        final Culture culture = characterPlayer.getCulture();
+        final Integer hobbyRanks = culture.getHobbyRanks();
+        if (hobbyRanks == null) {
+            return;
+        }
+        int loop = 0;
+        while (hobbyRanks - characterPlayer.getTotalHobbySkillRanks() > 0) {
+            loop++;
+            final List<String> hobbies = orderedHobbySkills(specializationLevel);
+            if (hobbies.isEmpty()) {
+                return;
+            }
+            final String skillId = hobbies.get(0);
+            final Skill skill = RulesCatalog.getInstance().getSkill(skillId);
+            if ((int) (RandomValues.random() * 100) < hobbyProbability(skill, loop)) {
+                characterPlayer.setHobbySkillRank(skillId, characterPlayer.getHobbySkillRank(skillId) + 1);
+            }
+        }
+    }
+
+    /**
+     * The legacy {@code getProbablilityOfSetHobby}, translated to the NG rank/cost API: rare skills
+     * are never hobbies, an unused category (or one already rich in skills, given the
+     * specialization) stays at the minimal weight, everything else scales with the ranks already
+     * bought in the skill and its category.
+     */
+    private int hobbyProbability(Skill skill, int loop) throws InvalidXmlElementException {
+        if (skill.isRare()) {
+            return loop;
+        }
+        final String categoryId = skill.getCategoryId();
+        final Integer categoryRanks = characterPlayer.getCategoryTotalRanks(categoryId);
+        final int skillsWithRanks = characterPlayer.getCategorySkillsWithRanks(
+                RulesCatalog.getInstance().getCategory(categoryId)).size();
+        if (categoryRanks == null || categoryRanks == 0 || skillsWithRanks > -specializationLevel + 1) {
+            return 5 * loop;
+        }
+        final Integer skillRanks = characterPlayer.getSkillTotalRanks(skill.getId());
+        final Integer firstCost = characterPlayer.getCategoryDevelopmentCost(categoryId, 0);
+        return (skillRanks == null ? 0 : skillRanks) * (2 + specializationLevel + loop)
+                + categoryRanks * 5 + Math.min(firstCost == null ? 0 : firstCost, 15)
+                - skillsWithRanks * 5 + 5 + loop;
     }
 
     /**
