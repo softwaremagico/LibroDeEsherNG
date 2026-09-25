@@ -62,6 +62,7 @@ import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -1067,8 +1068,91 @@ public class CharacterPlayer {
 	public void applyCultureAdolescenceRanks(Culture culture, Map<Integer, String> categorySelections,
 			Map<Integer, List<String>> skillSelections, Map<Integer, Map<String, Integer>> additionalSkillRanksSelections)
 			throws InvalidXmlElementException {
-		this.applyCategoryGrants("culture:" + culture.getId() + ":adolescence", culture.getAdolescenceRanks(),
-				categorySelections, skillSelections, additionalSkillRanksSelections);
+		this.applyCategoryGrants("culture:" + culture.getId() + ":adolescence",
+				this.getResolvedAdolescenceRanks(culture), categorySelections, skillSelections,
+				additionalSkillRanksSelections);
+	}
+
+	/**
+	 * The adolescence grants (see {@link Culture#getAdolescenceRanks()}) normalized for the character's
+	 * culture: the {@code "weapon"} / {@code "armor"} skill-option markers of the migrated data are
+	 * expanded into the culture's typical weapons/armors (see {@link Culture#getTypicalWeaponIds()} /
+	 * {@link Culture#getTypicalArmorIds()}, resolved like {@link Culture#isHobbySkillAllowed(String)})
+	 * when the weapon/armor belongs to the grant's category, the {@code "idiomas"} marker is dropped
+	 * (the legacy application routed that grant into its language step, which this model represents
+	 * through the culture/race language slots instead), and any other option that is unknown to the
+	 * catalog is dropped too. A skill grant left without an option — or a marker without a matching
+	 * candidate — disappears entirely (the legacy application also granted no rank for that category).
+	 * Returns a filtered copy so the culture's data is never mutated.
+	 */
+	public List<TrainingCategoryGrant> getResolvedAdolescenceRanks(Culture culture) throws InvalidXmlElementException {
+		final List<TrainingCategoryGrant> grants = culture.getAdolescenceRanks();
+		final List<TrainingCategoryGrant> resolved = new ArrayList<>(grants.size());
+		for (final TrainingCategoryGrant grant : grants) {
+			resolved.add(this.resolveAdolescenceGrantSkills(culture, grant));
+		}
+		return resolved;
+	}
+
+	private TrainingCategoryGrant resolveAdolescenceGrantSkills(Culture culture, TrainingCategoryGrant grant)
+			throws InvalidXmlElementException {
+		final TrainingCategoryGrant resolved = new TrainingCategoryGrant();
+		resolved.setCategoryOptions(new ArrayList<>(grant.getCategoryOptions()));
+		resolved.setRanksGranted(grant.getRanksGranted());
+		resolved.setMinSkills(grant.getMinSkills());
+		resolved.setMaxSkills(grant.getMaxSkills());
+		resolved.setRanksToDistribute(grant.getRanksToDistribute());
+		final List<String> offeredCategories = this.expandCategoryWildcards(grant.getCategoryOptions());
+		final String categoryId = offeredCategories.isEmpty() ? null : offeredCategories.get(0);
+		for (final TrainingSkillGrant skillGrant : grant.getSkills()) {
+			final List<String> options = new ArrayList<>();
+			for (final String option : skillGrant.getSkillOptions()) {
+				if (MARKER_WEAPON.equals(option) || MARKER_ARMOR.equals(option)
+						|| MARKER_LANGUAGE.equals(option)) {
+					options.addAll(this.getAdolescenceMarkerCandidates(culture, option, categoryId));
+				} else if (this.isResolvableSkill(option)) {
+					options.add(option);
+				}
+			}
+			if (!options.isEmpty()) {
+				final TrainingSkillGrant resolvedSkill = new TrainingSkillGrant(
+						List.copyOf(new LinkedHashSet<>(options)), skillGrant.getRanksToDistribute());
+				resolvedSkill.setChoice(skillGrant.getChoice());
+				resolved.getSkills().add(resolvedSkill);
+			}
+		}
+		return resolved;
+	}
+
+	private List<String> getAdolescenceMarkerCandidates(Culture culture, String marker, String categoryId)
+			throws InvalidXmlElementException {
+		if (categoryId == null || MARKER_LANGUAGE.equals(marker)) {
+			return Collections.emptyList();
+		}
+		final List<String> cultureIds = MARKER_WEAPON.equals(marker) ? culture.getTypicalWeaponIds()
+				: culture.getTypicalArmorIds();
+		final List<String> categorySkillIds = this.getCategorySkillIds(categoryId);
+		final List<String> candidates = new ArrayList<>();
+		for (final String candidate : cultureIds) {
+			if (categorySkillIds.contains(candidate) && this.isResolvableSkill(candidate)) {
+				candidates.add(candidate);
+			}
+		}
+		return candidates;
+	}
+
+	private List<String> getCategorySkillIds(String categoryId) throws InvalidXmlElementException {
+		final Category category = RulesCatalog.getInstance().getCategory(categoryId);
+		return category.hasDynamicSkills() ? this.getWeaponSkillIds(categoryId) : category.getSkills();
+	}
+
+	private boolean isResolvableSkill(String skillId) {
+		try {
+			RulesCatalog.getInstance().getSkill(skillId);
+			return true;
+		} catch (final InvalidXmlElementException exception) {
+			return false;
+		}
 	}
 
 	private void applyCategoryGrants(String keyPrefix, List<TrainingCategoryGrant> grants,
@@ -1240,6 +1324,16 @@ public class CharacterPlayer {
 	private static final String OPTIONAL_RACE_LANGUAGE_PREFIX = "language:optionalRace:";
 	private static final String OPTIONAL_BACKGROUND_LANGUAGE_PREFIX = "language:optionalBackground:";
 	private static final String OPTIONAL_CULTURE_LANGUAGE_PREFIX = "language:optionalCulture:";
+
+	/**
+	 * Skill-option markers in the migrated culture adolescence data standing for "any of the
+	 * culture's typical weapons/armors" (see {@link #getResolvedAdolescenceRanks()}, resolved like
+	 * {@link Culture#isHobbySkillAllowed(String)}).
+	 */
+	private static final String MARKER_WEAPON = "weapon";
+	private static final String MARKER_ARMOR = "armor";
+	/** Legacy "language" marker in adolescence skill grants, routed to the language step instead. */
+	private static final String MARKER_LANGUAGE = "idiomas";
 
 	/**
 	 * Expands any {@link #ALL_WEAPON_CATEGORIES}/{@link #ALL_ATTACK_CATEGORIES}

@@ -26,6 +26,9 @@ public class TrainingSkillGrant {
     @JsonProperty("ranksToDistribute")
     private Integer ranksToDistribute;
 
+    @JsonProperty("choice")
+    private Boolean choice;
+
     public TrainingSkillGrant() {
         // Required by Jackson.
     }
@@ -43,18 +46,46 @@ public class TrainingSkillGrant {
         this.skillOptions = skillOptions;
     }
 
-    /** Whether the player must choose one skill among several, rather than getting a fixed one. */
+    /**
+     * Whether the player must choose one skill among several rather than getting a fixed one,
+     * per the migrated rule data: an explicit {@code <choice>true</choice>}. Grants that expanded
+     * a single marker into several {@link #getSkillOptions()} keep their original
+     * {@code <choice>false</choice>}, meaning "no user prompt, pick any candidate".
+     */
+    public boolean isExplicitChoice() {
+        return Boolean.TRUE.equals(choice);
+    }
+
+    /** Whether the player must choose one skill among several once expanded; see {@link #isExplicitChoice()}. */
     public boolean isChoice() {
         return getSkillOptions().size() > 1;
     }
 
+    public Boolean getChoice() {
+        return choice;
+    }
+
+    public void setChoice(Boolean choice) {
+        this.choice = choice;
+    }
+
     /**
-     * Resolves which skill this grant applies to: for a fixed grant, {@code selectedSkillId} is
-     * ignored and the single option is used; for an actual choice, {@code selectedSkillId} must be
-     * one of {@link #getSkillOptions()}.
+     * Resolves which skill this grant applies to: the single option of a fixed grant (for which
+     * {@code selectedSkillId} is ignored), an explicit choice requires {@code selectedSkillId} to
+     * be one of {@link #getSkillOptions()}, and a non-choice grant with several expanded options
+     * (see {@link #getResolvedAdolescenceRanks}) picks the first one unless {@code selectedSkillId}
+     * is given.
      */
     public Decision resolve(String selectedSkillId) {
-        return isChoice() ? Decision.select(getSkillOptions(), selectedSkillId) : Decision.fixed(getSkillOptions());
+        final List<String> options = getSkillOptions();
+        if (options.size() <= 1) {
+            return Decision.fixed(options);
+        }
+        if (!isExplicitChoice()) {
+            return Decision.select(options,
+                    selectedSkillId == null || selectedSkillId.isBlank() ? options.get(0) : selectedSkillId);
+        }
+        return Decision.select(options, selectedSkillId);
     }
 
     public Integer getRanksToDistribute() {
