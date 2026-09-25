@@ -1548,6 +1548,138 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * Total background points the race assigns to perk selection ({@code null} without a race). The
+	 * NG race catalog ships one combined {@link Race#getBackgroundPoints()} pool, so this mirrors the
+	 * legacy {@code Race#getPerksPoints()} budget check with that pool standing in for the legacy
+	 * computed perk points (see {@code PerkProbability}).
+	 */
+	public Integer getRacePerksPoints() throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		return race == null ? null : race.getBackgroundPoints();
+	}
+
+	/**
+	 * Background points the already-selected perks cost, summed from their raw {@link Perk#getCost()}
+	 * values (negative for weaknesses), matching the legacy {@code CharacterPlayer#getSpentPerksPoints()}.
+	 * A selected perk whose id no enabled module resolves is skipped.
+	 */
+	public int getSpentPerksPoints() throws InvalidXmlElementException {
+		int spent = 0;
+		for (final SelectedPerk selectedPerk : this.selectedPerks) {
+			final Perk perk;
+			try {
+				perk = RulesCatalog.getInstance().getPerk(selectedPerk.getPerkId());
+			} catch (final InvalidXmlElementException e) {
+				continue;
+			}
+			spent += perk.getCost() == null ? 0 : perk.getCost();
+		}
+		return spent;
+	}
+
+	/**
+	 * Whether one of the character's selected perks is a "stacking sibling" of {@code perk} (shares
+	 * its basic name), matching the legacy {@code Perk#getNameBasic()}/{@code
+	 * PerkProbability#hasAlreadySimilarPerk()}: taking a perk excludes any other version of the same
+	 * family (e.g. "Bonificación a Agilidad (Máximo)" vs "…(Menor)").
+	 */
+	public boolean hasSimilarPerk(Perk perk) throws InvalidXmlElementException {
+		final String nameBasic = getPerkNameBasic(perk);
+		if (nameBasic == null) {
+			return false;
+		}
+		for (final SelectedPerk selectedPerk : this.selectedPerks) {
+			final Perk selected;
+			try {
+				selected = RulesCatalog.getInstance().getPerk(selectedPerk.getPerkId());
+			} catch (final InvalidXmlElementException e) {
+				continue;
+			}
+			if (nameBasic.equals(getPerkNameBasic(selected))) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/** The legacy {@code Perk#getNameBasic()}: the Spanish display name up to the first "{@code (}", trimmed. */
+	public String getPerkNameBasic(Perk perk) {
+		if (perk.getName() == null || perk.getName().getSpanish() == null) {
+			return null;
+		}
+		final String spanishName = perk.getName().getSpanish();
+		final int parenthesis = spanishName.indexOf('(');
+		return parenthesis < 0 ? spanishName : spanishName.substring(0, parenthesis).trim();
+	}
+
+	/**
+	 * Whether {@code category} is a good target for a perk's fixed bonus, matching the legacy {@code
+	 * CharacterPlayer#isCategoryInteresting(Category)}: its option is enabled, and (for non-wizards)
+	 * it is not a spell-list category, and the character already has ranks or bonus in it, and its
+	 * first-rank development cost stays under {@link #MAX_REASONABLE_COST}.
+	 */
+	public boolean isCategoryInteresting(Category category) throws InvalidXmlElementException {
+		if (!this.isCategoryEnabledByOptions(category)) {
+			return false;
+		}
+		if (!this.isWizard() && isSpellListCategory(category.getId())) {
+			return false;
+		}
+		final int ranks = this.getCategoryTotalRanks(category.getId());
+		final int bonus = this.getCategoryTotalBonus(category);
+		// The legacy code required strictly positive values, so negative profession bonuses (the
+		// weight penalties of some professions) do not make a category interesting.
+		if (ranks <= 0 && bonus <= 0) {
+			return false;
+		}
+		final Integer cost = this.getCategoryDevelopmentCost(category.getId(), 0);
+		return cost != null && cost < MAX_REASONABLE_COST;
+	}
+
+	/** Whether {@code skill} already gives the character bonuses, enough for a perk's fixed bonus to matter (the legacy {@code isSkillInteresting}). */
+	public boolean isSkillInteresting(Skill skill) throws InvalidXmlElementException {
+		return this.getSkillTotalRanks(skill.getId()) > 0 || this.getSkillTotalBonus(skill) > 0;
+	}
+
+	/**
+	 * Whether a category's option is currently enabled, matching the legacy {@code
+	 * isCategoryOptionEnabled(Category)}: a spell-list category needs {@link #isMagicAllowed()}, a
+	 * weapon-firearm category needs {@link #isFirearmsAllowed()}, a category holding CHI-group
+	 * skills needs {@link #isChiPowersAllowed()}, every other category is always enabled.
+	 */
+	public boolean isCategoryEnabledByOptions(Category category) throws InvalidXmlElementException {
+		if (isSpellListCategory(category.getId())) {
+			return this.isMagicAllowed();
+		}
+		if (this.isFirearmCategoryId(category.getId())) {
+			return this.isFirearmsAllowed();
+		}
+		for (final String skillId : category.getSkills()) {
+			try {
+				if (RulesCatalog.getInstance().getSkill(skillId).getSkillGroup() == SkillGroup.CHI) {
+					return this.isChiPowersAllowed();
+				}
+			} catch (final InvalidXmlElementException e) {
+				// Dangling skill id referenced by a dynamic category: ignore it.
+			}
+		}
+		return true;
+	}
+
+	private boolean isFirearmCategoryId(String categoryId) {
+		return categoryId.startsWith("weaponsFirearm");
+	}
+
+	/** Whether {@code categoryId} names a spell list (see {@link RulesCatalog#getSpellList(String)}). */
+	public boolean isSpellListCategory(String categoryId) throws InvalidXmlElementException {
+		try {
+			return RulesCatalog.getInstance().getSpellList(categoryId) != null;
+		} catch (final InvalidXmlElementException e) {
+			return false;
+		}
+	}
+
+	/**
 	 * Pairs an already-selected perk with a weakness, discounting the perk's
 	 * background points cost.
 	 */
