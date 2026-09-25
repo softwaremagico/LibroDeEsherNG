@@ -16,6 +16,14 @@ public class Appearance {
         dicesResult = Dice.getRoll(5, 10);
     }
 
+    /**
+     * Rebuilds an appearance from a previously persisted dice roll (used when restoring a character,
+     * so the roll is never thrown a second time).
+     */
+    public Appearance(int dicesResult) {
+        this.dicesResult = dicesResult;
+    }
+
     public int getTotal(int presencePotentialValue) {
         return presencePotentialValue - 25 + dicesResult;
     }
