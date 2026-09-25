@@ -290,4 +290,20 @@ public class Profession extends Element {
         }
         return null;
     }
+
+    /**
+     * Whether this profession is the elementalist (the one whose own trainings are the "elemental
+     * triad" wizard specializations, see {@link com.softwaremagico.librodeesher.magic.ElementalTriad}).
+     *
+     * <p>The legacy {@code Profession#isElementalist()} compared the profession's Spanish display
+     * name against {@code Spanish.ELEMENTALIST_PROFESSION} ("Elementalista"); here the id-based
+     * equivalent of that same single profession is checked instead ({@code "elementalist"}, the only
+     * profession the migrated data marks as a spell caster whose training table lists the elemental
+     * wizard trainings), matching how the rest of the migrated model resolves by id.</p>
+     */
+    public boolean isElementalist() {
+        return ELEMENTALIST_PROFESSION_ID.equals(this.getId());
+    }
+
+    private static final String ELEMENTALIST_PROFESSION_ID = "elementalist";
 }
