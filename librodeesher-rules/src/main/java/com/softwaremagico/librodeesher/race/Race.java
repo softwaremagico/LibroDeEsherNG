@@ -278,8 +278,11 @@ public class Race extends Element {
         return getRandomName(sex, new Random());
     }
 
-    /** Same as {@link #getRandomName(SexType)}, but using the provided generator (seedable for tests). */
-    String getRandomName(SexType sex, Random random) {
+    /**
+     * Same as {@link #getRandomName(SexType)}, but using the provided generator (seedable for tests
+     * and the random character generator).
+     */
+    public String getRandomName(SexType sex, Random random) {
         final String firstName = randomFirstName(sex, random);
         final String surname = getFamilyNames().isEmpty()
                 ? "" : getFamilyNames().get(random.nextInt(getFamilyNames().size()));

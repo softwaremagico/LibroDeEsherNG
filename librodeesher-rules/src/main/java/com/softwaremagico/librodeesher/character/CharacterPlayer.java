@@ -97,6 +97,7 @@ public class CharacterPlayer {
 			CharacteristicAbbreviation.class);
 	private final Map<CharacteristicAbbreviation, Integer> characteristicPotentialValues = new EnumMap<>(
 			CharacteristicAbbreviation.class);
+	private boolean characteristicsConfirmed;
 	private Appearance appearance = new Appearance();
 
 	private int currentAge = AgeModification.INITIAL_AGE;
@@ -266,6 +267,45 @@ public class CharacterPlayer {
 
 	public void setCharacteristicPotentialValue(CharacteristicAbbreviation abbreviation, Integer value) {
 		this.characteristicPotentialValues.put(abbreviation, value);
+	}
+
+	/**
+	 * The creation-time temporal-point budget (defaults to {@link
+	 * Characteristics#TOTAL_CHARACTERISTICS_POINTS}, i.e. no crutch), matching the legacy {@code
+	 * CharacterPlayer#getCharacteristicsTemporalTotalPoints()}.
+	 */
+	public int getCharacteristicsTemporalTotalPoints() {
+		return Characteristics.TOTAL_CHARACTERISTICS_POINTS;
+	}
+
+	/**
+	 * How many temporal points the current initial temporal values cost together (the sum of {@link
+	 * Characteristic#getTemporalCost} over every real characteristic), matching the legacy {@code
+	 * CharacterPlayer#getCharacteristicsTemporalPointsSpent()}.
+	 */
+	public int getCharacteristicsTemporalPointsSpent() {
+		int total = 0;
+		for (final CharacteristicAbbreviation abbreviation : allRealCharacteristics()) {
+			total += Characteristic.getTemporalCost(this.getCharacteristicTemporalValue(abbreviation));
+		}
+		return total;
+	}
+
+	/**
+	 * Whether the initial temporal values were already confirmed at the end of the characteristic
+	 * creation step (see {@link #setCharacteristicsAsConfirmed}); one-way and not consulted by the
+	 * rest of this class, but kept for a faithful mirror of the legacy creation flow.
+	 */
+	public boolean isCharacteristicsConfirmed() {
+		return this.characteristicsConfirmed;
+	}
+
+	/**
+	 * Freezes the initial temporal values picked during the characteristic creation step, matching
+	 * the legacy {@code CharacterPlayer#setCharacteristicsAsConfirmed()}.
+	 */
+	public void setCharacteristicsAsConfirmed() {
+		this.characteristicsConfirmed = true;
 	}
 
 	/**
