@@ -6,6 +6,7 @@ import com.softwaremagico.librodeesher.character.SexType;
 import com.softwaremagico.librodeesher.characteristic.Characteristic;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
+import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.profession.Profession;
@@ -184,6 +185,7 @@ public class RandomCharacterPlayer {
         setCharacterInfo();
         setMagicRealm();
         setRandomCharacteristics(characterPlayer, specializationLevel);
+        setRandomCulture();
         setDevelopmentPoints();
         setLevels();
     }
@@ -299,6 +301,36 @@ public class RandomCharacterPlayer {
     }
 
     /**
+     * Rolls the currently selected culture's own creation ranks, mirroring the legacy {@code
+     * setCulture}: the adolescence category grants (through the same grant machinery a training uses,
+     * {@link #applyCultureAdolescenceRanks} on the rules side), with the languages, hobbies and
+     * culture spell ranks still pending in the next slice. Cultures without adolescence grants (or
+     * characters without a culture selected) are left untouched.
+     */
+    private void setRandomCulture() throws InvalidXmlElementException {
+        final Culture culture = characterPlayer.getCulture();
+        if (culture == null) {
+            return;
+        }
+        // The rules side expands the "weapon"/"armor" markers of the migrated data into the
+        // culture's typical weapons/armors (see {@code CharacterPlayer#getResolvedAdolescenceRanks}),
+        // both here for the cost estimate and in {@code applyCultureAdolescenceRanks}; both sides
+        // must see the very same concrete options for the estimate to stay exact.
+        final List<TrainingCategoryGrant> grants = characterPlayer.getResolvedAdolescenceRanks(culture);
+        if (grants.isEmpty()) {
+            return;
+        }
+        // The adolescence ranks count against the current level's development budget like any other
+        // grant (see {@code applyCultureAdolescenceRanks}), so they are applied only when affordable.
+        final GrantPicks picks = buildGrantPicks(characterPlayer, grants);
+        if (characterPlayer.getRemainingDevelopmentPoints() - picks.estimatedGrantCost < 0) {
+            return;
+        }
+        characterPlayer.applyCultureAdolescenceRanks(culture, picks.categorySelections, picks.skillSelections,
+                picks.additionalSkillRanks);
+    }
+
+    /**
      * Spends the character's current available development points, repeating the "pick trainings,
      * then pick category/skill ranks" loop up to {@link #MAX_TRIES} times until the budget runs
      * out. Probabilities are cached between tries so previously rolled categories/skills are not
@@ -368,7 +400,7 @@ public class RandomCharacterPlayer {
             // exactly like every other rank (see {@code CharacterPlayer#getSpentDevelopmentPoints}),
             // so a training whose grants would drive the budget below zero is rolled back untouched:
             // its own cost alone is never enough to tell.
-            final GrantPicks picks = buildTrainingCategoryPicks(characterPlayer, training, grants);
+            final GrantPicks picks = buildGrantPicks(characterPlayer, grants);
             if (characterPlayer.getRemainingDevelopmentPoints() - picks.estimatedGrantCost < 0) {
                 characterPlayer.removeCurrentLevelTraining(trainingId);
                 return;
@@ -389,8 +421,8 @@ public class RandomCharacterPlayer {
 
     // Computes the decision picks together with the exact development cost the granted ranks will
     // consume once applied, mirroring {@code CharacterPlayer#getSpentDevelopmentPoints} rank-per-rank.
-    private static GrantPicks buildTrainingCategoryPicks(CharacterPlayer characterPlayer, Training training,
-            List<TrainingCategoryGrant> grants) throws InvalidXmlElementException {
+    private static GrantPicks buildGrantPicks(CharacterPlayer characterPlayer, List<TrainingCategoryGrant> grants)
+            throws InvalidXmlElementException {
         final GrantPicks picks = new GrantPicks();
         // Projected per-category and per-skill rank counts for the cost tables (mirroring how
         // {@code getSpentDevelopmentPoints} indexes them rank-per-rank; the character itself is not

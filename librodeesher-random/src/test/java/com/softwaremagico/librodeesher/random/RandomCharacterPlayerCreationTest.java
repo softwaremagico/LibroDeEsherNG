@@ -83,6 +83,46 @@ public class RandomCharacterPlayerCreationTest {
 	}
 
 	@Test
+	public void cultureAdolescenceRanksStayWithinTheDevelopmentBudget() throws InvalidXmlElementException {
+		for (int seed = 1; seed <= 4; seed++) {
+			final CharacterPlayer character = newCharacter("fighter");
+			character.setCultureId("aquaticNomadic");
+			RandomValues.setRandomSeed(seed);
+			new RandomCharacterPlayer(character, 3).createRandomValues();
+			Assert.assertTrue(character.getRemainingDevelopmentPoints() >= 0,
+					"Adolescence ranks must never overdraw the development budget (seed " + seed + ")");
+		}
+	}
+
+	@Test
+	public void sameSeedProducesTheSameCultureAdolescenceRanks() throws InvalidXmlElementException {
+		final CharacterPlayer first = newCharacter("fighter");
+		first.setCultureId("aquaticNomadic");
+		RandomValues.setRandomSeed(4242L);
+		new RandomCharacterPlayer(first, 3).createRandomValues();
+
+		final CharacterPlayer second = newCharacter("fighter");
+		second.setCultureId("aquaticNomadic");
+		RandomValues.setRandomSeed(4242L);
+		new RandomCharacterPlayer(second, 3).createRandomValues();
+
+		Assert.assertEquals(cultureAdolescenceDecisions(second), cultureAdolescenceDecisions(first),
+				"Same seed must reproduce the culture adolescence selections");
+		Assert.assertEquals(second.getRemainingDevelopmentPoints(), first.getRemainingDevelopmentPoints(),
+				"Same seed must reproduce the development budget after the adolescence ranks");
+	}
+
+	private static List<String> cultureAdolescenceDecisions(CharacterPlayer character) {
+		final List<String> keys = new ArrayList<>();
+		for (final String key : character.getDecisions().getAll().keySet()) {
+			if (key.contains(":adolescence:")) {
+				keys.add(key);
+			}
+		}
+		return keys;
+	}
+
+	@Test
 	public void aSingleRealmCasterEndsUpCastingThatRealm() throws InvalidXmlElementException {
 		final CharacterPlayer character = newCharacter("bard");
 		RandomValues.setRandomSeed(3L);
