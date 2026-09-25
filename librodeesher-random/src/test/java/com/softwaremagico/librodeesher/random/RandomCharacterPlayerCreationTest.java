@@ -2,9 +2,11 @@ package com.softwaremagico.librodeesher.random;
 
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
+import com.softwaremagico.librodeesher.characteristic.CharacteristicRoll;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
+import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
@@ -16,6 +18,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -336,6 +339,74 @@ public class RandomCharacterPlayerCreationTest {
 		RandomCharacterPlayer.setRandomCharacteristics(character, 0);
 		RandomCharacterPlayer.setRandomTraining(character, trainingId, 0);
 		return characteristicsOf(character);
+	}
+
+	@Test
+	public void theWholeCreationReplaysEndToEndForTheSameSeedAndStaysConsistent() throws InvalidXmlElementException {
+		final CharacterPlayer first = newCharacter("fighter");
+		RandomValues.setRandomSeed(4242L);
+		new RandomCharacterPlayer(first, 3).createRandomValues();
+		assertConsistent(first);
+
+		final CharacterPlayer replayed = newCharacter("fighter");
+		RandomValues.setRandomSeed(4242L);
+		new RandomCharacterPlayer(replayed, 3).createRandomValues();
+
+		Assert.assertEquals(fullCreationFingerprint(replayed), fullCreationFingerprint(first),
+				"The whole creation (sex, name, realms, characteristics, culture, perks, background, "
+						+ "per-level ranks and trainings, rolls) must replay from the same seed");
+
+		String different = null;
+		for (long seed = 4243; seed < 4263 && different == null; seed++) {
+			final CharacterPlayer other = newCharacter("fighter");
+			RandomValues.setRandomSeed(seed);
+			new RandomCharacterPlayer(other, 3).createRandomValues();
+			if (!fullCreationFingerprint(other).equals(fullCreationFingerprint(first))) {
+				different = fullCreationFingerprint(other);
+			}
+		}
+		Assert.assertNotNull(different,
+				"Distinctly-seeded creations must not all reproduce the same character");
+	}
+
+	private static void assertConsistent(CharacterPlayer character) throws InvalidXmlElementException {
+		Assert.assertEquals(character.getLevels().size(), 3, "The character must reach the requested final level");
+		Assert.assertTrue(character.getRemainingDevelopmentPoints() >= 0,
+				"Development points must never go negative");
+		Assert.assertTrue(character.getCharacteristicsTemporalPointsSpent() <= TEMPORAL_BUDGET,
+				"Temporal characteristic points must never exceed their budget");
+		Assert.assertNotNull(character.getName(), "A random name must be generated");
+		Assert.assertNotNull(character.getSex(), "A random sex must be generated");
+	}
+
+	private static String fullCreationFingerprint(CharacterPlayer character) throws InvalidXmlElementException {
+		final List<String> entries = new ArrayList<>();
+		for (final CharacteristicAbbreviation abbreviation : realCharacteristics()) {
+			entries.add(abbreviation + "=" + character.getCharacteristicTemporalValue(abbreviation));
+		}
+		entries.add("sex:" + character.getSex());
+		entries.add("name:" + character.getName());
+		entries.add("realms:" + character.getRealmsOfMagic());
+		for (int level = 0; level < character.getLevels().size(); level++) {
+			final LevelUp levelUp = character.getLevels().get(level);
+			final String prefix = "lvl" + level + ":";
+			levelUp.getTrainings().forEach(training -> entries.add(prefix + "training:" + training));
+			levelUp.getCategoryRanks()
+					.forEach((categoryId, ranks) -> entries.add(prefix + "cat:" + categoryId + ":" + ranks));
+			levelUp.getSkillRanks()
+					.forEach((skillId, ranks) -> entries.add(prefix + "skill:" + skillId + ":" + ranks));
+			for (final CharacteristicRoll roll : levelUp.getCharacteristicUpdates()) {
+				entries.add(prefix + "roll:" + roll.getCharacteristicAbbreviation() + ":" + roll.getRoll());
+			}
+		}
+		entries.add("perks:" + backgroundFingerprint(character));
+		entries.add("hobby:" + hobbyRanksFingerprint(character));
+		final List<String> decisions = new ArrayList<>(character.getDecisions().getAll().keySet());
+		Collections.sort(decisions);
+		for (final String key : decisions) {
+			entries.add("decision:" + key + "=" + character.getDecisions().getSelectedOption(key));
+		}
+		return String.join(";", entries);
 	}
 
 	private static CharacterPlayer newCharacter(String professionId) throws InvalidXmlElementException {
