@@ -2903,6 +2903,14 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * Every hobby rank taken so far, keyed by skill id, so callers (e.g. a persistence
+	 * layer) can enumerate the free culture ranks instead of probing individual skills.
+	 */
+	public Map<String, Integer> getHobbySkillRanks() {
+		return this.hobbySkillRanks;
+	}
+
+	/**
 	 * Sets free hobby ranks in a spell list. The caller can use {@link #isHobbySpellListAllowed(String)}
 	 * to validate the culture's list-of-spells option before applying the selection.
 	 */
@@ -2916,6 +2924,14 @@ public class CharacterPlayer {
 
 	public int getHobbySpellListRank(String spellListId) {
 		return this.hobbySpellListRanks.getOrDefault(spellListId, 0);
+	}
+
+	/**
+	 * Every hobby rank taken in a spell list, keyed by spell list id (see {@link
+	 * #getHobbySkillRanks()}).
+	 */
+	public Map<String, Integer> getHobbySpellListRanks() {
+		return this.hobbySpellListRanks;
 	}
 
 	/**

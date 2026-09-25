@@ -977,6 +977,16 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void hobbyRanksAreEnumerableForPersistence() {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setHobbySkillRank("acrobatics", 3);
+		character.setHobbySpellListRank("essenceBarrierAgainstSpells", 2);
+
+		Assert.assertEquals(character.getHobbySkillRanks(), Map.of("acrobatics", 3));
+		Assert.assertEquals(character.getHobbySpellListRanks(), Map.of("essenceBarrierAgainstSpells", 2));
+	}
+
+	@Test
 	public void cultureHobbyDataIsQueryableAlongsideCharacterSpentRanks() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.setCultureId("aquaticMilitarista");
