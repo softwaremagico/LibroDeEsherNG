@@ -55,6 +55,7 @@ import com.softwaremagico.librodeesher.training.TrainingSpecialItem;
 import com.softwaremagico.librodeesher.training.TrainingItemType;
 import com.softwaremagico.librodeesher.training.TrainingType;
 import com.softwaremagico.librodeesher.weapon.Weapon;
+import com.softwaremagico.librodeesher.weapon.WeaponType;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -664,6 +665,126 @@ public class CharacterPlayer {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Whether {@code skillId} is a spell: a skill whose category is a spell list (see {@link
+	 * MagicSpellList}), the NG equivalent of the legacy "spell list category" detection used by the
+	 * random character generator.
+	 */
+	public boolean isSpellSkill(String skillId) {
+		final Skill skill;
+		try {
+			skill = RulesCatalog.getInstance().getSkill(skillId);
+		} catch (final InvalidXmlElementException e) {
+			return false;
+		}
+		try {
+			return RulesCatalog.getInstance().getSpellList(skill.getCategoryId()) != null;
+		} catch (final InvalidXmlElementException e) {
+			return false;
+		}
+	}
+
+	/** Ranks bought at the current level in {@code skillId} (see {@link LevelUp#getSkillRanks(String)}). */
+	public Integer getSkillCurrentLevelRanks(String skillId) {
+		return this.getCurrentLevel().getSkillRanks(skillId);
+	}
+
+	/**
+	 * Every spell skill id of {@code spellListId}, in the order {@code skills.xml} declares them.
+	 * Spells are regular skills whose category id is the spell list they belong to.
+	 */
+	public List<String> getSpellListSkillIds(String spellListId) throws InvalidXmlElementException {
+		final List<String> ids = new ArrayList<>();
+		for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
+			if (spellListId.equals(skill.getCategoryId())) {
+				ids.add(skill.getId());
+			}
+		}
+		return ids;
+	}
+
+	/** Ranks bought directly in {@code categoryId}'s own development track at the current level. */
+	public Integer getCurrentLevelCategoryRanks(String categoryId) {
+		return this.getCurrentLevel().getCategoryRanks(categoryId);
+	}
+
+	/**
+	 * The development point cost of the next rank of {@code skillId} at the current level, matching
+	 * the legacy {@code CharacterPlayer#getNewRankCost(Skill)}: a skill ranks up through its own
+	 * category's cost table, a spell through its spell list's cost bracket (including the
+	 * multiple-lists-per-level multiplier). {@code null} when the character has no profession or the
+	 * skill is not currently developable.
+	 */
+	public Integer getSkillDevelopmentCost(String skillId, int currentLevelRanks) throws InvalidXmlElementException {
+		if (this.isSpellSkill(skillId)) {
+			final String spellListId = RulesCatalog.getInstance().getSkill(skillId).getCategoryId();
+			return this.getSpellListDevelopmentCost(spellListId, this.getSpellListTotalRanks(spellListId),
+					this.getCurrentLevel().getSpellListRanks(spellListId));
+		}
+		return this.getCategoryDevelopmentCost(RulesCatalog.getInstance().getSkill(skillId).getCategoryId(),
+				currentLevelRanks);
+	}
+
+	/**
+	 * Every skill of {@code category} with at least one rank bought at the current level, matching the
+	 * legacy {@code CharacterPlayer#getSkillsWithNewRanks(Category)}.
+	 */
+	public List<String> getCategorySkillsWithNewRanks(Category category) {
+		final List<String> skillsWithRanks = new ArrayList<>();
+		for (final String skillId : category.getSkills()) {
+			if (this.getSkillCurrentLevelRanks(skillId) > 0) {
+				skillsWithRanks.add(skillId);
+			}
+		}
+		return skillsWithRanks;
+	}
+
+	/**
+	 * How many weapon categories received a rank at the current level, matching the legacy {@code
+	 * CharacterPlayer#getWeaponsLearnedInCurrentLevel()}.
+	 */
+	public int getWeaponsLearnedInCurrentLevel() {
+		int weapons = 0;
+		for (final WeaponType type : WeaponType.values()) {
+			if (this.getCurrentLevelCategoryRanks(type.getCategoryId()) > 0) {
+				weapons++;
+			}
+		}
+		return weapons;
+	}
+
+	/** Whether {@code categoryId} is one of the weapon-category ids (see {@link WeaponType}). */
+	public static boolean isWeaponCategoryId(String categoryId) {
+		for (final WeaponType type : WeaponType.values()) {
+			if (type.getCategoryId().equals(categoryId)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Total bonus of {@code skill}, matching the legacy {@code CharacterPlayer#getTotalValue(Skill)}.
+	 */
+	public Integer getSkillTotalBonus(Skill skill) throws InvalidXmlElementException {
+		final Category category = RulesCatalog.getInstance().getCategory(skill.getCategoryId());
+		return this.getSkillTotalBonus(category, skill.getId());
+	}
+
+	/**
+	 * Maximum ranks per level the selected profession allows for a whole {@code listType} magic
+	 * bracket (the size of the bracket's cost table at the current level), matching the legacy {@code
+	 * getMaxRanksPerLevel(Category, 0)} for open/closed/basic lists.
+	 */
+	public int getMaximumMagicListRanksPerLevel(MagicListType listType) throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		if (profession == null) {
+			return 0;
+		}
+		final ProfessionMagicCost bracket = profession.getMagicCost(listType, 0);
+		return bracket == null ? 0 : bracket.getRankCosts().size();
 	}
 
 	/**
