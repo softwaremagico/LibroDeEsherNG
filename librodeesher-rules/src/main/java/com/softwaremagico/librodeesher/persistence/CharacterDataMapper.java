@@ -15,6 +15,7 @@ import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -191,7 +192,8 @@ public final class CharacterDataMapper {
         return character;
     }
 
-    private static LevelUp toLevelUp(LevelData levelData) {
+    /** Rebuilds a {@link LevelUp} from a flat {@link LevelData} (used when importing a shared level). */
+    public static LevelUp toLevelUp(LevelData levelData) {
         final LevelUp levelUp = new LevelUp();
         levelUp.setCategoryRanks(new HashMap<>(levelData.getCategoryRanks()));
         levelUp.setSkillRanks(new HashMap<>(levelData.getSkillRanks()));
@@ -207,6 +209,25 @@ public final class CharacterDataMapper {
         }
         levelUp.getAgeModifications().addAll(levelData.getAgeModifications());
         return levelUp;
+    }
+
+    /**
+     * A byte-stable fingerprint of everything that defines a character's identity at creation time
+     * (identity fields, characteristics, appearance, ages, background, perks and flags), without any
+     * of the state that grows with each level (level bookkeeping, hobby ranks, equipment, magic
+     * items and decisions). Two copies of the same character share the fingerprint regardless of how
+     * many levels they have progressed, which is what {@link LevelJsonManager} uses to accept a
+     * shared level for the right character.
+     */
+    public static String toIdentitySnapshot(CharacterPlayer character) {
+        final CharacterData data = toData(character);
+        data.setLevels(new ArrayList<>());
+        data.setDecisions(new LinkedHashMap<>());
+        data.setHobbySkillRanks(new LinkedHashMap<>());
+        data.setHobbySpellListRanks(new LinkedHashMap<>());
+        data.setMagicItems(new ArrayList<>());
+        data.setStandardEquipment(new ArrayList<>());
+        return CharacterJsonManager.toJson(data);
     }
 
     private static List<CharacteristicAbbreviation> realCharacteristics() {
