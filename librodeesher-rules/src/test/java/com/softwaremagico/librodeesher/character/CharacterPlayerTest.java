@@ -38,6 +38,7 @@ import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Verifies {@link CharacterPlayer}'s identity, characteristic and level
@@ -75,6 +76,24 @@ public class CharacterPlayerTest {
 
 		Assert.assertEquals(character.getLevel(), 2);
 		Assert.assertSame(character.getCurrentLevel(), secondLevel);
+		Assert.assertNotSame(secondLevel, firstLevel);
+	}
+
+	@Test
+	public void increaseLevelAdvancesAgeAndCopiesFavouriteSkills() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("warTroll");
+		character.setCurrentAge(10);
+		character.setFinalAge(11);
+		character.getCurrentLevel().addFavouriteSkill("sword");
+		final LevelUp firstLevel = character.getCurrentLevel();
+
+		final LevelUp secondLevel = character.increaseLevel();
+
+		Assert.assertEquals(character.getCurrentAge(), 11);
+		Assert.assertEquals(character.getLevel(), 2);
+		Assert.assertSame(character.getCurrentLevel(), secondLevel);
+		Assert.assertEquals(secondLevel.getFavouriteSkills(), Set.of("sword"));
 		Assert.assertNotSame(secondLevel, firstLevel);
 	}
 

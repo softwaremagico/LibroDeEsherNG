@@ -514,9 +514,28 @@ public class CharacterPlayer {
 		return this.levels.get(this.levels.size() - 1);
 	}
 
-	/** Adds a new, empty level and returns it, making it the current level. */
+	/**
+	 * Adds a new, empty level and returns it, making it the current level. Mirrors the legacy
+	 * {@code CharacterPlayer#increaseLevel()} orchestration that the rule model supports: age is
+	 * advanced from {@link #getCurrentAge()} to {@link #getFinalAge()} (a no-op for a character
+	 * still at its initial age, see {@link AgeModification#INITIAL_AGE}; its age modifications are
+	 * recorded on the previous level, exactly as the legacy method did), and the previous level's
+	 * favourite skills are copied over. The per-level characteristic development rolls themselves
+	 * are recorded by {@link #applyCharacteristicUpgrade} when such an upgrade is chosen, replacing
+	 * the legacy stored-roll snapshots.
+	 */
 	public LevelUp increaseLevel() {
 		final LevelUp levelUp = new LevelUp();
+		if (this.raceId != null) {
+			try {
+				this.increaseAge();
+			} catch (final InvalidXmlElementException e) {
+				// An unresolvable race id cannot advance age; the level-up still happens.
+			}
+		}
+		if (!this.levels.isEmpty()) {
+			levelUp.setFavouriteSkills(new HashSet<>(this.getCurrentLevel().getFavouriteSkills()));
+		}
 		this.levels.add(levelUp);
 		return levelUp;
 	}
