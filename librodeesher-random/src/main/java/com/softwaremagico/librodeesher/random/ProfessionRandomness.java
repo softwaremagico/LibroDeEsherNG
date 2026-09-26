@@ -9,18 +9,38 @@ import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.skill.Skill;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * How much the character's profession favours a skill, mirroring the legacy {@code
  * ProfessionRandomness#preferredSkillByProfession} on the id-based NG model. Spell lists are
  * classified exactly as in the legacy {@code MagicListType.BASIC/OPEN/CLOSED} branches (NG
- * {@link MagicListType} via {@link CharacterPlayer#classifySpellList(String)}), weapon/PD/PPD/armour
- * rules reuse the NG category types and ids; the legacy "aimed spells" elementalist special case
- * targeted Spanish skill names without an NG equivalent and is dropped.
+ * {@link MagicListType} via {@link CharacterPlayer#classifySpellList(String)}); the legacy
+ * "aimed spells" elementalist special case is matched on the {@code directedSpells} category and
+ * its element's basic law list; weapon/PD/PPD/armour rules reuse the NG category types and ids.
+ * Comparisons the legacy performed on {@code CharacterPlayer#getTotalValue} use
+ * {@link CharacterPlayer#getSkillTotalValue(Skill)}.
  */
 public final class ProfessionRandomness {
 
     private static final String COMMUNICATION_CATEGORY = "communication";
+    private static final String DIRECTED_SPELLS_CATEGORY = "directedSpells";
+
+    // Directed spell skill -> the elementalist basic spell list of its element (NG ids). Skills
+    // whose element has no law list in the migrated modules (aether, void, strength) are absent.
+    private static final Map<String, String> DIRECTED_SPELL_TO_LAW_LIST = Map.ofEntries(
+            Map.entry("ballOfFire", "essenceLawOfFire"),
+            Map.entry("boltOfFire", "essenceLawOfFire"),
+            Map.entry("ballOfCold", "essenceLawOfIce"),
+            Map.entry("boltOfCold", "essenceLawOfIce"),
+            Map.entry("boltOfIce", "essenceLawOfIce"),
+            Map.entry("boltOfWater", "essenceLawOfWater"),
+            Map.entry("boltOfSteam", "essenceLawOfWater"),
+            Map.entry("boltOfAir", "essenceLawOfWind"),
+            Map.entry("boltOfDischarge", "essenceLawOfWind"),
+            Map.entry("estallidoCyclonic", "essenceLawOfWind"),
+            Map.entry("lightning", "essenceLawOfWind"),
+            Map.entry("stone", "essenceLawOfEarth"));
 
     private ProfessionRandomness() {
         // Utility class.
@@ -76,6 +96,10 @@ public final class ProfessionRandomness {
                     }
                 }
             }
+        }
+
+        // For spellcasters: power point development, and elementalist aimed spells.
+        if (characterPlayer.isWizard()) {
             if (isPowerPointDevelopment(skill)) {
                 if (currentLevelRanks(characterPlayer, skill) == 0) {
                     return 50;
@@ -84,7 +108,7 @@ public final class ProfessionRandomness {
                 for (final String spellListId : characterPlayer.getAvailableSpellListIds()) {
                     for (final String spellId : characterPlayer.getSpellListSkillIds(spellListId)) {
                         final Skill spell = RulesCatalog.getInstance().getSkill(spellId);
-                        if (characterPlayer.getSkillTotalBonus(spell) < characterPlayer.getSkillTotalBonus(skill)) {
+                        if (characterPlayer.getSkillTotalValue(spell) < characterPlayer.getSkillTotalValue(skill)) {
                             return 100;
                         }
                     }
@@ -94,6 +118,20 @@ public final class ProfessionRandomness {
                     return 10 * (characterPlayer.getLevel() - characterPlayer.getCategoryTotalRanks(skill.getCategoryId())
                             + currentLevelRanks(characterPlayer, skill));
                 }
+            }
+            if (isDirectedSpell(skill)) {
+                final String lawListId = DIRECTED_SPELL_TO_LAW_LIST.get(skill.getId());
+                if (lawListId == null) {
+                    // No elemental law list matches (aether/void/strength); the legacy rule only
+                    // ever saw element-named directed spells, so these stay neutral.
+                    return 0;
+                }
+                // Already has a rank in the element's basic list; aims the directed spell up to it.
+                final int lawRanks = characterPlayer.getSpellListTotalRanks(lawListId);
+                if (lawRanks > 0) {
+                    return 10 * (lawRanks - characterPlayer.getSkillRealRanks(skill));
+                }
+                return NEVER;
             }
         }
 
@@ -244,6 +282,10 @@ public final class ProfessionRandomness {
 
     private static boolean isPowerPointDevelopment(Skill skill) throws InvalidXmlElementException {
         return RulesCatalog.getInstance().getCategory(skill.getCategoryId()).getType() == CategoryType.PPD;
+    }
+
+    private static boolean isDirectedSpell(Skill skill) {
+        return DIRECTED_SPELLS_CATEGORY.equals(skill.getCategoryId());
     }
 
     private static boolean isPhysicalDevelopment(Skill skill) throws InvalidXmlElementException {

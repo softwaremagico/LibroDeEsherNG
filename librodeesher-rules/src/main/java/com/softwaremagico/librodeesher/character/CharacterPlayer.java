@@ -840,6 +840,19 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * The legacy {@code CharacterPlayer#getTotalValue(Skill)}: the skill's development bonus plus the
+	 * whole {@link #getCategoryDevelopmentBonus(Category)} (its rank bonus, fixed bonus and the flat
+	 * profession/background/perk bonuses included) plus the category's characteristic bonus. Item
+	 * bonuses are deliberately excluded, exactly like the legacy total value, so the result is
+	 * comparable with the threshold the random character generator is calibrated on.
+	 */
+	public Integer getSkillTotalValue(Skill skill) throws InvalidXmlElementException {
+		final Category category = RulesCatalog.getInstance().getCategory(skill.getCategoryId());
+		return this.getSkillDevelopmentBonus(category, skill.getId())
+				+ this.getCategoryDevelopmentBonus(category) + this.getCategoryCharacteristicBonus(category);
+	}
+
+	/**
 	 * Maximum ranks per level the selected profession allows for a whole {@code listType} magic
 	 * bracket (the size of the bracket's cost table at the current level), matching the legacy {@code
 	 * getMaxRanksPerLevel(Category, 0)} for open/closed/basic lists.

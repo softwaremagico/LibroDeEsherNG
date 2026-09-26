@@ -53,6 +53,28 @@ public class ProfessionRandomnessTest {
 				RulesCatalog.getInstance().getCategory("selfControl"), 1), 0);
 	}
 
+	@Test
+	public void wizardFavoursUntouchedPowerPointDevelopment() throws InvalidXmlElementException {
+		// The legacy wizard PPD branch is not gated on the skill being a spell.
+		Assert.assertEquals(preferredSkillByProfession("powerPointDevelopment", freshWizard()), 50);
+	}
+
+	@Test
+	public void directedSpellsFollowTheirElementLawListRanks() throws InvalidXmlElementException {
+		// Without a rank in the element's basic list the directed spell is vetoed.
+		final CharacterPlayer wizard = freshWizard();
+		Assert.assertEquals(preferredSkillByProfession("ballOfFire", wizard), ProfessionRandomness.NEVER);
+		// A rank in the Law of Fire rewards Fire Ball by 10 * (1 - 0).
+		Assert.assertTrue(wizard.setCurrentLevelSpellListRanks("essenceLawOfFire", 1));
+		Assert.assertEquals(preferredSkillByProfession("ballOfFire", wizard), 10);
+	}
+
+	@Test
+	public void directedSpellsWithoutAnElementLawListStayNeutral() throws InvalidXmlElementException {
+		// Void/Aether/Strength directed spells have no "Ley de" list in the migrated modules.
+		Assert.assertEquals(preferredSkillByProfession("ballOfVoid", freshWizard()), 0);
+	}
+
 	private static int preferredSkillByProfession(String skillId) throws InvalidXmlElementException {
 		return preferredSkillByProfession(skillId, freshFighter());
 	}
@@ -73,6 +95,13 @@ public class ProfessionRandomnessTest {
 	private static CharacterPlayer freshMonk() {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.setProfessionId("monk");
+		return character;
+	}
+
+	private static CharacterPlayer freshWizard() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("wizard");
+		character.applyProfessionMagicRealms(null);
 		return character;
 	}
 }

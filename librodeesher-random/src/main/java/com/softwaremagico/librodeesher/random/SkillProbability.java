@@ -239,9 +239,17 @@ public class SkillProbability {
         return 0;
     }
 
-    /** Greater specialization allows more skills per category. */
-    private int skillsPerCategory() {
-        return characterPlayer.getCurrentLevelCategoryRanks(skill.getCategoryId()) * specializationLevel * 2;
+    /**
+     * Greater specialization allows more skills per category: the sum of the ranks bought this level
+     * in the category's skills (not the category's own development track), matching the legacy
+     * {@code getCurrentLevelSkillsRanks(Category)}.
+     */
+    private int skillsPerCategory() throws InvalidXmlElementException {
+        int currentLevelSkillRanks = 0;
+        for (final String skillId : RulesCatalog.getInstance().getCategory(skill.getCategoryId()).getSkills()) {
+            currentLevelSkillRanks += characterPlayer.getSkillCurrentLevelRanks(skillId);
+        }
+        return currentLevelSkillRanks * specializationLevel * 2;
     }
 
     private int randomnessByRanks() throws InvalidXmlElementException {
@@ -263,21 +271,21 @@ public class SkillProbability {
         }
 
         // Not so many communication skills.
-        if (COMMUNICATION_CATEGORY.equals(skill.getCategoryId()) && characterPlayer.getSkillTotalBonus(skill) > 60) {
+        if (COMMUNICATION_CATEGORY.equals(skill.getCategoryId()) && characterPlayer.getSkillTotalValue(skill) > 60) {
             bonus -= 40;
         }
 
         // Check armour values; armours are also useless if the race has natural armour.
         if ("armorLight".equals(skill.getCategoryId())
-                && (naturalArmorType() > 2 || characterPlayer.getSkillTotalBonus(skill) > 30)) {
+                && (naturalArmorType() > 2 || characterPlayer.getSkillTotalValue(skill) > 30)) {
             return -MAX_VALUE;
         }
         if ("armorMiddle".equals(skill.getCategoryId())
-                && (naturalArmorType() > 4 || characterPlayer.getSkillTotalBonus(skill) > 100)) {
+                && (naturalArmorType() > 4 || characterPlayer.getSkillTotalValue(skill) > 100)) {
             return -MAX_VALUE;
         }
         if ("armorHeavy".equals(skill.getCategoryId())
-                && (naturalArmorType() > 12 || characterPlayer.getSkillTotalBonus(skill) > 120)) {
+                && (naturalArmorType() > 12 || characterPlayer.getSkillTotalValue(skill) > 120)) {
             return -MAX_VALUE;
         }
 
