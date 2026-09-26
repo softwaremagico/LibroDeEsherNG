@@ -971,6 +971,16 @@ public class CharacterPlayer {
 						: Decision.fixed(offeredCategories));
 		final String categoryId = categoryDecision.getSelectedOption();
 		this.getCurrentLevel().addCategoryRanks(categoryId, grant.getRanksGranted());
+		// A grant that develops a spell list counts as list ranks for the
+		// many-lists-per-level multiplier and the list rank totals (the legacy
+		// CategoryGroup.SPELL auto-detection); see LevelUp#setSpellListRanks.
+		try {
+			if (RulesCatalog.getInstance().getSpellList(categoryId) != null) {
+				this.getCurrentLevel().addSpellListRanks(categoryId, grant.getRanksGranted());
+			}
+		} catch (final InvalidXmlElementException e) {
+			// Not a spell list category; nothing else to track.
+		}
 
 		final List<TrainingSkillGrant> skills = grant.getSkills();
 		final Set<String> namedSkillIds = new HashSet<>();
@@ -984,11 +994,8 @@ public class CharacterPlayer {
 			final Decision skillDecision = this.decideOrReuse(skillKey, () -> skillGrant.resolve(selectedSkillId));
 			namedSkillIds.add(skillDecision.getSelectedOption());
 			namedRanks += skillGrant.getRanksToDistribute();
-			// Whether this is a spell skill is not resolved here (it requires
-			// cross-referencing the
-			// skill's category), see LevelUp#setSkillRanks; future work.
 			this.getCurrentLevel().addSkillRanks(skillDecision.getSelectedOption(), skillGrant.getRanksToDistribute(),
-					false);
+					this.isSpellSkill(skillDecision.getSelectedOption()));
 		}
 
 		final int remainingRanks = grant.getRanksToDistribute() == null ? 0 : grant.getRanksToDistribute() - namedRanks;
@@ -1028,7 +1035,7 @@ public class CharacterPlayer {
 					"Expected the additional skill ranks to add up to " + remainingRanks + ", got " + sum + ".");
 		}
 		for (final Map.Entry<String, Integer> entry : additionalSkillRanks.entrySet()) {
-			this.getCurrentLevel().addSkillRanks(entry.getKey(), entry.getValue(), false);
+			this.getCurrentLevel().addSkillRanks(entry.getKey(), entry.getValue(), this.isSpellSkill(entry.getKey()));
 		}
 	}
 
@@ -3107,14 +3114,15 @@ public class CharacterPlayer {
 	public boolean setCurrentLevelSkillRanks(String skillId, int ranks) throws InvalidXmlElementException {
 		final Skill skill = RulesCatalog.getInstance().getSkill(skillId);
 		final LevelUp level = this.getCurrentLevel();
+		final boolean isSpellSkill = this.isSpellSkill(skillId);
 		final int previousRanks = level.getSkillRanks(skillId);
 		if (ranks < 0 || (ranks > previousRanks && (!this.isSkillEnabled(skill) || this.isSkillDisabledByOptions(skill)
 					|| ranks > this.getMaximumCategoryRanksThisLevel(skill.getCategoryId())))) {
 			return false;
 		}
-		level.setSkillRanks(skillId, ranks, false);
+		level.setSkillRanks(skillId, ranks, isSpellSkill);
 		if (this.getRemainingDevelopmentPoints() < 0) {
-			level.setSkillRanks(skillId, previousRanks, false);
+			level.setSkillRanks(skillId, previousRanks, isSpellSkill);
 			return false;
 		}
 		return true;

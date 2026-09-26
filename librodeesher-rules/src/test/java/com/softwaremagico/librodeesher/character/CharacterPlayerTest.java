@@ -1800,6 +1800,44 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void buyingSpellListRanksRegistersTheListForTheMultiplier() throws InvalidXmlElementException {
+		final CharacterPlayer wizard = new CharacterPlayer();
+		wizard.setProfessionId("wizard");
+		wizard.applyProfessionMagicRealms(null);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 500);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.CONSTITUTION, 500);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.MEMORY, 500);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.REASONING, 500);
+		wizard.setCharacteristicTemporalValue(CharacteristicAbbreviation.SELF_DISCIPLINE, 500);
+
+		Assert.assertTrue(wizard.setCurrentLevelSpellListRanks("essenceLawOfLight", 1));
+		Assert.assertEquals(wizard.getCurrentLevel().getSpellListRanks("essenceLawOfLight"), Integer.valueOf(1));
+		Assert.assertEquals(wizard.getSpellListTotalRanks("essenceLawOfLight"), Integer.valueOf(1));
+		Assert.assertTrue(wizard.getCurrentLevel().getSpellsUpdated().contains("essenceLawOfLight"));
+	}
+
+	@Test
+	public void spellListRanksGrantedByACategoryGrantAreTrackedAsSpellListRanks() throws InvalidXmlElementException {
+		final CharacterPlayer wizard = new CharacterPlayer();
+		wizard.setProfessionId("wizard");
+		wizard.applyProfessionMagicRealms(null);
+
+		final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+		grant.setCategoryOptions(List.of("essenceLawOfLight"));
+		grant.setRanksGranted(2);
+		grant.setMaxSkills(0);
+		grant.setMinSkills(0);
+		grant.setRanksToDistribute(0);
+
+		wizard.applyCategoryGrant("culture:test:adolescence:0", grant, null, null, Map.of());
+
+		Assert.assertEquals(wizard.getCurrentLevel().getCategoryRanks("essenceLawOfLight"), Integer.valueOf(2));
+		Assert.assertEquals(wizard.getCurrentLevel().getSpellListRanks("essenceLawOfLight"), Integer.valueOf(2));
+		Assert.assertEquals(wizard.getSpellListTotalRanks("essenceLawOfLight"), Integer.valueOf(2));
+		Assert.assertTrue(wizard.getCurrentLevel().getSpellsUpdated().contains("essenceLawOfLight"));
+	}
+
+	@Test
 	public void availableSpellListsRespectActiveMagicCostsAndRankLimits() throws InvalidXmlElementException {
 		final CharacterPlayer wizard = new CharacterPlayer();
 		wizard.setProfessionId("wizard");
