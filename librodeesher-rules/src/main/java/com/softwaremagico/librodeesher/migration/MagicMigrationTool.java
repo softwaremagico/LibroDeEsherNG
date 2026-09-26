@@ -115,13 +115,16 @@ public final class MagicMigrationTool {
      * trainingIndex} (professions are tried first, since a handful of training names collide with an
      * unrelated profession's name after translation).
      *
-     * <p><strong>Known simplification:</strong> "dark spell" pseudo-owner tags (e.g. legacy's
-     * per-realm "Hechicero Oscuro"-style tag, used so a dark-magic profession's own lists can also
-     * count as basic lists for it) and the "elementalist training" special-casing (legacy's {@code
-     * MagicFactory#getElementalistTraining}) are not resolved to anything and are kept as a readable,
-     * non-accented placeholder instead: classifying a spell list as {@code BASIC} vs. {@code OPEN}
-     * for those two cases specifically is future work (see {@code CharacterPlayer}'s spell list
-     * javadoc).</p>
+     * <p><strong>Known simplification:</strong> "dark spell" owner tags (e.g. legacy's per-realm
+     * "Hechicero Oscuro"-style tag, used so a dark-magic profession's own lists can also count as
+     * basic lists for it) and the "elementalist training" special-casing (legacy's {@code
+     * MagicFactory#getElementalistTraining}) are not translated by this tool: the language-derived
+     * placeholder written here simply never matches a loaded profession/training id. That is
+     * intentional, because both special cases are handled at runtime instead: dark lists are
+     * recognised by {@link MagicSpellList#isDarkList()} and counted as basic when the character
+     * allows {@code CharacterPlayer#setDarkSpellsAsBasicListsAllowed(boolean)}, and the elementalist
+     * training id is resolved by {@code CharacterPlayer#getElementalistTrainingId()} from the
+     * character's own chosen training.</p>
      */
     private static List<String> translateOwners(String[] rawOwners, Map<String, String> professionIndex,
                                                   Map<String, String> trainingIndex) {

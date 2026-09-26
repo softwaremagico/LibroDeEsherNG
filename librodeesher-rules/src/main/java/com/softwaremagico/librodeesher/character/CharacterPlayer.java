@@ -545,10 +545,13 @@ public class CharacterPlayer {
 	 * skills), across every level so far.
 	 *
 	 * <p>
-	 * This only sums {@link LevelUp#getCategoryRanks(String)}; ranks granted by
-	 * culture/training selections are future work (they require a
-	 * decision-resolution layer that does not exist yet, since a grant may offer a
-	 * choice of categories/skills).
+	 * This sums {@link LevelUp#getCategoryRanks(String)} across the levels: ranks
+	 * bought via {@link #setCurrentLevelCategoryRanks(String, int)} and ranks
+	 * recorded by a training/culture category grant when it is applied (see
+	 * {@link #applyCategoryGrant}, which develops the granted category through
+	 * that same per-level track, or the spell-list track when the category is a
+	 * spell list). Ranks developed in the category's individual skills are
+	 * therefore not part of this total.
 	 * </p>
 	 */
 	public Integer getCategoryTotalRanks(String categoryId) {
@@ -563,8 +566,11 @@ public class CharacterPlayer {
 	 * Total ranks bought in a skill, across every level so far.
 	 *
 	 * <p>
-	 * Same limitation as {@link #getCategoryTotalRanks(String)}: only sums
-	 * {@link LevelUp#getSkillRanks(String)}.
+	 * Sums {@link LevelUp#getSkillRanks(String)} across the levels (which include
+	 * the ranks a training/culture skill grant records when it is applied, see
+	 * {@link #applyCategoryGrant}), plus the skill's hobby ranks, net of the
+	 * rank cost of any {@link #addSkillSpecialization(String, String)}
+	 * specialization consumed from its pool.
 	 * </p>
 	 */
 	public Integer getSkillTotalRanks(String skillId) {
@@ -2239,8 +2245,9 @@ public class CharacterPlayer {
 	 * selected profession, or by the character's own elementalist training if any (its "basic lists";
 	 * matching the legacy {@code MagicFactory#getListOfProfession}/{@code
 	 * MagicSpellLists#orderSpellListsByCategory}'s own {@code elementalistList} addition to {@code
-	 * basicSpells}; the "dark spell" special case is still future work); empty if no profession is
-	 * selected and the character has no elementalist training either.
+	 * basicSpells}); when {@link #setDarkSpellsAsBasicListsAllowed(boolean)} is set, the realm's dark
+	 * lists ({@link MagicSpellList#isDarkList()}) are classified as basic too. Empty if no profession
+	 * is selected and the character has no elementalist training either.
 	 */
 	public List<MagicSpellList> getBasicSpellLists() throws InvalidXmlElementException {
 		final Profession profession = this.getProfession();
