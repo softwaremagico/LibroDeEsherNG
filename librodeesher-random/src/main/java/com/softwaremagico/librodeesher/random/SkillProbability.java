@@ -3,7 +3,10 @@ package com.softwaremagico.librodeesher.random;
 import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.category.CategoryType;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
+import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
+import com.softwaremagico.librodeesher.magic.RealmOfMagic;
+import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.skill.Skill;
 import com.softwaremagico.librodeesher.skill.SkillGroup;
@@ -39,6 +42,33 @@ public class SkillProbability {
     private static final String MARTIAL_ARTS_PREFIX = "martialArts";
     private static final String ADRENAL_TAG = "adrenal";
     private static final String LYCHANTROPY_TAG = "lycanthrope";
+
+    // NG ids of the legacy Spanish-named mount skills and knowledge skills, see
+    // randomnessByRace()/culturalSkill().
+    private static final String MOUNT_HORSES = "montarCaballos";
+    private static final String MOUNT_WOLVES = "montarLobos";
+    private static final String MOUNT_BEARS = "montarOsos";
+    private static final String MOUNT_CAMELS = "montarCamellos";
+    private static final String KNOWLEDGE_REGIONAL = "loreRegional";
+    private static final String KNOWLEDGE_CULTURAL = "loreCultural";
+    private static final String KNOWLEDGE_FAUNA = "loreOfFauna";
+    private static final String KNOWLEDGE_FLORA = "loreOfFlora";
+
+    // The five "famous" spell lists the legacy wizardPreferredSkills() favoured per realm, mapped
+    // from their Spanish list names to the migrated catalog ids.
+    private static final String ESSENCE_SHIELD_LIST = "essenceMasteryOfEscudos";
+    private static final String ESSENCE_QUICKNESS_LIST = "essencePathsOfQuickness";
+    private static final String MENTALISM_DODGE_LIST = "mentalismEvasionOfTheAttacks";
+    private static final String MENTALISM_SELFHEALING_LIST = "mentalismSelfHealing";
+    private static final String MENTALISM_SPEED_LIST = "mentalismSpeed";
+
+    // Legacy Spanish substrings used to classify races, cultures and knowledge skills.
+    private static final String ORC_RACE_NAME = "orco";
+    private static final String DWARF_RACE_NAME = "enano";
+    private static final String DESERT_CULTURE_NAME = "desierto";
+    // Longest generic knowledge name ("Conocimiento de la Fauna"); a culture-qualified variant is
+    // strictly longer.
+    private static final int GENERIC_KNOWLEDGE_NAME_MAX_LENGTH = 23;
 
     private final CharacterPlayer characterPlayer;
     private final Skill skill;
@@ -168,11 +198,36 @@ public class SkillProbability {
     }
 
     /**
-     * Legacy race/nature rules ("horses for humans, wolves for orcs, bears only for dwarves, camels
-     * only in deserts, elemental mounts only for elementalists") targeted Spanish skill names for
-     * which the migrated modules have no equivalent id; keeping the neutral 0.
+     * Legacy race/nature rules ("no horses for orcs, wolves only for orcs, bears only for dwarves,
+     * camels only in deserts") targeted Spanish skill names; the migrated modules keep the same
+     * skills under stable ids ({@code montarCaballos}, {@code montarLobos}, {@code montarOsos},
+     * {@code montarCamellos}), so the rules are keyed on them and on the translated race/culture
+     * names. The elemental-mount veto had no NG equivalent (no "montura elemental" skill in the
+     * migrated modules), so it keeps the neutral 0.
      */
-    private int randomnessByRace() {
+    private int randomnessByRace() throws InvalidXmlElementException {
+        final Race race = characterPlayer.getRace();
+        if (race == null) {
+            // Without a race there is no race-based restriction.
+            return 0;
+        }
+        final String raceName = race.getName().getTranslatedText();
+        if (MOUNT_HORSES.equals(skill.getId()) && raceName.toLowerCase().contains(ORC_RACE_NAME)) {
+            return -MAX_VALUE;
+        }
+        if (MOUNT_WOLVES.equals(skill.getId()) && !raceName.toLowerCase().contains(ORC_RACE_NAME)) {
+            return -MAX_VALUE;
+        }
+        if (MOUNT_BEARS.equals(skill.getId()) && !raceName.toLowerCase().contains(DWARF_RACE_NAME)) {
+            return -MAX_VALUE;
+        }
+        if (MOUNT_CAMELS.equals(skill.getId())) {
+            final Culture culture = characterPlayer.getCulture();
+            if (culture == null
+                    || !culture.getName().getTranslatedText().toLowerCase().contains(DESERT_CULTURE_NAME)) {
+                return -MAX_VALUE;
+            }
+        }
         return 0;
     }
 
@@ -273,12 +328,61 @@ public class SkillProbability {
     }
 
     /**
-     * Legacy preference for the five "famous" spell lists by realm relied on Spanish list names
-     * without an NG id; the structural basic/open/closed list preference is already applied by
-     * {@link ProfessionRandomness#preferredSkillByProfession(CharacterPlayer, Skill, int)} for every
-     * spell-casting profession, so this returns 0.
+     * Legacy preference for the five "famous" spell lists by realm (Shield and Quickness for
+     * Essence casters; Dodge, Auto-Health and Speed for Mentalism casters) keyed on the migrated
+     * spell list ids. The migrated modules model spell lists as categories and have no skill whose
+     * category is a spell list, so no real call can reach these branches today; the mapping is kept
+     * so that the rule works unchanged should the model ever gain spell skills. The structural
+     * basic/open/closed list preference is additionally applied by
+     * {@link ProfessionRandomness#preferredSkillByProfession}.
      */
-    private int wizardPreferredSkills() {
+    private int wizardPreferredSkills() throws InvalidXmlElementException {
+        if (!characterPlayer.isWizard()) {
+            return 0;
+        }
+        final int base = famousListBase(characterPlayer.getRealmsOfMagic(), skill.getCategoryId());
+        return base == 0 ? 0 : famousSpellListBonus(base, base >= 50 ? 8 : 5);
+    }
+
+    /** {@code base - currentLevelRanks * nextRankCost * factor}, the legacy famous-list formula. */
+    private int famousSpellListBonus(int base, int factor) throws InvalidXmlElementException {
+        final String listId = skill.getCategoryId();
+        final Integer nextRankCost = characterPlayer.getSpellListDevelopmentCost(listId,
+                characterPlayer.getSpellListTotalRanks(listId),
+                characterPlayer.getCurrentLevel().getSpellListRanks(listId));
+        if (nextRankCost == null) {
+            return 0;
+        }
+        return Math.max(base - characterPlayer.getCurrentLevel().getSpellListRanks(listId)
+                * nextRankCost * (factor - specializationLevel), 0);
+    }
+
+    /**
+     * The legacy "famous list" base by realm and spell list id: the five lists a caster of that
+     * realm most wants (Shield and Quickness for Essence; Dodge, Auto-Health and Speed for
+     * Mentalism), each with its legacy decay factor (8 ranks per point of base 50, 5 for the
+     * smaller ones), or 0 when {@code categoryId} is not one of them.
+     */
+    static int famousListBase(List<RealmOfMagic> realms, String categoryId) {
+        if (realms.contains(RealmOfMagic.ESSENCE)) {
+            if (ESSENCE_SHIELD_LIST.equals(categoryId)) {
+                return 50;
+            }
+            if (ESSENCE_QUICKNESS_LIST.equals(categoryId)) {
+                return 20;
+            }
+        }
+        if (realms.contains(RealmOfMagic.MENTALISM)) {
+            if (MENTALISM_DODGE_LIST.equals(categoryId)) {
+                return 50;
+            }
+            if (MENTALISM_SELFHEALING_LIST.equals(categoryId)) {
+                return 30;
+            }
+            if (MENTALISM_SPEED_LIST.equals(categoryId)) {
+                return 20;
+            }
+        }
         return 0;
     }
 
@@ -337,9 +441,34 @@ public class SkillProbability {
         return 0;
     }
 
-    /** Legacy "regional/cultural/fauna/flora knowledge" rules had no NG category equivalents. */
-    private int culturalSkill() {
+    /**
+     * Legacy "no knowledge from other cultures" rule: a regional/cultural/fauna/flora knowledge
+     * skill that claimed a foreign culture was vetoed, while the character's own culture granted its
+     * own knowledge skills through its adolescence category grants. The migrated modules keep the
+     * four knowledge skills generic ({@code loreRegional}, {@code loreCultural}, {@code loreOfFauna},
+     * {@code loreOfFlora}): their names carry no culture, so they are every culture's own knowledge
+     * and nothing is vetoed. If a culture-qualified variant ever appears (its name longer than any
+     * generic one), it is vetoed for every culture whose name it does not contain, as in the legacy.
+     */
+    private int culturalSkill() throws InvalidXmlElementException {
+        if (!knowledgeSkill()) {
+            return 0;
+        }
+        final Culture culture = characterPlayer.getCulture();
+        if (culture == null) {
+            return 0;
+        }
+        final String skillName = skill.getName().getTranslatedText();
+        if (skillName.length() > GENERIC_KNOWLEDGE_NAME_MAX_LENGTH
+                && !skillName.toLowerCase().contains(culture.getName().getTranslatedText().toLowerCase())) {
+            return -MAX_VALUE;
+        }
         return 0;
+    }
+
+    private boolean knowledgeSkill() {
+        return KNOWLEDGE_REGIONAL.equals(skill.getId()) || KNOWLEDGE_CULTURAL.equals(skill.getId())
+                || KNOWLEDGE_FAUNA.equals(skill.getId()) || KNOWLEDGE_FLORA.equals(skill.getId());
     }
 
     private int maxRanks() throws InvalidXmlElementException {

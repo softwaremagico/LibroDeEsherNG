@@ -2,11 +2,13 @@ package com.softwaremagico.librodeesher.random;
 
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
+import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.skill.Skill;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -69,6 +71,45 @@ public class SkillProbabilityTest {
 		Assert.assertEquals(rankProbability("boxeo", null, fighter), 43);
 	}
 
+	@Test
+	public void famousListsMapRealmAndIdToTheirLegacyBase() {
+		// Essence: Shield and Quickness. Mentalism: Dodge, Auto-Health and Speed.
+		Assert.assertEquals(SkillProbability.famousListBase(List.of(RealmOfMagic.ESSENCE), "essenceMasteryOfEscudos"), 50);
+		Assert.assertEquals(SkillProbability.famousListBase(List.of(RealmOfMagic.ESSENCE), "essencePathsOfQuickness"), 20);
+		Assert.assertEquals(SkillProbability.famousListBase(List.of(RealmOfMagic.MENTALISM), "mentalismEvasionOfTheAttacks"), 50);
+		Assert.assertEquals(SkillProbability.famousListBase(List.of(RealmOfMagic.MENTALISM), "mentalismSelfHealing"), 30);
+		Assert.assertEquals(SkillProbability.famousListBase(List.of(RealmOfMagic.MENTALISM), "mentalismSpeed"), 20);
+		// The other realm's lists, and any other category, get no famous bonus.
+		Assert.assertEquals(SkillProbability.famousListBase(List.of(RealmOfMagic.MENTALISM), "essenceMasteryOfEscudos"), 0);
+		Assert.assertEquals(SkillProbability.famousListBase(List.of(RealmOfMagic.CANALIZATION, RealmOfMagic.ESSENCE), "mentalismSpeed"), 0);
+		Assert.assertEquals(SkillProbability.famousListBase(List.of(RealmOfMagic.ESSENCE), "boxeo"), 0);
+	}
+
+	@Test
+	public void mountSkillsRespectTheRaceRestrictions() throws InvalidXmlElementException {
+		// The veto lowers the very same base by exactly -200: wolves only for orcs, horses only for
+		// non-orcs, bears only for dwarves.
+		final CharacterPlayer orc = freshFighterWithRace("commonOrcs");
+		final CharacterPlayer human = freshFighterWithRace("highMen");
+		final CharacterPlayer dwarf = freshFighterWithRace("dwarf");
+		Assert.assertEquals(rankProbability("montarLobos", null, orc),
+				rankProbability("montarLobos", null, human) + 200);
+		Assert.assertEquals(rankProbability("montarCaballos", null, human),
+				rankProbability("montarCaballos", null, orc) + 200);
+		Assert.assertEquals(rankProbability("montarOsos", null, dwarf),
+				rankProbability("montarOsos", null, human) + 200);
+	}
+
+	@Test
+	public void genericKnowledgeSkillsAreNotVetoedAsForeign() throws InvalidXmlElementException {
+		// The migrated knowledge skills carry no culture, so they belong to every culture and a
+		// foreign-knowledge veto (which would make the probability negative) never fires.
+		final CharacterPlayer fighter = freshFighter();
+		for (final String skillId : new String[] { "loreRegional", "loreCultural", "loreOfFauna", "loreOfFlora" }) {
+			Assert.assertTrue(rankProbability(skillId, null, fighter) >= 0, skillId + " must not be vetoed");
+		}
+	}
+
 	private static int rankProbability(String skillId, Map<String, Integer> suggested)
 			throws InvalidXmlElementException {
 		return rankProbability(skillId, suggested, freshFighter());
@@ -84,6 +125,12 @@ public class SkillProbabilityTest {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.setProfessionId("fighter");
 		character.applyProfessionMagicRealms(null);
+		return character;
+	}
+
+	private static CharacterPlayer freshFighterWithRace(String raceId) throws InvalidXmlElementException {
+		final CharacterPlayer character = freshFighter();
+		character.setRaceId(raceId);
 		return character;
 	}
 }
