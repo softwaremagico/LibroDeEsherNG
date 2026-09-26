@@ -317,7 +317,7 @@
       <en>War Troll</en>
       <es>Troll de Guerra</es>
     </name>
-    <naturalArmorType>15</naturalArmorType>
+    <naturalArmorType>1</naturalArmorType>
     <restrictedProfessions>
       <professionId>wizard</professionId>
       <professionId>sorcerer</professionId>

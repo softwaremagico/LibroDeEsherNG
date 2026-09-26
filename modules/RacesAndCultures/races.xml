@@ -643,7 +643,7 @@
       <en>Droloi</en>
       <es>Droloi</es>
     </name>
-    <naturalArmorType>1</naturalArmorType>
+    <naturalArmorType>3</naturalArmorType>
     <optionalRaceLanguages>
       <optionalRaceLanguageSlot>
         <maxSpeakingRanks>10</maxSpeakingRanks>
@@ -3576,7 +3576,7 @@
       <en>Hobgoblins</en>
       <es>Grandes Trasgos</es>
     </name>
-    <naturalArmorType>15</naturalArmorType>
+    <naturalArmorType>1</naturalArmorType>
     <progressionRankValues>
       <physicalDevelopment>0/7/6/5/2</physicalDevelopment>
       <ppArcane>0/5/4/3/2</ppArcane>
@@ -5964,7 +5964,7 @@
       <en>Jhordi</en>
       <es>Jhordi</es>
     </name>
-    <naturalArmorType>10</naturalArmorType>
+    <naturalArmorType>1</naturalArmorType>
     <restrictedProfessions>
       <professionId>cleric</professionId>
       <professionId>mythic</professionId>
@@ -6192,7 +6192,7 @@
       <en>Kobolds</en>
       <es>Kobolds</es>
     </name>
-    <naturalArmorType>15</naturalArmorType>
+    <naturalArmorType>1</naturalArmorType>
     <progressionRankValues>
       <physicalDevelopment>0/5/3/2/1</physicalDevelopment>
       <ppArcane>0/3/2/1/1</ppArcane>
@@ -6414,7 +6414,7 @@
       <en>Ky'taari</en>
       <es>Ky'taari</es>
     </name>
-    <naturalArmorType>150</naturalArmorType>
+    <naturalArmorType>1</naturalArmorType>
     <optionalRaceLanguages>
       <optionalRaceLanguageSlot>
         <maxSpeakingRanks>10</maxSpeakingRanks>
@@ -8804,7 +8804,7 @@
       <en>Half-Elf</en>
       <es>Medio-elfo</es>
     </name>
-    <naturalArmorType>150</naturalArmorType>
+    <naturalArmorType>1</naturalArmorType>
     <progressionRankValues>
       <physicalDevelopment>0/7/5/3/1</physicalDevelopment>
       <ppArcane>0/6/5/4/3</ppArcane>
@@ -8986,7 +8986,7 @@
       <en>Half-Orcs</en>
       <es>Medio-orcos</es>
     </name>
-    <naturalArmorType>8</naturalArmorType>
+    <naturalArmorType>1</naturalArmorType>
     <restrictedProfessions>
       <professionId>paladin</professionId>
     </restrictedProfessions>
@@ -9251,7 +9251,7 @@
       <en>Murlogi</en>
       <es>Murlogi</es>
     </name>
-    <naturalArmorType>15</naturalArmorType>
+    <naturalArmorType>1</naturalArmorType>
     <optionalRaceLanguages>
       <optionalRaceLanguageSlot>
         <maxSpeakingRanks>10</maxSpeakingRanks>
@@ -9479,7 +9479,7 @@
       <en>Common Orcs</en>
       <es>Orcos Comunes</es>
     </name>
-    <naturalArmorType>15</naturalArmorType>
+    <naturalArmorType>1</naturalArmorType>
     <restrictedProfessions>
       <professionId>paladin</professionId>
       <professionId>group:essence</professionId>
@@ -9729,7 +9729,7 @@
       <en>Greater Orcs</en>
       <es>Orcos Mayores</es>
     </name>
-    <naturalArmorType>10</naturalArmorType>
+    <naturalArmorType>1</naturalArmorType>
     <restrictedProfessions>
       <professionId>paladin</professionId>
       <professionId>group:essence</professionId>
@@ -10361,7 +10361,7 @@
       <en>Punkari</en>
       <es>Punkari</es>
     </name>
-    <naturalArmorType>150</naturalArmorType>
+    <naturalArmorType>1</naturalArmorType>
     <optionalRaceLanguages>
       <optionalRaceLanguageSlot>
         <maxSpeakingRanks>10</maxSpeakingRanks>
@@ -11984,7 +11984,7 @@
       <en>Sulini</en>
       <es>Sulini</es>
     </name>
-    <naturalArmorType>150</naturalArmorType>
+    <naturalArmorType>1</naturalArmorType>
     <optionalRaceLanguages>
       <optionalRaceLanguageSlot>
         <maxSpeakingRanks>10</maxSpeakingRanks>
@@ -12368,7 +12368,7 @@
       <en>Goblin</en>
       <es>Trasgo</es>
     </name>
-    <naturalArmorType>15</naturalArmorType>
+    <naturalArmorType>1</naturalArmorType>
     <progressionRankValues>
       <physicalDevelopment>0/6/3/2/2</physicalDevelopment>
       <ppArcane>0/3/2/1/1</ppArcane>
@@ -13568,7 +13568,7 @@
       <en>Vorloi</en>
       <es>Vorloi</es>
     </name>
-    <naturalArmorType>150</naturalArmorType>
+    <naturalArmorType>1</naturalArmorType>
     <optionalRaceLanguages>
       <optionalRaceLanguageSlot>
         <maxSpeakingRanks>10</maxSpeakingRanks>

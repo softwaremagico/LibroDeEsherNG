@@ -52,6 +52,9 @@ public class RaceMigrationToolTest {
             Assert.assertEquals(elf.getCommonSkillIds(), List.of("stalking"));
             Assert.assertEquals(elf.getCultureIds(), List.of("rural", "woodland"));
             Assert.assertEquals(elf.getSpecials().get(0).getPoints(), Integer.valueOf(10));
+            // The natural armour marker ("Tipo de Armadura 7") is picked up, while words merely
+            // containing "ta" (like "hasta 150 m") must not influence it.
+            Assert.assertEquals(elf.getNaturalArmorType(), Integer.valueOf(7));
             Assert.assertEquals(elf.getMaleNames(), List.of("Aerendil", "Calen"));
             Assert.assertEquals(elf.getFemaleNames(), List.of("Aerin", "Lúthien"));
             Assert.assertEquals(elf.getFamilyNames(), List.of("Silverbow", "Starleaf"));
@@ -92,7 +95,7 @@ public class RaceMigrationToolTest {
                 "#HABILIDADES COMUNES", "####################################", "Conocimiento·General, Acechar", "",
                 "#HABILIDADES RESTRINGIDAS", "####################################", "Ninguna", "",
                 "#CULTURAS", "####################################", "Rural, Silvana", "",
-                "#ESPECIALES", "####################################", "Visión nocturna [10]", "",
+                "#ESPECIALES", "####################################", "Visión nocturna [10]", "Tipo de Armadura 7 [5]", "Visión total hasta 150 m [15]", "",
                 "#NOMBRES MASCULINOS", "####################################", "Aerendil, Calen", "",
                 "#NOMBRES FEMENINOS", "####################################", "Aerin, Lúthien", "",
                 "#APELLIDOS", "####################################", "Silverbow, Starleaf", "",

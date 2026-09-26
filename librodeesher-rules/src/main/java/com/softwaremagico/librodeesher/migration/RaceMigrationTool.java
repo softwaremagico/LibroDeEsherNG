@@ -38,6 +38,16 @@ public final class RaceMigrationTool {
     private static final String ANY_RACE_LANGUAGE = "Idioma Racial";
     private static final String ANY_CULTURE_LANGUAGE = "Idioma Regional";
 
+    /**
+     * The natural armour type marker of the legacy free-text specials: the acronym "TA" (Tipo de
+     * Armadura) as its own word, the spelled-out "Tipo de Armadura", or the number written before
+     * the bare "TA" (e.g. "12 TA, +30BD"). Matching "TA" as a whole word prevents the old
+     * {@code contains("TA")} bug from firing on unrelated words such as "hasta", "necesita", or
+     * "Mentalismo".
+     */
+    private static final java.util.regex.Pattern NATURAL_ARMOR_TYPE_PATTERN = java.util.regex.Pattern.compile(
+            "(\\d+)\\s*\\bTA\\b|\\bTA\\b[^0-9]*(\\d+)|\\bTIPO\\s+DE\\s+ARMADURA\\b[^0-9]*(\\d+)");
+
     private RaceMigrationTool() {
         // Utility class.
     }
@@ -354,9 +364,7 @@ public final class RaceMigrationTool {
             }
             final Integer points = parseBracketedPoints(line);
             final String cleanText = line.replaceAll("\\s*\\[[^]]+]\\s*$", "").trim();
-            if (cleanText.toUpperCase().contains("TA")) {
-                parseNaturalArmorType(cleanText, race);
-            }
+            parseNaturalArmorType(cleanText, race);
             specials.add(new RaceSpecial(new TranslatedText(cleanText, Translations.toEnglish(cleanText)), points));
         }
         return specials;
@@ -376,9 +384,14 @@ public final class RaceMigrationTool {
     }
 
     private static void parseNaturalArmorType(String text, Race race) {
-        final java.util.regex.Matcher matcher = java.util.regex.Pattern.compile("TA[^0-9]*([0-9]+)").matcher(text.toUpperCase());
+        final java.util.regex.Matcher matcher = NATURAL_ARMOR_TYPE_PATTERN.matcher(text.toUpperCase());
         if (matcher.find()) {
-            race.setNaturalArmorType(Integer.valueOf(matcher.group(1)));
+            for (int group = 1; group <= matcher.groupCount(); group++) {
+                if (matcher.group(group) != null) {
+                    race.setNaturalArmorType(Integer.valueOf(matcher.group(group)));
+                    return;
+                }
+            }
         }
     }
 

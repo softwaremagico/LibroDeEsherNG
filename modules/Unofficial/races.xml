@@ -426,7 +426,7 @@
       <en>Dragonet</en>
       <es>Dragonet</es>
     </name>
-    <naturalArmorType>30</naturalArmorType>
+    <naturalArmorType>12</naturalArmorType>
     <progressionRankValues>
       <physicalDevelopment>0/7/5/3/1</physicalDevelopment>
       <ppArcane>0/5/3/2/1</ppArcane>

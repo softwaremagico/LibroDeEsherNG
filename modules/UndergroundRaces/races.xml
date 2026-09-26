@@ -1516,7 +1516,7 @@
       <en>Gray Orc</en>
       <es>Orco Gris</es>
     </name>
-    <naturalArmorType>3</naturalArmorType>
+    <naturalArmorType>8</naturalArmorType>
     <progressionRankValues>
       <physicalDevelopment>0/6/3/2/1</physicalDevelopment>
       <ppArcane>0/6/4/3/2</ppArcane>
