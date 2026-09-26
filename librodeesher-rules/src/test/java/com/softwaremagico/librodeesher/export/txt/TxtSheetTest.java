@@ -92,6 +92,69 @@ public class TxtSheetTest {
 		}
 	}
 
+	@Test
+	public void abbreviatureIncludesTheMonsterStatLine() throws InvalidXmlElementException {
+		final CharacterPlayer character = CharacterDataMapperTest.newFullyPopulatedCharacter();
+		final String sheet = TxtSheet.getCharacterAbbreviatureAsText(character);
+		Assert.assertTrue(sheet.startsWith("Ánforo Élfico ("), sheet);
+		Assert.assertTrue(sheet.contains("Unknown profession") || !sheet.startsWith(" ("), sheet);
+		Assert.assertTrue(sheet.contains(text(RulesCatalog.getInstance().getRace("warTroll").getName())), sheet);
+		Assert.assertTrue(sheet.contains("Level"), sheet);
+		Assert.assertTrue(sheet.contains("Size"), sheet);
+		Assert.assertTrue(sheet.contains("PV"), sheet);
+		Assert.assertTrue(sheet.contains("AC(DB)"), sheet);
+		Assert.assertTrue(sheet.contains("Attacks"), sheet);
+		Assert.assertTrue(sheet.contains("ea"), sheet);
+	}
+
+	@Test
+	public void abbreviatureIncludesTrainedSkillsAndTalents() throws InvalidXmlElementException {
+		final CharacterPlayer character = CharacterDataMapperTest.newFullyPopulatedCharacter();
+		final String sheet = TxtSheet.getCharacterAbbreviatureAsText(character);
+		Assert.assertTrue(sheet.contains("SKILLS: "), sheet);
+		Assert.assertTrue(sheet.contains("ArmF"), sheet);
+		Assert.assertTrue(sheet.contains(text(RulesCatalog.getInstance().getSkill("sword").getName())), sheet);
+		Assert.assertTrue(sheet.contains("TALENTS: "), sheet);
+		Assert.assertTrue(sheet.contains(text(RulesCatalog.getInstance().getPerk("skeptic").getName())), sheet);
+		Assert.assertTrue(sheet.contains(text(RulesCatalog.getInstance().getPerk("acrobat").getName())), sheet);
+		Assert.assertTrue(sheet.contains(text(RulesCatalog.getInstance().getPerk("minorAddiction").getName())), sheet);
+	}
+
+	@Test
+	public void blankCharacterAbbreviatureIsHarmless() throws InvalidXmlElementException {
+		final String sheet = TxtSheet.getCharacterAbbreviatureAsText(new CharacterPlayer());
+		Assert.assertTrue(sheet.contains("Unknown profession"), sheet);
+		Assert.assertTrue(sheet.contains("Level"), sheet);
+		Assert.assertTrue(sheet.contains("Attacks"), sheet);
+	}
+
+	@Test
+	public void abbreviatureIsDeterministic() throws InvalidXmlElementException {
+		final CharacterPlayer character = CharacterDataMapperTest.newFullyPopulatedCharacter();
+		Assert.assertEquals(TxtSheet.getCharacterAbbreviatureAsText(character),
+				TxtSheet.getCharacterAbbreviatureAsText(character));
+	}
+
+	@Test
+	public void nullCharacterRendersAnEmptyAbbreviature() throws InvalidXmlElementException {
+		Assert.assertEquals(TxtSheet.getCharacterAbbreviatureAsText(null), "");
+	}
+
+	@Test
+	public void createAbbreviatureFileWritesTheSheetWithTxtExtension() throws InvalidXmlElementException, IOException {
+		final Path target = Files.createTempFile("txt-abbrev", "");
+		try {
+			TxtSheet.createAbbreviatureFile(CharacterDataMapperTest.newFullyPopulatedCharacter(), target);
+			final Path written = Path.of(target + ".txt");
+			Assert.assertTrue(Files.exists(written));
+			Assert.assertEquals(Files.readString(written), TxtSheet.getCharacterAbbreviatureAsText(
+					CharacterDataMapperTest.newFullyPopulatedCharacter()));
+			Files.deleteIfExists(written);
+		} finally {
+			Files.deleteIfExists(target);
+		}
+	}
+
 	private static boolean characteristicRow(String sheet, String code, int temporal, int potential) {
 		for (final String line : sheet.split("\\R")) {
 			if (line.matches("^" + code + "\\s+" + temporal + "\\s+" + potential + "\\s.*")) {

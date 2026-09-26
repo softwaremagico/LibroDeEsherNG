@@ -15,11 +15,15 @@ import com.softwaremagico.librodeesher.perk.Perk;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.race.Race;
+import com.softwaremagico.librodeesher.race.RaceSize;
 import com.softwaremagico.librodeesher.race.RaceSpecial;
 import com.softwaremagico.librodeesher.resistance.ResistanceType;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.skill.Skill;
 import com.softwaremagico.librodeesher.training.Training;
+import com.softwaremagico.librodeesher.weapon.Weapon;
+import com.softwaremagico.librodeesher.weapon.WeaponFactory;
+import com.softwaremagico.librodeesher.weapon.WeaponType;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -270,5 +274,216 @@ public final class TxtSheet {
 		}
 		final String translated = translatedText.getTranslatedText();
 		return translated == null ? "" : translated;
+	}
+
+	/** The monster-style one-line abstract of a character (the legacy {@code exportCharacterAbbreviature}). */
+	public static String getCharacterAbbreviatureAsText(CharacterPlayer character) throws InvalidXmlElementException {
+		if (character == null) {
+			return "";
+		}
+		final String skills = abbreviatedSkills(character);
+		final String perks = abbreviatedPerks(character);
+		return (character.getName() == null ? "" : character.getName()) + " (" + professionName(character) + ")\n"
+				+ monsterStatLine(character)
+				+ (skills.isEmpty() ? "" : "\n\nSKILLS: \n" + skills)
+				+ (perks.isEmpty() ? "" : "\n\nTALENTS: " + perks);
+	}
+
+	/** Writes the monster-style abstract to {@code path} (a ".txt" extension is appended if missing). */
+	public static void createAbbreviatureFile(CharacterPlayer character, Path path)
+			throws InvalidXmlElementException, IOException {
+		final Path target = path.toString().endsWith(".txt") ? path : Path.of(path + ".txt");
+		Files.writeString(target, getCharacterAbbreviatureAsText(character), StandardCharsets.UTF_8);
+	}
+
+	private static final List<String> CLOSE_COMBAT_CATEGORIES = List.of("weaponsEdged", "weaponsPolearm",
+			"weaponsBlunt", "weaponsTwoHanded");
+	private static final List<String> LONG_RANGE_CATEGORIES = List.of("weaponsMissile", "weaponsThrown",
+			"weaponsFirearmOneHanded", "weaponsFirearmTwoHanded");
+	private static final List<String> OTHERS_ATTACK_CATEGORIES = List.of("martialArtsStrikes", "martialArtsSweeps",
+			"martialArtsCombatManeuvers", "specialAttacks");
+
+	private static String monsterStatLine(CharacterPlayer character) throws InvalidXmlElementException {
+		final Skill closeCombat = bestAttack(character, CLOSE_COMBAT_CATEGORIES);
+		final Skill longRange = bestAttack(character, LONG_RANGE_CATEGORIES);
+		final Skill others = bestAttack(character, OTHERS_ATTACK_CATEGORIES);
+
+		final Integer closeCombatValue = skillTotalValue(character, closeCombat);
+		final Integer longRangeValue = skillTotalValue(character, longRange);
+		final Integer othersValue = skillTotalValue(character, others);
+
+		String attacks = value(closeCombatValue) + attackCode(character, closeCombat);
+		if (longRangeValue != null && longRangeValue > 0) {
+			attacks += "/" + longRangeValue + attackCode(character, longRange);
+		}
+		if (othersValue != null && othersValue > 0) {
+			attacks += "/" + othersValue + attackCode(character, others);
+		}
+
+		final Race race = RulesCatalog.getInstance().getRace(character.getRaceId());
+		final int maxNameSize = Math.max(race == null ? 5 : text(race.getName()).length() + 2, 5);
+		final String stringFormat = "%1$-" + maxNameSize
+				+ "s %2$-8s %3$-8s %4$-8s %5$-8s %6$-8s %7$-8s %8$-8s %9$-12s%n";
+		final StringBuilder statLine = new StringBuilder(String.format(stringFormat, "Race", "Level", "Movem", "MM",
+				"VM/VA", "Size", "PV", "AC(DB)", "Attacks"));
+		statLine.append(String.format(stringFormat, race == null ? "?" : text(race.getName()),
+				value(character.getLevel()), value(character.getMovementCapacity()),
+				value(agilityMagicDefense(character)), movementCode(character),
+				race == null ? "?" : sizeCode(race.getSize()), value(character.getTotalDevelopmentPoints()),
+				character.getArmourClass() + "(" + character.getDefensiveBonus() + ")", attacks));
+		return statLine.toString();
+	}
+
+	private static Skill bestAttack(CharacterPlayer character, List<String> categoryIds)
+			throws InvalidXmlElementException {
+		Skill bestAttack = null;
+		for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
+			if (!categoryIds.contains(skill.getCategoryId())) {
+				continue;
+			}
+			if (bestAttack == null || skillTotalValue(character, skill) > skillTotalValue(character, bestAttack)) {
+				bestAttack = skill;
+			}
+		}
+		return bestAttack;
+	}
+
+	private static List<Skill> catalogSkillsOf(Category category) throws InvalidXmlElementException {
+		final List<Skill> skills = new ArrayList<>();
+		for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
+			if (category.getId().equals(skill.getCategoryId())) {
+				skills.add(skill);
+			}
+		}
+		return skills;
+	}
+
+	private static Integer skillTotalValue(CharacterPlayer character, Skill skill) throws InvalidXmlElementException {
+		return skill == null ? null : character.getSkillTotalBonus(skill);
+	}
+
+	private static String attackCode(CharacterPlayer character, Skill skill) throws InvalidXmlElementException {
+		if (skill == null) {
+			return "??";
+		}
+		final Weapon weapon = findWeapon(skill.getId());
+		if (weapon != null) {
+			return weapon.getAbbreviation();
+		}
+		final Category category = RulesCatalog.getInstance().getCategory(skill.getCategoryId());
+		return category == null ? "??" : category.getAbbreviation();
+	}
+
+	private static Weapon findWeapon(String id) throws InvalidXmlElementException {
+		for (final WeaponType type : WeaponType.values()) {
+			for (final Weapon weapon : WeaponFactory.getInstance().getWeaponsByType(type)) {
+				if (id.equals(weapon.getId())) {
+					return weapon;
+				}
+			}
+		}
+		return null;
+	}
+
+	private static Integer agilityMagicDefense(CharacterPlayer character) throws InvalidXmlElementException {
+		final Integer agilityBonus = character.getCharacteristicTotalBonus(CharacteristicAbbreviation.AGILITY);
+		return agilityBonus == null ? null : agilityBonus * 3;
+	}
+
+	private static String movementCode(CharacterPlayer character) throws InvalidXmlElementException {
+		final Integer speed = character.getCharacteristicTotalBonus(CharacteristicAbbreviation.QUICKNESS);
+		if (speed == null) {
+			return "N";
+		}
+		if (speed <= -14) {
+			return "IM";
+		}
+		if (speed <= -10) {
+			return "AR";
+		}
+		if (speed <= -6) {
+			return "ML";
+		}
+		if (speed <= -2) {
+			return "L";
+		}
+		if (speed <= 2) {
+			return "N";
+		}
+		if (speed <= 6) {
+			return "MdR";
+		}
+		if (speed <= 10) {
+			return "R";
+		}
+		if (speed <= 14) {
+			return "MR";
+		}
+		return "RS";
+	}
+
+	private static String sizeCode(RaceSize size) {
+		switch (size) {
+		case XXS:
+			return "MP";
+		case XS:
+			return "P";
+		case XL:
+			return "G";
+		case XXL:
+			return "EN";
+		case S:
+		case M:
+		case L:
+		default:
+			return "M";
+		}
+	}
+
+	private static String abbreviatedSkills(CharacterPlayer character) throws InvalidXmlElementException {
+		final List<Category> categories = new ArrayList<>(RulesCatalog.getInstance().getCategories());
+		categories.sort(Comparator.comparing(category -> text(category.getName())));
+		final StringBuilder text = new StringBuilder();
+		for (int index = 0; index < categories.size(); index++) {
+			final Category category = categories.get(index);
+			text.append(category.getAbbreviation()).append(" ").append(value(character.getCategoryTotalBonus(category)));
+			int added = 0;
+			for (final Skill skill : catalogSkillsOf(category)) {
+				if (character.getSkillTotalRanks(skill.getId()) <= 0) {
+					continue;
+				}
+				if (added == 0) {
+					text.append(" (");
+				} else {
+					text.append(", ");
+				}
+				text.append(text(skill.getName())).append(" ").append(value(skillTotalValue(character, skill)));
+				added++;
+			}
+			if (added > 0) {
+				text.append(")");
+			}
+			if (index < categories.size() - 1) {
+				text.append(", ");
+			}
+		}
+		return text.length() == 0 ? "" : text.append(".").toString();
+	}
+
+	private static String abbreviatedPerks(CharacterPlayer character) throws InvalidXmlElementException {
+		final List<String> names = new ArrayList<>();
+		for (final SelectedPerk selectedPerk : character.getSelectedPerks()) {
+			final Perk perk = RulesCatalog.getInstance().getPerk(selectedPerk.getPerkId());
+			if (perk != null) {
+				names.add(text(perk.getName()));
+			}
+			if (selectedPerk.getWeaknessId() != null) {
+				final Perk weakness = RulesCatalog.getInstance().getPerk(selectedPerk.getWeaknessId());
+				if (weakness != null) {
+					names.add(text(weakness.getName()));
+				}
+			}
+		}
+		return String.join(", ", names);
 	}
 }
