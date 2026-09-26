@@ -58,11 +58,11 @@ public class CharacterDataMapperTest {
 		Assert.assertTrue(isSorted(new ArrayList<>(data.getLevels().get(0).getCategoryRanks().keySet())));
 	}
 
-	static CharacterPlayer newFullyPopulatedCharacter() {
+	public static CharacterPlayer newFullyPopulatedCharacter() {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.setName("Ánforo Élfico");
 		character.setSex(SexType.MALE);
-		character.setRaceId("commonMen");
+		character.setRaceId("warTroll");
 		character.setCultureId("aquaticMilitarista");
 		character.setProfessionId("fighter");
 		character.setHistoryText("Trasfondo con acentos: áéíóú ñ.");
@@ -79,11 +79,12 @@ public class CharacterDataMapperTest {
 		final LevelUp firstLevel = character.getCurrentLevel();
 		firstLevel.setCategoryRanks("arms", 3);
 		firstLevel.setSkillRanks("sword", 2, false);
+		firstLevel.setSkillRanks("hardenedLeather", 1, false);
 		firstLevel.setSpellListRanks("defensive", 1);
 		firstLevel.setGeneralizedSkills(new HashSet<>(List.of("ng_healing")));
 		firstLevel.setSpellsUpdated(new ArrayList<>(List.of("fire_ball")));
 		firstLevel.setTrainings(new ArrayList<>(List.of("martialArtist")));
-		firstLevel.setSkillSpecializations(new HashSet<>(List.of("sword_throwing")));
+		firstLevel.setSkillSpecializations(new HashSet<>(List.of("TA9")));
 		firstLevel.setFavouriteSkills(new HashSet<>(List.of("sword")));
 		firstLevel.addCharacteristicUpdate(CharacteristicAbbreviation.STRENGTH, 60, 65, Roll.of(4, 6));
 		firstLevel.getAgeModifications().add(new AgeModification(25, 2));
@@ -105,8 +106,8 @@ public class CharacterDataMapperTest {
 		skeptic.setPerkId("skeptic");
 		character.getSelectedPerks().add(skeptic);
 		final SelectedPerk randomPerk = new SelectedPerk();
-		randomPerk.setPerkId("ql");
-		randomPerk.setWeaknessId("xenophobia");
+		randomPerk.setPerkId("acrobat");
+		randomPerk.setWeaknessId("minorAddiction");
 		randomPerk.setRandom(true);
 		character.getSelectedPerks().add(randomPerk);
 
