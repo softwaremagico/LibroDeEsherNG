@@ -4,6 +4,7 @@ import com.softwaremagico.librodeesher.age.AgeModification;
 import com.softwaremagico.librodeesher.age.AgeRules;
 import com.softwaremagico.librodeesher.background.Background;
 import com.softwaremagico.librodeesher.category.Category;
+import com.softwaremagico.librodeesher.category.CategoryType;
 import com.softwaremagico.librodeesher.characteristic.Appearance;
 import com.softwaremagico.librodeesher.characteristic.Characteristic;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
@@ -888,13 +889,19 @@ public class CharacterPlayer {
 	 * The race bonus and the characteristic bonus are future work (no shipped
 	 * race actually grants a bonus to a real skill either, same as categories).
 	 * </p>
+	 *
+	 * <p>
+	 * {@code category}'s progression table is the skill's rank value, except for the two development
+	 * types that ignore it and use the selected race's own progression instead (see {@link
+	 * #getSkillRankValue(Category, int)}), matching the legacy {@code Skill#getRankValue}.
+	 * </p>
 	 */
 	public Integer getSkillDevelopmentBonus(Category category, String skillId) throws InvalidXmlElementException {
 		final Integer perkSkillRankBonus = this.getPerkSkillRankBonus(skillId);
 		final int perkRankTerm = perkSkillRankBonus == 0
 				? 0
 				: perkSkillRankBonus * this.getSkillRealRanks(RulesCatalog.getInstance().getSkill(skillId));
-		return category.getSkillRankBonus(this.getSkillTotalRanks(skillId)) + this.getProfessionBonus(skillId)
+		return this.getSkillRankValue(category, this.getSkillTotalRanks(skillId)) + this.getProfessionBonus(skillId)
 				+ this.background.getSkillBonus(skillId) + this.getPerkSkillBonus(skillId)
 				+ this.getPerkSkillConditionalBonus(skillId) + perkRankTerm;
 	}
@@ -1638,8 +1645,8 @@ public class CharacterPlayer {
 	/** Total bonus for a specialization, replacing normal rank progression with specialized ranks. */
 	public Integer getSpecializedSkillTotalBonus(Category category, String skillId) throws InvalidXmlElementException {
 		final Skill skill = RulesCatalog.getInstance().getSkill(skillId);
-		final int normalRankBonus = category.getSkillRankBonus(this.getSkillTotalRanks(skillId));
-		final int specializedRankBonus = category.getSkillRankBonus(this.getSpecializedSkillRanks(skill));
+		final int normalRankBonus = this.getSkillRankValue(category, this.getSkillTotalRanks(skillId));
+		final int specializedRankBonus = this.getSkillRankValue(category, this.getSpecializedSkillRanks(skill));
 		return this.getSkillTotalBonus(category, skillId) - normalRankBonus + specializedRankBonus;
 	}
 
@@ -3657,12 +3664,62 @@ public class CharacterPlayer {
 	 * without any realm of magic.
 	 */
 	public int getPowerPoints() throws InvalidXmlElementException {
+		return this.getPowerPointsRankValue(this.getSkillTotalRanks("powerPointDevelopment"));
+	}
+
+	/** Hit points granted by ranks in Physical Development according to the selected race. */
+	public int getHitPoints() throws InvalidXmlElementException {
+		return this.getPhysicalDevelopmentRankValue(this.getSkillTotalRanks("physicalDevelopment"));
+	}
+
+	/**
+	 * The value {@code ranks} ranks in a skill of {@code category} are worth, matching the legacy
+	 * {@code Skill#getRankValue}: the category's own progression table for the four types that define
+	 * one, but the selected race's own progression for the two development types
+	 * ({@link CategoryType#PD} and {@link CategoryType#PPD}), whose own tables are all-zero.
+	 */
+	private Integer getSkillRankValue(Category category, int ranks) throws InvalidXmlElementException {
+		if (category == null) {
+			return 0;
+		}
+		if (category.getType() == CategoryType.PD) {
+			return this.getPhysicalDevelopmentRankValue(ranks);
+		}
+		if (category.getType() == CategoryType.PPD) {
+			return this.getPowerPointsRankValue(ranks);
+		}
+		return category.getSkillRankBonus(ranks);
+	}
+
+	/**
+	 * {@code ranks} ranks in Physical Development according to the selected race's own progression
+	 * (the same value as {@link #getHitPoints()}, but for an arbitrary rank count), matching the
+	 * legacy {@code Skill#getRankValue}'s {@code PD} case, which reads the race's
+	 * {@code physicalDevelopment} table instead of the category's. 0 without a race selected.
+	 */
+	private int getPhysicalDevelopmentRankValue(int ranks) throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		if (race == null) {
+			return 0;
+		}
+		final Integer value = race.getProgressionRankValue("physicalDevelopment", ranks);
+		return value == null ? 0 : value;
+	}
+
+	/**
+	 * {@code ranks} ranks in Power Point Development according to the selected race's own progression,
+	 * averaged across every one of {@link #getRealmsOfMagic()} exactly as {@link #getPowerPoints()}
+	 * does for the character's own current power points (the legacy {@code Skill#getRankValue}'s
+	 * {@code PPD} case sums each realm's own table over the character's realms and divides by how many
+	 * there are, not just by how many have a table). 0 without a race selected or without any realm of
+	 * magic.
+	 */
+	private int getPowerPointsRankValue(int ranks) throws InvalidXmlElementException {
 		final Race race = this.getRace();
 		final List<RealmOfMagic> realms = this.getRealmsOfMagic();
 		if (race == null || realms.isEmpty()) {
 			return 0;
 		}
-		final int ranks = this.getSkillTotalRanks("powerPointDevelopment");
 		int total = 0;
 		for (final RealmOfMagic realm : realms) {
 			final String key = realm.getPowerPointProgressionKey();
@@ -3674,17 +3731,6 @@ public class CharacterPlayer {
 			}
 		}
 		return total / realms.size();
-	}
-
-	/** Hit points granted by ranks in Physical Development according to the selected race. */
-	public int getHitPoints() throws InvalidXmlElementException {
-		final Race race = this.getRace();
-		if (race == null) {
-			return 0;
-		}
-		final int ranks = this.getSkillTotalRanks("physicalDevelopment");
-		final Integer value = race.getProgressionRankValue("physicalDevelopment", ranks);
-		return value == null ? 0 : value;
 	}
 
 	/**

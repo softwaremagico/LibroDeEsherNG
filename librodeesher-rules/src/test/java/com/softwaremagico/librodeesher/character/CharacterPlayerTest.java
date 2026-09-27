@@ -203,6 +203,84 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void physicalDevelopmentSkillBonusUsesTheRacesProgressionNotTheCategoryTable() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("dwarf");
+		character.getCurrentLevel().setSkillRanks("physicalDevelopment", 3, false);
+
+		final Category category = new Category("physicalDevelopment");
+		category.setType(CategoryType.PD);
+
+		// The PD category's own table is all zeros in the legacy too (FdCategory's
+		// "[0, 0, 0, 0, 0]"), so the whole value comes from the race's own
+		// "physicalDevelopment" table ("0/7/4/2/1" for a dwarf): 3 ranks * 7.
+		Assert.assertEquals(character.getSkillDevelopmentBonus(category, "physicalDevelopment"),
+				Integer.valueOf(21));
+		Assert.assertEquals(character.getSkillDevelopmentBonus(category, "physicalDevelopment"),
+				Integer.valueOf(character.getHitPoints()));
+	}
+
+	@Test
+	public void powerPointDevelopmentSkillBonusAveragesEveryRealmOfMagic() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("dwarf");
+		character.setProfessionId("fighter");
+		character.applyProfessionMagicRealms(null);
+		character.getCurrentLevel().setSkillRanks("powerPointDevelopment", 5, false);
+
+		final Category category = new Category("powerPointDevelopment");
+		category.setType(CategoryType.PPD);
+
+		// A fighter's three own realms (Essence, Canalization, Mentalism) have three different tables
+		// in a dwarf: 5 ranks are worth 10, 30 and 10, and the legacy adds them up and divides by
+		// how many realms there are, so 50/3 = 16, not the 30 of Canalization alone.
+		Assert.assertEquals(character.getRealmsOfMagic(), List.of(RealmOfMagic.ESSENCE, RealmOfMagic.CANALIZATION,
+				RealmOfMagic.MENTALISM));
+		Assert.assertEquals(character.getSkillDevelopmentBonus(category, "powerPointDevelopment"),
+				Integer.valueOf(16));
+		Assert.assertEquals(character.getSkillDevelopmentBonus(category, "powerPointDevelopment"),
+				Integer.valueOf(character.getPowerPoints()));
+	}
+
+	@Test
+	public void developmentSkillBonusIsZeroWithoutARaceSelected() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.getCurrentLevel().setSkillRanks("physicalDevelopment", 3, false);
+
+		final Category category = new Category("physicalDevelopment");
+		category.setType(CategoryType.PD);
+
+		Assert.assertEquals(character.getSkillDevelopmentBonus(category, "physicalDevelopment"), Integer.valueOf(0));
+	}
+
+	@Test
+	public void powerPointDevelopmentSkillBonusIsZeroWithoutAnyRealmOfMagic() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("dwarf");
+		character.getCurrentLevel().setSkillRanks("powerPointDevelopment", 5, false);
+
+		final Category category = new Category("powerPointDevelopment");
+		category.setType(CategoryType.PPD);
+
+		Assert.assertEquals(character.getSkillDevelopmentBonus(category, "powerPointDevelopment"), Integer.valueOf(0));
+	}
+
+	@Test
+	public void specializedPhysicalDevelopmentSkillBonusUsesTheRacesProgression() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("dwarf");
+		character.getCurrentLevel().setSkillRanks("physicalDevelopment", 3, false);
+
+		final Category category = new Category("physicalDevelopment");
+		category.setType(CategoryType.PD);
+
+		// Without any category rank a specialization is worth 1.5 times the skill's ranks
+		// (3 * 1.5 = 4), and 4 ranks are worth 4 * 7 in a dwarf.
+		Assert.assertEquals(character.getSpecializedSkillTotalBonus(category, "physicalDevelopment"),
+				Integer.valueOf(28));
+	}
+
+	@Test
 	public void skillDevelopmentBonusUsesItsCategorysProgressionTable() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.getCurrentLevel().setSkillRanks("tracking", 10, false);
