@@ -366,11 +366,10 @@ public class SkillProbability {
     /**
      * Legacy preference for the five "famous" spell lists by realm (Shield and Quickness for
      * Essence casters; Dodge, Auto-Health and Speed for Mentalism casters) keyed on the migrated
-     * spell list ids. The migrated modules model spell lists as categories and have no skill whose
-     * category is a spell list, so no real call can reach these branches today; the mapping is kept
-     * so that the rule works unchanged should the model ever gain spell skills. The structural
-     * basic/open/closed list preference is additionally applied by
-     * {@link ProfessionRandomness#preferredSkillByProfession}.
+     * spell list ids. Spell lists are developed as categories (see {@link MagicSpellList}), not as
+     * skills; accordingly, {@link CharacterPlayer#isSpellSkill(String)} returns false for every
+     * skill, so this branch is never reached in practice. The mapping is nevertheless preserved as a
+     * safeguard.
      */
     private int wizardPreferredSkills() throws InvalidXmlElementException {
         if (!characterPlayer.isWizard()) {

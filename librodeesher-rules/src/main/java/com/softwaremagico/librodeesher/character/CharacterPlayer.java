@@ -737,6 +737,12 @@ public class CharacterPlayer {
 	 * Whether {@code skillId} is a spell: a skill whose category is a spell list (see {@link
 	 * MagicSpellList}), the NG equivalent of the legacy "spell list category" detection used by the
 	 * random character generator.
+	 *
+	 * <p>No migrated module declares such a skill: the legacy "hechizos" data only ever defined the
+	 * <em>lists</em> (name + owner), which NG models as {@link MagicSpellList} categories developed
+	 * through their own track (see {@link #isSpellListCategory(String)}), so this is currently always
+	 * {@code false} for every skill, exactly as in the legacy. It is kept so the spell handling of the
+	 * random generator keeps working unchanged should a module ever add real spell skills.</p>
 	 */
 	public boolean isSpellSkill(String skillId) {
 		final Skill skill;
