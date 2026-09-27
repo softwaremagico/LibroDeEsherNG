@@ -114,6 +114,11 @@ public final class TxtSheet {
 		final StringBuilder text = new StringBuilder("Categories and skills\n");
 		text.append(SEPARATOR).append("\n");
 		for (final Category category : categories) {
+			// The legacy skipped any category whose option is off (a weapon-firearm category while
+			// firearms are off, a spell-list category while magic is off, TxtSheet#skills).
+			if (!character.isCategoryEnabledByOptions(category)) {
+				continue;
+			}
 			text.append(String.format("%1$-36s %2$-10s %3$-10s %4$-8s %5$-8s%n",
 					text(category.getName()), "Ranks", "Bonus", "Cost", "Max"));
 			text.append(String.format("%1$-36s %2$-10s %3$-10s %4$-8s %5$-8s%n",

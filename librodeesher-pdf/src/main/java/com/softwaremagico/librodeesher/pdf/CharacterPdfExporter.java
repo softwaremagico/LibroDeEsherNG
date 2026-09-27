@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.pdf;
 
+import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.lowagie.text.DocumentException;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
@@ -37,7 +38,7 @@ public final class CharacterPdfExporter {
         sheet.createFile(toCharacter(characterJSON), path);
     }
 
-    private static CharacterPlayer toCharacter(String characterJSON) {
+    private static CharacterPlayer toCharacter(String characterJSON) throws InvalidXmlElementException {
         final CharacterData data = CharacterJsonManager.fromJson(characterJSON);
         if (data == null) {
             throw new IllegalArgumentException("Cannot export an empty character: the JSON is null or blank.");

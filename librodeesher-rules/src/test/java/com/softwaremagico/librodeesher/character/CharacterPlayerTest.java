@@ -2031,9 +2031,117 @@ public class CharacterPlayerTest {
 		Assert.assertFalse(character.isSkillDisabledByOptions(firearmSkill));
 	}
 
+	/**
+	 * A firearm weapon model is {@link SkillGroup#STANDARD}, so only the category-level option (the
+	 * legacy's {@code isCategoryOptionEnabled}) keeps it out of a character with firearms off.
+	 */
 	@Test
-	public void magicAllowedToggleHidesEveryRealmOfMagic() throws InvalidXmlElementException {
-		final CharacterPlayer wizard = new CharacterPlayer();
+	public void firearmWeaponCategoriesAndTheirSkillsAreNotBuyableWhenFirearmsAreOff() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+		final String categoryId = "weaponsFirearmOneHanded";
+		final String skillId = "automaticPistolSamuelCoutty";
+
+		Assert.assertFalse(character.isFirearmsAllowed());
+		Assert.assertFalse(character.isCategoryEnabledByOptions(RulesCatalog.getInstance().getCategory(categoryId)));
+		Assert.assertFalse(character.getAvailableCategoryIds().contains(categoryId));
+		Assert.assertFalse(character.getAvailableSkillIds().contains(skillId));
+		Assert.assertFalse(character.setCurrentLevelCategoryRanks(categoryId, 1));
+		// Its models are ordinary weapon skills, so they need a cost tier for their category first.
+		character.setFirearmsAllowed(true);
+		Assert.assertFalse(character.setCurrentLevelCategoryRanks(categoryId, 1));
+		Assert.assertFalse(character.setCurrentLevelSkillRanks(skillId, 1));
+		character.setFirearmsAllowed(false);
+		// Its cost tier is off limits too, and the character only has the 7 tiers its profession defines.
+		Assert.assertEquals(character.getWeaponCategoryCostTierCount(), 7);
+		Assert.assertEquals(character.getAvailableWeaponCategoriesForCostTier(0).size(), 7);
+		Assert.assertFalse(character.assignAvailableWeaponCategoryCostTier(0, categoryId));
+
+		character.setFirearmsAllowed(true);
+		Assert.assertTrue(character.isCategoryEnabledByOptions(RulesCatalog.getInstance().getCategory(categoryId)));
+		Assert.assertEquals(character.getWeaponCategoryCostTierCount(), 9);
+		Assert.assertEquals(character.getAvailableWeaponCategoriesForCostTier(0).size(), 9);
+		// Tiers 7 and 8 are copies of the most expensive one, as in the legacy's extraWeaponCategoryCost.
+		Assert.assertTrue(character.assignAvailableWeaponCategoryCostTier(7, categoryId));
+		Assert.assertEquals(character.getAssignedWeaponCategoryCostTier(categoryId).getRankCosts(),
+				character.getProfession().getWeaponCategoryCostTiers().get(6).getRankCosts());
+		// With a cost tier it becomes developable again, the category and its weapon models alike.
+		Assert.assertTrue(character.getAvailableCategoryIds().contains(categoryId));
+		Assert.assertTrue(character.getAvailableSkillIds().contains(skillId));
+	}
+
+	/** The legacy's setFirearmsAllowed(false) also drops what firearms had bought. */
+	@Test
+	public void turningFirearmsOffClearsFirearmWeaponCategoryCostsAndRanks() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+		final String categoryId = "weaponsFirearmOneHanded";
+		final String skillId = "automaticPistolSamuelCoutty";
+
+		character.setFirearmsAllowed(true);
+		Assert.assertTrue(character.assignAvailableWeaponCategoryCostTier(0, categoryId));
+		Assert.assertTrue(character.setCurrentLevelCategoryRanks(categoryId, 2));
+		character.getCurrentLevel().setSkillRanks(skillId, 1, false);
+		Assert.assertNotNull(character.getAssignedWeaponCategoryCostTier(categoryId));
+
+		character.setFirearmsAllowed(false);
+		Assert.assertNull(character.getAssignedWeaponCategoryCostTier(categoryId));
+		Assert.assertEquals(character.getCurrentLevel().getCategoryRanks(categoryId), 0);
+		// The legacy's "noimporta" categories hold no skills of their own (the weapon models come from the
+		// weapons file), so their models' ranks were never wiped there either.
+		Assert.assertEquals(character.getCurrentLevel().getSkillRanks(skillId), 1);
+		// The other categories keep their tiers, and the two extra ones are gone with the option.
+		Assert.assertTrue(character.assignAvailableWeaponCategoryCostTier(0, "weaponsEdged"));
+		Assert.assertEquals(character.getWeaponCategoryCostTierCount(), 7);
+	}
+
+	/** ...and turning them back on hands the free cost tiers to the categories that have none. */
+	@Test
+	public void turningFirearmsOnGivesTheFreeCostTiersToTheCategoriesWithoutOne() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+		Assert.assertTrue(character.assignAvailableWeaponCategoryCostTier(0, "weaponsEdged"));
+		character.setFirearmsAllowed(true);
+
+		final List<Integer> cheapest = character.getProfession().getWeaponCategoryCostTiers().get(0).getRankCosts();
+		final List<Integer> dearest = character.getProfession().getWeaponCategoryCostTiers().get(6).getRankCosts();
+		Assert.assertEquals(character.getAssignedWeaponCategoryCostTier("weaponsEdged").getRankCosts(), cheapest);
+		// The two new expensive tiers are the only ones left, and the loop takes the firearms categories
+		// first here, so they are the ones that get a tier.
+		Assert.assertEquals(character.getAssignedWeaponCategoryCostTier("weaponsFirearmOneHanded").getRankCosts(), dearest);
+		Assert.assertEquals(character.getAssignedWeaponCategoryCostTier("weaponsFirearmTwoHanded").getRankCosts(), dearest);
+		Assert.assertEquals(character.getWeaponCategoryCostTierCount(), 9);
+		// Nothing but its own holder can still be given tier 7.
+		Assert.assertEquals(character.getAvailableWeaponCategoriesForCostTier(7), List.of("weaponsFirearmTwoHanded"));
+		Assert.assertTrue(character.setCurrentLevelCategoryRanks("weaponsFirearmTwoHanded", 1));
+		Assert.assertTrue(character.setCurrentLevelSkillRanks("muzzleloaderRifleMoroccanSnaphance", 1));
+	}
+
+	/**
+	 * The legacy's getFavouriteSkills() only added the bought-and-worthwhile skills when the player had
+	 * ticked "Incluir habilidades recomendadas", which it persisted per character.
+	 */
+	@Test
+	public void recommendedFavouriteSkillsAreOnlyIncludedWhenTheOptionIsSet() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.getCurrentLevel().setSkillRanks("climbing", 3, false);
+		character.getCurrentLevel().setSkillRanks("commonHabla", 2, false);
+
+		Assert.assertFalse(character.isRecommendedFavouriteSkillsIncluded());
+		Assert.assertEquals(character.getFavouriteSkillIds(), List.of());
+
+		character.setRecommendedFavouriteSkillsIncluded(true);
+		// "climbing" has a positive bonus; "commonHabla" is communication, so it is never recommended.
+		Assert.assertTrue(character.getFavouriteSkillIds().contains("climbing"));
+		Assert.assertFalse(character.getFavouriteSkillIds().contains("commonHabla"));
+
+		// A manually selected skill still shows up either way.
+		character.addFavouriteSkill("shield");
+		Assert.assertTrue(character.getFavouriteSkillIds().contains("shield"));
+	}
+
+	@Test
+	public void magicAllowedToggleHidesEveryRealmOfMagic() throws InvalidXmlElementException {		final CharacterPlayer wizard = new CharacterPlayer();
 		wizard.setProfessionId("wizard");
 		wizard.applyProfessionMagicRealms(null);
 		Assert.assertEquals(wizard.getRealmsOfMagic(), List.of(RealmOfMagic.ESSENCE));

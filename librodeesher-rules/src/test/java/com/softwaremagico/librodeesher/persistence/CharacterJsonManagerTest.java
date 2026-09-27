@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.persistence;
 
+import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,7 +16,7 @@ import java.util.List;
 public class CharacterJsonManagerTest {
 
 	@Test
-	public void jsonRoundTripsByteIdenticallyForTheSameSnapshot() {
+	public void jsonRoundTripsByteIdenticallyForTheSameSnapshot() throws InvalidXmlElementException {
 		final CharacterData data = CharacterDataMapper.toData(CharacterDataMapperTest.newFullyPopulatedCharacter());
 
 		final String json = CharacterJsonManager.toJson(data);
@@ -40,7 +41,7 @@ public class CharacterJsonManagerTest {
 	}
 
 	@Test
-	public void unknownTopLevelFieldsAreToleratedOnLoad() {
+	public void unknownTopLevelFieldsAreToleratedOnLoad() throws InvalidXmlElementException {
 		final CharacterData data = CharacterDataMapper.toData(CharacterDataMapperTest.newFullyPopulatedCharacter());
 		final String withFutureField = CharacterJsonManager.toJson(data)
 				.replace("\"characteristicsConfirmed\"",

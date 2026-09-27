@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.persistence;
 
+import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import org.testng.Assert;
@@ -61,7 +62,7 @@ public class LevelJsonManagerTest {
 		Assert.assertNull(LevelJsonManager.fromJson(null, "{}"));
 	}
 
-	private static CharacterPlayer cloneOneLevelBehind(CharacterPlayer original) {
+	private static CharacterPlayer cloneOneLevelBehind(CharacterPlayer original) throws InvalidXmlElementException {
 		final CharacterPlayer clone = CharacterDataMapper.toCharacter(CharacterDataMapper.toData(original));
 		clone.getLevels().remove(clone.getLevels().size() - 1);
 		return clone;

@@ -94,6 +94,8 @@ public final class CharacterData {
     @JsonProperty("darkSpellsAsBasicListsAllowed")
     private boolean darkSpellsAsBasicListsAllowed;
 
+    private boolean recommendedFavouriteSkillsIncluded;
+
     public CharacterData() {
         // Required by deserialization frameworks.
     }
@@ -256,6 +258,14 @@ public final class CharacterData {
 
     public void setStandardEquipment(List<Equipment> standardEquipment) {
         this.standardEquipment = standardEquipment;
+    }
+
+    public boolean isRecommendedFavouriteSkillsIncluded() {
+        return recommendedFavouriteSkillsIncluded;
+    }
+
+    public void setRecommendedFavouriteSkillsIncluded(boolean recommendedFavouriteSkillsIncluded) {
+        this.recommendedFavouriteSkillsIncluded = recommendedFavouriteSkillsIncluded;
     }
 
     public boolean isFirearmsAllowed() {

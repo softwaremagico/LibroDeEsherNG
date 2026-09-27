@@ -1246,7 +1246,10 @@ public class RandomCharacterPlayer {
      * categories holding the legacy ordering: first one hand-to-hand category, then one distance (or
      * firearm, when the character allows them) category, then everything else shuffled. The legacy's
      * unintentional fall-through that also collected projectile/throwing categories into the
-     * firearm bucket is not reproduced.
+     * firearm bucket is not reproduced. Only the profession's own tiers are handed out, never the two
+     * extra ones a character allowing firearms gets (see
+     * {@link CharacterPlayer#getWeaponCategoryCostTierCount()}): the legacy random character was built
+     * without ever calling {@code Profession#extendCategoryCost}, so it never saw them.
      */
     public static void setWeaponCosts(CharacterPlayer characterPlayer) throws InvalidXmlElementException {
         final int tierCount = characterPlayer.getProfession().getWeaponCategoryCostTiers().size();

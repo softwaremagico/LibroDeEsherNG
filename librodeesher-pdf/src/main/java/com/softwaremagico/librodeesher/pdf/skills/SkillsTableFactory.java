@@ -45,6 +45,10 @@ public final class SkillsTableFactory extends BaseElement {
             return table;
         }
         for (final Category category : categories) {
+            // The legacy skipped any category whose option is off (PdfStandardSheet#addSkillsTable).
+            if (!characterPlayer.isCategoryEnabledByOptions(category)) {
+                continue;
+            }
             addCategorySkills(table, characterPlayer, category);
         }
         return table;
@@ -62,7 +66,7 @@ public final class SkillsTableFactory extends BaseElement {
         for (final Skill skill : skills) {
             final Category category = categories.stream().filter(candidate -> candidate.getId().equals(skill.getCategoryId()))
                     .findFirst().orElse(null);
-            if (category == null) {
+            if (category == null || !characterPlayer.isCategoryEnabledByOptions(category)) {
                 continue;
             }
             table.addCell(getPlainCell(getText(category.getName())));

@@ -145,6 +145,17 @@ public class CharacterPlayer {
 	private boolean magicAllowed = true;
 	private boolean darkSpellsAsBasicListsAllowed = false;
 
+	/** The "Comunicación" category, whose skills are never recommended favourites (see {@link #getFavouriteSkillIds()}). */
+	private static final String COMMUNICATION_CATEGORY = "communication";
+
+	/**
+	 * Whether every bought-and-worthwhile skill is offered as a favourite (see {@link
+	 * #getFavouriteSkillIds()}), matching the legacy {@code CharacterPlayer#recommendedFavouriteSkillsIncluded}
+	 * (also {@code false} by default, and persisted per character there, so a migrated character keeps
+	 * whatever the player had chosen).
+	 */
+	private boolean recommendedFavouriteSkillsIncluded = false;
+
 	/**
 	 * A category or skill rank whose next-rank development cost is under this amount is "cheap enough
 	 * to be worth investing in" for the random character generator, matching the legacy {@code
@@ -152,6 +163,12 @@ public class CharacterPlayer {
 	 * SkillProbability}).
 	 */
 	public static final int MAX_REASONABLE_COST = 40;
+
+	/**
+	 * The legacy {@code Config#getCategoryMaxCost()}'s default: a category whose next rank would cost
+	 * more than this is not worth developing, so it is hidden (see {@link #isCategoryEnabledByOptions}).
+	 */
+	public static final int CATEGORY_MAX_COST = 50;
 
 	public CharacterPlayer() {
 		for (final CharacteristicAbbreviation abbreviation : allRealCharacteristics()) {
@@ -1429,7 +1446,7 @@ public class CharacterPlayer {
 	private List<String> getWeaponCategoryIds() throws InvalidXmlElementException {
 		final List<String> ids = new ArrayList<>();
 		for (final Category category : RulesCatalog.getInstance().getCategories()) {
-			if (category.getId().startsWith("weapons")) {
+			if (isWeaponCategoryId(category.getId())) {
 				ids.add(category.getId());
 			}
 		}
@@ -1561,8 +1578,104 @@ public class CharacterPlayer {
 		return this.firearmsAllowed;
 	}
 
-	public void setFirearmsAllowed(boolean firearmsAllowed) {
+	/**
+	 * Whether the character may use firearms, and (once toggled off and back on) which weapon categories
+	 * get a cost tier. Turning the option off also wipes what firearms had bought, and turning it back on
+	 * hands the free cost tiers to the weapon categories that have none yet, both only once the character
+	 * has decided at least one weapon cost tier, matching the legacy {@code
+	 * CharacterPlayer#setFirearmsAllowed(boolean)} (which guards both on {@code
+	 * ProfessionDecisions#isWeaponCostDecided()}, i.e. on any tier being assigned).
+	 */
+	public void setFirearmsAllowed(boolean firearmsAllowed) throws InvalidXmlElementException {
 		this.firearmsAllowed = firearmsAllowed;
+		if (!this.isAnyWeaponCategoryCostTierAssigned()) {
+			return;
+		}
+		final LevelUp level = this.getCurrentLevel();
+		if (firearmsAllowed) {
+			for (final String weaponCategoryId : this.getWeaponCategoryIds()) {
+				if (this.getAssignedWeaponCategoryCostTier(weaponCategoryId) == null) {
+					this.assignAvailableWeaponCategoryCostTier(this.firstUnassignedWeaponCostTierIndex(),
+							weaponCategoryId);
+				}
+			}
+			return;
+		}
+		for (final String weaponCategoryId : this.getWeaponCategoryIds()) {
+			if (!this.isFirearmCategoryId(weaponCategoryId)) {
+				continue;
+			}
+			this.resetWeaponCategoryCostTier(weaponCategoryId);
+			level.setCategoryRanks(weaponCategoryId, 0);
+			// The legacy's "noimporta" categories carry no skills of their own (the weapon models are
+			// loaded from the weapons file), so this loop is a no-op there too, just as it was there.
+			for (final String skillId : RulesCatalog.getInstance().getCategory(weaponCategoryId).getSkills()) {
+				level.setSkillRanks(skillId, 0, this.isSpellSkill(skillId));
+			}
+		}
+		// extendCategoryCost(false) removed the two most expensive tiers whichever category held them.
+		final Profession profession = this.getProfession();
+		final int dataTierCount = profession == null ? 0 : profession.getWeaponCategoryCostTiers().size();
+		for (int index = this.getWeaponCategoryCostTierCount(); index < dataTierCount + FIREARMS_EXTRA_COST_TIERS; index++) {
+			this.decisions.remove(WEAPON_COST_TIER_KEY_PREFIX + index);
+		}
+	}
+
+	/** Whether the selected profession has at least one of its weapon cost tiers assigned (see {@link #assignWeaponCategoryCostTier}). */
+	private boolean isAnyWeaponCategoryCostTierAssigned() throws InvalidXmlElementException {
+		for (int i = 0; i < this.getWeaponCategoryCostTierCount(); i++) {
+			if (this.isWeaponCategoryCostTierAssigned(i)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/** The cheapest tier index still free for another weapon category, or -1 when they are all assigned. */
+	private int firstUnassignedWeaponCostTierIndex() throws InvalidXmlElementException {
+		for (int i = 0; i < this.getWeaponCategoryCostTierCount(); i++) {
+			if (!this.isWeaponCategoryCostTierAssigned(i)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	/** Frees the cost tier assigned to {@code weaponCategoryId} (see {@link #assignWeaponCategoryCostTier}). */
+	private void resetWeaponCategoryCostTier(String weaponCategoryId) throws InvalidXmlElementException {
+		for (int i = 0; i < this.getWeaponCategoryCostTierCount(); i++) {
+			if (weaponCategoryId.equals(this.decisions.getSelectedOption(WEAPON_COST_TIER_KEY_PREFIX + i))) {
+				this.decisions.remove(WEAPON_COST_TIER_KEY_PREFIX + i);
+			}
+		}
+	}
+
+	/**
+	 * The weapon cost tiers this character actually has: its profession's own tiers (cheapest first, see
+	 * {@link #assignWeaponCategoryCostTier}) plus {@link #FIREARMS_EXTRA_COST_TIERS} more while firearms are
+	 * allowed, so that a character with 9 weapon categories can have a tier for each of them.
+	 */
+	public int getWeaponCategoryCostTierCount() throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		return profession == null ? 0
+				: profession.getWeaponCategoryCostTiers().size() + (this.isFirearmsAllowed() ? FIREARMS_EXTRA_COST_TIERS : 0);
+	}
+
+	/**
+	 * The {@code tierIndex}-th weapon cost tier of this character (see {@link #getWeaponCategoryCostTierCount}),
+	 * the extra ones being copies of the profession's most expensive tier, or {@code null} when there is no such
+	 * tier (no profession selected, or an index out of range).
+	 */
+	private ProfessionWeaponCostTier getWeaponCategoryCostTier(int tierIndex) throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		if (profession == null || tierIndex < 0 || tierIndex >= this.getWeaponCategoryCostTierCount()) {
+			return null;
+		}
+		final List<ProfessionWeaponCostTier> tiers = profession.getWeaponCategoryCostTiers();
+		if (tierIndex < tiers.size()) {
+			return tiers.get(tierIndex);
+		}
+		return new ProfessionWeaponCostTier(tiers.get(tiers.size() - 1).getRankCosts());
 	}
 
 	public boolean isChiPowersAllowed() {
@@ -1587,6 +1700,15 @@ public class CharacterPlayer {
 
 	public void setMagicAllowed(boolean magicAllowed) {
 		this.magicAllowed = magicAllowed;
+	}
+
+	/** Whether bought-and-worthwhile skills are offered as favourites (see {@link #getFavouriteSkillIds()}). */
+	public boolean isRecommendedFavouriteSkillsIncluded() {
+		return this.recommendedFavouriteSkillsIncluded;
+	}
+
+	public void setRecommendedFavouriteSkillsIncluded(boolean recommendedFavouriteSkillsIncluded) {
+		this.recommendedFavouriteSkillsIncluded = recommendedFavouriteSkillsIncluded;
 	}
 
 	/**
@@ -1845,28 +1967,28 @@ public class CharacterPlayer {
 	}
 
 	/**
-	 * Whether a category's option is currently enabled, matching the legacy {@code
-	 * isCategoryOptionEnabled(Category)}: a spell-list category needs {@link #isMagicAllowed()}, a
-	 * weapon-firearm category needs {@link #isFirearmsAllowed()}, a category holding CHI-group
-	 * skills needs {@link #isChiPowersAllowed()}, every other category is always enabled.
+	 * Whether a category's option is currently enabled, a faithful port of the legacy {@code
+	 * CharacterPlayer#isCategoryOptionEnabled(Category)}, rule for rule: a weapon category only needs
+	 * {@link #isFirearmsAllowed()} (weapons are allowed even when their cost is not set, so the
+	 * remaining rules are not applied to them), a category of other-realm training lists needs {@link
+	 * #isOtherRealmTrainingSpellsAllowed()}, a category whose first rank would cost more than {@link
+	 * #CATEGORY_MAX_COST} is useless, and a spell list needs {@link #isMagicAllowed()}. The legacy
+	 * read that cost limit from its global {@code Config}, whose default NG keeps as a constant (there
+	 * is no user configuration to read here).
 	 */
 	public boolean isCategoryEnabledByOptions(Category category) throws InvalidXmlElementException {
-		if (isSpellListCategory(category.getId())) {
-			return this.isMagicAllowed();
+		if (this.isWeaponCategoryId(category.getId())) {
+			return !(this.isFirearmCategoryId(category.getId()) && !this.isFirearmsAllowed());
 		}
-		if (this.isFirearmCategoryId(category.getId())) {
-			return this.isFirearmsAllowed();
+		if (isSpellListCategory(category.getId()) && !this.isOtherRealmTrainingSpellsAllowed()
+				&& this.classifySpellList(category.getId()) == MagicListType.OTHER_REALM_TRAINING) {
+			return false;
 		}
-		for (final String skillId : category.getSkills()) {
-			try {
-				if (RulesCatalog.getInstance().getSkill(skillId).getSkillGroup() == SkillGroup.CHI) {
-					return this.isChiPowersAllowed();
-				}
-			} catch (final InvalidXmlElementException e) {
-				// Dangling skill id referenced by a dynamic category: ignore it.
-			}
+		final Integer cost = this.getCategoryDevelopmentCost(category.getId(), 0);
+		if (cost != null && cost > CATEGORY_MAX_COST) {
+			return false;
 		}
-		return true;
+		return !isSpellListCategory(category.getId()) || this.isMagicAllowed();
 	}
 
 	private boolean isFirearmCategoryId(String categoryId) {
@@ -2457,9 +2579,22 @@ public class CharacterPlayer {
 		return ids;
 	}
 
-	/** Every manually selected favourite skill across all levels, in selection order by level. */
-	public List<String> getFavouriteSkillIds() {
+	/**
+	 * Every favourite skill of the character: the ones selected by hand (see {@link
+	 * #addFavouriteSkill(String)}), preceded by the recommended ones (every skill bought and worth
+	 * something) when {@link #isRecommendedFavouriteSkillsIncluded()} is set, matching the legacy
+	 * {@code CharacterPlayer#getFavouriteSkills()}.
+	 */
+	public List<String> getFavouriteSkillIds() throws InvalidXmlElementException {
 		final List<String> ids = new ArrayList<>();
+		if (this.recommendedFavouriteSkillsIncluded) {
+			for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
+				if (this.getSkillTotalRanks(skill.getId()) > 0 && !this.isUselessFavouriteSkill(skill)
+						&& !ids.contains(skill.getId())) {
+					ids.add(skill.getId());
+				}
+			}
+		}
 		for (final LevelUp levelUp : this.levels) {
 			for (final String skillId : levelUp.getFavouriteSkills()) {
 				if (!ids.contains(skillId)) {
@@ -2468,6 +2603,18 @@ public class CharacterPlayer {
 			}
 		}
 		return ids;
+	}
+
+	/**
+	 * Whether a recommended favourite skill is too uninteresting to offer (the legacy {@code
+	 * CharacterPlayer#isUselessFavouriteSkill}): a communication skill, or one whose total bonus is not
+	 * above zero.
+	 */
+	private boolean isUselessFavouriteSkill(Skill skill) throws InvalidXmlElementException {
+		if (COMMUNICATION_CATEGORY.equals(skill.getCategoryId())) {
+			return true;
+		}
+		return this.getSkillTotalBonus(skill) <= 0;
 	}
 
 	public void addFavouriteSkill(String skillId) {
@@ -3129,7 +3276,8 @@ public class CharacterPlayer {
 		for (final Category category : RulesCatalog.getInstance().getCategories()) {
 			final int currentRanks = this.getCurrentLevel().getCategoryRanks(category.getId());
 			final Integer cost = this.getCategoryDevelopmentCost(category.getId(), currentRanks);
-			if (currentRanks < this.getMaximumCategoryRanksThisLevel(category.getId()) && cost != null
+			if (this.isCategoryEnabledByOptions(category) && currentRanks < this.getMaximumCategoryRanksThisLevel(category.getId())
+					&& cost != null
 					&& cost <= this.getRemainingDevelopmentPoints()) {
 				available.add(category.getId());
 			}
@@ -3146,7 +3294,9 @@ public class CharacterPlayer {
 	public boolean setCurrentLevelCategoryRanks(String categoryId, int ranks) throws InvalidXmlElementException {
 		final LevelUp level = this.getCurrentLevel();
 		final int previousRanks = level.getCategoryRanks(categoryId);
-		if (ranks < 0 || (ranks > previousRanks && ranks > this.getMaximumCategoryRanksThisLevel(categoryId))) {
+		if (ranks < 0
+				|| (ranks > previousRanks && (!this.isCategoryEnabledByOptions(RulesCatalog.getInstance().getCategory(categoryId))
+						|| ranks > this.getMaximumCategoryRanksThisLevel(categoryId)))) {
 			return false;
 		}
 		level.setCategoryRanks(categoryId, ranks);
@@ -3169,6 +3319,7 @@ public class CharacterPlayer {
 		final boolean isSpellSkill = this.isSpellSkill(skillId);
 		final int previousRanks = level.getSkillRanks(skillId);
 		if (ranks < 0 || (ranks > previousRanks && (!this.isSkillEnabled(skill) || this.isSkillDisabledByOptions(skill)
+					|| !this.isCategoryEnabledByOptions(RulesCatalog.getInstance().getCategory(skill.getCategoryId()))
 					|| ranks > this.getMaximumCategoryRanksThisLevel(skill.getCategoryId())))) {
 			return false;
 		}
@@ -3183,8 +3334,17 @@ public class CharacterPlayer {
 	private static final String WEAPON_COST_TIER_KEY_PREFIX = "weaponCostTier:";
 
 	/**
+	 * A character that allows firearms gets this many weapon cost tiers more than its profession defines,
+	 * each one a copy of the most expensive tier: the legacy built them in {@code
+	 * Profession#createExtraWeaponsCosts()} and appended them in {@code extendCategoryCost(true)} so that
+	 * every one of the 9 weapon categories could have a tier, and dropped the two most expensive ones again
+	 * in {@code extendCategoryCost(false)}.
+	 */
+	private static final int FIREARMS_EXTRA_COST_TIERS = 2;
+
+	/**
 	 * Assigns the selected profession's {@code tierIndex}-th weapon-category cost tier (see {@link
-	 * Profession#getWeaponCategoryCostTiers()}, cheapest first) to {@code weaponCategoryId}: the
+	 * #getWeaponCategoryCostTierCount()}, cheapest first) to {@code weaponCategoryId}: the
 	 * player freely picks which of their available weapon categories gets the cheapest tier, the
 	 * second-cheapest, and so on, matching the legacy {@code ProfessionDecisions#setWeaponCost}
 	 * exactly (a plain assignment, freely overwritable; {@link #isWeaponCategoryCostTierAssigned}
@@ -3200,8 +3360,7 @@ public class CharacterPlayer {
 		if (profession == null) {
 			throw new IllegalStateException("No profession selected.");
 		}
-		final List<ProfessionWeaponCostTier> tiers = profession.getWeaponCategoryCostTiers();
-		if (tierIndex < 0 || tierIndex >= tiers.size()) {
+		if (tierIndex < 0 || tierIndex >= this.getWeaponCategoryCostTierCount()) {
 			throw new IllegalArgumentException(
 					"'" + tierIndex + "' is not one of '" + profession.getId() + "''s weapon cost tiers.");
 		}
@@ -3212,21 +3371,27 @@ public class CharacterPlayer {
 	}
 
 	/** Whether {@code tierIndex} has already been assigned to some weapon category (see {@link #assignWeaponCategoryCostTier}). */
-	public boolean isWeaponCategoryCostTierAssigned(int tierIndex) {
+	public boolean isWeaponCategoryCostTierAssigned(int tierIndex) throws InvalidXmlElementException {
 		return this.decisions.isDecided(WEAPON_COST_TIER_KEY_PREFIX + tierIndex);
 	}
 
 	/**
 	 * Weapon categories that may receive {@code tierIndex}. A category assigned to another tier is
-	 * excluded, while the current tier's existing selection remains available for reassignment.
+	 * excluded, as is one whose option is disabled (a weapon-firearm category while firearms are off,
+	 * see {@link #isCategoryEnabledByOptions(Category)}), while the current tier's existing selection
+	 * remains available for reassignment.
 	 */
 	public List<String> getAvailableWeaponCategoriesForCostTier(int tierIndex) throws InvalidXmlElementException {
-		final Profession profession = this.getProfession();
-		if (profession == null || tierIndex < 0 || tierIndex >= profession.getWeaponCategoryCostTiers().size()) {
+		if (this.getProfession() == null || tierIndex < 0 || tierIndex >= this.getWeaponCategoryCostTierCount()) {
 			return List.of();
 		}
-		final List<String> available = new ArrayList<>(this.getWeaponCategoryIds());
-		for (int index = 0; index < profession.getWeaponCategoryCostTiers().size(); index++) {
+		final List<String> available = new ArrayList<>();
+		for (final String categoryId : this.getWeaponCategoryIds()) {
+			if (this.isCategoryEnabledByOptions(RulesCatalog.getInstance().getCategory(categoryId))) {
+				available.add(categoryId);
+			}
+		}
+		for (int index = 0; index < this.getWeaponCategoryCostTierCount(); index++) {
 			if (index != tierIndex) {
 				available.remove(this.decisions.getSelectedOption(WEAPON_COST_TIER_KEY_PREFIX + index));
 			}
@@ -3254,14 +3419,12 @@ public class CharacterPlayer {
 	 * tiers have been assigned to it yet.
 	 */
 	public ProfessionWeaponCostTier getAssignedWeaponCategoryCostTier(String weaponCategoryId) throws InvalidXmlElementException {
-		final Profession profession = this.getProfession();
-		if (profession == null) {
+		if (this.getProfession() == null) {
 			return null;
 		}
-		final List<ProfessionWeaponCostTier> tiers = profession.getWeaponCategoryCostTiers();
-		for (int i = 0; i < tiers.size(); i++) {
+		for (int i = 0; i < this.getWeaponCategoryCostTierCount(); i++) {
 			if (weaponCategoryId.equals(this.decisions.getSelectedOption(WEAPON_COST_TIER_KEY_PREFIX + i))) {
-				return tiers.get(i);
+				return this.getWeaponCategoryCostTier(i);
 			}
 		}
 		return null;
@@ -4311,6 +4474,7 @@ public class CharacterPlayer {
 		for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
 			final int currentRanks = this.getCurrentLevel().getSkillRanks(skill.getId());
 			if (this.isSkillEnabled(skill) && !this.isSkillDisabledByOptions(skill)
+					&& this.isCategoryEnabledByOptions(RulesCatalog.getInstance().getCategory(skill.getCategoryId()))
 					&& currentRanks < this.getMaximumCategoryRanksThisLevel(skill.getCategoryId())
 					&& this.canAffordSkillRank(skill.getCategoryId(), currentRanks)) {
 				available.add(skill.getId());

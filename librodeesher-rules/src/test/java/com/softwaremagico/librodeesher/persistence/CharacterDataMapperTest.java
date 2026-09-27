@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.persistence;
 
+import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.age.AgeModification;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.character.SexType;
@@ -32,14 +33,14 @@ import java.util.Set;
 public class CharacterDataMapperTest {
 
 	@Test
-	public void roundTripsEveryFieldOfAFullyPopulatedCharacter() {
+	public void roundTripsEveryFieldOfAFullyPopulatedCharacter() throws InvalidXmlElementException {
 		final CharacterPlayer original = newFullyPopulatedCharacter();
 		final CharacterPlayer restored = CharacterDataMapper.toCharacter(CharacterDataMapper.toData(original));
 		assertCharactersEqual(original, restored);
 	}
 
 	@Test
-	public void roundTripsAnEmptyCharacter() {
+	public void roundTripsAnEmptyCharacter() throws InvalidXmlElementException {
 		final CharacterPlayer original = new CharacterPlayer();
 		final CharacterPlayer restored = CharacterDataMapper.toCharacter(CharacterDataMapper.toData(original));
 		Assert.assertEquals(restored.getLevel(), 1);
@@ -47,7 +48,22 @@ public class CharacterDataMapperTest {
 	}
 
 	@Test
-	public void snapshotMapsAreKeySortedForStableOutput() {
+	public void recommendedFavouriteSkillsFlagSurvivesTheJsonRoundTrip() throws InvalidXmlElementException {
+		final CharacterPlayer original = new CharacterPlayer();
+		Assert.assertFalse(CharacterDataMapper.toData(original).isRecommendedFavouriteSkillsIncluded());
+		Assert.assertFalse(CharacterDataMapper.toCharacter(CharacterDataMapper.toData(original))
+				.isRecommendedFavouriteSkillsIncluded());
+
+		original.setRecommendedFavouriteSkillsIncluded(true);
+		final CharacterData data = CharacterDataMapper.toData(original);
+		Assert.assertTrue(data.isRecommendedFavouriteSkillsIncluded());
+		Assert.assertTrue(CharacterJsonManager.fromJson(CharacterJsonManager.toJson(data))
+				.isRecommendedFavouriteSkillsIncluded());
+		Assert.assertTrue(CharacterDataMapper.toCharacter(data).isRecommendedFavouriteSkillsIncluded());
+	}
+
+	@Test
+	public void snapshotMapsAreKeySortedForStableOutput() throws InvalidXmlElementException {
 		final CharacterData data = CharacterDataMapper.toData(newFullyPopulatedCharacter());
 		Assert.assertTrue(isSorted(new ArrayList<>(data.getCharacteristicTemporalValues().keySet())));
 		Assert.assertTrue(isSorted(new ArrayList<>(data.getCharacteristicPotentialValues().keySet())));
@@ -58,7 +74,7 @@ public class CharacterDataMapperTest {
 		Assert.assertTrue(isSorted(new ArrayList<>(data.getLevels().get(0).getCategoryRanks().keySet())));
 	}
 
-	public static CharacterPlayer newFullyPopulatedCharacter() {
+	public static CharacterPlayer newFullyPopulatedCharacter() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.setName("Ánforo Élfico");
 		character.setSex(SexType.MALE);
@@ -124,11 +140,12 @@ public class CharacterDataMapperTest {
 		character.setChiPowersAllowed(true);
 		character.setOtherRealmTrainingSpellsAllowed(true);
 		character.setMagicAllowed(true);
+		character.setRecommendedFavouriteSkillsIncluded(true);
 		character.setDarkSpellsAsBasicListsAllowed(true);
 		return character;
 	}
 
-	private static void assertCharactersEqual(CharacterPlayer original, CharacterPlayer restored) {
+	private static void assertCharactersEqual(CharacterPlayer original, CharacterPlayer restored) throws InvalidXmlElementException {
 		Assert.assertEquals(restored.getName(), original.getName());
 		Assert.assertEquals(restored.getSex(), original.getSex());
 		Assert.assertEquals(restored.getRaceId(), original.getRaceId());
@@ -206,6 +223,8 @@ public class CharacterDataMapperTest {
 		Assert.assertEquals(restored.isOtherRealmTrainingSpellsAllowed(), original.isOtherRealmTrainingSpellsAllowed());
 		Assert.assertEquals(restored.isMagicAllowed(), original.isMagicAllowed());
 		Assert.assertEquals(restored.isDarkSpellsAsBasicListsAllowed(), original.isDarkSpellsAsBasicListsAllowed());
+		Assert.assertEquals(original.isRecommendedFavouriteSkillsIncluded(), restored.isRecommendedFavouriteSkillsIncluded());
+		Assert.assertEquals(original.getFavouriteSkillIds(), restored.getFavouriteSkillIds());
 	}
 
 	private static void assertLevelsEqual(LevelUp original, LevelUp restored, int index) {

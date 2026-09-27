@@ -9,6 +9,7 @@ import com.softwaremagico.librodeesher.decision.Decision;
 import com.softwaremagico.librodeesher.decision.Decisions;
 import com.softwaremagico.librodeesher.equipment.Equipment;
 import com.softwaremagico.librodeesher.equipment.MagicObject;
+import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
 
@@ -102,11 +103,12 @@ public final class CharacterDataMapper {
         data.setOtherRealmTrainingSpellsAllowed(character.isOtherRealmTrainingSpellsAllowed());
         data.setMagicAllowed(character.isMagicAllowed());
         data.setDarkSpellsAsBasicListsAllowed(character.isDarkSpellsAsBasicListsAllowed());
+        data.setRecommendedFavouriteSkillsIncluded(character.isRecommendedFavouriteSkillsIncluded());
         return data;
     }
 
     /** Rebuilds a {@link CharacterPlayer} from a {@link CharacterData} snapshot. */
-    public static CharacterPlayer toCharacter(CharacterData data) {
+    public static CharacterPlayer toCharacter(CharacterData data) throws InvalidXmlElementException {
         final CharacterPlayer character = new CharacterPlayer();
         character.setName(data.getName());
         character.setSex(data.getSex() == null ? null : data.getSex());
@@ -114,6 +116,15 @@ public final class CharacterDataMapper {
         character.setCultureId(data.getCultureId());
         character.setProfessionId(data.getProfessionId());
         character.setHistoryText(data.getHistoryText());
+
+        // Options come before the state they gate: setFirearmsAllowed() also wipes what
+        // firearms bought, which would otherwise throw away the ranks and costs just restored.
+        character.setFirearmsAllowed(data.isFirearmsAllowed());
+        character.setChiPowersAllowed(data.isChiPowersAllowed());
+        character.setOtherRealmTrainingSpellsAllowed(data.isOtherRealmTrainingSpellsAllowed());
+        character.setMagicAllowed(data.isMagicAllowed());
+        character.setDarkSpellsAsBasicListsAllowed(data.isDarkSpellsAsBasicListsAllowed());
+        character.setRecommendedFavouriteSkillsIncluded(data.isRecommendedFavouriteSkillsIncluded());
 
         for (final Map.Entry<String, Integer> entry : data.getCharacteristicTemporalValues().entrySet()) {
             character.setCharacteristicTemporalValue(CharacteristicAbbreviation.valueOf(entry.getKey()),
@@ -184,11 +195,6 @@ public final class CharacterDataMapper {
             character.addStandardEquipment(equipment);
         }
 
-        character.setFirearmsAllowed(data.isFirearmsAllowed());
-        character.setChiPowersAllowed(data.isChiPowersAllowed());
-        character.setOtherRealmTrainingSpellsAllowed(data.isOtherRealmTrainingSpellsAllowed());
-        character.setMagicAllowed(data.isMagicAllowed());
-        character.setDarkSpellsAsBasicListsAllowed(data.isDarkSpellsAsBasicListsAllowed());
         return character;
     }
 
