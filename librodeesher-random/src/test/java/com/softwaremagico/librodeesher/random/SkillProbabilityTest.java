@@ -110,6 +110,41 @@ public class SkillProbabilityTest {
 		}
 	}
 
+	@Test
+	public void knightTrainingFavoursRidingHorses() throws InvalidXmlElementException {
+		// Legacy warriorsPreferredSkills(): a fighter with the "knight" training selected gets +50 on
+		// montarCaballos; without it, horses are worth 0.
+		final CharacterPlayer fighter = freshFighter();
+		final int base = rankProbability("montarCaballos", null, fighter);
+		fighter.addTraining("knight");
+		Assert.assertEquals(rankProbability("montarCaballos", null, fighter), base + 50);
+	}
+
+	@Test
+	public void mainGaucheCannotBeTheFirstWeapon() throws InvalidXmlElementException {
+		// Legacy randomnessBySkill(): main gauche is vetoed (-200) until the character owns another
+		// weapon of its own category. Weapon categories list no skills of their own (the legacy
+		// categories.txt skills column is "noimporta" for them), so the condition never clears and
+		// the veto lowers the very same base by exactly -200, as the mount-race vetoes do.
+		final CharacterPlayer fighter = freshFighter();
+		fighter.assignWeaponCategoryCostTier(0, "weaponsEdged");
+		final int siblingWeapon = rankProbability("sword", null, fighter);
+		Assert.assertEquals(rankProbability("mainGauche", null, fighter), siblingWeapon - 200);
+	}
+
+	@Test
+	public void generalKnowledgeIsDiscouragedWhileDevelopmentPointsRemain() throws InvalidXmlElementException {
+		// Legacy randomnessByRanks(): general knowledge loses currentLevelSkillsRanks(category)*10
+		// while >10 DPs remain. One loreGeneral rank bought this level therefore costs the next lore
+		// skill 21 points: the -10 knowledge penalty itself, +2 (skillsPerCategory now counts the
+		// rank), -3 (a skill of the category already got a new rank) and -6 (stillNotUsed drops by
+		// the 1 point already spent on a 1-cost skill).
+		final CharacterPlayer fighter = freshFighter();
+		final int base = rankProbability("history", null, fighter);
+		Assert.assertTrue(fighter.setCurrentLevelSkillRanks("loreRegional", 1));
+		Assert.assertEquals(rankProbability("history", null, fighter), base - 21);
+	}
+
 	private static int rankProbability(String skillId, Map<String, Integer> suggested)
 			throws InvalidXmlElementException {
 		return rankProbability(skillId, suggested, freshFighter());

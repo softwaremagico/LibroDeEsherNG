@@ -808,15 +808,15 @@ public class CharacterPlayer {
 	}
 
 	/**
-	 * How many weapon categories received a rank at the current level, matching the legacy {@code
-	 * CharacterPlayer#getWeaponsLearnedInCurrentLevel()}.
+	 * How many weapon skills received a rank at the current level, matching the legacy {@code
+	 * CharacterPlayer#getWeaponsLearnedInCurrentLevel()} (which sums, across every weapon category,
+	 * the number of that category's skills with new ranks).
 	 */
-	public int getWeaponsLearnedInCurrentLevel() {
+	public int getWeaponsLearnedInCurrentLevel() throws InvalidXmlElementException {
 		int weapons = 0;
 		for (final WeaponType type : WeaponType.values()) {
-			if (this.getCurrentLevelCategoryRanks(type.getCategoryId()) > 0) {
-				weapons++;
-			}
+			final Category category = RulesCatalog.getInstance().getCategory(type.getCategoryId());
+			weapons += this.getCategorySkillsWithNewRanks(category).size();
 		}
 		return weapons;
 	}

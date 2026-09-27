@@ -20,11 +20,10 @@ import java.util.Map;
  * the legacy {@code SkillProbability} heuristic structure on the id-based NG model. The regular
  * cost/rank/specialization/favourite/common/professional/restricted terms reproduce the legacy math
  * exactly; the checks the legacy performed on Spanish <em>names</em> (e.g. the horse/wolf/bear/camel
- * mount rules, the "regional/cultural/general knowledge" categories or the famous spell-list names
- * of {@code wizardPreferredSkills}) have no equivalent id in the migrated modules, so they are
- * replaced by the closest id-based test (communication category, "rock" skills, armour categories,
- * racial attacks, weapon categories) or dropped where no NG element matches (returning 0, the same
- * neutral value the absent legacy bonus contributed).
+ * mount rules, the "regional/cultural/general knowledge" categories, "Main Gauche cannot be the first
+ * weapon" or the famous spell-list names of {@code wizardPreferredSkills}) are keyed on the migrated
+ * ids, or dropped where no NG element matches (returning 0, the same neutral value the absent legacy
+ * bonus contributed).
  *
  * <p>Like its legacy counterpart this class is pure RNG-free ranking; {@link #getRankProbability()}
  * returns a percentage in a [0..150] band (capped at 90 when between 90 and 150), 0 when nothing is
@@ -49,10 +48,12 @@ public class SkillProbability {
     private static final String MOUNT_WOLVES = "montarLobos";
     private static final String MOUNT_BEARS = "montarOsos";
     private static final String MOUNT_CAMELS = "montarCamellos";
+    private static final String KNIGHT_TRAINING_ID = "knight";
     private static final String KNOWLEDGE_REGIONAL = "loreRegional";
     private static final String KNOWLEDGE_CULTURAL = "loreCultural";
     private static final String KNOWLEDGE_FAUNA = "loreOfFauna";
     private static final String KNOWLEDGE_FLORA = "loreOfFlora";
+    private static final String KNOWLEDGE_GENERAL_CATEGORY = "loreGeneral";
 
     // The five "famous" spell lists the legacy wizardPreferredSkills() favoured per realm, mapped
     // from their Spanish list names to the migrated catalog ids.
@@ -252,6 +253,18 @@ public class SkillProbability {
         return currentLevelSkillRanks * specializationLevel * 2;
     }
 
+    /**
+     * Sum of the ranks bought this level across the category's own skills, the legacy {@code
+     * CharacterPlayer#getCurrentLevelSkillsRanks(Category)}.
+     */
+    private int currentLevelCategorySkillRanks() throws InvalidXmlElementException {
+        int currentLevelSkillRanks = 0;
+        for (final String skillId : RulesCatalog.getInstance().getCategory(skill.getCategoryId()).getSkills()) {
+            currentLevelSkillRanks += characterPlayer.getSkillCurrentLevelRanks(skillId);
+        }
+        return currentLevelSkillRanks;
+    }
+
     private int randomnessByRanks() throws InvalidXmlElementException {
         int bonus = 0;
 
@@ -275,17 +288,27 @@ public class SkillProbability {
             bonus -= 40;
         }
 
+        // Not so much general knowledge if still has points for other categories.
+        if (KNOWLEDGE_GENERAL_CATEGORY.equals(skill.getCategoryId())
+                && characterPlayer.getRemainingDevelopmentPoints() > LAST_DEVELOPMENT_POINTS_RANGE) {
+            bonus -= currentLevelCategorySkillRanks() * 10;
+        }
+
         // Check armour values; armours are also useless if the race has natural armour.
         if ("armorLight".equals(skill.getCategoryId())
                 && (naturalArmorType() > 2 || characterPlayer.getSkillTotalValue(skill) > 30)) {
             return -MAX_VALUE;
         }
         if ("armorMiddle".equals(skill.getCategoryId())
-                && (naturalArmorType() > 4 || characterPlayer.getSkillTotalValue(skill) > 100)) {
+                && (naturalArmorType() > 4 || characterPlayer.getSkillTotalValue(skill) > 90)) {
             return -MAX_VALUE;
         }
         if ("armorHeavy".equals(skill.getCategoryId())
                 && (naturalArmorType() > 12 || characterPlayer.getSkillTotalValue(skill) > 120)) {
+            return -MAX_VALUE;
+        }
+        if ("armorCuirass".equals(skill.getCategoryId())
+                && (naturalArmorType() > 16 || characterPlayer.getSkillTotalValue(skill) > 120)) {
             return -MAX_VALUE;
         }
 
@@ -299,6 +322,11 @@ public class SkillProbability {
 
     private int randomnessBySkill() throws InvalidXmlElementException {
         int bonus = 0;
+
+        // Main Gauche cannot be the first weapon.
+        if ("mainGauche".equals(skill.getId()) && skillsWithRanks().size() < 1) {
+            return -MAX_VALUE;
+        }
 
         // No rocks in random characters.
         if (skill.getId().toLowerCase().contains("rock") && realRanks() < 1) {
@@ -394,9 +422,13 @@ public class SkillProbability {
         return 0;
     }
 
-    /** Skills for warriors: weapons and natural attacks. */
+    /** Skills for warriors: horses, weapons and natural attacks. */
     private int warriorsPreferredSkills() throws InvalidXmlElementException {
         if (characterPlayer.isFighter()) {
+            // Knights ride horses.
+            if (MOUNT_HORSES.equals(skill.getId())) {
+                return characterPlayer.getSelectedTrainingIds().contains(KNIGHT_TRAINING_ID) ? 50 : 0;
+            }
             if (CharacterPlayer.isWeaponCategoryId(skill.getCategoryId())) {
                 return 10;
             }
