@@ -346,7 +346,6 @@
       <commonSkillId>loreOfLodCircles</commonSkillId>
     </commonSkillIds>
     <id>invocador</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -748,14 +747,12 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>true</choice>
         <options>
           <realm>ESSENCE</realm>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -1384,7 +1381,6 @@
       <characteristic>SELF_DISCIPLINE</characteristic>
     </characteristicPreferences>
     <id>mythic</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -1774,13 +1770,11 @@
     </professionalSkillIds>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -2405,7 +2399,6 @@
       <commonSkillId>religion</commonSkillId>
     </commonSkillIds>
     <id>nefando</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -2807,14 +2800,12 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>true</choice>
         <options>
           <realm>MENTALISM</realm>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>

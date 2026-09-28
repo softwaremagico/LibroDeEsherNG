@@ -2,7 +2,6 @@
 <weapons>
   <weapon>
     <abbreviation>Gnd</abbreviation>
-    <categoryId>weaponsThrown</categoryId>
     <id>grenade</id>
     <name>
       <en>Grenade</en>
@@ -13,7 +12,6 @@
   </weapon>
   <weapon>
     <abbreviation>mc</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>machete</id>
     <name>
       <en>Machete</en>
@@ -24,7 +22,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstPM</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>revolverColtArmyPeacemaker</id>
     <name>
       <en>Revolver: Colt Army (Peacemaker)</en>
@@ -35,7 +32,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstDA</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>revolverColtDaArmy</id>
     <name>
       <en>Revolver: Colt DA Army</en>
@@ -46,7 +42,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstDS</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>revolverColtDetectiveSpecial</id>
     <name>
       <en>Revolver: Colt Detective Special</en>
@@ -57,7 +52,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstNv</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>revolverColtNavy</id>
     <name>
       <en>Revolver: Colt Navy</en>
@@ -68,7 +62,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstPP</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>revolverColtPolicePositive</id>
     <name>
       <en>Revolver: Colt Police Positive</en>
@@ -79,7 +72,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstJa26</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>revolverJapaneseType26</id>
     <name>
       <en>Revolver: Japanese Type 26</en>
@@ -90,7 +82,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstNa1895</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>revolverNagantM1895</id>
     <name>
       <en>Revolver: Nagant M1895</en>
@@ -101,7 +92,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstDe</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>revolverRemington41Derringer</id>
     <name>
       <en>Revolver: Remington .41 Derringer</en>
@@ -112,7 +102,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstM27</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>revolverSWM27</id>
     <name>
       <en>Revolver: S&amp;W M27</en>
@@ -123,7 +112,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstM&amp;P</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>revolverSWMilitaryPolice</id>
     <name>
       <en>Revolver: S&amp;W Military &amp; Police</en>
@@ -134,7 +122,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstW3</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>revolverWebleyMk3</id>
     <name>
       <en>Revolver: Webley Mk3</en>
@@ -145,7 +132,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstW4</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>revolverWebleyMk4</id>
     <name>
       <en>Revolver: Webley Mk4</en>
@@ -156,7 +142,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstA400</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolAstra400</id>
     <name>
       <en>Automatic Pistol: Astra 400</en>
@@ -167,7 +152,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstA900</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolAstra900</id>
     <name>
       <en>Automatic Pistol: Astra 900</en>
@@ -178,7 +162,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstA902</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolAstra902</id>
     <name>
       <en>Automatic Pistol: Astra 902</en>
@@ -189,7 +172,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstAM1921</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolAstraM1921</id>
     <name>
       <en>Automatic Pistol: Astra M1921</en>
@@ -200,7 +182,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstB1923</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolBayard1923</id>
     <name>
       <en>Automatic Pistol: Bayard 1923</en>
@@ -211,7 +192,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstB1915</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolBeretta1915</id>
     <name>
       <en>Automatic Pistol: Beretta 1915</en>
@@ -222,7 +202,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstB1934</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolBeretta1934</id>
     <name>
       <en>Automatic Pistol: Beretta 1934</en>
@@ -233,7 +212,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstB1910</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolBrowning1910</id>
     <name>
       <en>Automatic Pistol: Browning 1910</en>
@@ -244,7 +222,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstB1922</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolBrowning1922</id>
     <name>
       <en>Automatic Pistol: Browning 1922</en>
@@ -255,7 +232,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstBBy</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolBrowningBaby</id>
     <name>
       <en>Automatic Pistol: Browning Baby</en>
@@ -266,7 +242,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstGP35</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolBrowningGp35</id>
     <name>
       <en>Automatic Pistol: Browning GP35</en>
@@ -277,7 +252,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstC1911</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolColtM1911</id>
     <name>
       <en>Automatic Pistol: Colt M1911</en>
@@ -288,7 +262,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstCS</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolColtService</id>
     <name>
       <en>Automatic Pistol: Colt Service</en>
@@ -299,7 +272,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstCW</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolColtWoodsman</id>
     <name>
       <en>Automatic Pistol: Colt Woodsman</en>
@@ -310,7 +282,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstCZ24</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolCz24</id>
     <name>
       <en>Automatic Pistol: CZ 24</en>
@@ -321,7 +292,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstCZ27</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolCz27</id>
     <name>
       <en>Automatic Pistol: CZ 27</en>
@@ -332,7 +302,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstFM29</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolFrommerM29</id>
     <name>
       <en>Automatic Pistol: Frommer M29</en>
@@ -343,7 +312,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstFM37</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolFrommerM37</id>
     <name>
       <en>Automatic Pistol: Frommer M37</en>
@@ -354,7 +322,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstFS</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolFrommerStop</id>
     <name>
       <en>Automatic Pistol: Frommer Stop</en>
@@ -365,7 +332,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstJa94</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolJapanseModel94</id>
     <name>
       <en>Automatic Pistol: Japanse Model 94</en>
@@ -376,7 +342,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstLM11</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolLlamaModel11</id>
     <name>
       <en>Automatic Pistol: Llama Model 11</en>
@@ -387,7 +352,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstLM3</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolLlamaModel3</id>
     <name>
       <en>Automatic Pistol: Llama Model 3</en>
@@ -398,7 +362,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstMMA</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolMabModelTo</id>
     <name>
       <en>Automatic Pistol: Mab Model To</en>
@@ -409,7 +372,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstMMD</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolMabModelD</id>
     <name>
       <en>Automatic Pistol: Mab Model D</en>
@@ -420,7 +382,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstM1901</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolMannlicher1901</id>
     <name>
       <en>Automatic Pistol: Mannlicher 1901</en>
@@ -431,7 +392,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstMC96</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolMauserC96</id>
     <name>
       <en>Automatic Pistol: Mauser C96</en>
@@ -442,7 +402,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstMPM1910</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolMauserPocketModel1910</id>
     <name>
       <en>Automatic Pistol: Mauser Pocket Model 1910</en>
@@ -453,7 +412,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstMPM1934</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolMauserPocketModel1934</id>
     <name>
       <en>Automatic Pistol: Mauser Pocket Model 1934</en>
@@ -464,7 +422,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstNBy</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolNambuBaby</id>
     <name>
       <en>Automatic Pistol: Nambu Baby</en>
@@ -475,7 +432,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstN1904</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolNamby1904</id>
     <name>
       <en>Automatic Pistol: Namby 1904</en>
@@ -486,7 +442,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstPLP08</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolParabellumLugerP08</id>
     <name>
       <en>Automatic Pistol: Parabellum Luger P08</en>
@@ -497,7 +452,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstRdm</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolRadom</id>
     <name>
       <en>Automatic Pistol: Radom</en>
@@ -508,7 +462,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstSBM</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolSauerBehordenModel</id>
     <name>
       <en>Automatic Pistol: Sauer Behorden Model</en>
@@ -519,7 +472,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstSM38H</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolSauerModel38h</id>
     <name>
       <en>Automatic Pistol: Sauer Model 38H</en>
@@ -530,7 +482,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstSMB</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolStarModelB</id>
     <name>
       <en>Automatic Pistol: Star Model B</en>
@@ -541,7 +492,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstTT33</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolTt33Tokarev</id>
     <name>
       <en>Automatic Pistol: TT-33 Tokarev</en>
@@ -552,7 +502,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstT80</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolType80</id>
     <name>
       <en>Automatic Pistol: Type 80</en>
@@ -563,7 +512,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstWM8</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolWaltherModel8</id>
     <name>
       <en>Automatic Pistol: Walther Model 8</en>
@@ -574,7 +522,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstWMP</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolWaltherModelPistole</id>
     <name>
       <en>Automatic Pistol: Walther Model Pistole</en>
@@ -585,7 +532,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstWMPP</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolWaltherModelPp</id>
     <name>
       <en>Automatic Pistol: Walther Model PP</en>
@@ -596,7 +542,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstWMPPK</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>automaticPistolWaltherModelPpk</id>
     <name>
       <en>Automatic Pistol: Walther Model PPK</en>
@@ -607,7 +552,6 @@
   </weapon>
   <weapon>
     <abbreviation>sfMP351</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>submachineGunBergmanMp351</id>
     <name>
       <en>Submachine Gun: Bergman MP35/1</en>
@@ -618,7 +562,6 @@
   </weapon>
   <weapon>
     <abbreviation>sfCZ383</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>submachineGunCz383</id>
     <name>
       <en>Submachine Gun: CZ 383</en>
@@ -629,7 +572,6 @@
   </weapon>
   <weapon>
     <abbreviation>sfMP38</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>submachineGunErmaMp38</id>
     <name>
       <en>Submachine Gun: Erma MP38</en>
@@ -640,7 +582,6 @@
   </weapon>
   <weapon>
     <abbreviation>sfMPE</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>submachineGunErmeMpe</id>
     <name>
       <en>Submachine Gun: Erme MPE</en>
@@ -651,7 +592,6 @@
   </weapon>
   <weapon>
     <abbreviation>sfM30</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>submachineGunM30Broomhandle</id>
     <name>
       <en>Submachine Gun: M30 Broomhandle</en>
@@ -662,7 +602,6 @@
   </weapon>
   <weapon>
     <abbreviation>sfMM38</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>submachineGunMasM38</id>
     <name>
       <en>Submachine Gun: MAS M38</en>
@@ -673,7 +612,6 @@
   </weapon>
   <weapon>
     <abbreviation>sfMP28/11</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>submachineGunMp2811</id>
     <name>
       <en>Submachine Gun: MP 28/11</en>
@@ -684,7 +622,6 @@
   </weapon>
   <weapon>
     <abbreviation>sfSM31</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>submachineGunSuomiM31</id>
     <name>
       <en>Submachine Gun: Suomi M31</en>
@@ -695,7 +632,6 @@
   </weapon>
   <weapon>
     <abbreviation>sfTM1928</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>submachineGunThompsonM1928</id>
     <name>
       <en>Submachine Gun: Thompson M1928</en>
@@ -706,7 +642,6 @@
   </weapon>
   <weapon>
     <abbreviation>sfTM1</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>submachineGunThompsonM1</id>
     <name>
       <en>Submachine Gun: Thompson M1</en>
@@ -717,7 +652,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfAT99</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleAriasakaType99</id>
     <name>
       <en>Rifle: Ariasaka Type 99</en>
@@ -728,7 +662,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfZH29</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleCzechZh29</id>
     <name>
       <en>Rifle: Czech ZH29</en>
@@ -739,7 +672,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfE1917</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleEnfieldM1917</id>
     <name>
       <en>Rifle: Enfield M1917</en>
@@ -750,7 +682,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfF1916</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleFrench19168mm</id>
     <name>
       <en>Rifle: French 1916 8mm</en>
@@ -761,7 +692,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfHHBQ</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleHHBqMagRifle</id>
     <name>
       <en>Rifle: H&amp;H BQ Mag Rifle</en>
@@ -772,7 +702,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfHH2H</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleHH2Hammerless</id>
     <name>
       <en>Rifle: H&amp;H #2 Hammerless</en>
@@ -783,7 +712,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfRDC300</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleHHRoyalDc300</id>
     <name>
       <en>Rifle: H&amp;H Royal DC 300</en>
@@ -794,7 +722,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfHM35</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleHungarianM35</id>
     <name>
       <en>Rifle: Hungarian M35</en>
@@ -805,7 +732,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfJT38</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleJapaneseType38</id>
     <name>
       <en>Rifle: Japanese Type 38</en>
@@ -816,7 +742,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfLE1</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleLeeEnfieldMkI</id>
     <name>
       <en>Rifle: Lee-Enfield Mk I</en>
@@ -827,7 +752,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfLE3</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleLeeEnfieldSmleMk3</id>
     <name>
       <en>Rifle: Lee-Enfield SMLE Mk 3</en>
@@ -838,7 +762,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfM1Ga</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleM1Garand</id>
     <name>
       <en>Rifle: M1 Garand</en>
@@ -849,7 +772,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfMAS</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleMas1936</id>
     <name>
       <en>Rifle: MAS 1936</en>
@@ -860,7 +782,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfMG98</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleMauserGewehr98</id>
     <name>
       <en>Rifle: Mauser Gewehr 98</en>
@@ -871,7 +792,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfMN1981</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleMoshinNagant1891</id>
     <name>
       <en>Rifle: Moshin-Nagant 1891</en>
@@ -882,7 +802,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfSR1931</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleSchmidtRubin1931</id>
     <name>
       <en>Rifle: Schmidt-Rubin 1931</en>
@@ -893,7 +812,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfSM36</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleSimonovModel36</id>
     <name>
       <en>Rifle: Simonov Model 36</en>
@@ -904,7 +822,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfS18</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleSolothurnS18100At</id>
     <name>
       <en>Rifle: Solothurn S-18/100 AT</en>
@@ -915,7 +832,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfS1909</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleSpringfield1903to1</id>
     <name>
       <en>Rifle: Springfield 1903To1</en>
@@ -926,7 +842,6 @@
   </weapon>
   <weapon>
     <abbreviation>rfTk38</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>rifleTokarevSvt38</id>
     <name>
       <en>Rifle: Tokarev SVT-38</en>
@@ -937,7 +852,6 @@
   </weapon>
   <weapon>
     <abbreviation>amM30</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>machineGunBredaM30</id>
     <name>
       <en>Machine Gun: Breda M30</en>
@@ -948,7 +862,6 @@
   </weapon>
   <weapon>
     <abbreviation>amM37</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>machineGunBredaM37</id>
     <name>
       <en>Machine Gun: Breda M37</en>
@@ -959,7 +872,6 @@
   </weapon>
   <weapon>
     <abbreviation>amB1</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>machineGunBrenMkI</id>
     <name>
       <en>Machine Gun: Bren Mk I</en>
@@ -970,7 +882,6 @@
   </weapon>
   <weapon>
     <abbreviation>amM2HB</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>machineGunBrowningM2hb</id>
     <name>
       <en>Machine Gun: Browning M2HB</en>
@@ -981,7 +892,6 @@
   </weapon>
   <weapon>
     <abbreviation>amCha29</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>machineGunChatellerault192429</id>
     <name>
       <en>Machine Gun: Chatellerault 1924/29</en>
@@ -992,7 +902,6 @@
   </weapon>
   <weapon>
     <abbreviation>amDDP</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>machineGunDegtyarevDp</id>
     <name>
       <en>Machine Gun: Degtyarev DP</en>
@@ -1003,7 +912,6 @@
   </weapon>
   <weapon>
     <abbreviation>amH1</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>machineGunHotchkissMkI</id>
     <name>
       <en>Machine Gun: Hotchkiss Mk I</en>
@@ -1014,7 +922,6 @@
   </weapon>
   <weapon>
     <abbreviation>amH1922</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>machineGunHotchkiss1922</id>
     <name>
       <en>Machine Gun: Hotchkiss 1922</en>
@@ -1025,7 +932,6 @@
   </weapon>
   <weapon>
     <abbreviation>amJa11</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>machineGunJapaneseType11</id>
     <name>
       <en>Machine Gun: Japanese Type 11</en>
@@ -1036,7 +942,6 @@
   </weapon>
   <weapon>
     <abbreviation>amJa92</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>machineGunJapaneseType92</id>
     <name>
       <en>Machine Gun: Japanese Type 92</en>
@@ -1047,7 +952,6 @@
   </weapon>
   <weapon>
     <abbreviation>amM26</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>machineGunM26LahtiSaloranta</id>
     <name>
       <en>Machine Gun: M26 Lahti Saloranta</en>
@@ -1058,7 +962,6 @@
   </weapon>
   <weapon>
     <abbreviation>amMG34</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>machineGunMg34</id>
     <name>
       <en>Machine Gun: MG34</en>
@@ -1069,7 +972,6 @@
   </weapon>
   <weapon>
     <abbreviation>amZB26</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>machineGunZb26</id>
     <name>
       <en>Machine Gun: ZB26</en>
@@ -1080,7 +982,6 @@
   </weapon>
   <weapon>
     <abbreviation>escB410</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>shotgunBeretta41010GMag</id>
     <name>
       <en>Shotgun: Beretta 410 10-G mag.</en>
@@ -1091,7 +992,6 @@
   </weapon>
   <weapon>
     <abbreviation>escBA5</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>shotgunBrowningAuto5</id>
     <name>
       <en>Shotgun: Browning Auto-5</en>
@@ -1102,7 +1002,6 @@
   </weapon>
   <weapon>
     <abbreviation>escWM1911</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>shotgunWinchesterM1911</id>
     <name>
       <en>Shotgun: Winchester M1911</en>

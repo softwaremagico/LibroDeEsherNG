@@ -7,7 +7,6 @@
       <characteristic>MEMORY</characteristic>
       <characteristic>INTUITION</characteristic>
     </characteristics>
-    <fixedBonus>0</fixedBonus>
     <id>scienceAnalyticMedical</id>
     <name>
       <en>Science/Analytic: Medical</en>
@@ -30,7 +29,6 @@
       <characteristic>MEMORY</characteristic>
       <characteristic>AGILITY</characteristic>
     </characteristics>
-    <fixedBonus>0</fixedBonus>
     <id>scienceAnalyticTechnique</id>
     <name>
       <en>Science/Analytic: Technique</en>
@@ -54,7 +52,6 @@
       <characteristic>REASONING</characteristic>
       <characteristic>MEMORY</characteristic>
     </characteristics>
-    <fixedBonus>0</fixedBonus>
     <id>loreAcademic</id>
     <name>
       <en>Lore: Academic</en>

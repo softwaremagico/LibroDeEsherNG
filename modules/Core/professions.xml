@@ -382,7 +382,6 @@
       <commonSkillId>senseOfTiempo</commonSkillId>
     </commonSkillIds>
     <id>bard</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -769,13 +768,11 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -1421,7 +1418,6 @@
       <commonSkillId>perceptionOfTheEnvironmentCiudades</commonSkillId>
     </commonSkillIds>
     <id>rogue</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -1760,25 +1756,21 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>false</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -2431,7 +2423,6 @@
       <commonSkillId>meditation</commonSkillId>
     </commonSkillIds>
     <id>cleric</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -2845,13 +2836,11 @@
     </professionalSkillIds>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -3486,7 +3475,6 @@
       <commonSkillId>buscar</commonSkillId>
     </commonSkillIds>
     <id>seeker</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -3876,13 +3864,11 @@
     </professionalSkillIds>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -4525,7 +4511,6 @@
       <commonSkillId>maquinaria</commonSkillId>
     </commonSkillIds>
     <id>thief</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -4867,25 +4852,21 @@
     </professionalSkillIds>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>false</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -5512,7 +5493,6 @@
       <commonSkillId>placaje</commonSkillId>
     </commonSkillIds>
     <id>fighter</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -5851,25 +5831,21 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>false</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -6471,7 +6447,6 @@
       <commonSkillId>meditation</commonSkillId>
     </commonSkillIds>
     <id>wizard</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -6880,13 +6855,11 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -7511,7 +7484,6 @@
       <commonSkillId>seduction</commonSkillId>
     </commonSkillIds>
     <id>mentalista</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -7920,13 +7892,11 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -8555,7 +8525,6 @@
       <characteristic>PRESENCE</characteristic>
     </characteristicPreferences>
     <id>montaraz</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -8942,13 +8911,11 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>

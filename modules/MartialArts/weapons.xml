@@ -2,7 +2,6 @@
 <weapons>
   <weapon>
     <abbreviation>ka</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>katana</id>
     <name>
       <en>Katana</en>
@@ -13,7 +12,6 @@
   </weapon>
   <weapon>
     <abbreviation>nu</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>nunchaku</id>
     <name>
       <en>Nunchaku</en>
@@ -24,7 +22,6 @@
   </weapon>
   <weapon>
     <abbreviation>te</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>tetsubo</id>
     <name>
       <en>Tetsubo</en>
@@ -35,7 +32,6 @@
   </weapon>
   <weapon>
     <abbreviation>v3</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>threeSectionStaff</id>
     <name>
       <en>Three-Section Staff</en>
@@ -46,7 +42,6 @@
   </weapon>
   <weapon>
     <abbreviation>chg</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>chigiriki</id>
     <name>
       <en>Chigiriki</en>
@@ -57,7 +52,6 @@
   </weapon>
   <weapon>
     <abbreviation>lgm</abbreviation>
-    <categoryId>weaponsBlunt</categoryId>
     <id>metalWhip</id>
     <name>
       <en>Metal Whip</en>
@@ -68,7 +62,6 @@
   </weapon>
   <weapon>
     <abbreviation>sa</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>saber</id>
     <name>
       <en>Saber</en>
@@ -79,7 +72,6 @@
   </weapon>
   <weapon>
     <abbreviation>km</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>kama</id>
     <name>
       <en>Kama</en>
@@ -90,7 +82,6 @@
   </weapon>
   <weapon>
     <abbreviation>wa</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>wakizashi</id>
     <name>
       <en>Wakizashi</en>

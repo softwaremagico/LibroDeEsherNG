@@ -361,7 +361,6 @@
       <commonSkillId>senseOfTiempo</commonSkillId>
     </commonSkillIds>
     <id>animista</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -773,13 +772,11 @@
     </professionalSkillIds>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -1427,7 +1424,6 @@
       <commonSkillId>meditation</commonSkillId>
     </commonSkillIds>
     <id>curandero</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -1841,13 +1837,11 @@
     </professionalSkillIds>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -2452,7 +2446,6 @@
       <commonSkillId>senseOfTiempo</commonSkillId>
     </commonSkillIds>
     <id>sorcerer</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -2854,14 +2847,12 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>true</choice>
         <options>
           <realm>ESSENCE</realm>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -3475,7 +3466,6 @@
       <commonSkillId>senseOfTiempo</commonSkillId>
     </commonSkillIds>
     <id>illusionist</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -3884,7 +3874,6 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
@@ -3893,7 +3882,6 @@
     <restrictedSkillIds>
       <restrictedSkillId>channeling</restrictedSkillId>
     </restrictedSkillIds>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -4542,7 +4530,6 @@
       </commonSkillGrant>
     </commonSkillChoices>
     <id>layman</id>
-    <indifferentToCharacteristics>true</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -4881,19 +4868,16 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
@@ -4902,7 +4886,6 @@
     <restrictedSkillIds>
       <restrictedSkillId>channeling</restrictedSkillId>
     </restrictedSkillIds>
-    <spellCaster>false</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -5539,7 +5522,6 @@
       <characteristic>CONSTITUTION</characteristic>
     </characteristicPreferences>
     <id>magente</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -5926,7 +5908,6 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
@@ -5935,7 +5916,6 @@
     <restrictedSkillIds>
       <restrictedSkillId>channeling</restrictedSkillId>
     </restrictedSkillIds>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -6544,7 +6524,6 @@
       <commonSkillId>detectingEmboscadas</commonSkillId>
     </commonSkillIds>
     <id>monkWarrior</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -6883,19 +6862,16 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
@@ -6906,7 +6882,6 @@
       <restrictedSkillId>luchaLibre</restrictedSkillId>
       <restrictedSkillId>channeling</restrictedSkillId>
     </restrictedSkillIds>
-    <spellCaster>false</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -7542,7 +7517,6 @@
       <commonSkillId>senseOfTiempo</commonSkillId>
     </commonSkillIds>
     <id>monk</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -7932,7 +7906,6 @@
     </professionalSkillIds>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
@@ -7941,7 +7914,6 @@
     <restrictedSkillIds>
       <restrictedSkillId>channeling</restrictedSkillId>
     </restrictedSkillIds>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -8582,7 +8554,6 @@
       <commonSkillId>senseOfTiempo</commonSkillId>
     </commonSkillIds>
     <id>mystic</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -8984,7 +8955,6 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>true</choice>
         <options>
           <realm>ESSENCE</realm>
           <realm>MENTALISM</realm>
@@ -8994,7 +8964,6 @@
     <restrictedSkillIds>
       <restrictedSkillId>channeling</restrictedSkillId>
     </restrictedSkillIds>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -9632,7 +9601,6 @@
       <commonSkillId>justar</commonSkillId>
     </commonSkillIds>
     <id>paladin</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -10022,13 +9990,11 @@
     </professionalSkillIds>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -10666,7 +10632,6 @@
       <commonSkillId>forrajear</commonSkillId>
     </commonSkillIds>
     <id>healing</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -11073,14 +11038,12 @@
     </professionalSkillIds>
     <magicRealms>
       <realmGrant>
-        <choice>true</choice>
         <options>
           <realm>CANALIZATION</realm>
           <realm>MENTALISM</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>

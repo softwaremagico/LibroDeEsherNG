@@ -1,13 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <spells>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceDefensesElementales</id>
     <name>
       <en>Defenses Elementales</en>
       <es>Defensas Elementales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wizardOfLight</owner>
       <owner>earthWizard</owner>
@@ -19,13 +17,11 @@
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceDeflectionsElementales</id>
     <name>
       <en>Deflections Elementales</en>
       <es>Desvíos Elementales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wizardOfLight</owner>
       <owner>earthWizard</owner>
@@ -37,13 +33,11 @@
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceSummoningsElementales</id>
     <name>
       <en>Summonings Elementales</en>
       <es>Invocaciones Elementales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>lightWizard</owner>
       <owner>earthWizard</owner>
@@ -55,416 +49,352 @@
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceControlOfAir</id>
     <name>
       <en>Control of Air</en>
       <es>Control del Aire</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wizardOfTheAir</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfWind</id>
     <name>
       <en>Mastery of Wind</en>
       <es>Maestría del Viento</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wizardOfTheAir</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceCamposTerrestres</id>
     <name>
       <en>Campos Terrestres</en>
       <es>Campos Terrestres</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>earthWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfEarth</id>
     <name>
       <en>Mastery of Earth</en>
       <es>Maestría de la Tierra</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>earthWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essencePathOfFlames</id>
     <name>
       <en>Path of Flames</en>
       <es>Camino de las Llamas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>fireWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essencePathsOfFire</id>
     <name>
       <en>Paths of Fire</en>
       <es>Sendas del Fuego</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>fireWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfCold</id>
     <name>
       <en>Mastery of Cold</en>
       <es>Maestría del Frío</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wizardOfTheIce</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfIce</id>
     <name>
       <en>Mastery of Ice</en>
       <es>Maestría del Hielo</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wizardOfTheIce</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfLight</id>
     <name>
       <en>Mastery of Light</en>
       <es>Maestría de la Luz</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>lightWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfOscuridad</id>
     <name>
       <en>Mastery of Oscuridad</en>
       <es>Maestría de la Oscuridad</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>lightWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfWater</id>
     <name>
       <en>Mastery of Water</en>
       <es>Maestría del Agua</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>waterWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceSendasAcuosas</id>
     <name>
       <en>Sendas Acuosas</en>
       <es>Sendas Acuosas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>waterWizard</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceCanalizacionesElementales</id>
     <name>
       <en>Canalizaciones Elementales</en>
       <es>Canalizaciones Elementales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priestElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceHealingElemental</id>
     <name>
       <en>Healing Elemental</en>
       <es>Curación Elemental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priestElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfPortalesElementales</id>
     <name>
       <en>Mastery of Portales Elementales</en>
       <es>Maestría de los Portales Elementales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priestElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMejoraInCombatElemental</id>
     <name>
       <en>Mejora in Combat Elemental</en>
       <es>Mejora en Combate Elemental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priestElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceRestorationElemental</id>
     <name>
       <en>Restoration Elemental</en>
       <es>Restauración Elemental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priestElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceTransformacionesElemental</id>
     <name>
       <en>Transformaciones Elemental</en>
       <es>Transformaciones Elemental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priestElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceWeaponElemental</id>
     <name>
       <en>Weapon Elemental</en>
       <es>Arma Elemental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>campeonElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceArmorElemental</id>
     <name>
       <en>Armor Elemental</en>
       <es>Armadura Elemental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>campeonElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceCambioElementalMinor</id>
     <name>
       <en>Cambio Elemental Minor</en>
       <es>Cambio Elemental Menor</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>campeonElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceCompanionsElementales</id>
     <name>
       <en>Companions Elementales</en>
       <es>Compañeros Elementales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>campeonElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceProtectionsElementalesMenores</id>
     <name>
       <en>Protections Elementales Menores</en>
       <es>Protecciones Elementales Menores</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>campeonElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceBondsOfCombat</id>
     <name>
       <en>Bonds of Combat</en>
       <es>Vínculos de Combate</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>campeonElemental</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceEnergyElementalVerdadera</id>
     <name>
       <en>Energy Elemental Verdadera</en>
       <es>Energía Elemental Verdadera</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wizardArcane</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceFluidsElementalesVerdaderos</id>
     <name>
       <en>Fluids Elementales Verdaderos</en>
       <es>Fluídos Elementales Verdaderos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wizardArcane</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfEter</id>
     <name>
       <en>Mastery of Eter</en>
       <es>Maestría del Eter</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>elementalistArcane</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfVoid</id>
     <name>
       <en>Mastery of Void</en>
       <es>Maestría del Vacío</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>elementalistArcane</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryElementalVerdadera</id>
     <name>
       <en>Mastery Elemental Verdadera</en>
       <es>Maestría Elemental Verdadera</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>elementalistArcane</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMaterialElementalVerdadero</id>
     <name>
       <en>Material Elemental Verdadero</en>
       <es>Material Elemental Verdadero</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>elementalistArcane</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceCraftsmanshipElemental</id>
     <name>
       <en>Craftsmanship Elemental</en>
       <es>Artesanía Elemental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>oa</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceForjaElemental</id>
     <name>
       <en>Forja Elemental</en>
       <es>Forja Elemental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>oa</owner>
     </owners>

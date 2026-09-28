@@ -2,7 +2,6 @@
 <weapons>
   <weapon>
     <abbreviation>hbt</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>bastardAxe</id>
     <name>
       <en>Bastard Axe</en>
@@ -13,7 +12,6 @@
   </weapon>
   <weapon>
     <abbreviation>ebt</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>bastardSword</id>
     <name>
       <en>Bastard Sword</en>
@@ -24,7 +22,6 @@
   </weapon>
   <weapon>
     <abbreviation>eg</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>greatSword</id>
     <name>
       <en>Great Sword</en>
@@ -35,7 +32,6 @@
   </weapon>
   <weapon>
     <abbreviation>cl</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>longScimitar</id>
     <name>
       <en>Long Scimitar</en>
@@ -46,7 +42,6 @@
   </weapon>
   <weapon>
     <abbreviation>ks</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>kyotetsuShoge</id>
     <name>
       <en>Kyotetsu-shoge</en>
@@ -57,7 +52,6 @@
   </weapon>
   <weapon>
     <abbreviation>ni</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>ninjato</id>
     <name>
       <en>Ninjato</en>
@@ -68,7 +62,6 @@
   </weapon>
   <weapon>
     <abbreviation>nd</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>notDachi</id>
     <name>
       <en>Not Dachi</en>
@@ -79,7 +72,6 @@
   </weapon>
   <weapon>
     <abbreviation>co</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>meteorHammer</id>
     <name>
       <en>Meteor Hammer</en>
@@ -90,7 +82,6 @@
   </weapon>
   <weapon>
     <abbreviation>ak</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>aklys</id>
     <name>
       <en>Aklys</en>
@@ -101,7 +92,6 @@
   </weapon>
   <weapon>
     <abbreviation>sh</abbreviation>
-    <categoryId>weaponsThrown</categoryId>
     <id>shuriken</id>
     <name>
       <en>Shuriken</en>
@@ -112,7 +102,6 @@
   </weapon>
   <weapon>
     <abbreviation>dcu</abbreviation>
-    <categoryId>weaponsThrown</categoryId>
     <id>cordedDart</id>
     <name>
       <en>Corded Dart</en>
@@ -123,7 +112,6 @@
   </weapon>
   <weapon>
     <abbreviation>boo</abbreviation>
-    <categoryId>weaponsThrown</categoryId>
     <id>boomerang</id>
     <name>
       <en>Boomerang</en>
@@ -134,7 +122,6 @@
   </weapon>
   <weapon>
     <abbreviation>drd</abbreviation>
-    <categoryId>weaponsThrown</categoryId>
     <id>dart</id>
     <name>
       <en>Dart</en>
@@ -145,7 +132,6 @@
   </weapon>
   <weapon>
     <abbreviation>lzo</abbreviation>
-    <categoryId>weaponsThrown</categoryId>
     <id>lasso</id>
     <name>
       <en>Lasso</en>
@@ -156,7 +142,6 @@
   </weapon>
   <weapon>
     <abbreviation>woo</abbreviation>
-    <categoryId>weaponsThrown</categoryId>
     <id>woomera</id>
     <name>
       <en>Woomera</en>
@@ -167,7 +152,6 @@
   </weapon>
   <weapon>
     <abbreviation>ngk</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>nagamaki</id>
     <name>
       <en>Nagamaki</en>
@@ -178,7 +162,6 @@
   </weapon>
   <weapon>
     <abbreviation>ngt</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>naginata</id>
     <name>
       <en>Naginata</en>
@@ -189,7 +172,6 @@
   </weapon>
   <weapon>
     <abbreviation>bdc</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>bardiche</id>
     <name>
       <en>Bardiche</en>
@@ -200,7 +182,6 @@
   </weapon>
   <weapon>
     <abbreviation>hpi</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>pickAxe</id>
     <name>
       <en>Pick Axe</en>
@@ -211,7 +192,6 @@
   </weapon>
   <weapon>
     <abbreviation>bco</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>becOfCorbin</id>
     <name>
       <en>Bec of Corbin</en>
@@ -222,7 +202,6 @@
   </weapon>
   <weapon>
     <abbreviation>fau</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>fauchard</id>
     <name>
       <en>Fauchard</en>
@@ -233,7 +212,6 @@
   </weapon>
   <weapon>
     <abbreviation>guj</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>guja</id>
     <name>
       <en>Guja</en>
@@ -244,7 +222,6 @@
   </weapon>
   <weapon>
     <abbreviation>bis</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>bisarme</id>
     <name>
       <en>Bisarme</en>
@@ -255,7 +232,6 @@
   </weapon>
   <weapon>
     <abbreviation>arp</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>harpoon</id>
     <name>
       <en>Harpoon</en>
@@ -266,7 +242,6 @@
   </weapon>
   <weapon>
     <abbreviation>lap</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>heavySpear</id>
     <name>
       <en>Heavy Spear</en>
@@ -277,7 +252,6 @@
   </weapon>
   <weapon>
     <abbreviation>luc</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>lucerneHammer</id>
     <name>
       <en>Lucerne Hammer</en>
@@ -288,7 +262,6 @@
   </weapon>
   <weapon>
     <abbreviation>ath</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>manCatcher</id>
     <name>
       <en>Man Catcher</en>
@@ -299,7 +272,6 @@
   </weapon>
   <weapon>
     <abbreviation>hor</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>pitchfork</id>
     <name>
       <en>Pitchfork</en>
@@ -310,7 +282,6 @@
   </weapon>
   <weapon>
     <abbreviation>prt</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>partisan</id>
     <name>
       <en>Partisan</en>
@@ -321,7 +292,6 @@
   </weapon>
   <weapon>
     <abbreviation>pi</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>pike</id>
     <name>
       <en>Pike</en>
@@ -332,7 +302,6 @@
   </weapon>
   <weapon>
     <abbreviation>ra</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>ranscur</id>
     <name>
       <en>Ranscur</en>
@@ -343,7 +312,6 @@
   </weapon>
   <weapon>
     <abbreviation>alb</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>halberd</id>
     <name>
       <en>Halberd</en>
@@ -354,7 +322,6 @@
   </weapon>
   <weapon>
     <abbreviation>tri</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>trident</id>
     <name>
       <en>Trident</en>
@@ -365,7 +332,6 @@
   </weapon>
   <weapon>
     <abbreviation>ji</abbreviation>
-    <categoryId>weaponsBlunt</categoryId>
     <id>jitte</id>
     <name>
       <en>Jitte</en>
@@ -376,7 +342,6 @@
   </weapon>
   <weapon>
     <abbreviation>sai</abbreviation>
-    <categoryId>weaponsBlunt</categoryId>
     <id>sai</id>
     <name>
       <en>Sai</en>
@@ -387,7 +352,6 @@
   </weapon>
   <weapon>
     <abbreviation>lga</abbreviation>
-    <categoryId>weaponsBlunt</categoryId>
     <id>steelWhip</id>
     <name>
       <en>Steel Whip</en>
@@ -398,7 +362,6 @@
   </weapon>
   <weapon>
     <abbreviation>ab</abbreviation>
-    <categoryId>weaponsBlunt</categoryId>
     <id>combatFan</id>
     <name>
       <en>Combat Fan</en>
@@ -409,7 +372,6 @@
   </weapon>
   <weapon>
     <abbreviation>g9c</abbreviation>
-    <categoryId>weaponsBlunt</categoryId>
     <id>catONineTails</id>
     <name>
       <en>Cat o' Nine Tails</en>
@@ -420,7 +382,6 @@
   </weapon>
   <weapon>
     <abbreviation>rgla</abbreviation>
-    <categoryId>weaponsBlunt</categoryId>
     <id>gladiatorNet</id>
     <name>
       <en>Gladiator Net</en>
@@ -431,7 +392,6 @@
   </weapon>
   <weapon>
     <abbreviation>cut</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>cutlass</id>
     <name>
       <en>Cutlass</en>
@@ -442,7 +402,6 @@
   </weapon>
   <weapon>
     <abbreviation>flo</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>florete</id>
     <name>
       <en>Florete</en>
@@ -453,7 +412,6 @@
   </weapon>
   <weapon>
     <abbreviation>cu</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>knife</id>
     <name>
       <en>Knife</en>
@@ -464,7 +422,6 @@
   </weapon>
   <weapon>
     <abbreviation>elar</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>longSword</id>
     <name>
       <en>Long Sword</en>
@@ -475,7 +432,6 @@
   </weapon>
   <weapon>
     <abbreviation>gart</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>tigerHook</id>
     <name>
       <en>Tiger Hook</en>
@@ -486,7 +442,6 @@
   </weapon>
   <weapon>
     <abbreviation>cer</abbreviation>
-    <categoryId>weaponsMissile</categoryId>
     <id>blowgun</id>
     <name>
       <en>Blowgun</en>
@@ -497,7 +452,6 @@
   </weapon>
   <weapon>
     <abbreviation>bm</abbreviation>
-    <categoryId>weaponsMissile</categoryId>
     <id>handCrossbow</id>
     <name>
       <en>Hand Crossbow</en>
@@ -508,7 +462,6 @@
   </weapon>
   <weapon>
     <abbreviation>bho</abbreviation>
-    <categoryId>weaponsMissile</categoryId>
     <id>staffSling</id>
     <name>
       <en>Staff Sling</en>

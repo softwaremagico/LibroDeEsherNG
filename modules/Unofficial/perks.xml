@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <perks>
   <perk>
-    <availableToEveryone>true</availableToEveryone>
     <bonuses>
       <bonus>
         <appearance>false</appearance>
@@ -23,6 +22,5 @@
       <es>Vampiro</es>
     </name>
     <type>SPECIAL</type>
-    <weakness>false</weakness>
   </perk>
 </perks>

@@ -1,13 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <spells>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismLoreOfStars</id>
     <name>
       <en>Lore of Stars</en>
       <es>Conocimiento de las Estrellas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>astrologer</owner>
       <owner>oraculo</owner>
@@ -15,273 +13,231 @@
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismLightsOfStars</id>
     <name>
       <en>Lights of Stars</en>
       <es>Luces de las Estrellas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>astrologer</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismPathsOfVoice</id>
     <name>
       <en>Paths of Voice</en>
       <es>Sendas de la Voz</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>astrologer</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismSenseOfStars</id>
     <name>
       <en>Sense of Stars</en>
       <es>Sentido de las Estrellas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>astrologer</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismVisionsSagradas</id>
     <name>
       <en>Visions Sagradas</en>
       <es>Visiones Sagradas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>astrologer</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismVoiceLejana</id>
     <name>
       <en>Voice Lejana</en>
       <es>Voz Lejana</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>astrologer</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMirageOfDefense</id>
     <name>
       <en>Mirage of Defense</en>
       <es>Espejismo de Defensa</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>encantador</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMirageOfMemories</id>
     <name>
       <en>Mirage of Memories</en>
       <es>Espejismo de Recuerdos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>encantador</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismLawOfMirages</id>
     <name>
       <en>Law of Mirages</en>
       <es>Ley de los Espejismos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>encantador</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfMirages</id>
     <name>
       <en>Mastery of Mirages</en>
       <es>Maestría de los Espejismos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>encantador</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismEnhancementOfMirages</id>
     <name>
       <en>Enhancement of Mirages</en>
       <es>Mejora de los Espejismos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>encantador</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismProjectionOfMirages</id>
     <name>
       <en>Projection of Mirages</en>
       <es>Proyección de los Espejismos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>encantador</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismLawOfBattle</id>
     <name>
       <en>Law of Battle</en>
       <es>Ley de la Batalla</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>maestroOfWeapons</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismLawOfFortitude</id>
     <name>
       <en>Law of Fortitude</en>
       <es>Ley de la Fortaleza</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>maestroOfWeapons</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismLawOfWarrior</id>
     <name>
       <en>Law of Warrior</en>
       <es>Ley del Guerrero</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>maestroOfWeapons</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismLawMarcial</id>
     <name>
       <en>Law Marcial</en>
       <es>Ley Marcial</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>maestroOfWeapons</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfArmor</id>
     <name>
       <en>Mastery of Armor</en>
       <es>Maestría de las Armaduras</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>maestroOfWeapons</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfWeapons</id>
     <name>
       <en>Mastery of Weapons</en>
       <es>Maestría de las Armas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>maestroOfWeapons</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismAppropriationOfVision</id>
     <name>
       <en>Appropriation of Vision</en>
       <es>Apropiación de la Visión</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>vidente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismProtectionOfVisions</id>
     <name>
       <en>Protection of Visions</en>
       <es>Protección de las Visiones</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>vidente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismVisionsLejanas</id>
     <name>
       <en>Visions Lejanas</en>
       <es>Visiones Lejanas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>vidente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismVisionsOfFuture</id>
     <name>
       <en>Visions of Future</en>
       <es>Visiones del Futuro</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>vidente</owner>
       <owner>oraculo</owner>
@@ -289,208 +245,176 @@
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismVisionsOfPast</id>
     <name>
       <en>Visions of Past</en>
       <es>Visiones del Pasado</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>vidente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismVisionsMentales</id>
     <name>
       <en>Visions Mentales</en>
       <es>Visiones Mentales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>vidente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismCharadas</id>
     <name>
       <en>Charadas</en>
       <es>Charadas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>charlatan</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismLawOfMedicine</id>
     <name>
       <en>Law of Medicine</en>
       <es>Ley de la Medicina</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>medicalEspecialista</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMedicine</id>
     <name>
       <en>Medicine</en>
       <es>Medicina</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>medicalEspecialista</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfNavigation</id>
     <name>
       <en>Mastery of Navigation</en>
       <es>Maestría de la Navegación</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>marinero</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfSea</id>
     <name>
       <en>Mastery of Sea</en>
       <es>Maestría del Mar</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>marinero</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfLore</id>
     <name>
       <en>Mastery of Lore</en>
       <es>Maestría del Conocimiento</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wise</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismKissesOfHouri</id>
     <name>
       <en>Kisses of Houri</en>
       <es>Besos del Houri</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>houri</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismDeceptionsOfHouri</id>
     <name>
       <en>Deceptions of Houri</en>
       <es>Engaños del Houri</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>houri</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismViajeOneiric</id>
     <name>
       <en>Viaje Oneiric</en>
       <es>Viaje Onírico</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>travelerOneiric</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismLawOfDreams</id>
     <name>
       <en>Law of Dreams</en>
       <es>Ley de los Sueños</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>tejesuenos</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismLoreOfDreams</id>
     <name>
       <en>Lore of Dreams</en>
       <es>Conocimiento de los Sueños</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>tejesuenos</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismAtarAnimals</id>
     <name>
       <en>Atar Animals</en>
       <es>Atar Animales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>lordOfTheBeasts</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismChangeOfMind</id>
     <name>
       <en>Change of Mind</en>
       <es>Cambio de Mente</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>niidea</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismChangeOfBody</id>
     <name>
       <en>Change of Body</en>
       <es>Cambio de Cuerpo</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>niidea</owner>
     </owners>

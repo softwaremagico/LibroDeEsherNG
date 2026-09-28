@@ -347,7 +347,6 @@
       <commonSkillId>investigation</commonSkillId>
     </commonSkillIds>
     <id>academicPulp</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -692,25 +691,21 @@
     </professionalSkillChoices>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>false</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -1412,7 +1407,6 @@
       </commonSkillGrant>
     </commonSkillChoices>
     <id>bardPulp</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -1791,13 +1785,11 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -2556,7 +2548,6 @@
       <commonSkillId>embaucar</commonSkillId>
     </commonSkillIds>
     <id>roguePulp</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -2895,25 +2886,21 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>false</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -3654,7 +3641,6 @@
       </commonSkillGrant>
     </commonSkillChoices>
     <id>laymanPulp</id>
-    <indifferentToCharacteristics>true</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -3993,19 +3979,16 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
@@ -4014,7 +3997,6 @@
     <restrictedSkillIds>
       <restrictedSkillId>channeling</restrictedSkillId>
     </restrictedSkillIds>
-    <spellCaster>false</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -4738,7 +4720,6 @@
       <commonSkillId>placaje</commonSkillId>
     </commonSkillIds>
     <id>fighterPulp</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -5077,25 +5058,21 @@
     </name>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>false</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>
@@ -5776,7 +5753,6 @@
       <commonSkillId>investigation</commonSkillId>
     </commonSkillIds>
     <id>technicalPulp</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -6121,25 +6097,21 @@
     </professionalSkillChoices>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>false</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>

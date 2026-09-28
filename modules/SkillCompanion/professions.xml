@@ -373,7 +373,6 @@
       </commonSkillGrant>
     </commonSkillChoices>
     <id>barbarian</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -715,19 +714,16 @@
     </professionalSkillIds>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>CANALIZATION</realm>
         </options>
       </realmGrant>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>MENTALISM</realm>
         </options>
@@ -740,7 +736,6 @@
       <restrictedSkillId>disimulo</restrictedSkillId>
       <restrictedSkillId>instintoUrban</restrictedSkillId>
     </restrictedSkillIds>
-    <spellCaster>false</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>

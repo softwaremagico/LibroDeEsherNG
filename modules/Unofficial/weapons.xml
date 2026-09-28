@@ -2,7 +2,6 @@
 <weapons>
   <weapon>
     <abbreviation>ro</abbreviation>
-    <categoryId>weaponsThrown</categoryId>
     <id>rock</id>
     <name>
       <en>Rock</en>
@@ -13,7 +12,6 @@
   </weapon>
   <weapon>
     <abbreviation>cñ</abbreviation>
-    <categoryId>weaponsSiege</categoryId>
     <id>cannon</id>
     <name>
       <en>Cannon</en>
@@ -24,7 +22,6 @@
   </weapon>
   <weapon>
     <abbreviation>pstSa</abbreviation>
-    <categoryId>weaponsFirearmOneHanded</categoryId>
     <id>energyPistolSaukur</id>
     <name>
       <en>Energy Pistol: Saukur</en>
@@ -35,7 +32,6 @@
   </weapon>
   <weapon>
     <abbreviation>rflSa</abbreviation>
-    <categoryId>weaponsFirearmTwoHanded</categoryId>
     <id>energyRifleSaukur</id>
     <name>
       <en>Energy Rifle: Saukur</en>

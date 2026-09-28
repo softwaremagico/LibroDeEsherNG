@@ -1,26 +1,22 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <spells>
   <spellList>
-    <closedList>false</closedList>
     <id>raceCrearUlogatToram</id>
     <name>
       <en>Crear Ulogat-Toram</en>
       <es>Crear Ulogat-Toram</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>grayOrc</owner>
     </owners>
     <realm>RACE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>raceCurseOfTheDogPale</id>
     <name>
       <en>Curse of the Dog Pale</en>
       <es>Maldición del Perro Pálido</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>grayOrc</owner>
     </owners>

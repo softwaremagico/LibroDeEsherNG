@@ -2,7 +2,6 @@
 <weapons>
   <weapon>
     <abbreviation>ca</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>staff</id>
     <name>
       <en>Staff</en>
@@ -13,7 +12,6 @@
   </weapon>
   <weapon>
     <abbreviation>e2</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>greatsword</id>
     <name>
       <en>Greatsword</en>
@@ -24,7 +22,6 @@
   </weapon>
   <weapon>
     <abbreviation>hb</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>battleAxe</id>
     <name>
       <en>Battle Axe</en>
@@ -35,7 +32,6 @@
   </weapon>
   <weapon>
     <abbreviation>mg</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>flail</id>
     <name>
       <en>Flail</en>
@@ -46,7 +42,6 @@
   </weapon>
   <weapon>
     <abbreviation>pc</abbreviation>
-    <categoryId>weaponsTwoHanded</categoryId>
     <id>warPike</id>
     <name>
       <en>War Pike</en>
@@ -57,7 +52,6 @@
   </weapon>
   <weapon>
     <abbreviation>bo</abbreviation>
-    <categoryId>weaponsThrown</categoryId>
     <id>bolas</id>
     <name>
       <en>Bolas</en>
@@ -68,7 +62,6 @@
   </weapon>
   <weapon>
     <abbreviation>daA</abbreviation>
-    <categoryId>weaponsThrown</categoryId>
     <id>throwingDagger</id>
     <name>
       <en>Throwing Dagger</en>
@@ -79,7 +72,6 @@
   </weapon>
   <weapon>
     <abbreviation>cp</abbreviation>
-    <categoryId>weaponsSiege</categoryId>
     <id>catapult</id>
     <name>
       <en>Catapult</en>
@@ -90,7 +82,6 @@
   </weapon>
   <weapon>
     <abbreviation>ar</abbreviation>
-    <categoryId>weaponsSiege</categoryId>
     <id>batteringRam</id>
     <name>
       <en>Battering Ram</en>
@@ -101,7 +92,6 @@
   </weapon>
   <weapon>
     <abbreviation>aa</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>polearmWeapon</id>
     <name>
       <en>Polearm Weapon</en>
@@ -112,7 +102,6 @@
   </weapon>
   <weapon>
     <abbreviation>ja</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>javelin</id>
     <name>
       <en>Javelin</en>
@@ -123,7 +112,6 @@
   </weapon>
   <weapon>
     <abbreviation>la</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>spear</id>
     <name>
       <en>Spear</en>
@@ -134,7 +122,6 @@
   </weapon>
   <weapon>
     <abbreviation>lc</abbreviation>
-    <categoryId>weaponsPolearm</categoryId>
     <id>cavalryLance</id>
     <name>
       <en>Cavalry Lance</en>
@@ -145,7 +132,6 @@
   </weapon>
   <weapon>
     <abbreviation>em</abbreviation>
-    <categoryId>weaponsBlunt</categoryId>
     <id>morningStar</id>
     <name>
       <en>Morning Star</en>
@@ -156,7 +142,6 @@
   </weapon>
   <weapon>
     <abbreviation>ga</abbreviation>
-    <categoryId>weaponsBlunt</categoryId>
     <id>club</id>
     <name>
       <en>Club</en>
@@ -167,7 +152,6 @@
   </weapon>
   <weapon>
     <abbreviation>lg</abbreviation>
-    <categoryId>weaponsBlunt</categoryId>
     <id>whip</id>
     <name>
       <en>Whip</en>
@@ -178,7 +162,6 @@
   </weapon>
   <weapon>
     <abbreviation>mr</abbreviation>
-    <categoryId>weaponsBlunt</categoryId>
     <id>warHammer</id>
     <name>
       <en>War Hammer</en>
@@ -189,7 +172,6 @@
   </weapon>
   <weapon>
     <abbreviation>ma</abbreviation>
-    <categoryId>weaponsBlunt</categoryId>
     <id>mace</id>
     <name>
       <en>Mace</en>
@@ -200,7 +182,6 @@
   </weapon>
   <weapon>
     <abbreviation>af</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>scimitar</id>
     <name>
       <en>Scimitar</en>
@@ -211,7 +192,6 @@
   </weapon>
   <weapon>
     <abbreviation>ci</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>scimitar2</id>
     <name>
       <en>Scimitar</en>
@@ -222,7 +202,6 @@
   </weapon>
   <weapon>
     <abbreviation>da</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>dagger</id>
     <name>
       <en>Dagger</en>
@@ -233,7 +212,6 @@
   </weapon>
   <weapon>
     <abbreviation>ea</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>sword</id>
     <name>
       <en>Sword</en>
@@ -244,7 +222,6 @@
   </weapon>
   <weapon>
     <abbreviation>ec</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>shortSword</id>
     <name>
       <en>Short Sword</en>
@@ -255,7 +232,6 @@
   </weapon>
   <weapon>
     <abbreviation>et</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>rapier</id>
     <name>
       <en>Rapier</en>
@@ -266,7 +242,6 @@
   </weapon>
   <weapon>
     <abbreviation>hm</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>handAxe</id>
     <name>
       <en>Hand Axe</en>
@@ -277,7 +252,6 @@
   </weapon>
   <weapon>
     <abbreviation>mg</abbreviation>
-    <categoryId>weaponsEdged</categoryId>
     <id>mainGauche</id>
     <name>
       <en>Main Gauche</en>
@@ -288,7 +262,6 @@
   </weapon>
   <weapon>
     <abbreviation>am</abbreviation>
-    <categoryId>weaponsMissile</categoryId>
     <id>compositeBow</id>
     <name>
       <en>Composite Bow</en>
@@ -299,7 +272,6 @@
   </weapon>
   <weapon>
     <abbreviation>ac</abbreviation>
-    <categoryId>weaponsMissile</categoryId>
     <id>shortBow</id>
     <name>
       <en>Short Bow</en>
@@ -310,7 +282,6 @@
   </weapon>
   <weapon>
     <abbreviation>al</abbreviation>
-    <categoryId>weaponsMissile</categoryId>
     <id>longBow</id>
     <name>
       <en>Long Bow</en>
@@ -321,7 +292,6 @@
   </weapon>
   <weapon>
     <abbreviation>bl</abbreviation>
-    <categoryId>weaponsMissile</categoryId>
     <id>lightCrossbow</id>
     <name>
       <en>Light Crossbow</en>
@@ -332,7 +302,6 @@
   </weapon>
   <weapon>
     <abbreviation>bp</abbreviation>
-    <categoryId>weaponsMissile</categoryId>
     <id>heavyCrossbow</id>
     <name>
       <en>Heavy Crossbow</en>
@@ -343,7 +312,6 @@
   </weapon>
   <weapon>
     <abbreviation>ho</abbreviation>
-    <categoryId>weaponsMissile</categoryId>
     <id>sling</id>
     <name>
       <en>Sling</en>

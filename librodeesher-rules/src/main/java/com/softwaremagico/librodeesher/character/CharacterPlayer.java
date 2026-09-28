@@ -2666,12 +2666,21 @@ public class CharacterPlayer {
 		// The legacy sorted by value without items (SkillComparatorByValue, common skills first on a
 		// tie) and then reversed the whole list, so what reaches the sheet is highest value first
 		// with the tie-break flipped too, i.e. rare skills first among equally valued attacks.
-		final Map<String, Integer> values = skillValuesWithoutItemBonus(skills);
-		skills.sort(Comparator.comparingInt((Skill skill) -> values.get(skill.getId())).reversed()
-				.thenComparing(Comparator.comparing(Skill::isRare).reversed()));
+		skills.sort(offensiveFavouriteComparator(skillValuesWithoutItemBonus(skills)));
 		return skills.size() > MOST_USED_ATTACKS_LINES
 				? new ArrayList<>(skills.subList(0, MOST_USED_ATTACKS_LINES))
 				: skills;
+	}
+
+	/**
+	 * The order the "most used attacks" table uses, over values already resolved by
+	 * {@link #getSkillValueWithoutItemBonus(Skill)}: highest value first, and among equally valued
+	 * attacks the rare one first. Extracted so the tie-break can be exercised directly, which the
+	 * shipped data never triggers on its own.
+	 */
+	static Comparator<Skill> offensiveFavouriteComparator(Map<String, Integer> valuesWithoutItemBonus) {
+		return Comparator.comparingInt((Skill skill) -> valuesWithoutItemBonus.get(skill.getId())).reversed()
+				.thenComparing(Comparator.comparing(Skill::isRare).reversed());
 	}
 
 	/**

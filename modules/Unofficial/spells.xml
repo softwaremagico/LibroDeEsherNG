@@ -1,39 +1,33 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <spells>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceArmorOfTheChaos</id>
     <name>
       <en>Armor of the Chaos</en>
       <es>Armadura del Caos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>lordOfTheChaos</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceWeaponOfTheChaos</id>
     <name>
       <en>Weapon of the Chaos</en>
       <es>Arma del Caos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>lordOfTheChaos</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfChaos</id>
     <name>
       <en>Mastery of Chaos</en>
       <es>Maestría del Caos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>lordOfTheChaos</owner>
     </owners>

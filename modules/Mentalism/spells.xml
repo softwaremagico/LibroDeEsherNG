@@ -1,793 +1,671 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <spells>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismSelfHealing</id>
     <name>
       <en>Self-Healing</en>
       <es>Autocuración</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismDetecciones</id>
     <name>
       <en>Detecciones</en>
       <es>Detecciones</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismEvasionOfTheAttacks</id>
     <name>
       <en>Evasion of the Attacks</en>
       <es>Evasión de los Ataques</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismIlusiones</id>
     <name>
       <en>Ilusiones</en>
       <es>Ilusiones</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismInvestigation</id>
     <name>
       <en>Investigation</en>
       <es>Investigación</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismConcealment</id>
     <name>
       <en>Concealment</en>
       <es>Ocultación</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismPresentimientos</id>
     <name>
       <en>Presentimientos</en>
       <es>Presentimientos</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismEnduranceToTheSpells</id>
     <name>
       <en>Endurance to the spells</en>
       <es>Resistencia a los Hechizos</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismEnduranceToTheDamage</id>
     <name>
       <en>Endurance to the Damage</en>
       <es>Resistencia al Daño</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismResplandor</id>
     <name>
       <en>Resplandor</en>
       <es>Resplandor</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>mentalismCambio</id>
     <name>
       <en>Cambio</en>
       <es>Cambio</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>mentalismMasteryOfSenses</id>
     <name>
       <en>Mastery of Senses</en>
       <es>Maestría de los Sentidos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>mentalismMasteryMental</id>
     <name>
       <en>Mastery Mental</en>
       <es>Maestría Mental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>mentalismManipulationOfTheGases</id>
     <name>
       <en>Manipulation of the Gases</en>
       <es>Manipulación de los Gases</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>mentalismManipulationOfTheLiquids</id>
     <name>
       <en>Manipulation of the Liquids</en>
       <es>Manipulación de los Líquidos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>mentalismManipulationOfTheSolids</id>
     <name>
       <en>Manipulation of the Solids</en>
       <es>Manipulación de los Sólidos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>mentalismMovimiento</id>
     <name>
       <en>Movimiento</en>
       <es>Movimiento</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>mentalismPuertaMental</id>
     <name>
       <en>Puerta Mental</en>
       <es>Puerta Mental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>mentalismTelequinesis</id>
     <name>
       <en>Telequinesis</en>
       <es>Telequinesis</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>mentalismSpeed</id>
     <name>
       <en>Speed</en>
       <es>Velocidad</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfConcussion</id>
     <name>
       <en>Mastery of Concussion</en>
       <es>Maestría de la Conmoción</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>curandero</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfBlood</id>
     <name>
       <en>Mastery of Blood</en>
       <es>Maestría de la Sangre</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>curandero</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfHuesos</id>
     <name>
       <en>Mastery of Huesos</en>
       <es>Maestría de los Huesos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>curandero</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfMuscles</id>
     <name>
       <en>Mastery of Muscles</en>
       <es>Maestría de los Músculos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>curandero</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfOrgansNervios</id>
     <name>
       <en>Mastery of Organs/Nervios</en>
       <es>Maestría de los Órganos/Nervios</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>curandero</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismProsthesis</id>
     <name>
       <en>Prosthesis</en>
       <es>Prótesis</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>curandero</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismAttackMental</id>
     <name>
       <en>Attack Mental</en>
       <es>Ataque Mental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mentalista</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismControlOfSenses</id>
     <name>
       <en>Control of Senses</en>
       <es>Control de los Sentidos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mentalista</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMindControl</id>
     <name>
       <en>Mind Control</en>
       <es>Control Mental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mentalista</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismFusionMental</id>
     <name>
       <en>Fusion Mental</en>
       <es>Fusión Mental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mentalista</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismPresence</id>
     <name>
       <en>Presence</en>
       <es>Presencia</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mentalista</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismTelepathy</id>
     <name>
       <en>Telepathy</en>
       <es>Telepatía</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mentalista</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismAmplificationOfTheSound</id>
     <name>
       <en>Amplification of the Sound</en>
       <es>Amplificación del Sonido</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>bard</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismSongsOfControl</id>
     <name>
       <en>Songs of Control</en>
       <es>Canciones de Control</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>bard</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismLoreOfObjects</id>
     <name>
       <en>Lore of Objects</en>
       <es>Conocimiento de los Objetos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>bard</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismControlOfSound</id>
     <name>
       <en>Control of Sound</en>
       <es>Control del Sonido</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>bard</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismSaberes</id>
     <name>
       <en>Saberes</en>
       <es>Saberes</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>bard</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismPathsOfDiversion</id>
     <name>
       <en>Paths of Diversion</en>
       <es>Sendas de la Diversión</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>bard</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismEscabullirse</id>
     <name>
       <en>Escabullirse</en>
       <es>Escabullirse</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>magente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfDisfraces</id>
     <name>
       <en>Mastery of Disfraces</en>
       <es>Maestría de los Disfraces</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>magente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfPoisons</id>
     <name>
       <en>Mastery of Poisons</en>
       <es>Maestría de los Venenos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>magente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfAsesinato</id>
     <name>
       <en>Mastery of Asesinato</en>
       <es>Maestría del Asesinato</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>magente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismRecopilarSecretos</id>
     <name>
       <en>Recopilar Secretos</en>
       <es>Recopilar Secretos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>magente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismRedirecciones</id>
     <name>
       <en>Redirecciones</en>
       <es>Redirecciones</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>magente</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismPathsOfSuperficies</id>
     <name>
       <en>Paths of Superficies</en>
       <es>Sendas de las Superficies</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>healing</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismPathsOfMuscles</id>
     <name>
       <en>Paths of Muscles</en>
       <es>Sendas de los Músculos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>healing</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismPathsOfBlood</id>
     <name>
       <en>Paths of Blood</en>
       <es>Sendas de la Sangre</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>healing</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismPathsOfHuesos</id>
     <name>
       <en>Paths of Huesos</en>
       <es>Sendas de los Huesos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>healing</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismPathOfOrgans</id>
     <name>
       <en>Path of Organs</en>
       <es>Senda de los Órganos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>healing</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismAlterationOfTheGases</id>
     <name>
       <en>Alteration of the Gases</en>
       <es>Alteración de los Gases</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mystic</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismAlterationOfTheLiquids</id>
     <name>
       <en>Alteration of the Liquids</en>
       <es>Alteración de los Líquidos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mystic</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismAlterationOfTheSolids</id>
     <name>
       <en>Alteration of the Solids</en>
       <es>Alteración de los Sólidos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mystic</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismCambioMystic</id>
     <name>
       <en>Cambio Mystic</en>
       <es>Cambio Místico</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mystic</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismHidingMystic</id>
     <name>
       <en>Hiding (Mystic)</en>
       <es>Esconderse (Místico)</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mystic</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismPathsOfConfusion</id>
     <name>
       <en>Paths of Confusion</en>
       <es>Sendas de la Confusión</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mystic</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismDominationOfTheMind</id>
     <name>
       <en>Domination of the Mind</en>
       <es>Dominación de la Mente</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mentalismMaligno</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismEnfermedadesMentales</id>
     <name>
       <en>Enfermedades Mentales</en>
       <es>Enfermedades Mentales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mentalismMaligno</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismErosionOfTheMind</id>
     <name>
       <en>Erosion of the Mind</en>
       <es>Erosión de la Mente</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mentalismMaligno</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismIlusionesMentales</id>
     <name>
       <en>Ilusiones Mentales</en>
       <es>Ilusiones Mentales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mentalismMaligno</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismDeathOfTheMind</id>
     <name>
       <en>Death of the Mind</en>
       <es>Muerte de la Mente</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mentalismMaligno</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismSubversionOfTheMind</id>
     <name>
       <en>Subversion of the Mind</en>
       <es>Subversión de la Mente</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mentalismMaligno</owner>
     </owners>

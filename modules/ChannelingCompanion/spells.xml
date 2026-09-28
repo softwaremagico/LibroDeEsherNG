@@ -1,663 +1,561 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <spells>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationAtadurasOfTheSummonings</id>
     <name>
       <en>Ataduras of the Summonings</en>
       <es>Ataduras de las Invocaciones</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>invocador</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationCirclesOfSummonings</id>
     <name>
       <en>Circles of Summonings</en>
       <es>Círculos de Invocaciones</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>invocador</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationSummoningsOfAnimals</id>
     <name>
       <en>Summonings of Animals</en>
       <es>Invocaciones de Animales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>invocador</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationSummoningsPlanares</id>
     <name>
       <en>Summonings Planares</en>
       <es>Invocaciones Planares</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>invocador</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationMasteryOfSummonings</id>
     <name>
       <en>Mastery of Summonings</en>
       <es>Maestría de las Invocaciones</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>invocador</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationUmbrales</id>
     <name>
       <en>Umbrales</en>
       <es>Umbrales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>invocador</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationDestructionOfTheFe</id>
     <name>
       <en>Destruction of the Fe</en>
       <es>Destrucción de la Fe</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>nefando</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationLawOfDoom</id>
     <name>
       <en>Law of Doom</en>
       <es>Ley de la Perdición</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>nefando</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationLawOfVenganza</id>
     <name>
       <en>Law of Venganza</en>
       <es>Ley de la Venganza</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>nefando</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationMasteryOfLoStrange</id>
     <name>
       <en>Mastery of lo Strange</en>
       <es>Maestría de lo Extraño</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>nefando</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationSemblanteOfTheTerror</id>
     <name>
       <en>Semblante of the Terror</en>
       <es>Semblante del Terror</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>nefando</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationTransformaciones</id>
     <name>
       <en>Transformaciones</en>
       <es>Transformaciones</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>nefando</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationTheDefensor</id>
     <name>
       <en>The Defensor</en>
       <es>El Defensor</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationTheOjo</id>
     <name>
       <en>The Ojo</en>
       <es>El Ojo</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationTheMask</id>
     <name>
       <en>The Mask</en>
       <es>La Máscara</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationTheVoluntad</id>
     <name>
       <en>The Voluntad</en>
       <es>La Voluntad</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationMissionSagrada</id>
     <name>
       <en>Mission Sagrada</en>
       <es>Misión Sagrada</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationVenganza</id>
     <name>
       <en>Venganza</en>
       <es>Venganza</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mythic</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationWeaponSagrada</id>
     <name>
       <en>Weapon Sagrada</en>
       <es>Arma Sagrada</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationAuraDivina</id>
     <name>
       <en>Aura Divina</en>
       <es>Aura Divina</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationCeremonias</id>
     <name>
       <en>Ceremonias</en>
       <es>Ceremonias</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationLoreOfTiempo</id>
     <name>
       <en>Lore of Tiempo</en>
       <es>Conocimiento del Tiempo</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationCruzada</id>
     <name>
       <en>Cruzada</en>
       <es>Cruzada</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationHealingOfCampaign</id>
     <name>
       <en>Healing of Campaign</en>
       <es>Curación de Campaña</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationDefenseSagrada</id>
     <name>
       <en>Defense Sagrada</en>
       <es>Defensa Sagrada</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationDestierros</id>
     <name>
       <en>Destierros</en>
       <es>Destierros</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationDisciplinaSagrada</id>
     <name>
       <en>Disciplina Sagrada</en>
       <es>Disciplina Sagrada</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationDominationOfTheNaturaleza</id>
     <name>
       <en>Domination of the Naturaleza</en>
       <es>Dominación de la Naturaleza</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationDominationOfTheSpirits</id>
     <name>
       <en>Domination of the Spirits</en>
       <es>Dominación de los Espíritus</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationTheHunter</id>
     <name>
       <en>The Hunter</en>
       <es>El Cazador</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationElementsSagrados</id>
     <name>
       <en>Elements Sagrados</en>
       <es>Elementos Sagrados</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationEncantamientos</id>
     <name>
       <en>Encantamientos</en>
       <es>Encantamientos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationShieldOfTheFe</id>
     <name>
       <en>Shield of the Fe</en>
       <es>Escudo de la Fe</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationFormasAquatic</id>
     <name>
       <en>Formas Aquatic</en>
       <es>Formas Acuáticas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationFormasTerrestres</id>
     <name>
       <en>Formas Terrestres</en>
       <es>Formas Terrestres</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationIraSagrada</id>
     <name>
       <en>Ira Sagrada</en>
       <es>Ira Sagrada</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationLawOfSerpientes</id>
     <name>
       <en>Law of Serpientes</en>
       <es>Ley de las Serpientes</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationLawOfSpirits</id>
     <name>
       <en>Law of Spirits</en>
       <es>Ley de los Espíritus</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationMasteryOfCaza</id>
     <name>
       <en>Mastery of Caza</en>
       <es>Maestría de la Caza</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationMasteryOfDeath</id>
     <name>
       <en>Mastery of Death</en>
       <es>Maestría de la Muerte</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationMasteryOfPiedras</id>
     <name>
       <en>Mastery of Piedras</en>
       <es>Maestría de las Piedras</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationMasteryOfTrees</id>
     <name>
       <en>Mastery of Trees</en>
       <es>Maestría de los Árboles</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationMasteryOfCaballos</id>
     <name>
       <en>Mastery of Caballos</en>
       <es>Maestría de los Caballos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationMasteryOfInsectos</id>
     <name>
       <en>Mastery of Insectos</en>
       <es>Maestría de los Insectos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationMagicDivina</id>
     <name>
       <en>Magic Divina</en>
       <es>Magia Divina</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationMagicVoodoo</id>
     <name>
       <en>Magic Voodoo</en>
       <es>Magia Vudú</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationProselitismo</id>
     <name>
       <en>Proselitismo</en>
       <es>Proselitismo</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationSymbolSagrado</id>
     <name>
       <en>Symbol Sagrado</en>
       <es>Símbolo Sagrado</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationTrancesSagrados</id>
     <name>
       <en>Trances Sagrados</en>
       <es>Trances Sagrados</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationVientosSagrados</id>
     <name>
       <en>Vientos Sagrados</en>
       <es>Vientos Sagrados</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationVisionsEspirituales</id>
     <name>
       <en>Visions Espirituales</en>
       <es>Visiones Espirituales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>priest</owner>
     </owners>

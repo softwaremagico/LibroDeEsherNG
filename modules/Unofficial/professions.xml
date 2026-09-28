@@ -347,7 +347,6 @@
       <characteristic>MEMORY</characteristic>
     </characteristicPreferences>
     <id>lordOfTheChaos</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -737,13 +736,11 @@
     </professionalSkillIds>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
       </realmGrant>
     </magicRealms>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>

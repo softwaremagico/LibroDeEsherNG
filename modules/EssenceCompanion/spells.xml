@@ -1,13 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <spells>
   <spellList>
-    <closedList>true</closedList>
     <id>essenceStaffArcane</id>
     <name>
       <en>Staff Arcane</en>
       <es>Bastón Mágico</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>

@@ -35,6 +35,8 @@ import com.softwaremagico.librodeesher.training.TrainingSpecialItem;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -2453,14 +2455,41 @@ public class CharacterPlayerTest {
 		final List<Skill> attacks = character.getFavouriteOffensiveSkills();
 
 		// The legacy's SkillComparatorByValue sorts by value ascending and the sheet reverses the
-		// list, so values must come out non-increasing; rarity only decides equal values (and the
-		// reversal flips that tie-break, putting rare skills first).
+		// list, so what reaches the sheet must be sorted by the production comparator itself (highest
+		// value without items first, rare skills ahead of common ones on a tie). The tie-break is
+		// pinned separately by offensiveFavouritesPutTheRareAttackFirstWhenValuesAreEqual.
+		final Map<String, Integer> values = new HashMap<>();
+		for (final Skill attack : attacks) {
+			values.put(attack.getId(), character.getSkillValueWithoutItemBonus(attack));
+		}
+		final Comparator<Skill> comparator = CharacterPlayer.offensiveFavouriteComparator(values);
 		for (int i = 1; i < attacks.size(); i++) {
-			final int previous = character.getSkillValueWithoutItemBonus(attacks.get(i - 1));
-			final int current = character.getSkillValueWithoutItemBonus(attacks.get(i));
-			Assert.assertTrue(previous > current || (previous == current && !attacks.get(i - 1).isRare()),
+			Assert.assertTrue(comparator.compare(attacks.get(i - 1), attacks.get(i)) <= 0,
 					"attacks out of order: " + attacks.stream().map(Skill::getId).toList());
 		}
+	}
+
+	@Test
+	public void offensiveFavouritesPutTheRareAttackFirstWhenValuesAreEqual() {
+		// The shipped data has no two equally valued attacks, so the tie-break is checked here with
+		// synthetic skills: equal value, one rare and one common, in both input orders.
+		final Skill common = new Skill("ataqueComun");
+		final Skill rare = new Skill("ataqueRaro");
+		rare.setRare(true);
+		final Map<String, Integer> equalValues = Map.of("ataqueComun", 7, "ataqueRaro", 7);
+		final Comparator<Skill> comparator = CharacterPlayer.offensiveFavouriteComparator(equalValues);
+
+		Assert.assertEquals(comparator.compare(rare, common), -1, "the rare attack must come first on a tie");
+		Assert.assertEquals(comparator.compare(common, rare), 1, "the comparison must be antisymmetric");
+
+		final List<Skill> shuffled = new ArrayList<>(List.of(common, rare));
+		shuffled.sort(comparator);
+		Assert.assertEquals(shuffled, List.of(rare, common));
+
+		// A more valuable common attack still wins over a rarer but weaker one.
+		final Map<String, Integer> uneven = Map.of("ataqueComun", 8, "ataqueRaro", 7);
+		Assert.assertTrue(CharacterPlayer.offensiveFavouriteComparator(uneven).compare(common, rare) < 0,
+				"value must take precedence over rarity");
 	}
 
 	@Test

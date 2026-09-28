@@ -1,13 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <trainings>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>crafts</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>3</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -17,7 +15,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>3</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -27,7 +24,6 @@
         <categoryOptions>
           <category>technicalTradeVocational</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -46,7 +42,6 @@
           <en>10d10 mp</en>
           <es>10d10 mp</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Trabajo Artisan of calidad</en>
           <es>Trabajo artesano de calidad</es>
@@ -60,7 +55,6 @@
           <en>8d10 mp</en>
           <es>8d10 mp</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Trabajo Artisan of calidad</en>
           <es>Trabajo artesano de calidad</es>
@@ -74,7 +68,6 @@
           <en>6d10 mp</en>
           <es>6d10 mp</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Trabajo Artisan of calidad</en>
           <es>Trabajo artesano de calidad</es>
@@ -88,7 +81,6 @@
           <en>4d10 mp</en>
           <es>4d10 mp</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Trabajo Artisan of calidad</en>
           <es>Trabajo artesano de calidad</es>
@@ -102,7 +94,6 @@
           <en>2d10 mp</en>
           <es>2d10 mp</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Trabajo Artisan of calidad</en>
           <es>Trabajo artesano de calidad</es>
@@ -116,7 +107,6 @@
           <en>+15 to a oficio specific</en>
           <es>+15 a un oficio específico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Herramientas of calidad</en>
           <es>Herramientas de calidad</es>
@@ -130,7 +120,6 @@
           <en>+10 to a oficio specific</en>
           <es>+10 a un oficio específico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Herramientas of calidad</en>
           <es>Herramientas de calidad</es>
@@ -144,7 +133,6 @@
           <en>+5 to a oficio specific</en>
           <es>+5 a un oficio específico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Herramientas</en>
           <es>Herramientas</es>
@@ -156,13 +144,11 @@
     <trainingTimeInMonths>28</trainingTimeInMonths>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>artCreative</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -172,7 +158,6 @@
         <categoryOptions>
           <category>martialArtsSweeps</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -198,7 +183,6 @@
         <categoryOptions>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -224,7 +208,6 @@
         <categoryOptions>
           <category>martialArtsCombatManeuvers</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -234,7 +217,6 @@
         <categoryOptions>
           <category>selfControl</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -244,7 +226,6 @@
         <categoryOptions>
           <category>loreGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>3</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -263,7 +244,6 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -287,7 +267,6 @@
     <specialItems>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Victoria in a torneo local</en>
           <es>Victoria en un torneo local</es>
@@ -301,7 +280,6 @@
           <en>+10 not Arcane to a Lore concreto</en>
           <es>+10 no mágico a un conocimiento concreto</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Pergamino</en>
           <es>Pergamino</es>
@@ -315,7 +293,6 @@
           <en>+5 not Arcane to a Category of Lore</en>
           <es>+5 no mágico a una categoría de conocimiento</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Pergamino</en>
           <es>Pergamino</es>
@@ -329,7 +306,6 @@
           <en>1d5 dosis</en>
           <es>1d5 dosis</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Herbs Comunes</en>
           <es>Hierbas Comunes</es>
@@ -339,7 +315,6 @@
       </specialItem>
       <specialItem>
         <bonus>5</bonus>
-        <magic>true</magic>
         <name>
           <en>Wristbands</en>
           <es>Muñequeras</es>
@@ -354,7 +329,6 @@
           <en>+5 not Arcane to a Lore concreto</en>
           <es>+5 no mágico a un conocimiento concreto</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Libro</en>
           <es>Libro</es>
@@ -364,7 +338,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Reputation como Fighter habilidoso</en>
           <es>Reputación como luchador habilidoso</es>
@@ -376,13 +349,11 @@
     <trainingTimeInMonths>73</trainingTimeInMonths>
     <characteristicUpgrades>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>STRENGTH</option>
         </options>
       </upgradeChoice>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>AGILITY</option>
         </options>
@@ -390,7 +361,6 @@
     </characteristicUpgrades>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
@@ -406,7 +376,6 @@
           <category>martialArtsSweeps</category>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -416,7 +385,6 @@
         <categoryOptions>
           <category>specialAttacks</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -426,7 +394,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -436,7 +403,6 @@
         <categoryOptions>
           <category>subterfugeAttack</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -446,7 +412,6 @@
         <categoryOptions>
           <category>subterfugeMechanics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -456,7 +421,6 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -475,7 +439,6 @@
           <en>+10 not Magical</en>
           <es>+10 no mágica</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Weapon of Hand</en>
           <es>Arma de mano</es>
@@ -489,7 +452,6 @@
           <en>+10 not Magical</en>
           <es>+10 no mágica</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Weapon of Missile</en>
           <es>Arma de proyectiles</es>
@@ -503,7 +465,6 @@
           <en>+10 not Magical</en>
           <es>+10 no mágica</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>2d10 Missile</en>
           <es>2d10 proyectiles</es>
@@ -513,7 +474,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Conctacto in the bajos fondos</en>
           <es>Conctacto en los bajos fondos</es>
@@ -523,7 +483,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Favor of persona importante</en>
           <es>Favor de persona importante</es>
@@ -533,7 +492,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Favor of persona importante</en>
           <es>Favor de persona importante</es>
@@ -543,7 +501,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Favor of persona importante</en>
           <es>Favor de persona importante</es>
@@ -553,7 +510,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Favor of persona importante</en>
           <es>Favor de persona importante</es>
@@ -567,7 +523,6 @@
           <en>lugar for ocultarse</en>
           <es>lugar para ocultarse</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Casa relativamente segura</en>
           <es>Casa relativamente segura</es>
@@ -579,13 +534,11 @@
     <trainingTimeInMonths>30</trainingTimeInMonths>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>allWeaponCategories</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -595,7 +548,6 @@
         <categoryOptions>
           <category>allWeaponCategories</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -605,7 +557,6 @@
         <categoryOptions>
           <category>selfControl</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>4</ranksGranted>
@@ -624,7 +575,6 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -652,7 +602,6 @@
           <en>+10 not Magical</en>
           <es>+10 no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon of Hand</en>
           <es>Arma de mano</es>
@@ -666,7 +615,6 @@
           <en>+5 not Magical</en>
           <es>+5 no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon of Hand</en>
           <es>Arma de mano</es>
@@ -676,7 +624,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Weapon to 2 Hands</en>
           <es>Arma a 2 manos</es>
@@ -688,7 +635,6 @@
     <trainingTimeInMonths>64</trainingTimeInMonths>
     <characteristicUpgrades>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>STRENGTH</option>
         </options>
@@ -696,13 +642,11 @@
     </characteristicUpgrades>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -712,7 +656,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -731,7 +674,6 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -750,7 +692,6 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>3</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>4</ranksGranted>
@@ -769,7 +710,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -788,7 +728,6 @@
           <en>10d10 mp</en>
           <es>10d10 mp</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Joyas robadas</en>
           <es>Joyas robadas</es>
@@ -802,7 +741,6 @@
           <en>10d10 mp</en>
           <es>10d10 mp</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Gemas robadas</en>
           <es>Gemas robadas</es>
@@ -812,7 +750,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Documentos robados</en>
           <es>Documentos robados</es>
@@ -826,7 +763,6 @@
           <en>+10 not Arcane</en>
           <es>+10 no mágico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Utensilios of disfraz</en>
           <es>Utensilios de disfraz</es>
@@ -836,7 +772,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Contactos of fiar</en>
           <es>Contactos de fiar</es>
@@ -846,7 +781,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Contactos in the bajos fondos</en>
           <es>Contactos en los bajos fondos</es>
@@ -858,13 +792,11 @@
     <trainingTimeInMonths>37</trainingTimeInMonths>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -874,7 +806,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>4</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>4</ranksGranted>
@@ -884,7 +815,6 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -903,7 +833,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -913,7 +842,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -928,7 +856,6 @@
     <specialItems>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Contacto in the administration of a ciudad</en>
           <es>Contacto en la admistración de una ciudad</es>
@@ -942,7 +869,6 @@
           <en>recompensa, 10d10 mp</en>
           <es>recompensa, 10d10 mp</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>A joya</en>
           <es>Una joya</es>
@@ -956,7 +882,6 @@
           <en>recompensa, 10d10 mp in total</en>
           <es>recompensa, 10d10 mp en total</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>d100 gemas</en>
           <es>d100 gemas</es>
@@ -970,7 +895,6 @@
           <en>recompensa, d10 mp</en>
           <es>recompensa, d10 mp</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Objecto of Art</en>
           <es>Objecto de arte</es>
@@ -980,7 +904,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Favor of a persona importante</en>
           <es>Favor de una persona importante</es>
@@ -990,7 +913,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Contactos in the bajos fondos</en>
           <es>Contactos en los bajos fondos</es>
@@ -1002,13 +924,11 @@
     <trainingTimeInMonths>33</trainingTimeInMonths>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>6</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>6</ranksGranted>
@@ -1018,7 +938,6 @@
         <categoryOptions>
           <category>loreGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>4</maxSkills>
         <minSkills>4</minSkills>
         <ranksGranted>4</ranksGranted>
@@ -1028,7 +947,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -1054,7 +972,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1078,7 +995,6 @@
     <specialItems>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Contacto in the administration of a ciudad</en>
           <es>Contacto en la admistración de una ciudad</es>
@@ -1088,7 +1004,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Contacto in the administration of a ciudad</en>
           <es>Contacto en la admistración de una ciudad</es>
@@ -1098,7 +1013,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Favor of a persona importante</en>
           <es>Favor de una persona importante</es>
@@ -1108,7 +1022,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Favor of a persona importante</en>
           <es>Favor de una persona importante</es>
@@ -1118,7 +1031,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Favor of a persona importante</en>
           <es>Favor de una persona importante</es>
@@ -1132,7 +1044,6 @@
           <en>a dosis, Spell of nivel 1</en>
           <es>una dosis, hechizo de nivel 1</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Potion</en>
           <es>Poción</es>
@@ -1146,7 +1057,6 @@
           <en>regalo</en>
           <es>regalo</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Objecto artesanal</en>
           <es>Objecto artesanal</es>
@@ -1158,13 +1068,11 @@
     <trainingTimeInMonths>48</trainingTimeInMonths>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>allWeaponCategories</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1174,7 +1082,6 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>5</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>5</ranksGranted>
@@ -1184,7 +1091,6 @@
         <categoryOptions>
           <category>loreGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>4</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>4</ranksGranted>
@@ -1194,7 +1100,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1204,7 +1109,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -1232,7 +1136,6 @@
           <en>+10 not Magical</en>
           <es>+10 no mágica</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -1246,7 +1149,6 @@
           <en>+10 not Arcane to a Lore especifico</en>
           <es>+10 no mágico a un conocimiento especifico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Libro</en>
           <es>Libro</es>
@@ -1260,7 +1162,6 @@
           <en>+10 not Arcane to a Lore especifico</en>
           <es>+10 no mágico a un conocimiento especifico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Libro</en>
           <es>Libro</es>
@@ -1270,7 +1171,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>A amuleto or signs reconocida by the estudiosos</en>
           <es>Un amuleto o señas reconocida por los estudiosos</es>
@@ -1280,7 +1180,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Bestia of monta or carga</en>
           <es>Bestia de monta o carga</es>
@@ -1292,13 +1191,11 @@
     <trainingTimeInMonths>110</trainingTimeInMonths>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>scienceAnalyticBasic</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -1317,7 +1214,6 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -1327,7 +1223,6 @@
         <categoryOptions>
           <category>loreGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>4</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>4</ranksGranted>
@@ -1337,7 +1232,6 @@
         <categoryOptions>
           <category>loreArcane</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1347,7 +1241,6 @@
         <categoryOptions>
           <category>loreTechnical</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>3</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -1366,7 +1259,6 @@
           <en>proporciona apoyo econonico</en>
           <es>proporciona apoyo econonico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Patron</en>
           <es>Patrón</es>
@@ -1380,7 +1272,6 @@
           <en>+10 not Arcane to a Lore especifico</en>
           <es>+10 no mágico a un conocimiento especifico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Libro</en>
           <es>Libro</es>
@@ -1394,7 +1285,6 @@
           <en>+10 not Arcane to a Lore especifico</en>
           <es>+10 no mágico a un conocimiento especifico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Libro</en>
           <es>Libro</es>
@@ -1408,7 +1298,6 @@
           <en>+10 not Arcane to a Lore especifico</en>
           <es>+10 no mágico a un conocimiento especifico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Libro</en>
           <es>Libro</es>
@@ -1422,7 +1311,6 @@
           <en>+10 not Arcane to a Lore especifico</en>
           <es>+10 no mágico a un conocimiento especifico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Libro</en>
           <es>Libro</es>
@@ -1436,7 +1324,6 @@
           <en>+10 not Arcane to a Lore especifico</en>
           <es>+10 no mágico a un conocimiento especifico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Libro</en>
           <es>Libro</es>
@@ -1450,7 +1337,6 @@
           <en>small</en>
           <es>pequeño</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Animal domestic</en>
           <es>Animal doméstico</es>
@@ -1462,13 +1348,11 @@
     <trainingTimeInMonths>95</trainingTimeInMonths>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -1478,7 +1362,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -1488,7 +1371,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -1498,7 +1380,6 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1517,7 +1398,6 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>4</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>4</ranksGranted>
@@ -1527,7 +1407,6 @@
         <categoryOptions>
           <category>subterfugeMechanics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1546,7 +1425,6 @@
           <en>+10 not Arcane</en>
           <es>+10 no mágico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Identification Falsa</en>
           <es>Identificación Falsa</es>
@@ -1560,7 +1438,6 @@
           <en>+10 not Arcane</en>
           <es>+10 no mágico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Capa</en>
           <es>Capa</es>
@@ -1570,7 +1447,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Contactos with a gobierno amigo</en>
           <es>Contactos con un gobierno amigo</es>
@@ -1584,7 +1460,6 @@
           <en>+10 not Magical</en>
           <es>+10 no mágicas</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Lockpicks</en>
           <es>Ganzúas</es>
@@ -1599,7 +1474,6 @@
           <en>10D10 mp</en>
           <es>10D10 mp</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Papeles Importantes</en>
           <es>Papeles Importantes</es>
@@ -1613,7 +1487,6 @@
           <en>+5 not Magical</en>
           <es>+5 no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -1625,13 +1498,11 @@
     <trainingTimeInMonths>44</trainingTimeInMonths>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>allWeaponCategories</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1641,7 +1512,6 @@
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1660,7 +1530,6 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1679,7 +1548,6 @@
         <categoryOptions>
           <category>loreGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -1689,7 +1557,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1708,7 +1575,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>3</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -1736,7 +1602,6 @@
           <en>+10 not Magical</en>
           <es>+10 no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -1746,7 +1611,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Animal of monta</en>
           <es>Animal de monta</es>
@@ -1756,7 +1620,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Pasaje without limit in a Ship</en>
           <es>Pasaje sin límite en un barco</es>
@@ -1766,7 +1629,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>d10 Herbs</en>
           <es>d10 hierbas</es>
@@ -1776,7 +1638,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Mapa of the mundo conocido</en>
           <es>Mapa del mundo conocido</es>
@@ -1788,13 +1649,11 @@
     <trainingTimeInMonths>66</trainingTimeInMonths>
     <characteristicUpgrades>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>CONSTITUTION</option>
         </options>
       </upgradeChoice>
       <upgradeChoice>
-        <fixed>false</fixed>
         <options>
           <option>AGILITY</option>
           <option>MEMORY</option>
@@ -1810,13 +1669,11 @@
     </characteristicUpgrades>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>allWeaponCategories</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>5</maxSkills>
         <minSkills>3</minSkills>
         <ranksGranted>5</ranksGranted>
@@ -1826,7 +1683,6 @@
         <categoryOptions>
           <category>allWeaponCategories</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>4</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>4</ranksGranted>
@@ -1836,7 +1692,6 @@
         <categoryOptions>
           <category>allWeaponCategories</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>3</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -1846,7 +1701,6 @@
         <categoryOptions>
           <category>allWeaponCategories</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1865,7 +1719,6 @@
           <en>+15 not Magical</en>
           <es>+15 no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -1879,7 +1732,6 @@
           <en>+15 not Magical</en>
           <es>+15 no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -1893,7 +1745,6 @@
           <en>+10 not Magical</en>
           <es>+10 no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -1907,7 +1758,6 @@
           <en>+10 not Magical</en>
           <es>+10 no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -1921,7 +1771,6 @@
           <en>+15 not Magical</en>
           <es>+15 no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -1933,13 +1782,11 @@
     <trainingTimeInMonths>95</trainingTimeInMonths>
     <characteristicUpgrades>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>STRENGTH</option>
         </options>
       </upgradeChoice>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>AGILITY</option>
         </options>
@@ -1947,7 +1794,6 @@
     </characteristicUpgrades>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
@@ -1961,7 +1807,6 @@
           <category>weaponsFirearmTwoHanded</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1971,7 +1816,6 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -1981,7 +1825,6 @@
         <categoryOptions>
           <category>loreGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>4</ranksGranted>
@@ -2000,7 +1843,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -2028,7 +1870,6 @@
           <en>not Magical</en>
           <es>no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -2038,7 +1879,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Objeto Diario I</en>
           <es>Objeto Diario I</es>
@@ -2048,7 +1888,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Symbol of orden religiosa</en>
           <es>Símbolo de orden religiosa</es>
@@ -2060,7 +1899,6 @@
     <trainingTimeInMonths>73</trainingTimeInMonths>
     <characteristicUpgrades>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>INTUITION</option>
         </options>
@@ -2068,13 +1906,11 @@
     </characteristicUpgrades>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>artCreative</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2084,7 +1920,6 @@
         <categoryOptions>
           <category>scienceAnalyticBasic</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -2094,7 +1929,6 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>5</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>5</ranksGranted>
@@ -2104,7 +1938,6 @@
         <categoryOptions>
           <category>loreGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>4</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>5</ranksGranted>
@@ -2114,7 +1947,6 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2142,7 +1974,6 @@
           <en>+5 to conocimientos specific</en>
           <es>+5 a conocimientos específicos</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>1D5 libros</en>
           <es>1D5 libros</es>
@@ -2156,7 +1987,6 @@
           <en>+5 to Skills scientific</en>
           <es>+5 a habilidades científicas</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>1D5 libros</en>
           <es>1D5 libros</es>
@@ -2170,7 +2000,6 @@
           <en>+10 to a Category of Lore</en>
           <es>+10 a una categoría de conocimiento</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Gran libro</en>
           <es>Gran libro</es>
@@ -2184,7 +2013,6 @@
           <en>+10 to a Category of Ciencia/Analytical</en>
           <es>+10 a una categoría de Ciencia/Analítica</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Gran libro</en>
           <es>Gran libro</es>
@@ -2194,7 +2022,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Sumando of Spells +1</en>
           <es>Sumando de hechizos +1</es>
@@ -2208,7 +2035,6 @@
           <en>+5 to a Skill of Lore</en>
           <es>+5 a una habilidad de conocimiento</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Libro</en>
           <es>Libro</es>
@@ -2220,7 +2046,6 @@
     <trainingTimeInMonths>130</trainingTimeInMonths>
     <characteristicUpgrades>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>REASONING</option>
         </options>
@@ -2228,13 +2053,11 @@
     </characteristicUpgrades>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>allWeaponCategories</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -2244,7 +2067,6 @@
         <categoryOptions>
           <category>armorLight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -2254,7 +2076,6 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -2264,7 +2085,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>3</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>6</ranksGranted>
@@ -2274,7 +2094,6 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2284,7 +2103,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -2294,7 +2112,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2313,7 +2130,6 @@
           <en>+10 not Magical</en>
           <es>+10 no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon Body to Body</en>
           <es>Arma cuerpo a cuerpo</es>
@@ -2327,7 +2143,6 @@
           <en>+10 not Magical</en>
           <es>+10 no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon of proyectil</en>
           <es>Arma de proyectil</es>
@@ -2337,7 +2152,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Animal of company</en>
           <es>Animal de compañía</es>
@@ -2351,7 +2165,6 @@
           <en>+10 to Hiding</en>
           <es>+10 a Esconderse</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Capa of camuflaje</en>
           <es>Capa de camuflaje</es>
@@ -2366,7 +2179,6 @@
           <en>+10 to Stalking</en>
           <es>+10 a Acechar</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Botas buenas</en>
           <es>Botas buenas</es>
@@ -2377,7 +2189,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>A amuleto or sign reconocida by the habitantes locales</en>
           <es>Un amuleto o seña reconocida por los habitantes locales</es>
@@ -2389,7 +2200,6 @@
     <trainingTimeInMonths>116</trainingTimeInMonths>
     <characteristicUpgrades>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>CONSTITUTION</option>
         </options>
@@ -2397,13 +2207,11 @@
     </characteristicUpgrades>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2422,7 +2230,6 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -2441,7 +2248,6 @@
         <categoryOptions>
           <category>loreGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -2451,7 +2257,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2471,7 +2276,6 @@
         <categoryOptions>
           <category>crafts</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2490,7 +2294,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2514,7 +2317,6 @@
     <specialItems>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Pasaje in a Ship</en>
           <es>Pasaje en un barco</es>
@@ -2528,7 +2330,6 @@
           <en>10d10 mp</en>
           <es>10d10 mp</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Merchandise for comerciar</en>
           <es>Mercancía para comerciar</es>
@@ -2538,7 +2339,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Pasaje in a Ship</en>
           <es>Pasaje en un barco</es>
@@ -2548,7 +2348,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Pasaje in a Ship</en>
           <es>Pasaje en un barco</es>
@@ -2558,7 +2357,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Amigo of the owner of a taberna</en>
           <es>Amigo del dueño de una taberna</es>
@@ -2568,7 +2366,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Amigo of the Captain of a Ship</en>
           <es>Amigo del capitán de un barco</es>
@@ -2578,7 +2375,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Pasaje in a Ship</en>
           <es>Pasaje en un barco</es>
@@ -2590,7 +2386,6 @@
     <trainingTimeInMonths>28</trainingTimeInMonths>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
@@ -2604,7 +2399,6 @@
           <category>weaponsFirearmTwoHanded</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -2614,7 +2408,6 @@
         <categoryOptions>
           <category>armorLight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2624,7 +2417,6 @@
         <categoryOptions>
           <category>specialAttacks</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2634,7 +2426,6 @@
         <categoryOptions>
           <category>athleticsPower</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2644,7 +2435,6 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2654,7 +2444,6 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2673,7 +2462,6 @@
         <categoryOptions>
           <category>combatManeuvers</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2683,7 +2471,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2693,7 +2480,6 @@
         <categoryOptions>
           <category>technicalTradeProfessional</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2712,7 +2498,6 @@
         <categoryOptions>
           <category>technicalTradeVocational</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2740,7 +2525,6 @@
           <en>not Magical</en>
           <es>no mágica</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -2754,7 +2538,6 @@
           <en>not Magical</en>
           <es>no mágica</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Armor</en>
           <es>Armadura</es>
@@ -2768,7 +2551,6 @@
           <en>not Arcane</en>
           <es>no mágico</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Shield</en>
           <es>Escudo</es>
@@ -2778,7 +2560,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Medalla by comportamiento in Battle</en>
           <es>Medalla por comportamiento en batalla</es>
@@ -2788,7 +2569,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Favor of a militar</en>
           <es>Favor de un militar</es>
@@ -2798,7 +2578,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Favor of a militar</en>
           <es>Favor de un militar</es>
@@ -2812,7 +2591,6 @@
           <en>D10 abierta</en>
           <es>D10 abierta</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Dinero adicional</en>
           <es>Dinero adicional</es>
@@ -2826,7 +2604,6 @@
           <en>D10 abierta</en>
           <es>D10 abierta</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Dinero adicional</en>
           <es>Dinero adicional</es>
@@ -2838,7 +2615,6 @@
     <trainingTimeInMonths>80</trainingTimeInMonths>
     <characteristicUpgrades>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>CONSTITUTION</option>
         </options>
@@ -2846,13 +2622,11 @@
     </characteristicUpgrades>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -2862,7 +2636,6 @@
         <categoryOptions>
           <category>loreGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -2872,7 +2645,6 @@
         <categoryOptions>
           <category>outdoorAnimals</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>3</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -2882,7 +2654,6 @@
         <categoryOptions>
           <category>listsBasicOfSpells</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2892,7 +2663,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2907,7 +2677,6 @@
     <specialItems>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Companion animal of gran Size</en>
           <es>Compañero animal de gran tamaño</es>
@@ -2921,7 +2690,6 @@
           <en>+1</en>
           <es>+1</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Sumando of Spells</en>
           <es>Sumando de Hechizos</es>
@@ -2935,7 +2703,6 @@
           <en>Spell of nivel 2</en>
           <es>hechizo de nivel 2</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Objeto Diario I</en>
           <es>Objeto Diario I</es>
@@ -2949,7 +2716,6 @@
           <en>not Magical</en>
           <es>no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -2963,7 +2729,6 @@
           <en>not Magical</en>
           <es>no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Armor</en>
           <es>Armadura</es>
@@ -2973,7 +2738,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Companion animal small</en>
           <es>Compañero animal pequeño</es>
@@ -2985,13 +2749,11 @@
     <trainingTimeInMonths>69</trainingTimeInMonths>
     <characteristicUpgrades>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>INTUITION</option>
         </options>
       </upgradeChoice>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>PRESENCE</option>
         </options>
@@ -2999,13 +2761,11 @@
     </characteristicUpgrades>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>allWeaponCategories</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -3015,7 +2775,6 @@
         <categoryOptions>
           <category>loreGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -3025,7 +2784,6 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3044,7 +2802,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>4</ranksGranted>
@@ -3054,7 +2811,6 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3082,7 +2838,6 @@
           <en>+5 not Magical</en>
           <es>+5 no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -3096,7 +2851,6 @@
           <en>5d10mp</en>
           <es>5d10mp</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Joyas robadas</en>
           <es>Joyas robadas</es>
@@ -3110,7 +2864,6 @@
           <en>5d10mp</en>
           <es>5d10mp</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Gemas robadas</en>
           <es>Gemas robadas</es>
@@ -3124,7 +2877,6 @@
           <en>5d10mp</en>
           <es>5d10mp</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Objeto of Art robado</en>
           <es>Objeto de arte robado</es>
@@ -3134,7 +2886,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Bestia of monta</en>
           <es>Bestia de monta</es>
@@ -3146,13 +2897,11 @@
     <trainingTimeInMonths>35</trainingTimeInMonths>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -3171,7 +2920,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -3190,7 +2938,6 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -3200,7 +2947,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -3215,7 +2961,6 @@
     <specialItems>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Contacto in the Bajos Fondos</en>
           <es>Contacto en los Bajos Fondos</es>
@@ -3225,7 +2970,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Favor of a personaje of the Bajos fondos</en>
           <es>Favor de un personaje de los Bajos fondos</es>
@@ -3235,7 +2979,6 @@
       </specialItem>
       <specialItem>
         <bonus>30</bonus>
-        <magic>true</magic>
         <name>
           <en>Identidad Falsificada</en>
           <es>Identidad Falsificada</es>
@@ -3250,7 +2993,6 @@
           <en>2D10 mo/year</en>
           <es>2D10 mo/año</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Investment</en>
           <es>Inversión</es>
@@ -3260,7 +3002,6 @@
       </specialItem>
       <specialItem>
         <bonus>15</bonus>
-        <magic>true</magic>
         <name>
           <en>Identidad Falsificada</en>
           <es>Identidad Falsificada</es>
@@ -3273,13 +3014,11 @@
     <trainingTimeInMonths>32</trainingTimeInMonths>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -3298,7 +3037,6 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -3317,7 +3055,6 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -3327,7 +3064,6 @@
         <categoryOptions>
           <category>loreGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -3337,7 +3073,6 @@
         <categoryOptions>
           <category>outdoorAnimals</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -3356,7 +3091,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>3</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -3366,7 +3100,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -3390,7 +3123,6 @@
     <specialItems>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Ropa resistente to the clima</en>
           <es>Ropa resistente al clima</es>
@@ -3400,7 +3132,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Bestia of monta</en>
           <es>Bestia de monta</es>
@@ -3414,7 +3145,6 @@
           <en>+5 to Stalking</en>
           <es>+5 a Acechar</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Capa</en>
           <es>Capa</es>
@@ -3429,7 +3159,6 @@
           <en>+5 to Hiding</en>
           <es>+5 a Esconderse</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Botas</en>
           <es>Botas</es>
@@ -3440,7 +3169,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Mapa sencillo of todo the mundo</en>
           <es>Mapa sencillo de todo el mundo</es>
@@ -3452,7 +3180,6 @@
     <trainingTimeInMonths>95</trainingTimeInMonths>
     <characteristicUpgrades>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>CONSTITUTION</option>
         </options>

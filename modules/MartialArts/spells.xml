@@ -1,26 +1,22 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <spells>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceHarmonyOfTheNaturaleza</id>
     <name>
       <en>Harmony of the Naturaleza</en>
       <es>Armonía de la Naturaleza</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monkTaoist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceEvasiones</id>
     <name>
       <en>Evasiones</en>
       <es>Evasiones</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monkTaoist</owner>
       <owner>monk</owner>
@@ -28,39 +24,33 @@
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceFormasOfTheNaturaleza</id>
     <name>
       <en>Formas of the Naturaleza</en>
       <es>Formas de la Naturaleza</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monkTaoist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceOjoInterior</id>
     <name>
       <en>Ojo Interior</en>
       <es>Ojo Interior</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monkTaoist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essencePuenteOfTheMonk</id>
     <name>
       <en>Puente of the Monk</en>
       <es>Puente del Monje</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monkTaoist</owner>
       <owner>monk</owner>
@@ -68,13 +58,11 @@
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceRenewalOfTheBody</id>
     <name>
       <en>Renewal of the Body</en>
       <es>Renovación del Cuerpo</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monkTaoist</owner>
       <owner>monk</owner>
@@ -82,78 +70,66 @@
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismConcentrationZen</id>
     <name>
       <en>Concentration Zen</en>
       <es>Concentración Zen</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monkZen</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismControlCorporal</id>
     <name>
       <en>Control Corporal</en>
       <es>Control Corporal</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monkZen</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismEvasiones</id>
     <name>
       <en>Evasiones</en>
       <es>Evasiones</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monkZen</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismPerceptionZen</id>
     <name>
       <en>Perception Zen</en>
       <es>Percepción Zen</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monkZen</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismRenewalOfTheBody</id>
     <name>
       <en>Renewal of the Body</en>
       <es>Renovación del Cuerpo</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monkZen</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismShadowMental</id>
     <name>
       <en>Shadow Mental</en>
       <es>Sombra Mental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monkZen</owner>
     </owners>

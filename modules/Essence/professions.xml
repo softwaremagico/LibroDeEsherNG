@@ -370,7 +370,6 @@
       <commonSkillId>senseOfTiempo</commonSkillId>
     </commonSkillIds>
     <id>monk</id>
-    <indifferentToCharacteristics>false</indifferentToCharacteristics>
     <magicCosts>
       <magicCost>
         <levelRange>FIRST_FIVE_LEVELS</levelRange>
@@ -760,7 +759,6 @@
     </professionalSkillIds>
     <magicRealms>
       <realmGrant>
-        <choice>false</choice>
         <options>
           <realm>ESSENCE</realm>
         </options>
@@ -769,7 +767,6 @@
     <restrictedSkillIds>
       <restrictedSkillId>channeling</restrictedSkillId>
     </restrictedSkillIds>
-    <spellCaster>true</spellCaster>
     <weaponCategoryCostTiers>
       <tier>
         <rankCosts>

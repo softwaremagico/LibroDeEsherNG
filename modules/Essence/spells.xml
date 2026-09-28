@@ -1,351 +1,297 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <spells>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceBarrierAgainstSpells</id>
     <name>
       <en>Barrier Against Spells</en>
       <es>Barrera Contra Hechizos</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfRunes</id>
     <name>
       <en>Mastery of Runes</en>
       <es>Maestría de las Runas</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essencePerceptionOfTheEssence</id>
     <name>
       <en>Perception of the Essence</en>
       <es>Percepción de la Esencia</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essencePathsOfInquiry</id>
     <name>
       <en>Paths of Inquiry</en>
       <es>Sendas de la Indagación</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceEscudosElementales</id>
     <name>
       <en>Escudos Elementales</en>
       <es>Escudos Elementales</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceHandOfTheEssence</id>
     <name>
       <en>Hand of the Essence</en>
       <es>Mano de la Esencia</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essencePathsOfApertura</id>
     <name>
       <en>Paths of Apertura</en>
       <es>Sendas de Apertura</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceIlusionesMenores</id>
     <name>
       <en>Ilusiones Menores</en>
       <es>Ilusiones Menores</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMejoraPhysical</id>
     <name>
       <en>Mejora Physical</en>
       <es>Mejora Física</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essencePathsOfDetection</id>
     <name>
       <en>Paths of Detection</en>
       <es>Sendas de la Detección</es>
     </name>
-    <openList>true</openList>
     <owners>
       <owner>OpenList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>essenceReinsOfTheSpells</id>
     <name>
       <en>Reins of the spells</en>
       <es>Bridas de los Hechizos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>essenceMasteryOfSpirits</id>
     <name>
       <en>Mastery of Spirits</en>
       <es>Maestría de los Espíritus</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>essencePathsOfQuickness</id>
     <name>
       <en>Paths of Quickness</en>
       <es>Sendas de la Rapidez</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>essenceCambioViviente</id>
     <name>
       <en>Cambio Viviente</en>
       <es>Cambio Viviente</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>essenceEnhancementOfSpells</id>
     <name>
       <en>Enhancement of spells</en>
       <es>Mejora de los Hechizos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>essencePathOfNullification</id>
     <name>
       <en>Path of Nullification</en>
       <es>Senda de la Anulación</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>essenceMasteryOfEscudos</id>
     <name>
       <en>Mastery of Escudos</en>
       <es>Maestría de los Escudos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>essenceMasteryOfPortales</id>
     <name>
       <en>Mastery of Portales</en>
       <es>Maestría de los Portales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>essencePuenteInTheAlturas</id>
     <name>
       <en>Puente in the Alturas</en>
       <es>Puente en la Alturas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>true</closedList>
     <id>essencePathOfInvisibilidad</id>
     <name>
       <en>Path of Invisibilidad</en>
       <es>Senda de la Invisibilidad</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>ClosedList</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceDisfraces</id>
     <name>
       <en>Disfraces</en>
       <es>Disfraces</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>illusionist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfIlusiones</id>
     <name>
       <en>Mastery of Ilusiones</en>
       <es>Maestría de las Ilusiones</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>illusionist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMoldearTheSound</id>
     <name>
       <en>Moldear the Sound</en>
       <es>Moldear el Sonido</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>illusionist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMoldearTheLight</id>
     <name>
       <en>Moldear the Light</en>
       <es>Moldear la Luz</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>illusionist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMoldearTheSenses</id>
     <name>
       <en>Moldear the Senses</en>
       <es>Moldear los Sentidos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>illusionist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceOlerSaborearSentir</id>
     <name>
       <en>Oler-Saborear-Sentir</en>
       <es>Oler-Saborear-Sentir</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>illusionist</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceLawOfLight</id>
     <name>
       <en>Law of Light</en>
       <es>Ley de la Luz</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wizard</owner>
       <owner>lightWizard</owner>
@@ -353,13 +299,11 @@
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceLawOfEarth</id>
     <name>
       <en>Law of Earth</en>
       <es>Ley de la Tierra</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wizard</owner>
       <owner>earthWizard</owner>
@@ -367,13 +311,11 @@
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceLawOfWater</id>
     <name>
       <en>Law of Water</en>
       <es>Ley del Agua</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wizard</owner>
       <owner>waterWizard</owner>
@@ -381,13 +323,11 @@
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceLawOfFire</id>
     <name>
       <en>Law of Fire</en>
       <es>Ley del Fuego</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wizard</owner>
       <owner>fireWizard</owner>
@@ -395,13 +335,11 @@
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceLawOfIce</id>
     <name>
       <en>Law of Ice</en>
       <es>Ley del Hielo</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wizard</owner>
       <owner>wizardOfTheIce</owner>
@@ -409,13 +347,11 @@
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceLawOfWind</id>
     <name>
       <en>Law of Wind</en>
       <es>Ley del Viento</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>wizard</owner>
       <owner>wizardOfTheAir</owner>
@@ -423,286 +359,242 @@
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceInfluencias</id>
     <name>
       <en>Influencias</en>
       <es>Influencias</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>seeker</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceLawOfLatrocinio</id>
     <name>
       <en>Law of Latrocinio</en>
       <es>Ley del Latrocinio</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>seeker</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfMovimiento</id>
     <name>
       <en>Mastery of Movimiento</en>
       <es>Maestría del Movimiento</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>seeker</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMasteryOfOcultamiento</id>
     <name>
       <en>Mastery of Ocultamiento</en>
       <es>Maestría del Ocultamiento</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>seeker</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMecanismos</id>
     <name>
       <en>Mecanismos</en>
       <es>Mecanismos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>seeker</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceSenses</id>
     <name>
       <en>Senses</en>
       <es>Sentidos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>seeker</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceReinsOfTheBody</id>
     <name>
       <en>Reins of the Body</en>
       <es>Bridas del Cuerpo</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monk</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceMindSobreMateria</id>
     <name>
       <en>Mind sobre Materia</en>
       <es>Mente sobre Materia</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monk</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceSensesOfMonk</id>
     <name>
       <en>Senses of Monk</en>
       <es>Sentidos del Monje</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>monk</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceAlterationOfTheGases</id>
     <name>
       <en>Alteration of the Gases</en>
       <es>Alteración de los Gases</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mystic</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceAlterationOfTheLiquids</id>
     <name>
       <en>Alteration of the Liquids</en>
       <es>Alteración de los Líquidos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mystic</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceAlterationOfTheSolids</id>
     <name>
       <en>Alteration of the Solids</en>
       <es>Alteración de los Sólidos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mystic</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceCambioMystic</id>
     <name>
       <en>Cambio Mystic</en>
       <es>Cambio Místico</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mystic</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceHidingMystic</id>
     <name>
       <en>Hiding (Mystic)</en>
       <es>Esconderse (Místico)</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mystic</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essencePathsOfConfusion</id>
     <name>
       <en>Paths of Confusion</en>
       <es>Sendas de la Confusión</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>mystic</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceDestructionOfTheFlesh</id>
     <name>
       <en>Destruction of the Flesh</en>
       <es>Destrucción de la Carne</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>sorcerer</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceDestructionOfTheFluidos</id>
     <name>
       <en>Destruction of the Fluidos</en>
       <es>Destrucción de los Fluidos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>sorcerer</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceDestructionOfTheGases</id>
     <name>
       <en>Destruction of the Gases</en>
       <es>Destrucción de los Gases</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>sorcerer</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceDestructionOfTheSolids</id>
     <name>
       <en>Destruction of the Solids</en>
       <es>Destrucción de los Sólidos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>sorcerer</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceDestructionOfTheSoul</id>
     <name>
       <en>Destruction of the Soul</en>
       <es>Destrucción del Alma</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>sorcerer</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceDestructionMental</id>
     <name>
       <en>Destruction Mental</en>
       <es>Destrucción Mental</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>sorcerer</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceContactosOscuros</id>
     <name>
       <en>Contactos Oscuros</en>
       <es>Contactos Oscuros</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>essenceMaligna</owner>
       <owner>lordOfTheChaos</owner>
@@ -710,39 +602,33 @@
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceDestructionOfTheMateria</id>
     <name>
       <en>Destruction of the Materia</en>
       <es>Destrucción de la Materia</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>essenceMaligna</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceErosionPhysical</id>
     <name>
       <en>Erosion Physical</en>
       <es>Erosión Física</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>essenceMaligna</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceSummoningsOscuras</id>
     <name>
       <en>Summonings Oscuras</en>
       <es>Invocaciones Oscuras</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>essenceMaligna</owner>
       <owner>lordOfTheChaos</owner>
@@ -750,26 +636,22 @@
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceSummoningOfEntidades</id>
     <name>
       <en>Summoning of Entidades</en>
       <es>Invocación de Entidades</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>essenceMaligna</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceOscuridad</id>
     <name>
       <en>Oscuridad</en>
       <es>Oscuridad</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>essenceMaligna</owner>
       <owner>lordOfTheChaos</owner>

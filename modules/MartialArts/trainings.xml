@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <trainings>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
@@ -10,7 +9,6 @@
           <category>weaponsPolearm</category>
           <category>weaponsEdged</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -20,7 +18,6 @@
         <categoryOptions>
           <category>martialArtsSweeps</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -30,7 +27,6 @@
         <categoryOptions>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -40,7 +36,6 @@
         <categoryOptions>
           <category>martialArtsCombatManeuvers</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -50,7 +45,6 @@
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>4</ranksGranted>
@@ -60,7 +54,6 @@
         <categoryOptions>
           <category>selfControl</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -70,7 +63,6 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -89,7 +81,6 @@
         <categoryOptions>
           <category>combatManeuvers</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -99,7 +90,6 @@
         <categoryOptions>
           <category>subterfugeAttack</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -109,7 +99,6 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>4</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>5</ranksGranted>
@@ -119,7 +108,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -134,7 +122,6 @@
     <specialItems>
       <specialItem>
         <bonus>10</bonus>
-        <magic>true</magic>
         <name>
           <en>Equipo of Disfraz</en>
           <es>Equipo de Disfraz</es>
@@ -145,7 +132,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Weapon Disimulada</en>
           <es>Arma Disimulada</es>
@@ -155,7 +141,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Contrato in Vigor</en>
           <es>Contrato en Vigor</es>
@@ -169,7 +154,6 @@
           <en>Merchant</en>
           <es>mercader</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Identidad Secreta</en>
           <es>Identidad Secreta</es>
@@ -179,7 +163,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Veneno Common</en>
           <es>Veneno Común</es>
@@ -193,7 +176,6 @@
           <en>peregrino</en>
           <es>peregrino</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Identidad Secreta</en>
           <es>Identidad Secreta</es>
@@ -207,7 +189,6 @@
           <en>mendigo</en>
           <es>mendigo</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Identidad Secreta</en>
           <es>Identidad Secreta</es>
@@ -217,7 +198,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Contacto Useful in the bajos fondos</en>
           <es>Contacto Útil en los bajos fondos</es>
@@ -227,7 +207,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Vestimenta tradicional of Spy</en>
           <es>Vestimenta tradicional de Espía</es>
@@ -239,13 +218,11 @@
     <trainingTimeInMonths>170</trainingTimeInMonths>
     <characteristicUpgrades>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>AGILITY</option>
         </options>
       </upgradeChoice>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>CONSTITUTION</option>
         </options>
@@ -253,7 +230,6 @@
     </characteristicUpgrades>
   </training>
   <training>
-    <availableToEveryRace>true</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
@@ -262,7 +238,6 @@
           <category>weaponsPolearm</category>
           <category>weaponsEdged</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -272,7 +247,6 @@
         <categoryOptions>
           <category>martialArtsSweeps</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -282,7 +256,6 @@
         <categoryOptions>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -292,7 +265,6 @@
         <categoryOptions>
           <category>martialArtsCombatManeuvers</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -302,7 +274,6 @@
         <categoryOptions>
           <category>selfControl</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -312,7 +283,6 @@
         <categoryOptions>
           <category>loreGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -322,7 +292,6 @@
         <categoryOptions>
           <category>loreTechnical</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -332,7 +301,6 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -356,7 +324,6 @@
     <specialItems>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Avance reciente dentro of the orden</en>
           <es>Avance reciente dentro de la orden</es>
@@ -370,7 +337,6 @@
           <en>to Meditation</en>
           <es>a meditación</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Rosario for rezar</en>
           <es>Rosario para rezar</es>
@@ -384,7 +350,6 @@
           <en>to a Skill</en>
           <es>a una habilidad</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Pergamino of oraciones</en>
           <es>Pergamino de oraciones</es>
@@ -398,7 +363,6 @@
           <en>not Magical</en>
           <es>no mágica</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -412,7 +376,6 @@
           <en>D10 curativas comunes</en>
           <es>D10 curativas comunes</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Herbs</en>
           <es>Hierbas</es>
@@ -422,7 +385,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Reputation como Warrior sagrado</en>
           <es>Reputación como guerrero sagrado</es>

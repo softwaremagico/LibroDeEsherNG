@@ -1,351 +1,297 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <spells>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationSkillsInorganic</id>
     <name>
       <en>Skills Inorganic</en>
       <es>Habilidades Inorgánicas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfChanneling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationSkillsLiquidGaseosas</id>
     <name>
       <en>Skills Liquid/Gaseosas</en>
       <es>Habilidades Líquidas/Gaseosas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfChanneling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationImbuirRealm</id>
     <name>
       <en>Imbuir Realm</en>
       <es>Imbuir Reino</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfChanneling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationImbuirOtroRealm</id>
     <name>
       <en>Imbuir Otro Realm</en>
       <es>Imbuir Otro Reino</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfChanneling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationArmorSagradas</id>
     <name>
       <en>Armor Sagradas</en>
       <es>Armaduras Sagradas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfChanneling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationWeaponsSagradas</id>
     <name>
       <en>Weapons Sagradas</en>
       <es>Armas Sagradas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfChanneling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationCraftsSagrados</id>
     <name>
       <en>Crafts Sagrados</en>
       <es>Oficios Sagrados</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfChanneling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationProtectionsSagradas</id>
     <name>
       <en>Protections Sagradas</en>
       <es>Protecciones Sagradas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfChanneling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>canalizationTrabajosSagrados</id>
     <name>
       <en>Trabajos Sagrados</en>
       <es>Trabajos Sagrados</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfChanneling</owner>
     </owners>
     <realm>CANALIZATION</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceSkillsInorganic</id>
     <name>
       <en>Skills Inorganic</en>
       <es>Habilidades Inorgánicas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfEssence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceSkillsLiquidGaseosas</id>
     <name>
       <en>Skills Liquid/Gaseosas</en>
       <es>Habilidades Líquidas/Gaseosas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfEssence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceImbuirRealm</id>
     <name>
       <en>Imbuir Realm</en>
       <es>Imbuir Reino</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfEssence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceImbuirOtroRealm</id>
     <name>
       <en>Imbuir Otro Realm</en>
       <es>Imbuir Otro Reino</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfEssence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceAnalysisOfObjects</id>
     <name>
       <en>Analysis of Objects</en>
       <es>Análisis de los Objetos</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfEssence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceEnchantmentsOfArmor</id>
     <name>
       <en>Enchantments of Armor</en>
       <es>Encantamientos de Armaduras</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfEssence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceEnchantmentsOfWeapons</id>
     <name>
       <en>Enchantments of Weapons</en>
       <es>Encantamientos de Armas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfEssence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceEncatamientosGenerales</id>
     <name>
       <en>Encatamientos Generales</en>
       <es>Encatamientos Generales</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfEssence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>essenceSkillsOrganic</id>
     <name>
       <en>Skills Organic</en>
       <es>Habilidades Orgánicas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfEssence</owner>
     </owners>
     <realm>ESSENCE</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismEsenciahabilidadesInorganic</id>
     <name>
       <en>EsenciaHabilidades Inorganic</en>
       <es>EsenciaHabilidades Inorgánicas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfMentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismSkillsLiquidGaseosas</id>
     <name>
       <en>Skills Liquid/Gaseosas</en>
       <es>Habilidades Líquidas/Gaseosas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfMentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismImbuirRealm</id>
     <name>
       <en>Imbuir Realm</en>
       <es>Imbuir Reino</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfMentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismImbuirOtroRealm</id>
     <name>
       <en>Imbuir Otro Realm</en>
       <es>Imbuir Otro Reino</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfMentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismConcentracionesExternas</id>
     <name>
       <en>Concentraciones Externas</en>
       <es>Concentraciones Externas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfMentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfDefenses</id>
     <name>
       <en>Mastery of Defenses</en>
       <es>Maestría de las Defensas</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfMentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfAttacks</id>
     <name>
       <en>Mastery of Attacks</en>
       <es>Maestría de los Ataques</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfMentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMasteryOfUnderstanding</id>
     <name>
       <en>Mastery of Understanding</en>
       <es>Maestría del Entendimiento</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfMentalism</owner>
     </owners>
     <realm>MENTALISM</realm>
   </spellList>
   <spellList>
-    <closedList>false</closedList>
     <id>mentalismMeditationCurativa</id>
     <name>
       <en>Meditation Curativa</en>
       <es>Meditación Curativa</es>
     </name>
-    <openList>false</openList>
     <owners>
       <owner>alchemistOfMentalism</owner>
     </owners>

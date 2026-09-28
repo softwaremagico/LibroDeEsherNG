@@ -1,13 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <trainings>
   <training>
-    <availableToEveryRace>false</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -26,7 +24,6 @@
         <categoryOptions>
           <category>powerManipulation</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -45,7 +42,6 @@
         <categoryOptions>
           <category>powerAwareness</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -57,7 +53,6 @@
           <category>armorMiddle</category>
           <category>armorHeavy</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -73,7 +68,6 @@
           <category>weaponsEdged</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -84,7 +78,6 @@
           <category>listsBasicOfSpells</category>
           <category>listsAbiertasOfSpells</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -106,7 +99,6 @@
           <en>not Magical</en>
           <es>no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon Body to Body</en>
           <es>Arma cuerpo a cuerpo</es>
@@ -120,7 +112,6 @@
           <en>not Magical</en>
           <es>no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Armor</en>
           <es>Armadura</es>
@@ -134,7 +125,6 @@
           <en>x2</en>
           <es>x2</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Multiplicador PPs</en>
           <es>Multiplicador PPs</es>
@@ -148,7 +138,6 @@
           <en>not Arcane</en>
           <es>no mágico</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Shield</en>
           <es>Escudo</es>
@@ -162,7 +151,6 @@
           <en>not Magical</en>
           <es>no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -172,7 +160,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Objeto diario II</en>
           <es>Objeto diario II</es>
@@ -186,7 +173,6 @@
           <en>+1</en>
           <es>+1</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Sumando of Spells</en>
           <es>Sumando de hechizos</es>
@@ -200,7 +186,6 @@
           <en>not magica</en>
           <es>no magica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon</en>
           <es>Arma</es>
@@ -212,7 +197,6 @@
     <trainingTimeInMonths>70</trainingTimeInMonths>
     <characteristicUpgrades>
       <upgradeChoice>
-        <fixed>false</fixed>
         <options>
           <option>AGILITY</option>
           <option>CONSTITUTION</option>
@@ -229,13 +213,11 @@
     </characteristicUpgrades>
   </training>
   <training>
-    <availableToEveryRace>false</availableToEveryRace>
     <categories>
       <categoryGrant>
         <categoryOptions>
           <category>listsBasicOfSpells</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -254,7 +236,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -273,7 +254,6 @@
         <categoryOptions>
           <category>technicalTradeProfessional</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>2</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -299,7 +279,6 @@
         <categoryOptions>
           <category>scienceAnalyticSpecialized</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -318,7 +297,6 @@
         <categoryOptions>
           <category>loreArcane</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -337,7 +315,6 @@
         <categoryOptions>
           <category>powerManipulation</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>3</maxSkills>
         <minSkills>2</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -362,7 +339,6 @@
           <category>weaponsEdged</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>1</maxSkills>
         <minSkills>1</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -384,7 +360,6 @@
           <en>x2</en>
           <es>x2</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Multiplicador PPs</en>
           <es>Multiplicador PPs</es>
@@ -398,7 +373,6 @@
           <en>not Magical</en>
           <es>no mágica</es>
         </description>
-        <magic>true</magic>
         <name>
           <en>Weapon Body to Body</en>
           <es>Arma cuerpo a cuerpo</es>
@@ -408,7 +382,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>1-2 Ulogat-Toram</en>
           <es>1-2 Ulogat-Toram</es>
@@ -418,7 +391,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Objeto diario III</en>
           <es>Objeto diario III</es>
@@ -428,7 +400,6 @@
       </specialItem>
       <specialItem>
         <bonus>10</bonus>
-        <magic>true</magic>
         <name>
           <en>Libro</en>
           <es>Libro</es>
@@ -439,7 +410,6 @@
       </specialItem>
       <specialItem>
         <bonus>0</bonus>
-        <magic>false</magic>
         <name>
           <en>Zombi without Hands</en>
           <es>Zombi sin manos</es>
@@ -453,7 +423,6 @@
           <en>+1</en>
           <es>+1</es>
         </description>
-        <magic>false</magic>
         <name>
           <en>Sumando of Spells</en>
           <es>Sumando de hechizos</es>
@@ -465,7 +434,6 @@
     <trainingTimeInMonths>69</trainingTimeInMonths>
     <characteristicUpgrades>
       <upgradeChoice>
-        <fixed>true</fixed>
         <options>
           <option>INTUITION</option>
         </options>

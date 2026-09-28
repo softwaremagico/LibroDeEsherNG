@@ -10,7 +10,6 @@
         <categoryOptions>
           <category>artPerforming</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -20,7 +19,6 @@
         <categoryOptions>
           <category>artCreative</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -30,7 +28,6 @@
         <categoryOptions>
           <category>athleticsPower</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -40,14 +37,12 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>swimming</skill>
@@ -59,14 +54,12 @@
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>climbing</skill>
@@ -78,14 +71,12 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>alerta</skill>
@@ -97,7 +88,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -107,7 +97,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -117,14 +106,12 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>physicalDevelopment</skill>
@@ -136,14 +123,12 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>9</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>12</ranksToDistribute>
             <skillOptions>
               <skill>idiomas</skill>
@@ -155,7 +140,6 @@
         <categoryOptions>
           <category>crafts</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -165,7 +149,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -179,14 +162,12 @@
           <category>loreTechnical</category>
           <category>loreAcademic</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>8</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -199,7 +180,6 @@
           <category>martialArtsSweeps</category>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -209,7 +189,6 @@
         <categoryOptions>
           <category>outdoorAnimals</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -219,7 +198,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -232,14 +210,12 @@
           <category>scienceAnalyticMedical</category>
           <category>scienceAnalyticTechnique</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>5</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -251,21 +227,18 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>hiding</skill>
@@ -277,7 +250,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -287,7 +259,6 @@
         <categoryOptions>
           <category>technicalTradeProfessional</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -297,7 +268,6 @@
         <categoryOptions>
           <category>technicalTradeVocational</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -307,7 +277,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -325,14 +294,12 @@
           <category>weaponsFirearmTwoHanded</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>weapon</skill>
@@ -367,7 +334,6 @@
         <categoryOptions>
           <category>artPerforming</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -377,7 +343,6 @@
         <categoryOptions>
           <category>artCreative</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -387,7 +352,6 @@
         <categoryOptions>
           <category>athleticsPower</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -397,14 +361,12 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
               <skill>swimming</skill>
@@ -416,14 +378,12 @@
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
               <skill>climbing</skill>
@@ -435,14 +395,12 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>alerta</skill>
@@ -454,7 +412,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -464,7 +421,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -474,14 +430,12 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>3</ranksToDistribute>
             <skillOptions>
               <skill>physicalDevelopment</skill>
@@ -493,14 +447,12 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>8</ranksToDistribute>
             <skillOptions>
               <skill>idiomas</skill>
@@ -512,7 +464,6 @@
         <categoryOptions>
           <category>crafts</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -522,7 +473,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -536,14 +486,12 @@
           <category>loreTechnical</category>
           <category>loreAcademic</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>4</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>5</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -556,7 +504,6 @@
           <category>martialArtsSweeps</category>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -566,7 +513,6 @@
         <categoryOptions>
           <category>outdoorAnimals</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -576,7 +522,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -589,14 +534,12 @@
           <category>scienceAnalyticMedical</category>
           <category>scienceAnalyticTechnique</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -608,21 +551,18 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
               <skill>hiding</skill>
@@ -634,7 +574,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -644,7 +583,6 @@
         <categoryOptions>
           <category>technicalTradeProfessional</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -654,7 +592,6 @@
         <categoryOptions>
           <category>technicalTradeVocational</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -664,7 +601,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -682,14 +618,12 @@
           <category>weaponsFirearmTwoHanded</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>4</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>3</ranksToDistribute>
             <skillOptions>
               <skill>weapon</skill>
@@ -728,7 +662,6 @@
         <categoryOptions>
           <category>artPerforming</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -738,7 +671,6 @@
         <categoryOptions>
           <category>artCreative</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -748,7 +680,6 @@
         <categoryOptions>
           <category>athleticsPower</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -758,14 +689,12 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>swimming</skill>
@@ -777,14 +706,12 @@
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>climbing</skill>
@@ -796,14 +723,12 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>alerta</skill>
@@ -815,7 +740,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -825,7 +749,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -835,14 +758,12 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>physicalDevelopment</skill>
@@ -854,14 +775,12 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>9</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>12</ranksToDistribute>
             <skillOptions>
               <skill>idiomas</skill>
@@ -873,7 +792,6 @@
         <categoryOptions>
           <category>crafts</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -883,7 +801,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -897,14 +814,12 @@
           <category>loreTechnical</category>
           <category>loreAcademic</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>8</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -917,7 +832,6 @@
           <category>martialArtsSweeps</category>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -927,7 +841,6 @@
         <categoryOptions>
           <category>outdoorAnimals</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -937,7 +850,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -950,14 +862,12 @@
           <category>scienceAnalyticMedical</category>
           <category>scienceAnalyticTechnique</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>5</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -969,21 +879,18 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>hiding</skill>
@@ -995,7 +902,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -1005,7 +911,6 @@
         <categoryOptions>
           <category>technicalTradeProfessional</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -1015,7 +920,6 @@
         <categoryOptions>
           <category>technicalTradeVocational</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1025,7 +929,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -1043,14 +946,12 @@
           <category>weaponsFirearmTwoHanded</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>weapon</skill>
@@ -1089,7 +990,6 @@
         <categoryOptions>
           <category>artPerforming</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1099,7 +999,6 @@
         <categoryOptions>
           <category>artCreative</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1109,7 +1008,6 @@
         <categoryOptions>
           <category>athleticsPower</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1119,14 +1017,12 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>swimming</skill>
@@ -1138,14 +1034,12 @@
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>climbing</skill>
@@ -1157,14 +1051,12 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>alerta</skill>
@@ -1176,7 +1068,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1186,7 +1077,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1196,14 +1086,12 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>physicalDevelopment</skill>
@@ -1215,14 +1103,12 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>9</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>12</ranksToDistribute>
             <skillOptions>
               <skill>idiomas</skill>
@@ -1234,7 +1120,6 @@
         <categoryOptions>
           <category>crafts</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1244,7 +1129,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -1258,14 +1142,12 @@
           <category>loreTechnical</category>
           <category>loreAcademic</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>8</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -1278,7 +1160,6 @@
           <category>martialArtsSweeps</category>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1288,7 +1169,6 @@
         <categoryOptions>
           <category>outdoorAnimals</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1298,7 +1178,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1311,14 +1190,12 @@
           <category>scienceAnalyticMedical</category>
           <category>scienceAnalyticTechnique</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>5</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -1330,21 +1207,18 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>hiding</skill>
@@ -1356,7 +1230,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -1366,7 +1239,6 @@
         <categoryOptions>
           <category>technicalTradeProfessional</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -1376,7 +1248,6 @@
         <categoryOptions>
           <category>technicalTradeVocational</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1386,7 +1257,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -1404,14 +1274,12 @@
           <category>weaponsFirearmTwoHanded</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>weapon</skill>
@@ -1446,7 +1314,6 @@
         <categoryOptions>
           <category>artPerforming</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1456,7 +1323,6 @@
         <categoryOptions>
           <category>artCreative</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1466,7 +1332,6 @@
         <categoryOptions>
           <category>athleticsPower</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1476,14 +1341,12 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>swimming</skill>
@@ -1495,14 +1358,12 @@
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>climbing</skill>
@@ -1514,14 +1375,12 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>alerta</skill>
@@ -1533,7 +1392,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1543,7 +1401,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1553,14 +1410,12 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
               <skill>physicalDevelopment</skill>
@@ -1572,14 +1427,12 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>6</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>10</ranksToDistribute>
             <skillOptions>
               <skill>idiomas</skill>
@@ -1591,7 +1444,6 @@
         <categoryOptions>
           <category>crafts</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1601,7 +1453,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1615,14 +1466,12 @@
           <category>loreTechnical</category>
           <category>loreAcademic</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>7</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -1635,7 +1484,6 @@
           <category>martialArtsSweeps</category>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1645,7 +1493,6 @@
         <categoryOptions>
           <category>outdoorAnimals</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1655,7 +1502,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1668,14 +1514,12 @@
           <category>scienceAnalyticMedical</category>
           <category>scienceAnalyticTechnique</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>3</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -1687,21 +1531,18 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>hiding</skill>
@@ -1713,7 +1554,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -1723,7 +1563,6 @@
         <categoryOptions>
           <category>technicalTradeProfessional</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1733,7 +1572,6 @@
         <categoryOptions>
           <category>technicalTradeVocational</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -1743,7 +1581,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>4</ranksGranted>
@@ -1761,14 +1598,12 @@
           <category>weaponsFirearmTwoHanded</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>weapon</skill>
@@ -1803,7 +1638,6 @@
         <categoryOptions>
           <category>artPerforming</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1813,7 +1647,6 @@
         <categoryOptions>
           <category>artCreative</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1823,7 +1656,6 @@
         <categoryOptions>
           <category>athleticsPower</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1833,14 +1665,12 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>swimming</skill>
@@ -1852,14 +1682,12 @@
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>climbing</skill>
@@ -1871,14 +1699,12 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>alerta</skill>
@@ -1890,7 +1716,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -1900,7 +1725,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1910,14 +1734,12 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>physicalDevelopment</skill>
@@ -1929,14 +1751,12 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>8</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>11</ranksToDistribute>
             <skillOptions>
               <skill>idiomas</skill>
@@ -1948,7 +1768,6 @@
         <categoryOptions>
           <category>crafts</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -1958,7 +1777,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -1972,14 +1790,12 @@
           <category>loreTechnical</category>
           <category>loreAcademic</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>8</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -1992,7 +1808,6 @@
           <category>martialArtsSweeps</category>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2002,7 +1817,6 @@
         <categoryOptions>
           <category>outdoorAnimals</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2012,7 +1826,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2025,14 +1838,12 @@
           <category>scienceAnalyticMedical</category>
           <category>scienceAnalyticTechnique</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>4</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -2044,21 +1855,18 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>hiding</skill>
@@ -2070,7 +1878,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -2080,7 +1887,6 @@
         <categoryOptions>
           <category>technicalTradeProfessional</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2090,7 +1896,6 @@
         <categoryOptions>
           <category>technicalTradeVocational</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2100,7 +1905,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>4</ranksGranted>
@@ -2118,14 +1922,12 @@
           <category>weaponsFirearmTwoHanded</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>weapon</skill>
@@ -2164,7 +1966,6 @@
         <categoryOptions>
           <category>artPerforming</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2174,7 +1975,6 @@
         <categoryOptions>
           <category>artCreative</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2184,7 +1984,6 @@
         <categoryOptions>
           <category>athleticsPower</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2194,14 +1993,12 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>swimming</skill>
@@ -2213,14 +2010,12 @@
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>climbing</skill>
@@ -2232,14 +2027,12 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>alerta</skill>
@@ -2251,7 +2044,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2261,7 +2053,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2271,14 +2062,12 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>physicalDevelopment</skill>
@@ -2290,14 +2079,12 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>9</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>12</ranksToDistribute>
             <skillOptions>
               <skill>idiomas</skill>
@@ -2309,7 +2096,6 @@
         <categoryOptions>
           <category>crafts</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -2319,7 +2105,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -2333,14 +2118,12 @@
           <category>loreTechnical</category>
           <category>loreAcademic</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>8</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -2353,7 +2136,6 @@
           <category>martialArtsSweeps</category>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2363,7 +2145,6 @@
         <categoryOptions>
           <category>outdoorAnimals</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2373,7 +2154,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2386,14 +2166,12 @@
           <category>scienceAnalyticMedical</category>
           <category>scienceAnalyticTechnique</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>5</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -2405,21 +2183,18 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>hiding</skill>
@@ -2431,7 +2206,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -2441,7 +2215,6 @@
         <categoryOptions>
           <category>technicalTradeProfessional</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -2451,7 +2224,6 @@
         <categoryOptions>
           <category>technicalTradeVocational</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2461,7 +2233,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -2479,14 +2250,12 @@
           <category>weaponsFirearmTwoHanded</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>weapon</skill>
@@ -2524,7 +2293,6 @@
         <categoryOptions>
           <category>artPerforming</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -2534,7 +2302,6 @@
         <categoryOptions>
           <category>artCreative</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2544,7 +2311,6 @@
         <categoryOptions>
           <category>athleticsPower</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -2554,14 +2320,12 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
               <skill>swimming</skill>
@@ -2573,14 +2337,12 @@
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>3</ranksToDistribute>
             <skillOptions>
               <skill>climbing</skill>
@@ -2592,14 +2354,12 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>alerta</skill>
@@ -2611,7 +2371,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2621,7 +2380,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2631,14 +2389,12 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
             <skillOptions>
               <skill>physicalDevelopment</skill>
@@ -2650,14 +2406,12 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>4</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>8</ranksToDistribute>
             <skillOptions>
               <skill>idiomas</skill>
@@ -2669,7 +2423,6 @@
         <categoryOptions>
           <category>crafts</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2679,7 +2432,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2693,14 +2445,12 @@
           <category>loreTechnical</category>
           <category>loreAcademic</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>4</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>5</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -2713,7 +2463,6 @@
           <category>martialArtsSweeps</category>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -2723,7 +2472,6 @@
         <categoryOptions>
           <category>outdoorAnimals</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -2733,7 +2481,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -2746,14 +2493,12 @@
           <category>scienceAnalyticMedical</category>
           <category>scienceAnalyticTechnique</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>3</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -2765,21 +2510,18 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>hiding</skill>
@@ -2791,7 +2533,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -2801,7 +2542,6 @@
         <categoryOptions>
           <category>technicalTradeProfessional</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2811,7 +2551,6 @@
         <categoryOptions>
           <category>technicalTradeVocational</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -2821,7 +2560,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -2839,14 +2577,12 @@
           <category>weaponsFirearmTwoHanded</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>3</ranksToDistribute>
             <skillOptions>
               <skill>weapon</skill>
@@ -2885,7 +2621,6 @@
         <categoryOptions>
           <category>artPerforming</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2895,7 +2630,6 @@
         <categoryOptions>
           <category>artCreative</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2905,7 +2639,6 @@
         <categoryOptions>
           <category>athleticsPower</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2915,14 +2648,12 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>swimming</skill>
@@ -2934,14 +2665,12 @@
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>climbing</skill>
@@ -2953,14 +2682,12 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>alerta</skill>
@@ -2972,7 +2699,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -2982,7 +2708,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -2992,14 +2717,12 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>physicalDevelopment</skill>
@@ -3011,14 +2734,12 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>9</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>12</ranksToDistribute>
             <skillOptions>
               <skill>idiomas</skill>
@@ -3030,7 +2751,6 @@
         <categoryOptions>
           <category>crafts</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -3040,7 +2760,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -3054,14 +2773,12 @@
           <category>loreTechnical</category>
           <category>loreAcademic</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>8</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -3074,7 +2791,6 @@
           <category>martialArtsSweeps</category>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3084,7 +2800,6 @@
         <categoryOptions>
           <category>outdoorAnimals</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3094,7 +2809,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3107,14 +2821,12 @@
           <category>scienceAnalyticMedical</category>
           <category>scienceAnalyticTechnique</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>5</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -3126,21 +2838,18 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>hiding</skill>
@@ -3152,7 +2861,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -3162,7 +2870,6 @@
         <categoryOptions>
           <category>technicalTradeProfessional</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -3172,7 +2879,6 @@
         <categoryOptions>
           <category>technicalTradeVocational</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3182,7 +2888,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -3200,14 +2905,12 @@
           <category>weaponsFirearmTwoHanded</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>weapon</skill>
@@ -3246,7 +2949,6 @@
         <categoryOptions>
           <category>artPerforming</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3256,7 +2958,6 @@
         <categoryOptions>
           <category>artCreative</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -3266,7 +2967,6 @@
         <categoryOptions>
           <category>athleticsPower</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3276,14 +2976,12 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>swimming</skill>
@@ -3295,14 +2993,12 @@
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>climbing</skill>
@@ -3314,14 +3010,12 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>alerta</skill>
@@ -3333,7 +3027,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -3343,7 +3036,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3353,14 +3045,12 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>physicalDevelopment</skill>
@@ -3372,14 +3062,12 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>9</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>12</ranksToDistribute>
             <skillOptions>
               <skill>idiomas</skill>
@@ -3391,7 +3079,6 @@
         <categoryOptions>
           <category>crafts</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -3401,7 +3088,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -3415,14 +3101,12 @@
           <category>loreTechnical</category>
           <category>loreAcademic</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>8</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -3435,7 +3119,6 @@
           <category>martialArtsSweeps</category>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3445,7 +3128,6 @@
         <categoryOptions>
           <category>outdoorAnimals</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3455,7 +3137,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3468,14 +3149,12 @@
           <category>scienceAnalyticMedical</category>
           <category>scienceAnalyticTechnique</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>5</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -3487,21 +3166,18 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>hiding</skill>
@@ -3513,7 +3189,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -3523,7 +3198,6 @@
         <categoryOptions>
           <category>technicalTradeProfessional</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -3533,7 +3207,6 @@
         <categoryOptions>
           <category>technicalTradeVocational</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3543,7 +3216,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -3561,14 +3233,12 @@
           <category>weaponsFirearmTwoHanded</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>weapon</skill>
@@ -3607,7 +3277,6 @@
         <categoryOptions>
           <category>artPerforming</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3617,7 +3286,6 @@
         <categoryOptions>
           <category>artCreative</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -3627,7 +3295,6 @@
         <categoryOptions>
           <category>athleticsPower</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3637,14 +3304,12 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>swimming</skill>
@@ -3656,14 +3321,12 @@
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>climbing</skill>
@@ -3675,14 +3338,12 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>alerta</skill>
@@ -3694,7 +3355,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -3704,7 +3364,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3714,14 +3373,12 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>physicalDevelopment</skill>
@@ -3733,14 +3390,12 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>9</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>12</ranksToDistribute>
             <skillOptions>
               <skill>idiomas</skill>
@@ -3752,7 +3407,6 @@
         <categoryOptions>
           <category>crafts</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -3762,7 +3416,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -3776,14 +3429,12 @@
           <category>loreTechnical</category>
           <category>loreAcademic</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>8</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -3796,7 +3447,6 @@
           <category>martialArtsSweeps</category>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3806,7 +3456,6 @@
         <categoryOptions>
           <category>outdoorAnimals</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3816,7 +3465,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3829,14 +3477,12 @@
           <category>scienceAnalyticMedical</category>
           <category>scienceAnalyticTechnique</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>5</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -3848,21 +3494,18 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>hiding</skill>
@@ -3874,7 +3517,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -3884,7 +3526,6 @@
         <categoryOptions>
           <category>technicalTradeProfessional</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -3894,7 +3535,6 @@
         <categoryOptions>
           <category>technicalTradeVocational</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3904,7 +3544,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -3922,14 +3561,12 @@
           <category>weaponsFirearmTwoHanded</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>weapon</skill>
@@ -3968,7 +3605,6 @@
         <categoryOptions>
           <category>artPerforming</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3978,7 +3614,6 @@
         <categoryOptions>
           <category>artCreative</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -3988,7 +3623,6 @@
         <categoryOptions>
           <category>athleticsPower</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -3998,14 +3632,12 @@
         <categoryOptions>
           <category>athleticsEndurance</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>swimming</skill>
@@ -4017,14 +3649,12 @@
         <categoryOptions>
           <category>athleticsGymnastics</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>climbing</skill>
@@ -4036,14 +3666,12 @@
         <categoryOptions>
           <category>perceptionInsight</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>alerta</skill>
@@ -4055,7 +3683,6 @@
         <categoryOptions>
           <category>perceptionSearching</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
@@ -4065,7 +3692,6 @@
         <categoryOptions>
           <category>perceptionSenses</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -4075,14 +3701,12 @@
         <categoryOptions>
           <category>physicalDevelopment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>physicalDevelopment</skill>
@@ -4094,14 +3718,12 @@
         <categoryOptions>
           <category>communication</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>9</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>12</ranksToDistribute>
             <skillOptions>
               <skill>idiomas</skill>
@@ -4113,7 +3735,6 @@
         <categoryOptions>
           <category>crafts</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -4123,7 +3744,6 @@
         <categoryOptions>
           <category>influence</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -4137,14 +3757,12 @@
           <category>loreTechnical</category>
           <category>loreAcademic</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>8</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -4157,7 +3775,6 @@
           <category>martialArtsSweeps</category>
           <category>martialArtsStrikes</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -4167,7 +3784,6 @@
         <categoryOptions>
           <category>outdoorAnimals</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -4177,7 +3793,6 @@
         <categoryOptions>
           <category>outdoorEnvironment</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -4190,14 +3805,12 @@
           <category>scienceAnalyticMedical</category>
           <category>scienceAnalyticTechnique</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>5</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>5</ranksToDistribute>
             <skillOptions>
               <skill>cualquierSkill</skill>
@@ -4209,21 +3822,18 @@
         <categoryOptions>
           <category>subterfugeStealth</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>stalking</skill>
             </skillOptions>
           </skillGrant>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
               <skill>hiding</skill>
@@ -4235,7 +3845,6 @@
         <categoryOptions>
           <category>technicalTradeGeneral</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -4245,7 +3854,6 @@
         <categoryOptions>
           <category>technicalTradeProfessional</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>2</ranksGranted>
@@ -4255,7 +3863,6 @@
         <categoryOptions>
           <category>technicalTradeVocational</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>0</ranksGranted>
@@ -4265,7 +3872,6 @@
         <categoryOptions>
           <category>urban</category>
         </categoryOptions>
-        <choice>false</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>3</ranksGranted>
@@ -4283,14 +3889,12 @@
           <category>weaponsFirearmTwoHanded</category>
           <category>weaponsMissile</category>
         </categoryOptions>
-        <choice>true</choice>
         <maxSkills>0</maxSkills>
         <minSkills>0</minSkills>
         <ranksGranted>1</ranksGranted>
         <ranksToDistribute>0</ranksToDistribute>
         <skills>
           <skillGrant>
-            <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
             <skillOptions>
               <skill>weapon</skill>
