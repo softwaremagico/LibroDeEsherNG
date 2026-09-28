@@ -36,9 +36,11 @@ import java.util.Map;
  * <p><strong>Known limitation:</strong> because the merge happens once, at migration time, disabling
  * a module that only <em>contributed extra skills</em> to a category first defined by another module
  * will not remove those extra skills at runtime (the category and its full skill list always live in
- * the defining module's XML). Revisiting this would require {@link
- * com.softwaremagico.librodeesher.xml.XmlFactory} to support additive (not just override) merging of
- * individual fields, which is left as future work.</p>
+ * the defining module's XML). It is latent rather than active: no category id is defined by more than
+ * one module in the shipped data (verified across all 19 modules), so {@link
+ * com.softwaremagico.librodeesher.xml.XmlFactory}'s last-one-wins merge never has to combine two
+ * definitions today. Revisiting this would require that factory to support additive (not just
+ * override) merging of individual fields.</p>
  */
 public final class CategoryMigrationTool {
 

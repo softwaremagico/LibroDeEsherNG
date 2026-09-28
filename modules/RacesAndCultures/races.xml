@@ -902,30 +902,17 @@
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
     <size>M</size>
+    <skillBonuses>
+      <hearing>20</hearing>
+      <vista>20</vista>
+      <detectingEmboscadas>20</detectingEmboscadas>
+    </skillBonuses>
     <soulDepartTime>1</soulDepartTime>
     <specials>
       <special>
         <text>
           <en>Vision Nocturna: you permite ver in Presence of Light faint.</en>
           <es>Visión Nocturna: Te permite ver en presencia de luz ténue.</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+20	Hearing</en>
-          <es>+20	Oído</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+20	Vista</en>
-          <es>+20	Vista</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+20	Detecting Emboscadas</en>
-          <es>+20	Detectar Emboscadas</es>
         </text>
       </special>
     </specials>
@@ -1056,20 +1043,12 @@
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>M</size>
+    <skillBonuses>
+      <attunement>20</attunement>
+      <hearing>10</hearing>
+    </skillBonuses>
     <soulDepartTime>1</soulDepartTime>
     <specials>
-      <special>
-        <text>
-          <en>+20	Attunement</en>
-          <es>+20	Sintonización</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+10	Hearing</en>
-          <es>+10	Oído</es>
-        </text>
-      </special>
       <special>
         <text>
           <en>Vision total to the Light of luna or of the Stars</en>
@@ -1334,14 +1313,11 @@
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
     <size>M</size>
+    <skillBonuses>
+      <hearing>10</hearing>
+    </skillBonuses>
     <soulDepartTime>2</soulDepartTime>
     <specials>
-      <special>
-        <text>
-          <en>+10	Hearing</en>
-          <es>+10	Oído</es>
-        </text>
-      </special>
       <special>
         <text>
           <en>Vision total to the Light of luna or of the Stars</en>
@@ -1534,32 +1510,14 @@
     </resistanceBonuses>
     <restorationTime>1.0</restorationTime>
     <size>M</size>
+    <skillBonuses>
+      <hearing>10</hearing>
+      <stalking>10</stalking>
+      <hiding>10</hiding>
+      <gamesOfHands>10</gamesOfHands>
+    </skillBonuses>
     <soulDepartTime>3</soulDepartTime>
     <specials>
-      <special>
-        <text>
-          <en>+10	Hearing</en>
-          <es>+10	Oído</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+10	Stalking</en>
-          <es>+10	Acechar</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+10	Hiding</en>
-          <es>+10	Esconderse</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+10	Games of Hands</en>
-          <es>+10	Juegos de Manos</es>
-        </text>
-      </special>
       <special>
         <text>
           <en>Vision total to the Light of luna or of the Stars</en>
@@ -2904,26 +2862,13 @@
     </resistanceBonuses>
     <restorationTime>1.5</restorationTime>
     <size>M</size>
+    <skillBonuses>
+      <vista>20</vista>
+      <hearing>20</hearing>
+      <detectingEmboscadas>20</detectingEmboscadas>
+    </skillBonuses>
     <soulDepartTime>3</soulDepartTime>
     <specials>
-      <special>
-        <text>
-          <en>+20	Vista</en>
-          <es>+20	Vista</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+20	Hearing</en>
-          <es>+20	Oído</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+20	Detecting Emboscadas</en>
-          <es>+20	Detectar Emboscadas</es>
-        </text>
-      </special>
       <special>
         <text>
           <en>Vision total to the Light of luna or of the Stars</en>
@@ -7705,26 +7650,13 @@
     </resistanceBonuses>
     <restorationTime>3.0</restorationTime>
     <size>M</size>
+    <skillBonuses>
+      <vista>20</vista>
+      <hearing>20</hearing>
+      <detectingEmboscadas>20</detectingEmboscadas>
+    </skillBonuses>
     <soulDepartTime>1</soulDepartTime>
     <specials>
-      <special>
-        <text>
-          <en>+20	Vista</en>
-          <es>+20	Vista</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+20	Hearing</en>
-          <es>+20	Oído</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+20	Detecting Emboscadas</en>
-          <es>+20	Detectar Emboscadas</es>
-        </text>
-      </special>
       <special>
         <text>
           <en>Vision total to the Light of luna or of the Stars</en>
@@ -8025,26 +7957,13 @@
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
     <size>M</size>
+    <skillBonuses>
+      <vista>20</vista>
+      <hearing>20</hearing>
+      <detectingEmboscadas>20</detectingEmboscadas>
+    </skillBonuses>
     <soulDepartTime>2</soulDepartTime>
     <specials>
-      <special>
-        <text>
-          <en>+20	Vista</en>
-          <es>+20	Vista</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+20	Hearing</en>
-          <es>+20	Oído</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+20	Detecting Emboscadas</en>
-          <es>+20	Detectar Emboscadas</es>
-        </text>
-      </special>
       <special>
         <text>
           <en>Vision total to the Light of luna or of the Stars</en>
@@ -11187,26 +11106,13 @@
     </resistanceBonuses>
     <restorationTime>2.0</restorationTime>
     <size>M</size>
+    <skillBonuses>
+      <vista>20</vista>
+      <hearing>20</hearing>
+      <detectingEmboscadas>20</detectingEmboscadas>
+    </skillBonuses>
     <soulDepartTime>3</soulDepartTime>
     <specials>
-      <special>
-        <text>
-          <en>+20	Vista</en>
-          <es>+20	Vista</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+20	Hearing</en>
-          <es>+20	Oído</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+20	Detecting Emboscadas</en>
-          <es>+20	Detectar Emboscadas</es>
-        </text>
-      </special>
       <special>
         <text>
           <en>Vision total to the Light of luna or of the Stars</en>
@@ -12463,6 +12369,9 @@
       </backgroundLanguage>
     </backgroundLanguages>
     <backgroundPoints>6</backgroundPoints>
+    <categoryBonuses>
+      <weaponsThrown>10</weaponsThrown>
+    </categoryBonuses>
     <characteristicBonuses>
       <AGILITY>0</AGILITY>
       <CONSTITUTION>4</CONSTITUTION>
@@ -12638,24 +12547,17 @@
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
     <size>M</size>
+    <skillBonuses>
+      <abrirLocks>10</abrirLocks>
+      <walkingByTheRopeSlack>10</walkingByTheRopeSlack>
+      <contortion>20</contortion>
+    </skillBonuses>
     <soulDepartTime>12</soulDepartTime>
     <specials>
       <special>
         <text>
           <en>Contortion</en>
           <es>Contorsionismo</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+10	Weapons: Thrown</en>
-          <es>+10	Armas·Arrojadizas</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+10	Abrir Locks</en>
-          <es>+10	Abrir Cerraduras</es>
         </text>
       </special>
       <special>
@@ -12674,18 +12576,6 @@
         <text>
           <en>+10	Balance</en>
           <es>+10	Equilibrio</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+10	Walking by the Rope Slack</en>
-          <es>+10	Caminar por la Cuerda Floja</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+20	Contortion</en>
-          <es>+20	Contorsionismo</es>
         </text>
       </special>
       <special>
@@ -12722,6 +12612,9 @@
       </backgroundLanguage>
     </backgroundLanguages>
     <backgroundPoints>6</backgroundPoints>
+    <categoryBonuses>
+      <weaponsThrown>10</weaponsThrown>
+    </categoryBonuses>
     <characteristicBonuses>
       <AGILITY>0</AGILITY>
       <CONSTITUTION>4</CONSTITUTION>
@@ -12896,24 +12789,17 @@
     </resistanceBonuses>
     <restorationTime>0.5</restorationTime>
     <size>M</size>
+    <skillBonuses>
+      <abrirLocks>10</abrirLocks>
+      <walkingByTheRopeSlack>10</walkingByTheRopeSlack>
+      <contortion>20</contortion>
+    </skillBonuses>
     <soulDepartTime>12</soulDepartTime>
     <specials>
       <special>
         <text>
           <en>Contortion</en>
           <es>Contorsionismo</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+10	Weapons: Thrown</en>
-          <es>+10	Armas·Arrojadizas</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+10	Abrir Locks</en>
-          <es>+10	Abrir Cerraduras</es>
         </text>
       </special>
       <special>
@@ -12932,18 +12818,6 @@
         <text>
           <en>+10	Balance</en>
           <es>+10	Equilibrio</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+10	Walking by the Rope Slack</en>
-          <es>+10	Caminar por la Cuerda Floja</es>
-        </text>
-      </special>
-      <special>
-        <text>
-          <en>+20	Contortion</en>
-          <es>+20	Contorsionismo</es>
         </text>
       </special>
       <special>

@@ -132,6 +132,19 @@ public class Race extends Element {
     @JacksonXmlProperty(localName = "excludedCultureId")
     private List<String> excludedCultureIds;
 
+    /**
+     * Flat skill bonuses this race grants, keyed by skill id, from an "ESPECIALES" line written as
+     * {@code "+10\tAcechar"} (see the legacy {@code Race#setOtherSpecials}, where such a line is a
+     * bonus instead of a special: the legacy only kept it in {@code bonusSkills} and skipped the
+     * free-text specials list entirely).
+     */
+    @JsonProperty("skillBonuses")
+    private Map<String, Integer> skillBonuses;
+
+    /** Same as {@link #skillBonuses}, but for a category ("+10\tArmas·Arrojadizas"). */
+    @JsonProperty("categoryBonuses")
+    private Map<String, Integer> categoryBonuses;
+
     @JacksonXmlElementWrapper(localName = "specials")
     @JacksonXmlProperty(localName = "special")
     private List<RaceSpecial> specials;
@@ -178,6 +191,28 @@ public class Race extends Element {
     public void setCharacteristicBonuses(Map<String, Integer> characteristicBonuses) { this.characteristicBonuses = characteristicBonuses; }
     public Map<String, Integer> getResistanceBonuses() { return resistanceBonuses == null ? Collections.emptyMap() : resistanceBonuses; }
     public void setResistanceBonuses(Map<String, Integer> resistanceBonuses) { this.resistanceBonuses = resistanceBonuses; }
+    public Map<String, Integer> getSkillBonuses() { return skillBonuses == null ? Collections.emptyMap() : skillBonuses; }
+    public void setSkillBonuses(Map<String, Integer> skillBonuses) { this.skillBonuses = skillBonuses; }
+    public Map<String, Integer> getCategoryBonuses() { return categoryBonuses == null ? Collections.emptyMap() : categoryBonuses; }
+    public void setCategoryBonuses(Map<String, Integer> categoryBonuses) { this.categoryBonuses = categoryBonuses; }
+
+    /**
+     * The flat bonus this race grants {@code skillId}, matching the legacy {@code Race#getBonus(
+     * Skill)} (0 if none). The legacy keyed this by skill name; here it is the id, like every other
+     * cross-reference in the new XML data.
+     */
+    public int getBonus(String skillId) {
+        return getSkillBonuses().getOrDefault(skillId, 0);
+    }
+
+    /**
+     * The flat bonus this race grants a category, matching the legacy {@code Race#getBonus(
+     * Category)} (0 if none).
+     */
+    public int getCategoryBonus(String categoryId) {
+        return getCategoryBonuses().getOrDefault(categoryId, 0);
+    }
+
     public Map<String, String> getProgressionRankValues() { return progressionRankValues == null ? Collections.emptyMap() : progressionRankValues; }
 
     /**

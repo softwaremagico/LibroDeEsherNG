@@ -319,17 +319,11 @@ public final class ProfessionMigrationTool {
     }
 
     /**
-     * Parses the "REINOS DE MAGIA" section. A token may itself be a "/"-separated hybrid (e.g. a
-     * profession choosing between two realms); this is flattened into a plain list of every realm
-     * involved, losing the original "choose one of" semantics of that hybrid, which is not modeled
-     * yet (left as future work alongside {@code Profession}'s other simplifications).
-     */
-    /**
      * Parses the "REINOS DE MAGIA" section: a comma-separated list of realm grants, each either a
      * single, fixed realm or a {@code "Realm1/Realm2"} choice between several (a "hybrid" profession),
-     * matching {@link RealmOfMagicGrant}'s semantics exactly (unlike the previous flattened
-     * representation, which lost the distinction between "grants both of these realms" and "grants
-     * one of these realms, player's choice").
+     * matching {@link RealmOfMagicGrant}'s semantics exactly (unlike a flattened list, which would
+     * lose the distinction between "grants both of these realms" and "grants one of these realms,
+     * player's choice").
      */
     private static List<RealmOfMagicGrant> parseMagicRealms(List<String> sectionLines) {
         final List<RealmOfMagicGrant> grants = new ArrayList<>();

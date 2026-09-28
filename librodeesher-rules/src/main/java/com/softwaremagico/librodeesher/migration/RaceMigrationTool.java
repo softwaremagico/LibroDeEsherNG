@@ -63,6 +63,7 @@ public final class RaceMigrationTool {
         final Path rolemasterDir = sourceRoot.resolve("rolemaster");
         final Path modulosDir = rolemasterDir.resolve("modulos");
         final Set<String> knownCategoryNames = loadCategoryNames(rolemasterDir, modulosDir);
+        final Map<String, String> skillIndex = SkillMigrationTool.buildSkillIndex(sourceRoot);
         final IdAllocator idAllocator = new IdAllocator();
 
         int written = 0;
@@ -75,7 +76,7 @@ public final class RaceMigrationTool {
             try (Stream<Path> files = Files.list(racesDir)) {
                 for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
                         .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
-                    races.add(readRaceFile(file, idAllocator, knownCategoryNames));
+                    races.add(readRaceFile(file, idAllocator, knownCategoryNames, skillIndex));
                 }
             }
             if (races.isEmpty()) {
@@ -129,7 +130,8 @@ public final class RaceMigrationTool {
         return names;
     }
 
-    private static Race readRaceFile(Path file, IdAllocator idAllocator, Set<String> knownCategoryNames) throws IOException {
+    private static Race readRaceFile(Path file, IdAllocator idAllocator, Set<String> knownCategoryNames,
+                                     Map<String, String> skillIndex) throws IOException {
         final String fileName = file.getFileName().toString();
         final String raceName = fileName.substring(0, fileName.length() - ".txt".length());
         final SectionCursor cursor = new SectionCursor(Files.readAllLines(file, StandardCharsets.UTF_8));
@@ -160,7 +162,7 @@ public final class RaceMigrationTool {
         final ParsedReferenceIds cultures = parseCultureIds(cursor.nextSection());
         race.setCultureIds(cultures.ids());
         race.setExcludedCultureIds(cultures.excluded());
-        race.setSpecials(parseSpecials(cursor.nextSection(), race));
+        parseSpecials(cursor.nextSection(), race, skillIndex, knownCategoryNames);
         race.setMaleNames(parseNames(cursor.nextSectionOrEmpty()));
         race.setFemaleNames(parseNames(cursor.nextSectionOrEmpty()));
         race.setFamilyNames(parseNames(cursor.nextSectionOrEmpty()));
@@ -356,10 +358,27 @@ public final class RaceMigrationTool {
         return parseReferenceIds(lines);
     }
 
-    private static List<RaceSpecial> parseSpecials(List<String> lines, Race race) {
+    /**
+     * Parses the "ESPECIALES" section. Most lines are free text kept as a {@link RaceSpecial}, but
+     * the legacy also accepted a flat bonus written as {@code "+10\tAcechar"} (exactly two
+     * tab-separated columns, the first one an integer): the target resolved against the skill
+     * catalog first and against the category catalog second, and a resolved bonus was stored in
+     * {@code Race#bonusSkills}/{@code Race#bonusCategory} and <em>skipped</em> from the specials
+     * list (the legacy kept reading the next line right away), while an unresolvable target was
+     * logged and kept as plain text. Both halves are reproduced here, keyed by id.
+     */
+    private static void parseSpecials(List<String> lines, Race race, Map<String, String> skillIndex,
+                                      Set<String> knownCategoryNames) {
         final List<RaceSpecial> specials = new ArrayList<>();
+        final Map<String, Integer> skillBonuses = new LinkedHashMap<>();
+        final Map<String, Integer> categoryBonuses = new LinkedHashMap<>();
         for (final String line : lines) {
             if (isNoneOrBlank(line)) {
+                continue;
+            }
+            final BonusTarget bonus = parseSkillOrCategoryBonus(line, skillIndex, knownCategoryNames);
+            if (bonus != null) {
+                (bonus.category() ? categoryBonuses : skillBonuses).put(bonus.id(), bonus.value());
                 continue;
             }
             final Integer points = parseBracketedPoints(line);
@@ -367,7 +386,47 @@ public final class RaceMigrationTool {
             parseNaturalArmorType(cleanText, race);
             specials.add(new RaceSpecial(new TranslatedText(cleanText, Translations.toEnglish(cleanText)), points));
         }
-        return specials;
+        race.setSkillBonuses(skillBonuses);
+        race.setCategoryBonuses(categoryBonuses);
+        race.setSpecials(specials);
+    }
+
+    /** What a legacy "+10\tName" line grants a bonus to: the target id, its value, and its kind. */
+    private record BonusTarget(String id, int value, boolean category) {
+    }
+
+    /**
+     * The element this line grants a flat bonus to, or {@code null} if the line is not a bonus.
+     * Mirrors the legacy {@code Race#setOtherSpecials} exactly, including its quirks: only
+     * exactly two tab-separated columns qualify (three or more are always text), both columns are
+     * used raw (so a stray space around the tab makes the line text instead of a bonus, as the
+     * legacy {@code Integer.parseInt}/{@code SkillFactory#getAvailableSkill} lookups did), and a
+     * name resolving to a skill wins over one resolving to a category. A line with a trailing tab
+     * and nothing after it (which the legacy would have read out of bounds) is simply kept as text.
+     */
+    private static BonusTarget parseSkillOrCategoryBonus(String line, Map<String, String> skillIndex,
+                                                        Set<String> knownCategoryNames) {
+        if (!line.contains("\t")) {
+            return null;
+        }
+        final String[] columns = line.split("\t");
+        if (columns.length > 2) {
+            return null;
+        }
+        final int value;
+        try {
+            value = Integer.parseInt(columns[0]);
+        } catch (NumberFormatException notABonus) {
+            return null;
+        }
+        final String target = columns.length > 1 ? columns[1] : "";
+        final String skillId = skillIndex.get(target);
+        if (skillId != null) {
+            return new BonusTarget(skillId, value, false);
+        }
+        return knownCategoryNames.contains(target)
+                ? new BonusTarget(Translations.toEnglishId(target), value, true)
+                : null;
     }
 
     private static Integer parseBracketedPoints(String line) {

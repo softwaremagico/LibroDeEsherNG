@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Map;
 
 /** Verifies {@link RaceMigrationTool} against a compact but representative race fixture. */
 @Test(groups = "migration")
@@ -58,6 +59,17 @@ public class RaceMigrationToolTest {
             Assert.assertEquals(elf.getMaleNames(), List.of("Aerendil", "Calen"));
             Assert.assertEquals(elf.getFemaleNames(), List.of("Aerin", "Lúthien"));
             Assert.assertEquals(elf.getFamilyNames(), List.of("Silverbow", "Starleaf"));
+            // A "+<n>\t<name>" line is a flat bonus, not a special: "Acechar" and "Arco" resolve to
+            // real skills, "Armas·Arrojadizas" to a real category, and "Aguja" is no skill at all, so
+            // the legacy logged it and kept it as plain text (as does the "Ahora sí" line, whose
+            // three tab-separated columns never qualified as a bonus).
+            Assert.assertEquals(elf.getSkillBonuses(), Map.of("stalking", 20, "bow", 10));
+            Assert.assertEquals(elf.getCategoryBonuses(), Map.of("weaponsThrown", 10));
+            Assert.assertEquals(elf.getBonus("stalking"), 20);
+            Assert.assertEquals(elf.getCategoryBonus("weaponsThrown"), 10);
+            Assert.assertEquals(elf.getBonus("hiding"), 0);
+            Assert.assertEquals(elf.getSpecials().stream().map(special -> special.getText().getSpanish()).toList(),
+                    List.of("Visión nocturna", "Tipo de Armadura 7", "Visión total hasta 150 m", "+10\tAguja", "+10\tAhora sí"));
         } finally {
             deleteRecursively(sourceRoot);
             deleteRecursively(targetRoot);
@@ -70,7 +82,8 @@ public class RaceMigrationToolTest {
         Files.writeString(rolemasterDir.resolve("categorias.txt"), String.join("\n",
                 "#Nombre\tCaracterísticas\tProgresión\tHabilidades",
                 "####################",
-                "Conocimiento·General(ConGen)\tMe/Ra/Me\tEstándar\tReligión",
+                "Conocimiento·General(ConGen)\tMe/Ra/Me\tEstándar\tReligión, Acechar",
+                "Armas·Arrojadizas(Arro)\tAg/Co\tEstándar\tArco",
                 ""), StandardCharsets.UTF_8);
 
         final Path raceDir = rolemasterDir.resolve("modulos/RazasYCulturas/razas");
@@ -95,7 +108,8 @@ public class RaceMigrationToolTest {
                 "#HABILIDADES COMUNES", "####################################", "Conocimiento·General, Acechar", "",
                 "#HABILIDADES RESTRINGIDAS", "####################################", "Ninguna", "",
                 "#CULTURAS", "####################################", "Rural, Silvana", "",
-                "#ESPECIALES", "####################################", "Visión nocturna [10]", "Tipo de Armadura 7 [5]", "Visión total hasta 150 m [15]", "",
+                "#ESPECIALES", "####################################", "Visión nocturna [10]", "Tipo de Armadura 7 [5]", "Visión total hasta 150 m [15]",
+                "+20\tAcechar", "+10\tArmas·Arrojadizas", "+10\tArco", "+10\tAguja", "+10\tAhora sí", "",
                 "#NOMBRES MASCULINOS", "####################################", "Aerendil, Calen", "",
                 "#NOMBRES FEMENINOS", "####################################", "Aerin, Lúthien", "",
                 "#APELLIDOS", "####################################", "Silverbow, Starleaf", "",

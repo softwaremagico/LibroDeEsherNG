@@ -39,6 +39,7 @@ public class CombinedTwoColumnsCharacterSheet extends PdfDocument {
         details.setWidthPercentage(100);
         details.addCell(contentCell(CharacteristicsTableFactory.getCharacteristicsTable(characterPlayer)));
         details.addCell(contentCell(FavouriteSkillsTableFactory.getFavouriteSkillsTable(characterPlayer)));
+        details.addCell(contentCell(FavouriteSkillsTableFactory.getFavouriteAttacksTable(characterPlayer)));
         details.addCell(contentCell(DerivedStatsTableFactory.getDerivedStatsTable(characterPlayer)));
         details.addCell(contentCell(ResistancesTableFactory.getResistancesTable(characterPlayer)));
         details.addCell(contentCell(RaceDetailsTableFactory.getRaceDetailsTable(characterPlayer)));

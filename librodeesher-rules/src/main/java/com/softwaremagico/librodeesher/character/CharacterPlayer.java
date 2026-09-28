@@ -60,6 +60,7 @@ import com.softwaremagico.librodeesher.weapon.WeaponType;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.EnumMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -393,11 +394,11 @@ public class CharacterPlayer {
 	/**
 	 * The characteristic's total bonus: its temporal bonus plus the race's fixed
 	 * bonus plus every selected perk's flat bonus to it (see
-	 * {@link #getPerkCharacteristicBonus(CharacteristicAbbreviation)}).
-	 *
-	 * <p>
-	 * Background/special bonuses are future work.
-	 * </p>
+	 * {@link #getPerkCharacteristicBonus(CharacteristicAbbreviation)}), matching the legacy
+	 * {@code getCharacteristicTotalBonus} exactly. The legacy's third term,
+	 * {@code getCharacteristicSpecialBonus}, is just a delegate to that same perk bonus, and neither
+	 * implementation adds a background bonus here. {@link CharacteristicAbbreviation#REALM_OF_MAGIC}
+	 * is answered by {@link #getBonusCharacteristicOfRealmOfMagic()} instead.
 	 */
 	public Integer getCharacteristicTotalBonus(CharacteristicAbbreviation abbreviation)
 			throws InvalidXmlElementException {
@@ -680,20 +681,36 @@ public class CharacterPlayer {
 	 * total unconditionally: consuming code/the player is expected to know when
 	 * the condition described in the perk's free-text description applies)
 	 * plus its per-rank perk bonus (see {@link #getPerkCategoryRankBonus(String)})
-	 * times the ranks bought in it.
-	 *
-	 * <p>
-	 * Race bonuses are future work (no shipped race actually grants one to a real
-	 * category, see {@code RaceMigrationTool#parseSpecials}, so there is nothing to
-	 * wire yet in practice).
-	 * </p>
+	 * times the ranks bought in it, plus the flat bonus the selected race grants
+	 * this category (see {@link Race#getCategoryBonus(String)}).
 	 */
 	public Integer getCategoryDevelopmentBonus(Category category) throws InvalidXmlElementException {
 		final int ranks = this.getCategoryTotalRanks(category.getId());
 		return category.getCategoryRankBonus(ranks) + category.getFixedBonus()
 				+ this.getProfessionBonus(category.getId()) + this.background.getCategoryBonus(category.getId())
 				+ this.getPerkCategoryBonus(category.getId()) + this.getPerkCategoryConditionalBonus(category.getId())
-				+ this.getPerkCategoryRankBonus(category.getId()) * ranks;
+				+ this.getPerkCategoryRankBonus(category.getId()) * ranks
+				+ this.getRaceCategoryBonus(category.getId());
+	}
+
+	/**
+	 * The flat bonus the selected race grants {@code categoryId}, or 0 if no race is selected or it
+	 * grants it none, matching the legacy {@code Race#getBonus(Category)} term of
+	 * {@link #getCategoryDevelopmentBonus(Category)}.
+	 */
+	public Integer getRaceCategoryBonus(String categoryId) throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		return race == null ? 0 : race.getCategoryBonus(categoryId);
+	}
+
+	/**
+	 * The flat bonus the selected race grants {@code skillId}, or 0 if no race is selected or it
+	 * grants it none, matching the legacy {@code Race#getBonus(Skill)} term of
+	 * {@link #getSkillDevelopmentBonus(Category, String)}.
+	 */
+	public Integer getRaceSkillBonus(String skillId) throws InvalidXmlElementException {
+		final Race race = this.getRace();
+		return race == null ? 0 : race.getBonus(skillId);
 	}
 
 	/** Sum of the character bonuses for every characteristic associated with {@code category}. */
@@ -899,13 +916,9 @@ public class CharacterPlayer {
 	 * #getPerkSkillConditionalBonus(String)}, included unconditionally, same as
 	 * {@link #getCategoryDevelopmentBonus}) plus its per-rank perk bonus (see
 	 * {@link #getPerkSkillRankBonus(String)}) times its "real ranks" (see
-	 * {@link #getSkillRealRanks(Skill)}), matching the legacy
+	 * {@link #getSkillRealRanks(Skill)}), plus the flat bonus the selected race
+	 * grants this skill (see {@link Race#getBonus(String)}), matching the legacy
 	 * {@code getSimpleBonus(Skill)} exactly.
-	 *
-	 * <p>
-	 * The race bonus and the characteristic bonus are future work (no shipped
-	 * race actually grants a bonus to a real skill either, same as categories).
-	 * </p>
 	 *
 	 * <p>
 	 * {@code category}'s progression table is the skill's rank value, except for the two development
@@ -920,7 +933,7 @@ public class CharacterPlayer {
 				: perkSkillRankBonus * this.getSkillRealRanks(RulesCatalog.getInstance().getSkill(skillId));
 		return this.getSkillRankValue(category, this.getSkillTotalRanks(skillId)) + this.getProfessionBonus(skillId)
 				+ this.background.getSkillBonus(skillId) + this.getPerkSkillBonus(skillId)
-				+ this.getPerkSkillConditionalBonus(skillId) + perkRankTerm;
+				+ this.getPerkSkillConditionalBonus(skillId) + this.getRaceSkillBonus(skillId) + perkRankTerm;
 	}
 
 	/**
@@ -1406,6 +1419,18 @@ public class CharacterPlayer {
 
 	private static final List<String> ATTACK_CATEGORY_IDS = List.of("martialArtsStrikes", "martialArtsSweeps",
 			"martialArtsCombatManeuvers", "specialAttacks");
+
+	/** The "Tareas a distancia" category, the legacy {@code Spanish.AIMED_SPELLS_CATEGORY}, treated as an attack. */
+	private static final String AIMED_SPELLS_CATEGORY = "directedSpells";
+
+	/** The id prefix of the race-specific attack skills (the legacy {@code Spanish.WEAPONS_RACE}). */
+	private static final String RACIAL_ATTACK_SKILL_PREFIX = "attackRacial";
+
+	/** The legacy {@code PdfStandardSheet#MOST_USED_SKILLS_LINES}: lines per "most used skills" column. */
+	public static final int MOST_USED_SKILLS_LINES = 16;
+
+	/** The legacy {@code PdfStandardSheet#MOST_USED_ATTACKS_LINES}: lines in the "most used attacks" table. */
+	public static final int MOST_USED_ATTACKS_LINES = 6;
 
 	private static final String OPTIONAL_RACE_LANGUAGE_PREFIX = "language:optionalRace:";
 	private static final String OPTIONAL_BACKGROUND_LANGUAGE_PREFIX = "language:optionalBackground:";
@@ -2380,9 +2405,9 @@ public class CharacterPlayer {
 	/**
 	 * Every spell list marked as a "closed list" (see {@link MagicSpellList#isClosedList()}) of one of
 	 * the character's {@link #getRealmsOfMagic()}: restricted, must be specifically granted (matching
-	 * the legacy {@code MagicFactory#getClosedLists}; that specific grant itself is future work, same
-	 * as the general "spend development points on a spell list" mechanic, see {@link
-	 * LevelUp#getSpellRankMultiplier}).
+	 * the legacy {@code MagicFactory#getClosedLists}, which likewise only filtered the lists and
+	 * never granted one). The general "spend development points on a spell list" mechanic is
+	 * likewise unimplemented in both, see {@link LevelUp#getSpellRankMultiplier}.
 	 */
 	public List<MagicSpellList> getClosedSpellLists() throws InvalidXmlElementException {
 		return this.getSpellListsMatching(MagicSpellList::isClosedList);
@@ -2603,6 +2628,88 @@ public class CharacterPlayer {
 			}
 		}
 		return ids;
+	}
+
+	/** The most-used non-offensive favourite skills, matching the legacy {@code getFavouriteNoOffensiveSkills()}. */
+	public List<Skill> getFavouriteNoOffensiveSkills() throws InvalidXmlElementException {
+		final List<Skill> skills = new ArrayList<>();
+		for (final String skillId : this.getFavouriteSkillIds()) {
+			final Skill skill = RulesCatalog.getInstance().getSkill(skillId);
+			if (!isOffensiveSkill(skill)) {
+				skills.add(skill);
+			}
+		}
+		// The legacy comparator (SkillComparatorByFavourite) was meant to put the player's own picks
+		// first, but both of its branches test the same skill, so neither can ever fire and it
+		// degenerates into "by value without items", which is the only order left here.
+		final Map<String, Integer> values = skillValuesWithoutItemBonus(skills);
+		skills.sort(Comparator.comparingInt(skill -> values.get(skill.getId())));
+		final List<Skill> capped = skills.size() > MOST_USED_SKILLS_LINES * 2
+				? new ArrayList<>(skills.subList(0, MOST_USED_SKILLS_LINES * 2))
+				: skills;
+		// The legacy then re-sorted by name (SkillComparatorByName), so only the capped selection
+		// survives in name order. Its Skill#getName() is the raw name read from the rulebook files,
+		// which are the Spanish ones, hence the Spanish side of the TranslatedText here.
+		capped.sort(Comparator.comparing(skill -> skill.getName().getSpanish()));
+		return capped;
+	}
+
+	/** The most-used offensive favourite skills, matching the legacy {@code getFavouriteOffensiveSkills()}. */
+	public List<Skill> getFavouriteOffensiveSkills() throws InvalidXmlElementException {
+		final List<Skill> skills = new ArrayList<>();
+		for (final String skillId : this.getFavouriteSkillIds()) {
+			final Skill skill = RulesCatalog.getInstance().getSkill(skillId);
+			if (isOffensiveSkill(skill)) {
+				skills.add(skill);
+			}
+		}
+		// The legacy sorted by value without items (SkillComparatorByValue, common skills first on a
+		// tie) and then reversed the whole list, so what reaches the sheet is highest value first
+		// with the tie-break flipped too, i.e. rare skills first among equally valued attacks.
+		final Map<String, Integer> values = skillValuesWithoutItemBonus(skills);
+		skills.sort(Comparator.comparingInt((Skill skill) -> values.get(skill.getId())).reversed()
+				.thenComparing(Comparator.comparing(Skill::isRare).reversed()));
+		return skills.size() > MOST_USED_ATTACKS_LINES
+				? new ArrayList<>(skills.subList(0, MOST_USED_ATTACKS_LINES))
+				: skills;
+	}
+
+	/**
+	 * Whether {@code skill} counts as an attack for the two "most used" tables, matching the legacy
+	 * condition: a weapon category, one of the four martial arts/special attack categories, the
+	 * directed spells category, or a racial attack skill.
+	 */
+	public boolean isOffensiveSkill(Skill skill) throws InvalidXmlElementException {
+		final String categoryId = skill.getCategoryId();
+		if (ATTACK_CATEGORY_IDS.contains(categoryId) || AIMED_SPELLS_CATEGORY.equals(categoryId)) {
+			return true;
+		}
+		return isWeaponCategoryId(categoryId) || isRacialAttackSkill(skill);
+	}
+
+	/** A "Ataque Racial:" skill, i.e. one of the race-specific attacks a race grants for free. */
+	public boolean isRacialAttackSkill(Skill skill) {
+		return skill.getId().startsWith(RACIAL_ATTACK_SKILL_PREFIX);
+	}
+
+	/**
+	 * {@link #getSkillTotalValue(Skill)} minus its magic item bonus, the legacy
+	 * {@code getTotalValue(skill) - getItemBonus(skill)} that both "most used" comparators used.
+	 */
+	public int getSkillValueWithoutItemBonus(Skill skill) throws InvalidXmlElementException {
+		return this.getSkillTotalValue(skill) - this.getItemBonus(BonusType.SKILL, skill.getId());
+	}
+
+	/**
+	 * {@link #getSkillValueWithoutItemBonus(Skill)} for every skill at once, keyed by id: a sorting
+	 * helper (the value lookup can throw, which a {@link Comparator} cannot).
+	 */
+	private Map<String, Integer> skillValuesWithoutItemBonus(List<Skill> skills) throws InvalidXmlElementException {
+		final Map<String, Integer> values = new LinkedHashMap<>();
+		for (final Skill skill : skills) {
+			values.put(skill.getId(), this.getSkillValueWithoutItemBonus(skill));
+		}
+		return values;
 	}
 
 	/**
@@ -3983,9 +4090,10 @@ public class CharacterPlayer {
 
 	/**
 	 * The sum of every {@link PerkBonusKind#PER_RANK} bonus a selected perk grants skill
-	 * {@code skillId} (a bonus applied to every rank bought, e.g. "+4 to every rank of X"): not yet
-	 * multiplied into {@link #getSkillDevelopmentBonus} (future work, since that depends on how many
-	 * ranks were actually bought).
+	 * {@code skillId} (a bonus applied to every rank bought, e.g. "+4 to every rank of X"). It is
+	 * already multiplied into {@link #getSkillDevelopmentBonus(Category, String)} by the skill's
+	 * "real ranks", exactly like the legacy {@code getPerkSkillRanksBonus}; the raw sum is kept
+	 * available for callers that need it on its own.
 	 */
 	public Integer getPerkSkillRankBonus(String skillId) throws InvalidXmlElementException {
 		int total = 0;

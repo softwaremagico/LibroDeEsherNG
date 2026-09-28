@@ -10,13 +10,12 @@ import java.util.List;
 /**
  * Age-related characteristic decline rules.
  *
- * <p>The legacy {@code AgeRules.increaseAge(CharacterPlayer)}/{@code hasCharacteristicDecrease(
- * CharacterPlayer)} orchestration methods (which loop from the character's current age to its final
- * age, mutating the character's current level) are intentionally not ported yet: they need a
- * {@code CharacterPlayer} equivalent, which does not exist in this codebase yet. The pure formulas
- * they relied on are ported below, taking their inputs directly instead of a character object, so
- * they are usable (and testable) independently; the per-year orchestration loop will be added back
- * once the character layer exists.</p>
+ * <p>These are the pure formulas of the legacy {@code AgeRules}; they take their inputs directly
+ * instead of a character object, so they are usable (and testable) independently. The legacy
+ * orchestration that loops from the character's current age to its final age, mutating the
+ * character's current level, lives in {@link com.softwaremagico.librodeesher.character.CharacterPlayer
+ * #increaseAge()}, which drives them year by year through
+ * {@link #hasCharacteristicDecrease(int, int, java.util.Random)}.</p>
  */
 public final class AgeRules {
 

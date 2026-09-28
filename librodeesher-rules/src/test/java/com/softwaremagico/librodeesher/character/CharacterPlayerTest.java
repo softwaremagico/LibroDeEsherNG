@@ -2424,6 +2424,91 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void offensiveFavouritesAreListedSeparatelyAndCapped() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		// "sword" is a weapon skill and "desarmarEnemigoArmado" a special attack, so both are
+		// offensive; the rest are not.
+		for (final String skillId : List.of("sword", "desarmarEnemigoArmado", "climbing", "stalking", "hiding")) {
+			character.addFavouriteSkill(skillId);
+		}
+
+		Assert.assertEquals(character.getFavouriteOffensiveSkills().stream().map(s -> s.getId()).toList(),
+				List.of("sword", "desarmarEnemigoArmado"));
+		Assert.assertEquals(character.getFavouriteNoOffensiveSkills().stream().map(s -> s.getId()).toList(),
+				List.of("stalking", "hiding", "climbing"));
+		Assert.assertTrue(character.isOffensiveSkill(RulesCatalog.getInstance().getSkill("sword")));
+		Assert.assertTrue(character.isOffensiveSkill(RulesCatalog.getInstance().getSkill("desarmarEnemigoArmado")));
+		Assert.assertFalse(character.isOffensiveSkill(RulesCatalog.getInstance().getSkill("climbing")));
+	}
+
+	@Test
+	public void offensiveFavouritesAreOrderedByValueWithRarityOnlyAsTieBreak() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		// Buy ranks in two different attacks so their values differ, and leave a third at zero.
+		character.getCurrentLevel().addSkillRanks("desarmarEnemigoArmado", 3, false);
+		character.addFavouriteSkill("desarmarEnemigoArmado");
+		character.addFavouriteSkill("desarmarEnemigoDesarmado");
+		character.addFavouriteSkill("sword");
+
+		final List<Skill> attacks = character.getFavouriteOffensiveSkills();
+
+		// The legacy's SkillComparatorByValue sorts by value ascending and the sheet reverses the
+		// list, so values must come out non-increasing; rarity only decides equal values (and the
+		// reversal flips that tie-break, putting rare skills first).
+		for (int i = 1; i < attacks.size(); i++) {
+			final int previous = character.getSkillValueWithoutItemBonus(attacks.get(i - 1));
+			final int current = character.getSkillValueWithoutItemBonus(attacks.get(i));
+			Assert.assertTrue(previous > current || (previous == current && !attacks.get(i - 1).isRare()),
+					"attacks out of order: " + attacks.stream().map(Skill::getId).toList());
+		}
+	}
+
+	@Test
+	public void favouriteListsAreCappedAtTheSheetLineCounts() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRecommendedFavouriteSkillsIncluded(true);
+		for (final Skill skill : RulesCatalog.getInstance().getSkills()) {
+			character.getCurrentLevel().addSkillRanks(skill.getId(), 1, false);
+		}
+
+		Assert.assertTrue(character.getFavouriteNoOffensiveSkills().size() <= CharacterPlayer.MOST_USED_SKILLS_LINES * 2);
+		Assert.assertTrue(character.getFavouriteOffensiveSkills().size() <= CharacterPlayer.MOST_USED_ATTACKS_LINES);
+		// The two lists never overlap: every skill is offensive or it is not.
+		final List<String> attacks = character.getFavouriteOffensiveSkills().stream()
+				.map(Skill::getId).toList();
+		Assert.assertTrue(character.getFavouriteNoOffensiveSkills().stream().noneMatch(s -> attacks.contains(s.getId())));
+	}
+
+	@Test
+	public void raceBonusesAddToCategoryAndSkillDevelopmentBonuses() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		final Category thrown = RulesCatalog.getInstance().getCategory("weaponsThrown");
+		final Category stealth = RulesCatalog.getInstance().getCategory("subterfugeStealth");
+
+		// Trogli/Troglodytes are the only shipped races granting a category bonus (+10 to thrown
+		// weapons), and the wood elves one of the few granting a skill bonus ("+10 Acechar").
+		character.setRaceId("trogli");
+		Assert.assertEquals(character.getRaceCategoryBonus("weaponsThrown"), Integer.valueOf(10));
+		Assert.assertEquals(character.getRaceSkillBonus("stalking"), Integer.valueOf(0));
+		final int trogliThrown = character.getCategoryDevelopmentBonus(thrown);
+		final int trogliStalking = character.getSkillDevelopmentBonus(stealth, "stalking");
+
+		character.setRaceId("woodElf");
+		Assert.assertEquals(character.getRaceCategoryBonus("weaponsThrown"), Integer.valueOf(0));
+		Assert.assertEquals(character.getRaceSkillBonus("stalking"), Integer.valueOf(10));
+		Assert.assertEquals(character.getCategoryDevelopmentBonus(thrown), Integer.valueOf(trogliThrown - 10));
+		Assert.assertEquals(character.getSkillDevelopmentBonus(stealth, "stalking"),
+				Integer.valueOf(trogliStalking + 10));
+
+		// No race selected at all: no race bonus either.
+		character.setRaceId(null);
+		Assert.assertEquals(character.getRaceCategoryBonus("weaponsThrown"), Integer.valueOf(0));
+		Assert.assertEquals(character.getRaceSkillBonus("stalking"), Integer.valueOf(0));
+		Assert.assertEquals(character.getCategoryDevelopmentBonus(thrown), Integer.valueOf(trogliThrown - 10));
+		Assert.assertEquals(character.getSkillDevelopmentBonus(stealth, "stalking"), Integer.valueOf(trogliStalking));
+	}
+
+	@Test
 	public void categoryTotalBonusIncludesEachAssociatedCharacteristic() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.AGILITY, 90);

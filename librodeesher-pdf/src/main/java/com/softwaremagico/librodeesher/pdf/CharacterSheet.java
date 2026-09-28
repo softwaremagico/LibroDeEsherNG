@@ -49,6 +49,7 @@ public class CharacterSheet extends PdfDocument {
         document.add(RaceDetailsTableFactory.getRaceDetailsTable(characterPlayer));
         document.add(SkillsTableFactory.getSkillsTable(characterPlayer, alphabeticallySortedSkills));
         document.add(FavouriteSkillsTableFactory.getFavouriteSkillsTable(characterPlayer));
+        document.add(FavouriteSkillsTableFactory.getFavouriteAttacksTable(characterPlayer));
         document.add(EquipmentTableFactory.getEquipmentTable(characterPlayer));
         document.add(PerksTableFactory.getPerksTable(characterPlayer));
         document.add(MagicTableFactory.getMagicTable(characterPlayer));

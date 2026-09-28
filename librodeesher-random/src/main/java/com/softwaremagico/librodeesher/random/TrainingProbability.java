@@ -35,21 +35,22 @@ import java.util.List;
  *       CharacterPlayer#isTrainingFavouredByProfession}/{@code isTrainingForbiddenByProfession},
  *       whose profession-side-first fallback is the exact legacy precedence.</li>
  *   <li>Training requirements (legacy {@code getCharacteristicRequirements()}/{@code
- *       getSkillRequirements()}) are a single {@link TrainingRequirement} list here whose entries the
- *       migration did not resolve; each is classified by looking it up as a characteristic first,
- *       else as a skill. No shipped training has any requirement at all (every legacy "REQUISITOS
- *       PROFESIONALES" section was "Ninguno"), so this branch is untested against real data; its
- *       requirement cost discounts are likewise not applied by {@code
- *       CharacterPlayer#getTrainingDevelopmentCost}.</li>
+ *       getSkillRequirements()}) are a single {@link TrainingRequirement} list here, classified per
+ *       entry by looking the name up as a characteristic first, else as a skill. The legacy parsed
+ *       and stored them but never read them back, so the only difference is that NG honours them as
+ *       a minimum. No shipped training has any requirement at all (every legacy "REQUISITOS
+ *       PROFESIONALES" section was "Ninguno"), so this branch is untested against real data; the
+ *       requirement cost discounts are applied by neither implementation.</li>
  * </ul>
  *
  * <p>{@code setRandomCategoryRanks()}, {@code setRandomCharacteristicsUpgrades()} and {@code
- * setRandomObjects()} of the legacy class are not ported here: NG resolves a training's category and
- * skill grants through typed decisions ({@code CharacterPlayer#applyTrainingCategories}/{@code
- * applyTrainingSkillChoices}, see {@code com.softwaremagico.librodeesher.training}), and the
- * characteristic/equipment application belongs to the character generator that consumes this class,
- * mirroring how {@code PerkProbability} defers {@code selectOptions()} and {@code shufflePerks()} to
- * {@code RandomCharacterPlayer}.</p>
+ * setRandomObjects()} of the legacy class are not ported here, mirroring how {@code PerkProbability}
+ * defers {@code selectOptions()} and {@code shufflePerks()} to the character generator: {@link
+ * com.softwaremagico.librodeesher.random.RandomCharacterPlayer} applies the chosen training, rolling
+ * the category/skill picks and then {@code applyTrainingCategories}/{@code applyTrainingSkillChoices}
+ * the typed grants, {@code addRandomTrainingSpecialItems} the legacy {@code setRandomObjects()} items
+ * and {@code addRandomTrainingCharacteristicUpgrades} the legacy
+ * {@code setRandomCharacteristicsUpgrades()}.</p>
  */
 public final class TrainingProbability {
 

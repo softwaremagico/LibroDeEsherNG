@@ -9,10 +9,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  * <p>{@link #getName()} is translated to an id-like string but not resolved to a {@link
  * com.softwaremagico.librodeesher.skill.Skill} or a characteristic at migration time (whether it is
- * one or the other is only known once both are cross-referenced against the character rules, left as
- * future work); consuming code should look it up in both places. In practice this is moot: every
- * shipped training's "REQUISITOS PROFESIONALES" section is "Ninguno" (empty), so no real training
- * ever produces a {@code TrainingRequirement} at all.</p>
+ * one or the other is only known once both are cross-referenced against the character rules);
+ * consuming code classifies it by trying a characteristic first, else a skill, see {@code
+ * TrainingProbability}. In practice this is moot: every shipped training's "REQUISITOS
+ * PROFESIONALES" section is "Ninguno" (empty), so no real training ever produces a {@code
+ * TrainingRequirement} at all - and the legacy, which parsed and stored the same section, never read
+ * it back either.</p>
  */
 public class TrainingRequirement {
 
