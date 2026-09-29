@@ -8,6 +8,8 @@ import com.softwaremagico.librodeesher.characteristic.Appearance;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicRoll;
 import com.softwaremagico.librodeesher.decision.Decision;
+import com.softwaremagico.librodeesher.decision.DecisionKey;
+import com.softwaremagico.librodeesher.decision.DecisionKind;
 import com.softwaremagico.librodeesher.dice.Roll;
 import com.softwaremagico.librodeesher.equipment.BonusType;
 import com.softwaremagico.librodeesher.equipment.Equipment;
@@ -113,10 +115,13 @@ public class CharacterDataMapperTest {
 		character.getBackground().addCharacteristicUpdate(CharacteristicAbbreviation.AGILITY, 50, 52, Roll.of(5, 5));
 		character.getBackground().getLanguageRanks().put("human_language", 2);
 
-		character.getDecisions().set("training:martialArtist:category:0",
-				Decision.select(List.of("arms", "artistic", "athletic"), "arms"));
-		character.getDecisions().set("training:martialArtist:characteristic:0", Decision.fixed(List.of("STRENGTH")));
-		character.getDecisions().set("multichoice", Decision.selectMultiple(List.of("a", "b", "c"), List.of("a", "c"), 2));
+		character.getDecisions().set(DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "martialArtist", 0, 1),
+				Decision.select(List.of("arms", "artistic", "athletic"), "arms").recordedAtLevel(1));
+		character.getDecisions().set(DecisionKey.atLevel(DecisionKind.TRAINING_CHARACTERISTIC, "martialArtist", 0, 1),
+				Decision.fixed(List.of("STRENGTH")).recordedAtLevel(1));
+		character.getDecisions().set(
+				DecisionKey.characterWide(DecisionKind.PROFESSION_COMMON_SKILL, "multichoice", 0),
+				Decision.selectMultiple(List.of("a", "b", "c"), List.of("a", "c"), 2));
 
 		final SelectedPerk skeptic = new SelectedPerk();
 		skeptic.setPerkId("skeptic");
@@ -179,12 +184,12 @@ public class CharacterDataMapperTest {
 				original.getBackground().getCharacteristicUpdates(), "background characteristic updates");
 
 		Assert.assertEquals(restored.getDecisions().getAll().keySet(), original.getDecisions().getAll().keySet());
-		for (final String key : original.getDecisions().getAll().keySet()) {
+		for (final DecisionKey key : original.getDecisions().getAll().keySet()) {
 			final Decision originalDecision = original.getDecisions().get(key);
 			final Decision restoredDecision = restored.getDecisions().get(key);
-			Assert.assertEquals(restoredDecision.getOfferedOptions(), originalDecision.getOfferedOptions(), key);
-			Assert.assertEquals(restoredDecision.getSelectedOptions(), originalDecision.getSelectedOptions(), key);
-			Assert.assertEquals(restoredDecision.getSelectedOption(), originalDecision.getSelectedOption(), key);
+			Assert.assertEquals(restoredDecision.getOfferedOptions(), originalDecision.getOfferedOptions(), key.toString());
+			Assert.assertEquals(restoredDecision.getSelectedOptions(), originalDecision.getSelectedOptions(), key.toString());
+			Assert.assertEquals(restoredDecision.getSelectedOption(), originalDecision.getSelectedOption(), key.toString());
 		}
 
 		Assert.assertEquals(restored.getSelectedPerks().size(), original.getSelectedPerks().size());

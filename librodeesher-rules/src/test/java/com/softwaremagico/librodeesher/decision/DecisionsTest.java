@@ -12,15 +12,16 @@ public class DecisionsTest {
     @Test
     public void undecidedKeyResolvesToNull() {
         final Decisions decisions = new Decisions();
-        Assert.assertFalse(decisions.isDecided("training:soldier:category:0"));
-        Assert.assertNull(decisions.get("training:soldier:category:0"));
-        Assert.assertNull(decisions.getSelectedOption("training:soldier:category:0"));
+        final DecisionKey key = DecisionKey.characterWide(DecisionKind.PROFESSION_REALM, "soldier", 0);
+        Assert.assertFalse(decisions.isDecided(key));
+        Assert.assertNull(decisions.get(key));
+        Assert.assertNull(decisions.getSelectedOption(key));
     }
 
     @Test
     public void setRecordsAndOverwritesADecision() {
         final Decisions decisions = new Decisions();
-        final String key = "training:soldier:category:0";
+        final DecisionKey key = DecisionKey.characterWide(DecisionKind.PROFESSION_REALM, "soldier", 0);
         decisions.set(key, Decision.select(List.of("sword", "axe"), "axe"));
 
         Assert.assertTrue(decisions.isDecided(key));
@@ -33,7 +34,7 @@ public class DecisionsTest {
     @Test
     public void removeForgetsADecision() {
         final Decisions decisions = new Decisions();
-        final String key = "training:soldier:category:0";
+        final DecisionKey key = DecisionKey.characterWide(DecisionKind.PROFESSION_REALM, "soldier", 0);
         decisions.set(key, Decision.fixed(List.of("sword")));
         decisions.remove(key);
         Assert.assertFalse(decisions.isDecided(key));

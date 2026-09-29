@@ -6,6 +6,7 @@ import com.softwaremagico.librodeesher.characteristic.CharacteristicRoll;
 import com.softwaremagico.librodeesher.characteristic.Appearance;
 import com.softwaremagico.librodeesher.background.Background;
 import com.softwaremagico.librodeesher.decision.Decision;
+import com.softwaremagico.librodeesher.decision.DecisionKey;
 import com.softwaremagico.librodeesher.decision.Decisions;
 import com.softwaremagico.librodeesher.equipment.Equipment;
 import com.softwaremagico.librodeesher.equipment.MagicObject;
@@ -82,10 +83,16 @@ public final class CharacterDataMapper {
         data.setBackground(backgroundData);
 
         final Map<String, DecisionData> decisionData = new TreeMap<>();
-        for (final Map.Entry<String, Decision> entry : character.getDecisions().getAll().entrySet()) {
+        for (final Map.Entry<DecisionKey, Decision> entry : character.getDecisions().getAll().entrySet()) {
             final Decision decision = entry.getValue();
-            decisionData.put(entry.getKey(), new DecisionData(
-                    new ArrayList<>(decision.getOfferedOptions()), new ArrayList<>(decision.getSelectedOptions())));
+            // A decision set without a level (only hand-built characters do that) is
+            // assumed to have been taken at the current level.
+            final int recordedAtLevel = decision.getRecordedAtLevel() == DecisionKey.CHARACTER_WIDE
+                    ? character.getLevel()
+                    : decision.getRecordedAtLevel();
+            decisionData.put(entry.getKey().toString(), new DecisionData(new DecisionKeyData(entry.getKey()),
+                    recordedAtLevel, new ArrayList<>(decision.getOfferedOptions()),
+                    new ArrayList<>(decision.getSelectedOptions())));
         }
         data.setDecisions(decisionData);
 
@@ -170,7 +177,11 @@ public final class CharacterDataMapper {
                 decision = Decision.selectMultiple(decisionData.getOfferedOptions(), decisionData.getSelectedOptions(),
                         decisionData.getSelectedOptions().size());
             }
-            decisions.set(entry.getKey(), decision);
+            final int recordedAtLevel = decisionData.getRecordedAtLevel() >= 1
+                    ? decisionData.getRecordedAtLevel()
+                    : character.getLevel();
+            decisions.set(decisionData.getKey().toDecisionKey(),
+                    decision.recordedAtLevel(recordedAtLevel));
         }
 
         character.getSelectedPerks().clear();

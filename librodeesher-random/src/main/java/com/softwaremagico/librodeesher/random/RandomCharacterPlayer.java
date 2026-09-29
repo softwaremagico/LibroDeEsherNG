@@ -9,6 +9,8 @@ import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.culture.CultureLanguageRank;
 import com.softwaremagico.librodeesher.decision.Decision;
+import com.softwaremagico.librodeesher.decision.DecisionKey;
+import com.softwaremagico.librodeesher.decision.DecisionKind;
 import com.softwaremagico.librodeesher.dice.Roll;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
@@ -803,8 +805,10 @@ public class RandomCharacterPlayer {
                 selected = lastChecked;
             }
             if (selected != null) {
-                characterPlayer.applyCharacteristicUpgrade("training:" + trainingId + ":characteristic:" + i, group,
-                        selected);
+                characterPlayer.applyCharacteristicUpgrade(
+                        DecisionKey.atLevel(DecisionKind.TRAINING_CHARACTERISTIC, trainingId, i,
+                                characterPlayer.getLevel()),
+                        group, selected);
             }
         }
     }

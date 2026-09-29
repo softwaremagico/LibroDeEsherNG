@@ -5,6 +5,8 @@ import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation
 import com.softwaremagico.librodeesher.characteristic.CharacteristicRoll;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.culture.Culture;
+import com.softwaremagico.librodeesher.decision.DecisionKey;
+import com.softwaremagico.librodeesher.decision.DecisionKind;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
@@ -270,9 +272,9 @@ public class RandomCharacterPlayerCreationTest {
 
 	private static List<String> cultureAdolescenceDecisions(CharacterPlayer character) {
 		final List<String> keys = new ArrayList<>();
-		for (final String key : character.getDecisions().getAll().keySet()) {
-			if (key.contains(":adolescence:")) {
-				keys.add(key);
+		for (final DecisionKey key : character.getDecisions().getAll().keySet()) {
+			if (key.getKind() == DecisionKind.CULTURE_ADOLESCENCE_CATEGORY) {
+				keys.add(key.toString());
 			}
 		}
 		return keys;
@@ -401,10 +403,13 @@ public class RandomCharacterPlayerCreationTest {
 		}
 		entries.add("perks:" + backgroundFingerprint(character));
 		entries.add("hobby:" + hobbyRanksFingerprint(character));
-		final List<String> decisions = new ArrayList<>(character.getDecisions().getAll().keySet());
+		final List<String> decisions = new ArrayList<>();
+		for (final DecisionKey key : character.getDecisions().getAll().keySet()) {
+			decisions.add(key + "=" + character.getDecisions().getSelectedOption(key));
+		}
 		Collections.sort(decisions);
-		for (final String key : decisions) {
-			entries.add("decision:" + key + "=" + character.getDecisions().getSelectedOption(key));
+		for (final String decision : decisions) {
+			entries.add("decision:" + decision);
 		}
 		return String.join(";", entries);
 	}

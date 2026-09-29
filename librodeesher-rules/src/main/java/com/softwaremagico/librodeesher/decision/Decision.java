@@ -20,15 +20,49 @@ import java.util.List;
  * {@code ProfessionSkillGrant}, where {@code N} may be greater than 1); {@link #getSelectedOption()}
  * remains the single-selection accessor (every existing choose-one caller keeps working unchanged),
  * while {@link #getSelectedOptions()} exposes the full list for "choose N" callers.</p>
+ *
+ * <p>Every decision also states the level it was recorded at ({@link #getRecordedAtLevel()}), so the
+ * options a character chose can be told apart per level. A decision built by the static factories
+ * carries {@link DecisionKey#CHARACTER_WIDE} until whoever stores it stamps the current level with
+ * {@link #recordedAtLevel(int)}.</p>
  */
 public final class Decision {
 
     private final List<String> offeredOptions;
     private final List<String> selectedOptions;
+    private final int recordedAtLevel;
 
     private Decision(List<String> offeredOptions, List<String> selectedOptions) {
+        this(offeredOptions, selectedOptions, DecisionKey.CHARACTER_WIDE);
+    }
+
+    private Decision(List<String> offeredOptions, List<String> selectedOptions, int recordedAtLevel) {
         this.offeredOptions = offeredOptions;
         this.selectedOptions = selectedOptions;
+        this.recordedAtLevel = recordedAtLevel;
+    }
+
+    /**
+     * The same decision, stamped with the level it was taken at.
+     *
+     * @param level the level the character made this choice at (1-based).
+     * @throws IllegalArgumentException if {@code level} is not a real level.
+     */
+    public Decision recordedAtLevel(int level) {
+        if (level < 1) {
+            throw new IllegalArgumentException("A decision is recorded at a level, but got " + level + ".");
+        }
+        return new Decision(offeredOptions, selectedOptions, level);
+    }
+
+    /** The level this decision was taken at (1-based); decisions built but not yet stored are {@link DecisionKey#CHARACTER_WIDE}. */
+    public int getRecordedAtLevel() {
+        return recordedAtLevel;
+    }
+
+    /** Whether this decision was taken at {@code candidateLevel} (1-based). */
+    public boolean isRecordedAtLevel(int candidateLevel) {
+        return recordedAtLevel == candidateLevel;
     }
 
     /**
@@ -120,6 +154,8 @@ public final class Decision {
 
     @Override
     public String toString() {
-        return selectedOptions + " (of " + offeredOptions + ")";
+        final String level = recordedAtLevel == DecisionKey.CHARACTER_WIDE ? ""
+                : " at level " + recordedAtLevel;
+        return selectedOptions + " (of " + offeredOptions + ")" + level;
     }
 }

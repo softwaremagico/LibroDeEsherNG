@@ -1,6 +1,8 @@
 package com.softwaremagico.librodeesher.random;
 
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
+import com.softwaremagico.librodeesher.decision.DecisionKey;
+import com.softwaremagico.librodeesher.decision.DecisionKind;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
@@ -101,7 +103,8 @@ public class RandomCharacterPlayerTest {
 		for (int tier = 0; tier < tiers; tier++) {
 			Assert.assertTrue(character.isWeaponCategoryCostTierAssigned(tier),
 					"tier " + tier + " should be assigned to a weapon category");
-			final String selected = character.getDecisions().getSelectedOption("weaponCostTier:" + tier);
+			final String selected = character.getDecisions().getSelectedOption(
+					DecisionKey.characterWide(DecisionKind.WEAPON_COST_TIER, "", tier));
 			Assert.assertNotNull(selected, "tier " + tier + " must have a decision");
 			Assert.assertTrue(selected.startsWith("weapons"), "tier " + tier + " selected '" + selected + "'");
 		}
@@ -160,7 +163,9 @@ public class RandomCharacterPlayerTest {
 		for (int tier = 0; tier < tiers; tier++) {
 			if (character.isWeaponCategoryCostTierAssigned(tier)) {
 				snapshot.append("weaponCostTier:").append(tier).append('=')
-						.append(character.getDecisions().getSelectedOption("weaponCostTier:" + tier)).append('\n');
+						.append(character.getDecisions().getSelectedOption(
+								DecisionKey.characterWide(DecisionKind.WEAPON_COST_TIER, "", tier)))
+						.append('\n');
 			}
 		}
 		return snapshot.toString();

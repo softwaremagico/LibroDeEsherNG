@@ -1,5 +1,7 @@
 package com.softwaremagico.librodeesher.persistence;
 
+import com.softwaremagico.librodeesher.decision.DecisionKey;
+import com.softwaremagico.librodeesher.decision.DecisionKind;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import org.testng.Assert;
@@ -24,8 +26,9 @@ public class CharacterJsonManagerTest {
 
 		Assert.assertEquals(CharacterJsonManager.toJson(decoded), json);
 		Assert.assertEquals(decoded.getName(), "Ánforo Élfico");
-		Assert.assertEquals(decoded.getDecisions().get("training:martialArtist:category:0").getSelectedOptions(),
-				List.of("arms"));
+		Assert.assertEquals(decoded.getDecisions()
+				.get(DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "martialArtist", 0, 1).toString())
+				.getSelectedOptions(), List.of("arms"));
 		Assert.assertEquals(decoded.getHobbySkillRanks().get("seamanship"), Integer.valueOf(3));
 		Assert.assertEquals(decoded.getLevels().get(0).getCategoryRanks().get("arms"), Integer.valueOf(3));
 		Assert.assertTrue(decoded.isMagicAllowed());

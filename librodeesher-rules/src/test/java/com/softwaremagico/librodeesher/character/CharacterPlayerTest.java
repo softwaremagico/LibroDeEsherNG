@@ -7,6 +7,8 @@ import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation
 import com.softwaremagico.librodeesher.characteristic.CharacteristicRoll;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.culture.Culture;
+import com.softwaremagico.librodeesher.decision.DecisionKey;
+import com.softwaremagico.librodeesher.decision.DecisionKind;
 import com.softwaremagico.librodeesher.decision.InvalidDecisionException;
 import com.softwaremagico.librodeesher.dice.Roll;
 import com.softwaremagico.librodeesher.equipment.BonusType;
@@ -334,14 +336,13 @@ public class CharacterPlayerTest {
 		grant.setRanksGranted(2);
 		grant.getSkills().add(new TrainingSkillGrant(List.of("tracking"), 2));
 
-		character.applyCategoryGrant("training:scout:category:0", grant, null, null, null);
+		final DecisionKey categoryKey = DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "scout", 0, 1);
+		character.applyCategoryGrant(categoryKey, grant, null, null, null);
 
 		Assert.assertEquals(character.getCategoryTotalRanks("outdoorEnvironment"), Integer.valueOf(2));
 		Assert.assertEquals(character.getSkillTotalRanks("tracking"), Integer.valueOf(2));
-		Assert.assertEquals(character.getDecisions().getSelectedOption("training:scout:category:0"),
-				"outdoorEnvironment");
-		Assert.assertEquals(character.getDecisions().getSelectedOption("training:scout:category:0:skill:0"),
-				"tracking");
+		Assert.assertEquals(character.getDecisions().getSelectedOption(categoryKey), "outdoorEnvironment");
+		Assert.assertEquals(character.getDecisions().getSelectedOption(categoryKey.nested(0)), "tracking");
 	}
 
 	@Test
@@ -351,11 +352,12 @@ public class CharacterPlayerTest {
 		grant.setCategoryOptions(List.of("weaponsTwoHanded", "weaponsEdged"));
 		grant.setRanksGranted(1);
 
-		character.applyCategoryGrant("training:soldier:category:1", grant, "weaponsEdged", null, null);
+		final DecisionKey categoryKey = DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "soldier", 1, 1);
+		character.applyCategoryGrant(categoryKey, grant, "weaponsEdged", null, null);
 
 		Assert.assertEquals(character.getCategoryTotalRanks("weaponsEdged"), Integer.valueOf(1));
 		Assert.assertEquals(character.getCategoryTotalRanks("weaponsTwoHanded"), Integer.valueOf(0));
-		Assert.assertEquals(character.getDecisions().getSelectedOption("training:soldier:category:1"), "weaponsEdged");
+		Assert.assertEquals(character.getDecisions().getSelectedOption(categoryKey), "weaponsEdged");
 	}
 
 	@Test(expectedExceptions = InvalidDecisionException.class)
@@ -365,7 +367,8 @@ public class CharacterPlayerTest {
 		grant.setCategoryOptions(List.of("weaponsTwoHanded", "weaponsEdged"));
 		grant.setRanksGranted(1);
 
-		character.applyCategoryGrant("training:soldier:category:1", grant, "weaponsMissile", null, null);
+		character.applyCategoryGrant(DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "soldier", 1, 1), grant,
+				"weaponsMissile", null, null);
 	}
 
 	@Test
@@ -375,14 +378,15 @@ public class CharacterPlayerTest {
 		grant.setCategoryOptions(List.of("weaponsTwoHanded", "weaponsEdged"));
 		grant.setRanksGranted(1);
 
-		character.applyCategoryGrant("training:soldier:category:1", grant, "weaponsEdged", null, null);
+		final DecisionKey categoryKey = DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "soldier", 1, 1);
+		character.applyCategoryGrant(categoryKey, grant, "weaponsEdged", null, null);
 		// A different (and otherwise invalid, since it wasn't offered before) id is
 		// ignored because
 		// the decision was already made.
-		character.applyCategoryGrant("training:soldier:category:1", grant, "somethingElse", null, null);
+		character.applyCategoryGrant(categoryKey, grant, "somethingElse", null, null);
 
 		Assert.assertEquals(character.getCategoryTotalRanks("weaponsEdged"), Integer.valueOf(2));
-		Assert.assertEquals(character.getDecisions().getSelectedOption("training:soldier:category:1"), "weaponsEdged");
+		Assert.assertEquals(character.getDecisions().getSelectedOption(categoryKey), "weaponsEdged");
 	}
 
 	@Test
@@ -421,7 +425,7 @@ public class CharacterPlayerTest {
 		// Every grant got a decision recorded, and every decided category actually has
 		// ranks.
 		for (int i = 0; i < soldier.getCategories().size(); i++) {
-			final String key = "training:soldier:category:" + i;
+			final DecisionKey key = DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, soldier.getId(), i, 1);
 			Assert.assertTrue(character.getDecisions().isDecided(key));
 			Assert.assertTrue(character.getCategoryTotalRanks(character.getDecisions().getSelectedOption(key)) >= 0);
 		}
@@ -435,7 +439,8 @@ public class CharacterPlayerTest {
 		character.applyCultureAdolescenceRanks(culture, null, null, null);
 
 		for (int i = 0; i < culture.getAdolescenceRanks().size(); i++) {
-			Assert.assertTrue(character.getDecisions().isDecided("culture:aquaticMilitarista:adolescence:" + i));
+			Assert.assertTrue(character.getDecisions().isDecided(
+					DecisionKey.atLevel(DecisionKind.CULTURE_ADOLESCENCE_CATEGORY, culture.getId(), i, 1)));
 		}
 	}
 
@@ -510,20 +515,21 @@ public class CharacterPlayerTest {
 		final CharacterPlayer character = new CharacterPlayer();
 		final Integer before = character.getCharacteristicTemporalValue(CharacteristicAbbreviation.STRENGTH);
 
-		final CharacteristicRoll roll = character.applyCharacteristicUpgrade("training:adventurer:characteristic:0",
+		final DecisionKey characteristicKey = DecisionKey.atLevel(DecisionKind.TRAINING_CHARACTERISTIC, "adventurer", 0, 1);
+		final CharacteristicRoll roll = character.applyCharacteristicUpgrade(characteristicKey,
 				adventurer.getCharacteristicUpgrades().get(0), CharacteristicAbbreviation.STRENGTH);
 
 		Assert.assertEquals(roll.getCharacteristicAbbreviation(), CharacteristicAbbreviation.STRENGTH);
 		Assert.assertEquals(roll.getCharacteristicTemporalValue(), before);
-		Assert.assertEquals(character.getDecisions().getSelectedOption("training:adventurer:characteristic:0"),
-				"STRENGTH");
+		Assert.assertEquals(character.getDecisions().getSelectedOption(characteristicKey), "STRENGTH");
 	}
 
 	@Test(expectedExceptions = InvalidDecisionException.class)
 	public void applyCharacteristicUpgradeRejectsACharacteristicNotOffered() throws InvalidXmlElementException {
 		final Training adventurer = RulesCatalog.getInstance().getTraining("adventurer");
 		final CharacterPlayer character = new CharacterPlayer();
-		character.applyCharacteristicUpgrade("training:adventurer:characteristic:0",
+		character.applyCharacteristicUpgrade(
+				DecisionKey.atLevel(DecisionKind.TRAINING_CHARACTERISTIC, "adventurer", 0, 1),
 				adventurer.getCharacteristicUpgrades().get(0), CharacteristicAbbreviation.NONE);
 	}
 
@@ -532,14 +538,12 @@ public class CharacterPlayerTest {
 		final Training adventurer = RulesCatalog.getInstance().getTraining("adventurer");
 		final CharacterPlayer character = new CharacterPlayer();
 		final ChoiceGroup group = adventurer.getCharacteristicUpgrades().get(0);
+		final DecisionKey characteristicKey = DecisionKey.atLevel(DecisionKind.TRAINING_CHARACTERISTIC, "adventurer", 0, 1);
 
-		character.applyCharacteristicUpgrade("training:adventurer:characteristic:0", group,
-				CharacteristicAbbreviation.STRENGTH);
-		character.applyCharacteristicUpgrade("training:adventurer:characteristic:0", group,
-				CharacteristicAbbreviation.AGILITY);
+		character.applyCharacteristicUpgrade(characteristicKey, group, CharacteristicAbbreviation.STRENGTH);
+		character.applyCharacteristicUpgrade(characteristicKey, group, CharacteristicAbbreviation.AGILITY);
 
-		Assert.assertEquals(character.getDecisions().getSelectedOption("training:adventurer:characteristic:0"),
-				"STRENGTH");
+		Assert.assertEquals(character.getDecisions().getSelectedOption(characteristicKey), "STRENGTH");
 	}
 
 	@Test
@@ -550,7 +554,8 @@ public class CharacterPlayerTest {
 		character.setCharacteristicPotentialValue(CharacteristicAbbreviation.STRENGTH, 90);
 		character.setRandomRollSupplier(() -> Roll.of(4, 6));
 
-		final CharacteristicRoll roll = character.applyCharacteristicUpgrade("training:adventurer:characteristic:0",
+		final CharacteristicRoll roll = character.applyCharacteristicUpgrade(
+				DecisionKey.atLevel(DecisionKind.TRAINING_CHARACTERISTIC, "adventurer", 0, 1),
 				adventurer.getCharacteristicUpgrades().get(0), CharacteristicAbbreviation.STRENGTH);
 
 		Assert.assertEquals(roll.getRoll().getFirstDice(), Integer.valueOf(4));
@@ -611,11 +616,11 @@ public class CharacterPlayerTest {
 		grant.setCategoryOptions(List.of(CharacterPlayer.ALL_WEAPON_CATEGORIES));
 		grant.setRanksGranted(2);
 
-		character.applyCategoryGrant("training:berserker:category:0", grant, "weaponsEdged", null, null);
+		final DecisionKey categoryKey = DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "berserker", 0, 1);
+		character.applyCategoryGrant(categoryKey, grant, "weaponsEdged", null, null);
 
 		Assert.assertEquals(character.getCategoryTotalRanks("weaponsEdged"), Integer.valueOf(2));
-		Assert.assertEquals(character.getDecisions().get("training:berserker:category:0").getOfferedOptions()
-				.contains("weaponsBlunt"), true);
+		Assert.assertEquals(character.getDecisions().get(categoryKey).getOfferedOptions().contains("weaponsBlunt"), true);
 	}
 
 	@Test(expectedExceptions = InvalidDecisionException.class)
@@ -626,7 +631,8 @@ public class CharacterPlayerTest {
 		grant.setCategoryOptions(List.of(CharacterPlayer.ALL_WEAPON_CATEGORIES));
 		grant.setRanksGranted(2);
 
-		character.applyCategoryGrant("training:berserker:category:0", grant, "outdoorEnvironment", null, null);
+		character.applyCategoryGrant(DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "berserker", 0, 1), grant,
+				"outdoorEnvironment", null, null);
 	}
 
 	@Test
@@ -859,7 +865,8 @@ public class CharacterPlayerTest {
 		final List<RealmOfMagic> realms = character.applyProfessionMagicRealms(Map.of(0, RealmOfMagic.CANALIZATION));
 
 		Assert.assertEquals(realms, List.of(RealmOfMagic.CANALIZATION));
-		Assert.assertEquals(character.getDecisions().getSelectedOption("profession:sorcerer:realm:0"), "CANALIZATION");
+		Assert.assertEquals(character.getDecisions().getSelectedOption(
+				DecisionKey.characterWide(DecisionKind.PROFESSION_REALM, "sorcerer", 0)), "CANALIZATION");
 	}
 
 	@Test(expectedExceptions = InvalidDecisionException.class)
@@ -881,8 +888,8 @@ public class CharacterPlayerTest {
 		final CharacterPlayer character = new CharacterPlayer();
 		final RealmOfMagicGrant grant = new RealmOfMagicGrant(List.of(RealmOfMagic.ESSENCE));
 
-		Assert.assertEquals(character.applyMagicRealmChoice("profession:wizard:realm:0", grant, null),
-				RealmOfMagic.ESSENCE);
+		final DecisionKey realmKey = DecisionKey.characterWide(DecisionKind.PROFESSION_REALM, "wizard", 0);
+		Assert.assertEquals(character.applyMagicRealmChoice(realmKey, grant, null), RealmOfMagic.ESSENCE);
 	}
 
 	@Test
@@ -1576,7 +1583,7 @@ public class CharacterPlayerTest {
 		Assert.assertEquals(grant.getRanksToChoose(), Integer.valueOf(1));
 
 		final List<String> resolved = character.applyProfessionSkillGrant("thief",
-				CharacterPlayer.PROFESSION_COMMON_SKILLS_SECTION, 0, grant,
+				DecisionKind.PROFESSION_COMMON_SKILL, 0, grant,
 				List.of("perceptionOfTheEnvironmentCombat"));
 
 		Assert.assertEquals(resolved, List.of("perceptionOfTheEnvironmentCombat"));
@@ -1588,7 +1595,7 @@ public class CharacterPlayerTest {
 
 		// Reusing the same key/index does not ask again.
 		Assert.assertEquals(
-				character.applyProfessionSkillGrant("thief", CharacterPlayer.PROFESSION_COMMON_SKILLS_SECTION, 0, grant,
+				character.applyProfessionSkillGrant("thief", DecisionKind.PROFESSION_COMMON_SKILL, 0, grant,
 						List.of("perceptionOfTheEnvironmentCiudades")),
 				List.of("perceptionOfTheEnvironmentCombat"));
 	}
@@ -1604,7 +1611,7 @@ public class CharacterPlayerTest {
 		final List<String> chosen = List.of("cocinar", "manejoOfCuerdas", "trabajarTheLeather", "trabajarTheMetal",
 				"trabajarTheMadera", "trabajarTheStone");
 		final List<String> resolved = character.applyProfessionSkillGrant("alchemistOfMentalism",
-				CharacterPlayer.PROFESSION_PROFESSIONAL_SKILLS_SECTION, 0, grant, chosen);
+				DecisionKind.PROFESSION_PROFESSIONAL_SKILL, 0, grant, chosen);
 
 		Assert.assertEquals(resolved, chosen);
 		Assert.assertTrue(character.isSkillProfessional(RulesCatalog.getInstance().getSkill("cocinar")));
@@ -1618,7 +1625,7 @@ public class CharacterPlayerTest {
 		final ProfessionSkillGrant grant = character.getProfession().getProfessionalSkillChoices().get(0);
 
 		character.applyProfessionSkillGrant("alchemistOfMentalism",
-				CharacterPlayer.PROFESSION_PROFESSIONAL_SKILLS_SECTION, 0, grant, List.of("cocinar"));
+				DecisionKind.PROFESSION_PROFESSIONAL_SKILL, 0, grant, List.of("cocinar"));
 	}
 
 	@Test
@@ -1878,6 +1885,79 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void theSameGrantDecidedAtTwoLevelsYieldsTwoIndependentDecisions() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+		grant.setCategoryOptions(List.of("weaponsTwoHanded", "weaponsEdged"));
+		grant.setRanksGranted(1);
+		grant.setMaxSkills(0);
+		grant.setMinSkills(0);
+		grant.setRanksToDistribute(0);
+
+		final DecisionKey firstLevelKey = DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "soldier", 1, 1);
+		character.applyCategoryGrant(firstLevelKey, grant, "weaponsEdged", null, Map.of());
+		character.increaseLevel();
+
+		final DecisionKey secondLevelKey = DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "soldier", 1, 2);
+		character.applyCategoryGrant(secondLevelKey, grant, "weaponsTwoHanded", null, Map.of());
+
+		// Both decisions exist, each stamped with its own level, reusing neither.
+		Assert.assertTrue(character.getDecisions().isDecided(firstLevelKey));
+		Assert.assertTrue(character.getDecisions().isDecided(secondLevelKey));
+		Assert.assertEquals(character.getDecisions().get(firstLevelKey).getRecordedAtLevel(), 1);
+		Assert.assertEquals(character.getDecisions().get(secondLevelKey).getRecordedAtLevel(), 2);
+		Assert.assertEquals(character.getDecisions().getSelectedOption(firstLevelKey), "weaponsEdged");
+		Assert.assertEquals(character.getDecisions().getSelectedOption(secondLevelKey), "weaponsTwoHanded");
+
+		// Per-level reconstruction sees only what was chosen by that level.
+		Assert.assertEquals(
+				character.getDecisionsAtLevel(1).stream()
+						.map(entry -> entry.getValue().getSelectedOption()).toList(),
+				List.of("weaponsEdged"));
+		Assert.assertEquals(
+				character.getDecisionsAtLevel(2).stream()
+						.map(entry -> entry.getValue().getSelectedOption()).toList(),
+				List.of("weaponsTwoHanded"));
+	}
+
+	@Test
+	public void totalRanksAtLevelReconstructTheHistoricValues() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+		grant.setCategoryOptions(List.of("outdoorEnvironment"));
+		grant.setRanksGranted(2);
+		grant.setMaxSkills(0);
+		grant.setMinSkills(0);
+		grant.setRanksToDistribute(0);
+
+		final DecisionKey firstLevelKey = DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "scout", 0, 1);
+		character.applyCategoryGrant(firstLevelKey, grant, null, null, Map.of());
+		Assert.assertEquals(character.getCategoryTotalRanksAtLevel("outdoorEnvironment", 1), Integer.valueOf(2));
+		Assert.assertEquals(character.getSpentDevelopmentPointsAtLevel(1),
+				character.getSpentDevelopmentPoints());
+
+		character.increaseLevel();
+		character.getCurrentLevel().addCategoryRanks("outdoorEnvironment", 1);
+
+		Assert.assertEquals(character.getCategoryTotalRanks("outdoorEnvironment"), Integer.valueOf(3));
+		Assert.assertEquals(character.getCategoryTotalRanksAtLevel("outdoorEnvironment", 1), Integer.valueOf(2));
+		Assert.assertEquals(character.getCategoryTotalRanksAtLevel("outdoorEnvironment", 2), Integer.valueOf(3));
+		// Cumulative spend: level 2's total (current level only) plus level 1's.
+		Assert.assertEquals(character.getSpentDevelopmentPointsAtLevel(2),
+				character.getSpentDevelopmentPointsAtLevel(1) + character.getSpentDevelopmentPoints());
+	}
+
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void ranksAtLevelRejectALevelBeyondTheCharacter() throws InvalidXmlElementException {
+		new CharacterPlayer().getCategoryTotalRanksAtLevel("outdoorEnvironment", 2);
+	}
+
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void decisionsAtLevelRejectALevelBeyondTheCharacter() throws InvalidXmlElementException {
+		new CharacterPlayer().getDecisionsAtLevel(2);
+	}
+
+	@Test
 	public void sixthSpellListAcquiredInALevelDoublesItsDevelopmentCost() throws InvalidXmlElementException {
 		final CharacterPlayer wizard = new CharacterPlayer();
 		wizard.setProfessionId("wizard");
@@ -1965,7 +2045,8 @@ public class CharacterPlayerTest {
 		grant.setMinSkills(0);
 		grant.setRanksToDistribute(0);
 
-		wizard.applyCategoryGrant("culture:test:adolescence:0", grant, null, null, Map.of());
+		wizard.applyCategoryGrant(DecisionKey.atLevel(DecisionKind.CULTURE_ADOLESCENCE_CATEGORY, "test", 0, 1), grant, null, null,
+				Map.of());
 
 		Assert.assertEquals(wizard.getCurrentLevel().getCategoryRanks("essenceLawOfLight"), Integer.valueOf(2));
 		Assert.assertEquals(wizard.getCurrentLevel().getSpellListRanks("essenceLawOfLight"), Integer.valueOf(2));

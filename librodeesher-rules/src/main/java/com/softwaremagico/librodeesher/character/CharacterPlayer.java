@@ -13,6 +13,8 @@ import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.culture.Culture;
 import com.softwaremagico.librodeesher.culture.CultureLanguageRank;
 import com.softwaremagico.librodeesher.decision.Decision;
+import com.softwaremagico.librodeesher.decision.DecisionKey;
+import com.softwaremagico.librodeesher.decision.DecisionKind;
 import com.softwaremagico.librodeesher.decision.Decisions;
 import com.softwaremagico.librodeesher.dice.Roll;
 import com.softwaremagico.librodeesher.equipment.BonusType;
@@ -582,6 +584,24 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * The category's total ranks bought in the first {@code level} levels (1-based, inclusive), i.e.
+	 * the historic total a character had at that level: counts every rank bought via
+	 * {@link #setCurrentLevelCategoryRanks(String, int)} and recorded by a training/culture category
+	 * grant up to and including {@code level}. Same bookkeeping as {@link #getCategoryTotalRanks},
+	 * clipped to the first {@code level} levels.
+	 *
+	 * @throws IllegalArgumentException if {@code level} is not a real level.
+	 */
+	public Integer getCategoryTotalRanksAtLevel(String categoryId, int level) {
+		final int lastLevel = this.levelIndex(level);
+		int total = 0;
+		for (int i = 0; i < lastLevel; i++) {
+			total += this.levels.get(i).getCategoryRanks(categoryId);
+		}
+		return total;
+	}
+
+	/**
 	 * Total ranks bought in a skill, across every level so far.
 	 *
 	 * <p>
@@ -600,6 +620,23 @@ public class CharacterPlayer {
 		return total + this.getHobbySkillRank(skillId) - this.getSkillSpecializationsRankCost(skillId);
 	}
 
+	/**
+	 * The skill's total ranks a character had at the end of the first {@code level} levels (1-based,
+	 * inclusive): the ranks bought in levels 1..{@code level} plus its hobby ranks, net of the
+	 * specialization rank cost. Same bookkeeping as {@link #getSkillTotalRanks}, clipped to the
+	 * first {@code level} levels.
+	 *
+	 * @throws IllegalArgumentException if {@code level} is not a real level.
+	 */
+	public Integer getSkillTotalRanksAtLevel(String skillId, int level) {
+		final int lastLevel = this.levelIndex(level);
+		int total = 0;
+		for (int i = 0; i < lastLevel; i++) {
+			total += this.levels.get(i).getSkillRanks(skillId);
+		}
+		return total + this.getHobbySkillRank(skillId) - this.getSkillSpecializationsRankCost(skillId);
+	}
+
 	/** Total ranks bought in a spell list across every character level. */
 	public Integer getSpellListTotalRanks(String spellListId) {
 		int total = 0;
@@ -607,6 +644,31 @@ public class CharacterPlayer {
 			total += levelUp.getSpellListRanks(spellListId);
 		}
 		return total + this.getHobbySpellListRank(spellListId);
+	}
+
+	/**
+	 * The spell list's total ranks a character had at the end of the first {@code level} levels
+	 * (1-based, inclusive): the ranks bought in levels 1..{@code level} plus its hobby ranks. Same
+	 * bookkeeping as {@link #getSpellListTotalRanks}, clipped to the first {@code level} levels.
+	 *
+	 * @throws IllegalArgumentException if {@code level} is not a real level.
+	 */
+	public Integer getSpellListTotalRanksAtLevel(String spellListId, int level) {
+		final int lastLevel = this.levelIndex(level);
+		int total = 0;
+		for (int i = 0; i < lastLevel; i++) {
+			total += this.levels.get(i).getSpellListRanks(spellListId);
+		}
+		return total + this.getHobbySpellListRank(spellListId);
+	}
+
+	/** The index (0-based) of the first {@code level} levels, validating it is a real level. */
+	private int levelIndex(int level) {
+		if (level < 1 || level > this.levels.size()) {
+			throw new IllegalArgumentException(
+					"There is no level " + level + " on a " + this.levels.size() + "-level character.");
+		}
+		return level;
 	}
 
 	/**
@@ -997,12 +1059,23 @@ public class CharacterPlayer {
 	}
 
 	/**
+	 * Every decision the player had taken by {@code level} (1-based, inclusive), in the order they
+	 * were recorded, so the options chosen while building that level can be listed back.
+	 *
+	 * @throws IllegalArgumentException if {@code level} is not a real level.
+	 */
+	public List<Map.Entry<DecisionKey, Decision>> getDecisionsAtLevel(int level) {
+		this.levelIndex(level);
+		return this.decisions.getDecisionsAtLevel(level);
+	}
+
+	/**
 	 * Applies one of a training's (or culture's adolescence) category grants to the
 	 * current level: resolves which category it applies to (reusing an already-made
-	 * decision if {@code key} was decided before, otherwise validating
+	 * decision if {@code categoryKey} was decided before, otherwise validating
 	 * {@code selectedCategoryId} and recording it), adds the grant's ranks to that
 	 * category, then does the same for each of its nested skill grants (keyed as
-	 * {@code key + ":skill:" + <index>}).
+	 * {@code categoryKey.nested(<index>)}).
 	 *
 	 * <p>
 	 * {@link #ALL_WEAPON_CATEGORIES}/{@link #ALL_ATTACK_CATEGORIES} wildcard
@@ -1020,16 +1093,18 @@ public class CharacterPlayer {
 	 * taken).
 	 * </p>
 	 *
-	 * @param key
-	 *            a caller-chosen id identifying this specific grant uniquely for
-	 *            this character (e.g. {@code "training:soldier:category:1"}),
-	 *            reused as-is on subsequent calls once a choice has been made.
+	 * @param categoryKey
+	 *            the structured id of this specific grant for this character and
+	 *            the current level (e.g.
+	 *            {@code DecisionKey.atLevel(TRAINING_CATEGORY, "soldier", 1, 3)});
+	 *            a later call at a different level produces a different, independent
+	 *            key instead of reusing this decision.
 	 * @param grant
 	 *            the category grant to apply.
 	 * @param selectedCategoryId
 	 *            the category to use if {@code grant} offers a choice and
-	 *            {@code key} has not been decided yet; ignored otherwise (including
-	 *            when {@code
+	 *            {@code categoryKey} has not been decided yet; ignored otherwise
+	 *            (including when {@code
 	 *                           grant} is not a choice).
 	 * @param selectedSkillIds
 	 *            the skill to use for each of {@code grant}'s nested skill grants
@@ -1052,10 +1127,10 @@ public class CharacterPlayer {
 	 *             skills), or if its values do not add up to exactly the ranks left
 	 *             to distribute.
 	 */
-	public void applyCategoryGrant(String key, TrainingCategoryGrant grant, String selectedCategoryId,
+	public void applyCategoryGrant(DecisionKey categoryKey, TrainingCategoryGrant grant, String selectedCategoryId,
 			List<String> selectedSkillIds, Map<String, Integer> additionalSkillRanks) throws InvalidXmlElementException {
 		final List<String> offeredCategories = this.expandCategoryWildcards(grant.getCategoryOptions());
-		final Decision categoryDecision = this.decideOrReuse(key,
+		final Decision categoryDecision = this.decideOrReuse(categoryKey,
 				() -> offeredCategories.size() > 1
 						? Decision.select(offeredCategories, selectedCategoryId)
 						: Decision.fixed(offeredCategories));
@@ -1077,7 +1152,7 @@ public class CharacterPlayer {
 		int namedRanks = 0;
 		for (int i = 0; i < skills.size(); i++) {
 			final TrainingSkillGrant skillGrant = skills.get(i);
-			final String skillKey = key + ":skill:" + i;
+			final DecisionKey skillKey = categoryKey.nested(i);
 			final String selectedSkillId = selectedSkillIds != null && i < selectedSkillIds.size()
 					? selectedSkillIds.get(i)
 					: null;
@@ -1152,7 +1227,7 @@ public class CharacterPlayer {
 	public void applyTrainingCategories(Training training, Map<Integer, String> categorySelections,
 			Map<Integer, List<String>> skillSelections, Map<Integer, Map<String, Integer>> additionalSkillRanksSelections)
 			throws InvalidXmlElementException {
-		this.applyCategoryGrants("training:" + training.getId() + ":category", training.getCategories(),
+		this.applyCategoryGrants(DecisionKind.TRAINING_CATEGORY, training.getId(), training.getCategories(),
 				categorySelections, skillSelections, additionalSkillRanksSelections);
 	}
 
@@ -1165,7 +1240,7 @@ public class CharacterPlayer {
 	public void applyCultureAdolescenceRanks(Culture culture, Map<Integer, String> categorySelections,
 			Map<Integer, List<String>> skillSelections, Map<Integer, Map<String, Integer>> additionalSkillRanksSelections)
 			throws InvalidXmlElementException {
-		this.applyCategoryGrants("culture:" + culture.getId() + ":adolescence",
+		this.applyCategoryGrants(DecisionKind.CULTURE_ADOLESCENCE_CATEGORY, culture.getId(),
 				this.getResolvedAdolescenceRanks(culture), categorySelections, skillSelections,
 				additionalSkillRanksSelections);
 	}
@@ -1252,7 +1327,7 @@ public class CharacterPlayer {
 		}
 	}
 
-	private void applyCategoryGrants(String keyPrefix, List<TrainingCategoryGrant> grants,
+	private void applyCategoryGrants(DecisionKind kind, String ownerId, List<TrainingCategoryGrant> grants,
 			Map<Integer, String> categorySelections, Map<Integer, List<String>> skillSelections,
 			Map<Integer, Map<String, Integer>> additionalSkillRanksSelections) throws InvalidXmlElementException {
 		for (int i = 0; i < grants.size(); i++) {
@@ -1260,8 +1335,8 @@ public class CharacterPlayer {
 			final List<String> selectedSkillIds = skillSelections == null ? null : skillSelections.get(i);
 			final Map<String, Integer> additionalSkillRanks = additionalSkillRanksSelections == null ? null
 					: additionalSkillRanksSelections.get(i);
-			this.applyCategoryGrant(keyPrefix + ":" + i, grants.get(i), selectedCategoryId, selectedSkillIds,
-					additionalSkillRanks);
+			this.applyCategoryGrant(DecisionKey.atLevel(kind, ownerId, i, this.getLevel()), grants.get(i),
+					selectedCategoryId, selectedSkillIds, additionalSkillRanks);
 		}
 	}
 
@@ -1285,12 +1360,14 @@ public class CharacterPlayer {
 	public void applyTrainingSkillChoices(Training training, Map<Integer, String> lifeSkillSelections,
 			Map<Integer, String> commonSkillSelections, Map<Integer, String> professionalSkillSelections,
 			Map<Integer, String> restrictedSkillSelections) {
-		final String prefix = "training:" + training.getId();
-		this.applyChoiceGroups(prefix + ":lifeSkill", training.getLifeSkills(), lifeSkillSelections);
-		this.applyChoiceGroups(prefix + ":commonSkill", training.getCommonSkills(), commonSkillSelections);
-		this.applyChoiceGroups(prefix + ":professionalSkill", training.getProfessionalSkills(),
-				professionalSkillSelections);
-		this.applyChoiceGroups(prefix + ":restrictedSkill", training.getRestrictedSkills(), restrictedSkillSelections);
+		this.applyChoiceGroups(DecisionKind.TRAINING_LIFE_SKILL, training.getId(), training.getLifeSkills(),
+				lifeSkillSelections);
+		this.applyChoiceGroups(DecisionKind.TRAINING_COMMON_SKILL, training.getId(), training.getCommonSkills(),
+				commonSkillSelections);
+		this.applyChoiceGroups(DecisionKind.TRAINING_PROFESSIONAL_SKILL, training.getId(),
+				training.getProfessionalSkills(), professionalSkillSelections);
+		this.applyChoiceGroups(DecisionKind.TRAINING_RESTRICTED_SKILL, training.getId(), training.getRestrictedSkills(),
+				restrictedSkillSelections);
 	}
 
 	/**
@@ -1298,7 +1375,8 @@ public class CharacterPlayer {
 	 * {@link Training#getLifeSkills()}.
 	 */
 	public List<String> getTrainingLifeSkills(Training training) {
-		return this.getDecidedOptions("training:" + training.getId() + ":lifeSkill", training.getLifeSkills().size());
+		return this.getDecidedOptions(DecisionKind.TRAINING_LIFE_SKILL, training.getId(),
+				training.getLifeSkills().size());
 	}
 
 	/**
@@ -1306,7 +1384,7 @@ public class CharacterPlayer {
 	 * {@link Training#getCommonSkills()}.
 	 */
 	public List<String> getTrainingCommonSkills(Training training) {
-		return this.getDecidedOptions("training:" + training.getId() + ":commonSkill",
+		return this.getDecidedOptions(DecisionKind.TRAINING_COMMON_SKILL, training.getId(),
 				training.getCommonSkills().size());
 	}
 
@@ -1315,7 +1393,7 @@ public class CharacterPlayer {
 	 * {@link Training#getProfessionalSkills()}.
 	 */
 	public List<String> getTrainingProfessionalSkills(Training training) {
-		return this.getDecidedOptions("training:" + training.getId() + ":professionalSkill",
+		return this.getDecidedOptions(DecisionKind.TRAINING_PROFESSIONAL_SKILL, training.getId(),
 				training.getProfessionalSkills().size());
 	}
 
@@ -1324,28 +1402,33 @@ public class CharacterPlayer {
 	 * {@link Training#getRestrictedSkills()}.
 	 */
 	public List<String> getTrainingRestrictedSkills(Training training) {
-		return this.getDecidedOptions("training:" + training.getId() + ":restrictedSkill",
+		return this.getDecidedOptions(DecisionKind.TRAINING_RESTRICTED_SKILL, training.getId(),
 				training.getRestrictedSkills().size());
 	}
 
-	private void applyChoiceGroups(String keyPrefix, List<ChoiceGroup> groups, Map<Integer, String> selections) {
+	private void applyChoiceGroups(DecisionKind kind, String ownerId, List<ChoiceGroup> groups,
+			Map<Integer, String> selections) {
 		for (int i = 0; i < groups.size(); i++) {
 			final ChoiceGroup group = groups.get(i);
 			final String selectedOption = selections == null ? null : selections.get(i);
-			this.decideOrReuse(keyPrefix + ":" + i, () -> group.resolve(selectedOption));
+			this.decideOrReuse(DecisionKey.atLevel(kind, ownerId, i, this.getLevel()),
+					() -> group.resolve(selectedOption));
 		}
 	}
 
 	/**
-	 * The selected option of every decision {@code keyPrefix + ":0"} through
-	 * {@code keyPrefix + ":" + (count - 1)}.
+	 * The selected option of every decision {@code DecisionKey.atLevel(kind, ownerId, i, level)}
+	 * taken so far, from the oldest level to the newest: a choice only made (or reused) at one level
+	 * yields that one option.
 	 */
-	private List<String> getDecidedOptions(String keyPrefix, int count) {
+	private List<String> getDecidedOptions(DecisionKind kind, String ownerId, int count) {
 		final List<String> selected = new ArrayList<>();
-		for (int i = 0; i < count; i++) {
-			final String option = this.decisions.getSelectedOption(keyPrefix + ":" + i);
-			if (option != null) {
-				selected.add(option);
+		for (int level = 1; level <= this.getLevel(); level++) {
+			for (int i = 0; i < count; i++) {
+				final String option = this.decisions.getSelectedOption(DecisionKey.atLevel(kind, ownerId, i, level));
+				if (option != null) {
+					selected.add(option);
+				}
 			}
 		}
 		return selected;
@@ -1354,25 +1437,26 @@ public class CharacterPlayer {
 	/**
 	 * Applies one of a training's "AUMENTOS CARACTERÍSTICAS" choices: resolves
 	 * which characteristic it applies to (reusing an already-made decision if
-	 * {@code key} was decided before), rolls 2d10 and increases that
+	 * {@code characteristicKey} was decided before), rolls 2d10 and increases that
 	 * characteristic's temporal value by
 	 * {@link Characteristic#getCharacteristicUpgrade}, recording the roll in the
 	 * current level.
 	 *
-	 * @param key
-	 *            a caller-chosen id identifying this specific choice uniquely for
-	 *            this character (e.g. {@code "training:scout:characteristic:0"}).
+	 * @param characteristicKey
+	 *            the structured id of this specific choice for this character and
+	 *            the current level (e.g.
+	 *            {@code DecisionKey.atLevel(TRAINING_CHARACTERISTIC, "scout", 0, 3)}).
 	 * @param group
 	 *            the characteristic choice to apply.
 	 * @param selectedCharacteristic
 	 *            the characteristic to use if {@code group} offers a choice and
-	 *            {@code key} has not been decided yet; ignored otherwise.
+	 *            {@code characteristicKey} has not been decided yet; ignored otherwise.
 	 * @return the recorded roll.
 	 */
-	public CharacteristicRoll applyCharacteristicUpgrade(String key, ChoiceGroup group,
+	public CharacteristicRoll applyCharacteristicUpgrade(DecisionKey characteristicKey, ChoiceGroup group,
 			CharacteristicAbbreviation selectedCharacteristic) {
 		final String selectedOption = selectedCharacteristic == null ? null : selectedCharacteristic.name();
-		final Decision decision = this.decideOrReuse(key, () -> group.resolve(selectedOption));
+		final Decision decision = this.decideOrReuse(characteristicKey, () -> group.resolve(selectedOption));
 		final CharacteristicAbbreviation abbreviation = CharacteristicAbbreviation
 				.valueOf(decision.getSelectedOption());
 
@@ -1398,13 +1482,13 @@ public class CharacterPlayer {
 
 	/**
 	 * Returns the existing decision for {@code key}, or resolves it via
-	 * {@code resolver} and records it.
+	 * {@code resolver} and records it at the current level.
 	 */
-	private Decision decideOrReuse(String key, Supplier<Decision> resolver) {
+	private Decision decideOrReuse(DecisionKey key, Supplier<Decision> resolver) {
 		if (this.decisions.isDecided(key)) {
 			return this.decisions.get(key);
 		}
-		final Decision decision = resolver.get();
+		final Decision decision = resolver.get().recordedAtLevel(this.getLevel());
 		this.decisions.set(key, decision);
 		return decision;
 	}
@@ -1441,9 +1525,17 @@ public class CharacterPlayer {
 	/** The legacy {@code PdfStandardSheet#MOST_USED_ATTACKS_LINES}: lines in the "most used attacks" table. */
 	public static final int MOST_USED_ATTACKS_LINES = 6;
 
-	private static final String OPTIONAL_RACE_LANGUAGE_PREFIX = "language:optionalRace:";
-	private static final String OPTIONAL_BACKGROUND_LANGUAGE_PREFIX = "language:optionalBackground:";
-	private static final String OPTIONAL_CULTURE_LANGUAGE_PREFIX = "language:optionalCulture:";
+	private static DecisionKey optionalRaceLanguageKey(int slotIndex) {
+		return DecisionKey.characterWide(DecisionKind.OPTIONAL_RACE_LANGUAGE, "", slotIndex);
+	}
+
+	private static DecisionKey optionalBackgroundLanguageKey(int slotIndex) {
+		return DecisionKey.characterWide(DecisionKind.OPTIONAL_BACKGROUND_LANGUAGE, "", slotIndex);
+	}
+
+	private static DecisionKey optionalCultureLanguageKey(int slotIndex) {
+		return DecisionKey.characterWide(DecisionKind.OPTIONAL_CULTURE_LANGUAGE, "", slotIndex);
+	}
 
 	/**
 	 * Skill-option markers in the migrated culture adolescence data standing for "any of the
@@ -1576,7 +1668,7 @@ public class CharacterPlayer {
 				|| this.isSkillRestrictedByRace(skill.getId())
 				|| (profession != null && profession.isRestrictedSkill(skill.getId()))
 				|| (profession != null && this.isSkillGrantedByProfessionChoice(skill.getId(),
-						PROFESSION_RESTRICTED_SKILLS_SECTION, profession.getRestrictedSkillChoices()))
+						DecisionKind.PROFESSION_RESTRICTED_SKILL, profession.getRestrictedSkillChoices()))
 				|| this.isSkillRestrictedByPerk(skill.getId());
 	}
 
@@ -1591,7 +1683,7 @@ public class CharacterPlayer {
 				|| this.isSkillCommonByRace(skill.getId())
 				|| (profession != null && profession.isCommonSkill(skill.getId()))
 				|| (profession != null && this.isSkillGrantedByProfessionChoice(skill.getId(),
-						PROFESSION_COMMON_SKILLS_SECTION, profession.getCommonSkillChoices()))
+						DecisionKind.PROFESSION_COMMON_SKILL, profession.getCommonSkillChoices()))
 				|| this.isSkillCommonByPerk(skill.getId());
 	}
 
@@ -1605,7 +1697,7 @@ public class CharacterPlayer {
 				|| this.isSkillGrantedByAnyTraining(skill.getId(), this::getTrainingProfessionalSkills)
 				|| (profession != null && profession.isProfessionalSkill(skill.getId()))
 				|| (profession != null && this.isSkillGrantedByProfessionChoice(skill.getId(),
-						PROFESSION_PROFESSIONAL_SKILLS_SECTION, profession.getProfessionalSkillChoices()));
+						DecisionKind.PROFESSION_PROFESSIONAL_SKILL, profession.getProfessionalSkillChoices()));
 	}
 
 	public boolean isFirearmsAllowed() {
@@ -1651,7 +1743,7 @@ public class CharacterPlayer {
 		final Profession profession = this.getProfession();
 		final int dataTierCount = profession == null ? 0 : profession.getWeaponCategoryCostTiers().size();
 		for (int index = this.getWeaponCategoryCostTierCount(); index < dataTierCount + FIREARMS_EXTRA_COST_TIERS; index++) {
-			this.decisions.remove(WEAPON_COST_TIER_KEY_PREFIX + index);
+			this.decisions.remove(weaponCostTierKey(index));
 		}
 	}
 
@@ -1678,8 +1770,8 @@ public class CharacterPlayer {
 	/** Frees the cost tier assigned to {@code weaponCategoryId} (see {@link #assignWeaponCategoryCostTier}). */
 	private void resetWeaponCategoryCostTier(String weaponCategoryId) throws InvalidXmlElementException {
 		for (int i = 0; i < this.getWeaponCategoryCostTierCount(); i++) {
-			if (weaponCategoryId.equals(this.decisions.getSelectedOption(WEAPON_COST_TIER_KEY_PREFIX + i))) {
-				this.decisions.remove(WEAPON_COST_TIER_KEY_PREFIX + i);
+			if (weaponCategoryId.equals(this.decisions.getSelectedOption(weaponCostTierKey(i)))) {
+				this.decisions.remove(weaponCostTierKey(i));
 			}
 		}
 	}
@@ -2195,7 +2287,37 @@ public class CharacterPlayer {
 	 *
 	 */
 	public Integer getSpentDevelopmentPoints() throws InvalidXmlElementException {
-		final LevelUp levelUp = this.getCurrentLevel();
+		return this.getSpentDevelopmentPointsAtLevelIndex(this.levels.size());
+	}
+
+	/**
+	 * Every development point spent in the first {@code level} levels (1-based, inclusive), i.e. the
+	 * cumulative spend accumulated by that level: every level's category ranks, skill ranks, and
+	 * trainings, each at its per-rank cost at the time (a spell list's ranks are priced at the ranks
+	 * the list had by the end of the previous level, exactly like {@link #getSpentDevelopmentPoints}
+	 * prices its current level). Unlike {@link #getSpentDevelopmentPoints}, this folds in every level
+	 * up to {@code level} instead of only the current one.
+	 *
+	 * @throws IllegalArgumentException if {@code level} is not a real level.
+	 */
+	public Integer getSpentDevelopmentPointsAtLevel(int level) throws InvalidXmlElementException {
+		if (level < 1 || level > this.levels.size()) {
+			throw new IllegalArgumentException(
+					"There is no level " + level + " on a " + this.levels.size() + "-level character.");
+		}
+		int total = 0;
+		for (int i = 1; i <= level; i++) {
+			total += this.getSpentDevelopmentPointsAtLevelIndex(i);
+		}
+		return total;
+	}
+
+	private Integer getSpentDevelopmentPointsAtLevelIndex(int level) throws InvalidXmlElementException {
+		if (level < 1 || level > this.levels.size()) {
+			throw new IllegalArgumentException(
+					"There is no level " + level + " on a " + this.levels.size() + "-level character.");
+		}
+		final LevelUp levelUp = this.levels.get(level - 1);
 		int total = 0;
 		for (final String categoryId : levelUp.getCategoriesWithRanks()) {
 			final int ranksThisLevel = levelUp.getCategoryRanks(categoryId);
@@ -2226,7 +2348,12 @@ public class CharacterPlayer {
 		}
 		for (final String spellListId : levelUp.getSpellListsWithRanks()) {
 			final int ranksThisLevel = levelUp.getSpellListRanks(spellListId);
-			final int ranksBeforeThisLevel = this.getSpellListTotalRanks(spellListId) - ranksThisLevel;
+			// The list's ranks bought before this level (level 1 has only hobby ranks
+			// to count), matching how {@link getSpentDevelopmentPoints} priced its
+			// current level via the total minus what this level itself bought.
+			final int ranksBeforeThisLevel = level == 1
+					? this.getHobbySpellListRank(spellListId)
+					: this.getSpellListTotalRanksAtLevel(spellListId, level - 1);
 			for (int i = 0; i < ranksThisLevel; i++) {
 				final Integer cost = this.getSpellListDevelopmentCost(spellListId, ranksBeforeThisLevel + i, i);
 				if (cost != null) {
@@ -2272,23 +2399,24 @@ public class CharacterPlayer {
 	 * (e.g. "Esencia/Canalización"), {@code selectedRealm} must be one of
 	 * {@link RealmOfMagicGrant#getOptions()}.
 	 *
-	 * @param key
-	 *            a caller-chosen id identifying this specific grant uniquely for
-	 *            this character (e.g. {@code "profession:sorcerer:realm:0"}),
-	 *            reused as-is on subsequent calls once a choice has been made.
+	 * @param realmKey
+	 *            the structured id of this specific grant for this character
+	 *            (e.g.
+	 *            {@code DecisionKey.characterWide(PROFESSION_REALM, "sorcerer", 0)})
+	 *            — a profession's realms are decided once, at creation.
 	 * @param grant
 	 *            the realm grant to resolve.
 	 * @param selectedRealm
-	 *            the realm to use if {@code grant} offers a choice and {@code key}
+	 *            the realm to use if {@code grant} offers a choice and {@code realmKey}
 	 *            has not been decided yet; ignored otherwise.
 	 */
-	public RealmOfMagic applyMagicRealmChoice(String key, RealmOfMagicGrant grant, RealmOfMagic selectedRealm) {
+	public RealmOfMagic applyMagicRealmChoice(DecisionKey realmKey, RealmOfMagicGrant grant, RealmOfMagic selectedRealm) {
 		final List<String> offeredRealms = new ArrayList<>();
 		for (final RealmOfMagic realm : grant.getOptions()) {
 			offeredRealms.add(realm.name());
 		}
 		final String selectedOption = selectedRealm == null ? null : selectedRealm.name();
-		final Decision decision = this.decideOrReuse(key,
+		final Decision decision = this.decideOrReuse(realmKey,
 				() -> grant.isChoice()
 						? Decision.select(offeredRealms, selectedOption)
 						: Decision.fixed(offeredRealms));
@@ -2298,11 +2426,10 @@ public class CharacterPlayer {
 	/**
 	 * Resolves every one of the selected profession's realm-of-magic grants (see
 	 * {@link #applyMagicRealmChoice}), keying each one's decision as
-	 * {@code "profession:" +
-	 * profession.getId() + ":realm:" + <index>}, and returns every resolved realm:
-	 * the character is a caster of all of them at once (as opposed to the
-	 * alternatives within a single hybrid grant, which are mutually exclusive).
-	 * Returns an empty list if no profession is selected.
+	 * {@code DecisionKey.characterWide(PROFESSION_REALM, professionId, <index>)},
+	 * and returns every resolved realm: the character is a caster of all of them
+	 * at once (as opposed to the alternatives within a single hybrid grant, which
+	 * are mutually exclusive). Returns an empty list if no profession is selected.
 	 *
 	 * @param realmSelections
 	 *            the realm to use for each grant (by its index in
@@ -2320,7 +2447,8 @@ public class CharacterPlayer {
 		final List<RealmOfMagicGrant> grants = profession.getMagicRealms();
 		for (int i = 0; i < grants.size(); i++) {
 			final RealmOfMagic selectedRealm = realmSelections == null ? null : realmSelections.get(i);
-			realms.add(this.applyMagicRealmChoice("profession:" + profession.getId() + ":realm:" + i, grants.get(i),
+			realms.add(this.applyMagicRealmChoice(
+					DecisionKey.characterWide(DecisionKind.PROFESSION_REALM, profession.getId(), i), grants.get(i),
 					selectedRealm));
 		}
 		return realms;
@@ -2406,9 +2534,12 @@ public class CharacterPlayer {
 			return List.of();
 		}
 		final List<RealmOfMagic> realms = new ArrayList<>();
-		for (final String tag : this.getDecidedOptions("profession:" + profession.getId() + ":realm",
-				profession.getMagicRealms().size())) {
-			realms.add(RealmOfMagic.valueOf(tag));
+		final List<RealmOfMagicGrant> grants = profession.getMagicRealms();
+		for (int i = 0; i < grants.size(); i++) {
+			final String tag = this.decisions.getSelectedOptionFor(DecisionKind.PROFESSION_REALM, profession.getId(), i);
+			if (tag != null) {
+				realms.add(RealmOfMagic.valueOf(tag));
+			}
 		}
 		return realms;
 	}
@@ -3073,11 +3204,12 @@ public class CharacterPlayer {
 	 * {@code languageId}.
 	 */
 	public void assignOptionalRaceLanguage(int slotIndex, String languageId) {
-		this.decisions.set(OPTIONAL_RACE_LANGUAGE_PREFIX + slotIndex, Decision.fixed(List.of(languageId)));
+		this.decisions.set(optionalRaceLanguageKey(slotIndex),
+				Decision.fixed(List.of(languageId)).recordedAtLevel(this.getLevel()));
 	}
 
 	public String getOptionalRaceLanguageAssignment(int slotIndex) {
-		return this.decisions.getSelectedOption(OPTIONAL_RACE_LANGUAGE_PREFIX + slotIndex);
+		return this.decisions.getSelectedOption(optionalRaceLanguageKey(slotIndex));
 	}
 
 	/**
@@ -3085,11 +3217,12 @@ public class CharacterPlayer {
 	 * {@link Race#getOptionalBackgroundLanguages()}.
 	 */
 	public void assignOptionalBackgroundLanguage(int slotIndex, String languageId) {
-		this.decisions.set(OPTIONAL_BACKGROUND_LANGUAGE_PREFIX + slotIndex, Decision.fixed(List.of(languageId)));
+		this.decisions.set(optionalBackgroundLanguageKey(slotIndex),
+				Decision.fixed(List.of(languageId)).recordedAtLevel(this.getLevel()));
 	}
 
 	public String getOptionalBackgroundLanguageAssignment(int slotIndex) {
-		return this.decisions.getSelectedOption(OPTIONAL_BACKGROUND_LANGUAGE_PREFIX + slotIndex);
+		return this.decisions.getSelectedOption(optionalBackgroundLanguageKey(slotIndex));
 	}
 
 	private int getOptionalRaceLanguageRanks(String languageId, Function<LanguageSlot, Integer> rankGetter,
@@ -3098,20 +3231,20 @@ public class CharacterPlayer {
 		if (race == null) {
 			return 0;
 		}
-		int best = this.matchingSlotRank(race.getOptionalRaceLanguages(), OPTIONAL_RACE_LANGUAGE_PREFIX, languageId,
+		int best = this.matchingSlotRank(race.getOptionalRaceLanguages(), i -> optionalRaceLanguageKey(i), languageId,
 				rankGetter);
 		if (includeBackgroundLanguages) {
 			best = Math.max(best, this.matchingSlotRank(race.getOptionalBackgroundLanguages(),
-					OPTIONAL_BACKGROUND_LANGUAGE_PREFIX, languageId, rankGetter));
+					i -> optionalBackgroundLanguageKey(i), languageId, rankGetter));
 		}
 		return best;
 	}
 
-	private int matchingSlotRank(List<LanguageSlot> slots, String keyPrefix, String languageId,
+	private int matchingSlotRank(List<LanguageSlot> slots, Function<Integer, DecisionKey> keyFactory, String languageId,
 			Function<LanguageSlot, Integer> rankGetter) {
 		int best = 0;
 		for (int i = 0; i < slots.size(); i++) {
-			if (languageId.equals(this.decisions.getSelectedOption(keyPrefix + i))) {
+			if (languageId.equals(this.decisions.getSelectedOption(keyFactory.apply(i)))) {
 				final Integer rank = rankGetter.apply(slots.get(i));
 				best = Math.max(best, rank == null ? 0 : rank);
 			}
@@ -3170,11 +3303,12 @@ public class CharacterPlayer {
 	 * see {@link #assignOptionalRaceLanguage}.
 	 */
 	public void assignOptionalCultureLanguage(int slotIndex, String languageId) {
-		this.decisions.set(OPTIONAL_CULTURE_LANGUAGE_PREFIX + slotIndex, Decision.fixed(List.of(languageId)));
+		this.decisions.set(optionalCultureLanguageKey(slotIndex),
+				Decision.fixed(List.of(languageId)).recordedAtLevel(this.getLevel()));
 	}
 
 	public String getOptionalCultureLanguageAssignment(int slotIndex) {
-		return this.decisions.getSelectedOption(OPTIONAL_CULTURE_LANGUAGE_PREFIX + slotIndex);
+		return this.decisions.getSelectedOption(optionalCultureLanguageKey(slotIndex));
 	}
 
 	private int getOptionalCultureLanguageMaxRanks(String languageId, Function<LanguageSlot, Integer> rankGetter)
@@ -3183,7 +3317,7 @@ public class CharacterPlayer {
 		if (culture == null) {
 			return 0;
 		}
-		return this.matchingSlotRank(culture.getOptionalLanguages(), OPTIONAL_CULTURE_LANGUAGE_PREFIX, languageId,
+		return this.matchingSlotRank(culture.getOptionalLanguages(), i -> optionalCultureLanguageKey(i), languageId,
 				rankGetter);
 	}
 
@@ -3467,7 +3601,10 @@ public class CharacterPlayer {
 		return true;
 	}
 
-	private static final String WEAPON_COST_TIER_KEY_PREFIX = "weaponCostTier:";
+	/** The structured key of the weapon-category cost tier decision (character-wide, chosen at creation). */
+	private static DecisionKey weaponCostTierKey(int tierIndex) {
+		return DecisionKey.characterWide(DecisionKind.WEAPON_COST_TIER, "", tierIndex);
+	}
 
 	/**
 	 * A character that allows firearms gets this many weapon cost tiers more than its profession defines,
@@ -3503,12 +3640,12 @@ public class CharacterPlayer {
 		if (!this.getWeaponCategoryIds().contains(weaponCategoryId)) {
 			throw new IllegalArgumentException("'" + weaponCategoryId + "' is not a real weapon category.");
 		}
-		this.decisions.set(WEAPON_COST_TIER_KEY_PREFIX + tierIndex, Decision.fixed(List.of(weaponCategoryId)));
+		this.decisions.set(weaponCostTierKey(tierIndex), Decision.fixed(List.of(weaponCategoryId)).recordedAtLevel(this.getLevel()));
 	}
 
 	/** Whether {@code tierIndex} has already been assigned to some weapon category (see {@link #assignWeaponCategoryCostTier}). */
 	public boolean isWeaponCategoryCostTierAssigned(int tierIndex) throws InvalidXmlElementException {
-		return this.decisions.isDecided(WEAPON_COST_TIER_KEY_PREFIX + tierIndex);
+		return this.decisions.isDecided(weaponCostTierKey(tierIndex));
 	}
 
 	/**
@@ -3529,7 +3666,7 @@ public class CharacterPlayer {
 		}
 		for (int index = 0; index < this.getWeaponCategoryCostTierCount(); index++) {
 			if (index != tierIndex) {
-				available.remove(this.decisions.getSelectedOption(WEAPON_COST_TIER_KEY_PREFIX + index));
+				available.remove(this.decisions.getSelectedOption(weaponCostTierKey(index)));
 			}
 		}
 		available.sort(String::compareTo);
@@ -3559,7 +3696,7 @@ public class CharacterPlayer {
 			return null;
 		}
 		for (int i = 0; i < this.getWeaponCategoryCostTierCount(); i++) {
-			if (weaponCategoryId.equals(this.decisions.getSelectedOption(WEAPON_COST_TIER_KEY_PREFIX + i))) {
+			if (weaponCategoryId.equals(this.decisions.getSelectedOption(weaponCostTierKey(i)))) {
 				return this.getWeaponCategoryCostTier(i);
 			}
 		}
@@ -3666,8 +3803,6 @@ public class CharacterPlayer {
 		return cost == null || cost <= this.getRemainingDevelopmentPoints();
 	}
 
-	private static final String PERK_CHOICE_KEY_PREFIX = "perk:";
-
 	/**
 	 * Resolves one of a selected perk's "choose N" grants ({@link PerkChoiceGrant},
 	 * the {@code "{...}"} entries of its "bonuses" column): a grant that already
@@ -3684,12 +3819,15 @@ public class CharacterPlayer {
 	 * single, fixed category as its "pool"), so a single {@code selectedTargetId}
 	 * per grant covers every real perk; future work if a perk ever needs more.</p>
 	 *
+	 * <p>A perk's choices are character-wide and decided once, at the level the perk
+	 * is taken.</p>
+	 *
 	 * @param perkId    the selected perk this grant belongs to.
 	 * @param grantIndex the grant's index within {@link Perk#getChoiceGrants()}.
 	 */
 	public String applyPerkChoiceGrant(String perkId, int grantIndex, PerkChoiceGrant grant, String selectedTargetId)
 			throws InvalidXmlElementException {
-		final String key = PERK_CHOICE_KEY_PREFIX + perkId + ":choice:" + grantIndex;
+		final DecisionKey key = DecisionKey.characterWide(DecisionKind.PERK_CHOICE, perkId, grantIndex);
 		final Decision decision = this.decideOrReuse(key, () -> {
 			if (grant.getCategoryId() != null) {
 				return Decision.fixed(List.of(grant.getCategoryId()));
@@ -3764,7 +3902,7 @@ public class CharacterPlayer {
 			final Perk perk = RulesCatalog.getInstance().getPerk(selectedPerk.getPerkId());
 			final List<PerkChoiceGrant> grants = perk.getChoiceGrants();
 			for (int i = 0; i < grants.size(); i++) {
-				final String key = PERK_CHOICE_KEY_PREFIX + perk.getId() + ":choice:" + i;
+				final DecisionKey key = DecisionKey.characterWide(DecisionKind.PERK_CHOICE, perk.getId(), i);
 				if (this.decisions.isDecided(key)) {
 					resolved.add(Map.entry(grants.get(i), this.decisions.get(key).getSelectedOption()));
 				}
@@ -3884,8 +4022,8 @@ public class CharacterPlayer {
 	 */
 	public void applyTrainingSpecialItem(Training training, int itemIndex) {
 		final TrainingSpecialItem item = training.getSpecialItems().get(itemIndex);
-		this.decisions.set("training:" + training.getId() + ":specialItem:" + itemIndex,
-				Decision.fixed(List.of(String.valueOf(itemIndex))));
+		this.decisions.set(DecisionKey.atLevel(DecisionKind.TRAINING_SPECIAL_ITEM, training.getId(), itemIndex,
+				this.getLevel()), Decision.fixed(List.of(String.valueOf(itemIndex))).recordedAtLevel(this.getLevel()));
 		if (item.isMagic()) {
 			this.addMagicItem(MagicObject.forTrainingSpecialItem(item));
 		} else {
@@ -4481,13 +4619,6 @@ public class CharacterPlayer {
 		return ids;
 	}
 
-	private static final String PROFESSION_SKILL_CHOICE_KEY_PREFIX = "profession:";
-
-	/** Section names used to namespace {@link #applyProfessionSkillGrant} decisions; see there. */
-	public static final String PROFESSION_COMMON_SKILLS_SECTION = "commonSkill";
-	public static final String PROFESSION_PROFESSIONAL_SKILLS_SECTION = "professionalSkill";
-	public static final String PROFESSION_RESTRICTED_SKILLS_SECTION = "restrictedSkill";
-
 	/**
 	 * Resolves one of the selected profession's "choose N skills from a category/list" grants
 	 * ({@link ProfessionSkillGrant}, one of {@link Profession#getCommonSkillChoices()}/{@link
@@ -4499,17 +4630,19 @@ public class CharacterPlayer {
 	 * classifies the same way as one of {@link Profession#getCommonSkillIds()}/etc. (see {@link
 	 * #isSkillCommon}/{@link #isSkillRestricted}/{@link #isSkillProfessional}).
 	 *
+	 * <p>A profession is decided once at creation, so every choice is character-wide.</p>
+	 *
 	 * @param professionId the selected profession this grant belongs to.
-	 * @param section       which of the three sections {@code grant} came from: {@link
-	 *                      #PROFESSION_COMMON_SKILLS_SECTION}/{@link
-	 *                      #PROFESSION_PROFESSIONAL_SKILLS_SECTION}/{@link
-	 *                      #PROFESSION_RESTRICTED_SKILLS_SECTION}.
-	 * @param grantIndex    the grant's index within that section's list.
+	 * @param kind         which of the three sections {@code grant} came from: {@link
+	 *                     DecisionKind#PROFESSION_COMMON_SKILL}/{@link
+	 *                     DecisionKind#PROFESSION_PROFESSIONAL_SKILL}/{@link
+	 *                     DecisionKind#PROFESSION_RESTRICTED_SKILL}.
+	 * @param grantIndex   the grant's index within that section's list.
 	 */
-	public List<String> applyProfessionSkillGrant(String professionId, String section, int grantIndex,
+	public List<String> applyProfessionSkillGrant(String professionId, DecisionKind kind, int grantIndex,
 												   ProfessionSkillGrant grant, List<String> selectedSkillIds)
 			throws InvalidXmlElementException {
-		final String key = PROFESSION_SKILL_CHOICE_KEY_PREFIX + professionId + ":" + section + ":" + grantIndex;
+		final DecisionKey key = DecisionKey.characterWide(kind, professionId, grantIndex);
 		final List<String> pool = this.getProfessionSkillGrantPool(grant);
 		final Decision decision = this.decideOrReuse(key,
 				() -> Decision.selectMultiple(pool, selectedSkillIds, grant.getRanksToChoose()));
@@ -4535,13 +4668,13 @@ public class CharacterPlayer {
 	 * the selected profession, granted {@code skillId}; {@code false} if no profession is selected,
 	 * it has no such grants, or none of them have been resolved yet.
 	 */
-	private boolean isSkillGrantedByProfessionChoice(String skillId, String section, List<ProfessionSkillGrant> grants) {
+	private boolean isSkillGrantedByProfessionChoice(String skillId, DecisionKind kind, List<ProfessionSkillGrant> grants) {
 		final Profession profession = this.tryGetSelectedProfession();
 		if (profession == null) {
 			return false;
 		}
 		for (int i = 0; i < grants.size(); i++) {
-			final String key = PROFESSION_SKILL_CHOICE_KEY_PREFIX + profession.getId() + ":" + section + ":" + i;
+			final DecisionKey key = DecisionKey.characterWide(kind, profession.getId(), i);
 			if (this.decisions.isDecided(key) && this.decisions.get(key).getSelectedOptions().contains(skillId)) {
 				return true;
 			}
@@ -4558,8 +4691,6 @@ public class CharacterPlayer {
 		}
 	}
 
-	private static final String ENABLE_SKILL_KEY_PREFIX = "skill:enables:";
-
 	/**
 	 * Resolves which of {@code enablingSkillId}'s {@link Skill#getEnableSkills()} gets unlocked once
 	 * it has ranks bought in it, when {@link Skill#isAllEnabled()} is {@code false} (an "or" choice,
@@ -4570,8 +4701,8 @@ public class CharacterPlayer {
 	 */
 	public void enableSkillOption(String enablingSkillId, String selectedEnabledSkillId) throws InvalidXmlElementException {
 		final Skill enablingSkill = RulesCatalog.getInstance().getSkill(enablingSkillId);
-		this.decideOrReuse(ENABLE_SKILL_KEY_PREFIX + enablingSkillId,
-				() -> Decision.select(enablingSkill.getEnableSkills(), selectedEnabledSkillId));
+		final DecisionKey key = DecisionKey.characterWide(DecisionKind.SKILL_ENABLE, enablingSkillId, 0);
+		this.decideOrReuse(key, () -> Decision.select(enablingSkill.getEnableSkills(), selectedEnabledSkillId));
 	}
 
 	/**
@@ -4593,7 +4724,7 @@ public class CharacterPlayer {
 			if (candidate.isAllEnabled()) {
 				return true;
 			}
-			final String key = ENABLE_SKILL_KEY_PREFIX + candidate.getId();
+			final DecisionKey key = DecisionKey.characterWide(DecisionKind.SKILL_ENABLE, candidate.getId(), 0);
 			if (this.decisions.isDecided(key) && skill.getId().equals(this.decisions.getSelectedOption(key))) {
 				return true;
 			}

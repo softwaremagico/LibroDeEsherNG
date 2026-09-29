@@ -4,6 +4,8 @@ import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.characteristic.Appearance;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.decision.Decision;
+import com.softwaremagico.librodeesher.decision.DecisionKey;
+import com.softwaremagico.librodeesher.decision.DecisionKind;
 import com.softwaremagico.librodeesher.persistence.CharacterDataMapper;
 import com.softwaremagico.librodeesher.persistence.CharacterJsonManager;
 import org.testng.Assert;
@@ -66,8 +68,8 @@ public class CharacterPdfExporterTest {
         character.getCurrentLevel().setSkillRanks("sword", 2, false);
         character.getCurrentLevel().setTrainings(List.of("martialArtist"));
         character.getCurrentLevel().getFavouriteSkills().add("sword");
-        character.getDecisions().set("training:martialArtist:category:0",
-                Decision.select(List.of("arms", "artistic", "athletic"), "arms"));
+        character.getDecisions().set(DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "martialArtist", 0, 1),
+                Decision.select(List.of("arms", "artistic", "athletic"), "arms").recordedAtLevel(1));
         return character;
     }
 }
