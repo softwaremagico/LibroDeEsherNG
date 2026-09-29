@@ -17,9 +17,6 @@ public final class PathManager {
      */
     public static final String MODULES_FOLDER = "modules";
 
-    /** Name of the file describing the available modules (id, display name, folder). */
-    public static final String MODULES_DEFINITION_FILE = "modules.xml";
-
     private PathManager() {
         // Utility class.
     }
@@ -27,7 +24,11 @@ public final class PathManager {
     /**
      * Returns the classpath folder for a given rulebook module, e.g. {@code "modules/Core/"}.
      *
-     * @param moduleName folder name of the module (as declared in {@code modules/modules.xml}), or
+     * <p>The module folder names are the ids declared in {@link ModuleManager} (which keeps the list
+     * in code rather than reading a descriptor file, so a module without any data file — the sample
+     * {@code Example} module — needs no folder at all).</p>
+     *
+     * @param moduleName folder name of the module, as declared in {@link ModuleManager}, or
      *                    {@code null} to get the root modules folder.
      */
     public static String getModulePath(String moduleName) {
@@ -35,10 +36,5 @@ public final class PathManager {
             return MODULES_FOLDER + "/";
         }
         return MODULES_FOLDER + "/" + moduleName + "/";
-    }
-
-    /** Returns the classpath path of the module definition file, e.g. {@code "modules/modules.xml"}. */
-    public static String getModulesDefinitionPath() {
-        return getModulePath(null) + MODULES_DEFINITION_FILE;
     }
 }

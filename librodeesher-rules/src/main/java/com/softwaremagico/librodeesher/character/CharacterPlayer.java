@@ -917,8 +917,17 @@ public class CharacterPlayer {
 	 * {@link #getCategoryDevelopmentBonus}) plus its per-rank perk bonus (see
 	 * {@link #getPerkSkillRankBonus(String)}) times its "real ranks" (see
 	 * {@link #getSkillRealRanks(Skill)}), plus the flat bonus the selected race
-	 * grants this skill (see {@link Race#getBonus(String)}), matching the legacy
-	 * {@code getSimpleBonus(Skill)} exactly.
+	 * grants this skill (see {@link Race#getBonus(String)}).
+	 *
+	 * <p>
+	 * The rank value is applied to the "real ranks" rather than to the raw bought ranks, so a skill
+	 * the character treats as common is worth twice, a professional one three times, a restricted one
+	 * half, and a generalized one half unless it is common or professional (see {@link
+	 * #getSkillRankMultiplier(Skill)}). This method is therefore the sum of the legacy {@code
+	 * getRanksValue(Skill)} (which fed {@code Skill#getRankValue} the real ranks) and {@code
+	 * getSimpleBonus(Skill)}, the legacy keeping both apart only to paint them in separate sheet
+	 * columns.
+	 * </p>
 	 *
 	 * <p>
 	 * {@code category}'s progression table is the skill's rank value, except for the two development
@@ -927,11 +936,11 @@ public class CharacterPlayer {
 	 * </p>
 	 */
 	public Integer getSkillDevelopmentBonus(Category category, String skillId) throws InvalidXmlElementException {
+		final Skill skill = this.resolveSkillOrNull(skillId);
+		final int realRanks = skill == null ? 0 : this.getSkillRealRanks(skill);
 		final Integer perkSkillRankBonus = this.getPerkSkillRankBonus(skillId);
-		final int perkRankTerm = perkSkillRankBonus == 0
-				? 0
-				: perkSkillRankBonus * this.getSkillRealRanks(RulesCatalog.getInstance().getSkill(skillId));
-		return this.getSkillRankValue(category, this.getSkillTotalRanks(skillId)) + this.getProfessionBonus(skillId)
+		final int perkRankTerm = perkSkillRankBonus == 0 ? 0 : perkSkillRankBonus * realRanks;
+		return this.getSkillRankValue(category, realRanks) + this.getProfessionBonus(skillId)
 				+ this.background.getSkillBonus(skillId) + this.getPerkSkillBonus(skillId)
 				+ this.getPerkSkillConditionalBonus(skillId) + this.getRaceSkillBonus(skillId) + perkRankTerm;
 	}
@@ -1789,11 +1798,22 @@ public class CharacterPlayer {
 		return this.getCategoryTotalRanks(skill.getCategoryId()) > 0 ? ranks * 2 : (int) (ranks * 1.5);
 	}
 
-	/** Total bonus for a specialization, replacing normal rank progression with specialized ranks. */
+	/**
+	 * Total bonus for a specialization, replacing normal rank progression with specialized ranks.
+	 *
+	 * <p>
+	 * The normal rank value is removed with the very same ranks {@link
+	 * #getSkillDevelopmentBonus(Category, String)} added it with, so only the flat bonuses, the item
+	 * bonuses and the specialized rank value survive.
+	 * </p>
+	 */
 	public Integer getSpecializedSkillTotalBonus(Category category, String skillId) throws InvalidXmlElementException {
-		final Skill skill = RulesCatalog.getInstance().getSkill(skillId);
-		final int normalRankBonus = this.getSkillRankValue(category, this.getSkillTotalRanks(skillId));
-		final int specializedRankBonus = this.getSkillRankValue(category, this.getSpecializedSkillRanks(skill));
+		final Skill skill = this.resolveSkillOrNull(skillId);
+		if (skill == null) {
+			return this.getSkillTotalBonus(category, skillId);
+		}
+		final int normalRankBonus = this.getSkillRankValue(category, this.getSkillRealRanks(skill));
+		final Integer specializedRankBonus = this.getSkillRankValue(category, this.getSpecializedSkillRanks(skill));
 		return this.getSkillTotalBonus(category, skillId) - normalRankBonus + specializedRankBonus;
 	}
 

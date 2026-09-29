@@ -1178,9 +1178,46 @@ public class CharacterPlayerTest {
 		final Category category = RulesCatalog.getInstance().getCategory("powerPointDevelopment");
 		Assert.assertEquals(character.getSkillRealRanks(skill), 5);
 
-		final Integer expected = category.getSkillRankBonus(character.getSkillTotalRanks("powerPointDevelopment"))
+		final Integer expected = category.getSkillRankBonus(character.getSkillRealRanks(skill))
 				+ 4 * 5;
 		Assert.assertEquals(character.getSkillDevelopmentBonus(category, "powerPointDevelopment"), expected);
+	}
+
+	@Test
+	public void skillRankValueUsesRealRanksSoACommonSkillIsWorthDoubleRanks() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("rogue");
+		final Skill skill = RulesCatalog.getInstance().getSkill("boxeo");
+		final Category category = RulesCatalog.getInstance().getCategory(skill.getCategoryId());
+		// "Boxeo" is one of a rogue's common skills, so its bought ranks count double and the
+		// category's progression table is applied to twice the bought ranks, exactly as the legacy
+		// getRanksValue(Skill) did by feeding Skill#getRankValue the real ranks. Comparing a character
+		// without ranks against the same character with two ranks cancels every flat bonus, so what
+		// is left is the rank value alone.
+		final int withoutRanks = character.getSkillDevelopmentBonus(category, skill.getId());
+		character.getCurrentLevel().setSkillRanks(skill.getId(), 2, false);
+		final int withRanks = character.getSkillDevelopmentBonus(category, skill.getId());
+
+		Assert.assertTrue(character.isSkillCommon(skill));
+		Assert.assertEquals(character.getSkillTotalRanks(skill.getId()), Integer.valueOf(2));
+		Assert.assertEquals(character.getSkillRealRanks(skill), 4);
+		Assert.assertEquals(withRanks - withoutRanks,
+				category.getSkillRankBonus(4) - category.getSkillRankBonus(0));
+	}
+
+	@Test
+	public void skillRankValueUsesBoughtRanksForAStandardSkill() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		final Skill skill = RulesCatalog.getInstance().getSkill("tracking");
+		final Category category = RulesCatalog.getInstance().getCategory(skill.getCategoryId());
+		// A standard skill has no multiplier, so the table is applied to the bought ranks.
+		final int withoutRanks = character.getSkillDevelopmentBonus(category, skill.getId());
+		character.getCurrentLevel().setSkillRanks(skill.getId(), 2, false);
+		final int withRanks = character.getSkillDevelopmentBonus(category, skill.getId());
+
+		Assert.assertEquals(character.getSkillRealRanks(skill), 2);
+		Assert.assertEquals(withRanks - withoutRanks,
+				category.getSkillRankBonus(2) - category.getSkillRankBonus(0));
 	}
 
 	@Test
