@@ -76,6 +76,50 @@ public class CharacterDataMapperTest {
 		Assert.assertTrue(isSorted(new ArrayList<>(data.getLevels().get(0).getCategoryRanks().keySet())));
 	}
 
+	@Test
+	public void toDataAtLevelAtTheCurrentLevelEquatesToData() throws InvalidXmlElementException {
+		final CharacterPlayer character = newFullyPopulatedCharacter();
+		final CharacterData atCurrentLevel = CharacterDataMapper.toDataAtLevel(character, character.getLevel());
+		Assert.assertEquals(CharacterJsonManager.toJson(atCurrentLevel),
+				CharacterJsonManager.toJson(CharacterDataMapper.toData(character)));
+	}
+
+	@Test
+	public void toDataAtLevelReconstructsTheCharacterAsItWasAtThatLevel() throws InvalidXmlElementException {
+		final CharacterPlayer character = newFullyPopulatedCharacter();
+		final CharacterData atLevelOne = CharacterDataMapper.toDataAtLevel(character, 1);
+
+		// Only the first level is kept, with the age and (reconstructed) characteristics of then.
+		Assert.assertEquals(atLevelOne.getLevels().size(), 1);
+		Assert.assertEquals(atLevelOne.getCurrentAge(), character.getAgeAtLevel(1));
+		Assert.assertEquals(atLevelOne.getFinalAge(), character.getAgeAtLevel(1));
+		for (final CharacteristicAbbreviation abbreviation : realCharacteristics()) {
+			Assert.assertEquals(atLevelOne.getCharacteristicTemporalValues().get(abbreviation.name()),
+					character.getCharacteristicTemporalValueAtLevel(abbreviation, 1));
+			Assert.assertEquals(atLevelOne.getCharacteristicPotentialValues().get(abbreviation.name()),
+					character.getCharacteristicPotentialValueAtLevel(abbreviation, 1));
+		}
+
+		// Only the decisions taken at or before level 1 survive.
+		Assert.assertEquals(atLevelOne.getDecisions().size(), 3);
+		Assert.assertTrue(atLevelOne.getDecisions().containsKey(
+				DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "martialArtist", 0, 1).toString()));
+
+		// Reimporting the snapshot restores a character stuck at level 1.
+		final CharacterPlayer stuck = CharacterDataMapper.toCharacter(atLevelOne);
+		Assert.assertEquals(stuck.getLevel(), 1);
+		Assert.assertEquals(stuck.getAgeAtLevel(1), character.getAgeAtLevel(1));
+	}
+
+	@Test
+	public void levelAgesSurviveTheRoundTrip() throws InvalidXmlElementException {
+		final CharacterPlayer character = newFullyPopulatedCharacter();
+		final CharacterPlayer restored = CharacterDataMapper.toCharacter(CharacterDataMapper.toData(character));
+		for (int i = 1; i <= character.getLevel(); i++) {
+			Assert.assertEquals(restored.getAgeAtLevel(i), character.getAgeAtLevel(i));
+		}
+	}
+
 	public static CharacterPlayer newFullyPopulatedCharacter() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.setName("Ánforo Élfico");

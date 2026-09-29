@@ -36,6 +36,25 @@ public final class CharacterDataMapper {
 
     /** Snapshots {@code character} into a flat {@link CharacterData}. */
     public static CharacterData toData(CharacterPlayer character) {
+        return toDataAtLevel(character, character.getLevel());
+    }
+
+    /**
+     * Snapshots {@code character} as it was at the end of level {@code level} (1-based, inclusive):
+     * the first {@code level} levels, only the decisions recorded up to that level, the
+     * characteristic temporal/potential values reconstructed with
+     * {@link CharacterPlayer#getCharacteristicTemporalValueAtLevel}/{@link
+     * CharacterPlayer#getCharacteristicPotentialValueAtLevel}, and the age the character had then
+     * ({@link CharacterPlayer#getAgeAtLevel}) - with no aging left pending, since the aging into
+     * the next level has not happened yet at that point.
+     *
+     * @throws IllegalArgumentException if {@code level} is not a real level of {@code character}.
+     */
+    public static CharacterData toDataAtLevel(CharacterPlayer character, int level) {
+        if (level < 1 || level > character.getLevel()) {
+            throw new IllegalArgumentException(
+                    "There is no level " + level + " on a " + character.getLevel() + "-level character.");
+        }
         final CharacterData data = new CharacterData();
         data.setName(character.getName());
         data.setSex(character.getSex());
@@ -47,30 +66,20 @@ public final class CharacterDataMapper {
         final Map<String, Integer> temporalValues = new TreeMap<>();
         final Map<String, Integer> potentialValues = new TreeMap<>();
         for (final CharacteristicAbbreviation abbreviation : realCharacteristics()) {
-            temporalValues.put(abbreviation.name(), character.getCharacteristicTemporalValue(abbreviation));
-            potentialValues.put(abbreviation.name(), character.getCharacteristicPotentialValue(abbreviation));
+            temporalValues.put(abbreviation.name(), character.getCharacteristicTemporalValueAtLevel(abbreviation, level));
+            potentialValues.put(abbreviation.name(), character.getCharacteristicPotentialValueAtLevel(abbreviation, level));
         }
         data.setCharacteristicTemporalValues(temporalValues);
         data.setCharacteristicPotentialValues(potentialValues);
         data.setCharacteristicsConfirmed(character.isCharacteristicsConfirmed());
         data.setAppearance(character.getAppearance().getDicesResult());
-        data.setCurrentAge(character.getCurrentAge());
-        data.setFinalAge(character.getFinalAge());
+        final int ageAtLevel = character.getAgeAtLevel(level);
+        data.setCurrentAge(ageAtLevel);
+        data.setFinalAge(ageAtLevel);
 
         final List<LevelData> levels = new ArrayList<>();
-        for (final LevelUp levelUp : character.getLevels()) {
-            final LevelData levelData = new LevelData();
-            levelData.setCategoryRanks(new TreeMap<>(levelUp.getCategoryRanks()));
-            levelData.setSkillRanks(new TreeMap<>(levelUp.getSkillRanks()));
-            levelData.setSpellListRanks(new TreeMap<>(levelUp.getSpellListRanks()));
-            levelData.setGeneralizedSkills(sorted(levelUp.getGeneralizedSkills()));
-            levelData.setSpellsUpdated(new ArrayList<>(levelUp.getSpellsUpdated()));
-            levelData.setTrainings(new ArrayList<>(levelUp.getTrainings()));
-            levelData.setSkillSpecializations(sorted(levelUp.getSkillSpecializations()));
-            levelData.setFavouriteSkills(sorted(levelUp.getFavouriteSkills()));
-            levelData.setCharacteristicUpdates(new ArrayList<>(levelUp.getCharacteristicUpdates()));
-            levelData.setAgeModifications(new ArrayList<>(levelUp.getAgeModifications()));
-            levels.add(levelData);
+        for (int i = 0; i < level; i++) {
+            levels.add(toLevelData(character.getLevels().get(i)));
         }
         data.setLevels(levels);
 
@@ -86,13 +95,16 @@ public final class CharacterDataMapper {
         for (final Map.Entry<DecisionKey, Decision> entry : character.getDecisions().getAll().entrySet()) {
             final Decision decision = entry.getValue();
             // A decision set without a level (only hand-built characters do that) is
-            // assumed to have been taken at the current level.
+            // assumed to have been taken at the level being snapshotted.
             final int recordedAtLevel = decision.getRecordedAtLevel() == DecisionKey.CHARACTER_WIDE
-                    ? character.getLevel()
+                    ? level
                     : decision.getRecordedAtLevel();
-            decisionData.put(entry.getKey().toString(), new DecisionData(new DecisionKeyData(entry.getKey()),
-                    recordedAtLevel, new ArrayList<>(decision.getOfferedOptions()),
-                    new ArrayList<>(decision.getSelectedOptions())));
+            // Only the decisions taken up to and including this level existed then.
+            if (recordedAtLevel <= level) {
+                decisionData.put(entry.getKey().toString(), new DecisionData(new DecisionKeyData(entry.getKey()),
+                        recordedAtLevel, new ArrayList<>(decision.getOfferedOptions()),
+                        new ArrayList<>(decision.getSelectedOptions())));
+            }
         }
         data.setDecisions(decisionData);
 
@@ -112,6 +124,23 @@ public final class CharacterDataMapper {
         data.setDarkSpellsAsBasicListsAllowed(character.isDarkSpellsAsBasicListsAllowed());
         data.setRecommendedFavouriteSkillsIncluded(character.isRecommendedFavouriteSkillsIncluded());
         return data;
+    }
+
+    /** Flattens one level's bookkeeping into a sort-stable {@link LevelData}. */
+    private static LevelData toLevelData(LevelUp levelUp) {
+        final LevelData levelData = new LevelData();
+        levelData.setCategoryRanks(new TreeMap<>(levelUp.getCategoryRanks()));
+        levelData.setSkillRanks(new TreeMap<>(levelUp.getSkillRanks()));
+        levelData.setSpellListRanks(new TreeMap<>(levelUp.getSpellListRanks()));
+        levelData.setGeneralizedSkills(sorted(levelUp.getGeneralizedSkills()));
+        levelData.setSpellsUpdated(new ArrayList<>(levelUp.getSpellsUpdated()));
+        levelData.setTrainings(new ArrayList<>(levelUp.getTrainings()));
+        levelData.setSkillSpecializations(sorted(levelUp.getSkillSpecializations()));
+        levelData.setFavouriteSkills(sorted(levelUp.getFavouriteSkills()));
+        levelData.setCharacteristicUpdates(new ArrayList<>(levelUp.getCharacteristicUpdates()));
+        levelData.setAgeModifications(new ArrayList<>(levelUp.getAgeModifications()));
+        levelData.setAge(levelUp.getAge());
+        return levelData;
     }
 
     /** Rebuilds a {@link CharacterPlayer} from a {@link CharacterData} snapshot. */
@@ -225,19 +254,22 @@ public final class CharacterDataMapper {
                     roll.getCharacteristicPotentialValue(), roll.getRoll());
         }
         levelUp.getAgeModifications().addAll(levelData.getAgeModifications());
+        levelUp.setAge(levelData.getAge());
         return levelUp;
     }
 
     /**
      * A byte-stable fingerprint of everything that defines a character's identity at creation time
-     * (identity fields, characteristics, appearance, ages, background, perks and flags), without any
-     * of the state that grows with each level (level bookkeeping, hobby ranks, equipment, magic
-     * items and decisions). Two copies of the same character share the fingerprint regardless of how
-     * many levels they have progressed, which is what {@link LevelJsonManager} uses to accept a
-     * shared level for the right character.
+     * (identity fields, characteristics, appearance, background, perks and flags), without any of
+     * the state that grows with each level (level bookkeeping, hobby ranks, equipment, magic items,
+     * decisions and the age, which advances with every level). Two copies of the same character
+     * share the fingerprint regardless of how many levels they have progressed, which is what
+     * {@link LevelJsonManager} uses to accept a shared level for the right character.
      */
     public static String toIdentitySnapshot(CharacterPlayer character) {
         final CharacterData data = toData(character);
+        data.setCurrentAge(0);
+        data.setFinalAge(0);
         data.setLevels(new ArrayList<>());
         data.setDecisions(new LinkedHashMap<>());
         data.setHobbySkillRanks(new LinkedHashMap<>());

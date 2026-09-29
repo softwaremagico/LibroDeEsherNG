@@ -3,6 +3,7 @@ package com.softwaremagico.librodeesher.character;
 import com.softwaremagico.librodeesher.age.AgeModification;
 import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.category.CategoryType;
+import com.softwaremagico.librodeesher.characteristic.Characteristic;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicRoll;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
@@ -2723,5 +2724,104 @@ public class CharacterPlayerTest {
 		Assert.assertEquals(character.getCategorySkillsWithRanks(selfControl), List.of("frenzy"));
 		Assert.assertFalse(character.hasCommonOrProfessionalSkills(
 				RulesCatalog.getInstance().getCategory("outdoorAnimals")));
+	}
+
+	@Test
+	public void reconstructsTheCharacteristicValuesAtAnEarlierLevel() {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.STRENGTH, 50);
+		character.setCharacteristicPotentialValue(CharacteristicAbbreviation.STRENGTH, 60);
+
+		final LevelUp firstLevel = character.getCurrentLevel();
+		final Roll firstRoll = Roll.of(4, 6);
+		final int firstUpgrade = Characteristic.getCharacteristicUpgrade(50, 60, firstRoll);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.STRENGTH, 50 + firstUpgrade);
+		firstLevel.addCharacteristicUpdate(CharacteristicAbbreviation.STRENGTH, 50, 60, firstRoll);
+
+		final LevelUp secondLevel = character.increaseLevel();
+		final int temporalAfterFirstLevel = 50 + firstUpgrade;
+		final Roll secondRoll = Roll.of(5, 6);
+		final int secondUpgrade = Characteristic.getCharacteristicUpgrade(temporalAfterFirstLevel, 60, secondRoll);
+		character.setCharacteristicTemporalValue(CharacteristicAbbreviation.STRENGTH, temporalAfterFirstLevel + secondUpgrade);
+		secondLevel.addCharacteristicUpdate(CharacteristicAbbreviation.STRENGTH, temporalAfterFirstLevel, 60, secondRoll);
+
+		// At the end of level 1 only the first upgrade has been applied; at the end of level 2 both.
+		Assert.assertEquals(character.getCharacteristicTemporalValueAtLevel(CharacteristicAbbreviation.STRENGTH, 1),
+				Integer.valueOf(temporalAfterFirstLevel));
+		Assert.assertEquals(character.getCharacteristicTemporalValueAtLevel(CharacteristicAbbreviation.STRENGTH, 2),
+				Integer.valueOf(temporalAfterFirstLevel + secondUpgrade));
+		// Upgrades never move the potential value.
+		Assert.assertEquals(character.getCharacteristicPotentialValueAtLevel(CharacteristicAbbreviation.STRENGTH, 1),
+				Integer.valueOf(60));
+		Assert.assertEquals(character.getCharacteristicPotentialValueAtLevel(CharacteristicAbbreviation.STRENGTH, 2),
+				Integer.valueOf(60));
+		// A characteristic never developed keeps its initial value.
+		Assert.assertEquals(character.getCharacteristicTemporalValueAtLevel(CharacteristicAbbreviation.AGILITY, 1),
+				Integer.valueOf(Characteristics.INITIAL_CHARACTERISTIC_VALUE));
+		Assert.assertThrows(IllegalArgumentException.class,
+				() -> character.getCharacteristicTemporalValueAtLevel(CharacteristicAbbreviation.STRENGTH, 3));
+	}
+
+	@Test
+	public void reconstructsTheCharacteristicValuesBackAcrossAgeModifications() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("lionCentaur"); // expectedLifeYears=100, raceType=2
+		for (final CharacteristicAbbreviation abbreviation : realCharacteristics()) {
+			character.rollCharacteristicPotentialValue(abbreviation);
+		}
+		final Map<CharacteristicAbbreviation, Integer> temporalBefore = new HashMap<>();
+		final Map<CharacteristicAbbreviation, Integer> potentialBefore = new HashMap<>();
+		for (final CharacteristicAbbreviation abbreviation : realCharacteristics()) {
+			temporalBefore.put(abbreviation, character.getCharacteristicTemporalValue(abbreviation));
+			potentialBefore.put(abbreviation, character.getCharacteristicPotentialValue(abbreviation));
+		}
+		character.setCurrentAge(99);
+		character.setFinalAge(100);
+
+		character.increaseLevel(); // the aging into level 2 is recorded on level 1 and applied
+
+		Assert.assertEquals(character.getLevel(), 2);
+		final List<AgeModification> ageModifications = character.getLevels().get(0).getAgeModifications();
+		Assert.assertTrue(ageModifications.size() >= 1);
+		for (final AgeModification ageModification : ageModifications) {
+			final CharacteristicAbbreviation affected = ageModification.getCharacteristicAbbreviation();
+			final int modification = ageModification.getCharacteristicModification();
+			// At the end of level 1 the aging into level 2 has not happened yet.
+			Assert.assertEquals(character.getCharacteristicTemporalValueAtLevel(affected, 1), temporalBefore.get(affected));
+			Assert.assertEquals(character.getCharacteristicPotentialValueAtLevel(affected, 1), potentialBefore.get(affected));
+			// By the end of level 2 it has: the temporal value lost the full modification, the
+			// potential value a third of it.
+			Assert.assertEquals(character.getCharacteristicTemporalValueAtLevel(affected, 2),
+					Integer.valueOf(temporalBefore.get(affected) - modification));
+			Assert.assertEquals(character.getCharacteristicPotentialValueAtLevel(affected, 2),
+					Integer.valueOf(potentialBefore.get(affected) - modification / 3));
+		}
+	}
+
+	@Test
+	public void ageAtLevelFollowsTheAgingBetweenLevels() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		Assert.assertEquals(character.getAgeAtLevel(1), AgeModification.INITIAL_AGE);
+		character.setRaceId("warTroll");
+		character.setCurrentAge(30);
+		character.setFinalAge(31);
+
+		character.increaseLevel();
+
+		Assert.assertEquals(character.getCurrentAge(), 31);
+		Assert.assertEquals(character.getAgeAtLevel(1), 30);
+		Assert.assertEquals(character.getAgeAtLevel(2), 31);
+		Assert.assertThrows(IllegalArgumentException.class, () -> character.getAgeAtLevel(3));
+	}
+
+	private static List<CharacteristicAbbreviation> realCharacteristics() {
+		final List<CharacteristicAbbreviation> abbreviations = new ArrayList<>();
+		for (final CharacteristicAbbreviation abbreviation : CharacteristicAbbreviation.values()) {
+			if (abbreviation != CharacteristicAbbreviation.NONE
+					&& abbreviation != CharacteristicAbbreviation.REALM_OF_MAGIC) {
+				abbreviations.add(abbreviation);
+			}
+		}
+		return abbreviations;
 	}
 }

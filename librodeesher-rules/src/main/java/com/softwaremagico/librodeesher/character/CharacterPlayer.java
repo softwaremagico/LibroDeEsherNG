@@ -179,6 +179,8 @@ public class CharacterPlayer {
 		}
 		// Every character starts at level 1.
 		this.levels.add(new LevelUp());
+		// Level 1 is developed at the character's initial age.
+		this.levels.get(0).setAge(this.currentAge);
 	}
 
 	private static List<CharacteristicAbbreviation> allRealCharacteristics() {
@@ -476,6 +478,11 @@ public class CharacterPlayer {
 
 	public void setCurrentAge(int currentAge) {
 		this.currentAge = currentAge;
+		// The age always describes the character as it is now, i.e. during its current level; keep
+		// the level in sync so the age at every level can be reconstructed later (getAgeAtLevel).
+		if (!this.levels.isEmpty()) {
+			this.getCurrentLevel().setAge(currentAge);
+		}
 	}
 
 	public int getFinalAge() {
@@ -557,6 +564,8 @@ public class CharacterPlayer {
 		if (!this.levels.isEmpty()) {
 			levelUp.setFavouriteSkills(new HashSet<>(this.getCurrentLevel().getFavouriteSkills()));
 		}
+		// The new level is developed at the age reached after aging (see getAgeAtLevel).
+		levelUp.setAge(this.currentAge);
 		this.levels.add(levelUp);
 		return levelUp;
 	}
@@ -669,6 +678,93 @@ public class CharacterPlayer {
 					"There is no level " + level + " on a " + this.levels.size() + "-level character.");
 		}
 		return level;
+	}
+
+	/**
+	 * The age the character had while developing {@code level} (1-based): the initial age for level
+	 * 1, and, for every later level, the age reached after the aging that preceded the level-up
+	 * (see {@link #increaseLevel()}).
+	 *
+	 * @throws IllegalArgumentException if {@code level} is not a real level.
+	 */
+	public int getAgeAtLevel(int level) {
+		this.levelIndex(level);
+		return this.levels.get(level - 1).getAge();
+	}
+
+	/**
+	 * The {@code abbreviation}'s temporal value at the end of {@code level} (1-based, inclusive),
+	 * i.e. before the aging that precedes the level-up into {@code level + 1}. Reconstructed by
+	 * walking the recorded characteristic updates and age modifications back from the current value,
+	 * so it is exact for a fully recorded development history. See
+	 * {@link #getCharacteristicPotentialValueAtLevel} for the potential value.
+	 *
+	 * @throws IllegalArgumentException if {@code level} is not a real level.
+	 */
+	public Integer getCharacteristicTemporalValueAtLevel(CharacteristicAbbreviation abbreviation, int level) {
+		this.levelIndex(level);
+		return temporalValuesAtLevel(level).getOrDefault(abbreviation, 0);
+	}
+
+	/**
+	 * The {@code abbreviation}'s potential value at the end of {@code level} (1-based, inclusive),
+	 * i.e. before the aging that precedes the level-up into {@code level + 1}. Only the age
+	 * modifications move the potential value (a third of the temporal change each, see
+	 * {@link #increaseAge()}); characteristic upgrades do not.
+	 *
+	 * @throws IllegalArgumentException if {@code level} is not a real level.
+	 */
+	public Integer getCharacteristicPotentialValueAtLevel(CharacteristicAbbreviation abbreviation, int level) {
+		this.levelIndex(level);
+		return potentialValuesAtLevel(level).getOrDefault(abbreviation, 0);
+	}
+
+	/**
+	 * Reconstructs the temporal values at the end of {@code level} from the current ones: for every
+	 * level above it, reverses that level's characteristic updates (each roll records the value
+	 * right before it, so undoing them in reverse restores the value at the level's start) and then
+	 * the aging suffered while advancing into it (recorded on the previous level, see
+	 * {@link #increaseAge()}). The clamp in {@link #increaseAge()} never triggers while the temporal
+	 * value stays at or below the potential value, so the reversal is exact.
+	 */
+	private Map<CharacteristicAbbreviation, Integer> temporalValuesAtLevel(int level) {
+		final Map<CharacteristicAbbreviation, Integer> values = new EnumMap<>(this.characteristicTemporalValues);
+		for (int lvl = this.levels.size(); lvl > level; lvl--) {
+			final List<CharacteristicRoll> updates = this.levels.get(lvl - 1).getCharacteristicUpdates();
+			for (int i = updates.size() - 1; i >= 0; i--) {
+				final CharacteristicRoll roll = updates.get(i);
+				values.put(roll.getCharacteristicAbbreviation(), roll.getCharacteristicTemporalValue());
+			}
+			undoAgeModifications(values, lvl - 2, true);
+		}
+		return values;
+	}
+
+	/** The potential-value counterpart of {@link #temporalValuesAtLevel}. */
+	private Map<CharacteristicAbbreviation, Integer> potentialValuesAtLevel(int level) {
+		final Map<CharacteristicAbbreviation, Integer> values = new EnumMap<>(this.characteristicPotentialValues);
+		for (int lvl = this.levels.size(); lvl > level; lvl--) {
+			undoAgeModifications(values, lvl - 2, false);
+		}
+		return values;
+	}
+
+	/**
+	 * Reverses the age modifications recorded on {@code levelIndex} (0-based), the aging suffered
+	 * while advancing from that level into the next one: the temporal value grows back by the full
+	 * modification, and the potential value by a third of it when {@code temporalOnly} is false.
+	 */
+	private void undoAgeModifications(Map<CharacteristicAbbreviation, Integer> values, int levelIndex,
+			boolean temporalOnly) {
+		if (levelIndex < 0) {
+			return;
+		}
+		for (final AgeModification ageModification : this.levels.get(levelIndex).getAgeModifications()) {
+			final CharacteristicAbbreviation abbreviation = ageModification.getCharacteristicAbbreviation();
+			final int modification = ageModification.getCharacteristicModification();
+			values.put(abbreviation, values.getOrDefault(abbreviation, 0)
+					+ (temporalOnly ? modification : modification / 3));
+		}
 	}
 
 	/**

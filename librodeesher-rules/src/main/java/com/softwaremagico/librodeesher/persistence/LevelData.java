@@ -46,6 +46,9 @@ public final class LevelData {
     @JsonProperty("ageModifications")
     private List<AgeModification> ageModifications = new ArrayList<>();
 
+    @JsonProperty("age")
+    private int age;
+
     public LevelData() {
         // Required by deserialization frameworks.
     }
@@ -128,5 +131,13 @@ public final class LevelData {
 
     public void setAgeModifications(List<AgeModification> ageModifications) {
         this.ageModifications = ageModifications;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

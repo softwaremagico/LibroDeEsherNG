@@ -48,6 +48,14 @@ public class LevelUp {
     private List<CharacteristicRoll> characteristicUpdates = new ArrayList<>();
     @JsonProperty("ageModifications")
     private List<AgeModification> ageModifications = new ArrayList<>();
+    /**
+     * The age the character had while developing this level: the initial age for level 1, and the age
+     * reached after aging for every level created by
+     * {@code CharacterPlayer#increaseLevel()}. It is the age {@code CharacterPlayer#getAgeAtLevel}
+     * reports when reconstructing the character at this level.
+     */
+    @JsonProperty("age")
+    private int age;
 
     public Integer getCategoryRanks(String categoryId) {
         return categoryRanks.getOrDefault(categoryId, 0);
@@ -299,5 +307,13 @@ public class LevelUp {
 
     public void addAgeModification(AgeModification ageModification) {
         ageModifications.add(ageModification);
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
