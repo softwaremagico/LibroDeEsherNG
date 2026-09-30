@@ -97,21 +97,29 @@ public final class LegacyCharacterJsonImporter {
         setCharacteristicsAndAge(data, root);
 
         final List<LevelData> levels = new ArrayList<>();
-        levels.add(buildLevelOne(rulesCatalog, root, categoryIds, skillIds, spellListIds, data.getCultureId()));
-        for (int i = 1; i < 6; i++) {
+        // A 2.x save may fold the early levels into a single merged "inserted" record: the
+        // character then keeps that development on level insertedLevels and one real level-up per
+        // remaining entry, with the levels in between left empty as the legacy application did.
+        final int inserted = insertedLevels(root);
+        levels.add(inserted == 0
+                ? buildLevelOne(rulesCatalog, root, categoryIds, skillIds, spellListIds, data.getCultureId())
+                : buildCultureLevelOne(rulesCatalog, root, categoryIds, skillIds, data.getCultureId()));
+        for (int i = 1; i < inserted - 1; i++) {
             levels.add(emptyLevel(data.getCurrentAge()));
         }
-        levels.add(buildInsertedLevel(root, categoryIds, skillIds, spellListIds, data.getCurrentAge()));
-        final JsonNode levelUps = required(root, "levelUps");
-        levels.add(fromLevelUp(levelUps.get(1), categoryIds, skillIds, spellListIds, trainingIds,
-                data.getCurrentAge()));
-        levels.add(fromLevelUp(levelUps.get(2), categoryIds, skillIds, spellListIds, trainingIds,
-                data.getCurrentAge()));
+        if (inserted > 0) {
+            levels.add(buildInsertedLevel(root, categoryIds, skillIds, spellListIds, data.getCurrentAge()));
+        }
+        for (final JsonNode levelUp : required(root, "levelUps")) {
+            levels.add(fromLevelUp(levelUp, categoryIds, skillIds, spellListIds, trainingIds,
+                    data.getCurrentAge()));
+        }
         data.setLevels(levels);
 
         final BackgroundData background = new BackgroundData();
-        background.setCategoryIds(List.of(requireResolved("Influencia", categoryIds)));
+        background.setCategoryIds(resolveRequiredNames(root.path("background").path("categories"), categoryIds));
         background.setSkillIds(resolveSkillNames(root.path("background").path("skills"), skillIds));
+        background.setLanguageRanks(languageRanks(root.path("cultureDecisions").path("languageRanks")));
         data.setBackground(background);
 
         final Map<String, DecisionData> decisions = new TreeMap<>();
@@ -154,8 +162,8 @@ public final class LegacyCharacterJsonImporter {
         data.setCultureId(requireResolved(required(root, "cultureName").asText(), cultureIds));
         data.setProfessionId(requireResolved(required(root, "professionName").asText(), professionIds));
 
-        data.setCharacteristicTemporalValues(characteristicTemporalValues(required(root, "levelUps")));
-        data.setCharacteristicPotentialValues(characteristicMap(required(root, "characteristicsPotentialValues")));
+        data.setCharacteristicTemporalValues(characteristicTemporalValues(root));
+        data.setCharacteristicPotentialValues(characteristicPotentialValues(root));
         data.setCharacteristicsConfirmed(required(root, "characteristicsConfirmed").asBoolean(false));
         data.setAppearance(root.path("appearance").path("dicesResult").asInt(0));
         data.setCurrentAge(currentAge);
@@ -163,9 +171,22 @@ public final class LegacyCharacterJsonImporter {
 
         final List<LevelData> levels = new ArrayList<>();
         final JsonNode levelUps = required(root, "levelUps");
-        levels.add(buildLevelOne(root, rulesCatalog, categoryIds, skillIds, spellListIds, trainingIds,
-                data.getCultureId(), currentAge));
-        for (int i = 1; i < levelUps.size(); i++) {
+        // As in the 2.0.0 schema, the legacy application may fold the early levels into a single
+        // merged "inserted" record, keeping that development on level insertedLevels and one real
+        // level-up per remaining entry, with the levels in between left empty.
+        final int inserted = insertedLevels(root);
+        if (inserted == 0) {
+            levels.add(buildLevelOne(root, rulesCatalog, categoryIds, skillIds, spellListIds, trainingIds,
+                    data.getCultureId(), currentAge));
+        } else {
+            levels.add(buildCultureLevelOne(rulesCatalog, root, categoryIds, skillIds, spellListIds,
+                    data.getCultureId(), currentAge));
+            for (int i = 1; i < inserted - 1; i++) {
+                levels.add(emptyLevel(currentAge));
+            }
+            levels.add(buildInsertedLevel(root, categoryIds, skillIds, spellListIds, currentAge));
+        }
+        for (int i = inserted == 0 ? 1 : 0; i < levelUps.size(); i++) {
             levels.add(fromLevelUp(levelUps.get(i), categoryIds, skillIds, spellListIds, trainingIds, currentAge));
         }
         data.setLevels(levels);
@@ -196,15 +217,65 @@ public final class LegacyCharacterJsonImporter {
     }
 
     private static void setCharacteristicsAndAge(CharacterData data, JsonNode root) {
-        data.setCharacteristicTemporalValues(
-                characteristicMap(required(root, "insertedData").path("characteristicsTemporalValuesModification")));
-        data.setCharacteristicPotentialValues(
-                characteristicMap(required(root, "insertedData").path("characteristicsPotentialValuesModification")));
+        data.setCharacteristicTemporalValues(characteristicTemporalValues(root));
+        data.setCharacteristicPotentialValues(characteristicPotentialValues(root));
         data.setCharacteristicsConfirmed(root.path("characteristicsConfirmed").asBoolean(false));
         data.setAppearance(root.path("appearance").path("dicesResult").asInt(0));
         final int currentAge = root.path("currentAge").asInt(10);
         data.setCurrentAge(currentAge);
         data.setFinalAge(root.path("finalAge").asInt(currentAge));
+    }
+
+    /** The character's final temporal values: the base values, then the folded levels' development,
+     *  then every level-up's update in order. */
+    private static Map<String, Integer> characteristicTemporalValues(JsonNode root) {
+        final Map<String, Integer> values =
+                characteristicMap(root.path("characteristicsInitialTemporalValues"));
+        values.putAll(characteristicMap(root.path("insertedData").path("characteristicsTemporalValuesModification")));
+        for (final JsonNode levelUp : root.path("levelUps")) {
+            for (final JsonNode update : recordedCharacteristicUpdates(levelUp)) {
+                values.put(CharacteristicAbbreviation
+                        .fromTag(update.path("characteristicAbbreviature").asText()).name(),
+                        update.path("characteristicTemporalValue").asInt(0));
+            }
+        }
+        return values;
+    }
+
+    /** The character's final potential values, following the same base/inserted/level-up order. */
+    private static Map<String, Integer> characteristicPotentialValues(JsonNode root) {
+        final Map<String, Integer> values = characteristicMap(root.path("characteristicsPotentialValues"));
+        values.putAll(characteristicMap(root.path("insertedData").path("characteristicsPotentialValuesModification")));
+        for (final JsonNode levelUp : root.path("levelUps")) {
+            for (final JsonNode update : recordedCharacteristicUpdates(levelUp)) {
+                values.put(CharacteristicAbbreviation
+                        .fromTag(update.path("characteristicAbbreviature").asText()).name(),
+                        update.path("characteristicPotentialValue").asInt(0));
+            }
+        }
+        return values;
+    }
+
+    /**
+     * The level-up's characteristic updates that actually recorded a development: the legacy
+     * application stored a placeholder (temporal 31, potential 0) on the level right after a folded
+     * one, as no roll was ever made there.
+     */
+    private static List<JsonNode> recordedCharacteristicUpdates(JsonNode levelUp) {
+        final List<JsonNode> updates = new ArrayList<>();
+        for (final JsonNode update : levelUp.path("characteristicsUpdates")) {
+            if (update.path("characteristicPotentialValue").asInt(0) > 0
+                    && CharacteristicAbbreviation.fromTag(update.path("characteristicAbbreviature").asText())
+                    != CharacteristicAbbreviation.NONE) {
+                updates.add(update);
+            }
+        }
+        return updates;
+    }
+
+    /** How many levels the legacy application folded into the merged {@code insertedData} record. */
+    private static int insertedLevels(JsonNode root) {
+        return root.path("insertedData").path("insertedLevels").asInt(0);
     }
 
     /**
@@ -222,25 +293,6 @@ public final class LegacyCharacterJsonImporter {
             }
         });
         values.put(CharacteristicAbbreviation.APPEARANCE.name(), 0);
-        return values;
-    }
-
-    /** The final temporal values: for each characteristic, the last development update any level-up
-     *  recorded (the 2.1.1 schema tracks one update per characteristic per level, and the last one
-     *  is the character's current value), plus the {@link CharacteristicAbbreviation#APPEARANCE}
-     *  placeholder. */
-    private static Map<String, Integer> characteristicTemporalValues(JsonNode levelUps) {
-        final Map<String, Integer> values = new TreeMap<>();
-        values.put(CharacteristicAbbreviation.APPEARANCE.name(), 0);
-        for (final JsonNode levelUp : levelUps) {
-            for (final JsonNode update : levelUp.path("characteristicsUpdates")) {
-                final CharacteristicAbbreviation abbreviation =
-                        CharacteristicAbbreviation.fromTag(update.path("characteristicAbbreviature").asText());
-                if (abbreviation != CharacteristicAbbreviation.NONE) {
-                    values.put(abbreviation.name(), update.path("characteristicTemporalValue").asInt(0));
-                }
-            }
-        }
         return values;
     }
 
@@ -311,6 +363,17 @@ public final class LegacyCharacterJsonImporter {
         return level;
     }
 
+    /** 2.0.0 level 1 of a save whose early levels were folded into an inserted record: the culture's
+     *  adolescence grants materialized as fixed ranks, the first real level-up belonging to level
+     *  {@code insertedLevels + 1}. */
+    private static LevelData buildCultureLevelOne(RulesCatalog rulesCatalog, JsonNode root,
+                                                  Map<String, String> categoryIds, Map<String, String> skillIds,
+                                                  String cultureId) throws InvalidXmlElementException {
+        final LevelData level = emptyLevel(root.path("currentAge").asInt(10));
+        materializeCulture(rulesCatalog.getCulture(cultureId), categoryIds, skillIds, level);
+        return level;
+    }
+
     /** 2.1.1 level 1: the culture's adolescence grants materialized as fixed ranks, the weapon skills
      *  chosen in {@code cultureDecisions.skillRanks} materialized as skill ranks, and the first
      *  legacy level-up's own development (categories, skills, spell lists, trainings, experience and
@@ -332,6 +395,20 @@ public final class LegacyCharacterJsonImporter {
         level.setTrainings(firstLevelUp.getTrainings());
         level.setFavouriteSkills(firstLevelUp.getFavouriteSkills());
         level.setCharacteristicUpdates(firstLevelUp.getCharacteristicUpdates());
+        return level;
+    }
+
+    /** 2.1.1 level 1 of a save whose early levels were folded into an inserted record: the culture's
+     *  adolescence grants and the weapon skills chosen in {@code cultureDecisions.skillRanks}, with
+     *  the first real level-up belonging to level {@code insertedLevels + 1}. */
+    private static LevelData buildCultureLevelOne(RulesCatalog rulesCatalog, JsonNode root,
+                                                  Map<String, String> categoryIds, Map<String, String> skillIds,
+                                                  Map<String, String> spellListIds, String cultureId, int age)
+            throws InvalidXmlElementException {
+        final LevelData level = emptyLevel(age);
+        materializeCulture(rulesCatalog.getCulture(cultureId), categoryIds, skillIds, level);
+        mergeRanks(level.getSkillRanks(),
+                resolveRankedNames(root.path("cultureDecisions").path("skillRanks"), skillIds));
         return level;
     }
 
