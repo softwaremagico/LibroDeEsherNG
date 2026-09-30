@@ -301,8 +301,7 @@ public class LegacyCharacterJsonImporterTest {
         Assert.assertEquals(levelEight.getSpellListRanks().get("essenceArmorOfTheChaos"), Integer.valueOf(1));
         Assert.assertEquals(levelEight.getSpellsUpdated(),
                 List.of("essenceMasteryOfChaos", "essenceArmorOfTheChaos", "essencePathsOfDetection"));
-        Assert.assertEquals(levelEight.getFavouriteSkills(), List.of("bolas", "essenceArmorOfTheChaos",
-                "essenceMasteryOfChaos", "essenceOscuridad", "essenceWeaponOfTheChaos", "liderazgo", "sword"));
+        Assert.assertEquals(levelEight.getFavouriteSkills(), List.of("bolas", "liderazgo", "sword"));
         Assert.assertEquals(levelEight.getCharacteristicUpdates().size(), 10);
         Assert.assertEquals(levelEight.getCharacteristicUpdates().get(0).getCharacteristicAbbreviation(),
                 CharacteristicAbbreviation.AGILITY);

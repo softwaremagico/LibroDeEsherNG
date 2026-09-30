@@ -433,7 +433,9 @@ public final class LegacyCharacterJsonImporter {
 
         final List<String> favourites = new ArrayList<>();
         for (final JsonNode favourite : levelUp.path("favouriteSkills")) {
-            final String id = resolveFavourite(normalize(favourite.asText()), skillIds, spellListIds);
+            // NG favourites are skills only, so the spell lists the legacy app also accepted as
+            // favourites (e.g. "Armadura del Caos") are dropped.
+            final String id = skillIds.get(normalize(favourite.asText()));
             if (id != null) {
                 favourites.add(id);
             }
@@ -599,14 +601,6 @@ public final class LegacyCharacterJsonImporter {
             }
         }
         return skills;
-    }
-
-    private static String resolveFavourite(String name, Map<String, String> skillIds, Map<String, String> spellListIds) {
-        String id = skillIds.get(name);
-        if (id == null) {
-            id = spellListIds.get(name);
-        }
-        return id;
     }
 
     /** Indexes every rule element by its Spanish name (first occurrence wins), so legacy names can
