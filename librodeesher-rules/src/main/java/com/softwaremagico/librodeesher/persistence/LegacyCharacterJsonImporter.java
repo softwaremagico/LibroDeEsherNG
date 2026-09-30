@@ -16,6 +16,7 @@ import com.softwaremagico.librodeesher.equipment.MagicObject;
 import com.softwaremagico.librodeesher.equipment.ObjectBonus;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.language.TranslatedText;
+import com.softwaremagico.librodeesher.magic.MagicSpellList;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
@@ -24,9 +25,11 @@ import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 /**
@@ -53,12 +56,26 @@ public final class LegacyCharacterJsonImporter {
      * Imports the legacy character JSON into a {@link CharacterData} snapshot equivalent to what
      * {@link CharacterDataMapper#toData} would write for the same character.
      *
-     * @param legacyJson the raw content of a legacy {@code .rlm} JSON export (2.0.0).
+     * <p>The legacy application evolved its save format; the last 2.0.0 release saved each
+     * character's {@code background}, an {@code insertedData} merged level and a
+     * {@code configuration}, while 2.1.1 renamed the background section {@code historial} and
+     * moved the option flags onto the top level. Both schemas are imported here, detected by the
+     * presence of the 2.1.1 {@code historial} field.</p>
+     *
+     * @param legacyJson the raw content of a legacy {@code .rlm} JSON export (2.0.0 or 2.1.1).
      * @return a ready to save/serialize {@link CharacterData}.
      */
     public static CharacterData importLegacyJson(String legacyJson)
             throws IOException, InvalidXmlElementException {
         final JsonNode root = JSON.readTree(legacyJson);
+        if (root.has("historial")) {
+            return importLegacyV211Json(root);
+        }
+        return importLegacyV2Json(root);
+    }
+
+    /** The 2.0.0 schema: characteristics live under {@code insertedData}. */
+    private static CharacterData importLegacyV2Json(JsonNode root) throws IOException, InvalidXmlElementException {
         final RulesCatalog rulesCatalog = RulesCatalog.getInstance();
 
         final Map<String, String> categoryIds = resolveNames(rulesCatalog.getCategories());
@@ -68,6 +85,7 @@ public final class LegacyCharacterJsonImporter {
         final Map<String, String> cultureIds = resolveNames(rulesCatalog.getCultures());
         final Map<String, String> professionIds = resolveNames(rulesCatalog.getProfessions());
         final Map<String, String> perkIds = resolveNames(rulesCatalog.getPerks());
+        final Map<String, String> trainingIds = resolveNames(rulesCatalog.getTrainings());
 
         final CharacterData data = new CharacterData();
         data.setName(required(root, "name").asText());
@@ -85,8 +103,10 @@ public final class LegacyCharacterJsonImporter {
         }
         levels.add(buildInsertedLevel(root, categoryIds, skillIds, spellListIds, data.getCurrentAge()));
         final JsonNode levelUps = required(root, "levelUps");
-        levels.add(fromLevelUp(levelUps.get(1), categoryIds, skillIds, spellListIds, data.getCurrentAge()));
-        levels.add(fromLevelUp(levelUps.get(2), categoryIds, skillIds, spellListIds, data.getCurrentAge()));
+        levels.add(fromLevelUp(levelUps.get(1), categoryIds, skillIds, spellListIds, trainingIds,
+                data.getCurrentAge()));
+        levels.add(fromLevelUp(levelUps.get(2), categoryIds, skillIds, spellListIds, trainingIds,
+                data.getCurrentAge()));
         data.setLevels(levels);
 
         final BackgroundData background = new BackgroundData();
@@ -103,6 +123,75 @@ public final class LegacyCharacterJsonImporter {
 
         applyConfiguration(root.path("configuration"), data);
         data.setRecommendedFavouriteSkillsIncluded(root.path("recommendedFavouriteSkillsIncluded").asBoolean(false));
+        return data;
+    }
+
+    /** The 2.1.1 schema: characteristics and every development decision live on the top level. */
+    private static CharacterData importLegacyV211Json(JsonNode root) throws InvalidXmlElementException {
+        final RulesCatalog rulesCatalog = RulesCatalog.getInstance();
+
+        final Map<String, String> categoryIds = resolveNames(rulesCatalog.getCategories());
+        final Map<String, String> skillIds = resolveNames(rulesCatalog.getSkills());
+        final Set<RealmOfMagic> realms = new HashSet<>();
+        for (final JsonNode realm : root.path("realmOfMagic").path("magicRealmsAvailable")) {
+            final RealmOfMagic resolved = RealmOfMagic.fromTag(realm.asText());
+            if (resolved != null) {
+                realms.add(resolved);
+            }
+        }
+        final Map<String, String> spellListIds = resolveSpellListsPreferringRealm(rulesCatalog, realms);
+        final Map<String, String> raceIds = resolveNames(rulesCatalog.getRaces());
+        final Map<String, String> cultureIds = resolveNames(rulesCatalog.getCultures());
+        final Map<String, String> professionIds = resolveNames(rulesCatalog.getProfessions());
+        final Map<String, String> perkIds = resolveNames(rulesCatalog.getPerks());
+        final Map<String, String> trainingIds = resolveNames(rulesCatalog.getTrainings());
+        final int currentAge = 10;
+
+        final CharacterData data = new CharacterData();
+        data.setName(required(root, "name").asText());
+        data.setSex(SexType.valueOf(required(root, "sex").asText()));
+        data.setRaceId(requireResolved(required(root, "raceName").asText(), raceIds));
+        data.setCultureId(requireResolved(required(root, "cultureName").asText(), cultureIds));
+        data.setProfessionId(requireResolved(required(root, "professionName").asText(), professionIds));
+
+        data.setCharacteristicTemporalValues(characteristicTemporalValues(required(root, "levelUps")));
+        data.setCharacteristicPotentialValues(characteristicMap(required(root, "characteristicsPotentialValues")));
+        data.setCharacteristicsConfirmed(required(root, "characteristicsConfirmed").asBoolean(false));
+        data.setAppearance(root.path("appearance").path("dicesResult").asInt(0));
+        data.setCurrentAge(currentAge);
+        data.setFinalAge(currentAge);
+
+        final List<LevelData> levels = new ArrayList<>();
+        final JsonNode levelUps = required(root, "levelUps");
+        levels.add(buildLevelOne(root, rulesCatalog, categoryIds, skillIds, spellListIds, trainingIds,
+                data.getCultureId(), currentAge));
+        for (int i = 1; i < levelUps.size(); i++) {
+            levels.add(fromLevelUp(levelUps.get(i), categoryIds, skillIds, spellListIds, trainingIds, currentAge));
+        }
+        data.setLevels(levels);
+
+        final BackgroundData background = new BackgroundData();
+        final JsonNode historial = root.path("historial");
+        background.setCategoryIds(resolveRequiredNames(historial.path("categories"), categoryIds));
+        background.setSkillIds(resolveSkillNames(historial.path("skills"), skillIds));
+        background.setLanguageRanks(languageRanks(root.path("cultureDecisions").path("languageRanks")));
+        data.setBackground(background);
+        data.setHobbySkillRanks(resolveRankedNames(root.path("cultureDecisions").path("hobbyRanks"), skillIds));
+
+        final Map<String, DecisionData> decisions = new TreeMap<>();
+        data.setDecisions(decisions);
+        buildWeaponCostDecisions(root.path("professionDecisions").path("weaponsCost"), categoryIds, decisions);
+        buildMagicRealmDecisions(root.path("realmOfMagic").path("magicRealmsAvailable"), data.getProfessionId(), decisions);
+        buildSkillEnableDecisions(root.path("enabledSkill"), skillIds, decisions);
+        data.setSelectedPerks(buildPerks(root.path("selectedPerks"), perkIds));
+        data.setMagicItems(buildMagicItems(root.path("magicItems"), skillIds));
+
+        data.setFirearmsAllowed(required(root, "firearmsAllowed").asBoolean(false));
+        data.setChiPowersAllowed(required(root, "chiPowersAllowed").asBoolean(false));
+        data.setOtherRealmTrainingSpellsAllowed(required(root, "otherRealmtrainingSpellsAllowed").asBoolean(false));
+        data.setDarkSpellsAsBasicListsAllowed(required(root, "darkSpellsAsBasicListsAllowed").asBoolean(false));
+        data.setRecommendedFavouriteSkillsIncluded(root.path("recommendedFavouriteSkillsIncluded").asBoolean(false));
+        data.setMagicAllowed(true);
         return data;
     }
 
@@ -136,6 +225,81 @@ public final class LegacyCharacterJsonImporter {
         return values;
     }
 
+    /** The final temporal values: for each characteristic, the last development update any level-up
+     *  recorded (the 2.1.1 schema tracks one update per characteristic per level, and the last one
+     *  is the character's current value), plus the {@link CharacteristicAbbreviation#APPEARANCE}
+     *  placeholder. */
+    private static Map<String, Integer> characteristicTemporalValues(JsonNode levelUps) {
+        final Map<String, Integer> values = new TreeMap<>();
+        values.put(CharacteristicAbbreviation.APPEARANCE.name(), 0);
+        for (final JsonNode levelUp : levelUps) {
+            for (final JsonNode update : levelUp.path("characteristicsUpdates")) {
+                final CharacteristicAbbreviation abbreviation =
+                        CharacteristicAbbreviation.fromTag(update.path("characteristicAbbreviature").asText());
+                if (abbreviation != CharacteristicAbbreviation.NONE) {
+                    values.put(abbreviation.name(), update.path("characteristicTemporalValue").asInt(0));
+                }
+            }
+        }
+        return values;
+    }
+
+    /** Indexes every spell list by its Spanish name, preferring (for shared names such as the
+     *  Mentalism/Essence variants of a martial arts list) the variant of one of {@code realms}, so a
+     *  Mentalism caster resolves "Evasiones" to the Mentalism list, not the Essence one. */
+    private static Map<String, String> resolveSpellListsPreferringRealm(RulesCatalog rulesCatalog,
+                                                                        Set<RealmOfMagic> realms)
+            throws InvalidXmlElementException {
+        final Map<String, String> ids = new LinkedHashMap<>(resolveNames(rulesCatalog.getSpellLists()));
+        for (final MagicSpellList spellList : rulesCatalog.getSpellLists()) {
+            if (spellList.getName() == null || spellList.getName().getSpanish() == null) {
+                continue;
+            }
+            if (spellList.getRealm() != null && realms.contains(spellList.getRealm())) {
+                ids.put(normalize(spellList.getName().getSpanish()), spellList.getId());
+            }
+        }
+        return ids;
+    }
+
+    /** The legacy skills that unlocked one specific enabled skill become one character-wide
+     *  {@link DecisionKind#SKILL_ENABLE} decision per enabling skill, recorded at level 1, so the
+     *  rebuilt character's {@code isSkillEnabled()} resolves as the original did. */
+    private static void buildSkillEnableDecisions(JsonNode enabledSkill, Map<String, String> skillIds,
+                                                  Map<String, DecisionData> decisions) {
+        enabledSkill.fields().forEachRemaining(entry -> {
+            final String enablingSkillId = skillIds.get(normalize(entry.getKey()));
+            final String enabledSkillId = skillIds.get(normalize(entry.getValue().asText()));
+            if (enablingSkillId != null && enabledSkillId != null) {
+                final DecisionKey key = DecisionKey.characterWide(DecisionKind.SKILL_ENABLE, enablingSkillId, 0);
+                decisions.put(key.toString(), new DecisionData(new DecisionKeyData(key), 1,
+                        List.of(enabledSkillId), List.of(enabledSkillId)));
+            }
+        });
+    }
+
+    /** The background's trained categories, resolved by name (failing loudly when unknown). */
+    private static List<String> resolveRequiredNames(JsonNode node, Map<String, String> ids) {
+        final List<String> names = new ArrayList<>();
+        for (final JsonNode child : node) {
+            names.add(requireResolved(child.asText(), ids));
+        }
+        return names;
+    }
+
+    /** The legacy culture language ranks, keyed by their original (unresolved) names: the NG
+     *  catalogs have no language elements of their own, and the keys round-trip verbatim. */
+    private static Map<String, Integer> languageRanks(JsonNode node) {
+        final Map<String, Integer> ranks = new TreeMap<>();
+        for (final Map.Entry<String, JsonNode> entry : node.properties()) {
+            final int rank = entry.getValue().asInt();
+            if (rank > 0) {
+                ranks.put(entry.getKey(), rank);
+            }
+        }
+        return ranks;
+    }
+
     /** Level 1: the culture's adolescence grants materialized as fixed ranks, plus the spell-list
      *  updates recorded by the first legacy level-up as pure metadata. */
     private static LevelData buildLevelOne(RulesCatalog rulesCatalog, JsonNode root, Map<String, String> categoryIds,
@@ -144,6 +308,30 @@ public final class LegacyCharacterJsonImporter {
         final LevelData level = emptyLevel(root.path("currentAge").asInt(10));
         materializeCulture(rulesCatalog.getCulture(cultureId), categoryIds, skillIds, level);
         level.setSpellsUpdated(resolveListNames(required(root, "levelUps").get(0).path("spellsUpdated"), spellListIds));
+        return level;
+    }
+
+    /** 2.1.1 level 1: the culture's adolescence grants materialized as fixed ranks, the weapon skills
+     *  chosen in {@code cultureDecisions.skillRanks} materialized as skill ranks, and the first
+     *  legacy level-up's own development (categories, skills, spell lists, trainings, experience and
+     *  skill updates) recorded on top. */
+    private static LevelData buildLevelOne(JsonNode root, RulesCatalog rulesCatalog, Map<String, String> categoryIds,
+                                           Map<String, String> skillIds, Map<String, String> spellListIds,
+                                           Map<String, String> trainingIds, String cultureId, int age)
+            throws InvalidXmlElementException {
+        final LevelData level = emptyLevel(age);
+        materializeCulture(rulesCatalog.getCulture(cultureId), categoryIds, skillIds, level);
+        mergeRanks(level.getSkillRanks(),
+                resolveRankedNames(root.path("cultureDecisions").path("skillRanks"), skillIds));
+        final LevelData firstLevelUp = fromLevelUp(required(root, "levelUps").get(0), categoryIds, skillIds,
+                spellListIds, trainingIds, age);
+        mergeRanks(level.getCategoryRanks(), firstLevelUp.getCategoryRanks());
+        mergeRanks(level.getSkillRanks(), firstLevelUp.getSkillRanks());
+        mergeRanks(level.getSpellListRanks(), firstLevelUp.getSpellListRanks());
+        level.setSpellsUpdated(firstLevelUp.getSpellsUpdated());
+        level.setTrainings(firstLevelUp.getTrainings());
+        level.setFavouriteSkills(firstLevelUp.getFavouriteSkills());
+        level.setCharacteristicUpdates(firstLevelUp.getCharacteristicUpdates());
         return level;
     }
 
@@ -194,7 +382,8 @@ public final class LegacyCharacterJsonImporter {
 
     /** One legacy level-up (entered in the app at a specific level) to its {@link LevelData}. */
     private static LevelData fromLevelUp(JsonNode levelUp, Map<String, String> categoryIds,
-                                         Map<String, String> skillIds, Map<String, String> spellListIds, int age) {
+                                         Map<String, String> skillIds, Map<String, String> spellListIds,
+                                         Map<String, String> trainingIds, int age) {
         final LevelData level = emptyLevel(age);
         level.setCategoryRanks(resolveRankedNames(levelUp.path("categoriesRanks"), categoryIds));
         final Map<String, Integer> skillRanks = new TreeMap<>();
@@ -203,6 +392,44 @@ public final class LegacyCharacterJsonImporter {
         level.setSkillRanks(skillRanks);
         level.setSpellListRanks(spellListRanks);
         level.setSpellsUpdated(resolveListNames(levelUp.path("spellsUpdated"), spellListIds));
+
+        // The ranks granted by the trainings taken this level, baked into the level's skill ranks
+        // (their home in the NG bookkeeping), and the trainings themselves recorded as metadata.
+        final List<String> trainings = new ArrayList<>();
+        for (final JsonNode training : levelUp.path("trainings")) {
+            final String id = trainingIds.get(normalize(training.asText()));
+            if (id != null) {
+                trainings.add(id);
+            }
+        }
+        level.setTrainings(trainings);
+        final Map<String, Integer> trainingRanks = new TreeMap<>();
+        levelUp.path("trainingDecisions").fields().forEachRemaining(training -> {
+            training.getValue().path("skillsSelected").fields().forEachRemaining(selection -> {
+                selection.getValue().path("skillsRanks").properties().forEach(rank -> {
+                    final int ranks = rank.getValue().asInt();
+                    if (ranks == 0) {
+                        return;
+                    }
+                    String id = skillIds.get(normalize(rank.getKey()));
+                    if (id != null) {
+                        trainingRanks.merge(id, ranks, Integer::sum);
+                        return;
+                    }
+                    id = spellListIds.get(normalize(rank.getKey()));
+                    if (id != null) {
+                        trainingRanks.merge(id, ranks, Integer::sum);
+                    }
+                });
+            });
+        });
+        trainingRanks.forEach((id, ranks) -> {
+            if (spellListIds.containsValue(id)) {
+                spellListRanks.merge(id, ranks, Integer::sum);
+            } else {
+                skillRanks.merge(id, ranks, Integer::sum);
+            }
+        });
 
         final List<String> favourites = new ArrayList<>();
         for (final JsonNode favourite : levelUp.path("favouriteSkills")) {
@@ -408,6 +635,10 @@ public final class LegacyCharacterJsonImporter {
 
     private static void addRank(Map<String, Integer> ranks, String id, int value) {
         ranks.merge(id, value, Integer::sum);
+    }
+
+    private static void mergeRanks(Map<String, Integer> target, Map<String, Integer> source) {
+        source.forEach((id, ranks) -> target.merge(id, ranks, Integer::sum));
     }
 
     private static JsonNode required(JsonNode node, String field) {

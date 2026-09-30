@@ -28,6 +28,209 @@ import java.util.TreeMap;
 public class LegacyCharacterJsonImporterTest {
 
     private static final String REFERENCE_SNAPSHOT = "/Nihal_level9_2_0_0.json";
+    private static final String REFERENCE_SNAPSHOT_V211 = "/Ophiliaglii_Humbiton_N7_Jhordi_Monje_Zen.json";
+
+    @Test
+    public void importsTheReferenceLevelSevenV211Snapshot() throws IOException, InvalidXmlElementException {
+        final CharacterData data = LegacyCharacterJsonImporter.importLegacyJson(readN7Snapshot());
+
+        Assert.assertEquals(data.getName(), "Ophiliaglii Humbiton");
+        Assert.assertEquals(data.getSex(), SexType.MALE);
+        Assert.assertEquals(data.getRaceId(), "jhordi");
+        Assert.assertEquals(data.getCultureId(), "plains");
+        Assert.assertEquals(data.getProfessionId(), "monkZen");
+
+        Assert.assertEquals(data.getLevels().size(), 7);
+        Assert.assertEquals(data.getCurrentAge(), 10);
+        Assert.assertEquals(data.getFinalAge(), 10);
+        for (final LevelData level : data.getLevels()) {
+            Assert.assertEquals(level.getAge(), 10);
+        }
+
+        Assert.assertEquals(data.getCharacteristicTemporalValues().get("AGILITY"), Integer.valueOf(95));
+        Assert.assertEquals(data.getCharacteristicTemporalValues().get("SELF_DISCIPLINE"), Integer.valueOf(96));
+        Assert.assertEquals(data.getCharacteristicTemporalValues().get("QUICKNESS"), Integer.valueOf(100));
+        Assert.assertEquals(data.getCharacteristicTemporalValues().get("STRENGTH"), Integer.valueOf(99));
+        Assert.assertEquals(data.getCharacteristicTemporalValues().get("APPEARANCE"), Integer.valueOf(0));
+        Assert.assertEquals(data.getCharacteristicPotentialValues().get("MEMORY"), Integer.valueOf(68));
+        Assert.assertEquals(data.getCharacteristicPotentialValues().get("PRESENCE"), Integer.valueOf(94));
+        Assert.assertEquals(data.getCharacteristicPotentialValues().get("REASONING"), Integer.valueOf(97));
+        Assert.assertTrue(data.isCharacteristicsConfirmed());
+        Assert.assertEquals(data.getAppearance(), 18);
+
+        // Level 1: the culture's adolescence grants materialized as fixed ranks, the chosen weapon
+        // skills as skill ranks, and the first level-up's ranks (including its training's grants).
+        final LevelData levelOne = data.getLevels().get(0);
+        Assert.assertEquals(levelOne.getCategoryRanks().get("armorLight"), Integer.valueOf(1));
+        Assert.assertEquals(levelOne.getCategoryRanks().get("weaponsEdged"), Integer.valueOf(1));
+        Assert.assertEquals(levelOne.getCategoryRanks().get("weaponsMissile"), Integer.valueOf(2));
+        Assert.assertEquals(levelOne.getCategoryRanks().get("loreGeneral"), Integer.valueOf(4));
+        Assert.assertEquals(levelOne.getCategoryRanks().get("outdoorAnimals"), Integer.valueOf(3));
+        Assert.assertEquals(levelOne.getSkillRanks().get("spear"), Integer.valueOf(2));
+        Assert.assertEquals(levelOne.getSkillRanks().get("sword"), Integer.valueOf(1));
+        Assert.assertEquals(levelOne.getSkillRanks().get("throwingDagger"), Integer.valueOf(1));
+        Assert.assertEquals(levelOne.getSkillRanks().get("compositeBow"), Integer.valueOf(2));
+        Assert.assertEquals(levelOne.getSkillRanks().get("staff"), Integer.valueOf(1));
+        Assert.assertEquals(levelOne.getSkillRanks().get("inmovilizar"), Integer.valueOf(2));
+        Assert.assertEquals(levelOne.getSkillRanks().get("strikesOfArtesMarciales"), Integer.valueOf(3));
+        Assert.assertEquals(levelOne.getSkillRanks().get("physicalDevelopment"), Integer.valueOf(5));
+        Assert.assertEquals(levelOne.getTrainings(), List.of("priestWarrior"));
+        Assert.assertTrue(levelOne.getCharacteristicUpdates().size() == 10);
+
+        // Level 2: the first level-up's spell list development.
+        final LevelData levelTwo = data.getLevels().get(1);
+        Assert.assertEquals(levelTwo.getSpellListRanks().get("mentalismConcentrationZen"), Integer.valueOf(1));
+        Assert.assertEquals(levelTwo.getSpellListRanks().get("mentalismEvasiones"), Integer.valueOf(1));
+        Assert.assertEquals(levelTwo.getSpellsUpdated(), List.of("mentalismConcentrationZen",
+                "mentalismControlCorporal", "mentalismEvasiones", "mentalismRenewalOfTheBody",
+                "mentalismShadowMental"));
+
+        // The seven weapon cost tiers become character-wide decisions, filed by key.
+        final Map<String, DecisionData> decisions = new TreeMap<>(data.getDecisions());
+        Assert.assertEquals(decisions.size(), 9);
+        final List<String> categoryByTier = List.of("weaponsTwoHanded", "weaponsThrown", "weaponsSiege",
+                "weaponsPolearm", "weaponsBlunt", "weaponsEdged", "weaponsMissile");
+        for (int tier = 0; tier < 7; tier++) {
+            final String key = DecisionKey.characterWide(DecisionKind.WEAPON_COST_TIER, "", tier).toString();
+            final DecisionData decision = decisions.get(key);
+            Assert.assertNotNull(decision, key);
+            Assert.assertEquals(decision.getRecordedAtLevel(), 1);
+            Assert.assertEquals(decision.getOfferedOptions(), List.of(categoryByTier.get(tier)));
+            Assert.assertEquals(decision.getSelectedOptions(), List.of(categoryByTier.get(tier)));
+        }
+
+        // The legacy realm of magic becomes a fixed profession-realm decision, so the rebuilt
+        // character resolves a Mentalism caster.
+        final String realmKey =
+                DecisionKey.characterWide(DecisionKind.PROFESSION_REALM, data.getProfessionId(), 0).toString();
+        final DecisionData realmDecision = decisions.get(realmKey);
+        Assert.assertNotNull(realmDecision, realmKey);
+        Assert.assertEquals(realmDecision.getRecordedAtLevel(), 1);
+        Assert.assertEquals(realmDecision.getOfferedOptions(), List.of("MENTALISM"));
+        Assert.assertEquals(realmDecision.getSelectedOptions(), List.of("MENTALISM"));
+
+        // The chi skill unlocked by the martial arts style becomes a skill-enable decision.
+        final String skillEnableKey =
+                DecisionKey.characterWide(DecisionKind.SKILL_ENABLE, "styleOfTheCrane", 0).toString();
+        final DecisionData skillEnableDecision = decisions.get(skillEnableKey);
+        Assert.assertNotNull(skillEnableDecision, skillEnableKey);
+        Assert.assertEquals(skillEnableDecision.getRecordedAtLevel(), 1);
+        Assert.assertEquals(skillEnableDecision.getOfferedOptions(), List.of("chiPowerStrikesContinuous"));
+        Assert.assertEquals(skillEnableDecision.getSelectedOptions(), List.of("chiPowerStrikesContinuous"));
+
+        Assert.assertEquals(data.getSelectedPerks().size(), 17);
+        Assert.assertEquals(data.getSelectedPerks().get(0).getPerkId(), "adherencia");
+        Assert.assertEquals(data.getSelectedPerks().get(1).getPerkId(), "slightAddiction");
+        Assert.assertEquals(data.getSelectedPerks().get(2).getPerkId(), "trainingInArtesMarcialesMaximum");
+        Assert.assertEquals(data.getSelectedPerks().get(3).getPerkId(), "sensitiveSkin");
+        Assert.assertEquals(data.getSelectedPerks().get(4).getPerkId(), "pielGruesaMajor");
+
+        Assert.assertEquals(data.getBackground().getCategoryIds(), List.of("martialArtsStrikes",
+                "martialArtsCombatManeuvers", "selfControl", "influence"));
+        Assert.assertTrue(data.getBackground().getSkillIds().isEmpty());
+        Assert.assertEquals(data.getBackground().getLanguageRanks().size(), 4);
+        Assert.assertEquals(data.getBackground().getLanguageRanks().get("Hablar Habla Común"), Integer.valueOf(2));
+        Assert.assertEquals(data.getBackground().getLanguageRanks().get("Hablar Habla de las Llanuras"),
+                Integer.valueOf(2));
+        Assert.assertEquals(data.getBackground().getLanguageRanks().get("Hablar Habla Alta"), Integer.valueOf(4));
+        Assert.assertEquals(data.getBackground().getLanguageRanks().get("Escribir Habla Común"), Integer.valueOf(1));
+        Assert.assertEquals(data.getHobbySkillRanks().size(), 12);
+
+        Assert.assertTrue(data.isChiPowersAllowed());
+        Assert.assertFalse(data.isFirearmsAllowed());
+        Assert.assertFalse(data.isOtherRealmTrainingSpellsAllowed());
+        Assert.assertFalse(data.isDarkSpellsAsBasicListsAllowed());
+        Assert.assertFalse(data.isRecommendedFavouriteSkillsIncluded());
+    }
+
+    @Test
+    public void rebuiltV211CharacterTotalsMatchTheReferenceBook() throws IOException, InvalidXmlElementException {
+        final CharacterPlayer character = CharacterDataMapper.toCharacter(
+                LegacyCharacterJsonImporter.importLegacyJson(readN7Snapshot()));
+
+        Assert.assertEquals(character.getLevel(), 7);
+        Assert.assertEquals(character.getAgeAtLevel(7), 10);
+
+        int categoriesWithRanks = 0;
+        int categoryRanks = 0;
+        for (final com.softwaremagico.librodeesher.Element category : RulesCatalog.getInstance().getCategories()) {
+            final int ranks = character.getCategoryTotalRanks(category.getId());
+            if (ranks > 0) {
+                categoriesWithRanks++;
+                categoryRanks += ranks;
+            }
+        }
+        Assert.assertEquals(categoriesWithRanks, 23);
+        Assert.assertEquals(categoryRanks, 84);
+
+        int skillsWithRanks = 0;
+        int skillRanks = 0;
+        for (final com.softwaremagico.librodeesher.Element skill : RulesCatalog.getInstance().getSkills()) {
+            final int ranks = character.getSkillTotalRanks(skill.getId());
+            if (ranks > 0) {
+                skillsWithRanks++;
+                skillRanks += ranks;
+            }
+        }
+        Assert.assertEquals(skillsWithRanks, 77);
+        Assert.assertEquals(skillRanks, 124);
+
+        int listsWithRanks = 0;
+        int listRanks = 0;
+        for (final com.softwaremagico.librodeesher.Element list : RulesCatalog.getInstance().getSpellLists()) {
+            final int ranks = character.getSpellListTotalRanks(list.getId());
+            if (ranks > 0) {
+                listsWithRanks++;
+                listRanks += ranks;
+            }
+        }
+        Assert.assertEquals(listsWithRanks, 6);
+        Assert.assertEquals(listRanks, 30);
+
+        // Spot totals matching the reference character sheet.
+        Assert.assertEquals(character.getCategoryTotalRanks("martialArtsStrikes"), Integer.valueOf(7));
+        Assert.assertEquals(character.getCategoryTotalRanks("selfControl"), Integer.valueOf(7));
+        Assert.assertEquals(character.getCategoryTotalRanks("influence"), Integer.valueOf(7));
+        Assert.assertEquals(character.getSkillTotalRanks("strikesOfArtesMarciales"), Integer.valueOf(9));
+        Assert.assertEquals(character.getSkillTotalRanks("physicalDevelopment"), Integer.valueOf(7));
+        Assert.assertEquals(character.getSkillTotalRanks("defenseAdrenal"), Integer.valueOf(7));
+        Assert.assertEquals(character.getSkillTotalRanks("styleOfTheCrane"), Integer.valueOf(6));
+        Assert.assertEquals(character.getSkillTotalRanks("spear"), Integer.valueOf(2));
+        Assert.assertEquals(character.getSkillTotalRanks("sword"), Integer.valueOf(1));
+        Assert.assertEquals(character.getSkillTotalRanks("meditation"), Integer.valueOf(1));
+        Assert.assertEquals(character.getSpellListTotalRanks("mentalismShadowMental"), Integer.valueOf(7));
+        Assert.assertEquals(character.getSpellListTotalRanks("mentalismConcentrationZen"), Integer.valueOf(6));
+        Assert.assertEquals(character.getSpellListTotalRanks("mentalismEvasiones"), Integer.valueOf(6));
+        Assert.assertEquals(character.getSpellListTotalRanks("mentalismRenewalOfTheBody"), Integer.valueOf(5));
+        Assert.assertEquals(character.getSpellListTotalRanks("mentalismControlCorporal"), Integer.valueOf(5));
+        Assert.assertEquals(character.getSpellListTotalRanks("mentalismPerceptionZen"), Integer.valueOf(1));
+
+        Assert.assertEquals(character.getWeaponCategoryCostTierCount(), 7);
+        Assert.assertEquals(character.getDecisions().getAll().size(), 9);
+        Assert.assertEquals(character.getRealmsOfMagic().size(), 1);
+        Assert.assertEquals(character.getRealmsOfMagic().get(0), RealmOfMagic.MENTALISM);
+        Assert.assertTrue(character.getPowerPoints() > 0);
+    }
+
+    @Test
+    public void v211SnapshotSurvivesRebuildByteForByte() throws IOException, InvalidXmlElementException {
+        final CharacterData data = LegacyCharacterJsonImporter.importLegacyJson(readN7Snapshot());
+        final String json = CharacterJsonManager.toJson(data);
+
+        final CharacterPlayer character = CharacterDataMapper.toCharacter(data);
+        Assert.assertEquals(CharacterJsonManager.toJson(CharacterDataMapper.toData(character)), json);
+    }
+
+    private static String readN7Snapshot() throws IOException {
+        return readFixture(REFERENCE_SNAPSHOT_V211);
+    }
+
+    private static String readFixture(String path) throws IOException {
+        try (final InputStream in = LegacyCharacterJsonImporterTest.class.getResourceAsStream(path)) {
+            Assert.assertNotNull(in, "Missing test resource " + path);
+            return new String(in.readAllBytes(), StandardCharsets.UTF_8);
+        }
+    }
 
     @Test
     public void importsTheReferenceLevelNineSnapshot() throws IOException, InvalidXmlElementException {
