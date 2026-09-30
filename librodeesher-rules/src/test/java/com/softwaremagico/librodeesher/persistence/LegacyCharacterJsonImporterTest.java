@@ -7,6 +7,7 @@ import com.softwaremagico.librodeesher.decision.DecisionKey;
 import com.softwaremagico.librodeesher.decision.DecisionKind;
 import com.softwaremagico.librodeesher.equipment.BonusType;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
+import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -118,7 +119,7 @@ public class LegacyCharacterJsonImporterTest {
 
         // The nine weapon cost tiers become character-wide decisions, filed by key.
         final Map<String, DecisionData> decisions = new TreeMap<>(data.getDecisions());
-        Assert.assertEquals(decisions.size(), 9);
+        Assert.assertEquals(decisions.size(), 10);
         final List<String> categoryByTier = List.of("weaponsEdged", "weaponsThrown", "weaponsBlunt",
                 "weaponsTwoHanded", "weaponsPolearm", "weaponsMissile", "weaponsSiege",
                 "weaponsFirearmOneHanded", "weaponsFirearmTwoHanded");
@@ -130,6 +131,16 @@ public class LegacyCharacterJsonImporterTest {
             Assert.assertEquals(decision.getOfferedOptions(), List.of(categoryByTier.get(tier)));
             Assert.assertEquals(decision.getSelectedOptions(), List.of(categoryByTier.get(tier)));
         }
+
+        // The legacy realm of magic becomes a fixed profession-realm decision, so the rebuilt
+        // character resolves a caster of the Essence realm.
+        final String realmKey =
+                DecisionKey.characterWide(DecisionKind.PROFESSION_REALM, data.getProfessionId(), 0).toString();
+        final DecisionData realmDecision = decisions.get(realmKey);
+        Assert.assertNotNull(realmDecision, realmKey);
+        Assert.assertEquals(realmDecision.getRecordedAtLevel(), 1);
+        Assert.assertEquals(realmDecision.getOfferedOptions(), List.of("ESSENCE"));
+        Assert.assertEquals(realmDecision.getSelectedOptions(), List.of("ESSENCE"));
 
         Assert.assertEquals(data.getSelectedPerks().size(), 5);
         Assert.assertEquals(data.getSelectedPerks().get(0).getPerkId(), "herbExpert");
@@ -214,7 +225,10 @@ public class LegacyCharacterJsonImporterTest {
         Assert.assertEquals(character.getSpellListTotalRanks("essenceSummoningsOscuras"), Integer.valueOf(8));
 
         Assert.assertEquals(character.getWeaponCategoryCostTierCount(), 9);
-        Assert.assertEquals(character.getDecisions().getAll().size(), 9);
+        Assert.assertEquals(character.getDecisions().getAll().size(), 10);
+        Assert.assertEquals(character.getRealmsOfMagic().size(), 1);
+        Assert.assertEquals(character.getRealmsOfMagic().get(0), RealmOfMagic.ESSENCE);
+        Assert.assertTrue(character.getPowerPoints() > 0);
     }
 
     @Test

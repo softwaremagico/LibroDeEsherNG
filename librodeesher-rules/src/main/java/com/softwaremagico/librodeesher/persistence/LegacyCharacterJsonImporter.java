@@ -16,6 +16,7 @@ import com.softwaremagico.librodeesher.equipment.MagicObject;
 import com.softwaremagico.librodeesher.equipment.ObjectBonus;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.language.TranslatedText;
+import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
@@ -93,7 +94,10 @@ public final class LegacyCharacterJsonImporter {
         background.setSkillIds(resolveSkillNames(root.path("background").path("skills"), skillIds));
         data.setBackground(background);
 
-        buildWeaponCostDecisions(root.path("professionDecisions").path("weaponsCost"), categoryIds, data);
+        final Map<String, DecisionData> decisions = new TreeMap<>();
+        data.setDecisions(decisions);
+        buildWeaponCostDecisions(root.path("professionDecisions").path("weaponsCost"), categoryIds, decisions);
+        buildMagicRealmDecisions(root.path("realmOfMagic").path("magicRealmsAvailable"), data.getProfessionId(), decisions);
         data.setSelectedPerks(buildPerks(root.path("selectedPerks"), perkIds));
         data.setMagicItems(buildMagicItems(root.path("magicItems"), skillIds));
 
@@ -229,8 +233,7 @@ public final class LegacyCharacterJsonImporter {
     /** The legacy weapon cost tiers become one character-wide {@link DecisionKind#WEAPON_COST_TIER}
      *  decision per weapon category, recorded at level 1 (map keys are the decision keys, sorted). */
     private static void buildWeaponCostDecisions(JsonNode weaponsCost, Map<String, String> categoryIds,
-                                                 CharacterData data) {
-        final Map<String, DecisionData> decisions = new TreeMap<>();
+                                                 Map<String, DecisionData> decisions) {
         weaponsCost.fields().forEachRemaining(entry -> {
             final String categoryCostId = entry.getValue().path("categoryCostId").asText();
             if (!categoryCostId.startsWith("WEAPON")) {
@@ -242,7 +245,22 @@ public final class LegacyCharacterJsonImporter {
             decisions.put(key.toString(),
                     new DecisionData(new DecisionKeyData(key), 1, List.of(weaponCategoryId), List.of(weaponCategoryId)));
         });
-        data.setDecisions(decisions);
+    }
+
+    /** The legacy realm of magic (a single, fixed realm in a 2.0.0 save) becomes one character-wide
+     *  {@link DecisionKind#PROFESSION_REALM} decision per selected realm, recorded at level 1, so the
+     *  rebuilt character's {@code getRealmsOfMagic()} (and so its power points and spell list access)
+     *  resolves as the original did. */
+    private static void buildMagicRealmDecisions(JsonNode magicRealmsAvailable, String professionId,
+                                                 Map<String, DecisionData> decisions) {
+        int index = 0;
+        for (final JsonNode realm : magicRealmsAvailable) {
+            final RealmOfMagic resolved = RealmOfMagic.fromTag(realm.asText());
+            final DecisionKey key =
+                    DecisionKey.characterWide(DecisionKind.PROFESSION_REALM, professionId, index++);
+            decisions.put(key.toString(), new DecisionData(new DecisionKeyData(key), 1,
+                    List.of(resolved.name()), List.of(resolved.name())));
+        }
     }
 
     private static List<SelectedPerk> buildPerks(JsonNode node, Map<String, String> perkIds) {
