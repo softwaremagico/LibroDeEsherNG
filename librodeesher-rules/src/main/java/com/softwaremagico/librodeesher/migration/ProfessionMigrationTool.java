@@ -73,6 +73,7 @@ public final class ProfessionMigrationTool {
         final IdAllocator idAllocator = new IdAllocator();
         final Map<String, String> categoryIndex = CategoryMigrationTool.buildCategoryIndex(sourceRoot);
         final Map<String, String> trainingIndex = TrainingMigrationTool.buildTrainingIndex(sourceRoot);
+        final Map<String, String> skillIndex = SkillMigrationTool.buildSkillIndex(sourceRoot);
 
         int written = 0;
         for (final String module : ModuleManager.getAllModules()) {
@@ -84,7 +85,7 @@ public final class ProfessionMigrationTool {
             try (Stream<Path> files = Files.list(professionsDir)) {
                 for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
                         .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
-                    professions.add(readProfessionFile(file, idAllocator, categoryIndex, trainingIndex));
+                    professions.add(readProfessionFile(file, idAllocator, categoryIndex, trainingIndex, skillIndex));
                 }
             }
             if (professions.isEmpty()) {
@@ -126,7 +127,7 @@ public final class ProfessionMigrationTool {
     }
 
     private static Profession readProfessionFile(Path file, IdAllocator idAllocator, Map<String, String> categoryIndex,
-                                                   Map<String, String> trainingIndex)
+                                                   Map<String, String> trainingIndex, Map<String, String> skillIndex)
             throws IOException {
         final String fileName = file.getFileName().toString();
         final String professionName = fileName.substring(0, fileName.length() - ".txt".length());
@@ -140,13 +141,13 @@ public final class ProfessionMigrationTool {
         final ParsedCategoryCosts categoryCosts = parseCategoryCosts(cursor.nextSection(), categoryIndex);
         profession.setCategoryCosts(categoryCosts.categoryCosts());
         profession.setWeaponCategoryCostTiers(categoryCosts.weaponCostTiers());
-        final ParsedSkillSection common = parseSkillSection(cursor.nextSection(), categoryIndex);
+        final ParsedSkillSection common = parseSkillSection(cursor.nextSection(), categoryIndex, skillIndex);
         profession.setCommonSkillIds(common.fixedSkillIds());
         profession.setCommonSkillChoices(common.choices());
-        final ParsedSkillSection professional = parseSkillSection(cursor.nextSection(), categoryIndex);
+        final ParsedSkillSection professional = parseSkillSection(cursor.nextSection(), categoryIndex, skillIndex);
         profession.setProfessionalSkillIds(professional.fixedSkillIds());
         profession.setProfessionalSkillChoices(professional.choices());
-        final ParsedSkillSection restricted = parseSkillSection(cursor.nextSection(), categoryIndex);
+        final ParsedSkillSection restricted = parseSkillSection(cursor.nextSection(), categoryIndex, skillIndex);
         profession.setRestrictedSkillIds(restricted.fixedSkillIds());
         profession.setRestrictedSkillChoices(restricted.choices());
         final List<String> magicCostLines = cursor.nextSectionOrEmpty();
@@ -200,13 +201,11 @@ public final class ProfessionMigrationTool {
      * and {@code "MNatemáticas Basícas"} (a doubly-mistyped "Matemáticas Básicas", also in
      * "Astrólogo.txt").
      *
-     * <p>A handful of other typos/nonexistent skill names are left untouched instead (e.g. "Conocimiento
-     * de lod Círculos", "Hipnosi", "Ritual Mágica", "Estabilización Adreanl", "Primerio Auxilios",
-     * "Maestría de los Hechizo", none of which name a real migrated skill even once corrected, since
-     * "Círculos"/"Hipnosis"/etc. are not skills anywhere in the shipped data): the resulting ids
-     * (already non-accented, so safe to keep) match no real {@code Skill}, which is a faithful match
-     * for the legacy behaviour here (its {@code SkillFactory#getSkill(String)} silently created a new,
-     * standalone "skill" for any never-before-seen name instead of failing, so these grants were
+     * <p>Any other typo is corrected by {@link TrainingMigrationTool#resolveSkillId} against the real
+     * skill catalog, so this map only needs the spellings whose <em>corrected</em> form is still not a
+     * catalog skill name ("Conocimiento de la Adivinación"): those keep producing a placeholder id, a
+     * faithful match for the legacy behaviour (its {@code SkillFactory#getSkill(String)} silently created
+     * a new, standalone "skill" for any never-before-seen name instead of failing, so these grants were
      * already effectively inert there too).</p>
      */
     private static final Map<String, String> SKILL_NAME_TYPO_FIXES = Map.of(
@@ -214,8 +213,8 @@ public final class ProfessionMigrationTool {
             "Conocimiento de la Advinación", "Conocimiento de la Adivinación",
             "MNatemáticas Basícas", "Matemáticas Básicas");
 
-    private static String translateSkillName(String rawName) {
-        return Translations.toEnglishId(SKILL_NAME_TYPO_FIXES.getOrDefault(rawName, rawName));
+    private static String translateSkillName(String rawName, Map<String, String> skillIndex) {
+        return TrainingMigrationTool.resolveSkillId(SKILL_NAME_TYPO_FIXES.getOrDefault(rawName, rawName), skillIndex);
     }
 
     /**
@@ -226,7 +225,8 @@ public final class ProfessionMigrationTool {
      * surrounding braces), an explicit {@code {alt1;alt2}} alternative list, or one of {@link
      * #SKILL_PREFIX_GROUPS}.
      */
-    private static ParsedSkillSection parseSkillSection(List<String> sectionLines, Map<String, String> categoryIndex) {
+    private static ParsedSkillSection parseSkillSection(List<String> sectionLines, Map<String, String> categoryIndex,
+                                                           Map<String, String> skillIndex) {
         final List<String> fixedSkillIds = new ArrayList<>();
         final List<ProfessionSkillGrant> choices = new ArrayList<>();
         for (final String line : sectionLines) {
@@ -235,16 +235,17 @@ public final class ProfessionMigrationTool {
             }
             for (final String token : splitTopLevelComma(line)) {
                 if (token.contains("#") || token.startsWith("{")) {
-                    choices.add(parseSkillChoice(token, categoryIndex));
+                    choices.add(parseSkillChoice(token, categoryIndex, skillIndex));
                 } else {
-                    fixedSkillIds.add(translateSkillName(token));
+                    fixedSkillIds.add(translateSkillName(token, skillIndex));
                 }
             }
         }
         return new ParsedSkillSection(fixedSkillIds, choices);
     }
 
-    private static ProfessionSkillGrant parseSkillChoice(String token, Map<String, String> categoryIndex) {
+    private static ProfessionSkillGrant parseSkillChoice(String token, Map<String, String> categoryIndex,
+                                                           Map<String, String> skillIndex) {
         final int hashIndex = token.lastIndexOf('#');
         final String content = (hashIndex >= 0 ? token.substring(0, hashIndex) : token)
                 .replace("{", "").replace("}", "").trim();
@@ -257,7 +258,7 @@ public final class ProfessionMigrationTool {
         if (content.contains(";")) {
             final List<String> options = new ArrayList<>();
             for (final String option : content.split(";")) {
-                options.add(translateSkillName(option.trim()));
+                options.add(translateSkillName(option.trim(), skillIndex));
             }
             return ProfessionSkillGrant.ofSkillOptions(ranksToChoose, options);
         }

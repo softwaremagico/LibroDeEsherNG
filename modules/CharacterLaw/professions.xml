@@ -8547,10 +8547,10 @@
       <characteristic>INTUITION</characteristic>
     </characteristicPreferences>
     <commonSkillIds>
-      <commonSkillId>stabilizationAdreanl</commonSkillId>
-      <commonSkillId>masteryOfSpell</commonSkillId>
+      <commonSkillId>stabilizationAdrenal</commonSkillId>
+      <commonSkillId>masteryOfSpells</commonSkillId>
       <commonSkillId>meditation</commonSkillId>
-      <commonSkillId>ritualMagical</commonSkillId>
+      <commonSkillId>ritualArcane</commonSkillId>
       <commonSkillId>senseOfTiempo</commonSkillId>
     </commonSkillIds>
     <id>mystic</id>
@@ -11034,7 +11034,7 @@
     </name>
     <professionalSkillIds>
       <professionalSkillId>healingOfAnimals</professionalSkillId>
-      <professionalSkillId>primerioAuxilios</professionalSkillId>
+      <professionalSkillId>primerosAuxilios</professionalSkillId>
     </professionalSkillIds>
     <magicRealms>
       <realmGrant>

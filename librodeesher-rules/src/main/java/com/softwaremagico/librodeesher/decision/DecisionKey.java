@@ -25,6 +25,13 @@ public final class DecisionKey {
     /** The {@code subIndex} of a grant that is not nested inside another one. */
     public static final int NO_SUB_INDEX = -1;
 
+    /**
+     * Reserved offset applied to the sub-index of a nested <em>spell list</em> grant, so that it can
+     * never collide with the sub-index of a nested skill grant of the same owner grant. Large enough to
+     * stay clear of any realistic number of skill grants.
+     */
+    private static final int SPELL_LIST_SUB_INDEX_OFFSET = 1_000_000;
+
     private final DecisionKind kind;
     private final String ownerId;
     private final int index;
@@ -142,6 +149,15 @@ public final class DecisionKey {
      */
     public DecisionKey nested(int subIndex) {
         return new DecisionKey(kind, ownerId, index, subIndex, level);
+    }
+
+    /**
+     * The nested <em>spell list</em> grant {@code subIndex} of the same owner-grant-level as this key.
+     * Distinct from {@link #nested(int)}, which yields the nested <em>skill</em> grant of the same
+     * sub-index: a category grant may offer both, and their decisions must not alias each other.
+     */
+    public DecisionKey nestedSpellList(int subIndex) {
+        return new DecisionKey(kind, ownerId, index, SPELL_LIST_SUB_INDEX_OFFSET + subIndex, level);
     }
 
     @Override

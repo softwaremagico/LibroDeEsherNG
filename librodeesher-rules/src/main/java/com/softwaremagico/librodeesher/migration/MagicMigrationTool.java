@@ -14,6 +14,8 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Set;
 
 /**
@@ -74,6 +76,50 @@ public final class MagicMigrationTool {
             written++;
         }
         return written;
+    }
+
+    /**
+     * Builds a Spanish spell list name -&gt; real id index the same way {@link #migrate} builds the
+     * spell list catalog itself, so other migration tools (e.g. {@code TrainingMigrationTool}, whose
+     * "Listas Básicas de Hechizos" grants name spell lists rather than skills) can resolve a name to the
+     * real {@link MagicSpellList} id.
+     *
+     * <p><strong>Ambiguous names are omitted on purpose.</strong> The rulebook reuses one name across
+     * realms ("Sendas de los Huesos" exists in both CANALIZATION and MENTALISM), and a training grant
+     * names only the Spanish name, so there is no way to pick one from the grant alone. Rather than
+     * silently bind a grant to an arbitrary realm, such a name resolves to nothing and
+     * {@code TrainingMigrationTool} reports it as unknown. No spell list named by a training grant in
+     * the shipped data is ambiguous today.</p>
+     */
+    public static Map<String, String> buildSpellListIndex(Path sourceRoot) throws IOException {
+        final Path modulosDir = sourceRoot.resolve("rolemaster").resolve("modulos");
+        final Map<String, String> idsByName = new LinkedHashMap<>();
+        final Set<String> ambiguousNames = new HashSet<>();
+
+        for (final String module : ModuleManager.getAllModules()) {
+            for (final RealmOfMagic realm : RealmOfMagic.values()) {
+                final Path file = modulosDir.resolve(LegacyModules.sourceFolderFor(module))
+                        .resolve(SPELLS_FOLDER).resolve(realm.getTag() + ".txt");
+                if (!Files.isRegularFile(file) || !LegacyFileFilters.isRealDataFile(file)) {
+                    continue;
+                }
+                for (final String line : Files.readAllLines(file, StandardCharsets.UTF_8)) {
+                    if (line.isBlank() || line.startsWith("#")) {
+                        continue;
+                    }
+                    // The id is derived from realm + name, so a name repeated inside one realm file (or
+                    // across modules of the same realm) yields the very same id and stays unambiguous.
+                    final String name = line.split("\t")[0].trim();
+                    final String id = MagicSpellList.buildId(realm, name);
+                    final String previousId = idsByName.putIfAbsent(name, id);
+                    if (previousId != null && !previousId.equals(id)) {
+                        ambiguousNames.add(name);
+                    }
+                }
+            }
+        }
+        ambiguousNames.forEach(idsByName::remove);
+        return idsByName;
     }
 
     private static void readSpellListsFile(Path file, RealmOfMagic realm, String module,

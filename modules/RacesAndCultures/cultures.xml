@@ -3100,7 +3100,7 @@
       <hobbyId>observation</hobbyId>
       <hobbyId>predictionOfTheClima</hobbyId>
       <hobbyId>supervivenciaMountains</hobbyId>
-      <hobbyId>climbing</hobbyId>
+      <hobbyId>climbing2</hobbyId>
     </hobbies>
     <hobbyRanks>12</hobbyRanks>
     <id>aerialBarbarian</id>
@@ -3556,7 +3556,7 @@
       <hobbyId>predictionOfTheClima</hobbyId>
       <hobbyId>rappelling</hobbyId>
       <hobbyId>supervivenciaMountains</hobbyId>
-      <hobbyId>climbing</hobbyId>
+      <hobbyId>climbing2</hobbyId>
     </hobbies>
     <hobbyRanks>12</hobbyRanks>
     <id>aerial</id>
@@ -4004,7 +4004,7 @@
       <hobbyId>tracking</hobbyId>
       <hobbyId>senseOfDirection</hobbyId>
       <hobbyId>signals</hobbyId>
-      <hobbyId>supervivenciaDesert</hobbyId>
+      <hobbyId>supervivenciaDesiertos</hobbyId>
       <hobbyId>trabajarTheLeather</hobbyId>
       <hobbyId>trabajarTheMetal</hobbyId>
     </hobbies>
@@ -4458,7 +4458,7 @@
       <hobbyId>montar</hobbyId>
       <hobbyId>orientationCeleste</hobbyId>
       <hobbyId>signals</hobbyId>
-      <hobbyId>supervivenciaDesert</hobbyId>
+      <hobbyId>supervivenciaDesiertos</hobbyId>
       <hobbyId>trabajarTheLeather</hobbyId>
       <hobbyId>trabajarTheMetal</hobbyId>
     </hobbies>
@@ -5392,7 +5392,7 @@
       <hobbyId>seduction</hobbyId>
       <hobbyId>senseOfDirection</hobbyId>
       <hobbyId>sobornar</hobbyId>
-      <hobbyId>supervivenciaDesert</hobbyId>
+      <hobbyId>supervivenciaDesiertos</hobbyId>
       <hobbyId>playingInstrument</hobbyId>
       <hobbyId>trabajarTheLeather</hobbyId>
       <hobbyId>trabajarTheMetal</hobbyId>
@@ -5844,7 +5844,7 @@
       <hobbyId>senseOfDirection</hobbyId>
       <hobbyId>senseOfTiempo</hobbyId>
       <hobbyId>sobornar</hobbyId>
-      <hobbyId>supervivenciaDesert</hobbyId>
+      <hobbyId>supervivenciaDesiertos</hobbyId>
       <hobbyId>trabajarTheLeather</hobbyId>
       <hobbyId>trabajarTheStone</hobbyId>
     </hobbies>
@@ -12674,7 +12674,7 @@
       <hobbyId>dancing</hobbyId>
       <hobbyId>cocinar</hobbyId>
       <hobbyId>loreRegional</hobbyId>
-      <hobbyId>climbing</hobbyId>
+      <hobbyId>climbing2</hobbyId>
       <hobbyId>hiding</hobbyId>
       <hobbyId>forrajear</hobbyId>
       <hobbyId>masteryOfAnimals</hobbyId>
@@ -13141,7 +13141,7 @@
       <hobbyId>tracking</hobbyId>
       <hobbyId>trabajarTheLeather</hobbyId>
       <hobbyId>trabajarTheMadera</hobbyId>
-      <hobbyId>climbing</hobbyId>
+      <hobbyId>climbing2</hobbyId>
     </hobbies>
     <hobbyRanks>12</hobbyRanks>
     <id>rural</id>
@@ -14519,7 +14519,7 @@
       <hobbyId>senseOfRealidad</hobbyId>
       <hobbyId>predictionOfTheClima</hobbyId>
       <hobbyId>tracking</hobbyId>
-      <hobbyId>supervivenciaBosque</hobbyId>
+      <hobbyId>supervivenciaBosques</hobbyId>
       <hobbyId>climbing</hobbyId>
       <hobbyId>tumbling</hobbyId>
     </hobbies>
@@ -18105,7 +18105,7 @@
       <hobbyId>predictionOfTheClima</hobbyId>
       <hobbyId>tracking</hobbyId>
       <hobbyId>jumping</hobbyId>
-      <hobbyId>supervivenciaTierrasHigh</hobbyId>
+      <hobbyId>supervivenciaMountains</hobbyId>
       <hobbyId>climbing</hobbyId>
     </hobbies>
     <hobbyRanks>12</hobbyRanks>
@@ -19057,7 +19057,7 @@
       <hobbyId>playingInstrument</hobbyId>
       <hobbyId>trabajarTheLeather</hobbyId>
       <hobbyId>trabajarTheMetal</hobbyId>
-      <hobbyId>climbing</hobbyId>
+      <hobbyId>climbing2</hobbyId>
     </hobbies>
     <hobbyRanks>12</hobbyRanks>
     <id>highlands</id>
@@ -20442,7 +20442,7 @@
       <hobbyId>loreOfFaunaArctic</hobbyId>
       <hobbyId>construirTrampas</hobbyId>
       <hobbyId>physicalDevelopment</hobbyId>
-      <hobbyId>climbing</hobbyId>
+      <hobbyId>climbing2</hobbyId>
       <hobbyId>speleology</hobbyId>
       <hobbyId>forrajear</hobbyId>
       <hobbyId>manejoOfTheAnimals</hobbyId>

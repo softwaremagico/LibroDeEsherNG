@@ -4,6 +4,7 @@ import com.softwaremagico.librodeesher.training.ChoiceGroup;
 import com.softwaremagico.librodeesher.training.Training;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
 import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
+import com.softwaremagico.librodeesher.training.TrainingSpellListGrant;
 import com.softwaremagico.librodeesher.training.TrainingSpecialItem;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -159,6 +160,104 @@ public class TrainingMigrationToolTest {
             Assert.assertEquals(commonSkills.get(1).getOptions(), List.of("tracking", "stalking"));
 
             Assert.assertTrue(explorador.getProfessionCosts().isEmpty());
+        } finally {
+            deleteRecursively(sourceRoot);
+            deleteRecursively(targetRoot);
+        }
+    }
+
+    /**
+     * A "Listas Básicas de Hechizos" grant names spell lists, not skills. The legacy parser had no
+     * spell list slot, so every one of these names became a brand new standalone {@code Skill} that no
+     * catalog defines; they must now resolve to the real, realm-prefixed spell list id.
+     */
+    @Test
+    public void resolvesSpellListGrantsToRealSpellListIds() throws IOException {
+        final Path sourceRoot = Files.createTempDirectory("librodeesher-spell-list-migration-source");
+        final Path targetRoot = Files.createTempDirectory("librodeesher-spell-list-migration-target");
+        try {
+            Files.createDirectories(sourceRoot.resolve("rolemaster"));
+            Files.writeString(sourceRoot.resolve("rolemaster/categorias.txt"), String.join("\n",
+                    "Listas Básicas de Hechizos(ListBas)\t*\tLimitada\tHechizos",
+                    ""), StandardCharsets.UTF_8);
+
+            final Path essenceDir = sourceRoot.resolve("rolemaster/modulos/Esencia/hechizos");
+            Files.createDirectories(essenceDir);
+            Files.writeString(essenceDir.resolve("Esencia.txt"), String.join("\n",
+                    "Ley del Fuego\tMago",
+                    "Maestría de la Luz\tMago",
+                    ""), StandardCharsets.UTF_8);
+
+            final Path channelingDir = sourceRoot.resolve("rolemaster/modulos/Canalización/hechizos");
+            Files.createDirectories(channelingDir);
+            Files.writeString(channelingDir.resolve("Canalización.txt"), String.join("\n",
+                    // The rulebook typo of "Shaguk Kun-Toramim", resolved through SPELL_LIST_NAME_ALIASES.
+                    "Nigromacia\tGuerrero/Can",
+                    ""), StandardCharsets.UTF_8);
+
+            final Path trainingsDir = sourceRoot.resolve("rolemaster/modulos/Basico/adiestramientos");
+            Files.createDirectories(trainingsDir);
+            Files.writeString(trainingsDir.resolve("Mago del Fuego.txt"), String.join("\n",
+                    "# TIEMPO (meses)",
+                    "####################################",
+                    "24",
+                    "",
+                    "# EXCLUSIVO RAZA",
+                    "####################################",
+                    "Ninguno",
+                    "",
+                    "#ESPECIAL",
+                    "####################################",
+                    "Libro\t30",
+                    "",
+                    "#HABILIDADES\t\tRANGOS\tMIN\tMAX\tRANG",
+                    "####################################",
+                    "Listas Básicas de Hechizos\t0\t2\t2\t4",
+                    "  *  Ley del Fuego\t0\t-\t-\t-\t",
+                    "  *  Maestría de la Luz\t2\t-\t-\t-\t",
+                    "### FIN ADIESTRAMIENTO ###",
+                    ""), StandardCharsets.UTF_8);
+            Files.writeString(trainingsDir.resolve("Shaguk.txt"), String.join("\n",
+                    "# TIEMPO (meses)",
+                    "####################################",
+                    "24",
+                    "",
+                    "# EXCLUSIVO RAZA",
+                    "####################################",
+                    "Ninguno",
+                    "",
+                    "#ESPECIAL",
+                    "####################################",
+                    "Libro\t30",
+                    "",
+                    "#HABILIDADES\t\tRANGOS\tMIN\tMAX\tRANG",
+                    "####################################",
+                    "Listas Básicas de Hechizos\t0\t1\t1\t2",
+                    "  *  Nigromancia\t2\t-\t-\t-\t",
+                    "### FIN ADIESTRAMIENTO ###",
+                    ""), StandardCharsets.UTF_8);
+
+            Assert.assertEquals(TrainingMigrationTool.migrate(sourceRoot, targetRoot), 1);
+
+            final List<Training> trainings = readGeneratedFile(targetRoot.resolve("Core/trainings.xml"));
+            Assert.assertEquals(trainings.size(), 2);
+
+            final Training fireWizard = trainings.get(0);
+            Assert.assertEquals(fireWizard.getId(), "fireWizard");
+            Assert.assertTrue(fireWizard.getCategories().get(0).getSkills().isEmpty(),
+                    "a spell list grant must not become a skill grant");
+            Assert.assertEquals(fireWizard.getCategories().get(0).getSpellLists().size(), 2);
+            final TrainingSpellListGrant fireLaw = fireWizard.getCategories().get(0).getSpellLists().get(0);
+            Assert.assertEquals(fireLaw.getSpellListOptions(), List.of("essenceLawOfFire"));
+            Assert.assertEquals(fireLaw.getRanksToDistribute(), Integer.valueOf(0));
+            final TrainingSpellListGrant lightMastery = fireWizard.getCategories().get(0).getSpellLists().get(1);
+            Assert.assertEquals(lightMastery.getSpellListOptions(), List.of("essenceMasteryOfLight"));
+            Assert.assertEquals(lightMastery.getRanksToDistribute(), Integer.valueOf(2));
+
+            final Training shaguk = trainings.get(1);
+            Assert.assertEquals(shaguk.getCategories().get(0).getSpellLists().size(), 1);
+            Assert.assertEquals(shaguk.getCategories().get(0).getSpellLists().get(0).getSpellListOptions(),
+                    List.of("canalizationNigromacia"));
         } finally {
             deleteRecursively(sourceRoot);
             deleteRecursively(targetRoot);

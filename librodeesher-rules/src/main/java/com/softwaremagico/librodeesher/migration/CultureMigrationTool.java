@@ -74,7 +74,7 @@ public final class CultureMigrationTool {
         culture.setTypicalArmorIds(parseArmorIds(cursor.nextSection()));
         culture.setAdolescenceRanks(parseAdolescenceRanks(cursor.nextSection(), categoryIndex, skillIndex));
         culture.setHobbyRanks(parseOptionalInteger(cursor.nextSection()));
-        final ParsedHobbyIds hobbies = parseHobbyIds(cursor.nextSection());
+        final ParsedHobbyIds hobbies = parseHobbyIds(cursor.nextSection(), skillIndex);
         culture.setHobbyIds(hobbies.hobbyIds());
         culture.setExcludedHobbyIds(hobbies.excluded());
         final ParsedCultureLanguages languages = parseLanguageRanks(cursor.nextSection());
@@ -186,7 +186,7 @@ public final class CultureMigrationTool {
      * language ({@code "// TODO select a language"}), so it was silently a no-op there too.
      */
     /** Parses the "AFICIONES" section, splitting explicitly excluded ("-Skill") entries into {@link ParsedHobbyIds#excluded()}. */
-    private static ParsedHobbyIds parseHobbyIds(List<String> lines) {
+    private static ParsedHobbyIds parseHobbyIds(List<String> lines, Map<String, String> skillIndex) {
         final List<String> ids = new ArrayList<>();
         final List<String> excluded = new ArrayList<>();
         for (final String line : lines) {
@@ -202,7 +202,7 @@ public final class CultureMigrationTool {
                 if (cleaned.equalsIgnoreCase("idiomas")) {
                     continue;
                 }
-                final String resolved = Translations.toEnglishId(cleaned);
+                final String resolved = TrainingMigrationTool.resolveSkillId(cleaned, skillIndex);
                 if (token.startsWith("-")) {
                     excluded.add(resolved);
                 } else {

@@ -222,15 +222,15 @@
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>2</ranksToDistribute>
-        <skills>
-          <skillGrant>
+        <spellLists>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
-            <skillOptions>
-              <skill>nigromancia</skill>
-            </skillOptions>
-          </skillGrant>
-        </skills>
+            <spellListOptions>
+              <spellList>canalizationNigromacia</spellList>
+            </spellListOptions>
+          </spellListGrant>
+        </spellLists>
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>

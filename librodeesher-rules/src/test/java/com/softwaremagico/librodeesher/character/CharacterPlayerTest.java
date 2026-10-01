@@ -34,6 +34,7 @@ import com.softwaremagico.librodeesher.training.Training;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
 import com.softwaremagico.librodeesher.training.TrainingItemType;
 import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
+import com.softwaremagico.librodeesher.training.TrainingSpellListGrant;
 import com.softwaremagico.librodeesher.training.TrainingSpecialItem;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -388,6 +389,84 @@ public class CharacterPlayerTest {
 
 		Assert.assertEquals(character.getCategoryTotalRanks("weaponsEdged"), Integer.valueOf(2));
 		Assert.assertEquals(character.getDecisions().getSelectedOption(categoryKey), "weaponsEdged");
+	}
+
+	@Test
+	public void applyingASpellListGrantAddsItsRanksToTheSpellListsAndNotToTheSkills()
+			throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+		// "Listas Hechizos de Adiestramiento", as the MentalismCompanion "Houri" training declares it.
+		grant.setCategoryOptions(List.of("listsSpellsOfTraining"));
+		grant.setRanksGranted(0);
+		grant.setMinSkills(2);
+		grant.setMaxSkills(2);
+		grant.setRanksToDistribute(4);
+		grant.getSpellLists().add(new TrainingSpellListGrant(List.of("mentalismKissesOfHouri"), 2));
+		grant.getSpellLists().add(new TrainingSpellListGrant(List.of("mentalismDeceptionsOfHouri"), 2));
+
+		final DecisionKey categoryKey = DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "houri", 0, 1);
+		character.applyCategoryGrant(categoryKey, grant, null, null, null);
+
+		Assert.assertEquals(character.getSpellListTotalRanks("mentalismKissesOfHouri"), Integer.valueOf(2));
+		Assert.assertEquals(character.getSpellListTotalRanks("mentalismDeceptionsOfHouri"), Integer.valueOf(2));
+		Assert.assertEquals(character.getDecisions().getSelectedOption(categoryKey), "listsSpellsOfTraining");
+		Assert.assertEquals(character.getDecisions().getSelectedOption(categoryKey.nestedSpellList(0)),
+				"mentalismKissesOfHouri");
+		// A spell list decision must not be reachable through the nested-skill key of the same index.
+		Assert.assertFalse(character.getDecisions().isDecided(categoryKey.nested(0)));
+	}
+
+	@Test
+	public void applyingASpellListGrantDistributesTheRemainingRanksOverTheChosenLists()
+			throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+		grant.setCategoryOptions(List.of("listsBasicOfSpells"));
+		grant.setRanksGranted(0);
+		grant.setMinSkills(1);
+		grant.setMaxSkills(3);
+		grant.setRanksToDistribute(3);
+		grant.getSpellLists().add(new TrainingSpellListGrant(
+				List.of("essenceLawOfFire", "essenceLawOfLight", "essenceMasteryOfLight"), 0));
+
+		character.applyCategoryGrant(DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "fireWizard", 0, 1), grant,
+				null, null, null, null, Map.of("essenceLawOfLight", 3));
+
+		Assert.assertEquals(character.getSpellListTotalRanks("essenceLawOfLight"), Integer.valueOf(3));
+		Assert.assertEquals(character.getSpellListTotalRanks("essenceLawOfFire"), Integer.valueOf(0));
+	}
+
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void applyingASpellListGrantWithAListOutsideTheGrantFails() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+		grant.setCategoryOptions(List.of("listsBasicOfSpells"));
+		grant.setRanksGranted(0);
+		grant.setMinSkills(1);
+		grant.setMaxSkills(3);
+		grant.setRanksToDistribute(3);
+		grant.getSpellLists().add(new TrainingSpellListGrant(
+				List.of("essenceLawOfFire", "essenceLawOfLight"), 0));
+
+		character.applyCategoryGrant(DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "fireWizard", 0, 1), grant,
+				null, null, null, null, Map.of("essencePathsOfFire", 3));
+	}
+
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void applyingASpellListGrantWithTheWrongNumberOfRanksFails() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+		grant.setCategoryOptions(List.of("listsBasicOfSpells"));
+		grant.setRanksGranted(0);
+		grant.setMinSkills(1);
+		grant.setMaxSkills(3);
+		grant.setRanksToDistribute(3);
+		grant.getSpellLists().add(new TrainingSpellListGrant(
+				List.of("essenceLawOfFire", "essenceLawOfLight"), 0));
+
+		character.applyCategoryGrant(DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "fireWizard", 0, 1), grant,
+				null, null, null, null, Map.of("essenceLawOfFire", 1));
 	}
 
 	@Test

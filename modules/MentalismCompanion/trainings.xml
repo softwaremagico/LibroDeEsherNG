@@ -19,22 +19,22 @@
         <minSkills>2</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>4</ranksToDistribute>
-        <skills>
-          <skillGrant>
+        <spellLists>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
-            <skillOptions>
-              <skill>kissesOfHouri</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>mentalismKissesOfHouri</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>2</ranksToDistribute>
-            <skillOptions>
-              <skill>deceptionsOfHouri</skill>
-            </skillOptions>
-          </skillGrant>
-        </skills>
+            <spellListOptions>
+              <spellList>mentalismDeceptionsOfHouri</spellList>
+            </spellListOptions>
+          </spellListGrant>
+        </spellLists>
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>

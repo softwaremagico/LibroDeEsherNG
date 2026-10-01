@@ -22,6 +22,9 @@ import java.util.List;
  * guaranteed 3 of those points". {@link #getCategoryOptions()} has more than one entry when the
  * legacy file used the {@code {Cat1; Cat2}} choose-one-category syntax.</p>
  *
+ * <p>A grant may develop {@link com.softwaremagico.librodeesher.magic.MagicSpellList}s instead of
+ * skills (the "Listas Básicas de Hechizos" grants); see {@link #getSpellLists()}.</p>
+ *
  * <p><strong>Known simplification:</strong> the legacy application also allowed two special
  * pseudo-category tokens here ("arma"/"ataque", expanded at read time into every weapon/special-attack
  * category via {@code CategoryFactory}). This migration keeps such tokens as literal, unexpanded
@@ -52,8 +55,20 @@ public class TrainingCategoryGrant {
     @JacksonXmlProperty(localName = "skillGrant")
     private List<TrainingSkillGrant> skills;
 
+    /**
+     * The spell lists this grant develops, when it is a "Listas Básicas de Hechizos"/"Listas Hechizos de
+     * Adiestramiento" grant rather than a skill grant. {@link #getMinSkills()}/{@link #getMaxSkills()}
+     * and {@link #getRanksToDistribute()} apply to these lists exactly as they do to
+     * {@link #getSkills()}, so "exactly 2 of these lists, 4 ranks to distribute" reads the same either
+     * way. See {@link TrainingSpellListGrant}.
+     */
+    @JacksonXmlElementWrapper(localName = "spellLists")
+    @JacksonXmlProperty(localName = "spellListGrant")
+    private List<TrainingSpellListGrant> spellLists;
+
     public TrainingCategoryGrant() {
         skills = new ArrayList<>();
+        spellLists = new ArrayList<>();
     }
 
     public List<String> getCategoryOptions() {
@@ -116,5 +131,13 @@ public class TrainingCategoryGrant {
 
     public void setSkills(List<TrainingSkillGrant> skills) {
         this.skills = skills;
+    }
+
+    public List<TrainingSpellListGrant> getSpellLists() {
+        return spellLists == null ? Collections.emptyList() : spellLists;
+    }
+
+    public void setSpellLists(List<TrainingSpellListGrant> spellLists) {
+        this.spellLists = spellLists;
     }
 }

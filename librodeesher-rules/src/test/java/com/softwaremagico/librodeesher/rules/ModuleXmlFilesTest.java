@@ -176,6 +176,151 @@ public class ModuleXmlFilesTest {
         Assert.assertEquals(dangling, List.of(), "skill references that no module's skills.xml defines");
     }
 
+    /**
+     * A training grants skills and spell lists, and both must exist in the catalogs: the legacy parser
+     * could only produce skill slots, so every "Listas Básicas de Hechizos" entry was auto-created as a
+     * standalone {@code Skill} that no {@code skills.xml} defines. Those ranks were therefore invisible
+     * to {@link com.softwaremagico.librodeesher.level.LevelUp#addSpellListRanks} and to the
+     * "more than 5/10 spell lists per level" cost multiplier.
+     */
+    @Test
+    public void everySkillAndSpellListReferencedByATrainingExists() throws Exception {
+        final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setNamespaceAware(false);
+        factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+
+        final String corePath = classpathFileOrNull(PathManager.getModulePath(ModuleManager.CORE));
+        Assert.assertNotNull(corePath, "the core module is not on the classpath");
+        final File modulesFolder = new File(corePath).getParentFile();
+
+        final Set<String> skillIds = new TreeSet<>();
+        final Set<String> spellListIds = new TreeSet<>();
+        final Map<String, Set<String>> skillReferences = new TreeMap<>();
+        final Map<String, Set<String>> spellListReferences = new TreeMap<>();
+        for (final String module : ModuleManager.getAllModules()) {
+            final File moduleFolder = new File(modulesFolder, module);
+            final File[] files = moduleFolder.isDirectory()
+                    ? moduleFolder.listFiles((dir, name) -> name.endsWith(".xml"))
+                    : null;
+            if (files == null) {
+                continue;
+            }
+            for (final File file : files) {
+                final Document document = factory.newDocumentBuilder().parse(file);
+                if ("skills.xml".equals(file.getName())) {
+                    collect(document, "id", skillIds);
+                } else if ("spells.xml".equals(file.getName())) {
+                    collect(document, "id", spellListIds);
+                } else if ("trainings.xml".equals(file.getName())) {
+                    collect(document, "skill", skillReferences.computeIfAbsent(file.getPath(), key -> new TreeSet<>()));
+                    collect(document, "spellList",
+                            spellListReferences.computeIfAbsent(file.getPath(), key -> new TreeSet<>()));
+                }
+            }
+        }
+        Assert.assertFalse(skillIds.isEmpty(), "no skill id was found at all");
+        Assert.assertFalse(spellListIds.isEmpty(), "no spell list id was found at all");
+        Assert.assertFalse(spellListReferences.isEmpty(), "no training spell list reference was found at all");
+
+        final List<String> danglingSkills = new ArrayList<>();
+        skillReferences.forEach((file, referenced) -> {
+            for (final String id : referenced) {
+                if (!skillIds.contains(id) && !KNOWN_LEGACY_TRAINING_SKILL_TOKENS.contains(id)) {
+                    danglingSkills.add(file.substring(modulesFolder.getPath().length() + 1) + " -> " + id);
+                }
+            }
+        });
+        Assert.assertEquals(danglingSkills, List.of(), "training skill references no module's skills.xml defines");
+
+        final List<String> danglingSpellLists = new ArrayList<>();
+        spellListReferences.forEach((file, referenced) -> {
+            for (final String id : referenced) {
+                if (!spellListIds.contains(id)) {
+                    danglingSpellLists.add(file.substring(modulesFolder.getPath().length() + 1) + " -> " + id);
+                }
+            }
+        });
+        Assert.assertEquals(danglingSpellLists, List.of(),
+                "training spell list references no module's spells.xml defines");
+    }
+
+    /**
+     * Training skill references that resolve to nothing on purpose: the martial-arts grant of
+     * "ManualPersonajes" names two skills the legacy application auto-created at runtime
+     * ({@code SkillFactory}) without ever adding them to a {@code categorias.txt} file.
+     */
+    private static final Set<String> KNOWN_LEGACY_TRAINING_SKILL_TOKENS = Set.of(
+            "inmovilizaciones", "strikesNerviosos");
+
+    /**
+     * A culture hobby may legally name either a skill ("Cantar") or a weapon/armour type category
+     * ("Armas·Filo", "Armadura·Ligera"), because the rulebook lets a culture spend hobby points on
+     * gear as well as on skills. Anything else is a dangling reference.
+     *
+     * <p>This guards a failure the previous test could not see: {@code CultureMigrationTool} used to
+     * translate every hobby with {@code Translations.toEnglishId} directly instead of resolving it
+     * against the skill catalog, so both "Trepar" and "Escalar" collapsed onto the single id
+     * {@code climbing} (silently duplicating a hobby and losing "Escalar"), while real
+     * singular/gender variants ("Supervivencia (Bosque)" vs. the catalog's "Supervivencia (Bosques)")
+     * produced ids no skill has.</p>
+     */
+    @Test
+    public void everyCultureHobbyResolvesToASkillOrAGearCategory() throws Exception {
+        final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setNamespaceAware(false);
+        factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+
+        final String corePath = classpathFileOrNull(PathManager.getModulePath(ModuleManager.CORE));
+        Assert.assertNotNull(corePath, "the core module is not on classpath");
+        final File modulesFolder = new File(corePath).getParentFile();
+
+        final Set<String> resolvable = new TreeSet<>();
+        final Map<String, Set<String>> hobbiesByFile = new TreeMap<>();
+        for (final String module : ModuleManager.getAllModules()) {
+            final File moduleFolder = new File(modulesFolder, module);
+            final File[] files = moduleFolder.isDirectory()
+                    ? moduleFolder.listFiles((dir, name) -> name.endsWith(".xml"))
+                    : null;
+            if (files == null) {
+                continue;
+            }
+            for (final File file : files) {
+                final Document document = factory.newDocumentBuilder().parse(file);
+                if ("skills.xml".equals(file.getName()) || "categories.xml".equals(file.getName())) {
+                    collect(document, "id", resolvable);
+                } else if ("cultures.xml".equals(file.getName())) {
+                    final Set<String> hobbies = hobbiesByFile.computeIfAbsent(file.getPath(), key -> new TreeSet<>());
+                    collect(document, "hobbyId", hobbies);
+                    collect(document, "excludedHobbyId", hobbies);
+                }
+            }
+        }
+        Assert.assertFalse(resolvable.isEmpty(), "no skill/category id was found at all");
+        Assert.assertFalse(hobbiesByFile.isEmpty(), "no culture hobby reference was found at all");
+
+        final List<String> dangling = new ArrayList<>();
+        hobbiesByFile.forEach((file, hobbies) -> {
+            for (final String id : hobbies) {
+                if (!resolvable.contains(id) && !KNOWN_LEGACY_CULTURE_TOKENS.contains(id)) {
+                    dangling.add(file.substring(modulesFolder.getPath().length() + 1) + " -> " + id);
+                }
+            }
+        });
+        Assert.assertEquals(dangling, List.of(), "culture hobbies that are neither a skill nor a gear category");
+    }
+
+    /**
+     * Culture hobbies that resolve to nothing on purpose. {@code all}/{@code weapon}/{@code armor} are
+     * the legacy "any hobby"/"any weapon"/"any armour" markers and {@code listOfSpells} is the
+     * "Lista de Hechizos" slot. The rest are hobby skills the legacy {@code SkillFactory} silently
+     * auto-created at runtime and that were never added to any {@code categorias.txt}, so no catalog
+     * entry exists for them yet.
+     */
+    private static final Set<String> KNOWN_LEGACY_CULTURE_TOKENS = Set.of(
+            "all", "weapon", "armor", "listOfSpells",
+            "coser", "loreOfFaunaAquatic", "loreOfFaunaArctic", "loreOfFloraAquatic",
+            "loreRegionalArctic", "supervivenciaAquatic");
+
     /** Collects the text of every {@code tag} element of {@code document} into {@code into}. */
     private static void collect(Document document, String tag, Set<String> into) {
         final var nodes = document.getElementsByTagName(tag);

@@ -3481,8 +3481,7 @@
     <commonSkillIds>
       <commonSkillId>loreOfArtifacts</commonSkillId>
       <commonSkillId>history</commonSkillId>
-      <commonSkillId>loreOfAdvincaciones</commonSkillId>
-      <commonSkillId>detectingLies</commonSkillId>
+        <commonSkillId>detectingLies</commonSkillId>
       <commonSkillId>orientationCeleste</commonSkillId>
       <commonSkillId>senseOfTiempo</commonSkillId>
     </commonSkillIds>

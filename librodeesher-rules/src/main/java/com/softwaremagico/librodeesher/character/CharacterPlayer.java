@@ -54,6 +54,7 @@ import com.softwaremagico.librodeesher.training.Training;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
 import com.softwaremagico.librodeesher.training.TrainingProfessionCost;
 import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
+import com.softwaremagico.librodeesher.training.TrainingSpellListGrant;
 import com.softwaremagico.librodeesher.training.TrainingSpecialItem;
 import com.softwaremagico.librodeesher.training.TrainingItemType;
 import com.softwaremagico.librodeesher.training.TrainingType;
@@ -1238,6 +1239,38 @@ public class CharacterPlayer {
 	 */
 	public void applyCategoryGrant(DecisionKey categoryKey, TrainingCategoryGrant grant, String selectedCategoryId,
 			List<String> selectedSkillIds, Map<String, Integer> additionalSkillRanks) throws InvalidXmlElementException {
+		this.applyCategoryGrant(categoryKey, grant, selectedCategoryId, selectedSkillIds, additionalSkillRanks,
+				null, Map.of());
+	}
+
+	/**
+	 * {@link #applyCategoryGrant} extended to grants that develop {@link
+	 * com.softwaremagico.librodeesher.magic.MagicSpellList}s rather than skills (the "Listas Básicas de
+	 * Hechizos" grants), whose ranks are recorded as spell list ranks so they count towards
+	 * {@link #getSpellListTotalRanks} and the per-level list multiplier.
+	 *
+	 * @param selectedSpellListIds
+	 *            the spell list to use for each of {@code grant}'s nested spell list grants that offers
+	 *            a choice and has not been decided yet, in the same order as
+	 *            {@link TrainingCategoryGrant#getSpellLists()}; ignored otherwise.
+	 * @param additionalSpellListRanks
+	 *            how many ranks to grant each freely-chosen spell list of the grant, on top of the
+	 *            grant's named spell list grants. A spell list must be one of the grant's
+	 *            {@link TrainingCategoryGrant#getSpellLists()} options (mirrors how a skill must be one of
+	 *            the resolved category's skills), and the values must add up to exactly the ranks left to
+	 *            distribute, choosing between {@link TrainingCategoryGrant#getMinSkills()} and
+	 *            {@link TrainingCategoryGrant#getMaxSkills()} lists in total.
+	 * @throws InvalidXmlElementException
+	 *             never thrown for a spell list id the catalog does not define.
+	 * @throws IllegalArgumentException
+	 *             if a spell list in {@code additionalSpellListRanks} is not one of the grant's options
+	 *             (or is already one of its named ones), if its size is out of range, or if its values do
+	 *             not add up to the ranks left to distribute.
+	 */
+	public void applyCategoryGrant(DecisionKey categoryKey, TrainingCategoryGrant grant, String selectedCategoryId,
+			List<String> selectedSkillIds, Map<String, Integer> additionalSkillRanks,
+			List<String> selectedSpellListIds, Map<String, Integer> additionalSpellListRanks)
+			throws InvalidXmlElementException {
 		final List<String> offeredCategories = this.expandCategoryWildcards(grant.getCategoryOptions());
 		final Decision categoryDecision = this.decideOrReuse(categoryKey,
 				() -> offeredCategories.size() > 1
@@ -1272,10 +1305,77 @@ public class CharacterPlayer {
 					this.isSpellSkill(skillDecision.getSelectedOption()));
 		}
 
-		final int remainingRanks = grant.getRanksToDistribute() == null ? 0 : grant.getRanksToDistribute() - namedRanks;
-		if (remainingRanks > 0) {
-			this.applyAdditionalCategorySkillRanks(grant, categoryId, namedSkillIds, remainingRanks,
-					additionalSkillRanks == null ? Map.of() : additionalSkillRanks);
+		final List<TrainingSpellListGrant> spellLists = grant.getSpellLists();
+		final Set<String> namedSpellListIds = new HashSet<>();
+		int namedSpellListRanks = 0;
+		for (int i = 0; i < spellLists.size(); i++) {
+			final TrainingSpellListGrant spellListGrant = spellLists.get(i);
+			// Key the spell list decisions apart from the skill ones (see DecisionKey#nested), so a
+			// grant naming both keeps the two decision chains independent.
+			final DecisionKey spellListKey = categoryKey.nestedSpellList(i);
+			final String selectedSpellListId = selectedSpellListIds != null && i < selectedSpellListIds.size()
+					? selectedSpellListIds.get(i)
+					: null;
+			final Decision spellListDecision = this.decideOrReuse(spellListKey,
+					() -> spellListGrant.resolve(selectedSpellListId));
+			namedSpellListIds.add(spellListDecision.getSelectedOption());
+			namedSpellListRanks += spellListGrant.getRanksToDistribute();
+			this.getCurrentLevel().addSpellListRanks(spellListDecision.getSelectedOption(),
+					spellListGrant.getRanksToDistribute());
+		}
+
+		// A grant develops either skills or spell lists, never both, so only one of the two remaining-rank
+		// paths can have ranks left to hand out.
+		final int budget = grant.getRanksToDistribute() == null ? 0 : grant.getRanksToDistribute();
+		if (!spellLists.isEmpty()) {
+			final int remainingSpellListRanks = budget - namedSpellListRanks;
+			if (remainingSpellListRanks > 0) {
+				this.applyAdditionalCategorySpellListRanks(grant, namedSpellListIds, remainingSpellListRanks,
+						additionalSpellListRanks == null ? Map.of() : additionalSpellListRanks);
+			}
+		} else {
+			final int remainingSkillRanks = budget - namedRanks;
+			if (remainingSkillRanks > 0) {
+				this.applyAdditionalCategorySkillRanks(grant, categoryId, namedSkillIds, remainingSkillRanks,
+						additionalSkillRanks == null ? Map.of() : additionalSkillRanks);
+			}
+		}
+	}
+
+	/**
+	 * Validates and applies the "freely chosen" part of a spell list grant (see
+	 * {@link #applyCategoryGrant}'s {@code additionalSpellListRanks} parameter).
+	 */
+	private void applyAdditionalCategorySpellListRanks(TrainingCategoryGrant grant, Set<String> namedSpellListIds,
+			int remainingRanks, Map<String, Integer> additionalSpellListRanks) throws InvalidXmlElementException {
+		// The grant's own options are the pool: a "Listas Básicas de Hechizos" category is a wrapper with
+		// no skills of its own, so unlike the skill path there is no catalog list to validate against.
+		final List<String> optionIds = new ArrayList<>();
+		for (final TrainingSpellListGrant spellListGrant : grant.getSpellLists()) {
+			optionIds.addAll(spellListGrant.getSpellListOptions());
+		}
+		final int minAdditional = Math.max(0, grant.getMinSkills() - namedSpellListIds.size());
+		final int maxAdditional = grant.getMaxSkills() - namedSpellListIds.size();
+		if (additionalSpellListRanks.size() < minAdditional || additionalSpellListRanks.size() > maxAdditional) {
+			throw new IllegalArgumentException("Expected between " + minAdditional + " and " + maxAdditional
+					+ " additional spell list(s), got " + additionalSpellListRanks.size() + ".");
+		}
+		int sum = 0;
+		for (final Map.Entry<String, Integer> entry : additionalSpellListRanks.entrySet()) {
+			if (namedSpellListIds.contains(entry.getKey()) || !optionIds.contains(entry.getKey())) {
+				throw new IllegalArgumentException(
+						"'" + entry.getKey() + "' is not one of the grant's remaining spell lists.");
+			}
+			// Fail loudly on a list no module defines, rather than tracking ranks against nothing.
+			RulesCatalog.getInstance().getSpellList(entry.getKey());
+			sum += entry.getValue();
+		}
+		if (sum != remainingRanks) {
+			throw new IllegalArgumentException("Expected the additional spell list ranks to add up to " + remainingRanks
+					+ ", got " + sum + ".");
+		}
+		for (final Map.Entry<String, Integer> entry : additionalSpellListRanks.entrySet()) {
+			this.getCurrentLevel().addSpellListRanks(entry.getKey(), entry.getValue());
 		}
 	}
 
@@ -1336,8 +1436,30 @@ public class CharacterPlayer {
 	public void applyTrainingCategories(Training training, Map<Integer, String> categorySelections,
 			Map<Integer, List<String>> skillSelections, Map<Integer, Map<String, Integer>> additionalSkillRanksSelections)
 			throws InvalidXmlElementException {
+		this.applyTrainingCategories(training, categorySelections, skillSelections, additionalSkillRanksSelections, null,
+				Map.of());
+	}
+
+	/**
+	 * {@link #applyTrainingCategories} extended to the training's "Listas Básicas de Hechizos" category
+	 * grants, whose nested grants name spell lists rather than skills.
+	 *
+	 * @param spellListSelections
+	 *            the spell list to use for each grant's nested spell list choices, keyed the same way
+	 *            as {@code categorySelections} (see {@link #applyCategoryGrant}'s
+	 *            {@code selectedSpellListIds}). May be {@code null} if no nested spell list grant is an
+	 *            undecided choice.
+	 * @param additionalSpellListRanksSelections
+	 *            same, but for each grant's freely-chosen spell list ranks (see
+	 *            {@link #applyCategoryGrant}).
+	 */
+	public void applyTrainingCategories(Training training, Map<Integer, String> categorySelections,
+			Map<Integer, List<String>> skillSelections, Map<Integer, Map<String, Integer>> additionalSkillRanksSelections,
+			Map<Integer, List<String>> spellListSelections,
+			Map<Integer, Map<String, Integer>> additionalSpellListRanksSelections) throws InvalidXmlElementException {
 		this.applyCategoryGrants(DecisionKind.TRAINING_CATEGORY, training.getId(), training.getCategories(),
-				categorySelections, skillSelections, additionalSkillRanksSelections);
+				categorySelections, skillSelections, additionalSkillRanksSelections, spellListSelections,
+				additionalSpellListRanksSelections);
 	}
 
 	/**
@@ -1351,7 +1473,7 @@ public class CharacterPlayer {
 			throws InvalidXmlElementException {
 		this.applyCategoryGrants(DecisionKind.CULTURE_ADOLESCENCE_CATEGORY, culture.getId(),
 				this.getResolvedAdolescenceRanks(culture), categorySelections, skillSelections,
-				additionalSkillRanksSelections);
+				additionalSkillRanksSelections, null, Map.of());
 	}
 
 	/**
@@ -1438,14 +1560,20 @@ public class CharacterPlayer {
 
 	private void applyCategoryGrants(DecisionKind kind, String ownerId, List<TrainingCategoryGrant> grants,
 			Map<Integer, String> categorySelections, Map<Integer, List<String>> skillSelections,
-			Map<Integer, Map<String, Integer>> additionalSkillRanksSelections) throws InvalidXmlElementException {
+			Map<Integer, Map<String, Integer>> additionalSkillRanksSelections,
+			Map<Integer, List<String>> spellListSelections,
+			Map<Integer, Map<String, Integer>> additionalSpellListRanksSelections) throws InvalidXmlElementException {
 		for (int i = 0; i < grants.size(); i++) {
 			final String selectedCategoryId = categorySelections == null ? null : categorySelections.get(i);
 			final List<String> selectedSkillIds = skillSelections == null ? null : skillSelections.get(i);
 			final Map<String, Integer> additionalSkillRanks = additionalSkillRanksSelections == null ? null
 					: additionalSkillRanksSelections.get(i);
+			final List<String> selectedSpellListIds = spellListSelections == null ? null : spellListSelections.get(i);
+			final Map<String, Integer> additionalSpellListRanks = additionalSpellListRanksSelections == null ? null
+					: additionalSpellListRanksSelections.get(i);
 			this.applyCategoryGrant(DecisionKey.atLevel(kind, ownerId, i, this.getLevel()), grants.get(i),
-					selectedCategoryId, selectedSkillIds, additionalSkillRanks);
+					selectedCategoryId, selectedSkillIds, additionalSkillRanks, selectedSpellListIds,
+					additionalSpellListRanks);
 		}
 	}
 
