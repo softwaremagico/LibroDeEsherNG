@@ -160,6 +160,14 @@ public class CharacterPlayer {
 	private boolean recommendedFavouriteSkillsIncluded = false;
 
 	/**
+	 * Whether the generated PDF writes the player's values in the handwritten
+	 * {@code ArchitectsDaughter} font instead of Helvetica, matching the legacy
+	 * {@code CharacterConfiguration#handWrittingFont} (which defaulted to {@code false}, i.e. printed
+	 * values in Helvetica).
+	 */
+	private boolean handWritingFont = false;
+
+	/**
 	 * A category or skill rank whose next-rank development cost is under this amount is "cheap enough
 	 * to be worth investing in" for the random character generator, matching the legacy {@code
 	 * CharacterPlayer#MAX_REASONABLE_COST} (consulted by {@code CategoryProbability}/{@code
@@ -807,8 +815,13 @@ public class CharacterPlayer {
 	 * Category}'s rank-cost tables) but are not counted towards {@link #getSkillTotalRanks(String)}
 	 * itself, matching the legacy {@code getTotalRanks(Skill)} exactly (ranks minus specialities
 	 * selected).
+	 *
+	 * <p>Public because the legacy character sheet painted that subtraction separately: it showed
+	 * the ranks bought in earlier levels (the legacy {@code getPreviousRanks(Skill)}, which is
+	 * {@link #getSkillTotalRanks(String)} minus this level's ranks plus this cost) in its own
+	 * column, next to the ranks bought in the current level.</p>
 	 */
-	private int getSkillSpecializationsRankCost(String skillId) {
+	public int getSkillSpecializationsRankCost(String skillId) {
 		final List<String> specialityIds;
 		try {
 			specialityIds = RulesCatalog.getInstance().getSkill(skillId).getSpecialities();
@@ -1931,6 +1944,17 @@ public class CharacterPlayer {
 
 	public void setRecommendedFavouriteSkillsIncluded(boolean recommendedFavouriteSkillsIncluded) {
 		this.recommendedFavouriteSkillsIncluded = recommendedFavouriteSkillsIncluded;
+	}
+
+	/**
+	 * Whether the PDF sheet writes values in the handwritten font (see {@link #handWritingFont}).
+	 */
+	public boolean isHandWritingFont() {
+		return handWritingFont;
+	}
+
+	public void setHandWritingFont(boolean handWritingFont) {
+		this.handWritingFont = handWritingFont;
 	}
 
 	/**
@@ -4210,8 +4234,12 @@ public class CharacterPlayer {
 	 * {@code Skill#getRankValue}: the category's own progression table for the four types that define
 	 * one, but the selected race's own progression for the two development types
 	 * ({@link CategoryType#PD} and {@link CategoryType#PPD}), whose own tables are all-zero.
+	 *
+	 * <p>Public because the legacy character sheet painted it separately: it showed this rank value
+	 * in its own column, next to the skill's flat bonuses (see {@link #getSkillDevelopmentBonus(Category,
+	 * String)}, which is this value plus those bonuses).</p>
 	 */
-	private Integer getSkillRankValue(Category category, int ranks) throws InvalidXmlElementException {
+	public Integer getSkillRankValue(Category category, int ranks) throws InvalidXmlElementException {
 		if (category == null) {
 			return 0;
 		}

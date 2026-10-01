@@ -26,11 +26,11 @@ import java.nio.file.Path;
  * com.lowagie.text.pdf.PdfPTable} per section (see {@code
  * com.softwaremagico.librodeesher.pdf.elements.BaseElement}).
  *
- * <p>Unlike the legacy {@code PdfStandardSheet}/{@code PdfCombinedSheet1Column}/{@code
- * PdfCombinedSheet2Columns}, this does not overlay tables on top of a hand-drawn character sheet
- * background image (those PNG assets are not part of either repository, legacy or NG): every
- * section is a plain bordered/titled table instead, simpler to build and maintain, at the cost of
- * not visually matching the original printed sheet pixel-for-pixel.</p>
+* <p>Subclasses can still use the plain flow layout (one {@link
+     * com.lowagie.text.pdf.PdfPTable} per section) or, like {@link
+     * com.softwaremagico.librodeesher.pdf.legacy.LegacyCharacterSheet}, the legacy layout that overlays
+     * its tables on top of the hand-drawn background images now bundled as resources (see {@link
+     * com.softwaremagico.librodeesher.pdf.legacy.LegacySheetAssets}).</p>
  */
 public abstract class PdfDocument {
 
@@ -48,16 +48,36 @@ public abstract class PdfDocument {
     protected abstract void createContent(Document document, CharacterPlayer characterPlayer)
             throws DocumentException, InvalidXmlElementException;
 
+    /**
+     * Renders the content with access to the {@link PdfWriter}. The default implementation ignores it
+     * and delegates to {@link #createContent(Document, CharacterPlayer)}; only the legacy sheet, which
+     * draws its tables with {@link com.lowagie.text.pdf.PdfPTable#writeSelectedRows}, overrides this.
+     */
+    protected void createContent(Document document, CharacterPlayer characterPlayer, PdfWriter writer)
+            throws DocumentException, InvalidXmlElementException {
+        createContent(document, characterPlayer);
+    }
+
     protected Rectangle getPageSize() {
         return PageSize.A4;
     }
 
-    private void generatePdf(Document document, CharacterPlayer characterPlayer)
+    /** The page margin used on all four sides. */
+    protected float getMargin() {
+        return MARGIN;
+    }
+
+    /** Whether {@link FooterEvent} stamps the page number; the legacy sheet draws its own footer instead. */
+    protected boolean useFooterEvent() {
+        return true;
+    }
+
+    private void generatePdf(Document document, PdfWriter writer, CharacterPlayer characterPlayer)
             throws DocumentException, InvalidXmlElementException {
         this.addMetaData(document);
         document.open();
         try {
-            this.createContent(document, characterPlayer);
+            this.createContent(document, characterPlayer, writer);
         } finally {
             document.close();
         }
@@ -65,11 +85,14 @@ public abstract class PdfDocument {
 
     /** The character sheet as a byte array. Be careful with very large PDFs. */
     public final byte[] generate(CharacterPlayer characterPlayer) throws DocumentException, InvalidXmlElementException {
-        final Document document = new Document(this.getPageSize(), MARGIN, MARGIN, MARGIN, MARGIN);
+        final float margin = this.getMargin();
+        final Document document = new Document(this.getPageSize(), margin, margin, margin, margin);
         final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         final PdfWriter writer = PdfWriter.getInstance(document, outputStream);
-        writer.setPageEvent(new FooterEvent());
-        this.generatePdf(document, characterPlayer);
+        if (this.useFooterEvent()) {
+            writer.setPageEvent(new FooterEvent());
+        }
+        this.generatePdf(document, writer, characterPlayer);
         return outputStream.toByteArray();
     }
 
@@ -77,11 +100,14 @@ public abstract class PdfDocument {
     public final void createFile(CharacterPlayer characterPlayer, Path path)
             throws DocumentException, InvalidXmlElementException, IOException {
         final Path target = path.toString().endsWith(".pdf") ? path : Path.of(path + ".pdf");
-        final Document document = new Document(this.getPageSize(), MARGIN, MARGIN, MARGIN, MARGIN);
+        final float margin = this.getMargin();
+        final Document document = new Document(this.getPageSize(), margin, margin, margin, margin);
         try (OutputStream outputStream = Files.newOutputStream(target)) {
             final PdfWriter writer = PdfWriter.getInstance(document, outputStream);
-            writer.setPageEvent(new FooterEvent());
-            this.generatePdf(document, characterPlayer);
+            if (this.useFooterEvent()) {
+                writer.setPageEvent(new FooterEvent());
+            }
+            this.generatePdf(document, writer, characterPlayer);
         }
     }
 }

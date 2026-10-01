@@ -2,32 +2,26 @@ package com.softwaremagico.librodeesher.pdf;
 
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
+import com.lowagie.text.pdf.PdfWriter;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
-import com.softwaremagico.librodeesher.pdf.characteristics.CharacteristicsTableFactory;
-import com.softwaremagico.librodeesher.pdf.details.CharacterDetailsTableFactory;
-import com.softwaremagico.librodeesher.pdf.details.HistoryTableFactory;
-import com.softwaremagico.librodeesher.pdf.equipment.EquipmentTableFactory;
-import com.softwaremagico.librodeesher.pdf.info.CharacterBasicsTableFactory;
-import com.softwaremagico.librodeesher.pdf.info.DerivedStatsTableFactory;
-import com.softwaremagico.librodeesher.pdf.info.ResistancesTableFactory;
-import com.softwaremagico.librodeesher.pdf.info.RaceDetailsTableFactory;
-import com.softwaremagico.librodeesher.pdf.magic.MagicTableFactory;
-import com.softwaremagico.librodeesher.pdf.perks.PerksTableFactory;
-import com.softwaremagico.librodeesher.pdf.skills.SkillsTableFactory;
-import com.softwaremagico.librodeesher.pdf.skills.FavouriteSkillsTableFactory;
+import com.softwaremagico.librodeesher.pdf.legacy.LegacyCharacterSheet;
+import com.softwaremagico.librodeesher.pdf.legacy.LegacySheetAssets;
 
 /**
- * The character sheet: name/race/culture/profession/level, the ten characteristics, the derived
- * stats (movement/defensive bonus/armour class/power points/points left) and the nine resistance
- * rolls, one {@link com.lowagie.text.pdf.PdfPTable} per section (see {@link PdfDocument}'s own
- * javadoc for why this does not attempt to replicate the legacy hand-drawn sheet layout).
+ * The character sheet: the hand-drawn Rolemaster layout of the legacy application.
  *
- * <p>The sections intentionally use flow-layout tables instead of the old, image-overlay pages:
- * this preserves the data and lets OpenPDF paginate longer skill and spell-list collections.
- * Each section is isolated in a factory, following ThinkMachine4E's modern PDF structure.</p>
+ * <p>This renders through {@link LegacyCharacterSheet}, a port of the legacy {@code PdfStandardSheet}
+ * onto OpenPDF and the NG model. Each page carries the original full-page drawing as a background
+ * (see {@link LegacySheetAssets}) and its values are drawn on top at fixed page coordinates, so the
+ * generated sheet matches the printed one instead of being a generic flow of tables. A character-free
+ * export still produces the blank version of the same sheet, as the legacy code did.</p>
+ *
+ * <p>The legacy sheet drew its own footer as a table row on every page, so this class does not install
+ * {@link com.softwaremagico.librodeesher.pdf.events.FooterEvent}.</p>
  */
 public class CharacterSheet extends PdfDocument {
+
     private final boolean alphabeticallySortedSkills;
 
     public CharacterSheet() {
@@ -40,20 +34,36 @@ public class CharacterSheet extends PdfDocument {
     }
 
     @Override
+    protected float getMargin() {
+        return LegacyCharacterSheet.MARGIN;
+    }
+
+    @Override
+    protected boolean useFooterEvent() {
+        return false;
+    }
+
+    @Override
+    protected Document addMetaData(Document document) {
+        document.addTitle("Ficha Personaje Rolemaster");
+        document.addAuthor("Software Magico");
+        document.addCreator("Libro de Esher - Generador de PJs y PNJs para Rolemaster");
+        document.addSubject("Pagina de PJ para Rolemaster");
+        document.addKeywords("Rolemaster, PJ, PNJ, Libro de Esher");
+        document.addCreationDate();
+        return document;
+    }
+
+    @Override
     protected void createContent(Document document, CharacterPlayer characterPlayer)
             throws DocumentException, InvalidXmlElementException {
-        document.add(CharacterBasicsTableFactory.getCharacterBasicsTable(characterPlayer));
-        document.add(CharacteristicsTableFactory.getCharacteristicsTable(characterPlayer));
-        document.add(DerivedStatsTableFactory.getDerivedStatsTable(characterPlayer));
-        document.add(ResistancesTableFactory.getResistancesTable(characterPlayer));
-        document.add(RaceDetailsTableFactory.getRaceDetailsTable(characterPlayer));
-        document.add(SkillsTableFactory.getSkillsTable(characterPlayer, alphabeticallySortedSkills));
-        document.add(FavouriteSkillsTableFactory.getFavouriteSkillsTable(characterPlayer));
-        document.add(FavouriteSkillsTableFactory.getFavouriteAttacksTable(characterPlayer));
-        document.add(EquipmentTableFactory.getEquipmentTable(characterPlayer));
-        document.add(PerksTableFactory.getPerksTable(characterPlayer));
-        document.add(MagicTableFactory.getMagicTable(characterPlayer));
-        document.add(CharacterDetailsTableFactory.getCharacterDetailsTable(characterPlayer));
-        document.add(HistoryTableFactory.getHistoryTable(characterPlayer));
+        // Unused: this sheet draws with the PdfWriter, see createContent(Document, CharacterPlayer, PdfWriter).
+        throw new UnsupportedOperationException("Use the PdfWriter-aware overload");
+    }
+
+    @Override
+    protected void createContent(Document document, CharacterPlayer characterPlayer, PdfWriter writer)
+            throws InvalidXmlElementException {
+        new LegacyCharacterSheet(characterPlayer, alphabeticallySortedSkills).render(document, writer);
     }
 }

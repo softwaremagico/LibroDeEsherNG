@@ -27,6 +27,15 @@ public enum SkillType {
     }
 
     /**
+     * The suffix this type was written with in a legacy skill name, matching the legacy
+     * {@code SkillType#getTag}: the character sheet printed it after the skill's name so a
+     * restricted or professional skill stayed recognisable once filled in by hand.
+     */
+    public String getTag() {
+        return this.tag;
+    }
+
+    /**
      * Reproduces the legacy (case-insensitive-for-"(r)"-only) detection order: a name containing
      * "(r)" is restricted, otherwise "(p)" is professional, otherwise "(c)" is common, otherwise
      * standard.

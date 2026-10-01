@@ -34,6 +34,11 @@ public enum ResistanceType {
         return code;
     }
 
+    /** The Spanish name the legacy rules files used (e.g. "Veneno"), as {@link #fromTag} matches it. */
+    public String getTag() {
+        return tag;
+    }
+
     /** Resolves the resistance type from the original Spanish column name (e.g. "Veneno"). */
     public static ResistanceType fromTag(String tag) {
         if (tag == null) {

@@ -45,6 +45,14 @@ public enum CharacteristicAbbreviation {
         return code;
     }
 
+    /**
+     * The Spanish two-letter abbreviation the legacy sheet printed (e.g. "Ag"), i.e. the tag the
+     * legacy {@code CharacteristicsAbbreviature} names carried.
+     */
+    public String getTag() {
+        return tag;
+    }
+
     /** Resolves the abbreviation used by the legacy {@code categorias.txt}/{@code razas/*.txt} files. */
     public static CharacteristicAbbreviation fromTag(String tag) {
         if (tag == null) {
