@@ -1810,7 +1810,7 @@ public class LegacyCharacterSheet {
 		Paragraph p;
 		PdfPCell cell;
 
-		p = new Paragraph("Generado con El Libro de Esher, herramienta para Rolemaster V" + LegacySheetAssets.VERSION + "", new Font(getDefaultFont(), fontSize));
+		p = new Paragraph("Generado con El Libro de Esher NG, herramienta para Rolemaster V" + LegacySheetAssets.VERSION, new Font(getDefaultFont(), fontSize));
 		cell = new PdfPCell(p);
 		cell.setBorderWidth(BORDER);
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
