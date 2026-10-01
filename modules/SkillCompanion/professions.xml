@@ -734,7 +734,7 @@
       <restrictedSkillId>agenciar</restrictedSkillId>
       <restrictedSkillId>streetSmarts</restrictedSkillId>
       <restrictedSkillId>disimulo</restrictedSkillId>
-      <restrictedSkillId>instintoUrban</restrictedSkillId>
+      <restrictedSkillId>instintoUrbano</restrictedSkillId>
     </restrictedSkillIds>
     <weaponCategoryCostTiers>
       <tier>

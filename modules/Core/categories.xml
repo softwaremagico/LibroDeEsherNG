@@ -302,32 +302,32 @@
       <skill>styleOfArtMarcialBasic</skill>
       <skill>styleOfArtMarcialAdvanced</skill>
       <skill>blindFighting</skill>
-      <skill>styleOfTheCranePowersChiAttackWithoutShadowPowersChiStrikesContinuous</skill>
-      <skill>styleOfTheOchoFeyBorrachasPowersChiRebirthOfThePhoenixPowersChiFistsOfIronPowersChiResistThePain</skill>
-      <skill>styleOfTheSnakePowersChiFistEnvenenado</skill>
+      <skill>styleOfTheCrane</skill>
+      <skill>styleOfTheOchoFeyBorrachas</skill>
+      <skill>styleOfTheSnake</skill>
       <skill>chiPowerClothLance</skill>
       <skill>chiPowerJumpingStrike</skill>
-      <skill>chiPowerContactoContinuousR</skill>
-      <skill>styleDragonPowersChiSpearOfClothPowersChiFistsOfIronPowersChiResistThePain</skill>
-      <skill>styleApePowersChiJumpFantasticPowersChiStrikeInJumpPowersChiClimbingOfTheGecko</skill>
-      <skill>styleCobraPowersChiAttackToDistance</skill>
-      <skill>styleCobraRealPowersChiFistEnvenenado</skill>
+      <skill>chiPowerContinuousContact</skill>
+      <skill>styleDragon</skill>
+      <skill>styleApe</skill>
+      <skill>styleCobra</skill>
+      <skill>styleCobraReal</skill>
       <skill>styleDosInstrumentos</skill>
-      <skill>styleHsingIPowersChiPiesLigerosPowersChiSentirDebilidadPowersChiJumpFantastic</skill>
-      <skill>styleMantisReligiosaPowersChiContactoContinuousPowersChiAttackWithoutShadow</skill>
-      <skill>stylePaKuaChuAnPowersChiHandOfBuddhaPowersChiAttackToDistance</skill>
-      <skill>styleFistOfCottonPowersChiFallingOfTheLeafPowersChiContactoContinuous</skill>
-      <skill>styleTigerPowersChiStrikeInJumpPowersChiStrikesContinuous</skill>
-      <skill>styleRobeOfIronPowersChiPosturaInvenciblePowersChiInvulnerabilityEdgedPowersChiInvulnerabilityBluntPowersChiInvulnerabilityAttacksWithoutWeaponsPowersChiInvulnerabilityMissilePowersChiInvulnerabilityThrownPowersChiInvulnerabilityDosHandsPowersChiInvulnerabilityPolearmPowersChiRebirthOfThePhoenix</skill>
+      <skill>styleHsingI</skill>
+      <skill>styleMantisReligiosa</skill>
+      <skill>stylePaKuaChuAn</skill>
+      <skill>styleFistOfCotton</skill>
+      <skill>styleTiger</skill>
+      <skill>styleRobeOfIron</skill>
       <skill>styleWingChun</skill>
-      <skill>baruPentjakSilatPowersChiAttackWithoutShadow</skill>
-      <skill>harimauPentjatSilatPowersChiStrikeInJumpPowersChiPiesLigeros</skill>
-      <skill>kumangoPowersChiPiesLigeros</skill>
+      <skill>baruPentjakSilat</skill>
+      <skill>harimauPentjatSilat</skill>
+      <skill>kumango</skill>
       <skill>juJutsu</skill>
-      <skill>ninJutsuPowersChiFallingOfTheLeafPowersChiMantenerTheBreathPowersChiPiesLigerosPowersChiClimbingOfTheGeckoPowersChiResistElements</skill>
-      <skill>sumaiPowersChiResistThePainPowersChiInvulnerabilityEdgedPowersChiInvulnerabilityBluntPowersChiInvulnerabilityAttacksWithoutWeaponsPowersChiInvulnerabilityMissilePowersChiInvulnerabilityThrownPowersChiInvulnerabilityDosHandsPowersChiInvulnerabilityPolearm</skill>
-      <skill>hwarangDoPowersChiHandOfBuddhaPowersChiSentirDebilidadPowersChiResistElements</skill>
-      <skill>tawKwonDoPowersChiStrikeInJump</skill>
+      <skill>ninJutsu</skill>
+      <skill>sumai</skill>
+      <skill>hwarangDo</skill>
+      <skill>tawKwonDo</skill>
       <skill>karate</skill>
       <skill>savate</skill>
     </skills>
@@ -359,14 +359,14 @@
       <skill>attackRacialOtro</skill>
       <skill>attackRacialVomit</skill>
       <skill>chiPowerStrikesContinuous</skill>
-      <skill>chiPowerHandOfBuddhaR</skill>
-      <skill>chiPowerAttackToDistanceR</skill>
-      <skill>chiPowerFistsOfIronR</skill>
-      <skill>chiPowerFistElementalColdR</skill>
-      <skill>chiPowerFistElementalHeatR</skill>
-      <skill>chiPowerFistElementalElectricityR</skill>
-      <skill>chiPowerFistElementalImpactR</skill>
-      <skill>chiPowerFistEnvenenadoR</skill>
+      <skill>chiPowerHandOfBuddha</skill>
+      <skill>chiPowerRangedAttack</skill>
+      <skill>chiPowerFistsOfIron</skill>
+      <skill>chiPowerFistElementalCold</skill>
+      <skill>chiPowerFistElementalHeat</skill>
+      <skill>chiPowerFistElementalElectricity</skill>
+      <skill>chiPowerFistElementalImpact</skill>
+      <skill>chiPowerPoisonedFist</skill>
       <skill>francotirador</skill>
       <skill>apuntar</skill>
       <skill>dejarInconsciente</skill>
@@ -473,27 +473,27 @@
       <skill>overcomingStun</skill>
       <skill>fallAdrenal</skill>
       <skill>concentrationAdrenal</skill>
-      <skill>controlOfLycanthropyR</skill>
+      <skill>controlOfLycanthropy</skill>
       <skill>drawingWeaponAdrenal</skill>
       <skill>balanceAdrenal</skill>
-      <skill>stabilizationAdrenalR</skill>
+      <skill>stabilizationAdrenal</skill>
       <skill>strengthAdrenal</skill>
       <skill>maneuveringStunned</skill>
       <skill>jumpAdrenal</skill>
       <skill>tranceNumbing</skill>
-      <skill>tranceOfTheDeathR</skill>
-      <skill>trancePurifyingR</skill>
+      <skill>tranceOfTheDeath</skill>
+      <skill>trancePurifying</skill>
       <skill>tranceHealing</skill>
       <skill>speedAdrenal</skill>
       <skill>chiPowerHoldBreath</skill>
       <skill>chiPowerShadowlessAttack</skill>
       <skill>chiPowerResistElements</skill>
       <skill>chiPowerResistPain</skill>
-      <skill>chiPowerFallingOfTheLeafR</skill>
-      <skill>chiPowerJumpFantasticR</skill>
-      <skill>chiPowerPiesLigerosR</skill>
-      <skill>chiPowerClimbingOfTheGeckoR</skill>
-      <skill>chiPowerSentirDebilidadR</skill>
+      <skill>chiPowerFallingOfTheLeaf</skill>
+      <skill>chiPowerFantasticLeap</skill>
+      <skill>chiPowerLightFeet</skill>
+      <skill>chiPowerGeckoClimb</skill>
+      <skill>chiPowerSenseWeakness</skill>
       <skill>recargaAdrenal</skill>
     </skills>
     <skillsRaw>Frenesí, Meditación, Mnemotecnia, Superar Aturdimiento, Caída Adrenal, Concentración Adrenal, Control de la Licantropía (R), Desenvainar Adrenal, Equilibrio Adrenal, Estabilización Adrenal (R), Fuerza Adrenal, Maniobrar Aturdido, Salto Adrenal, Trance Adormecedor, Trance de la Muerte  (R), Trance Purificador  (R), Trance Sanador, Velocidad Adrenal, Poderes Chi: Mantener la Respiración, Poderes Chi: Ataque Sin Sombra, Poderes Chi: Resistir Elementos, Poderes Chi: Resistir el Dolor, Poderes Chi: Caer de la Hoja (R), Poderes Chi: Salto Fantástico (R), Poderes Chi: Pies Ligeros (R), Poderes Chi: Trepar de la Lagartija (R), Poderes Chi: Sentir Debilidad (R), Recarga Adrenal</skillsRaw>
@@ -577,9 +577,9 @@
       <skill>escribirHablaOfTheColinas</skill>
       <skill>hablarHablaOfTheBosques</skill>
       <skill>escribirHablaOfTheBosques</skill>
-      <skill>idiomasMagicalR</skill>
-      <skill>idiomasMagicalSpellsElementalesR</skill>
-      <skill>idiomasMagicalEspiritusR</skill>
+      <skill>idiomasMagical</skill>
+      <skill>idiomasMagicalSpellsElementales</skill>
+      <skill>idiomasMagicalEspiritus</skill>
       <skill>hablarCentauroScorpion</skill>
       <skill>escribirCentauroScorpion</skill>
       <skill>lecturaFast</skill>
@@ -767,14 +767,14 @@
       <skill>defenseAdrenal</skill>
       <skill>enduranceAdrenal</skill>
       <skill>chiPowerInvincibleStance</skill>
-      <skill>chiPowerInvulnerabilityEdgedR</skill>
-      <skill>chiPowerInvulnerabilityBluntR</skill>
-      <skill>chiPowerInvulnerabilityAttacksWithoutWeaponsR</skill>
-      <skill>chiPowerInvulnerabilityMissileR</skill>
-      <skill>chiPowerInvulnerabilityThrownR</skill>
-      <skill>chiPowerInvulnerabilityDosHandsR</skill>
-      <skill>chiPowerInvulnerabilityPolearmR</skill>
-      <skill>chiPowerRebirthOfThePhoenixR</skill>
+      <skill>chiPowerInvulnerabilityEdged</skill>
+      <skill>chiPowerInvulnerabilityBlunt</skill>
+      <skill>chiPowerInvulnerabilityAttacksWithoutWeapons</skill>
+      <skill>chiPowerInvulnerabilityMissile</skill>
+      <skill>chiPowerInvulnerabilityThrown</skill>
+      <skill>chiPowerInvulnerabilityDosHands</skill>
+      <skill>chiPowerInvulnerabilityPolearm</skill>
+      <skill>chiPowerRebirthOfThePhoenix</skill>
     </skills>
     <skillsRaw>Aguante Adrenal, Defensa Adrenal, Resistencia Adrenal, Poderes Chi: Postura Invencible, Poderes Chi: Invulnerabilidad - Filo (R), Poderes Chi: Invulnerabilidad - Contundentes (R), Poderes Chi: Invulnerabilidad - Ataques sin Armas (R), Poderes Chi: Invulnerabilidad - Proyectiles (R), Poderes Chi: Invulnerabilidad - Arrojadizas (R), Poderes Chi: Invulnerabilidad - Dos Manos (R), Poderes Chi: Invulnerabilidad - Asta (R), Poderes Chi: Resurgir del Fénix (R)</skillsRaw>
     <type>COMBINED</type>
@@ -828,7 +828,7 @@
     <skills>
       <skill>conducir</skill>
       <skill>domar</skill>
-      <skill>masteryOfAnimalsR</skill>
+      <skill>masteryOfAnimals</skill>
       <skill>manejoOfTheAnimals</skill>
       <skill>montar</skill>
       <skill>montarLobos</skill>
@@ -836,7 +836,7 @@
       <skill>montarOsos</skill>
       <skill>montarCamellos</skill>
       <skill>montarElefantes</skill>
-      <skill>healingOfAnimalsR</skill>
+      <skill>healingOfAnimals</skill>
       <skill>pastoreo</skill>
       <skill>montarMonturaElemental</skill>
     </skills>
@@ -1145,7 +1145,7 @@
       <skill>drawingWeapon</skill>
       <skill>florituras</skill>
       <skill>attackOfBackhand</skill>
-      <skill>esquivaAcrobaticR</skill>
+      <skill>esquivaAcrobatic</skill>
       <skill>styleOfWeaponBasic</skill>
       <skill>styleOfWeaponAdvanced</skill>
       <skill>subyugar</skill>
@@ -1181,7 +1181,7 @@
       <skill>masteryOfSpellsMasteryOfEspiritus</skill>
       <skill>ritualArcane</skill>
       <skill>concealmentOfSpells</skill>
-      <skill>trascenderArmorR</skill>
+      <skill>trascenderArmor</skill>
     </skills>
     <skillsRaw>Canalización, Maestría de los Hechizos, Maestría de los Hechizos: Control del Aire, Maestría de los Hechizos: Ley de la Luz, Maestría de los Hechizos: Maestría de los Espiritus, Ritual Mágico, Ocultación de Hechizos, Trascender Armadura (R)</skillsRaw>
     <type>COMBINED</type>
@@ -1282,14 +1282,14 @@
       <skill>perceptionOfTheEnvironmentDurmiendo</skill>
       <skill>perceptionOfTheEnvironmentExploration</skill>
       <skill>senseOfDirection</skill>
-      <skill>senseOfEspacioR</skill>
+      <skill>senseOfEspacio</skill>
       <skill>senseOfTiempo</skill>
       <skill>vista</skill>
       <skill>olfato</skill>
       <skill>gusto</skill>
       <skill>hearing</skill>
       <skill>tacto</skill>
-      <skill>senseOfRealidadR</skill>
+      <skill>senseOfRealidad</skill>
       <skill>vigilancia</skill>
       <skill>environmentPerceptionAmmunition</skill>
     </skills>
@@ -1312,7 +1312,7 @@
       <skill>readingRunes</skill>
       <skill>attunement</skill>
       <skill>divination</skill>
-      <skill>perceptionOfThePowerR</skill>
+      <skill>perceptionOfThePower</skill>
     </skills>
     <skillsRaw>Leer Runas, Sintonización, Adivinación, Percepción del Poder (R)</skillsRaw>
     <type>STANDARD</type>

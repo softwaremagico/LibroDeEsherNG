@@ -78,4 +78,30 @@ public class SkillNameParserTest {
 
         Assert.assertEquals(skill.getSkillGroup(), SkillGroup.FIREARM);
     }
+
+    @Test
+    public void plainNameAgreesWithTheParsedSkillName() {
+        for (final String rawToken : new String[]{"Nadar", "Xeno-Conocimientos*", "Control de la Licantropía (R)",
+                "Estilo de la Grulla {Poderes Chi: Ataque Sin Sombra | Poderes Chi: Golpes Contínuos}",
+                "Artes Marciales·Barridos [algo; otra]", "*  Ley del Fuego", "Nadar (p)", "Nadar (c)"}) {
+            Assert.assertEquals(SkillNameParser.plainName(rawToken),
+                    SkillNameParser.parse(rawToken).getName().getSpanish(),
+                    "plainName must return the very same name parse() stores for: " + rawToken);
+        }
+    }
+
+    /**
+     * A raw token quoted outside a skills column (e.g. a category's "Habilidades" cell) has to go
+     * through {@link #plainName} before being turned into an id: leaving the enable-skills block glued
+     * on, or the "(R)" suffix attached, makes the phrase lookup in {@code Translations} miss and yields
+     * a per-word id no skill actually has.
+     */
+    @Test
+    public void plainNameStripsEverythingButTheName() {
+        Assert.assertEquals(SkillNameParser.plainName("Estilo de la Grulla {Poderes Chi: Ataque Sin Sombra | "
+                + "Poderes Chi: Golpes Contínuos}"), "Estilo de la Grulla");
+        Assert.assertEquals(SkillNameParser.plainName("Poderes Chi: Contacto Contínuo (R)"), "Poderes Chi: Contacto Contínuo");
+        Assert.assertEquals(SkillNameParser.plainName("*  Ley del Fuego"), "Ley del Fuego");
+        Assert.assertEquals(SkillNameParser.plainName("Artes Marciales·Barridos [algo; otra]"), "Artes Marciales·Barridos");
+    }
 }

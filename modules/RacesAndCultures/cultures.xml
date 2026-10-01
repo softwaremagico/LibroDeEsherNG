@@ -1742,7 +1742,7 @@
       <hobbyId>physicalDevelopment</hobbyId>
       <hobbyId>forrajear</hobbyId>
       <hobbyId>hacerSurfing</hobbyId>
-      <hobbyId>instintoUrban</hobbyId>
+      <hobbyId>instintoUrbano</hobbyId>
       <hobbyId>gamesOfHands</hobbyId>
       <hobbyId>manejoOfTheAnimals</hobbyId>
       <hobbyId>mendigar</hobbyId>
@@ -5379,7 +5379,7 @@
       <hobbyId>disimulo</hobbyId>
       <hobbyId>hiding</hobbyId>
       <hobbyId>forrajear</hobbyId>
-      <hobbyId>instintoUrban</hobbyId>
+      <hobbyId>instintoUrbano</hobbyId>
       <hobbyId>juego</hobbyId>
       <hobbyId>gamesOfHands</hobbyId>
       <hobbyId>masteryOfAnimals</hobbyId>
@@ -7667,7 +7667,7 @@
       <hobbyId>disimulo</hobbyId>
       <hobbyId>ambushing</hobbyId>
       <hobbyId>history</hobbyId>
-      <hobbyId>instintoUrban</hobbyId>
+      <hobbyId>instintoUrbano</hobbyId>
       <hobbyId>juego</hobbyId>
       <hobbyId>gamesOfHands</hobbyId>
       <hobbyId>manejoOfCuerdas</hobbyId>
@@ -16349,7 +16349,7 @@
       <hobbyId>disimulo</hobbyId>
       <hobbyId>ambushing</hobbyId>
       <hobbyId>speleology</hobbyId>
-      <hobbyId>instintoUrban</hobbyId>
+      <hobbyId>instintoUrbano</hobbyId>
       <hobbyId>juego</hobbyId>
       <hobbyId>ocultarObjects</hobbyId>
       <hobbyId>senseOfDirection</hobbyId>

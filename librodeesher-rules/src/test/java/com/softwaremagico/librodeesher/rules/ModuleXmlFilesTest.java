@@ -25,6 +25,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
@@ -119,12 +120,75 @@ public class ModuleXmlFilesTest {
         Assert.assertFalse(absentModules.contains(ModuleManager.CORE), "the core module folder is missing");
     }
 
+    /**
+     * Every skill a category or a profession points at must exist in some module's {@code skills.xml}.
+     *
+     * <p>A dangling reference is invisible at load time (an id is just a string), yet it silently drops
+     * that skill from the character's sheet and from the development-point cost. This is exactly how 56
+     * category references broke: {@code Category#namesFromRaw} used to keep a raw token's
+     * <code>{...}</code> enable-skills block or its "(R)" suffix attached, so the whole-phrase lookup in
+     * {@code Translations} missed and produced per-word ids no skill has
+     * ("chiPowerContactoContinuousR" instead of "chiPowerContinuousContact").</p>
+     */
+    @Test
+    public void everySkillReferencedByACategoryOrProfessionExists() throws Exception {
+        final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setNamespaceAware(false);
+        factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+
+        final String corePath = classpathFileOrNull(PathManager.getModulePath(ModuleManager.CORE));
+        Assert.assertNotNull(corePath, "the core module is not on the classpath");
+        final File modulesFolder = new File(corePath).getParentFile();
+
+        final Set<String> skillIds = new TreeSet<>();
+        final Map<String, Set<String>> referencesByFile = new TreeMap<>();
+        for (final String module : ModuleManager.getAllModules()) {
+            final File moduleFolder = new File(modulesFolder, module);
+            final File[] files = moduleFolder.isDirectory()
+                    ? moduleFolder.listFiles((dir, name) -> name.endsWith(".xml"))
+                    : null;
+            if (files == null) {
+                continue;
+            }
+            for (final File file : files) {
+                final Document document = factory.newDocumentBuilder().parse(file);
+                if ("skills.xml".equals(file.getName())) {
+                    collect(document, "id", skillIds);
+                } else if ("categories.xml".equals(file.getName())) {
+                    collect(document, "skill", referencesByFile.computeIfAbsent(file.getPath(), key -> new TreeSet<>()));
+                } else if ("professions.xml".equals(file.getName())) {
+                    collect(document, "restrictedSkillId",
+                            referencesByFile.computeIfAbsent(file.getPath(), key -> new TreeSet<>()));
+                }
+            }
+        }
+        Assert.assertFalse(skillIds.isEmpty(), "no skill id was found at all");
+        Assert.assertFalse(referencesByFile.isEmpty(), "no category/profession skill reference was found at all");
+
+        final List<String> dangling = new ArrayList<>();
+        referencesByFile.forEach((file, referenced) -> {
+            for (final String id : referenced) {
+                if (!skillIds.contains(id)) {
+                    dangling.add(file.substring(modulesFolder.getPath().length() + 1) + " -> " + id);
+                }
+            }
+        });
+        Assert.assertEquals(dangling, List.of(), "skill references that no module's skills.xml defines");
+    }
+
+    /** Collects the text of every {@code tag} element of {@code document} into {@code into}. */
+    private static void collect(Document document, String tag, Set<String> into) {
+        final var nodes = document.getElementsByTagName(tag);
+        for (int i = 0; i < nodes.getLength(); i++) {
+            into.add(nodes.item(i).getTextContent().strip());
+        }
+    }
+
     /** A copy of the production mapper that refuses unknown fields, to catch mistyped data tags. */
     private static com.fasterxml.jackson.databind.ObjectMapper strictMapper() {
         return ObjectMapperFactory.getXmlObjectMapper().copy()
                 .enable(com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
     }
-
     private static List<String> listFolders(File modulesFolder) {
         final String[] names = modulesFolder.list((dir, name) -> new File(dir, name).isDirectory());
         return names == null ? List.of() : Arrays.asList(names);

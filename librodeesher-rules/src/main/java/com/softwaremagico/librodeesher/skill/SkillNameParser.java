@@ -32,11 +32,9 @@ public final class SkillNameParser {
         final boolean rare = rawToken.contains("*");
         final SkillType skillType = SkillType.detectFromRawName(rawToken);
 
-        String remaining = rawToken;
-
         final List<String> enableSkills = new ArrayList<>();
         final boolean[] allEnabled = {false};
-        remaining = extractBracketedList(remaining, ENABLE_SKILLS_PATTERN, content -> {
+        extractBracketedList(rawToken, ENABLE_SKILLS_PATTERN, content -> {
             final String[] tokens = content.contains("&") ? content.split("&") : content.split("\\|");
             allEnabled[0] = content.contains("&");
             for (final String token : tokens) {
@@ -45,14 +43,14 @@ public final class SkillNameParser {
         });
 
         final List<String> specialities = new ArrayList<>();
-        remaining = extractBracketedList(remaining, SPECIALITIES_PATTERN, content -> {
+        extractBracketedList(rawToken, SPECIALITIES_PATTERN, content -> {
             final String[] tokens = content.contains(";") ? content.split(";") : content.split(",");
             for (final String token : tokens) {
                 specialities.add(token.trim());
             }
         });
 
-        final String name = removeTypeMarkers(remaining).trim();
+        final String name = plainName(rawToken);
 
         final Skill skill = new Skill(name);
         skill.setName(name, Translations.toEnglish(name));
@@ -65,14 +63,30 @@ public final class SkillNameParser {
         return skill;
     }
 
-    /** Removes a single {@code {...}} or {@code [...]} block matched by {@code pattern}, if present. */
-    private static String extractBracketedList(String text, Pattern pattern, java.util.function.Consumer<String> onMatch) {
+    /** Hands the content of the first <code>{...}</code> or <code>[...]</code> block matched by {@code pattern} to {@code onMatch}, if present. */
+    private static void extractBracketedList(String text, Pattern pattern, java.util.function.Consumer<String> onMatch) {
         final var matcher = pattern.matcher(text);
         if (matcher.find()) {
             onMatch.accept(matcher.group(1));
-            return text.substring(0, matcher.start()) + text.substring(matcher.end());
         }
-        return text;
+    }
+
+    /**
+     * Returns the plain Spanish name of {@code rawToken}: the token without its <code>{...}</code>
+     * enable-skills block, its <code>[...]</code> speciality hints, the "*" rare marker or the
+     * "(r)"/"(p)"/"(c)" skill-type suffix. That is exactly the name {@link #parse} stores on the
+     * {@link Skill}, so it is also the key {@code SkillMigrationTool} indexes every skill by.
+     *
+     * <p>Any other place a raw token is quoted (e.g. a category's "Habilidades" column) must strip it
+     * the same way: passing {@code "Poderes Chi: Contacto Contínuo (R)"} to
+     * {@link Translations#toEnglishId(String)} with the suffix still attached misses the whole-phrase
+     * lookup table and silently yields a per-word id ({@code chiPowerContactoContinuousR}) instead of
+     * the real skill's id ({@code chiPowerContinuousContact}).</p>
+     */
+    public static String plainName(String rawToken) {
+        String name = ENABLE_SKILLS_PATTERN.matcher(rawToken).replaceAll("");
+        name = SPECIALITIES_PATTERN.matcher(name).replaceAll("");
+        return removeTypeMarkers(name).trim();
     }
 
     /** Strips the "*" rare marker and "(r)"/"(p)"/"(c)" skill-type suffixes from a raw skill name. */

@@ -969,6 +969,12 @@ public final class Translations {
         put(m, "Pulmones Poderosos", "Powerful Lungs");
         put(m, "Grito de Guerra", "War Cry");
         put(m, "Instinto de Supervivencia", "Survival Instinct");
+        // Pinned to the Spanish adjective rather than the per-word "Urbano" -> "Urban" translation:
+        // this skill is already published under the id "instintoUrbano" in modules/Core/skills.xml, so
+        // letting "Instinto Urbano" fall through to per-word translation would rename it to
+        // "instintoUrban" and silently orphan the references already migrated into professions.xml,
+        // trainings.xml and cultures.xml.
+        put(m, "Instinto Urbano", "Instinto Urbano");
         put(m, "Intolerante", "Intolerant");
         put(m, "Megalómano", "Megalomaniac");
         put(m, "Mal Genio", "Bad Temper");

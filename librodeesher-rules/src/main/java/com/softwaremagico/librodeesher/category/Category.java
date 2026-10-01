@@ -5,6 +5,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.softwaremagico.librodeesher.Element;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
+import com.softwaremagico.librodeesher.skill.SkillNameParser;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -165,10 +166,19 @@ public class Category extends Element {
     }
 
     /**
-     * Splits the raw "Habilidades" column into plain Spanish skill names, dropping the "[...]" unlock
-     * hints, so {@code CategoryMigrationTool} can resolve each one to a real skill id (see
-     * {@link #getSkills()}). Top-level commas separate skills; brackets never contain a comma in the
-     * source data (they use semicolons), so a naive split on commas is safe here.
+     * Splits the raw "Habilidades" column into the plain Spanish skill names
+     * {@code SkillMigrationTool} indexes skills by, so {@code CategoryMigrationTool} can resolve each
+     * one to a real skill id (see {@link #getSkills()}). Top-level commas separate skills; the blocks
+     * inside the tokens themselves never contain a comma in the source data, so a naive split on
+     * commas is safe here.
+     *
+     * <p>Each token is reduced with {@link SkillNameParser#plainName(String)}, dropping its
+     * <code>{...}</code> enable-skills block, <code>[...]</code> unlock hints, "*" rare marker and
+     * "(r)"/"(p)"/"(c)" skill-type suffix. All four must go: the enable-skills block would otherwise be
+     * glued onto the name ("Estilo de la Grulla {Poderes Chi: ...}" → an id no skill has), and a
+     * retained "(R)" suffix makes {@link com.softwaremagico.librodeesher.language.Translations#toEnglishId(String)}
+     * fall back to a per-word translation, inventing ids such as "chiPowerContactoContinuousR" for a
+     * skill whose real id is "chiPowerContinuousContact".</p>
      */
     public static List<String> namesFromRaw(String raw) {
         final List<String> names = new ArrayList<>();
@@ -176,11 +186,7 @@ public class Category extends Element {
             return names;
         }
         for (final String entry : raw.split(",")) {
-            String name = entry.trim();
-            final int bracketIndex = name.indexOf('[');
-            if (bracketIndex >= 0) {
-                name = name.substring(0, bracketIndex).trim();
-            }
+            final String name = SkillNameParser.plainName(entry);
             if (!name.isEmpty()) {
                 names.add(name);
             }

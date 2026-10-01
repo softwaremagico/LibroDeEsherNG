@@ -1655,7 +1655,7 @@
             <choice>false</choice>
             <ranksToDistribute>1</ranksToDistribute>
             <skillOptions>
-              <skill>instintoUrban</skill>
+              <skill>instintoUrbano</skill>
             </skillOptions>
           </skillGrant>
         </skills>
