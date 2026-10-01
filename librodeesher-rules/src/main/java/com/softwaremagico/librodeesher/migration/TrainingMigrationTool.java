@@ -10,6 +10,7 @@ import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
 import com.softwaremagico.librodeesher.training.TrainingProfessionCost;
 import com.softwaremagico.librodeesher.training.TrainingRequirement;
 import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
+import com.softwaremagico.librodeesher.training.TrainingSpellListGrant;
 import com.softwaremagico.librodeesher.training.TrainingSpecialItem;
 import com.softwaremagico.librodeesher.training.TrainingItemType;
 import com.softwaremagico.librodeesher.training.TrainingType;
@@ -57,9 +58,29 @@ public final class TrainingMigrationTool {
      * A handful of real "HABILIDADES" skill lines that do not match any real skill name exactly (a
      * typo, or a differently-ordered variant of a real name found elsewhere in the same data).
      */
-    private static final Map<String, String> SKILL_NAME_ALIASES = Map.of(
-            "Robar bolsillos", "Robar Bolsillos",
-            "Artes Marciales·Barridos", "Barridos de Artes Marciales");
+    private static final Map<String, String> SKILL_NAME_ALIASES = Map.ofEntries(
+            Map.entry("Robar bolsillos", "Robar Bolsillos"),
+            Map.entry("Artes Marciales·Barridos", "Barridos de Artes Marciales"),
+            Map.entry("Maestría de los Hechizo", "Maestría de los Hechizos"),
+            Map.entry("Ritual Mágica", "Ritual Mágico"),
+            Map.entry("Estabilización Adreanl", "Estabilización Adrenal"),
+            Map.entry("Primerio Auxilios", "Primeros Auxilios"),
+            Map.entry("Hipnosi", "Hipnosis"),
+            Map.entry("Conocimiento de las Advincaciones", "Adivinación"),
+            Map.entry("Advinación", "Adivinación"),
+            // Singular/plural and gender variants of the same terrain survival skill.
+            Map.entry("Supervivencia (Bosque)", "Supervivencia (Bosques)"),
+            Map.entry("Supervivencia (Desierto)", "Supervivencia (Desiertos)"),
+            Map.entry("Supervivencia (Tierras Alta)", "Supervivencia (Montañas)"));
+
+    /**
+     * Spell list name typos, corrected before resolution against the spell list index (the spell list
+     * counterpart of {@link #SKILL_NAME_ALIASES}): {@code "Nigromancia"} (in
+     * "RazasSubterraneas/adiestramientos/Shaguk Kun-Toramim.txt") for "Nigromacia", the actual
+     * CANALIZATION list "Nigromacia".
+     */
+    private static final Map<String, String> SPELL_LIST_NAME_ALIASES = Map.of(
+            "Nigromancia", "Nigromacia");
 
     private TrainingMigrationTool() {
         // Utility class.
@@ -77,6 +98,7 @@ public final class TrainingMigrationTool {
         final IdAllocator idAllocator = new IdAllocator();
         final Map<String, String> categoryIndex = CategoryMigrationTool.buildCategoryIndex(sourceRoot);
         final Map<String, String> skillIndex = SkillMigrationTool.buildSkillIndex(sourceRoot);
+        final Map<String, String> spellListIndex = MagicMigrationTool.buildSpellListIndex(sourceRoot);
         final Map<String, String> professionIndex = ProfessionMigrationTool.buildProfessionIndex(sourceRoot);
 
         int written = 0;
@@ -89,7 +111,7 @@ public final class TrainingMigrationTool {
             try (Stream<Path> files = Files.list(trainingsDir)) {
                 for (final Path file : files.filter(path -> path.toString().endsWith(".txt"))
                         .filter(LegacyFileFilters::isRealDataFile).sorted().toList()) {
-                    trainings.add(readTrainingFile(file, idAllocator, categoryIndex, skillIndex, professionIndex));
+                    trainings.add(readTrainingFile(file, idAllocator, categoryIndex, skillIndex, spellListIndex, professionIndex));
                 }
             }
             if (trainings.isEmpty()) {
@@ -131,7 +153,8 @@ public final class TrainingMigrationTool {
     }
 
     private static Training readTrainingFile(Path file, IdAllocator idAllocator, Map<String, String> categoryIndex,
-                                              Map<String, String> skillIndex, Map<String, String> professionIndex)
+                                              Map<String, String> skillIndex, Map<String, String> spellListIndex,
+                                              Map<String, String> professionIndex)
             throws IOException {
         final String fileName = file.getFileName().toString();
         final String trainingName = fileName.substring(0, fileName.length() - ".txt".length());
@@ -142,7 +165,7 @@ public final class TrainingMigrationTool {
         training.setTrainingTimeInMonths(Integer.valueOf(cursor.nextSection().get(0).trim()));
         training.setLimitedRaces(parseCommaList(cursor.nextSection()));
         training.setSpecialItems(parseSpecialItems(cursor.nextSection(), categoryIndex, skillIndex));
-        training.setCategories(parseCategories(cursor.nextSection(), categoryIndex, skillIndex));
+        training.setCategories(parseCategories(cursor.nextSection(), categoryIndex, skillIndex, spellListIndex));
         training.setCharacteristicUpgrades(parseCharacteristicChoiceGroups(cursor.nextSection()));
         training.setRequirements(parseRequirements(cursor.nextSection()));
         training.setLifeSkills(parseSkillChoiceGroups(cursor.nextSection()));
@@ -159,7 +182,8 @@ public final class TrainingMigrationTool {
      * not a category, precisely when it contains a "*", exactly like the legacy parser).
      */
     static List<TrainingCategoryGrant> parseCategories(List<String> sectionLines, Map<String, String> categoryIndex,
-                                                         Map<String, String> skillIndex) {
+                                                         Map<String, String> skillIndex,
+                                                         Map<String, String> spellListIndex) {
         final List<TrainingCategoryGrant> categories = new ArrayList<>();
         TrainingCategoryGrant currentCategory = null;
         for (final String rawLine : sectionLines) {
@@ -170,10 +194,75 @@ public final class TrainingMigrationTool {
                 if (currentCategory == null) {
                     throw new IllegalStateException("Skill line without a preceding category: '" + rawLine + "'.");
                 }
-                currentCategory.getSkills().add(parseSkillLine(rawLine, skillIndex));
+                final List<String> optionNames = parseSkillOptionNames(rawLine);
+                // A "Listas Básicas de Hechizos" grant does not name skills at all, only spell lists,
+                // so decide per line: if every option names a real spell list, record it as one.
+                if (isSpellListGrant(optionNames, spellListIndex)) {
+                    currentCategory.getSpellLists().add(new TrainingSpellListGrant(resolveSpellListIds(optionNames,
+                            spellListIndex), parseSkillOptionRanks(rawLine)));
+                } else {
+                    currentCategory.getSkills().add(parseSkillLine(rawLine, skillIndex));
+                }
             }
         }
         return categories;
+    }
+
+    /**
+     * The Spanish names of one "  *  Skill..." line's options, before any resolution: either the single
+     * name of a {@code "Nombre\tRanks"} line or every alternative of a {@code "{Skill1; Skill2}"} one.
+     */
+    static List<String> parseSkillOptionNames(String rawLine) {
+        final String withoutMarker = rawLine.replace("*", "").trim();
+        if (withoutMarker.contains("{")) {
+            final String optionsPart = withoutMarker.split("}", 2)[0];
+            return parseChoiceOptions(optionsPart.substring(optionsPart.indexOf('{') + 1));
+        }
+        final String[] columns = withoutMarker.split("\t");
+        return List.of(columns[0].trim());
+    }
+
+    /** The rank column of a "  *  Skill..." line, stripping the cosmetic "-" choice marker. */
+    static Integer parseSkillOptionRanks(String rawLine) {
+        final String withoutMarker = rawLine.replace("*", "").trim();
+        final String ranksColumn;
+        if (withoutMarker.contains("{")) {
+            ranksColumn = withoutMarker.split("}", 2)[1];
+        } else {
+            final String[] columns = withoutMarker.split("\t");
+            ranksColumn = columns.length > 1 ? columns[1] : "0";
+        }
+        return Integer.valueOf(ranksColumn.replace("-", "").replace("\t", "").trim());
+    }
+
+    /**
+     * Resolves spell list names to their real, realm-prefixed ids (e.g. "Ley del Fuego" ->
+     * {@code essenceLawOfFire}) via {@code spellListIndex}. Unlike a skill, a spell list name is
+     * ambiguous across realms: the rulebook reuses a name such as "Sendas de los Huesos" in more than
+     * one realm, and a legacy training grant names only the Spanish name. {@code spellListIndex}
+     * therefore only contains names that are unique across every realm, and a name that is ambiguous
+     * is deliberately left unresolved (see {@link MagicMigrationTool#buildSpellListIndex}).
+     */
+    static List<String> resolveSpellListIds(List<String> spanishNames, Map<String, String> spellListIndex) {
+        final List<String> ids = new ArrayList<>();
+        for (final String spanishName : spanishNames) {
+            final String id = findSpellListId(spanishName, spellListIndex);
+            if (id == null) {
+                throw new IllegalStateException("Unknown spell list name: '" + spanishName + "'.");
+            }
+            ids.add(id);
+        }
+        return ids;
+    }
+
+    /** Whether a "  *  ..." line names spell lists only (never a mix of both). */
+    static boolean isSpellListGrant(List<String> spanishNames, Map<String, String> spellListIndex) {
+        return !spanishNames.isEmpty()
+                && spanishNames.stream().allMatch(name -> findSpellListId(name, spellListIndex) != null);
+    }
+
+    private static String findSpellListId(String spanishName, Map<String, String> spellListIndex) {
+        return spellListIndex.get(SPELL_LIST_NAME_ALIASES.getOrDefault(spanishName, spanishName));
     }
 
     /**
@@ -246,24 +335,11 @@ public final class TrainingMigrationTool {
      * real skill id via {@link #resolveSkillId}.
      */
     static TrainingSkillGrant parseSkillLine(String rawLine, Map<String, String> skillIndex) {
-        final String withoutMarker = rawLine.replace("*", "").trim();
-        final List<String> skillOptions;
-        final String ranksColumn;
-        if (withoutMarker.contains("{")) {
-            final String[] parts = withoutMarker.split("}", 2);
-            skillOptions = parseChoiceOptions(parts[0].substring(parts[0].indexOf('{') + 1));
-            ranksColumn = parts[1];
-        } else {
-            final String[] columns = withoutMarker.split("\t");
-            skillOptions = List.of(columns[0].trim());
-            ranksColumn = columns.length > 1 ? columns[1] : "0";
-        }
-        final Integer ranks = Integer.valueOf(ranksColumn.replace("-", "").replace("\t", "").trim());
         final List<String> resolvedSkillIds = new ArrayList<>();
-        for (final String skillName : skillOptions) {
+        for (final String skillName : parseSkillOptionNames(rawLine)) {
             resolvedSkillIds.add(resolveSkillId(skillName, skillIndex));
         }
-        return new TrainingSkillGrant(resolvedSkillIds, ranks);
+        return new TrainingSkillGrant(resolvedSkillIds, parseSkillOptionRanks(rawLine));
     }
 
     /**
@@ -272,14 +348,20 @@ public final class TrainingMigrationTool {
      * a case-insensitive match and then {@link #SKILL_NAME_ALIASES} before giving up.
      *
      * <p>A handful of names (~2% of every "HABILIDADES" skill line) do not match any real skill at
-     * all: either a spell list name (e.g. {@code "Ley del Fuego"}, only meaningful for spell-casting
-     * professions, whose spell/magic system has not been ported yet, see {@code MagicSpellList}), or
-     * one of a few dead legacy markers ({@code "Arma"}, {@code "Idiomas"}, {@code "Cualquier
-     * Habilidad"}) that the legacy {@code SkillFactory#getSkill} did not special-case (unlike the
-     * bare {@code "Arma"}/{@code "No importa"} category markers) and instead silently auto-created a
-     * bogus, one-off {@code Skill} for. Since there is no real skill (or spell list) to resolve these
-     * to, they are kept as a readable, non-accented placeholder id (never the raw Spanish text, to
-     * avoid embedding untranslated prose in the generated XML) instead.</p>
+     * all, and are kept as a readable, non-accented placeholder id (never the raw Spanish text, to
+     * avoid embedding untranslated prose in the generated XML). They fall into two groups:</p>
+     *
+     * <p>1. Spell list names (e.g. {@code "Ley del Fuego"}). The lists themselves are ported (see
+     * {@link com.softwaremagico.librodeesher.magic.MagicSpellList}) and carry realm-prefixed ids
+     * ({@code essenceLawOfFire}), but a training grant still cannot name one: {@code
+     * TrainingCategoryGrant} only has a skill slot, and a "Listas Básicas de Hechizos" grant names its
+     * lists through that wrapper category instead. The legacy resolved these by list <em>owner</em>,
+     * never as skills, so the ids never pointed at a real skill there either.</p>
+     *
+     * <p>2. Dead legacy markers ({@code "Arma"}, {@code "Idiomas"}, {@code "Cualquier Habilidad"})
+     * that the legacy {@code SkillFactory#getSkill} did not special-case (unlike the bare
+     * {@code "Arma"}/{@code "No importa"} category markers) and instead silently auto-created a bogus,
+     * one-off {@code Skill} for.</p>
      */
     static String resolveSkillId(String skillName, Map<String, String> skillIndex) {
         final String aliased = SKILL_NAME_ALIASES.getOrDefault(skillName, skillName);

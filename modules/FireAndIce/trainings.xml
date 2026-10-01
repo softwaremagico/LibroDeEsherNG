@@ -64,50 +64,50 @@
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>3</ranksToDistribute>
-        <skills>
-          <skillGrant>
+        <spellLists>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>masteryOfOscuridad</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essenceMasteryOfOscuridad</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>masteryOfLight</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essenceMasteryOfLight</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>defensesElementales</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essenceDefensesElementales</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>deflectionsElementales</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essenceDeflectionsElementales</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>summoningsElementales</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essenceSummoningsElementales</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>lawOfLight</skill>
-            </skillOptions>
-          </skillGrant>
-        </skills>
+            <spellListOptions>
+              <spellList>essenceLawOfLight</spellList>
+            </spellListOptions>
+          </spellListGrant>
+        </spellLists>
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
@@ -277,50 +277,50 @@
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>3</ranksToDistribute>
-        <skills>
-          <skillGrant>
+        <spellLists>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>summoningsElementales</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essenceSummoningsElementales</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>deflectionsElementales</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essenceDeflectionsElementales</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>defensesElementales</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essenceDefensesElementales</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>controlOfAir</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essenceControlOfAir</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>masteryOfWind</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essenceMasteryOfWind</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>lawOfWind</skill>
-            </skillOptions>
-          </skillGrant>
-        </skills>
+            <spellListOptions>
+              <spellList>essenceLawOfWind</spellList>
+            </spellListOptions>
+          </spellListGrant>
+        </spellLists>
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
@@ -521,50 +521,50 @@
         <minSkills>1</minSkills>
         <ranksGranted>0</ranksGranted>
         <ranksToDistribute>3</ranksToDistribute>
-        <skills>
-          <skillGrant>
+        <spellLists>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>summoningsElementales</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essenceSummoningsElementales</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>deflectionsElementales</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essenceDeflectionsElementales</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>defensesElementales</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essenceDefensesElementales</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>pathOfFlames</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essencePathOfFlames</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>pathsOfFire</skill>
-            </skillOptions>
-          </skillGrant>
-          <skillGrant>
+            <spellListOptions>
+              <spellList>essencePathsOfFire</spellList>
+            </spellListOptions>
+          </spellListGrant>
+          <spellListGrant>
             <choice>false</choice>
             <ranksToDistribute>0</ranksToDistribute>
-            <skillOptions>
-              <skill>lawOfFire</skill>
-            </skillOptions>
-          </skillGrant>
-        </skills>
+            <spellListOptions>
+              <spellList>essenceLawOfFire</spellList>
+            </spellListOptions>
+          </spellListGrant>
+        </spellLists>
       </categoryGrant>
       <categoryGrant>
         <categoryOptions>
