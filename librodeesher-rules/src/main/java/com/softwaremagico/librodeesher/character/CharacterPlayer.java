@@ -1053,16 +1053,15 @@ public class CharacterPlayer {
 	}
 
 	/**
-	 * The legacy {@code CharacterPlayer#getTotalValue(Skill)}: the skill's development bonus plus the
-	 * whole {@link #getCategoryDevelopmentBonus(Category)} (its rank bonus, fixed bonus and the flat
-	 * profession/background/perk bonuses included) plus the category's characteristic bonus. Item
-	 * bonuses are deliberately excluded, exactly like the legacy total value, so the result is
-	 * comparable with the threshold the random character generator is calibrated on.
+	 * The legacy {@code CharacterPlayer#getTotalValue(Skill)}: the skill's own bonus including its
+	 * magic item bonus ({@link #getSkillTotalBonus(Category, String)}) plus the whole category total
+	 * ({@link #getCategoryTotalBonus(Category)}: its ranks value, flat bonuses, item bonus and
+	 * characteristic bonuses). Magic item bonuses do count here, exactly as in the legacy total value,
+	 * so the numbers a character sheet prints are the ones the rulebook totals.
 	 */
 	public Integer getSkillTotalValue(Skill skill) throws InvalidXmlElementException {
 		final Category category = RulesCatalog.getInstance().getCategory(skill.getCategoryId());
-		return this.getSkillDevelopmentBonus(category, skill.getId())
-				+ this.getCategoryDevelopmentBonus(category) + this.getCategoryCharacteristicBonus(category);
+		return this.getSkillTotalBonus(category, skill.getId()) + this.getCategoryTotalBonus(category);
 	}
 
 	/**

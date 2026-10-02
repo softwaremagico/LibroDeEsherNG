@@ -2,16 +2,21 @@ package com.softwaremagico.librodeesher.pdf.legacy;
 
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
+import com.softwaremagico.librodeesher.category.Category;
+import com.softwaremagico.librodeesher.equipment.BonusType;
 import com.softwaremagico.librodeesher.equipment.Equipment;
 import com.softwaremagico.librodeesher.equipment.MagicObject;
 import com.softwaremagico.librodeesher.equipment.ObjectBonus;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.language.TranslatedText;
 import com.softwaremagico.librodeesher.perk.Perk;
+import com.softwaremagico.librodeesher.perk.PerkBonus;
+import com.softwaremagico.librodeesher.perk.PerkBonusKind;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.race.RaceSpecial;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
+import com.softwaremagico.librodeesher.skill.Skill;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -62,13 +67,87 @@ public final class LegacyTextBlocks {
         }
         final StringBuilder text = new StringBuilder("Talentos:\n").append(SEPARATOR).append("\n");
         for (final Perk perk : perks) {
-            text.append(perk.getName().getSpanish()).append(":\t ").append(perk.getDescription()).append("\n\n");
+            text.append(perk.getName().getSpanish()).append(":\t ").append(perkLongDescription(perk)).append("\n\n");
         }
         for (final Perk weakness : weaknesses) {
-            text.append(weakness.getName().getSpanish()).append(":\t ").append(weakness.getDescription())
+            text.append(weakness.getName().getSpanish()).append(":\t ").append(perkLongDescription(weakness))
                     .append("\n\n");
         }
         return text + "\n\n";
+    }
+
+    /**
+     * The legacy {@code Perk#getLongDescription()}: the perk's flat and conditional category/skill
+     * bonuses ("<name> (<value>), ...", "<name> (<value>*)", ... for the conditional ones, each in
+     * the legacy order: flat categories, flat skills, conditional categories, conditional skills)
+     * followed by ". " and the free-text description.
+     */
+    private static String perkLongDescription(Perk perk) throws InvalidXmlElementException {
+        final List<PerkBonus> flatCategories = new ArrayList<>();
+        final List<PerkBonus> flatSkills = new ArrayList<>();
+        final List<PerkBonus> conditionalCategories = new ArrayList<>();
+        final List<PerkBonus> conditionalSkills = new ArrayList<>();
+        for (final PerkBonus bonus : perk.getBonuses()) {
+            if (bonus.getValue() == null) {
+                continue;
+            }
+            final boolean conditional = bonus.getKind() != PerkBonusKind.FLAT;
+            if (bonus.getCategoryId() != null) {
+                (conditional ? conditionalCategories : flatCategories).add(bonus);
+            } else {
+                (conditional ? conditionalSkills : flatSkills).add(bonus);
+            }
+        }
+        final String bonuses = perkBonusesBlock(flatCategories)
+                + perkBonusesBlock(flatSkills)
+                + perkBonusesBlock(conditionalCategories)
+                + perkBonusesBlock(conditionalSkills);
+        String description = name(perk.getDescription());
+        if (!bonuses.isEmpty()) {
+            description = bonuses + ". " + description;
+        }
+        return description;
+    }
+
+    private static String perkBonusesBlock(List<PerkBonus> bonuses) {
+        if (bonuses.isEmpty()) {
+            return "";
+        }
+        final List<String> parts = new ArrayList<>();
+        for (final PerkBonus bonus : bonuses) {
+            parts.add(bonusTargetName(bonus) + " (" + bonus.getValue()
+                    + (bonus.getKind() != PerkBonusKind.FLAT ? "*)" : ")"));
+        }
+        parts.sort(String::compareTo);
+        return String.join(", ", parts);
+    }
+
+    private static String bonusTargetName(PerkBonus bonus) {
+        if (bonus.getCategoryId() != null) {
+            return elementSpanishName(bonus.getCategoryId(), true);
+        }
+        return elementSpanishName(bonus.getSkillId(), false);
+    }
+
+    /** The Spanish name of a skill/category id, or the raw id when the catalog does not know it. */
+    private static String elementSpanishName(String id, boolean category) {
+        if (id == null || id.isEmpty()) {
+            return "";
+        }
+        try {
+            final TranslatedText name = category
+                    ? RulesCatalog.getInstance().getCategory(id).getName()
+                    : RulesCatalog.getInstance().getSkill(id).getName();
+            if (name != null) {
+                final String spanish = name.getSpanish();
+                if (spanish != null && !spanish.isEmpty()) {
+                    return spanish;
+                }
+            }
+        } catch (InvalidXmlElementException e) {
+            // Not enabled/defined: print the raw target name.
+        }
+        return id;
     }
 
     /** The "Especiales:" block (race specials), empty when the race grants none. */
@@ -105,7 +184,7 @@ public final class LegacyTextBlocks {
             }
             for (int i = 0; i < item.getBonuses().size(); i++) {
                 final ObjectBonus bonus = item.getBonuses().get(i);
-                line += bonus.getBonus() + " a " + bonus.getBonusName();
+                line += bonus.getBonus() + " a " + itemBonusTargetName(bonus);
                 if (i < item.getBonuses().size() - 1) {
                     line += ", ";
                 }
@@ -126,6 +205,18 @@ public final class LegacyTextBlocks {
             text.append("\n");
         }
         return text.toString();
+    }
+
+    /**
+     * The legacy {@code MagicObject} bonus target, printed as the legacy stored it: its Spanish name
+     * ("Espada", "Primeros Auxilios", ...), or "Bonificación Defensiva" for the defensive bonus,
+     * which has no skill/category target.
+     */
+    private static String itemBonusTargetName(ObjectBonus bonus) {
+        if (bonus.getType() == BonusType.DEFENSIVE_BONUS) {
+            return "Bonificación Defensiva";
+        }
+        return elementSpanishName(bonus.getBonusName(), bonus.getType() == BonusType.CATEGORY);
     }
 
     /**

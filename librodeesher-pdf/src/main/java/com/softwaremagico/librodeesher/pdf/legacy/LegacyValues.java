@@ -10,11 +10,13 @@ import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.profession.ProfessionCategoryCost;
+import com.softwaremagico.librodeesher.profession.ProfessionWeaponCostTier;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.race.RaceSpecial;
 import com.softwaremagico.librodeesher.resistance.ResistanceType;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.skill.Skill;
+import com.softwaremagico.librodeesher.skill.SkillFactory;
 import com.softwaremagico.librodeesher.skill.SkillType;
 
 /**
@@ -60,17 +62,27 @@ final class LegacyValues {
     /**
      * The legacy {@code CategoryCost#getCostTag()}: the whole rank-cost progression of a category,
      * joined with slashes ("3/2/2/1"). It is printed in the category table so the player can see what
-     * each rank will cost.
+     * each rank will cost. A weapon category has no per-category cost table: the legacy sheet showed
+     * the cost progression of the {@code WEAPONx} tier the player assigned to it, which is what NG
+     * re-exposes through {@code CharacterPlayer#getAssignedWeaponCategoryCostTier}, so that tier is
+     * used here too.
      */
     static String categoryCostTag(CharacterPlayer characterPlayer, Category category)
             throws InvalidXmlElementException {
-        final ProfessionCategoryCost cost = characterPlayer.getProfessionCategoryCost(category.getId());
+        ProfessionCategoryCost cost = characterPlayer.getProfessionCategoryCost(category.getId());
         if (cost == null) {
-            // No profession, or that profession has no cost table for this category: the legacy sheet
-            // printed nothing in the cost column rather than failing.
-            return "";
+            final ProfessionWeaponCostTier weaponTier = characterPlayer.getAssignedWeaponCategoryCostTier(category.getId());
+            if (weaponTier == null) {
+                // No profession, or that profession has no cost table for this category: the legacy
+                // sheet printed nothing in the cost column rather than failing.
+                return "";
+            }
+            return costTag(weaponTier.getRankCosts());
         }
-        final List<Integer> rankCosts = cost.getRankCosts();
+        return costTag(cost.getRankCosts());
+    }
+
+    private static String costTag(List<Integer> rankCosts) {
         final StringBuilder tag = new StringBuilder();
         for (int i = 0; i < rankCosts.size(); i++) {
             tag.append(rankCosts.get(i));
@@ -129,6 +141,11 @@ final class LegacyValues {
      * define, so resolving each id can fail. Those skills have no name, type or costs to print, and
      * the sheet has always been driven by the skills the catalog actually knows, so they are skipped
      * rather than failing the whole export.</p>
+     *
+     * <p>The nine weapon categories keep the legacy "skillsRaw noimporta" marker instead of a
+     * skill list, but every weapon skill in {@code skills.xml} records the category it belongs to,
+     * so those skills are listed by that cross-reference, exactly as the legacy sheet listed the
+     * weapon skills of its own categories.</p>
      */
     static List<Skill> skillsOf(Category category) throws InvalidXmlElementException {
         final List<Skill> skills = new ArrayList<>();
@@ -140,6 +157,13 @@ final class LegacyValues {
                 }
             } catch (InvalidXmlElementException e) {
                 // Referenced by the category but not defined in the rules: nothing to print.
+            }
+        }
+        if (skills.isEmpty()) {
+            for (final Skill skill : SkillFactory.getInstance().getElements()) {
+                if (category.getId().equals(skill.getCategoryId())) {
+                    skills.add(skill);
+                }
             }
         }
         return skills;
@@ -214,16 +238,16 @@ final class LegacyValues {
         return category.getCategoryRankBonus(characterPlayer.getCategoryTotalRanks(category.getId()));
     }
 
-    /**
+	/**
      * The legacy {@code CharacterPlayer#getTotalValue(Category)}: the category's ranks value plus
      * every bonus it grants (its flat bonuses, its item bonus and the characteristic bonuses of its
-     * characteristics). The skill rows of the sheet showed it in their own column.
+     * characteristics), which is what {@code getCategoryTotalBonus} already adds up, so the ranks
+     * value and the characteristic bonuses must not be counted a second time here. The skill rows of
+     * the sheet showed it in their own column.
      */
     static int categoryTotalValue(CharacterPlayer characterPlayer, Category category)
             throws InvalidXmlElementException {
-        return categoryRanksValue(characterPlayer, category)
-                + characterPlayer.getCategoryTotalBonus(category)
-                + characterPlayer.getCategoryCharacteristicBonus(category);
+        return characterPlayer.getCategoryTotalBonus(category);
     }
 
     /**

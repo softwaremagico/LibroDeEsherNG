@@ -1151,7 +1151,7 @@ public class LegacyCharacterSheet {
 		tabla.addCell(cell);
 
 		if (characterPlayer != null) {
-			text = "   " + characterPlayer.getSex();
+			text = "   " + characterPlayer.getSex().getTag();
 			p = new Paragraph(text, new Font(getHandWrittingFont(), fontSize));
 		} else {
 			text = "_____________";
