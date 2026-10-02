@@ -3,6 +3,7 @@ package com.softwaremagico.librodeesher.pdf.legacy;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -28,6 +29,7 @@ import com.softwaremagico.librodeesher.characteristic.Characteristics;
 import com.softwaremagico.librodeesher.equipment.BonusType;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.Experience;
+import com.softwaremagico.librodeesher.magic.MagicSpellList;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.resistance.ResistanceType;
@@ -1533,14 +1535,13 @@ public class LegacyCharacterSheet {
 		cell.setColspan(2);
 		tableFrame.addCell(cell);
 
-		List<Skill> skillsToAdd = new ArrayList<>();
-		skillsToAdd.addAll(characterPlayer.getFavouriteNoOffensiveSkills());
-		cell = new PdfPCell(createMostUsedSkillsColumn(skillsToAdd, fontSize));
+		final List<FavouriteSkillLine> favourites = buildFavouriteSkillLines();
+		cell = new PdfPCell(createMostUsedSkillsColumn(favourites, fontSize));
 		cell.setBorderWidth(BORDER);
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 		tableFrame.addCell(cell);
 
-		cell = new PdfPCell(createMostUsedSkillsColumn(skillsToAdd, fontSize));
+		cell = new PdfPCell(createMostUsedSkillsColumn(favourites, fontSize));
 		cell.setBorderWidth(BORDER);
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 		tableFrame.addCell(cell);
@@ -1548,20 +1549,46 @@ public class LegacyCharacterSheet {
 		return tableFrame;
 	}
 
-	private PdfPTable createMostUsedSkillsColumn(List<Skill> favouriteSkills, int fontSize) throws MalformedURLException, IOException, InvalidXmlElementException {
+	/**
+	 * The most-used block lines: the favourite non-offensive skills plus the favourite spell lists
+	 * (the legacy {@code getFavouriteNoOffensiveSkills} saw the spell lists as skills, since its
+	 * favourites were names), in name order, capped at what the two columns can print. A spell
+	 * list's bonus is its realm characteristic bonus plus its ranks, exactly like the legacy sheet.
+	 */
+	private List<FavouriteSkillLine> buildFavouriteSkillLines() throws MalformedURLException, IOException, InvalidXmlElementException {
+		final List<FavouriteSkillLine> favourites = new ArrayList<>();
+		for (final Skill skill : characterPlayer.getFavouriteNoOffensiveSkills()) {
+			favourites.add(new FavouriteSkillLine(
+					LegacyTextBlocks.getFavouriteSkillNameOfLength(LegacyTextBlocks.name(skill.getName())),
+					characterPlayer.getSkillTotalRanks(skill.getId()), characterPlayer.getSkillTotalValue(skill)));
+		}
+		for (final MagicSpellList spellList : characterPlayer.getFavouriteSpellLists()) {
+			favourites.add(new FavouriteSkillLine(
+					LegacyTextBlocks.getFavouriteSkillNameOfLength(LegacyTextBlocks.name(spellList.getName())),
+					characterPlayer.getSpellListTotalRanks(spellList.getId()),
+					characterPlayer.getBonusCharacteristicOfRealmOfMagic() + characterPlayer.getSpellListTotalRanks(spellList.getId())));
+		}
+		favourites.sort(Comparator.comparing(line -> line.name.strip()));
+		while (favourites.size() > MOST_USED_SKILLS_LINES * 2) {
+			favourites.remove(favourites.size() - 1);
+		}
+		return favourites;
+	}
+
+	private PdfPTable createMostUsedSkillsColumn(List<FavouriteSkillLine> favouriteSkills, int fontSize) throws MalformedURLException, IOException, InvalidXmlElementException {
 		PdfPTable tableFrame = new PdfPTable(1);
 
 		int skillsShowed = 0;
-		List<Skill> skillsToAdd = new ArrayList<>(favouriteSkills);
+		List<FavouriteSkillLine> skillsToAdd = new ArrayList<>(favouriteSkills);
 		for (int i = 0; i < (skillsToAdd.size() < MOST_USED_SKILLS_LINES ? skillsToAdd.size() : MOST_USED_SKILLS_LINES); i++) {
+			final FavouriteSkillLine line = skillsToAdd.get(i);
 			PdfPCell cell = new PdfPCell(createMostUsedSkillLine(
-					" " + LegacyTextBlocks.getFavouriteSkillNameOfLength(LegacyTextBlocks.name(skillsToAdd.get(i).getName())),
-					characterPlayer.getSkillTotalRanks(skillsToAdd.get(i).getId()) + "", characterPlayer.getSkillTotalValue(skillsToAdd.get(i)) + "", getHandWrittingFont(),
+					" " + line.name, line.ranks + "", line.total + "", getHandWrittingFont(),
 					fontSize));
 			cell.setBorderWidth(BORDER);
 			cell.setMinimumHeight((float) 8);
 			tableFrame.addCell(cell);
-			favouriteSkills.remove(skillsToAdd.get(i));
+			favouriteSkills.remove(line);
 			skillsShowed++;
 		}
 
@@ -1573,6 +1600,20 @@ public class LegacyCharacterSheet {
 		}
 
 		return tableFrame;
+	}
+
+	/** One rendered line of the most-used block: a skill name (already length-capped) and its ranks
+	 *  and total, so favourite skills and favourite spell lists can share the same layout. */
+	private static final class FavouriteSkillLine {
+		private final String name;
+		private final int ranks;
+		private final int total;
+
+		FavouriteSkillLine(String name, int ranks, int total) {
+			this.name = name;
+			this.ranks = ranks;
+			this.total = total;
+		}
 	}
 
 	private PdfPTable createMostUsedSkillLine(String skillName, String skillRanks, String skillTotal, BaseFont font, int fontSize) throws MalformedURLException, IOException, InvalidXmlElementException {

@@ -137,6 +137,7 @@ public final class CharacterDataMapper {
         levelData.setTrainings(new ArrayList<>(levelUp.getTrainings()));
         levelData.setSkillSpecializations(sorted(levelUp.getSkillSpecializations()));
         levelData.setFavouriteSkills(sorted(levelUp.getFavouriteSkills()));
+        levelData.setFavouriteSpellLists(sorted(levelUp.getFavouriteSpellLists()));
         levelData.setCharacteristicUpdates(new ArrayList<>(levelUp.getCharacteristicUpdates()));
         levelData.setAgeModifications(new ArrayList<>(levelUp.getAgeModifications()));
         levelData.setAge(levelUp.getAge());
@@ -249,6 +250,7 @@ public final class CharacterDataMapper {
         levelUp.setGeneralizedSkills(new HashSet<>(levelData.getGeneralizedSkills()));
         levelUp.setSkillSpecializations(new HashSet<>(levelData.getSkillSpecializations()));
         levelUp.setFavouriteSkills(new HashSet<>(levelData.getFavouriteSkills()));
+        levelUp.setFavouriteSpellLists(new HashSet<>(levelData.getFavouriteSpellLists()));
         for (final CharacteristicRoll roll : levelData.getCharacteristicUpdates()) {
             levelUp.addCharacteristicUpdate(roll.getCharacteristicAbbreviation(), roll.getCharacteristicTemporalValue(),
                     roll.getCharacteristicPotentialValue(), roll.getRoll());

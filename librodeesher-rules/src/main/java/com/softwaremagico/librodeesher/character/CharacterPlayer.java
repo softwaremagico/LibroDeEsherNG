@@ -579,6 +579,7 @@ public class CharacterPlayer {
 		}
 		if (!this.levels.isEmpty()) {
 			levelUp.setFavouriteSkills(new HashSet<>(this.getCurrentLevel().getFavouriteSkills()));
+			levelUp.setFavouriteSpellLists(new HashSet<>(this.getCurrentLevel().getFavouriteSpellLists()));
 		}
 		// The new level is developed at the age reached after aging (see getAgeAtLevel).
 		levelUp.setAge(this.currentAge);
@@ -3109,6 +3110,30 @@ public class CharacterPlayer {
 		return skills.size() > MOST_USED_ATTACKS_LINES
 				? new ArrayList<>(skills.subList(0, MOST_USED_ATTACKS_LINES))
 				: skills;
+	}
+
+	/** Every spell list the player marked as a favourite, across all levels, in no particular order
+	 *  (the legacy {@code getFavouriteSkills} accepted the list names too, and the sheet mixes them
+	 *  into the most-used block). */
+	public List<String> getFavouriteSpellListIds() throws InvalidXmlElementException {
+		final List<String> ids = new ArrayList<>();
+		for (final LevelUp levelUp : this.levels) {
+			for (final String spellListId : levelUp.getFavouriteSpellLists()) {
+				if (!ids.contains(spellListId)) {
+					ids.add(spellListId);
+				}
+			}
+		}
+		return ids;
+	}
+
+	/** The favourite spell lists themselves, resolved from {@link #getFavouriteSpellListIds()}. */
+	public List<MagicSpellList> getFavouriteSpellLists() throws InvalidXmlElementException {
+		final List<MagicSpellList> lists = new ArrayList<>();
+		for (final String spellListId : this.getFavouriteSpellListIds()) {
+			lists.add(RulesCatalog.getInstance().getSpellList(spellListId));
+		}
+		return lists;
 	}
 
 	/**

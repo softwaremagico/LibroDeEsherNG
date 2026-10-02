@@ -509,16 +509,25 @@ public final class LegacyCharacterJsonImporter {
         });
 
         final List<String> favourites = new ArrayList<>();
+        final List<String> favouriteSpellLists = new ArrayList<>();
         for (final JsonNode favourite : levelUp.path("favouriteSkills")) {
-            // NG favourites are skills only, so the spell lists the legacy app also accepted as
-            // favourites (e.g. "Armadura del Caos") are dropped.
-            final String id = skillIds.get(normalize(favourite.asText()));
+            // Favourites may name either a skill or a spell list (e.g. "Armadura del Caos"): the
+            // legacy application accepted both, and the sheet prints both in its most-used block.
+            final String name = normalize(favourite.asText());
+            final String id = skillIds.get(name);
             if (id != null) {
                 favourites.add(id);
+            } else {
+                final String spellListId = spellListIds.get(name);
+                if (spellListId != null) {
+                    favouriteSpellLists.add(spellListId);
+                }
             }
         }
         favourites.sort(String::compareTo);
+        favouriteSpellLists.sort(String::compareTo);
         level.setFavouriteSkills(favourites);
+        level.setFavouriteSpellLists(favouriteSpellLists);
 
         final List<CharacteristicRoll> updates = new ArrayList<>();
         for (final JsonNode update : levelUp.path("characteristicsUpdates")) {

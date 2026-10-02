@@ -40,6 +40,9 @@ public final class LevelData {
     @JsonProperty("favouriteSkills")
     private List<String> favouriteSkills = new ArrayList<>();
 
+    @JsonProperty("favouriteSpellLists")
+    private List<String> favouriteSpellLists = new ArrayList<>();
+
     @JsonProperty("characteristicUpdates")
     private List<CharacteristicRoll> characteristicUpdates = new ArrayList<>();
 
@@ -115,6 +118,14 @@ public final class LevelData {
 
     public void setFavouriteSkills(List<String> favouriteSkills) {
         this.favouriteSkills = favouriteSkills;
+    }
+
+    public List<String> getFavouriteSpellLists() {
+        return favouriteSpellLists;
+    }
+
+    public void setFavouriteSpellLists(List<String> favouriteSpellLists) {
+        this.favouriteSpellLists = favouriteSpellLists;
     }
 
     public List<CharacteristicRoll> getCharacteristicUpdates() {

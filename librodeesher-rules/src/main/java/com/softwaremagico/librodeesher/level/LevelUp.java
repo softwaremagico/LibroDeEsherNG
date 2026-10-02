@@ -44,6 +44,8 @@ public class LevelUp {
     private Set<String> skillSpecializations = new HashSet<>();
     @JsonProperty("favouriteSkills")
     private Set<String> favouriteSkills = new HashSet<>();
+    @JsonProperty("favouriteSpellLists")
+    private Set<String> favouriteSpellLists = new HashSet<>();
     @JsonProperty("characteristicUpdates")
     private List<CharacteristicRoll> characteristicUpdates = new ArrayList<>();
     @JsonProperty("ageModifications")
@@ -299,6 +301,22 @@ public class LevelUp {
 
     public void setFavouriteSkills(Set<String> favouriteSkills) {
         this.favouriteSkills = favouriteSkills;
+    }
+
+    public Set<String> getFavouriteSpellLists() {
+        return favouriteSpellLists;
+    }
+
+    public void addFavouriteSpellList(String spellListId) {
+        favouriteSpellLists.add(spellListId);
+    }
+
+    public void removeFavouriteSpellList(String spellListId) {
+        favouriteSpellLists.remove(spellListId);
+    }
+
+    public void setFavouriteSpellLists(Set<String> favouriteSpellLists) {
+        this.favouriteSpellLists = favouriteSpellLists;
     }
 
     public List<AgeModification> getAgeModifications() {
