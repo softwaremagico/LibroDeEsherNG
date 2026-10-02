@@ -100,6 +100,30 @@ public class LegacyCharacterSheet {
 	}
 
 	/**
+	 * A name guaranteed to fit on a single line inside a cell {@code maxWidth} points wide, so the
+	 * fixed row height of the tabular sheets is never broken by a wrapped cell: the {@code startSize}
+	 * sheet font shrinks just enough to fit, and the name is cut with an ellipsis only when no
+	 * legible size fits (the legacy layout assumed every category name fit its 23% column, which the
+	 * "Listas Hechizos de Adiestramientos de Otros Reinos" name wraps in).
+	 */
+	private Paragraph singleLineName(String text, BaseFont font, float maxWidth, float startSize) {
+		float size = startSize;
+		if (font.getWidthPoint(text, size) > maxWidth) {
+			while (size > 4f && font.getWidthPoint(text, size) > maxWidth) {
+				size -= 0.5f;
+			}
+			if (font.getWidthPoint(text, size) > maxWidth) {
+				final String ellipsis = "...";
+				while (text.length() > 1 && font.getWidthPoint(text + ellipsis, size) > maxWidth) {
+					text = text.substring(0, text.length() - 1);
+				}
+				text += ellipsis;
+			}
+		}
+		return new Paragraph(text, new Font(font, size));
+	}
+
+	/**
 	 * Writes every page of the sheet onto an already-open {@code document}.
 	 *
 	 * <p>A null {@code characterPlayer} is not handled here: {@code PdfDocument} renders the blank
@@ -207,7 +231,7 @@ public class LegacyCharacterSheet {
 					Paragraph p;
 					if (i < LegacyValues.availableCategories().size()) {
 						text = LegacyTextBlocks.name(category.getName());
-						p = new Paragraph(text, new Font(getDefaultFont(), fontSize));
+						p = singleLineName(text, getDefaultFont(), 0.23f * (document.getPageSize().getWidth() - 65) - 8, fontSize);
 					} else {
 						text = "_______________________";
 						p = new Paragraph(text, new Font(getDefaultFont(), fontSize));
