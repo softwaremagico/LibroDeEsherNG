@@ -3136,6 +3136,32 @@ public class CharacterPlayer {
 		return lists;
 	}
 
+	/** Every spell list the character has ranks in (across any level or hobby ranks), in no
+	 *  particular order: the "interesting" spell lists the skills page must print as rows, matching
+	 *  how the legacy sheet listed them among the skills. */
+	public List<MagicSpellList> getLearnedSpellLists() throws InvalidXmlElementException {
+		final List<String> ids = new ArrayList<>();
+		for (final LevelUp levelUp : this.levels) {
+			for (final String spellListId : levelUp.getSpellListsWithRanks()) {
+				if (!ids.contains(spellListId)) {
+					ids.add(spellListId);
+				}
+			}
+		}
+		for (final String spellListId : this.getHobbySpellListRanks().keySet()) {
+			if (!ids.contains(spellListId) && this.getSpellListTotalRanks(spellListId) > 0) {
+				ids.add(spellListId);
+			}
+		}
+		final List<MagicSpellList> lists = new ArrayList<>();
+		for (final String spellListId : ids) {
+			if (this.getSpellListTotalRanks(spellListId) > 0) {
+				lists.add(RulesCatalog.getInstance().getSpellList(spellListId));
+			}
+		}
+		return lists;
+	}
+
 	/**
 	 * The order the "most used attacks" table uses, over values already resolved by
 	 * {@link #getSkillValueWithoutItemBonus(Skill)}: highest value first, and among equally valued

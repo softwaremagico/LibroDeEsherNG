@@ -588,6 +588,75 @@ public class LegacyCharacterSheet {
 		table.addCell(cell);
 	}
 
+	private void addSpellListLine(MagicSpellList spellList, int fontSize, PdfPTable table, int line) throws InvalidXmlElementException, BadElementException, MalformedURLException, IOException {
+		String text;
+		PdfPCell cell;
+		Paragraph p;
+
+		// A list row mirrors a skill row: the bonus of the character's magic realm characteristic in
+		// the "category" column, and its rank values where skills show theirs.
+		text = LegacyTextBlocks.name(spellList.getName());
+		p = new Paragraph(text, new Font(getHandWrittingFont(), fontSize));
+		cell = new PdfPCell(p);
+		cell.setMinimumHeight(11 + line % 2);
+		cell.setBorderWidth(BORDER);
+		cell.setHorizontalAlignment(Element.ALIGN_LEFT);
+		cell.setPaddingLeft(5f);
+		table.addCell(cell);
+
+		final int level = characterPlayer.getLevel();
+		text = (level > 1 ? characterPlayer.getSpellListTotalRanksAtLevel(spellList.getId(), level - 1) : 0) + "";
+		p = new Paragraph(text, new Font(getHandWrittingFont(), fontSize));
+		cell = new PdfPCell(p);
+		cell.setBorderWidth(BORDER);
+		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+		table.addCell(cell);
+
+		cell = new PdfPCell(getNewRanksImage(characterPlayer.getCurrentLevel().getSpellListRanks(spellList.getId())));
+		cell.setBorderWidth(BORDER);
+		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+		table.addCell(cell);
+
+		text = "  " + characterPlayer.getSpellListTotalRanks(spellList.getId()) + "";
+		p = new Paragraph(text, new Font(getHandWrittingFont(), fontSize));
+		cell = new PdfPCell(p);
+		cell.setBorderWidth(BORDER);
+		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+		table.addCell(cell);
+
+		text = characterPlayer.getBonusCharacteristicOfRealmOfMagic() + "";
+		p = new Paragraph(text, new Font(getHandWrittingFont(), fontSize));
+		cell = new PdfPCell(p);
+		cell.setBorderWidth(BORDER);
+		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+		table.addCell(cell);
+
+		p = new Paragraph(EMPTY_VALUE, new Font(getDefaultFont(), fontSize));
+		cell = new PdfPCell(p);
+		cell.setBorderWidth(BORDER);
+		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+		table.addCell(cell);
+
+		p = new Paragraph("0", new Font(getHandWrittingFont(), fontSize));
+		cell = new PdfPCell(p);
+		cell.setBorderWidth(BORDER);
+		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+		table.addCell(cell);
+
+		p = new Paragraph(EMPTY_VALUE, new Font(getDefaultFont(), fontSize));
+		cell = new PdfPCell(p);
+		cell.setBorderWidth(BORDER);
+		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+		table.addCell(cell);
+
+		text = characterPlayer.getBonusCharacteristicOfRealmOfMagic() + characterPlayer.getSpellListTotalRanks(spellList.getId()) + "";
+		p = new Paragraph(text, new Font(getHandWrittingFont(), fontSize));
+		cell = new PdfPCell(p);
+		cell.setBorderWidth(BORDER);
+		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+		table.addCell(cell);
+	}
+
 	private void addSpecializedSkillLine(Skill skill, int fontSize, PdfPTable table, int i, int specializedIndex) throws InvalidXmlElementException, BadElementException, MalformedURLException, IOException {
 		String text;
 		PdfPCell cell;
@@ -843,6 +912,20 @@ public class LegacyCharacterSheet {
 			} else {
 				List<Skill> sortedSkills = SkillFactory.getInstance().getElements();
 				skillLines = newSkill(table, document, writer, fontsize, widths, sortedSkills, skillLines);
+			}
+			// The character's learned spell lists are rows of the skills page too, exactly as the
+			// legacy sheet listed them (its spell lists were the skills of the magic categories).
+			for (final MagicSpellList spellList : characterPlayer.getLearnedSpellLists()) {
+				if (skillLines > 56) {
+					addNewSkillPage(table, document, writer, fontsize);
+					table.flushContent();
+					table.getDefaultCell().setBorderWidth(BORDER);
+					table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
+					table.setTotalWidth(document.getPageSize().getWidth() - 65);
+					skillLines = 0;
+				}
+				skillLines++;
+				addSpellListLine(spellList, fontsize, table, skillLines);
 			}
 		}
 		while (skillLines < 57) {
