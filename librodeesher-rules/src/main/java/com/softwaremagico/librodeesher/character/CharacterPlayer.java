@@ -182,6 +182,13 @@ public class CharacterPlayer {
 	 */
 	public static final int CATEGORY_MAX_COST = 50;
 
+	/**
+	 * The legacy {@code CharacterPlayer#INVALID_COST} sentinel (200): what the legacy
+	 * {@code getNewRankCost} returned when the profession had no cost row for a category, so its first
+	 * rank always exceeded {@link #CATEGORY_MAX_COST} and the category was hidden.
+	 */
+	public static final int INVALID_COST = 200;
+
 	public CharacterPlayer() {
 		for (final CharacteristicAbbreviation abbreviation : allRealCharacteristics()) {
 			this.characteristicTemporalValues.put(abbreviation, Characteristics.INITIAL_CHARACTERISTIC_VALUE);
@@ -2364,6 +2371,22 @@ public class CharacterPlayer {
 		if (this.isWeaponCategoryId(category.getId())) {
 			return !(this.isFirearmCategoryId(category.getId()) && !this.isFirearmsAllowed());
 		}
+		// The twelve "Listas ... de Hechizos" rows of a profession's "DESARROLLO DE HECHIZOS" section
+		// are synthetic categories in the legacy model (one per MagicListType, see
+		// MagicListType#getCategoryId), where the same per-rank rules applied: an other-realm training
+		// list needs that option, a list type without a cost row for the profession (e.g. the Triad
+		// for a Lord del Caos) or with a first rank costing more than CATEGORY_MAX_COST (the 80-point
+		// "Listas Básicas de Otros Reinos") is not bought, and a magic-user option gates them all.
+		final MagicListType listType = MagicListType.fromCategoryId(category.getId());
+		if (listType != null) {
+			if (listType == MagicListType.OTHER_REALM_TRAINING && !this.isOtherRealmTrainingSpellsAllowed()) {
+				return false;
+			}
+			if (this.firstRankListCost(listType) > CATEGORY_MAX_COST) {
+				return false;
+			}
+			return this.isMagicAllowed();
+		}
 		if (isSpellListCategory(category.getId()) && !this.isOtherRealmTrainingSpellsAllowed()
 				&& this.classifySpellList(category.getId()) == MagicListType.OTHER_REALM_TRAINING) {
 			return false;
@@ -2373,6 +2396,24 @@ public class CharacterPlayer {
 			return false;
 		}
 		return !isSpellListCategory(category.getId()) || this.isMagicAllowed();
+	}
+
+	/**
+	 * The cost of the first rank of a list of {@code listType} for this character's profession: the
+	 * legacy {@code getNewRankCost(category, 0, 0)} of the synthetic "Listas ... de Hechizos"
+	 * category, i.e. the unbounded {@code INVALID_COST} (200) sentinel of the legacy application when
+	 * no profession is selected or it has no cost row for the type.
+	 */
+	private int firstRankListCost(MagicListType listType) throws InvalidXmlElementException {
+		final Profession profession = this.getProfession();
+		if (profession == null) {
+			return INVALID_COST;
+		}
+		final ProfessionMagicCost cost = profession.getMagicCost(listType, 0);
+		if (cost == null || cost.getRankCosts().isEmpty()) {
+			return INVALID_COST;
+		}
+		return cost.getRankCosts().get(0);
 	}
 
 	private boolean isFirearmCategoryId(String categoryId) {

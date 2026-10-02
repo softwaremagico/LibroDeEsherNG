@@ -1,6 +1,7 @@
 package com.softwaremagico.librodeesher.pdf.legacy;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -9,7 +10,10 @@ import com.softwaremagico.librodeesher.category.CategoryFactory;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
+import com.softwaremagico.librodeesher.magic.MagicListType;
+import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.ProfessionCategoryCost;
+import com.softwaremagico.librodeesher.profession.ProfessionMagicCost;
 import com.softwaremagico.librodeesher.profession.ProfessionWeaponCostTier;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.race.RaceSpecial;
@@ -73,6 +77,17 @@ final class LegacyValues {
         if (cost == null) {
             final ProfessionWeaponCostTier weaponTier = characterPlayer.getAssignedWeaponCategoryCostTier(category.getId());
             if (weaponTier == null) {
+                // The legacy getCategoryCost of a synthetic "Listas ... de Hechizos" category was the
+                // profession's magic cost for that list type (one bracket per rank range), so its cost
+                // tag is the whole rank-cost progression of the same bracket the list ranks start in.
+                final MagicListType listType = MagicListType.fromCategoryId(category.getId());
+                if (listType != null) {
+                    final Profession profession = characterPlayer.getProfession();
+                    final ProfessionMagicCost magicCost = profession == null ? null : profession.getMagicCost(listType, 0);
+                    if (magicCost != null) {
+                        return costTag(magicCost.getRankCosts());
+                    }
+                }
                 // No profession, or that profession has no cost table for this category: the legacy
                 // sheet printed nothing in the cost column rather than failing.
                 return "";
@@ -123,13 +138,15 @@ final class LegacyValues {
     }
 
     /**
-     * Every category, in the order the rules files list them, matching the legacy {@code
-     * CategoryFactory#getAvailableCategories()} the sheet walked (its order is what decides the row
-     * each category is printed on).
+     * Every category, ordered by name: the legacy {@code CategoryFactory} finished by sorting its
+     * {@code availableCategoriesByName} list, and the sheet walked that order to place each category
+     * on its row (the XML files are stored roughly alphabetically, but the twelve "Listas ... de
+     * Hechizos" categories are not in that order there, hence the explicit sort).
      */
     static List<Category> availableCategories() throws InvalidXmlElementException {
         if (availableCategories == null) {
-            availableCategories = CategoryFactory.getInstance().getElements();
+            availableCategories = new ArrayList<>(CategoryFactory.getInstance().getElements());
+            availableCategories.sort(Comparator.comparing(Category::getName));
         }
         return availableCategories;
     }

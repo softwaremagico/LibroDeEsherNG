@@ -56,4 +56,14 @@ public enum MagicListType {
         }
         throw new IllegalArgumentException("Unknown magic list type tag '" + tag + "'.");
     }
+
+    /** The magic list type whose synthetic category id is {@code categoryId}, or {@code null} if {@code categoryId} is not the id of one of the twelve "Listas ... de Hechizos" categories. */
+    public static MagicListType fromCategoryId(String categoryId) {
+        for (final MagicListType type : values()) {
+            if (type.categoryId.equals(categoryId)) {
+                return type;
+            }
+        }
+        return null;
+    }
 }
