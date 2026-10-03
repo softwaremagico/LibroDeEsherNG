@@ -649,7 +649,8 @@ public class CharacterPlayer {
 		for (final LevelUp levelUp : this.levels) {
 			total += levelUp.getSkillRanks(skillId);
 		}
-		return total + this.getHobbySkillRank(skillId) - this.getSkillSpecializationsRankCost(skillId);
+		return total + this.getHobbySkillRank(skillId) - this.getSkillSpecializationsRankCost(skillId)
+				+ this.getLanguageRaceInitialRanks(skillId);
 	}
 
 	/**
@@ -666,7 +667,50 @@ public class CharacterPlayer {
 		for (int i = 0; i < lastLevel; i++) {
 			total += this.levels.get(i).getSkillRanks(skillId);
 		}
-		return total + this.getHobbySkillRank(skillId) - this.getSkillSpecializationsRankCost(skillId);
+		return total + this.getHobbySkillRank(skillId) - this.getSkillSpecializationsRankCost(skillId)
+				+ this.getLanguageRaceInitialRanks(skillId);
+	}
+
+	/**
+	 * The speaking or writing ranks the character's race grants at creation for a "Hablar" or
+	 * "Escribir" skill of one of its languages: the legacy sheet counts them as ranks the
+	 * character already had (see the legacy
+	 * {@code CharacterPlayer#getLanguageRaceInitialRanks(String)}), so the totals above include
+	 * them. Returns 0 for any other skill, for a language the race does not speak and without a
+	 * race selected.
+	 */
+	private int getLanguageRaceInitialRanks(String skillId) {
+		if (skillId == null) {
+			return 0;
+		}
+		try {
+			final Race race = this.getRace();
+			if (race == null) {
+				return 0;
+			}
+			final List<String> languageIds = new ArrayList<>();
+			for (final RaceLanguage language : race.getRaceLanguages()) {
+				languageIds.add(language.getLanguageId());
+			}
+			for (int slot = 0; slot < race.getOptionalRaceLanguages().size(); slot++) {
+				final String assigned = this.getOptionalRaceLanguageAssignment(slot);
+				if (assigned != null) {
+					languageIds.add(assigned);
+				}
+			}
+			for (final String languageId : languageIds) {
+				final String skillSuffix = Character.toUpperCase(languageId.charAt(0)) + languageId.substring(1);
+				final boolean speaking = skillId.equals("hablar" + skillSuffix);
+				if (!speaking && !skillId.equals("escribir" + skillSuffix)) {
+					continue;
+				}
+				return speaking ? this.getRaceLanguageStartingSpeakingRanks(languageId)
+						: this.getRaceLanguageStartingWritingRanks(languageId);
+			}
+		} catch (final InvalidXmlElementException e) {
+			return 0;
+		}
+		return 0;
 	}
 
 	/** Total ranks bought in a spell list across every character level. */

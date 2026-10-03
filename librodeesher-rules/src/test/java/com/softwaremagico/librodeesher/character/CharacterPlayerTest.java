@@ -1109,6 +1109,60 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void raceLanguageStartingRanksCountTowardsTheSkillTotals() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("laan");
+
+		// Laan speaks Laan and Emeriano 8/4 from creation, the ranks the legacy sheet
+		// printed as the ranks the character already had.
+		Assert.assertEquals(character.getSkillTotalRanks("hablarLaan"), Integer.valueOf(8));
+		Assert.assertEquals(character.getSkillTotalRanks("escribirLaan"), Integer.valueOf(4));
+		Assert.assertEquals(character.getSkillTotalRanks("hablarEmeriano"), Integer.valueOf(8));
+		Assert.assertEquals(character.getSkillTotalRanks("escribirEmeriano"), Integer.valueOf(4));
+
+		// A language the race does not speak keeps its own ranks.
+		Assert.assertEquals(character.getSkillTotalRanks("hablarDwarf"), Integer.valueOf(0));
+	}
+
+	@Test
+	public void skillTotalsAddTheBoughtRanksToTheRaceLanguageOnes() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("laan");
+
+		// A new character already has its level 1, the race languages count there.
+		Assert.assertEquals(character.getSkillTotalRanksAtLevel("hablarLaan", 1), Integer.valueOf(8));
+
+		final LevelUp secondLevel = new LevelUp();
+		secondLevel.setSkillRanks("hablarLaan", 2, false);
+		character.getLevels().add(secondLevel);
+
+		Assert.assertEquals(character.getSkillTotalRanks("hablarLaan"), Integer.valueOf(10));
+		Assert.assertEquals(character.getSkillTotalRanksAtLevel("hablarLaan", 2), Integer.valueOf(10));
+	}
+
+	@Test
+	public void optionalRaceLanguageSlotCountsTowardsTheSkillTotals() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("dyari");
+
+		Assert.assertEquals(character.getSkillTotalRanks("hablarAldari"), Integer.valueOf(0));
+
+		// "aldari" is one of the dyari's optional background languages (starting ranks
+		// 0/0), so the slot is what grants its 8/4 at creation.
+		character.assignOptionalRaceLanguage(0, "aldari");
+
+		Assert.assertEquals(character.getSkillTotalRanks("hablarAldari"), Integer.valueOf(8));
+		Assert.assertEquals(character.getSkillTotalRanks("escribirAldari"), Integer.valueOf(4));
+	}
+
+	@Test
+	public void skillTotalsIgnoreRaceLanguagesWithoutARaceSelected() {
+		final CharacterPlayer character = new CharacterPlayer();
+		Assert.assertEquals(character.getSkillTotalRanks("hablarLaan"), Integer.valueOf(0));
+		Assert.assertEquals(character.getSkillTotalRanks("escribirLaan"), Integer.valueOf(0));
+	}
+
+	@Test
 	public void assigningAnOptionalCultureLanguageGrantsItsSlotMaxRanks() throws InvalidXmlElementException {
 		// aquaticMilitarista has one optional 'Idioma Regional' slot capping at 8/8 (no
 		// starting ranks).

@@ -407,8 +407,8 @@ public class LegacyCharacterJsonImporterTest {
                 skillRanks += ranks;
             }
         }
-        Assert.assertEquals(skillsWithRanks, 59);
-        Assert.assertEquals(skillRanks, 135);
+        Assert.assertEquals(skillsWithRanks, 63);
+        Assert.assertEquals(skillRanks, 159);
 
         int listsWithRanks = 0;
         int listRanks = 0;
@@ -496,9 +496,9 @@ public class LegacyCharacterJsonImporterTest {
     public void rebuiltMorticiaTotalsMatchTheReferenceBook() throws IOException, InvalidXmlElementException {
         // Reference totals recomputed from the snapshots' own "inserted" record and level-ups, with
         // the skill ranks of the level 10 "Mago del Aire" training added on top of the recorded ones.
-        assertMorticiaTotals(importMorticia(MORTICIA_N10), 10, 22, 81, 49, 211, 16, 187, 7, 8);
-        assertMorticiaTotals(importMorticia(MORTICIA_N11), 11, 22, 89, 57, 240, 16, 193, 7, 8);
-        assertMorticiaTotals(importMorticia(MORTICIA_N12), 12, 22, 91, 61, 246, 18, 211, 9, 10);
+        assertMorticiaTotals(importMorticia(MORTICIA_N10), 10, 22, 81, 50, 216, 16, 187, 7, 8);
+        assertMorticiaTotals(importMorticia(MORTICIA_N11), 11, 22, 89, 58, 245, 16, 193, 7, 8);
+        assertMorticiaTotals(importMorticia(MORTICIA_N12), 12, 22, 91, 62, 251, 18, 211, 9, 10);
     }
 
     private static CharacterData importMorticia(String snapshot) throws IOException, InvalidXmlElementException {
