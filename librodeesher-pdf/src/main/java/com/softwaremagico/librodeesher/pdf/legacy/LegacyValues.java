@@ -195,6 +195,14 @@ final class LegacyValues {
     }
 
     /**
+     * The legacy {@code Spanish.POWER_POINTS_DEVELOPMENT_SKILL} skill, whose total value the sheet
+     * printed as the character's power points.
+     */
+    static Skill powerPointDevelopmentSkill() throws InvalidXmlElementException {
+        return RulesCatalog.getInstance().getSkill("powerPointDevelopment");
+    }
+
+    /**
      * The legacy {@code CharacterPlayer#getSkillNameWithSufix(Skill)}: the skill's name followed by
      * the suffix of its rank-cost variant, so a hand-filled sheet still says which skills were
      * restricted, professional, common or generalized.

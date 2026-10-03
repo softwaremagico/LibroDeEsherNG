@@ -1864,7 +1864,7 @@ public class LegacyCharacterSheet {
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 		tabla.addCell(cell);
 		if (characterPlayer != null) {
-			p = new Paragraph(Math.max(characterPlayer.getPowerPoints(), 0) + "", new Font(getHandWrittingFont(), fontSize + 3));
+			p = new Paragraph(Math.max(characterPlayer.getSkillTotalValue(LegacyValues.powerPointDevelopmentSkill()), 0) + "", new Font(getHandWrittingFont(), fontSize + 3));
 		} else {
 			p = new Paragraph("", new Font(getHandWrittingFont(), fontSize + 3));
 		}
@@ -1940,7 +1940,7 @@ public class LegacyCharacterSheet {
 		tabla.addCell(cell);
 
 		if (characterPlayer != null) {
-			p = new Paragraph(Math.max(characterPlayer.getPowerPoints() / 2, 1) + "", new Font(getHandWrittingFont(), fontSize));
+			p = new Paragraph(Math.max(characterPlayer.getSkillTotalValue(LegacyValues.powerPointDevelopmentSkill()) / 2, 1) + "", new Font(getHandWrittingFont(), fontSize));
 		} else {
 			p = new Paragraph("__", new Font(getDefaultFont(), fontSize));
 		}
