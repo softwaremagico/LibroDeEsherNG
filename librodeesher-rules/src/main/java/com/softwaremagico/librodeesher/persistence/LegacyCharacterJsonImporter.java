@@ -212,6 +212,8 @@ public final class LegacyCharacterJsonImporter {
         data.setOtherRealmTrainingSpellsAllowed(required(root, "otherRealmtrainingSpellsAllowed").asBoolean(false));
         data.setDarkSpellsAsBasicListsAllowed(required(root, "darkSpellsAsBasicListsAllowed").asBoolean(false));
         data.setRecommendedFavouriteSkillsIncluded(root.path("recommendedFavouriteSkillsIncluded").asBoolean(false));
+        data.setHandWritingFont(root.path("handWritingFont").asBoolean(false));
+        data.setSortPdfSkills(root.path("sortPdfSkills").asBoolean(false));
         data.setMagicAllowed(true);
         return data;
     }
@@ -614,6 +616,8 @@ public final class LegacyCharacterJsonImporter {
         data.setOtherRealmTrainingSpellsAllowed(node.path("otherRealmsTrainingSpells").asBoolean(false));
         data.setMagicAllowed(node.path("magicAllowed").asBoolean(true));
         data.setDarkSpellsAsBasicListsAllowed(node.path("darkSpellsAsBasic").asBoolean(false));
+        data.setHandWritingFont(node.path("handWrittingFont").asBoolean(false));
+        data.setSortPdfSkills(node.path("sortPdfSkills").asBoolean(false));
     }
 
     private static LevelData emptyLevel(int age) {

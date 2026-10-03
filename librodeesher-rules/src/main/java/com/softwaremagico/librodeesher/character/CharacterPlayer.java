@@ -169,6 +169,12 @@ public class CharacterPlayer {
 	private boolean handWritingFont = false;
 
 	/**
+	 * Whether the generated PDF lists the skills globally sorted by name instead of grouped by
+	 * category, matching the legacy {@code CharacterConfiguration#sortPdfSkills}.
+	 */
+	private boolean sortPdfSkills = false;
+
+	/**
 	 * A category or skill rank whose next-rank development cost is under this amount is "cheap enough
 	 * to be worth investing in" for the random character generator, matching the legacy {@code
 	 * CharacterPlayer#MAX_REASONABLE_COST} (consulted by {@code CategoryProbability}/{@code
@@ -2090,6 +2096,17 @@ public class CharacterPlayer {
 
 	public void setHandWritingFont(boolean handWritingFont) {
 		this.handWritingFont = handWritingFont;
+	}
+
+	/**
+	 * Whether the PDF sheet lists the skills globally sorted by name (see {@link #sortPdfSkills}).
+	 */
+	public boolean isSortPdfSkills() {
+		return sortPdfSkills;
+	}
+
+	public void setSortPdfSkills(boolean sortPdfSkills) {
+		this.sortPdfSkills = sortPdfSkills;
 	}
 
 	/**

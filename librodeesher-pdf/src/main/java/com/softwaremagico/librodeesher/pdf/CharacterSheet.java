@@ -64,6 +64,11 @@ public class CharacterSheet extends PdfDocument {
     @Override
     protected void createContent(Document document, CharacterPlayer characterPlayer, PdfWriter writer)
             throws InvalidXmlElementException {
-        new LegacyCharacterSheet(characterPlayer, alphabeticallySortedSkills).render(document, writer);
+        // The legacy application exported the sheet honouring the character's own "sort PDF
+        // skills by name" option; a character-free export keeps the constructor default.
+        final boolean sortedSkills = characterPlayer != null
+                ? characterPlayer.isSortPdfSkills()
+                : this.alphabeticallySortedSkills;
+        new LegacyCharacterSheet(characterPlayer, sortedSkills).render(document, writer);
     }
 }

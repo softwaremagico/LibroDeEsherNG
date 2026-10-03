@@ -123,6 +123,8 @@ public final class CharacterDataMapper {
         data.setMagicAllowed(character.isMagicAllowed());
         data.setDarkSpellsAsBasicListsAllowed(character.isDarkSpellsAsBasicListsAllowed());
         data.setRecommendedFavouriteSkillsIncluded(character.isRecommendedFavouriteSkillsIncluded());
+        data.setHandWritingFont(character.isHandWritingFont());
+        data.setSortPdfSkills(character.isSortPdfSkills());
         return data;
     }
 
@@ -162,6 +164,8 @@ public final class CharacterDataMapper {
         character.setMagicAllowed(data.isMagicAllowed());
         character.setDarkSpellsAsBasicListsAllowed(data.isDarkSpellsAsBasicListsAllowed());
         character.setRecommendedFavouriteSkillsIncluded(data.isRecommendedFavouriteSkillsIncluded());
+        character.setHandWritingFont(data.isHandWritingFont());
+        character.setSortPdfSkills(data.isSortPdfSkills());
 
         for (final Map.Entry<String, Integer> entry : data.getCharacteristicTemporalValues().entrySet()) {
             character.setCharacteristicTemporalValue(CharacteristicAbbreviation.valueOf(entry.getKey()),

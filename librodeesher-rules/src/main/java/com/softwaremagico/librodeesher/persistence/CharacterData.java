@@ -94,6 +94,14 @@ public final class CharacterData {
     @JsonProperty("darkSpellsAsBasicListsAllowed")
     private boolean darkSpellsAsBasicListsAllowed;
 
+    /** Whether the generated PDF writes the values in the handwriting font (legacy {@code handWrittingFont}). */
+    @JsonProperty("handWritingFont")
+    private boolean handWritingFont;
+
+    /** Whether the PDF lists the skills globally sorted by name (legacy {@code sortPdfSkills}). */
+    @JsonProperty("sortPdfSkills")
+    private boolean sortPdfSkills;
+
     private boolean recommendedFavouriteSkillsIncluded;
 
     public CharacterData() {
@@ -306,5 +314,21 @@ public final class CharacterData {
 
     public void setDarkSpellsAsBasicListsAllowed(boolean darkSpellsAsBasicListsAllowed) {
         this.darkSpellsAsBasicListsAllowed = darkSpellsAsBasicListsAllowed;
+    }
+
+    public boolean isHandWritingFont() {
+        return handWritingFont;
+    }
+
+    public void setHandWritingFont(boolean handWritingFont) {
+        this.handWritingFont = handWritingFont;
+    }
+
+    public boolean isSortPdfSkills() {
+        return sortPdfSkills;
+    }
+
+    public void setSortPdfSkills(boolean sortPdfSkills) {
+        this.sortPdfSkills = sortPdfSkills;
     }
 }
