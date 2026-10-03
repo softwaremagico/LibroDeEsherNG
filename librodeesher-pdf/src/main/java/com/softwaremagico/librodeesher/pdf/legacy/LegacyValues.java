@@ -48,11 +48,6 @@ final class LegacyValues {
         return characterPlayer.getSkillRankValue(categoryOf(skill), characterPlayer.getSkillRealRanks(skill));
     }
 
-    /** The legacy {@code CharacterPlayer#getRanksValue(Skill)} plus its flat bonuses. */
-    static int skillDevelopmentBonus(CharacterPlayer characterPlayer, Skill skill) throws InvalidXmlElementException {
-        return characterPlayer.getSkillDevelopmentBonus(categoryOf(skill), skill.getId());
-    }
-
     /**
      * The legacy {@code CharacterPlayer#getSpecializedTotalValue(Skill)}: the specialization's own
      * ranks value plus the flat bonuses plus the value of its skill's category.
@@ -232,6 +227,15 @@ final class LegacyValues {
      */
     static int skillSimpleBonus(CharacterPlayer characterPlayer, Skill skill) throws InvalidXmlElementException {
         return characterPlayer.getSkillDevelopmentBonus(categoryOf(skill), skill.getId()) - skillRanksValue(characterPlayer, skill);
+    }
+
+    /**
+     * The legacy {@code CharacterPlayer#getTotalValue(Category)}, which the skill row painted next to
+     * the skill's ranks value: the total value of the skill's own category, the same number on
+     * every row of that category and without the skill's own bonus.
+     */
+    static int categoryTotalValue(CharacterPlayer characterPlayer, Skill skill) throws InvalidXmlElementException {
+        return characterPlayer.getCategoryTotalBonus(categoryOf(skill));
     }
 
     /**

@@ -502,7 +502,7 @@ public class LegacyCharacterSheet {
 		table.addCell(cell);
 
 		if (characterPlayer != null) {
-			text = "  " + LegacyValues.skillDevelopmentBonus(characterPlayer, skill) + "";
+			text = "  " + LegacyValues.skillRanksValue(characterPlayer, skill) + "";
 			p = new Paragraph(text, new Font(getHandWrittingFont(), fontSize));
 		} else {
 			text = "   __";
@@ -514,7 +514,7 @@ public class LegacyCharacterSheet {
 		table.addCell(cell);
 
 		if (characterPlayer != null) {
-			text = characterPlayer.getSkillTotalValue(skill) + "";
+			text = LegacyValues.categoryTotalValue(characterPlayer, skill) + "";
 			p = new Paragraph(text, new Font(getHandWrittingFont(), fontSize));
 		} else {
 			text = "__";
