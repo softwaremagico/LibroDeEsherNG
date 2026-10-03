@@ -1125,7 +1125,7 @@ public class CharacterPlayer {
 		final int realRanks = skill == null ? 0 : this.getSkillRealRanks(skill);
 		final Integer perkSkillRankBonus = this.getPerkSkillRankBonus(skillId);
 		final int perkRankTerm = perkSkillRankBonus == 0 ? 0 : perkSkillRankBonus * realRanks;
-		return this.getSkillRankValue(category, realRanks) + this.getProfessionBonus(skillId)
+		return this.getSkillRankValue(category, realRanks) + this.getProfessionSkillBonus(skillId)
 				+ this.background.getSkillBonus(skillId) + this.getPerkSkillBonus(skillId)
 				+ this.getPerkSkillConditionalBonus(skillId) + this.getRaceSkillBonus(skillId) + perkRankTerm;
 	}
@@ -1156,6 +1156,24 @@ public class CharacterPlayer {
 	public Integer getProfessionBonus(String id) throws InvalidXmlElementException {
 		final Profession profession = this.getProfession();
 		return profession == null ? 0 : profession.getBonus(id);
+	}
+
+	/**
+	 * The flat profession bonus applied to a {@code skillId} at the skill level. Legacy profession
+	 * bonus entries ("BONIFICACIÓN POR PROFESIÓN") target categories; a name that refers to both a
+	 * category and a skill (e.g. physicalDevelopment, powerPointDevelopment) is resolved as the
+	 * category one, so the skill must not receive it a second time through the skill term. Skill ids
+	 * that are not category ids remain free to receive profession bonuses.
+	 */
+	private Integer getProfessionSkillBonus(String skillId) throws InvalidXmlElementException {
+		try {
+			if (RulesCatalog.getInstance().getCategory(skillId) != null) {
+				return 0;
+			}
+		} catch (final InvalidXmlElementException e) {
+			// Not a category id, so the profession bonus targets this skill alone.
+		}
+		return this.getProfessionBonus(skillId);
 	}
 
 	/**

@@ -316,8 +316,11 @@ public class CharacterPlayerTest {
 		category.setType(CategoryType.STANDARD);
 		Assert.assertEquals(character.getCategoryDevelopmentBonus(category),
 				CategoryType.STANDARD.getCategoryRankBonus(0) + 10);
+		// A profession bonus whose name is a category id ("BONIFICACIÓN POR PROFESIÓN" targets
+		// categories) is resolved as the category bonus alone: the skill level must not receive it
+		// a second time, exactly as the legacy profession bonus returned 0 for the skill term.
 		Assert.assertEquals(character.getSkillDevelopmentBonus(category, "loreArcane"),
-				CategoryType.STANDARD.getSkillRankBonus(0) + 10);
+				CategoryType.STANDARD.getSkillRankBonus(0));
 	}
 
 	@Test
