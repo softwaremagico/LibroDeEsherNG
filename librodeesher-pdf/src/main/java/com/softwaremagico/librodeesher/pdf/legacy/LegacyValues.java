@@ -290,7 +290,7 @@ final class LegacyValues {
         if (race == null) {
             return 0;
         }
-        final Integer bonus = race.getResistanceBonuses().get(resistance.getTag());
+        final Integer bonus = race.getResistanceBonuses().get(resistance.name());
         return bonus == null ? 0 : bonus;
     }
 
