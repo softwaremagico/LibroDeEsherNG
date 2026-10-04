@@ -249,6 +249,13 @@ public final class LegacyTextBlocks {
      * showed them: the two-letter abbreviations joined with a slash.
      */
     public static String characteristicTags(List<CharacteristicAbbreviation> characteristics) {
+        if (characteristics == null || characteristics.isEmpty()) {
+            // The legacy catalog stores the raw tag text of every category, and the one category
+            // that develops in no characteristic ("Defensas Especiales") spells it out as
+            // "Ninguna" in rolemaster/categorias.txt. NG stores the tags as a list instead, so
+            // the word is restored here to keep the legacy row.
+            return "Ninguna";
+        }
         final StringBuilder tags = new StringBuilder();
         for (final CharacteristicAbbreviation characteristic : characteristics) {
             if (tags.length() > 0) {

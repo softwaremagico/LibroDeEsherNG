@@ -8,6 +8,8 @@ import com.softwaremagico.librodeesher.skill.Skill;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 /**
  * The numbers the legacy skill row paints next to every skill, which are the category's total and
  * the skill's ranks value, not the skill's own total value nor its development bonus.
@@ -48,6 +50,14 @@ public class LegacyValuesTest {
 
         // The flat bonuses are painted in the column with the (H)/(T) marks instead.
         Assert.assertEquals(LegacyValues.skillSimpleBonus(character, hablarLaan), 0);
+    }
+
+    @Test
+    public void categoryWithoutCharacteristicsIsPaintedAsNinguna() throws InvalidXmlElementException {
+        final Category specialDefenses = RulesCatalog.getInstance().getCategory("specialDefenses");
+        Assert.assertTrue(specialDefenses.getCharacteristics().isEmpty(), "the fixture still develops in no characteristic");
+        Assert.assertEquals(LegacyTextBlocks.characteristicTags(specialDefenses.getCharacteristics()), "Ninguna");
+        Assert.assertEquals(LegacyTextBlocks.characteristicTags(List.of()), "Ninguna");
     }
 
     @Test
