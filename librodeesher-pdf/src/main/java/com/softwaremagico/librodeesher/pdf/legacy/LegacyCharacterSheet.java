@@ -857,16 +857,61 @@ public class LegacyCharacterSheet {
 		createBackgroundImage(document, LegacySheetAssets.getSkillsPage());
 	}
 
+	/**
+	 * A row of the skills page when it is printed sorted: either one catalog skill or one of the
+	 * learned spell lists, both carrying the Spanish name the row is ordered by.
+	 */
+	private record SkillRow(String name, Skill skill, MagicSpellList spellList) {}
+
+	/** Closes the skills table that was filled and opens the next skills page, as the legacy sheet did. */
+	private void startNewSkillPage(PdfPTable table, Document document, PdfWriter writer, int fontsize) throws InvalidXmlElementException, DocumentException, MalformedURLException, IOException {
+		addNewSkillPage(table, document, writer, fontsize);
+		table.flushContent();
+		table.getDefaultCell().setBorderWidth(BORDER);
+		table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
+		table.setTotalWidth(document.getPageSize().getWidth() - 65);
+	}
+
+	/**
+	 * Prints one already sorted skills page: the skills and the learned spell lists share the
+	 * alphabetical sequence, and a row that does not fit opens a new page exactly like the legacy
+	 * {@code newSkill(...)}, which received the spell lists as skills.
+	 */
+	private int newSkillRow(PdfPTable table, Document document, PdfWriter writer, int fontsize, List<SkillRow> rows, int alreadyAddedSkills) throws InvalidXmlElementException, DocumentException, MalformedURLException, IOException {
+		for (final SkillRow row : rows) {
+			if (alreadyAddedSkills > 56) {
+				startNewSkillPage(table, document, writer, fontsize);
+				alreadyAddedSkills = 0;
+			}
+			if (row.spellList() == null) {
+				final Skill skill = row.skill();
+				if (!characterPlayer.isSkillInteresting(skill)) {
+					continue;
+				}
+				alreadyAddedSkills++;
+				addSkillLine(skill, fontsize, table, alreadyAddedSkills);
+				for (int m = 0; m < characterPlayer.getSkillSpecializations(skill.getId()).size(); m++) {
+					addSpecializedSkillLine(skill, fontsize, table, alreadyAddedSkills, m);
+					if (alreadyAddedSkills > 56) {
+						startNewSkillPage(table, document, writer, fontsize);
+						alreadyAddedSkills = 0;
+					}
+					alreadyAddedSkills++;
+				}
+			} else {
+				alreadyAddedSkills++;
+				addSpellListLine(row.spellList(), fontsize, table, alreadyAddedSkills);
+			}
+		}
+		return alreadyAddedSkills;
+	}
+
 	private int newSkill(PdfPTable table, Document document, PdfWriter writer, int fontsize, float[] widths, List<Skill> skills, int alreadyAddedSkills) throws InvalidXmlElementException, DocumentException, MalformedURLException, IOException {
 
 		for (int j = 0; j < skills.size(); j++) {
 			Skill skill = skills.get(j);
 			if (alreadyAddedSkills > 56) {
-				addNewSkillPage(table, document, writer, fontsize);
-				table.flushContent();
-				table.getDefaultCell().setBorderWidth(BORDER);
-				table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
-				table.setTotalWidth(document.getPageSize().getWidth() - 65);
+				startNewSkillPage(table, document, writer, fontsize);
 				alreadyAddedSkills = 0;
 			}
 
@@ -876,11 +921,7 @@ public class LegacyCharacterSheet {
 				for (int m = 0; m < characterPlayer.getSkillSpecializations(skill.getId()).size(); m++) {
 					addSpecializedSkillLine(skill, fontsize, table, alreadyAddedSkills, m);
 					if (alreadyAddedSkills > 56) {
-						addNewSkillPage(table, document, writer, fontsize);
-						table.flushContent();
-						table.getDefaultCell().setBorderWidth(BORDER);
-						table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
-						table.setTotalWidth(document.getPageSize().getWidth() - 65);
+						startNewSkillPage(table, document, writer, fontsize);
 						alreadyAddedSkills = 0;
 					}
 					alreadyAddedSkills++;
@@ -908,24 +949,32 @@ public class LegacyCharacterSheet {
 					Category category = LegacyValues.availableCategories().get(i);
 										skillLines = newSkill(table, document, writer, fontsize, widths, LegacyValues.skillsOf(category), skillLines);
 				}
+				// The learned spell lists close the page here because they are not skills of any
+				// category in this data model; the legacy sheet walked them as the last, magic
+				// categories.
+				for (final MagicSpellList spellList : characterPlayer.getLearnedSpellLists()) {
+					if (skillLines > 56) {
+						startNewSkillPage(table, document, writer, fontsize);
+						skillLines = 0;
+					}
+					skillLines++;
+					addSpellListLine(spellList, fontsize, table, skillLines);
+				}
 				// Add skills sorted
 			} else {
-				List<Skill> sortedSkills = SkillFactory.getInstance().getElements();
-				skillLines = newSkill(table, document, writer, fontsize, widths, sortedSkills, skillLines);
-			}
-			// The character's learned spell lists are rows of the skills page too, exactly as the
-			// legacy sheet listed them (its spell lists were the skills of the magic categories).
-			for (final MagicSpellList spellList : characterPlayer.getLearnedSpellLists()) {
-				if (skillLines > 56) {
-					addNewSkillPage(table, document, writer, fontsize);
-					table.flushContent();
-					table.getDefaultCell().setBorderWidth(BORDER);
-					table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
-					table.setTotalWidth(document.getPageSize().getWidth() - 65);
-					skillLines = 0;
+				// The legacy sheet sorted the whole page instead of walking the categories: every
+				// skill of the catalog by its Spanish name (SkillFactory#getSkills +
+				// SkillComparatorByName) with the learned spell lists mixed in, because in the
+				// legacy data model those lists were the skills of the magic categories.
+				final List<SkillRow> rows = new ArrayList<>();
+				for (final Skill skill : SkillFactory.getInstance().getElements()) {
+					rows.add(new SkillRow(LegacyTextBlocks.name(skill.getName()), skill, null));
 				}
-				skillLines++;
-				addSpellListLine(spellList, fontsize, table, skillLines);
+				for (final MagicSpellList spellList : characterPlayer.getLearnedSpellLists()) {
+					rows.add(new SkillRow(LegacyTextBlocks.name(spellList.getName()), null, spellList));
+				}
+				rows.sort(Comparator.comparing(SkillRow::name));
+				skillLines = newSkillRow(table, document, writer, fontsize, rows, skillLines);
 			}
 		}
 		while (skillLines < 57) {

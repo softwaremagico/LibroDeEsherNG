@@ -200,20 +200,24 @@ final class LegacyValues {
     /**
      * The legacy {@code CharacterPlayer#getSkillNameWithSufix(Skill)}: the skill's name followed by
      * the suffix of its rank-cost variant, so a hand-filled sheet still says which skills were
-     * restricted, professional, common or generalized.
+     * restricted, professional, common or generalized. Which variant a skill is depends on the
+     * character (its profession, race, trainings and perks), exactly as in the legacy
+     * {@code isProfessional(Skill)}/{@code isCommon(Skill)}/{@code isRestricted(Skill)}, so a
+     * standard skill such as "Demonolog&#237;a" is painted as "(p)" when only the character's
+     * profession may take it.
      */
-    static String skillNameWithSufix(CharacterPlayer characterPlayer, Skill skill) {
+    static String skillNameWithSufix(CharacterPlayer characterPlayer, Skill skill)
+            throws InvalidXmlElementException {
         String skillName = LegacyTextBlocks.name(skill.getName());
-        final SkillType skillType = skill.getSkillType();
-        if (skillType == SkillType.GENERALIZED) {
+        if (characterPlayer.isSkillGeneralized(skill.getId())) {
             skillName += " " + SkillType.GENERALIZED.getTag();
         }
-        if (skillType == SkillType.PROFESSIONAL) {
+        if (characterPlayer.isSkillProfessional(skill)) {
             skillName += " " + SkillType.PROFESSIONAL.getTag();
-        } else if (skillType == SkillType.COMMON) {
+        } else if (characterPlayer.isSkillCommon(skill)) {
             skillName += " " + SkillType.COMMON.getTag();
         }
-        if (skillType == SkillType.RESTRICTED) {
+        if (characterPlayer.isSkillRestricted(skill)) {
             skillName += " " + SkillType.RESTRICTED.getTag();
         }
         return skillName;
