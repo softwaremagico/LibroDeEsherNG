@@ -220,8 +220,14 @@ public class LegacyCharacterSheet {
 		Category category = null;
 		int omitidas = 0;
 
-		// Add categories and spaces for a new ones.
-		for (int i = 0; i < 60 + omitidas; i++) {
+		// Add categories and spaces for a new ones. The legacy sheet had room for 60 rows, but NG's
+		// catalog knows more categories than the legacy one (the optional Pulp module adds Ciencia/
+		// Analitica Medica, Ciencia/Analitica Tecnica and Conocimiento Academico among others), and
+		// the fixed budget silently pushed the last ones out of the page. Every category of the
+		// catalog is painted now; the filler rows are only added when there are fewer categories
+		// than the legacy page had room for.
+		final int rows = Math.max(60, LegacyValues.availableCategories().size()) + omitidas;
+		for (int i = 0; i < rows; i++) {
 			if (i < LegacyValues.availableCategories().size()) {
 				category = LegacyValues.availableCategories().get(i);
 			}
