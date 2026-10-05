@@ -1,5 +1,6 @@
 package com.softwaremagico.librodeesher.magic;
 
+import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 
 /**
@@ -55,8 +56,9 @@ public enum RealmOfMagic {
     }
 
     public static RealmOfMagic fromTag(String tag) {
+        final String needle = Translations.normalize(tag);
         for (final RealmOfMagic realm : values()) {
-            if (realm.tag.equalsIgnoreCase(tag)) {
+            if (Translations.normalize(realm.tag).equals(needle)) {
                 return realm;
             }
         }

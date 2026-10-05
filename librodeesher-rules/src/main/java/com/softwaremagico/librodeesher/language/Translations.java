@@ -2,6 +2,7 @@ package com.softwaremagico.librodeesher.language;
 
 import java.text.Normalizer;
 import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
@@ -173,6 +174,22 @@ public final class Translations {
             }
         }
         return id.toString();
+    }
+
+    /**
+     * Accent- and case-insensitive key to compare Spanish names that come from files written by any
+     * other tool: legacy saves serialize the enum name without accents ("Canalizacion") and some saves
+     * carry lowercase category names ("T\u00e9cnica/comercio\u00b7Vocacional").
+     */
+    public static String normalize(final String text) {
+        if (text == null) {
+            return "";
+        }
+        return Normalizer.normalize(text, Normalizer.Form.NFD)
+                .replaceAll("\\p{M}", "")
+                .replaceAll("[\\s\u00a0]+", " ")
+                .trim()
+                .toLowerCase(Locale.ROOT);
     }
 
     /** Shorthand for {@code toId(toEnglish(spanish))}: the id a Spanish name would be assigned. */

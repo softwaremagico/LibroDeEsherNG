@@ -143,6 +143,28 @@ public class LegacyCharacterJsonImporterTest {
         Assert.assertFalse(data.isRecommendedFavouriteSkillsIncluded());
     }
 
+    /**
+     * Real saves are not always spelled exactly like the rulebook: Gson serialized the realm enum
+     * without its accent ("Canalizacion") and some saves carry lowercase category names. Both must
+     * still resolve to the same element as the accented, capitalised spelling.
+     */
+    @Test
+    public void resolvesLegacyNamesWhateverTheirAccentsAndCapitals() throws IOException, InvalidXmlElementException {
+        final String oddSpelling = readN7Snapshot()
+                .replace("\"Mentalismo\"", "\"Canalizacion\"")
+                .replace("\"Artes Marciales\u00b7Barridos\"", "\"artes marciales\u00b7barridos\"")
+                .replace("\"Defensa Adrenal\"", "\"defensa adrenal\"");
+        final CharacterData data = LegacyCharacterJsonImporter.importLegacyJson(oddSpelling);
+
+        final CharacterPlayer character = CharacterDataMapper.toCharacter(data);
+        Assert.assertTrue(character.getRealmsOfMagic().contains(RealmOfMagic.CANALIZATION),
+                "the unaccented realm tag must resolve: " + character.getRealmsOfMagic());
+        Assert.assertEquals(data.getLevels().get(0).getCategoryRanks().get("martialArtsSweeps"), Integer.valueOf(1),
+                "the lowercased category name must resolve");
+        Assert.assertEquals(data.getLevels().get(0).getSkillRanks().get("defenseAdrenal"), Integer.valueOf(1),
+                "the lowercased skill name must resolve");
+    }
+
     @Test
     public void rebuiltV211CharacterTotalsMatchTheReferenceBook() throws IOException, InvalidXmlElementException {
         final CharacterPlayer character = CharacterDataMapper.toCharacter(
@@ -396,7 +418,7 @@ public class LegacyCharacterJsonImporterTest {
             }
         }
         Assert.assertEquals(categoriesWithRanks, 22);
-        Assert.assertEquals(categoryRanks, 96);
+        Assert.assertEquals(categoryRanks, 99);
 
         int skillsWithRanks = 0;
         int skillRanks = 0;
@@ -496,9 +518,9 @@ public class LegacyCharacterJsonImporterTest {
     public void rebuiltMorticiaTotalsMatchTheReferenceBook() throws IOException, InvalidXmlElementException {
         // Reference totals recomputed from the snapshots' own "inserted" record and level-ups, with
         // the skill ranks of the level 10 "Mago del Aire" training added on top of the recorded ones.
-        assertMorticiaTotals(importMorticia(MORTICIA_N10), 10, 22, 81, 50, 216, 16, 187, 7, 8);
-        assertMorticiaTotals(importMorticia(MORTICIA_N11), 11, 22, 89, 58, 245, 16, 193, 7, 8);
-        assertMorticiaTotals(importMorticia(MORTICIA_N12), 12, 22, 91, 62, 251, 18, 211, 9, 10);
+        assertMorticiaTotals(importMorticia(MORTICIA_N10), 10, 22, 84, 50, 216, 16, 187, 7, 8);
+        assertMorticiaTotals(importMorticia(MORTICIA_N11), 11, 22, 92, 58, 245, 16, 193, 7, 8);
+        assertMorticiaTotals(importMorticia(MORTICIA_N12), 12, 22, 94, 62, 251, 18, 211, 9, 10);
     }
 
     private static CharacterData importMorticia(String snapshot) throws IOException, InvalidXmlElementException {
@@ -560,9 +582,13 @@ public class LegacyCharacterJsonImporterTest {
         }
 
         // Level 9: the folded development, holding the whole of the first nine levels.
+        // The saves spell two names differently from the rulebook ("Técnica/comercio·General" and
+        // "Maestría de los Espíritus"). Resolving them as well recovers the three ranks of each, and
+        // the legacy sheets show both rows with those same values.
         final LevelData inserted = data.getLevels().get(8);
-        Assert.assertEquals(sum(inserted.getCategoryRanks()), 55);
-        Assert.assertEquals(inserted.getCategoryRanks().size(), 13);
+        Assert.assertEquals(sum(inserted.getCategoryRanks()), 58);
+        Assert.assertEquals(inserted.getCategoryRanks().size(), 14);
+        Assert.assertEquals(inserted.getCategoryRanks().get("technicalTradeGeneral"), Integer.valueOf(3));
         Assert.assertEquals(sum(inserted.getSkillRanks()), 178);
         Assert.assertEquals(inserted.getSkillRanks().size(), 41);
         Assert.assertEquals(sum(inserted.getSpellListRanks()), 187);

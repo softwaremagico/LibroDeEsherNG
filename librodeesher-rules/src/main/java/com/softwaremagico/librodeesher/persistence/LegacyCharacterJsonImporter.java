@@ -2,6 +2,7 @@ package com.softwaremagico.librodeesher.persistence;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.Element;
 import com.softwaremagico.librodeesher.ObjectMapperFactory;
 import com.softwaremagico.librodeesher.character.SexType;
@@ -25,6 +26,7 @@ import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -301,16 +303,18 @@ public final class LegacyCharacterJsonImporter {
     /** Indexes every spell list by its Spanish name, preferring (for shared names such as the
      *  Mentalism/Essence variants of a martial arts list) the variant of one of {@code realms}, so a
      *  Mentalism caster resolves "Evasiones" to the Mentalism list, not the Essence one. */
-    private static Map<String, String> resolveSpellListsPreferringRealm(RulesCatalog rulesCatalog,
-                                                                        Set<RealmOfMagic> realms)
+    private static NameIndex resolveSpellListsPreferringRealm(RulesCatalog rulesCatalog,
+                                                              Set<RealmOfMagic> realms)
             throws InvalidXmlElementException {
-        final Map<String, String> ids = new LinkedHashMap<>(resolveNames(rulesCatalog.getSpellLists()));
+        final NameIndex ids = resolveNames(rulesCatalog.getSpellLists());
         for (final MagicSpellList spellList : rulesCatalog.getSpellLists()) {
             if (spellList.getName() == null || spellList.getName().getSpanish() == null) {
                 continue;
             }
             if (spellList.getRealm() != null && realms.contains(spellList.getRealm())) {
-                ids.put(normalize(spellList.getName().getSpanish()), spellList.getId());
+                // Several realms share list names ("Evasiones" is mentalism's and psionics'), so the
+                // list of one of the character's own realms takes over the name.
+                ids.prefer(spellList.getName().getSpanish(), spellList.getId());
             }
         }
         return ids;
@@ -322,8 +326,8 @@ public final class LegacyCharacterJsonImporter {
     private static void buildSkillEnableDecisions(JsonNode enabledSkill, Map<String, String> skillIds,
                                                   Map<String, DecisionData> decisions) {
         enabledSkill.fields().forEachRemaining(entry -> {
-            final String enablingSkillId = skillIds.get(normalize(entry.getKey()));
-            final String enabledSkillId = skillIds.get(normalize(entry.getValue().asText()));
+            final String enablingSkillId = skillIds.get(entry.getKey());
+            final String enabledSkillId = skillIds.get(entry.getValue().asText());
             if (enablingSkillId != null && enabledSkillId != null) {
                 final DecisionKey key = DecisionKey.characterWide(DecisionKind.SKILL_ENABLE, enablingSkillId, 0);
                 decisions.put(key.toString(), new DecisionData(new DecisionKeyData(key), 1,
@@ -476,7 +480,7 @@ public final class LegacyCharacterJsonImporter {
         // (their home in the NG bookkeeping), and the trainings themselves recorded as metadata.
         final List<String> trainings = new ArrayList<>();
         for (final JsonNode training : levelUp.path("trainings")) {
-            final String id = trainingIds.get(normalize(training.asText()));
+            final String id = trainingIds.get(training.asText());
             if (id != null) {
                 trainings.add(id);
             }
@@ -490,12 +494,12 @@ public final class LegacyCharacterJsonImporter {
                     if (ranks == 0) {
                         return;
                     }
-                    String id = skillIds.get(normalize(rank.getKey()));
+                    String id = skillIds.get(rank.getKey());
                     if (id != null) {
                         trainingRanks.merge(id, ranks, Integer::sum);
                         return;
                     }
-                    id = spellListIds.get(normalize(rank.getKey()));
+                    id = spellListIds.get(rank.getKey());
                     if (id != null) {
                         trainingRanks.merge(id, ranks, Integer::sum);
                     }
@@ -583,7 +587,7 @@ public final class LegacyCharacterJsonImporter {
     private static List<SelectedPerk> buildPerks(JsonNode node, Map<String, String> perkIds) {
         final List<SelectedPerk> perks = new ArrayList<>();
         for (final JsonNode perk : node) {
-            final String perkId = perkIds.get(normalize(perk.path("name").asText()));
+            final String perkId = perkIds.get(perk.path("name").asText());
             if (perkId != null) {
                 perks.add(new SelectedPerk(perkId));
             }
@@ -600,7 +604,7 @@ public final class LegacyCharacterJsonImporter {
                 if (type == BonusType.DEFENSIVE_BONUS) {
                     bonuses.add(new ObjectBonus(type, null, bonus.path("bonus").asInt()));
                 } else {
-                    bonuses.add(new ObjectBonus(type, skillIds.get(normalize(bonus.path("bonusName").asText())),
+                    bonuses.add(new ObjectBonus(type, skillIds.get(bonus.path("bonusName").asText()),
                             bonus.path("bonus").asInt()));
                 }
             }
@@ -644,12 +648,12 @@ public final class LegacyCharacterJsonImporter {
             if (ranks == 0) {
                 continue;
             }
-            String id = skillIds.get(normalize(entry.getKey()));
+            String id = skillIds.get(entry.getKey());
             if (id != null) {
                 addRank(skillRanks, id, ranks);
                 continue;
             }
-            id = spellListIds.get(normalize(entry.getKey()));
+            id = spellListIds.get(entry.getKey());
             if (id != null) {
                 addRank(spellListRanks, id, ranks);
             }
@@ -663,7 +667,7 @@ public final class LegacyCharacterJsonImporter {
             if (value == 0) {
                 continue;
             }
-            final String id = ids.get(normalize(entry.getKey()));
+            final String id = ids.get(entry.getKey());
             if (id != null) {
                 addRank(ranks, id, value);
             }
@@ -674,7 +678,7 @@ public final class LegacyCharacterJsonImporter {
     private static List<String> resolveListNames(JsonNode node, Map<String, String> spellListIds) {
         final List<String> names = new ArrayList<>();
         for (final JsonNode child : node) {
-            final String id = spellListIds.get(normalize(child.asText()));
+            final String id = spellListIds.get(child.asText());
             if (id != null) {
                 names.add(id);
             }
@@ -685,7 +689,7 @@ public final class LegacyCharacterJsonImporter {
     private static List<String> resolveSkillNames(JsonNode node, Map<String, String> skillIds) {
         final List<String> skills = new ArrayList<>();
         for (final JsonNode skill : node) {
-            final String id = skillIds.get(normalize(skill.asText()));
+            final String id = skillIds.get(skill.asText());
             if (id != null) {
                 skills.add(id);
             }
@@ -695,26 +699,57 @@ public final class LegacyCharacterJsonImporter {
 
     /** Indexes every rule element by its Spanish name (first occurrence wins), so legacy names can
      *  be resolved to ids. */
-    private static Map<String, String> resolveNames(List<? extends Element> elements) {
-        final Map<String, String> ids = new LinkedHashMap<>();
+    private static NameIndex resolveNames(List<? extends Element> elements) {
+        final NameIndex ids = new NameIndex();
         for (final Element element : elements) {
             if (element.getName() != null && element.getName().getSpanish() != null) {
-                ids.putIfAbsent(normalize(element.getName().getSpanish()), element.getId());
+                ids.add(element.getName().getSpanish(), element.getId());
             }
         }
         return ids;
     }
 
+    /**
+     * Map of element ids by Spanish name that also accepts the spellings other tools produced: an
+     * exact name always wins, and only when there is none the name is matched ignoring case and
+     * accents. The fallback is needed because saves are not always spelled as the rulebook is (Gson
+     * serialized the realm enum without its accent, "Canalizacion", and some saves carry lowercase
+     * names), and it must never override an exact match: two different elements may differ only in
+     * case or accents, so the fallback is kept apart from the exact keys.
+     */
+    private static final class NameIndex extends LinkedHashMap<String, String> {
+
+        private final Map<String, String> byNormalizedName = new HashMap<>();
+
+        private void add(final String name, final String id) {
+            putIfAbsent(name, id);
+            byNormalizedName.putIfAbsent(normalize(name), id);
+        }
+
+        /** Adds a name that must win over whatever was indexed before it. */
+        private void prefer(final String name, final String id) {
+            put(name, id);
+            byNormalizedName.put(normalize(name), id);
+        }
+
+        @Override
+        public String get(final Object name) {
+            final String id = super.get(name);
+            return id != null ? id : byNormalizedName.get(normalize(String.valueOf(name)));
+        }
+    }
+
     private static String requireResolved(String name, Map<String, String> ids) {
-        final String id = ids.get(normalize(name));
+        final String id = ids.get(name);
         if (id == null) {
             throw new IllegalArgumentException("No known rule element named \"" + name + "\".");
         }
         return id;
     }
 
+    /** Accent- and case-insensitive name key, shared with the rest of the application. */
     private static String normalize(final String name) {
-        return name == null ? "" : name.replaceAll("\\s+", " ").trim();
+        return Translations.normalize(name);
     }
 
     private static void addRank(Map<String, Integer> ranks, String id, int value) {
