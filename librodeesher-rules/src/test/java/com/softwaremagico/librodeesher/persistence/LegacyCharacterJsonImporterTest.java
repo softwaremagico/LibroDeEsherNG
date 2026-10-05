@@ -165,6 +165,23 @@ public class LegacyCharacterJsonImporterTest {
                 "the lowercased skill name must resolve");
     }
 
+    /**
+     * A save may write the same element twice under different spellings, as this one does with
+     * "Técnica/Comercio·General" (three ranks) and "Técnica/comercio·General" (two). Only the
+     * spelling of the catalog is counted, so that the value is not taken twice.
+     */
+    @Test
+    public void keepsTheCatalogSpellingWhenASaveRepeatsAnElement()
+            throws IOException, InvalidXmlElementException {
+        final CharacterData data = LegacyCharacterJsonImporter.importLegacyJson(readReferenceSnapshot());
+
+        int ranks = 0;
+        for (final LevelData level : data.getLevels()) {
+            ranks += level.getCategoryRanks().getOrDefault("technicalTradeGeneral", 0);
+        }
+        Assert.assertEquals(ranks, 5, "one rank at level one, three in the folded development and one at level eight");
+    }
+
     @Test
     public void rebuiltV211CharacterTotalsMatchTheReferenceBook() throws IOException, InvalidXmlElementException {
         final CharacterPlayer character = CharacterDataMapper.toCharacter(
@@ -418,7 +435,7 @@ public class LegacyCharacterJsonImporterTest {
             }
         }
         Assert.assertEquals(categoriesWithRanks, 22);
-        Assert.assertEquals(categoryRanks, 99);
+        Assert.assertEquals(categoryRanks, 97);
 
         int skillsWithRanks = 0;
         int skillRanks = 0;

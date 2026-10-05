@@ -643,33 +643,78 @@ public final class LegacyCharacterJsonImporter {
     private static void splitSkillsAndLists(JsonNode node, Map<String, String> skillIds,
                                             Map<String, String> spellListIds,
                                             Map<String, Integer> skillRanks, Map<String, Integer> spellListRanks) {
-        for (final Map.Entry<String, JsonNode> entry : node.properties()) {
+        // Two passes, because the same element can be written twice in one node under different
+        // spellings and the catalog spelling has to be the one that counts.
+        final Set<String> canonicalNames = new HashSet<>();
+        for (final Map.Entry<String, JsonNode> entry : nonZeroEntries(node)) {
             final int ranks = entry.getValue().asInt();
-            if (ranks == 0) {
+            final String skillId = exactId(entry.getKey(), skillIds);
+            if (skillId != null) {
+                addRank(skillRanks, skillId, ranks);
+                canonicalNames.add(entry.getKey());
                 continue;
             }
-            String id = skillIds.get(entry.getKey());
-            if (id != null) {
-                addRank(skillRanks, id, ranks);
+            final String listId = exactId(entry.getKey(), spellListIds);
+            if (listId != null) {
+                addRank(spellListRanks, listId, ranks);
+                canonicalNames.add(entry.getKey());
+            }
+        }
+        for (final Map.Entry<String, JsonNode> entry : nonZeroEntries(node)) {
+            if (canonicalNames.contains(entry.getKey())) {
                 continue;
             }
-            id = spellListIds.get(entry.getKey());
-            if (id != null) {
-                addRank(spellListRanks, id, ranks);
+            final int ranks = entry.getValue().asInt();
+            final String skillId = skillIds.get(entry.getKey());
+            if (skillId != null) {
+                if (!skillRanks.containsKey(skillId)) {
+                    skillRanks.put(skillId, ranks);
+                }
+                continue;
+            }
+            final String listId = spellListIds.get(entry.getKey());
+            if (listId != null && !spellListRanks.containsKey(listId)) {
+                spellListRanks.put(listId, ranks);
             }
         }
     }
 
+    /** The entries of a legacy rank node that give something to some element. */
+    private static List<Map.Entry<String, JsonNode>> nonZeroEntries(JsonNode node) {
+        final List<Map.Entry<String, JsonNode>> entries = new ArrayList<>();
+        for (final Map.Entry<String, JsonNode> entry : node.properties()) {
+            if (entry.getValue().asInt() != 0) {
+                entries.add(entry);
+            }
+        }
+        return entries;
+    }
+
+    /** The id indexed under exactly this name, or null when the name is only found when the accents
+     *  and the capitals are ignored. */
+    private static String exactId(String name, Map<String, String> ids) {
+        return ids instanceof NameIndex index ? index.exactId(name) : ids.get(name);
+    }
+
     private static Map<String, Integer> resolveRankedNames(JsonNode node, Map<String, String> ids) {
         final Map<String, Integer> ranks = new TreeMap<>();
-        for (final Map.Entry<String, JsonNode> entry : node.properties()) {
-            final int value = entry.getValue().asInt();
-            if (value == 0) {
+        // Two passes, because the same element can be written twice in one node under different
+        // spellings and the catalog spelling has to be the one that counts.
+        final Set<String> canonicalNames = new HashSet<>();
+        for (final Map.Entry<String, JsonNode> entry : nonZeroEntries(node)) {
+            final String id = exactId(entry.getKey(), ids);
+            if (id != null) {
+                addRank(ranks, id, entry.getValue().asInt());
+                canonicalNames.add(entry.getKey());
+            }
+        }
+        for (final Map.Entry<String, JsonNode> entry : nonZeroEntries(node)) {
+            if (canonicalNames.contains(entry.getKey())) {
                 continue;
             }
             final String id = ids.get(entry.getKey());
-            if (id != null) {
-                addRank(ranks, id, value);
+            if (id != null && !ranks.containsKey(id)) {
+                ranks.put(id, entry.getValue().asInt());
             }
         }
         return ranks;
@@ -724,6 +769,12 @@ public final class LegacyCharacterJsonImporter {
         private void add(final String name, final String id) {
             putIfAbsent(name, id);
             byNormalizedName.putIfAbsent(normalize(name), id);
+        }
+
+        /** The id indexed under exactly this name, or null when it is only found with
+         *  {@link #normalize}. */
+        private String exactId(final String name) {
+            return super.get(name);
         }
 
         /** Adds a name that must win over whatever was indexed before it. */
