@@ -11,6 +11,7 @@ import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.magic.MagicListType;
+import com.softwaremagico.librodeesher.magic.MagicSpellList;
 import com.softwaremagico.librodeesher.profession.Profession;
 import com.softwaremagico.librodeesher.profession.ProfessionCategoryCost;
 import com.softwaremagico.librodeesher.profession.ProfessionMagicCost;
@@ -45,7 +46,11 @@ final class LegacyValues {
      * {@link CharacterPlayer#getSkillDevelopmentBonus(Category, String)} that comes from ranks.
      */
     static int skillRanksValue(CharacterPlayer characterPlayer, Skill skill) throws InvalidXmlElementException {
-        return characterPlayer.getSkillRankValue(categoryOf(skill), characterPlayer.getSkillRealRanks(skill));
+        return skillRanksValue(characterPlayer, skill, null);
+    }
+    static int skillRanksValue(CharacterPlayer characterPlayer, Skill skill, Category categoryContext) throws InvalidXmlElementException {
+        Category cat = categoryContext != null ? categoryContext : categoryOf(skill);
+        return characterPlayer.getSkillRankValue(cat, characterPlayer.getSkillRealRanks(skill));
     }
 
     /**
@@ -54,7 +59,11 @@ final class LegacyValues {
      */
     static int specializedSkillTotalValue(CharacterPlayer characterPlayer, Skill skill)
             throws InvalidXmlElementException {
-        final Category category = categoryOf(skill);
+        return specializedSkillTotalValue(characterPlayer, skill, null);
+    }
+    static int specializedSkillTotalValue(CharacterPlayer characterPlayer, Skill skill, Category categoryContext)
+            throws InvalidXmlElementException {
+        final Category category = categoryContext != null ? categoryContext : categoryOf(skill);
         return characterPlayer.getSpecializedSkillTotalBonus(category, skill.getId());
     }
 
@@ -90,6 +99,28 @@ final class LegacyValues {
             return costTag(weaponTier.getRankCosts());
         }
         return costTag(cost.getRankCosts());
+    }
+
+    /**
+     * Whether the legacy {@code CharacterPlayer#getCategoryCost(Category, 0)} found a cost for the
+     * category: its own table in the selected profession, the {@code WEAPONx} tier the player
+     * assigned to a weapon category, or the profession's magic cost for the list type of a spell
+     * list. The combined sheet used it to leave out the categories the character could not develop,
+     * which is why a spell list of another realm was still printed: the profession defines a cost
+     * for every list type, not only for the realms it may use.
+     */
+    static boolean hasCategoryCost(CharacterPlayer characterPlayer, Category category)
+            throws InvalidXmlElementException {
+        if (characterPlayer.getProfessionCategoryCost(category.getId()) != null
+                || characterPlayer.getAssignedWeaponCategoryCostTier(category.getId()) != null) {
+            return true;
+        }
+        final MagicListType listType = MagicListType.fromCategoryId(category.getId());
+        if (listType == null) {
+            return false;
+        }
+        final Profession profession = characterPlayer.getProfession();
+        return profession != null && profession.getMagicCost(listType, 0) != null;
     }
 
     private static String costTag(List<Integer> rankCosts) {
@@ -160,6 +191,34 @@ final class LegacyValues {
      * weapon skills of its own categories.</p>
      */
     static List<Skill> skillsOf(Category category) throws InvalidXmlElementException {
+        return skillsOf(null, category);
+    }
+
+    static List<Skill> skillsOf(CharacterPlayer characterPlayer, Category category) throws InvalidXmlElementException {
+        final MagicListType listType = MagicListType.fromCategoryId(category.getId());
+        if (listType != null && characterPlayer != null) {
+            final List<Skill> spellListSkills = new ArrayList<>();
+            for (final MagicSpellList spellList : RulesCatalog.getInstance().getSpellLists()) {
+                try {
+                    if (characterPlayer.classifySpellList(spellList.getId()) == listType) {
+                        final Skill skillWrapper = new Skill(spellList.getId());
+                        skillWrapper.setName(spellList.getName());
+                        skillWrapper.setCategoryId(category.getId());
+                        spellListSkills.add(skillWrapper);
+                    }
+                } catch (Exception e) {
+                    // Skip if classification fails
+                }
+            }
+            spellListSkills.sort((a, b) -> {
+                try {
+                    return a.getName().getSpanish().compareTo(b.getName().getSpanish());
+                } catch (Exception ex) {
+                    return 0;
+                }
+            });
+            return spellListSkills;
+        }
         final List<Skill> skills = new ArrayList<>();
         for (final String skillId : category.getSkills()) {
             try {
@@ -230,7 +289,11 @@ final class LegacyValues {
      * "bonificación" column next to the ranks value.
      */
     static int skillSimpleBonus(CharacterPlayer characterPlayer, Skill skill) throws InvalidXmlElementException {
-        return characterPlayer.getSkillDevelopmentBonus(categoryOf(skill), skill.getId()) - skillRanksValue(characterPlayer, skill);
+        return skillSimpleBonus(characterPlayer, skill, null);
+    }
+    static int skillSimpleBonus(CharacterPlayer characterPlayer, Skill skill, Category categoryContext) throws InvalidXmlElementException {
+        Category cat = categoryContext != null ? categoryContext : categoryOf(skill);
+        return characterPlayer.getSkillDevelopmentBonus(cat, skill.getId()) - skillRanksValue(characterPlayer, skill, cat);
     }
 
     /**
@@ -239,7 +302,11 @@ final class LegacyValues {
      * every row of that category and without the skill's own bonus.
      */
     static int categoryTotalValue(CharacterPlayer characterPlayer, Skill skill) throws InvalidXmlElementException {
-        return characterPlayer.getCategoryTotalBonus(categoryOf(skill));
+        return categoryTotalValue(characterPlayer, skill, null);
+    }
+    static int categoryTotalValue(CharacterPlayer characterPlayer, Skill skill, Category categoryContext) throws InvalidXmlElementException {
+        Category cat = categoryContext != null ? categoryContext : categoryOf(skill);
+        return characterPlayer.getCategoryTotalBonus(cat);
     }
 
     /**
@@ -402,6 +469,13 @@ final class LegacyValues {
     }
 
     private static Category categoryOf(Skill skill) throws InvalidXmlElementException {
-        return RulesCatalog.getInstance().getCategory(skill.getCategoryId());
+        if (skill.getCategoryId() != null && !skill.getCategoryId().isEmpty()) {
+            try {
+                return RulesCatalog.getInstance().getCategory(skill.getCategoryId());
+            } catch (Exception e) {
+                // fall through
+            }
+        }
+        return null;
     }
 }
