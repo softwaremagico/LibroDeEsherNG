@@ -136,14 +136,27 @@ final class LegacyValues {
 
     /**
      * The legacy {@code CharacterPlayer#getSelectedTrainings()}: every training the character picked,
-     * across all levels.
+     * across all levels, printed with its display name. The legacy {@code LevelUp} stored the
+     * training names themselves, while the NG level-up bookkeeps their ids, so each id is resolved
+     * against the {@link RulesCatalog} here (an unknown id is printed as-is rather than failing the
+     * whole sheet).
      */
     static List<String> selectedTrainings(CharacterPlayer characterPlayer) {
         final List<String> trainings = new ArrayList<>();
         for (final LevelUp levelUp : characterPlayer.getLevels()) {
-            trainings.addAll(levelUp.getTrainings());
+            for (final String trainingId : levelUp.getTrainings()) {
+                trainings.add(trainingName(trainingId));
+            }
         }
         return trainings;
+    }
+
+    private static String trainingName(String trainingId) {
+        try {
+            return LegacyTextBlocks.name(RulesCatalog.getInstance().getTraining(trainingId).getName());
+        } catch (InvalidXmlElementException e) {
+            return trainingId;
+        }
     }
 
     /**
@@ -178,7 +191,7 @@ final class LegacyValues {
     }
 
     /**
-     * The skills a category develops, in the category's own order.
+     * The skills a category develops, in the alphabetical order the legacy sheet painted them.
      *
      * <p>{@code categories.xml} references about 200 skill ids that {@code skills.xml} does not
      * define, so resolving each id can fail. Those skills have no name, type or costs to print, and
@@ -189,6 +202,10 @@ final class LegacyValues {
      * skill list, but every weapon skill in {@code skills.xml} records the category it belongs to,
      * so those skills are listed by that cross-reference, exactly as the legacy sheet listed the
      * weapon skills of its own categories.</p>
+     *
+     * <p>The legacy catalog was sorted by the Spanish skill name, so both pages of the legacy sheet
+     * rendered each category's skills alphabetically, and the NG catalog order (which only matches
+     * in most categories) is normalized here to the same alphabetical order.</p>
      */
     static List<Skill> skillsOf(Category category) throws InvalidXmlElementException {
         return skillsOf(null, category);
@@ -237,6 +254,13 @@ final class LegacyValues {
                 }
             }
         }
+        skills.sort((a, b) -> {
+            try {
+                return a.getName().getSpanish().compareTo(b.getName().getSpanish());
+            } catch (Exception e) {
+                return 0;
+            }
+        });
         return skills;
     }
 
@@ -317,8 +341,7 @@ final class LegacyValues {
      */
     static int previousSkillRanks(CharacterPlayer characterPlayer, Skill skill) {
         return characterPlayer.getSkillTotalRanks(skill.getId())
-                + characterPlayer.getSkillSpecializationsRankCost(skill.getId())
-                - characterPlayer.getCurrentLevel().getSkillRanks(skill.getId());
+                + characterPlayer.getSkillSpecializationsRankCost(skill.getId());
     }
 
     /**

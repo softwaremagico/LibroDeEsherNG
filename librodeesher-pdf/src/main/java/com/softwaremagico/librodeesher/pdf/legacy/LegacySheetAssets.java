@@ -32,8 +32,8 @@ import java.net.URL;
  */
 public final class LegacySheetAssets {
 
-    /** The version printed in the legacy footer ("...herramienta para Rolemaster V2.0.3"). */
-    public static final String VERSION = "2.0.3";
+    /** The version printed in the legacy footer ("...herramienta para Rolemaster V2.2.1"). */
+    public static final String VERSION = "2.2.1";
 
     private static final String SHEETS = "/sheets/";
     private static final String CUADROS = SHEETS + "cuadros/";

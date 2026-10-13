@@ -85,9 +85,10 @@ public class LegacyCharacterJsonImporterTest {
                 "mentalismControlCorporal", "mentalismEvasiones", "mentalismRenewalOfTheBody",
                 "mentalismShadowMental"));
 
-        // The seven weapon cost tiers become character-wide decisions, filed by key.
+        // The seven weapon cost tiers, the profession realm, the enabled skill and the perk's common
+        // skill choice become character-wide decisions, filed by key.
         final Map<String, DecisionData> decisions = new TreeMap<>(data.getDecisions());
-        Assert.assertEquals(decisions.size(), 9);
+        Assert.assertEquals(decisions.size(), 10);
         final List<String> categoryByTier = List.of("weaponsTwoHanded", "weaponsThrown", "weaponsSiege",
                 "weaponsPolearm", "weaponsBlunt", "weaponsEdged", "weaponsMissile");
         for (int tier = 0; tier < 7; tier++) {
@@ -200,7 +201,7 @@ public class LegacyCharacterJsonImporterTest {
             }
         }
         Assert.assertEquals(categoriesWithRanks, 23);
-        Assert.assertEquals(categoryRanks, 84);
+        Assert.assertEquals(categoryRanks, 93);
 
         int skillsWithRanks = 0;
         int skillRanks = 0;
@@ -226,9 +227,10 @@ public class LegacyCharacterJsonImporterTest {
         Assert.assertEquals(listsWithRanks, 6);
         Assert.assertEquals(listRanks, 30);
 
-        // Spot totals matching the reference character sheet.
-        Assert.assertEquals(character.getCategoryTotalRanks("martialArtsStrikes"), Integer.valueOf(7));
-        Assert.assertEquals(character.getCategoryTotalRanks("selfControl"), Integer.valueOf(7));
+        // Spot totals matching the reference character sheet, including the category ranks granted by
+        // the level seven priestWarrior training (legacy getPreviousRanks adds getTrainingRanks(category)).
+        Assert.assertEquals(character.getCategoryTotalRanks("martialArtsStrikes"), Integer.valueOf(9));
+        Assert.assertEquals(character.getCategoryTotalRanks("selfControl"), Integer.valueOf(9));
         Assert.assertEquals(character.getCategoryTotalRanks("influence"), Integer.valueOf(7));
         Assert.assertEquals(character.getSkillTotalRanks("strikesOfArtesMarciales"), Integer.valueOf(9));
         Assert.assertEquals(character.getSkillTotalRanks("physicalDevelopment"), Integer.valueOf(7));
@@ -245,7 +247,7 @@ public class LegacyCharacterJsonImporterTest {
         Assert.assertEquals(character.getSpellListTotalRanks("mentalismPerceptionZen"), Integer.valueOf(1));
 
         Assert.assertEquals(character.getWeaponCategoryCostTierCount(), 7);
-        Assert.assertEquals(character.getDecisions().getAll().size(), 9);
+        Assert.assertEquals(character.getDecisions().getAll().size(), 10);
         Assert.assertEquals(character.getRealmsOfMagic().size(), 1);
         Assert.assertEquals(character.getRealmsOfMagic().get(0), RealmOfMagic.MENTALISM);
         Assert.assertTrue(character.getPowerPoints() > 0);
@@ -534,10 +536,11 @@ public class LegacyCharacterJsonImporterTest {
     @Test
     public void rebuiltMorticiaTotalsMatchTheReferenceBook() throws IOException, InvalidXmlElementException {
         // Reference totals recomputed from the snapshots' own "inserted" record and level-ups, with
-        // the skill ranks of the level 10 "Mago del Aire" training added on top of the recorded ones.
-        assertMorticiaTotals(importMorticia(MORTICIA_N10), 10, 22, 84, 50, 216, 16, 187, 7, 8);
-        assertMorticiaTotals(importMorticia(MORTICIA_N11), 11, 22, 92, 58, 245, 16, 193, 7, 8);
-        assertMorticiaTotals(importMorticia(MORTICIA_N12), 12, 22, 94, 62, 251, 18, 211, 9, 10);
+        // the skill and category ranks of the level 10 "Mago del Aire" training added on top of the
+        // recorded ones (legacy getPreviousRanks adds both getTrainingRanks(skill) and (category)).
+        assertMorticiaTotals(importMorticia(MORTICIA_N10), 10, 23, 90, 50, 216, 16, 187, 7, 17);
+        assertMorticiaTotals(importMorticia(MORTICIA_N11), 11, 23, 98, 58, 245, 16, 193, 7, 17);
+        assertMorticiaTotals(importMorticia(MORTICIA_N12), 12, 23, 100, 62, 251, 18, 211, 9, 19);
     }
 
     private static CharacterData importMorticia(String snapshot) throws IOException, InvalidXmlElementException {

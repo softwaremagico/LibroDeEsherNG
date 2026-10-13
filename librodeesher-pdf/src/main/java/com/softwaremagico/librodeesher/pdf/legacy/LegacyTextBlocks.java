@@ -67,10 +67,10 @@ public final class LegacyTextBlocks {
         }
         final StringBuilder text = new StringBuilder("Talentos:\n").append(SEPARATOR).append("\n");
         for (final Perk perk : perks) {
-            text.append(perk.getName().getSpanish()).append(":\t ").append(perkLongDescription(perk)).append("\n\n");
+            text.append(perk.getName().getSpanish()).append(": ").append(perkLongDescription(perk)).append("\n\n");
         }
         for (final Perk weakness : weaknesses) {
-            text.append(weakness.getName().getSpanish()).append(":\t ").append(perkLongDescription(weakness))
+            text.append(weakness.getName().getSpanish()).append(": ").append(perkLongDescription(weakness))
                     .append("\n\n");
         }
         return text + "\n\n";
@@ -113,13 +113,21 @@ public final class LegacyTextBlocks {
         if (bonuses.isEmpty()) {
             return "";
         }
+        // The legacy Perk#getBonusesDescription sorted each block by the bonus target key (the
+        // internal skill/category name), not by the translated name shown to the player.
+        final List<PerkBonus> sorted = new ArrayList<>(bonuses);
+        sorted.sort(Comparator.comparing(LegacyTextBlocks::perkBonusSortKey));
         final List<String> parts = new ArrayList<>();
-        for (final PerkBonus bonus : bonuses) {
+        for (final PerkBonus bonus : sorted) {
             parts.add(bonusTargetName(bonus) + " (" + bonus.getValue()
                     + (bonus.getKind() != PerkBonusKind.FLAT ? "*)" : ")"));
         }
-        parts.sort(String::compareTo);
         return String.join(", ", parts);
+    }
+
+    private static String perkBonusSortKey(PerkBonus bonus) {
+        final String id = bonus.getCategoryId() != null ? bonus.getCategoryId() : bonus.getSkillId();
+        return id != null ? id : bonusTargetName(bonus);
     }
 
     private static String bonusTargetName(PerkBonus bonus) {
@@ -164,14 +172,19 @@ public final class LegacyTextBlocks {
         return text.toString().replace("\t", "  ") + "\n\n";
     }
 
-    /** The "Equipo:" block (magic objects then non-magic equipment), empty when the character has none. */
+    /**
+     * The "Equipo:"/ending "Objetos:" block (non-magic equipment then magic objects). The legacy
+     * exporter labelled the block "Equipo:" only when the character had no magic objects and
+     * "Objetos:" otherwise, so the header follows that rule here.
+     */
     public static String exportItems(CharacterPlayer character) throws InvalidXmlElementException {
         final List<MagicObject> magicItems = new ArrayList<>(character.getAllMagicItems());
         final List<Equipment> equipment = new ArrayList<>(character.getAllNotMagicEquipment());
         if (magicItems.isEmpty() && equipment.isEmpty()) {
             return "";
         }
-        final StringBuilder text = new StringBuilder("Equipo:\n").append(SEPARATOR).append("\n");
+        final String header = magicItems.isEmpty() ? "Equipo:" : "Objetos:";
+        final StringBuilder text = new StringBuilder(header).append("\n").append(SEPARATOR).append("\n");
 
         magicItems.sort(Comparator.comparing(item -> name(item.getName())));
         for (final MagicObject item : magicItems) {

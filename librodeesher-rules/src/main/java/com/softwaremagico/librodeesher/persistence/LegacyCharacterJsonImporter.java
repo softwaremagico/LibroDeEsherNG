@@ -128,6 +128,7 @@ public final class LegacyCharacterJsonImporter {
         data.setDecisions(decisions);
         buildWeaponCostDecisions(root.path("professionDecisions").path("weaponsCost"), categoryIds, decisions);
         buildMagicRealmDecisions(root.path("realmOfMagic").path("magicRealmsAvailable"), data.getProfessionId(), decisions);
+        buildPerkChoiceDecisions(root.path("perkDecisions"), perkIds, categoryIds, skillIds, decisions);
         data.setSelectedPerks(buildPerks(root.path("selectedPerks"), perkIds));
         data.setMagicItems(buildMagicItems(root.path("magicItems"), skillIds));
 
@@ -205,6 +206,7 @@ public final class LegacyCharacterJsonImporter {
         data.setDecisions(decisions);
         buildWeaponCostDecisions(root.path("professionDecisions").path("weaponsCost"), categoryIds, decisions);
         buildMagicRealmDecisions(root.path("realmOfMagic").path("magicRealmsAvailable"), data.getProfessionId(), decisions);
+        buildPerkChoiceDecisions(root.path("perkDecisions"), perkIds, categoryIds, skillIds, decisions);
         buildSkillEnableDecisions(root.path("enabledSkill"), skillIds, decisions);
         data.setSelectedPerks(buildPerks(root.path("selectedPerks"), perkIds));
         data.setMagicItems(buildMagicItems(root.path("magicItems"), skillIds));
@@ -593,6 +595,56 @@ public final class LegacyCharacterJsonImporter {
             }
         }
         return perks;
+    }
+
+    /**
+     * The legacy {@code perkDecisions} of every selected perk (the choices for its
+     * {@link DecisionKind#PERK_CHOICE} grants) become one character-wide decision per resolved
+     * grant, in the order the legacy recorded them (category bonuses, then skill bonuses, then
+     * common skills), recorded at level 1, so the rebuilt character's resolved
+     * {@code PerkChoiceGrant}s (see {@code CharacterPlayer#getResolvedPerkChoiceGrants}) match the
+     * original ones (e.g. "Cimitarra" chosen for "Experto en Armas Especializado (Menor)", which
+     * makes it a common weapon).
+     */
+    private static void buildPerkChoiceDecisions(JsonNode perkDecisions, Map<String, String> perkIds,
+                                                 Map<String, String> categoryIds, Map<String, String> skillIds,
+                                                 Map<String, DecisionData> decisions) {
+        perkDecisions.fields().forEachRemaining(entry -> {
+            final String perkId = perkIds.get(entry.getKey());
+            if (perkId == null) {
+                return;
+            }
+            final JsonNode decision = entry.getValue();
+            int grantIndex = 0;
+            for (final JsonNode chosen : decision.path("categoriesBonusChosen")) {
+                final String categoryId = categoryIds.get(chosen.asText());
+                if (categoryId != null) {
+                    putPerkChoiceDecision(decisions, perkId, grantIndex, categoryId);
+                }
+                grantIndex++;
+            }
+            for (final JsonNode chosen : decision.path("skillsBonusChosen")) {
+                final String skillId = skillIds.get(chosen.asText());
+                if (skillId != null) {
+                    putPerkChoiceDecision(decisions, perkId, grantIndex, skillId);
+                }
+                grantIndex++;
+            }
+            for (final JsonNode chosen : decision.path("commonSkillsChosen")) {
+                final String skillId = skillIds.get(chosen.asText());
+                if (skillId != null) {
+                    putPerkChoiceDecision(decisions, perkId, grantIndex, skillId);
+                }
+                grantIndex++;
+            }
+        });
+    }
+
+    private static void putPerkChoiceDecision(Map<String, DecisionData> decisions, String perkId, int grantIndex,
+                                              String targetId) {
+        final DecisionKey key = DecisionKey.characterWide(DecisionKind.PERK_CHOICE, perkId, grantIndex);
+        decisions.put(key.toString(), new DecisionData(new DecisionKeyData(key), 1,
+                List.of(targetId), List.of(targetId)));
     }
 
     private static List<MagicObject> buildMagicItems(JsonNode node, Map<String, String> skillIds) {

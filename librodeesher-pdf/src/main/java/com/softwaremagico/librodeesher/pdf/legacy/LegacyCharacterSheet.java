@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.lowagie.text.BadElementException;
+import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Element;
@@ -1282,11 +1283,9 @@ public class LegacyCharacterSheet {
 				line = "  ______________________";
 			}
 			text = "(" + characterPlayer.getAppearanceTotal() + ")";
-			Paragraph p1 = new Paragraph(line, new Font(getDefaultFont(), fontSize));
-			Paragraph p2 = new Paragraph(text, new Font(getHandWrittingFont(), fontSize));
 			p = new Paragraph();
-			p.add(p1);
-			p.add(p2);
+			p.add(new Chunk(text, new Font(getHandWrittingFont(), fontSize)));
+			p.add(new Chunk(line, new Font(getDefaultFont(), fontSize)));
 		} else {
 			text = "____________________________";
 			p = new Paragraph(text, new Font(getDefaultFont(), fontSize));
@@ -1471,7 +1470,7 @@ public class LegacyCharacterSheet {
 			p.add(p2);
 			p.add(p1);
 		} else {
-			text = "_________________________";
+			text = "";
 			p = new Paragraph(text, new Font(getDefaultFont(), fontSize));
 		}
 		cell = new PdfPCell(p);
@@ -1593,7 +1592,7 @@ public class LegacyCharacterSheet {
 			cell = new PdfPCell(createMostUsedAttackLine(
 					" " + LegacyTextBlocks.getWeaponNameOfLength(LegacyTextBlocks.name(favouriteAttacks.get(i).getName())),
 					characterPlayer.getSkillTotalRanks(favouriteAttacks.get(i).getId()) + "", characterPlayer.getSkillTotalValue(favouriteAttacks.get(i)) + "",
-					getHandWrittingFont(), fontSize));
+					"______", "_______________________________________", getHandWrittingFont(), fontSize));
 			cell.setBorderWidth(BORDER);
 			cell.setMinimumHeight((float) 8);
 			cell.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -1602,7 +1601,7 @@ public class LegacyCharacterSheet {
 		}
 
 		for (int i = favouriteSkillsNumber; i < MOST_USED_ATTACKS_LINES; i++) {
-			cell = new PdfPCell(createMostUsedAttackLine("_______________________", "______", "_______", getDefaultFont(), fontSize));
+			cell = new PdfPCell(createMostUsedAttackLine("", "", "", "", "", getDefaultFont(), fontSize));
 			cell.setBorderWidth(BORDER);
 			cell.setMinimumHeight((float) 9);
 			cell.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -1612,7 +1611,7 @@ public class LegacyCharacterSheet {
 		return tableFrame;
 	}
 
-	private PdfPTable createMostUsedAttackLine(String skillName, String skillRanks, String skillTotal, BaseFont font, int fontSize) throws MalformedURLException, IOException, InvalidXmlElementException {
+	private PdfPTable createMostUsedAttackLine(String skillName, String skillRanks, String skillTotal, String criticalFailure, String range, BaseFont font, int fontSize) throws MalformedURLException, IOException, InvalidXmlElementException {
 		float[] widths = { 3.1f, 1f, 1f, 1f, 5f };
 		PdfPTable tableFrame = new PdfPTable(widths);
 
@@ -1641,7 +1640,7 @@ public class LegacyCharacterSheet {
 		tableFrame.addCell(cell);
 
 		// CriticalFailure
-		p = new Paragraph("______", new Font(getDefaultFont(), fontSize));
+		p = new Paragraph(criticalFailure, new Font(getDefaultFont(), fontSize));
 		cell = new PdfPCell(p);
 		cell.setBorderWidth(BORDER);
 		cell.setMinimumHeight((float) 9);
@@ -1649,7 +1648,7 @@ public class LegacyCharacterSheet {
 		tableFrame.addCell(cell);
 
 		// Range
-		p = new Paragraph("_______________________________________", new Font(getDefaultFont(), fontSize));
+		p = new Paragraph(range, new Font(getDefaultFont(), fontSize));
 		cell = new PdfPCell(p);
 		cell.setBorderWidth(BORDER);
 		cell.setMinimumHeight((float) 9);
@@ -1731,7 +1730,7 @@ public class LegacyCharacterSheet {
 		}
 
 		for (int i = skillsShowed; i < MOST_USED_SKILLS_LINES; i++) {
-			PdfPCell cell = new PdfPCell(createMostUsedSkillLine(" ____________________________", "_____", "_____", getDefaultFont(), fontSize));
+			PdfPCell cell = new PdfPCell(createMostUsedSkillLine("", "", "", getDefaultFont(), fontSize));
 			cell.setBorderWidth(BORDER);
 			cell.setMinimumHeight((float) 8);
 			tableFrame.addCell(cell);
@@ -2013,7 +2012,7 @@ public class LegacyCharacterSheet {
 		Paragraph p;
 		PdfPCell cell;
 
-		p = new Paragraph("Generado con El Libro de Esher NG, herramienta para Rolemaster V" + LegacySheetAssets.VERSION, new Font(getDefaultFont(), fontSize));
+		p = new Paragraph("Generado con El Libro de Esher, herramienta para Rolemaster V" + LegacySheetAssets.VERSION, new Font(getDefaultFont(), fontSize));
 		cell = new PdfPCell(p);
 		cell.setBorderWidth(BORDER);
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -2132,7 +2131,7 @@ public class LegacyCharacterSheet {
 		tablaPagina.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
 		tablaPagina.setTotalWidth(document.getPageSize().getWidth() - 60);
 
-		String texto = exportHistory() + "\n\n" + exportPerks() + "\n\n" + exportSpecials() + "\n" + exportItems();
+		String texto = exportPerks() + "\n\n" + exportSpecials() + "\n" + exportItems();
 		p = new Paragraph(texto, new Font(getHandWrittingFont(), fontSize - 1));
 
 		cell = new PdfPCell(p);

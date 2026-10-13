@@ -612,7 +612,7 @@ public class CharacterPlayer {
 		for (final LevelUp levelUp : this.levels) {
 			total += levelUp.getCategoryRanks(categoryId);
 		}
-		return total;
+		return total + this.getTrainingCategoryRanks(categoryId, this.levels.size());
 	}
 
 	/**
@@ -629,6 +629,48 @@ public class CharacterPlayer {
 		int total = 0;
 		for (int i = 0; i < lastLevel; i++) {
 			total += this.levels.get(i).getCategoryRanks(categoryId);
+		}
+		return total + this.getTrainingCategoryRanks(categoryId, lastLevel);
+	}
+
+	/**
+	 * Ranks a category receives from the trainings taken across the first {@code levelCount} levels.
+	 *
+	 * <p>The legacy application counted a training's category grants as ranks the character already
+	 * had, alongside the ranks bought directly in the category (see the legacy
+	 * {@code CharacterPlayer#getTrainingRanks(Category)}), so the rebuilt totals and sheets match.
+	 * A grant naming a single category always applies; one offering a choice applies only when the
+	 * matching {@link DecisionKind#TRAINING_CATEGORY} decision selected this category.</p>
+	 */
+	private int getTrainingCategoryRanks(String categoryId, int levelCount) {
+		int total = 0;
+		for (int i = 0; i < levelCount; i++) {
+			for (final String trainingId : this.levels.get(i).getTrainings()) {
+				final Training training;
+				try {
+					training = RulesCatalog.getInstance().getTraining(trainingId);
+				} catch (final InvalidXmlElementException e) {
+					continue;
+				}
+				if (training == null) {
+					continue;
+				}
+				final List<TrainingCategoryGrant> grants = training.getCategories();
+				for (int grantIndex = 0; grantIndex < grants.size(); grantIndex++) {
+					final TrainingCategoryGrant grant = grants.get(grantIndex);
+					final int ranks = grant.getRanksGranted() == null ? 0 : grant.getRanksGranted();
+					if (ranks == 0) {
+						continue;
+					}
+					final List<String> options = grant.getCategoryOptions();
+					if (options.size() == 1 && options.get(0).equals(categoryId)) {
+						total += ranks;
+					} else if (options.contains(categoryId) && categoryId.equals(this.decisions
+							.getSelectedOptionFor(DecisionKind.TRAINING_CATEGORY, trainingId, grantIndex))) {
+						total += ranks;
+					}
+				}
+			}
 		}
 		return total;
 	}

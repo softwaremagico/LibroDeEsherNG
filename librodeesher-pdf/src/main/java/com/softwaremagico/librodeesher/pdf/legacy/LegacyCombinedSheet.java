@@ -1,6 +1,5 @@
 package com.softwaremagico.librodeesher.pdf.legacy;
 
-import java.awt.Color;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
@@ -17,6 +16,7 @@ import com.lowagie.text.Paragraph;
 import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
+import com.lowagie.text.pdf.RGBColor;
 import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.magic.MagicListType;
 import com.softwaremagico.librodeesher.category.CategoryType;
@@ -35,24 +35,28 @@ import com.softwaremagico.librodeesher.skill.Skill;
  * {@link PdfPTable} with an absolute total width is painted over it with {@code writeSelectedRows}.</p>
  *
  * <p>The categories are walked in catalog order and packed into columns of at most
- * {@value #MAX_LINES_PER_COLUMN} abstract lines (a category block counts as {@value #CATEGORY_SIZE}
+ * {@link #getMaxLinesPerColumn()} abstract lines (a category block counts as {@value #CATEGORY_SIZE}
  * lines plus one line per interesting skill and one per specialization, plus
- * {@value #MIN_EMPTY_SKILLS_PER_CATEGORY} spare line); two columns make a page and the surplus lines
- * of a column are handed out to its categories as blank skill rows. That arithmetic is what decided
- * the page count and the filler rows of the printed sheets, so it is reproduced exactly.</p>
+ * {@link #getMinEmptySkillsPerCategory()} spare line); the columns that make a page are given by
+ * {@link #getColumnsPerPage()} and the surplus lines of a column are handed out to its categories as
+ * blank skill rows. That arithmetic is what decided the page count and the filler rows of the printed
+ * sheets, so it is reproduced exactly. Every layout number lives behind a protected getter, and the
+ * one-column variant {@link LegacyCombinedOneColumnSheet} only overrides those.</p>
  */
 public class LegacyCombinedSheet extends LegacyCharacterSheet {
 
-	private final static int MAX_LINES_PER_COLUMN = 71;
+	private final static int DEFAULT_MAX_LINES_PER_COLUMN = 71;
 	private final static int CATEGORY_SIZE = 4;
 	private final static int SKILL_SIZE = 1;
-	private final static int COLUMNS_PER_PAGE = 2;
+	private final static int DEFAULT_COLUMNS_PER_PAGE = 2;
 	private final static int BORDER = 0;
-	private final static int SKILL_NAME_LENGTH = 30;
-	private final static int CATEGORY_NAME_LENGTH = 33;
-	private final static int MIN_EMPTY_SKILLS_PER_CATEGORY = 1;
+	private final static int DEFAULT_SKILL_NAME_LENGTH = 30;
+	private final static int DEFAULT_CATEGORY_NAME_LENGTH = 33;
+	private final static int DEFAULT_MIN_EMPTY_SKILLS_PER_CATEGORY = 1;
 
-	private final static int FONT_SIZE = 6;
+	private final static int DEFAULT_FONT_SIZE = 6;
+
+	private static final RGBColor VERY_LIGHT_GRAY = new RGBColor(215, 215, 215);
 
 	private final CharacterPlayer characterPlayer;
 	private int page = 0;
@@ -117,14 +121,14 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		PdfPCell cell;
 
 		cell = new PdfPCell(createHeader());
-		cell.setColspan(COLUMNS_PER_PAGE);
+		cell.setColspan(getColumnsPerPage());
 		getMainTable().addCell(cell);
 
 		setColumnTable(new PdfPTable(1));
 
 		int columnIndex = 1;
 		for (List<Category> column : columns) {
-			int emptyLinesToAdd = MAX_LINES_PER_COLUMN - getMinNeededColumnLines(column);
+			int emptyLinesToAdd = getMaxLinesPerColumn() - getMinNeededColumnLines(column);
 			for (int index = 0; index < column.size(); index++) {
 				final Category category = column.get(index);
 
@@ -132,10 +136,7 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 				getColumnTable().addCell(categoryCell(category));
 
 				// Add the title for the skill list.
-				PdfPCell skillTitleCell = skillLine("Habilidad:", "#", null, "Rng:", "Cat", "Obj:", "Esp:", "Total:",
-						new Font(getDefaultFont(), FONT_SIZE - 1, Font.BOLD), new Font(getDefaultFont(), FONT_SIZE - 1, Font.BOLD),
-						getSkillLineWidths());
-				getColumnTable().addCell(skillTitleCell);
+				getColumnTable().addCell(skillTitleCell());
 
 				// Skills list.
 				boolean isSpellListCat = MagicListType.fromCategoryId(category.getId()) != null;
@@ -156,7 +157,7 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 					}
 					int currentRanks = isSpellListCat ? characterPlayer.getCurrentLevel().getSpellListRanks(skill.getId())
 							: characterPlayer.getCurrentLevel().getSkillRanks(skill.getId());
-					int prevRanks = isSpellListCat ? (characterPlayer.getSpellListTotalRanks(skill.getId()) - currentRanks)
+					int prevRanks = isSpellListCat ? characterPlayer.getSpellListTotalRanks(skill.getId())
 							: LegacyValues.previousSkillRanks(characterPlayer, skill);
 					int skillRankValue = isSpellListCat ? characterPlayer.getSkillRankValue(category, characterPlayer.getSpellListTotalRanks(skill.getId()))
 							: LegacyValues.skillRanksValue(characterPlayer, skill, category);
@@ -165,8 +166,10 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 							skillRankValue + "",
 							LegacyValues.categoryTotalValue(characterPlayer, skill, category) + "",
 							characterPlayer.getItemBonus(BonusType.SKILL, skill.getId()) + "", getBonusValue(skill),
-							getTotalValue(skill), new Font(getHandWrittingFont(), FONT_SIZE - 1),
-							new Font(getHandWrittingFont(), FONT_SIZE - 1), getSkillLineWidths());
+							isSpellListCat ? getTotalValue(skill, spellListTotalValue(skill, category, skillRankValue))
+									: getTotalValue(skill),
+							new Font(getHandWrittingFont(), getFontSize() - 1),
+							new Font(getHandWrittingFont(), getFontSize() - 1), getSkillLineWidths());
 					getColumnTable().addCell(skillLineCell);
 
 					// Add the specializations.
@@ -177,8 +180,8 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 										characterPlayer.getSpecializedSkillRanks(skill) + "",
 										LegacyValues.categoryTotalValue(characterPlayer, skill, category) + "",
 										characterPlayer.getItemBonus(BonusType.SKILL, skill.getId()) + "", getBonusValue(skill),
-										getTotalSpecializedValue(skill), new Font(getHandWrittingFont(), FONT_SIZE - 1),
-										new Font(getHandWrittingFont(), FONT_SIZE - 1), getSkillLineWidths());
+										getTotalSpecializedValue(skill), new Font(getHandWrittingFont(), getFontSize() - 1),
+										new Font(getHandWrittingFont(), getFontSize() - 1), getSkillLineWidths());
 								getColumnTable().addCell(skillSpecializedLineCell);
 							}
 						} catch (Exception e) {
@@ -189,12 +192,12 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 
 				// Empty skill lines to fill gaps:
 				int addEmptyLines = (emptyLinesToAdd / (column.size() - index))
-						+ MIN_EMPTY_SKILLS_PER_CATEGORY;
+						+ getMinEmptySkillsPerCategory();
 				
 				for (int i = 0; i < addEmptyLines; i++) {
 					PdfPCell emptySkillLines = skillLine("________________________", "__", getNewRanksImage(0), "___",
 							LegacyValues.categoryTotalValue(characterPlayer, category) + "", "___", "___", "___",
-							new Font(getDefaultFont(), FONT_SIZE - 1), new Font(getHandWrittingFont(), FONT_SIZE - 1),
+							new Font(getDefaultFont(), getFontSize() - 1), new Font(getHandWrittingFont(), getFontSize() - 1),
 							getSkillLineWidths());
 					getColumnTable().addCell(emptySkillLines);
 					emptyLinesToAdd--;
@@ -203,7 +206,7 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 
 			addColumn(document);
 
-			if (columnIndex % COLUMNS_PER_PAGE == 0 && columnIndex < columns.size()) {
+			if (columnIndex % getColumnsPerPage() == 0 && columnIndex < columns.size()) {
 				addNewSkillPage(document, writer);
 			}
 			columnIndex++;
@@ -237,13 +240,34 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 	}
 
 	private String getTotalValue(Skill skill) throws InvalidXmlElementException {
+		return getTotalValue(skill, characterPlayer.getSkillTotalValue(skill));
+	}
+
+	/**
+	 * {@link #getTotalValue(Skill)} over a total supplied by the caller, used by spell-list rows
+	 * (whose ranks are not those of a catalog skill, see
+	 * {@link #spellListTotalValue(Skill, Category, int)}).
+	 */
+	private String getTotalValue(Skill skill, int total) throws InvalidXmlElementException {
 		if (characterPlayer.getItemBonus(BonusType.SKILL, skill.getId()) > 0
 				|| characterPlayer.getPerkSkillConditionalBonus(skill.getId()) != 0) {
-			return characterPlayer.getSkillTotalValue(skill) - characterPlayer.getItemBonus(BonusType.SKILL, skill.getId())
-					- characterPlayer.getPerkSkillConditionalBonus(skill.getId()) + "/" + characterPlayer.getSkillTotalValue(skill)
-					+ "";
+			return total - characterPlayer.getItemBonus(BonusType.SKILL, skill.getId())
+					- characterPlayer.getPerkSkillConditionalBonus(skill.getId()) + "/" + total + "";
 		}
-		return characterPlayer.getSkillTotalValue(skill) + "";
+		return total + "";
+	}
+
+	/**
+	 * The legacy {@code getTotalValue(Skill)} for a spell list: the flat bonus and item bonus of the
+	 * list plus its own rank value applied to the list's real ranks (the magic list categories have
+	 * no per-rank development term in {@code getSkillTotalValue}, whose ranks resolve to 0 for a
+	 * synthetic list skill, so it is added here from {@code spellListRankValue})
+	 */
+	private int spellListTotalValue(Skill skill, Category category, int spellListRankValue)
+			throws InvalidXmlElementException {
+		return characterPlayer.getSkillTotalValue(skill)
+				- characterPlayer.getSkillRankValue(category, characterPlayer.getSkillRealRanks(skill))
+				+ spellListRankValue;
 	}
 
 	private String getTotalSpecializedValue(Skill skill) throws InvalidXmlElementException {
@@ -282,8 +306,8 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		} else {
 			suffix = characterPlayer.isSkillGeneralized(skill.getId()) ? " (g)" : "";
 		}
-		if (SKILL_NAME_LENGTH < name.length() + suffix.length()) {
-			name = name.substring(0, SKILL_NAME_LENGTH - suffix.length());
+		if (getSkillNameLength() < name.length() + suffix.length()) {
+			name = name.substring(0, getSkillNameLength() - suffix.length());
 		}
 		return name + suffix;
 	}
@@ -294,20 +318,20 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		float[] widths = { 0.23f, 0.18f, 0.19f, 0.11f, 0.13f, 0.16f };
 		PdfPTable categoryTable = new PdfPTable(widths);
 
-		Paragraph p = new Paragraph(categoryName(category), new Font(getDefaultFont(), FONT_SIZE - 1, Font.BOLD));
+		Paragraph p = new Paragraph(categoryName(category), new Font(getDefaultFont(), getFontSize() - 1, Font.BOLD));
 		PdfPCell cell = getCategoryCell(p);
 		cell.setColspan(2);
 		categoryTable.addCell(cell);
 
 		p = new Paragraph(LegacyTextBlocks.characteristicTags(category.getCharacteristics()),
-				new Font(getDefaultFont(), FONT_SIZE));
+				new Font(getDefaultFont(), getFontSize()));
 		categoryTable.addCell(getCategoryCell(p));
 
-		p = new Paragraph(LegacyValues.categoryCostTag(characterPlayer, category), new Font(getDefaultFont(), FONT_SIZE));
+		p = new Paragraph(LegacyValues.categoryCostTag(characterPlayer, category), new Font(getDefaultFont(), getFontSize()));
 		categoryTable.addCell(getCategoryCell(p));
 
 		p = new Paragraph("Rang: " + LegacyValues.previousCategoryRanks(characterPlayer, category),
-				new Font(getDefaultFont(), FONT_SIZE));
+				new Font(getDefaultFont(), getFontSize()));
 		categoryTable.addCell(getCategoryCell(p));
 
 		if (category.getType().equals(CategoryType.STANDARD)) {
@@ -315,23 +339,23 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 					getCategoryCell(getNewRanksImage(characterPlayer.getCurrentLevel().getCategoryRanks(category.getId()))));
 		} else {
 			if (category.getType().equals(CategoryType.COMBINED)) {
-				p = new Paragraph("*", new Font(getDefaultFont(), FONT_SIZE));
+				p = new Paragraph("*", new Font(getDefaultFont(), getFontSize()));
 				categoryTable.addCell(getCategoryCell(p));
 			}
 			if (category.getType().equals(CategoryType.LIMITED) || category.getType().equals(CategoryType.SPECIAL)
 					|| category.getType().equals(CategoryType.PPD) || category.getType().equals(CategoryType.PD)) {
-				p = new Paragraph("+", new Font(getDefaultFont(), FONT_SIZE));
+				p = new Paragraph("+", new Font(getDefaultFont(), getFontSize()));
 				categoryTable.addCell(getCategoryCell(p));
 			}
 		}
 
 		// Second line.
 		p = new Paragraph("Bonif. Rango: " + LegacyValues.categoryRanksValue(characterPlayer, category),
-				new Font(getDefaultFont(), FONT_SIZE));
+				new Font(getDefaultFont(), getFontSize()));
 		categoryTable.addCell(getCategoryCell(p));
 
 		p = new Paragraph("Caract: " + characterPlayer.getCategoryCharacteristicBonus(category),
-				new Font(getDefaultFont(), FONT_SIZE));
+				new Font(getDefaultFont(), getFontSize()));
 		categoryTable.addCell(getCategoryCell(p));
 
 		String text = (LegacyValues.backgroundCategoryBonus(characterPlayer, category)
@@ -349,19 +373,19 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		if (!letter.equals("")) {
 			text += " (" + letter + ")";
 		}
-		p = new Paragraph("Esp: " + text, new Font(getDefaultFont(), FONT_SIZE));
+		p = new Paragraph("Esp: " + text, new Font(getDefaultFont(), getFontSize()));
 		categoryTable.addCell(getCategoryCell(p));
 
 		p = new Paragraph("Prof: " + LegacyValues.categoryBonus(category, characterPlayer),
-				new Font(getDefaultFont(), FONT_SIZE));
+				new Font(getDefaultFont(), getFontSize()));
 		categoryTable.addCell(getCategoryCell(p));
 
 		p = new Paragraph("Obj: " + characterPlayer.getItemBonus(BonusType.CATEGORY, category.getId()),
-				new Font(getDefaultFont(), FONT_SIZE));
+				new Font(getDefaultFont(), getFontSize()));
 		categoryTable.addCell(getCategoryCell(p));
 
 		p = new Paragraph("Total: " + LegacyValues.categoryTotalValue(characterPlayer, category),
-				new Font(getDefaultFont(), FONT_SIZE));
+				new Font(getDefaultFont(), getFontSize()));
 		categoryTable.addCell(getCategoryCell(p));
 
 		cell = new PdfPCell(categoryTable);
@@ -370,14 +394,15 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		cell.setColspan(1);
 		cell.setMinimumHeight(30);
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-		
+		cell.setBackgroundColor(VERY_LIGHT_GRAY);
+
 		return cell;
 	}
 
 	/** The legacy {@code Category#getName(int)}: the Spanish name cut to fit its column. */
 	private String categoryName(Category category) {
 		final String name = LegacyTextBlocks.name(category.getName());
-		return name.substring(0, Math.min(CATEGORY_NAME_LENGTH - 1, name.length())).toUpperCase();
+		return name.substring(0, Math.min(getCategoryNameLength() - 1, name.length())).toUpperCase();
 	}
 
 	private void addColumn(Document document) {
@@ -393,9 +418,9 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 	}
 
 	private void closePage(Document document, PdfWriter writer) throws BadElementException {
-		PdfPCell cell = new PdfPCell(createFooter(FONT_SIZE));
+		PdfPCell cell = new PdfPCell(createFooter(getFontSize()));
 		cell.setBorderWidth(0);
-		cell.setColspan(COLUMNS_PER_PAGE);
+		cell.setColspan(getColumnsPerPage());
 		cell.setMinimumHeight(20);
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 		cell.setVerticalAlignment(Element.ALIGN_BOTTOM);
@@ -406,52 +431,66 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 	/**
 	 * The legacy {@code PdfCombinedSheet#obtainCategoriesPerColumn}: walk the categories in catalog
 	 * order and start a new column as soon as the next one would not fit in
-	 * {@value #MAX_LINES_PER_COLUMN} lines.
+	 * {@link #getMaxLinesPerColumn()} lines.
 	 */
 	private void obtainCategoriesPerColumn() throws InvalidXmlElementException {
 		columns = new ArrayList<>();
-
-		List<Category> categoriesPerColumn = new ArrayList<>();
-		int currentColumnLines = 0;
-
+		List<Category> allCategories = new ArrayList<>();
 		for (final Category category : LegacyValues.availableCategories()) {
 			if (!characterPlayer.isCategoryEnabledByOptions(category)
 					|| !LegacyValues.hasCategoryCost(characterPlayer, category)) {
 				continue;
 			}
-			int linesByCategory = CATEGORY_SIZE;
-			boolean isSpellListCat = MagicListType.fromCategoryId(category.getId()) != null;
-			for (final Skill skill : LegacyValues.skillsOf(characterPlayer, category)) {
-				boolean interesting = characterPlayer.isSkillInteresting(skill);
-				if (!interesting && isSpellListCat) {
-					try { interesting = characterPlayer.getSpellListTotalRanks(skill.getId()) > 0; } catch (Exception e) { interesting = false; }
+			allCategories.add(category);
+		}
+
+		if (allCategories.isEmpty()) {
+			return;
+		}
+
+		List<Category> col = new ArrayList<>();
+		int colLines = 0;
+		for (int i = 0; i < allCategories.size(); i++) {
+			Category category = allCategories.get(i);
+			int linesByCategory = getCategoryLines(category);
+			if (colLines + linesByCategory > getMaxLinesPerColumn() && !col.isEmpty()) {
+				columns.add(col);
+				col = new ArrayList<>();
+				colLines = 0;
+			}
+			col.add(category);
+			colLines += linesByCategory;
+		}
+		if (!col.isEmpty()) {
+			columns.add(col);
+		}
+	}
+
+	private int getCategoryLines(Category category) throws InvalidXmlElementException {
+		int linesByCategory = CATEGORY_SIZE;
+		boolean isSpellListCat = MagicListType.fromCategoryId(category.getId()) != null;
+		for (final Skill skill : LegacyValues.skillsOf(characterPlayer, category)) {
+			boolean interesting = characterPlayer.isSkillInteresting(skill);
+			if (!interesting && isSpellListCat) {
+				try {
+					interesting = characterPlayer.getSpellListTotalRanks(skill.getId()) > 0;
+				} catch (Exception e) {
+					interesting = false;
 				}
-				if (interesting) {
-					linesByCategory += SKILL_SIZE;
-					if (!isSpellListCat) {
-						try { linesByCategory += characterPlayer.getSkillSpecializations(skill.getId()).size() * SKILL_SIZE; } catch (Exception e) {}
+			}
+			if (interesting) {
+				linesByCategory += SKILL_SIZE;
+				if (!isSpellListCat) {
+					try {
+						linesByCategory += characterPlayer.getSkillSpecializations(skill.getId()).size() * SKILL_SIZE;
+					} catch (Exception e) {
 					}
 				}
 			}
-
-			// At least one empty line in each category.
-			linesByCategory += MIN_EMPTY_SKILLS_PER_CATEGORY * SKILL_SIZE;
-
-			// If the category does not fit in the current column, change column.
-			if (currentColumnLines + linesByCategory > MAX_LINES_PER_COLUMN) {
-				columns.add(categoriesPerColumn);
-				categoriesPerColumn = new ArrayList<>();
-				currentColumnLines = 0;
-			}
-
-			categoriesPerColumn.add(category);
-			currentColumnLines += linesByCategory;
 		}
-		// Add the last column.
-		columns.add(categoriesPerColumn);
+		linesByCategory += getMinEmptySkillsPerCategory() * SKILL_SIZE;
+		return linesByCategory;
 	}
-
-	/** The lines a column needs for its categories, without the spare lines it may fill them with. */
 	private int getMinNeededColumnLines(List<Category> column) throws InvalidXmlElementException {
 		int linesByCategory = 0;
 		for (final Category category : column) {
@@ -473,7 +512,17 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		return linesByCategory;
 	}
 
-	private static PdfPCell skillLine(String skillName, String previousSkillRanks, Image currentLevelRanks,
+	/**
+	 * The row of titles printed above every skill list. The one-column sheet widens its first
+	 * column, so it spells the same columns with longer words.
+	 */
+	protected PdfPCell skillTitleCell() throws BadElementException {
+		final Font titleFont = new Font(getDefaultFont(), getFontSize() - 1, Font.BOLD);
+		return skillLine("Habilidad:", "#", null, "Rng:", "Cat", "Obj:", "Esp:", "Total:", titleFont, titleFont,
+				getSkillLineWidths());
+	}
+
+	protected static PdfPCell skillLine(String skillName, String previousSkillRanks, Image currentLevelRanks,
 			String rankValue, String totalCategoryValue, String itemBonus, String totalBonus, String total, Font font,
 			Font categoryFont, float[] widths) throws BadElementException {
 		Paragraph p;
@@ -532,42 +581,47 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		return skillcell;
 	}
 
-	private static PdfPCell getSkillCell(Paragraph content  ) {
+	private static PdfPCell getSkillCell(Paragraph content) {
 		PdfPCell cell = new PdfPCell(content);
 		cell.setMinimumHeight(10);
 		cell.setBorderWidth(BORDER);
-				cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+		// The legacy sheet painted every skill cell opaque white over the RMHPComb.png drawing.
+		cell.setBackgroundColor(new RGBColor(255, 255, 255));
+		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 		cell.setPaddingLeft(5f);
 
 		return cell;
 	}
 
-	private static PdfPCell getSkillCell(Image content  ) {
+	private static PdfPCell getSkillCell(Image content) {
 		PdfPCell cell = new PdfPCell(content);
 		cell.setMinimumHeight(10);
 		cell.setBorderWidth(BORDER);
-				cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+		cell.setBackgroundColor(new RGBColor(255, 255, 255));
+		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 		cell.setPaddingLeft(5f);
 
 		return cell;
 	}
 
-	private PdfPCell getCategoryCell(Paragraph content  ) {
+	private PdfPCell getCategoryCell(Paragraph content) {
 		PdfPCell cell = new PdfPCell(content);
 		cell.setMinimumHeight(15);
 		cell.setBorderWidth(0);
-				cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+		cell.setBackgroundColor(VERY_LIGHT_GRAY);
+		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 		cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 		cell.setPaddingLeft(5f);
 
 		return cell;
 	}
 
-	private PdfPCell getCategoryCell(Image content  ) {
+	private PdfPCell getCategoryCell(Image content) {
 		PdfPCell cell = new PdfPCell(content);
 		cell.setMinimumHeight(15);
 		cell.setBorderWidth(0);
-				cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+		cell.setBackgroundColor(VERY_LIGHT_GRAY);
+		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 		cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 		cell.setPaddingLeft(5f);
 
@@ -597,13 +651,13 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 
 	private PdfPCell leftHeader() throws InvalidXmlElementException {
 		PdfPCell cell;
-		Font f = FontFactory.getFont(FontFactory.TIMES_BOLDITALIC, FONT_SIZE + 9);
-		f.setColor(Color.WHITE);
+		Font f = FontFactory.getFont(FontFactory.TIMES_BOLDITALIC, getFontSize() + 9);
+		f.setColor(255, 255, 255);
 
 		obtainCategoriesPerColumn();
 
 		Paragraph p = new Paragraph("Hoja Combinada de Habilidades (" + (page + 1) + " de "
-				+ ((columns.size() + 1) / COLUMNS_PER_PAGE) + ")", f);
+				+ ((columns.size() + getColumnsPerPage() - 1) / getColumnsPerPage()) + ")", f);
 		cell = new PdfPCell(p);
 		cell.setMinimumHeight(30);
 				cell.setBorderWidth(0);
@@ -620,7 +674,7 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		PdfPCell cell;
 
 		Paragraph p = new Paragraph("Personaje: " + characterPlayer.getName(),
-				FontFactory.getFont(FontFactory.HELVETICA, FONT_SIZE));
+				FontFactory.getFont(FontFactory.HELVETICA, getFontSize()));
 		cell = new PdfPCell(p);
 		cell.setMinimumHeight(15);
 		cell.setBorderWidth(0);
@@ -629,12 +683,11 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		cell.setPaddingLeft(5f);
 		tableC.addCell(cell);
 
-		p = new Paragraph("Jugador: ___________________________________", FontFactory.getFont(FontFactory.HELVETICA, FONT_SIZE));
+		p = new Paragraph("Jugador: ___________________________________", FontFactory.getFont(FontFactory.HELVETICA, getFontSize()));
 		cell = new PdfPCell(p);
 		cell.setMinimumHeight(15);
 		cell.setBorderWidth(0);
 		cell.setHorizontalAlignment(Element.ALIGN_LEFT);
-		cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 		cell.setPaddingLeft(5f);
 		tableC.addCell(cell);
 
@@ -657,7 +710,7 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		createBackgroundImage(document, LegacySheetAssets.getCombinedPage());
 
 		cell = new PdfPCell(createHeader());
-		cell.setColspan(COLUMNS_PER_PAGE);
+		cell.setColspan(getColumnsPerPage());
 		getMainTable().addCell(cell);
 	}
 
@@ -677,13 +730,40 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		tableColumn = table;
 	}
 
-	private static float[] getMainTableWidths() {
+	protected float[] getMainTableWidths() {
 		float[] mainWidths = { 0.45f, 0.45f };
 		return mainWidths;
 	}
 
-	private static float[] getSkillLineWidths() {
+	protected float[] getSkillLineWidths() {
 		float[] widths = { 0.32f, 0.05f, 0.15f, 0.08f, 0.10f, 0.10f, 0.10f, 0.10f };
 		return widths;
+	}
+
+	/** Abstract lines a column may hold, including the spare ones. */
+	protected int getMaxLinesPerColumn() {
+		return DEFAULT_MAX_LINES_PER_COLUMN;
+	}
+
+	/** Columns painted side by side on every combined page. */
+	protected int getColumnsPerPage() {
+		return DEFAULT_COLUMNS_PER_PAGE;
+	}
+
+	protected int getSkillNameLength() {
+		return DEFAULT_SKILL_NAME_LENGTH;
+	}
+
+	protected int getCategoryNameLength() {
+		return DEFAULT_CATEGORY_NAME_LENGTH;
+	}
+
+	/** Spare blank skill rows printed after every category. */
+	protected int getMinEmptySkillsPerCategory() {
+		return DEFAULT_MIN_EMPTY_SKILLS_PER_CATEGORY;
+	}
+
+	protected int getFontSize() {
+		return DEFAULT_FONT_SIZE;
 	}
 }
