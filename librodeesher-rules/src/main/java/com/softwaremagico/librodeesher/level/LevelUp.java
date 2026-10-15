@@ -31,6 +31,13 @@ public class LevelUp {
     private Map<String, Integer> categoryRanks = new HashMap<>();
     @JsonProperty("skillRanks")
     private Map<String, Integer> skillRanks = new HashMap<>();
+    /**
+     * The subset of {@link #skillRanks} granted by the level's trainings (rather than bought with
+     * development points). The legacy sheet keeps these in its "previous ranks" column, never in the
+     * current level's, so the sheet needs to tell them apart.
+     */
+    @JsonProperty("trainingSkillRanks")
+    private Map<String, Integer> trainingSkillRanks = new HashMap<>();
     @JsonProperty("spellListRanks")
     private Map<String, Integer> spellListRanks = new HashMap<>();
     @JsonProperty("generalizedSkills")
@@ -126,6 +133,19 @@ public class LevelUp {
 
     public void setSkillRanks(Map<String, Integer> skillRanks) {
         this.skillRanks = skillRanks;
+    }
+
+    /** The ranks of {@link #getSkillRanks(String)} that came from this level's trainings. */
+    public Integer getTrainingSkillRanks(String skillId) {
+        return trainingSkillRanks.getOrDefault(skillId, 0);
+    }
+
+    public Map<String, Integer> getTrainingSkillRanks() {
+        return trainingSkillRanks;
+    }
+
+    public void setTrainingSkillRanks(Map<String, Integer> trainingSkillRanks) {
+        this.trainingSkillRanks = trainingSkillRanks;
     }
 
     /** Ranks bought this level in a spell list, kept apart from ordinary skills. */

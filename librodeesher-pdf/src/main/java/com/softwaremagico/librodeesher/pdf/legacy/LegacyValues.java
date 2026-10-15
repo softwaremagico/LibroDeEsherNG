@@ -2,6 +2,7 @@ package com.softwaremagico.librodeesher.pdf.legacy;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,6 +10,7 @@ import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.category.CategoryFactory;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
+import com.softwaremagico.librodeesher.language.LanguageSlot;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.magic.MagicListType;
 import com.softwaremagico.librodeesher.magic.MagicSpellList;
@@ -33,6 +35,9 @@ import com.softwaremagico.librodeesher.skill.SkillType;
  * call. Each method below documents the legacy formula it reproduces.</p>
  */
 final class LegacyValues {
+
+    /** The Core "Comunicación" category, where the legacy app added every race language. */
+    private static final String COMMUNICATION_CATEGORY_ID = "communication";
 
     private static List<Category> availableCategories;
 
@@ -254,6 +259,7 @@ final class LegacyValues {
                 }
             }
         }
+        skills.addAll(regionalLanguageSkills(characterPlayer, category));
         skills.sort((a, b) -> {
             try {
                 return a.getName().getSpanish().compareTo(b.getName().getSpanish());
@@ -261,7 +267,71 @@ final class LegacyValues {
                 return 0;
             }
         });
-        return skills;
+        return deduplicateByName(characterPlayer, skills);
+    }
+
+    /**
+     * The legacy application created a "Hablar/Escribir Idioma regional" skill for every language
+     * line of the race (see the legacy {@code Race#setLanguages}, which added them to the
+     * Communication category), so an unassigned optional language slot still printed a speaking and a
+     * writing row with the slot's starting ranks. NG models those slots as {@link LanguageSlot}s, so
+     * there is no catalog skill to print; these synthetic skills restore the rows (their ranks are
+     * resolved by {@link CharacterPlayer}, and a character with no unassigned slot simply gets zero
+     * ranks, which the sheet filters out). Only the Communication category gets them.
+     */
+    private static List<Skill> regionalLanguageSkills(CharacterPlayer characterPlayer, Category category) {
+        final List<Skill> regionalLanguages = new ArrayList<>();
+        if (characterPlayer == null || !COMMUNICATION_CATEGORY_ID.equals(category.getId())) {
+            return regionalLanguages;
+        }
+        regionalLanguages.add(regionalLanguageSkill(CharacterPlayer.REGIONAL_LANGUAGE_SPEAKING_ID,
+                "Hablar Idioma regional", "Speak Regional Language", category.getId()));
+        regionalLanguages.add(regionalLanguageSkill(CharacterPlayer.REGIONAL_LANGUAGE_WRITING_ID,
+                "Escribir Idioma regional", "Write Regional Language", category.getId()));
+        return regionalLanguages;
+    }
+
+    private static Skill regionalLanguageSkill(String id, String spanishName, String englishName, String categoryId) {
+        final Skill skill = new Skill(id);
+        skill.setName(spanishName, englishName);
+        skill.setCategoryId(categoryId);
+        return skill;
+    }
+
+    /**
+     * The NG catalog lists some skills twice under the same Spanish name (e.g. the Core
+     * {@code hablarHablaCommon} and the RacesAndCultures {@code hablarCommonSpeech} are both "Hablar
+     * Habla Común"). The legacy catalog had each once, so the sheet must print each name once. When a
+     * character is available the entry actually populated with ranks wins; otherwise the first is
+     * kept.
+     */
+    private static List<Skill> deduplicateByName(CharacterPlayer characterPlayer, List<Skill> skills) {
+        final Map<String, Skill> unique = new LinkedHashMap<>();
+        for (final Skill skill : skills) {
+            String name;
+            try {
+                name = skill.getName().getSpanish();
+            } catch (Exception e) {
+                name = skill.getId();
+            }
+            final Skill previous = unique.get(name);
+            if (previous == null || isMorePopulated(characterPlayer, skill, previous)) {
+                unique.put(name, skill);
+            }
+        }
+        return new ArrayList<>(unique.values());
+    }
+
+    private static boolean isMorePopulated(CharacterPlayer characterPlayer, Skill candidate, Skill previous) {
+        if (characterPlayer == null) {
+            return false;
+        }
+        try {
+            return characterPlayer.getSkillTotalRanks(candidate.getId())
+                    > characterPlayer.getSkillTotalRanks(previous.getId());
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     /**
@@ -337,11 +407,17 @@ final class LegacyValues {
      * The legacy {@code CharacterPlayer#getPreviousRanks(Skill)}: the ranks the character already had
      * before the current level. The legacy total was {@code previous + current - specialities}, and
      * NG's {@link CharacterPlayer#getSkillTotalRanks(String)} already subtracts those specialities, so
-     * the previous ranks are the total plus that cost, minus the current level's ranks.
+     * the previous ranks are the total plus that cost, minus the current level's ranks. The legacy
+     * "current level" only held the ranks *bought* there, never the ones a training granted (those are
+     * part of {@code getTrainingRanks}, counted among the previous ranks), so the current level's
+     * training-granted ranks are kept.
      */
     static int previousSkillRanks(CharacterPlayer characterPlayer, Skill skill) {
+        final LevelUp current = characterPlayer.getCurrentLevel();
+        final int currentBoughtRanks = current == null ? 0
+                : current.getSkillRanks(skill.getId()) - current.getTrainingSkillRanks(skill.getId());
         return characterPlayer.getSkillTotalRanks(skill.getId())
-                + characterPlayer.getSkillSpecializationsRankCost(skill.getId());
+                + characterPlayer.getSkillSpecializationsRankCost(skill.getId()) - currentBoughtRanks;
     }
 
     /**

@@ -54,6 +54,7 @@ public class LevelJsonRoundTripTest {
 
         Assert.assertEquals(imported.getCategoryRanks(), expected.getCategoryRanks(), "category ranks");
         Assert.assertEquals(imported.getSkillRanks(), expected.getSkillRanks(), "skill ranks");
+        Assert.assertEquals(imported.getTrainingSkillRanks(), expected.getTrainingSkillRanks(), "training skill ranks");
         Assert.assertEquals(imported.getSpellListRanks(), expected.getSpellListRanks(), "spell list ranks");
         Assert.assertEquals(imported.getSpellsUpdated(), expected.getSpellsUpdated(), "updated spells");
         Assert.assertEquals(imported.getGeneralizedSkills(), expected.getGeneralizedSkills(), "generalised skills");
@@ -78,6 +79,7 @@ public class LevelJsonRoundTripTest {
         final LevelUp replayed = target.increaseLevel();
         replayed.setCategoryRanks(imported.getCategoryRanks());
         replayed.setSkillRanks(imported.getSkillRanks());
+        replayed.setTrainingSkillRanks(imported.getTrainingSkillRanks());
         replayed.setSpellListRanks(imported.getSpellListRanks());
         replayed.setSpellsUpdated(imported.getSpellsUpdated());
         replayed.setGeneralizedSkills(imported.getGeneralizedSkills());

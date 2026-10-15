@@ -62,7 +62,7 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 	private int page = 0;
 	private PdfPTable tableColumn;
 	private PdfPTable table;
-	private List<List<Category>> columns;
+	protected List<List<Category>> columns;
 
 	public LegacyCombinedSheet(CharacterPlayer characterPlayer) {
 		super(characterPlayer, false);
@@ -128,7 +128,7 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 
 		int columnIndex = 1;
 		for (List<Category> column : columns) {
-			int emptyLinesToAdd = getMaxLinesPerColumn() - getMinNeededColumnLines(column);
+			int emptyLinesToAdd = getColumnEmptyLines(column);
 			for (int index = 0; index < column.size(); index++) {
 				final Category category = column.get(index);
 
@@ -191,17 +191,19 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 				}
 
 				// Empty skill lines to fill gaps:
-				int addEmptyLines = (emptyLinesToAdd / (column.size() - index))
-						+ getMinEmptySkillsPerCategory();
-				
+				int addEmptyLines = getCategoryEmptyLines(emptyLinesToAdd, column, index);
+
 				for (int i = 0; i < addEmptyLines; i++) {
-					PdfPCell emptySkillLines = skillLine("________________________", "__", getNewRanksImage(0), "___",
-							LegacyValues.categoryTotalValue(characterPlayer, category) + "", "___", "___", "___",
+					PdfPCell emptySkillLines = skillLine(getEmptySkillName(), getEmptySkillPreviousRanks(),
+							getNewRanksImage(0), getEmptySkillValue(),
+							LegacyValues.categoryTotalValue(characterPlayer, category) + "", getEmptySkillValue(),
+							getEmptySkillValue(), getEmptySkillValue(),
 							new Font(getDefaultFont(), getFontSize() - 1), new Font(getHandWrittingFont(), getFontSize() - 1),
 							getSkillLineWidths());
 					getColumnTable().addCell(emptySkillLines);
 					emptyLinesToAdd--;
 				}
+				emptyLinesToAdd += getReaddedEmptySkills();
 			}
 
 			addColumn(document);
@@ -213,6 +215,45 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		}
 
 		closePage(document, writer);
+	}
+
+	/**
+	 * Left-over lines of a column, which the blank skill rows must fill. The one-column sheet
+	 * subtracts one because its category rows are not an exact multiple of its skill rows.
+	 */
+	protected int getColumnEmptyLines(List<Category> column) throws InvalidXmlElementException {
+		return getMaxLinesPerColumn() - getMinNeededColumnLines(column);
+	}
+
+	/**
+	 * The legacy {@code (emptyLinesToAdd / (column.size() - index)) + MIN_EMPTY_SKILLS_PER_CATEGORY}:
+	 * the blank rows a category prints, spreading the column surplus over the categories left.
+	 */
+	protected int getCategoryEmptyLines(int emptyLinesToAdd, List<Category> column, int index) {
+		return (emptyLinesToAdd / (column.size() - index)) + getMinEmptySkillsPerCategory();
+	}
+
+	/**
+	 * The legacy 2016 arithmetic put the spare blank rows of a category back into the running count;
+	 * the 2.2.1 sheet this port follows does not.
+	 */
+	protected int getReaddedEmptySkills() {
+		return 0;
+	}
+
+	/** The name printed on a blank skill row. */
+	protected String getEmptySkillName() {
+		return "________________________";
+	}
+
+	/** The previous-ranks placeholder printed on a blank skill row. */
+	protected String getEmptySkillPreviousRanks() {
+		return "__";
+	}
+
+	/** The value placeholder printed on a blank skill row. */
+	protected String getEmptySkillValue() {
+		return "___";
 	}
 
 	/**
@@ -429,20 +470,28 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 	}
 
 	/**
-	 * The legacy {@code PdfCombinedSheet#obtainCategoriesPerColumn}: walk the categories in catalog
-	 * order and start a new column as soon as the next one would not fit in
-	 * {@link #getMaxLinesPerColumn()} lines.
+	 * The categories the sheet may print, in catalog order: those enabled by the character options
+	 * and with a cost.
 	 */
-	private void obtainCategoriesPerColumn() throws InvalidXmlElementException {
-		columns = new ArrayList<>();
+	protected List<Category> availableCategories() throws InvalidXmlElementException {
 		List<Category> allCategories = new ArrayList<>();
 		for (final Category category : LegacyValues.availableCategories()) {
-			if (!characterPlayer.isCategoryEnabledByOptions(category)
-					|| !LegacyValues.hasCategoryCost(characterPlayer, category)) {
+			if (!characterPlayer.isCategoryUseful(category) || !LegacyValues.hasCategoryCost(characterPlayer, category)) {
 				continue;
 			}
 			allCategories.add(category);
 		}
+		return allCategories;
+	}
+
+	/**
+	 * The legacy {@code PdfCombinedSheet#obtainCategoriesPerColumn}: walk the categories in catalog
+	 * order and start a new column as soon as the next one would not fit in
+	 * {@link #getMaxLinesPerColumn()} lines.
+	 */
+	protected void obtainCategoriesPerColumn() throws InvalidXmlElementException {
+		columns = new ArrayList<>();
+		List<Category> allCategories = availableCategories();
 
 		if (allCategories.isEmpty()) {
 			return;
@@ -467,6 +516,10 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 	}
 
 	private int getCategoryLines(Category category) throws InvalidXmlElementException {
+		return getCategoryLines(category, getMinEmptySkillsPerCategory());
+	}
+
+	protected int getCategoryLines(Category category, int emptyLinesPerCategory) throws InvalidXmlElementException {
 		int linesByCategory = CATEGORY_SIZE;
 		boolean isSpellListCat = MagicListType.fromCategoryId(category.getId()) != null;
 		for (final Skill skill : LegacyValues.skillsOf(characterPlayer, category)) {
@@ -488,10 +541,10 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 				}
 			}
 		}
-		linesByCategory += getMinEmptySkillsPerCategory() * SKILL_SIZE;
+		linesByCategory += emptyLinesPerCategory * SKILL_SIZE;
 		return linesByCategory;
 	}
-	private int getMinNeededColumnLines(List<Category> column) throws InvalidXmlElementException {
+	protected int getMinNeededColumnLines(List<Category> column) throws InvalidXmlElementException {
 		int linesByCategory = 0;
 		for (final Category category : column) {
 			linesByCategory += CATEGORY_SIZE;
@@ -656,16 +709,26 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 
 		obtainCategoriesPerColumn();
 
-		Paragraph p = new Paragraph("Hoja Combinada de Habilidades (" + (page + 1) + " de "
+		Paragraph p = new Paragraph(sheetTitle() + " (" + (page + 1) + " de "
 				+ ((columns.size() + getColumnsPerPage() - 1) / getColumnsPerPage()) + ")", f);
 		cell = new PdfPCell(p);
 		cell.setMinimumHeight(30);
-				cell.setBorderWidth(0);
+		cell.setBorderWidth(0);
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 		cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 		cell.setPaddingLeft(5f);
+		applyTitleBackground(cell);
 
 		return cell;
+	}
+
+	/** The name of the sheet on the page title, before the page counter. */
+	protected String sheetTitle() {
+		return "Hoja Combinada de Habilidades";
+	}
+
+	/** The one-column legacy sheet painted its title white on a black bar. */
+	protected void applyTitleBackground(PdfPCell cell) {
 	}
 
 	private PdfPCell rightHeader() {

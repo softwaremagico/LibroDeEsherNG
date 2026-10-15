@@ -22,6 +22,11 @@ public final class LevelData {
     @JsonProperty("skillRanks")
     private Map<String, Integer> skillRanks = new LinkedHashMap<>();
 
+    /** The subset of {@link #skillRanks} granted by this level's trainings (see
+     *  {@link com.softwaremagico.librodeesher.level.LevelUp#getTrainingSkillRanks(String)}). */
+    @JsonProperty("trainingSkillRanks")
+    private Map<String, Integer> trainingSkillRanks = new LinkedHashMap<>();
+
     @JsonProperty("spellListRanks")
     private Map<String, Integer> spellListRanks = new LinkedHashMap<>();
 
@@ -70,6 +75,14 @@ public final class LevelData {
 
     public void setSkillRanks(Map<String, Integer> skillRanks) {
         this.skillRanks = skillRanks;
+    }
+
+    public Map<String, Integer> getTrainingSkillRanks() {
+        return trainingSkillRanks;
+    }
+
+    public void setTrainingSkillRanks(Map<String, Integer> trainingSkillRanks) {
+        this.trainingSkillRanks = trainingSkillRanks;
     }
 
     public Map<String, Integer> getSpellListRanks() {

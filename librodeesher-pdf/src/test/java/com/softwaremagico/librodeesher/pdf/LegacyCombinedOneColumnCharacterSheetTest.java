@@ -26,7 +26,7 @@ public class LegacyCombinedOneColumnCharacterSheetTest {
 
     private static final Path OUTPUT_DIRECTORY = Path.of("/tmp/RolemasterPDF");
     private static final String SNAPSHOT = "Bellido__Kara_Trace_N5_Medio-elfo_Magente.rlm";
-    private static final Pattern HEADER = Pattern.compile("Hoja Combinada de Habilidades \\((\\d+) de (\\d+)\\)");
+    private static final Pattern HEADER = Pattern.compile("Hoja de Habilidades \\((\\d+) de (\\d+)\\)");
 
     private CharacterPlayer character;
     private int pageCount;
@@ -90,6 +90,34 @@ public class LegacyCombinedOneColumnCharacterSheetTest {
     public void retainsTheExpectedCategories() {
         Assert.assertTrue(sheetText.toLowerCase().contains("armadura"), "missing armor-related category");
         Assert.assertTrue(sheetText.toLowerCase().contains("hechizos"), "missing spell lists category");
+    }
+
+    /**
+     * A V2 save (as opposed to a V2.1.1 one) carries its hobby ranks inside {@code
+     * cultureDecisions.hobbyRanks}, and the legacy app also printed an "Idioma regional" speaking and
+     * writing row for each unassigned optional race/culture language slot (here the Garks' single
+     * 8/4 slot). Both used to be lost in the import, so the sheet was missing ranks and two rows.
+     */
+    @Test
+    public void importsV2HobbyRanksAndPrintsTheRegionalLanguageRows() throws Exception {
+        final String snapshot = "Fthagtli_Milupa_N5_Garks_Monje Guerrero.rlm";
+        final CharacterData data = LegacyCharacterJsonImporter.importLegacyJson(readSnapshot(snapshot));
+        Assert.assertEquals(data.getHobbySkillRanks().size(), 6,
+                "the V2 hobby ranks must be imported: " + data.getHobbySkillRanks());
+
+        final byte[] pdf = new LegacyCombinedOneColumnCharacterSheet()
+                .generate(CharacterDataMapper.toCharacter(data));
+        final PdfReader reader = new PdfReader(new ByteArrayInputStream(pdf));
+        final PdfTextExtractor extractor = new PdfTextExtractor(reader);
+        final StringBuilder text = new StringBuilder();
+        for (int page = 1; page <= reader.getNumberOfPages(); page++) {
+            text.append(extractor.getTextFromPage(page)).append('\n');
+        }
+        reader.close();
+
+        final String flat = flatten(text.toString());
+        Assert.assertTrue(flat.contains("Escribir Idioma regional"), "missing the synthetic writing row");
+        Assert.assertTrue(flat.contains("Hablar Idioma regional"), "missing the synthetic speaking row");
     }
 
     private static String readSnapshot(String path) throws IOException {

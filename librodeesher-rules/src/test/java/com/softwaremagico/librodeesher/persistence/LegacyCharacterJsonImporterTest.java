@@ -212,8 +212,8 @@ public class LegacyCharacterJsonImporterTest {
                 skillRanks += ranks;
             }
         }
-        Assert.assertEquals(skillsWithRanks, 77);
-        Assert.assertEquals(skillRanks, 124);
+        Assert.assertEquals(skillsWithRanks, 83);
+        Assert.assertEquals(skillRanks, 148);
 
         int listsWithRanks = 0;
         int listRanks = 0;

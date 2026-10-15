@@ -6,6 +6,7 @@ import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.Element;
 import com.softwaremagico.librodeesher.ObjectMapperFactory;
 import com.softwaremagico.librodeesher.character.SexType;
+import com.softwaremagico.librodeesher.characteristic.Characteristic;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicRoll;
 import com.softwaremagico.librodeesher.culture.Culture;
@@ -102,18 +103,22 @@ public final class LegacyCharacterJsonImporter {
         // A 2.x save may fold the early levels into a single merged "inserted" record: the
         // character then keeps that development on level insertedLevels and one real level-up per
         // remaining entry, with the levels in between left empty as the legacy application did.
+        // With no inserted record, the first level-up holds the character creation (level 1), so it
+        // is merged into level one and the remaining entries become levels 2..N.
         final int inserted = insertedLevels(root);
-        levels.add(inserted == 0
-                ? buildLevelOne(rulesCatalog, root, categoryIds, skillIds, spellListIds, data.getCultureId())
-                : buildCultureLevelOne(rulesCatalog, root, categoryIds, skillIds, data.getCultureId()));
-        for (int i = 1; i < inserted - 1; i++) {
-            levels.add(emptyLevel(data.getCurrentAge()));
-        }
-        if (inserted > 0) {
+        final JsonNode levelUps = required(root, "levelUps");
+        if (inserted == 0) {
+            levels.add(buildLevelOne(root, rulesCatalog, categoryIds, skillIds, spellListIds, trainingIds,
+                    data.getCultureId(), data.getCurrentAge()));
+        } else {
+            levels.add(buildCultureLevelOne(rulesCatalog, root, categoryIds, skillIds, data.getCultureId()));
+            for (int i = 1; i < inserted - 1; i++) {
+                levels.add(emptyLevel(data.getCurrentAge()));
+            }
             levels.add(buildInsertedLevel(root, categoryIds, skillIds, spellListIds, data.getCurrentAge()));
         }
-        for (final JsonNode levelUp : required(root, "levelUps")) {
-            levels.add(fromLevelUp(levelUp, categoryIds, skillIds, spellListIds, trainingIds,
+        for (int i = inserted == 0 ? 1 : 0; i < levelUps.size(); i++) {
+            levels.add(fromLevelUp(levelUps.get(i), categoryIds, skillIds, spellListIds, trainingIds,
                     data.getCurrentAge()));
         }
         data.setLevels(levels);
@@ -123,6 +128,7 @@ public final class LegacyCharacterJsonImporter {
         background.setSkillIds(resolveSkillNames(root.path("background").path("skills"), skillIds));
         background.setLanguageRanks(languageRanks(root.path("cultureDecisions").path("languageRanks")));
         data.setBackground(background);
+        data.setHobbySkillRanks(resolveRankedNames(root.path("cultureDecisions").path("hobbyRanks"), skillIds));
 
         final Map<String, DecisionData> decisions = new TreeMap<>();
         data.setDecisions(decisions);
@@ -240,9 +246,16 @@ public final class LegacyCharacterJsonImporter {
         values.putAll(characteristicMap(root.path("insertedData").path("characteristicsTemporalValuesModification")));
         for (final JsonNode levelUp : root.path("levelUps")) {
             for (final JsonNode update : recordedCharacteristicUpdates(levelUp)) {
+                // The legacy update records the temporal value *before* its roll, so the value after
+                // that level is the recorded one plus the roll's upgrade (the potential follows the
+                // same recorded value).
+                final int temporal = update.path("characteristicTemporalValue").asInt(0);
+                final int potential = update.path("characteristicPotentialValue").asInt(0);
+                final Roll roll = Roll.of(update.path("roll").path("firstDice").asInt(0),
+                        update.path("roll").path("secondDice").asInt(0));
                 values.put(CharacteristicAbbreviation
                         .fromTag(update.path("characteristicAbbreviature").asText()).name(),
-                        update.path("characteristicTemporalValue").asInt(0));
+                        temporal + Characteristic.getCharacteristicUpgrade(temporal, potential, roll));
             }
         }
         return values;
@@ -360,17 +373,6 @@ public final class LegacyCharacterJsonImporter {
         return ranks;
     }
 
-    /** Level 1: the culture's adolescence grants materialized as fixed ranks, plus the spell-list
-     *  updates recorded by the first legacy level-up as pure metadata. */
-    private static LevelData buildLevelOne(RulesCatalog rulesCatalog, JsonNode root, Map<String, String> categoryIds,
-                                           Map<String, String> skillIds, Map<String, String> spellListIds,
-                                           String cultureId) throws InvalidXmlElementException {
-        final LevelData level = emptyLevel(root.path("currentAge").asInt(10));
-        materializeCulture(rulesCatalog.getCulture(cultureId), categoryIds, skillIds, level);
-        level.setSpellsUpdated(resolveListNames(required(root, "levelUps").get(0).path("spellsUpdated"), spellListIds));
-        return level;
-    }
-
     /** 2.0.0 level 1 of a save whose early levels were folded into an inserted record: the culture's
      *  adolescence grants materialized as fixed ranks, the first real level-up belonging to level
      *  {@code insertedLevels + 1}. */
@@ -398,6 +400,7 @@ public final class LegacyCharacterJsonImporter {
                 spellListIds, trainingIds, age);
         mergeRanks(level.getCategoryRanks(), firstLevelUp.getCategoryRanks());
         mergeRanks(level.getSkillRanks(), firstLevelUp.getSkillRanks());
+        mergeRanks(level.getTrainingSkillRanks(), firstLevelUp.getTrainingSkillRanks());
         mergeRanks(level.getSpellListRanks(), firstLevelUp.getSpellListRanks());
         level.setSpellsUpdated(firstLevelUp.getSpellsUpdated());
         level.setTrainings(firstLevelUp.getTrainings());
@@ -515,6 +518,15 @@ public final class LegacyCharacterJsonImporter {
                 skillRanks.merge(id, ranks, Integer::sum);
             }
         });
+        // Remember which of the merged skill ranks came from trainings: the legacy sheet counts
+        // those as "previous ranks", never as the current level's.
+        final Map<String, Integer> trainingSkillRanks = new TreeMap<>();
+        trainingRanks.forEach((id, ranks) -> {
+            if (!spellListIds.containsValue(id)) {
+                trainingSkillRanks.merge(id, ranks, Integer::sum);
+            }
+        });
+        level.setTrainingSkillRanks(trainingSkillRanks);
 
         final List<String> favourites = new ArrayList<>();
         final List<String> favouriteSpellLists = new ArrayList<>();

@@ -446,7 +446,7 @@ public class CharacterPlayer {
 	 * (legacy divides by zero instead).
 	 */
 	public Integer getBonusCharacteristicOfRealmOfMagic() throws InvalidXmlElementException {
-		final List<RealmOfMagic> realms = this.getRealmsOfMagic();
+		final List<RealmOfMagic> realms = this.resolvedRealmsOfMagic();
 		if (realms.isEmpty()) {
 			return 0;
 		}
@@ -692,7 +692,7 @@ public class CharacterPlayer {
 			total += levelUp.getSkillRanks(skillId);
 		}
 		return total + this.getHobbySkillRank(skillId) - this.getSkillSpecializationsRankCost(skillId)
-				+ this.getLanguageRaceInitialRanks(skillId);
+				+ this.getLanguageTotalRanks(skillId);
 	}
 
 	/**
@@ -710,7 +710,7 @@ public class CharacterPlayer {
 			total += this.levels.get(i).getSkillRanks(skillId);
 		}
 		return total + this.getHobbySkillRank(skillId) - this.getSkillSpecializationsRankCost(skillId)
-				+ this.getLanguageRaceInitialRanks(skillId);
+				+ this.getLanguageTotalRanks(skillId);
 	}
 
 	/**
@@ -753,6 +753,129 @@ public class CharacterPlayer {
 			return 0;
 		}
 		return 0;
+	}
+
+	/**
+	 * The total creation ranks a "Hablar"/"Escribir" language skill gets from the character's race
+	 * and culture. The legacy sheet counted the culture's own grant for the language (the legacy
+	 * {@code Culture#getCultureRanks(Skill)}) plus the larger of the culture's chosen language ranks
+	 * and the race's initial ranks (the legacy {@code CharacterPlayer#getLanguageRanks(String)}),
+	 * so the totals above include both. Returns 0 for any other skill.
+	 */
+	private int getLanguageTotalRanks(String skillId) {
+		if (REGIONAL_LANGUAGE_SPEAKING_ID.equals(skillId)) {
+			return this.getUnassignedRegionalLanguageRanks(true);
+		}
+		if (REGIONAL_LANGUAGE_WRITING_ID.equals(skillId)) {
+			return this.getUnassignedRegionalLanguageRanks(false);
+		}
+		final int raceRanks = this.getLanguageRaceInitialRanks(skillId);
+		final int cultureRanks = this.getLanguageCultureRanks(skillId);
+		return cultureRanks + Math.max(raceRanks, cultureRanks);
+	}
+
+	/**
+	 * Synthetic skill ids for the race/culture optional language slots ("Idioma Regional") while they
+	 * are still unassigned. The legacy application created a "Hablar/Escribir Idioma regional" skill
+	 * for each language line of the race (see the legacy {@code Race#setLanguages}), so an unassigned
+	 * slot still printed a speaking and a writing row with the slot's starting ranks; NG models those
+	 * slots as {@link LanguageSlot}s instead, and these ids let the sheet keep printing the rows.
+	 */
+	public static final String REGIONAL_LANGUAGE_SPEAKING_ID = "hablarIdiomaRegional";
+	public static final String REGIONAL_LANGUAGE_WRITING_ID = "escribirIdiomaRegional";
+
+	/**
+	 * The largest starting ranks among the still-unassigned optional language slots of the race and
+	 * the culture, for the synthetic "Idioma regional" speaking/writing skills. Returns 0 when every
+	 * optional slot has been assigned to a real language (in which case its ranks are counted for
+	 * that language instead) or when there is no such slot.
+	 */
+	private int getUnassignedRegionalLanguageRanks(boolean speaking) {
+		int best = 0;
+		try {
+			final Race race = this.getRace();
+			if (race != null) {
+				for (int slot = 0; slot < race.getOptionalRaceLanguages().size(); slot++) {
+					if (this.getOptionalRaceLanguageAssignment(slot) != null) {
+						continue;
+					}
+					best = Math.max(best, this.regionLanguageSlotRanks(race.getOptionalRaceLanguages().get(slot), speaking));
+				}
+			}
+			final Culture culture = this.getCulture();
+			if (culture != null) {
+				for (int slot = 0; slot < culture.getOptionalLanguages().size(); slot++) {
+					if (this.getOptionalCultureLanguageAssignment(slot) != null) {
+						continue;
+					}
+					best = Math.max(best, this.regionLanguageSlotRanks(culture.getOptionalLanguages().get(slot), speaking));
+				}
+			}
+		} catch (final InvalidXmlElementException e) {
+			return best;
+		}
+		return best;
+	}
+
+	private int regionLanguageSlotRanks(LanguageSlot slot, boolean speaking) {
+		final Integer ranks = speaking ? slot.getStartingSpeakingRanks() : slot.getStartingWritingRanks();
+		return ranks == null ? 0 : ranks;
+	}
+
+	/**
+	 * The "Comunicación" category of the Core rulebook, where the legacy application added every race
+	 * language (see the legacy {@code Race#setLanguages}).
+	 */
+	private static final String COMMUNICATION_CATEGORY_ID = "communication";
+
+	/**
+	 * Builds the synthetic {@link Skill} behind {@link #REGIONAL_LANGUAGE_SPEAKING_ID} or {@link
+	 * #REGIONAL_LANGUAGE_WRITING_ID}, or {@code null} for any other id. These have no catalog entry
+	 * (the legacy app created them on the fly from the race's language lines), so
+	 * {@link #resolveSkillOrNull(String)} falls back to this factory and the values that key on a real
+	 * {@code Skill} object (real ranks, rank value, bonuses) work for them too.
+	 */
+	public static Skill regionalLanguageSkill(String skillId) {
+		if (REGIONAL_LANGUAGE_SPEAKING_ID.equals(skillId)) {
+			final Skill skill = new Skill(REGIONAL_LANGUAGE_SPEAKING_ID);
+			skill.setName("Hablar Idioma regional", "Speak Regional Language");
+			skill.setCategoryId(COMMUNICATION_CATEGORY_ID);
+			return skill;
+		}
+		if (REGIONAL_LANGUAGE_WRITING_ID.equals(skillId)) {
+			final Skill skill = new Skill(REGIONAL_LANGUAGE_WRITING_ID);
+			skill.setName("Escribir Idioma regional", "Write Regional Language");
+			skill.setCategoryId(COMMUNICATION_CATEGORY_ID);
+			return skill;
+		}
+		return null;
+	}
+
+	/**
+	 * The ranks the character's culture grants for a "Hablar"/"Escribir" skill, keyed by the skill's
+	 * Spanish name as the culture decisions store them (the legacy
+	 * {@code CultureDecisions#getLanguageRanks(String)}). Returns 0 for any other skill, for a
+	 * language the culture granted no ranks on, or without a culture.
+	 */
+	private int getLanguageCultureRanks(String skillId) {
+		if (skillId == null || this.getBackground() == null) {
+			return 0;
+		}
+		final Map<String, Integer> cultureRanks = this.getBackground().getLanguageRanks();
+		if (cultureRanks == null || cultureRanks.isEmpty()) {
+			return 0;
+		}
+		final Skill skill;
+		try {
+			skill = RulesCatalog.getInstance().getSkill(skillId);
+		} catch (final InvalidXmlElementException e) {
+			return 0;
+		}
+		if (skill == null || skill.getName() == null) {
+			return 0;
+		}
+		final Integer ranks = cultureRanks.get(skill.getName().getSpanish());
+		return ranks == null ? 0 : ranks;
 	}
 
 	/** Total ranks bought in a spell list across every character level. */
@@ -2490,6 +2613,22 @@ public class CharacterPlayer {
 	 * is no user configuration to read here).
 	 */
 	public boolean isCategoryEnabledByOptions(Category category) throws InvalidXmlElementException {
+		return isCategoryEnabledByOptions(category, this.isMagicAllowed());
+	}
+
+	/**
+	 * The legacy {@code CharacterPlayer#isCategoryUseful}, the check the combined sheet used when
+	 * the magic option did not gate every spell list yet: identical to
+	 * {@link #isCategoryEnabledByOptions(Category)} but with magic always allowed, so a character
+	 * who never switched magic on still lists every spell-list row its profession can develop,
+	 * exactly as the era's sheet did (the legacy read a global configuration that was enabled for
+	 * the exported sheets).
+	 */
+	public boolean isCategoryUseful(Category category) throws InvalidXmlElementException {
+		return isCategoryEnabledByOptions(category, true);
+	}
+
+	private boolean isCategoryEnabledByOptions(Category category, boolean magicAllowed) throws InvalidXmlElementException {
 		if (this.isWeaponCategoryId(category.getId())) {
 			return !(this.isFirearmCategoryId(category.getId()) && !this.isFirearmsAllowed());
 		}
@@ -2507,7 +2646,7 @@ public class CharacterPlayer {
 			if (this.firstRankListCost(listType) > CATEGORY_MAX_COST) {
 				return false;
 			}
-			return this.isMagicAllowed();
+			return magicAllowed;
 		}
 		if (isSpellListCategory(category.getId()) && !this.isOtherRealmTrainingSpellsAllowed()
 				&& this.classifySpellList(category.getId()) == MagicListType.OTHER_REALM_TRAINING) {
@@ -2517,7 +2656,7 @@ public class CharacterPlayer {
 		if (cost != null && cost > CATEGORY_MAX_COST) {
 			return false;
 		}
-		return !isSpellListCategory(category.getId()) || this.isMagicAllowed();
+		return !isSpellListCategory(category.getId()) || magicAllowed;
 	}
 
 	/**
@@ -2783,10 +2922,14 @@ public class CharacterPlayer {
 	/** The {@code Skill} for {@code skillId}, or {@code null} when the catalog does not know it. */
 	private Skill resolveSkillOrNull(String skillId) {
 		try {
-			return RulesCatalog.getInstance().getSkill(skillId);
+			final Skill resolved = RulesCatalog.getInstance().getSkill(skillId);
+			if (resolved != null) {
+				return resolved;
+			}
 		} catch (final InvalidXmlElementException e) {
-			return null;
+			// Not in the catalog: it may be one of the synthetic sheet skills below.
 		}
+		return regionalLanguageSkill(skillId);
 	}
 
 	/**
@@ -2939,6 +3082,16 @@ public class CharacterPlayer {
 		if (!this.isMagicAllowed()) {
 			return List.of();
 		}
+		return resolvedRealmsOfMagic();
+	}
+
+	/**
+	 * The profession's granted realms with the character's own choices applied, ignoring
+	 * {@link #isMagicAllowed()}: the realm-of-magic characteristic bonus is computed from these (the
+	 * legacy read its realm set regardless of whether magic was switched on, so a non-caster still
+	 * shows the realm's characteristic bonus on the sheet).
+	 */
+	private List<RealmOfMagic> resolvedRealmsOfMagic() throws InvalidXmlElementException {
 		final Profession profession = this.getProfession();
 		if (profession == null) {
 			return List.of();

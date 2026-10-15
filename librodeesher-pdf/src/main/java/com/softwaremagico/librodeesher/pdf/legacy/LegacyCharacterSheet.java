@@ -2007,12 +2007,21 @@ public class LegacyCharacterSheet {
 		return tabla;
 	}
 
+	/**
+	 * The version the footer advertises. The legacy combined sheet of the 2.2.1 era printed {@code
+	 * LegacySheetAssets#VERSION}; the one-column sheet only ever existed in the 2.3.0 application, so
+	 * it overrides this to print its own version.
+	 */
+	protected String footerVersion() {
+		return LegacySheetAssets.VERSION;
+	}
+
 	PdfPTable createFooter(int fontSize) {
 		PdfPTable tabla = new PdfPTable(1);
 		Paragraph p;
 		PdfPCell cell;
 
-		p = new Paragraph("Generado con El Libro de Esher, herramienta para Rolemaster V" + LegacySheetAssets.VERSION, new Font(getDefaultFont(), fontSize));
+		p = new Paragraph("Generado con El Libro de Esher, herramienta para Rolemaster V" + footerVersion(), new Font(getDefaultFont(), fontSize));
 		cell = new PdfPCell(p);
 		cell.setBorderWidth(BORDER);
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
