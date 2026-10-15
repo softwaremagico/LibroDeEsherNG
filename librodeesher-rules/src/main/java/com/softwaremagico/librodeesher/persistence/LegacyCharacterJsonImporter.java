@@ -135,6 +135,7 @@ public final class LegacyCharacterJsonImporter {
         buildWeaponCostDecisions(root.path("professionDecisions").path("weaponsCost"), categoryIds, decisions);
         buildMagicRealmDecisions(root.path("realmOfMagic").path("magicRealmsAvailable"), data.getProfessionId(), decisions);
         buildPerkChoiceDecisions(root.path("perkDecisions"), perkIds, categoryIds, skillIds, decisions);
+        buildTrainingCategoryDecisions(levelUps, inserted, trainingIds, categoryIds, decisions);
         data.setSelectedPerks(buildPerks(root.path("selectedPerks"), perkIds));
         data.setMagicItems(buildMagicItems(root.path("magicItems"), skillIds));
 
@@ -214,6 +215,7 @@ public final class LegacyCharacterJsonImporter {
         buildMagicRealmDecisions(root.path("realmOfMagic").path("magicRealmsAvailable"), data.getProfessionId(), decisions);
         buildPerkChoiceDecisions(root.path("perkDecisions"), perkIds, categoryIds, skillIds, decisions);
         buildSkillEnableDecisions(root.path("enabledSkill"), skillIds, decisions);
+        buildTrainingCategoryDecisions(levelUps, inserted, trainingIds, categoryIds, decisions);
         data.setSelectedPerks(buildPerks(root.path("selectedPerks"), perkIds));
         data.setMagicItems(buildMagicItems(root.path("magicItems"), skillIds));
 
@@ -657,6 +659,53 @@ public final class LegacyCharacterJsonImporter {
         final DecisionKey key = DecisionKey.characterWide(DecisionKind.PERK_CHOICE, perkId, grantIndex);
         decisions.put(key.toString(), new DecisionData(new DecisionKeyData(key), 1,
                 List.of(targetId), List.of(targetId)));
+    }
+
+    /**
+     * The legacy {@code trainingDecisions} record, for every training taken, which category the
+     * player picked for each choice category grant (e.g. "Armas·Asta" for the "Guardia" grant that
+     * offers every weapon category). The legacy application counted those granted ranks as ranks the
+     * character already had (see the legacy {@code CharacterPlayer#getTrainingRanks(Category)}), so
+     * they must be rebuilt as {@link DecisionKind#TRAINING_CATEGORY} decisions keyed by the training
+     * and the grant's index, at the level the training was taken. Otherwise
+     * {@code CharacterPlayer#getTrainingCategoryRanks} finds no decision for a choice grant and the
+     * granted ranks are silently dropped (e.g. Gorju's two "Armas·Asta" ranks). A fixed grant (one
+     * option) needs no decision: its ranks always apply.
+     */
+    private static void buildTrainingCategoryDecisions(JsonNode levelUps, int inserted,
+                                                       Map<String, String> trainingIds, Map<String, String> categoryIds,
+                                                       Map<String, DecisionData> decisions) {
+        for (int i = 0; i < levelUps.size(); i++) {
+            final int level = (inserted == 0 ? i : inserted + i) + 1;
+            final JsonNode trainingDecisions = levelUps.get(i).path("trainingDecisions");
+            trainingDecisions.fields().forEachRemaining(training -> {
+                final String trainingId = trainingIds.get(training.getKey());
+                if (trainingId == null) {
+                    return;
+                }
+                training.getValue().path("categoriesSelected").fields().forEachRemaining(selection -> {
+                    final int grantIndex;
+                    try {
+                        grantIndex = Integer.parseInt(selection.getKey());
+                    } catch (final NumberFormatException e) {
+                        return;
+                    }
+                    for (final JsonNode category : selection.getValue().path("categories")) {
+                        final String categoryId = categoryIds.get(category.asText());
+                        if (categoryId != null) {
+                            putTrainingCategoryDecision(decisions, trainingId, grantIndex, level, categoryId);
+                        }
+                    }
+                });
+            });
+        }
+    }
+
+    private static void putTrainingCategoryDecision(Map<String, DecisionData> decisions, String trainingId,
+                                                    int grantIndex, int level, String categoryId) {
+        final DecisionKey key = DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, trainingId, grantIndex, level);
+        decisions.put(key.toString(), new DecisionData(new DecisionKeyData(key), level,
+                List.of(categoryId), List.of(categoryId)));
     }
 
     private static List<MagicObject> buildMagicItems(JsonNode node, Map<String, String> skillIds) {

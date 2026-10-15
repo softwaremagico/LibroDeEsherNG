@@ -120,6 +120,21 @@ public class LegacyCombinedOneColumnCharacterSheetTest {
         Assert.assertTrue(flat.contains("Hablar Idioma regional"), "missing the synthetic speaking row");
     }
 
+    /**
+     * The legacy {@code trainingDecisions.categoriesSelected} of a level-up record which category
+     * the player chose for each choice category grant of a training. They used to be dropped in the
+     * import, so a training that grants ranks in a category picked from a list (here "Guardia"
+     * granting two "Armas·Asta" ranks) lost them: the sheet printed "Rang 0" instead of "Rang 2".
+     */
+    @Test
+    public void importsTrainingCategoryDecisionsSoGrantedCategoryRanksAreKept() throws Exception {
+        final String snapshot = "Gorju_Ping_N5_Kobolds_Lego.rlm";
+        final CharacterData data = LegacyCharacterJsonImporter.importLegacyJson(readSnapshot(snapshot));
+        final CharacterPlayer gorju = CharacterDataMapper.toCharacter(data);
+        Assert.assertEquals(gorju.getCategoryTotalRanks("weaponsPolearm"), Integer.valueOf(2),
+                "the two 'Armas·Asta' ranks granted by the 'Guardia' training must be kept");
+    }
+
     private static String readSnapshot(String path) throws IOException {
         try (final InputStream in = LegacyImportedCharacterSheetTest.class.getResourceAsStream("/" + path)) {
             Assert.assertNotNull(in, "Missing snapshot " + path);
