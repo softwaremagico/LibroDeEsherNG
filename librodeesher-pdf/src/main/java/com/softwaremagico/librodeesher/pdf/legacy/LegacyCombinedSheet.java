@@ -144,11 +144,7 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 					if (!interesting) {
 						// For spell lists, check spell list ranks
 						if (isSpellListCat) {
-							try {
-								interesting = characterPlayer.getSpellListTotalRanks(skill.getId()) > 0;
-							} catch (Exception e) {
-								interesting = false;
-							}
+							interesting = characterPlayer.getSpellListTotalRanks(skill.getId()) > 0;
 						}
 					}
 					if (!interesting) {
@@ -173,18 +169,14 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 
 					// Add the specializations.
 					if (!isSpellListCat) {
-						try {
-							for (String specialization : characterPlayer.getSkillSpecializations(skill.getId())) {
-								PdfPCell skillSpecializedLineCell = skillLine("  " + specialization, "", null,
-										characterPlayer.getSpecializedSkillRanks(skill) + "",
-										LegacyValues.categoryTotalValue(characterPlayer, skill, category) + "",
-										characterPlayer.getItemBonus(BonusType.SKILL, skill.getId()) + "", getBonusValue(skill),
-										getTotalSpecializedValue(skill), new Font(getHandWrittingFont(), getFontSize() - 1),
-										new Font(getHandWrittingFont(), getFontSize() - 1), getSkillLineWidths());
-								getColumnTable().addCell(skillSpecializedLineCell);
-							}
-						} catch (Exception e) {
-							// skip specializations if not applicable
+						for (String specialization : characterPlayer.getSkillSpecializations(skill.getId())) {
+							PdfPCell skillSpecializedLineCell = skillLine("  " + specialization, "", null,
+									characterPlayer.getSpecializedSkillRanks(skill) + "",
+									LegacyValues.categoryTotalValue(characterPlayer, skill, category) + "",
+									characterPlayer.getItemBonus(BonusType.SKILL, skill.getId()) + "", getBonusValue(skill),
+									getTotalSpecializedValue(skill), new Font(getHandWrittingFont(), getFontSize() - 1),
+									new Font(getHandWrittingFont(), getFontSize() - 1), getSkillLineWidths());
+							getColumnTable().addCell(skillSpecializedLineCell);
 						}
 					}
 				}
@@ -524,19 +516,12 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		for (final Skill skill : LegacyValues.skillsOf(characterPlayer, category)) {
 			boolean interesting = characterPlayer.isSkillInteresting(skill);
 			if (!interesting && isSpellListCat) {
-				try {
-					interesting = characterPlayer.getSpellListTotalRanks(skill.getId()) > 0;
-				} catch (Exception e) {
-					interesting = false;
-				}
+				interesting = characterPlayer.getSpellListTotalRanks(skill.getId()) > 0;
 			}
 			if (interesting) {
 				linesByCategory += SKILL_SIZE;
 				if (!isSpellListCat) {
-					try {
-						linesByCategory += characterPlayer.getSkillSpecializations(skill.getId()).size() * SKILL_SIZE;
-					} catch (Exception e) {
-					}
+					linesByCategory += characterPlayer.getSkillSpecializations(skill.getId()).size() * SKILL_SIZE;
 				}
 			}
 		}
@@ -551,12 +536,12 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 			for (final Skill skill : LegacyValues.skillsOf(characterPlayer, category)) {
 				boolean interesting = characterPlayer.isSkillInteresting(skill);
 				if (!interesting && isSpellListCat) {
-					try { interesting = characterPlayer.getSpellListTotalRanks(skill.getId()) > 0; } catch (Exception e) { interesting = false; }
+					interesting = characterPlayer.getSpellListTotalRanks(skill.getId()) > 0;
 				}
 				if (interesting) {
 					linesByCategory += SKILL_SIZE;
 					if (!isSpellListCat) {
-						try { linesByCategory += characterPlayer.getSkillSpecializations(skill.getId()).size() * SKILL_SIZE; } catch (Exception e) {}
+						linesByCategory += characterPlayer.getSkillSpecializations(skill.getId()).size() * SKILL_SIZE;
 					}
 				}
 			}

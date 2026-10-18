@@ -1030,6 +1030,9 @@ public class CharacterPlayer {
 
 	/** Every one of {@code skillId}'s specialities (see {@link Skill#getSpecialities()}) selected so far, across every level. */
 	public List<String> getSkillSpecializations(String skillId) throws InvalidXmlElementException {
+		if (REGIONAL_LANGUAGE_SPEAKING_ID.equals(skillId) || REGIONAL_LANGUAGE_WRITING_ID.equals(skillId)) {
+			return List.of();
+		}
 		final List<String> specialityIds = RulesCatalog.getInstance().getSkill(skillId).getSpecialities();
 		if (specialityIds.isEmpty()) {
 			return List.of();

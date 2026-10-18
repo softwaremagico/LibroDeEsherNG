@@ -1938,6 +1938,14 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void syntheticRegionalLanguageSkillsHaveNoSpecializations() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+
+		Assert.assertTrue(character.getSkillSpecializations(CharacterPlayer.REGIONAL_LANGUAGE_SPEAKING_ID).isEmpty());
+		Assert.assertTrue(character.getSkillSpecializations(CharacterPlayer.REGIONAL_LANGUAGE_WRITING_ID).isEmpty());
+	}
+
+	@Test
 	public void generalizingASkillIsMutuallyExclusiveWithSpecializingIt() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		final LevelUp firstLevel = new LevelUp();
