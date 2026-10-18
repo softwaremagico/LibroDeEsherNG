@@ -226,24 +226,14 @@ final class LegacyValues {
         if (listType != null && characterPlayer != null) {
             final List<Skill> spellListSkills = new ArrayList<>();
             for (final MagicSpellList spellList : RulesCatalog.getInstance().getSpellLists()) {
-                try {
-                    if (characterPlayer.classifySpellList(spellList.getId()) == listType) {
-                        final Skill skillWrapper = new Skill(spellList.getId());
-                        skillWrapper.setName(spellList.getName());
-                        skillWrapper.setCategoryId(category.getId());
-                        spellListSkills.add(skillWrapper);
-                    }
-                } catch (Exception e) {
-                    // Skip if classification fails
+                if (characterPlayer.classifySpellList(spellList.getId()) == listType) {
+                    final Skill skillWrapper = new Skill(spellList.getId());
+                    skillWrapper.setName(spellList.getName());
+                    skillWrapper.setCategoryId(category.getId());
+                    spellListSkills.add(skillWrapper);
                 }
             }
-            spellListSkills.sort((a, b) -> {
-                try {
-                    return a.getName().getSpanish().compareTo(b.getName().getSpanish());
-                } catch (Exception ex) {
-                    return 0;
-                }
-            });
+            spellListSkills.sort((a, b) -> spanishName(a).compareTo(spanishName(b)));
             return spellListSkills;
         }
         final List<Skill> skills = new ArrayList<>();
@@ -265,14 +255,15 @@ final class LegacyValues {
             }
         }
         skills.addAll(regionalLanguageSkills(characterPlayer, category));
-        skills.sort((a, b) -> {
-            try {
-                return a.getName().getSpanish().compareTo(b.getName().getSpanish());
-            } catch (Exception e) {
-                return 0;
-            }
-        });
+        skills.sort((a, b) -> spanishName(a).compareTo(spanishName(b)));
         return deduplicateByName(characterPlayer, skills);
+    }
+
+    private static String spanishName(Skill skill) {
+        if (skill.getName() == null || skill.getName().getSpanish() == null) {
+            return skill.getId() == null ? "" : skill.getId();
+        }
+        return skill.getName().getSpanish();
     }
 
     /**
@@ -313,12 +304,7 @@ final class LegacyValues {
     private static List<Skill> deduplicateByName(CharacterPlayer characterPlayer, List<Skill> skills) {
         final Map<String, Skill> unique = new LinkedHashMap<>();
         for (final Skill skill : skills) {
-            String name;
-            try {
-                name = skill.getName().getSpanish();
-            } catch (Exception e) {
-                name = skill.getId();
-            }
+            final String name = spanishName(skill);
             final Skill previous = unique.get(name);
             if (previous == null || isMorePopulated(characterPlayer, skill, previous)) {
                 unique.put(name, skill);
@@ -331,12 +317,8 @@ final class LegacyValues {
         if (characterPlayer == null) {
             return false;
         }
-        try {
-            return characterPlayer.getSkillTotalRanks(candidate.getId())
-                    > characterPlayer.getSkillTotalRanks(previous.getId());
-        } catch (Exception e) {
-            return false;
-        }
+        return characterPlayer.getSkillTotalRanks(candidate.getId())
+                > characterPlayer.getSkillTotalRanks(previous.getId());
     }
 
     /**
@@ -576,7 +558,7 @@ final class LegacyValues {
         if (skill.getCategoryId() != null && !skill.getCategoryId().isEmpty()) {
             try {
                 return RulesCatalog.getInstance().getCategory(skill.getCategoryId());
-            } catch (Exception e) {
+            } catch (InvalidXmlElementException e) {
                 // fall through
             }
         }
