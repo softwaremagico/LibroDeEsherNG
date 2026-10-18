@@ -3,6 +3,9 @@ package com.softwaremagico.librodeesher.pdf.legacy;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.category.Category;
+import com.softwaremagico.librodeesher.decision.Decision;
+import com.softwaremagico.librodeesher.decision.DecisionKey;
+import com.softwaremagico.librodeesher.decision.DecisionKind;
 import com.softwaremagico.librodeesher.equipment.BonusType;
 import com.softwaremagico.librodeesher.equipment.Equipment;
 import com.softwaremagico.librodeesher.equipment.MagicObject;
@@ -12,6 +15,8 @@ import com.softwaremagico.librodeesher.language.TranslatedText;
 import com.softwaremagico.librodeesher.perk.Perk;
 import com.softwaremagico.librodeesher.perk.PerkBonus;
 import com.softwaremagico.librodeesher.perk.PerkBonusKind;
+import com.softwaremagico.librodeesher.perk.PerkChoiceGrant;
+import com.softwaremagico.librodeesher.perk.PerkChoiceScope;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.race.RaceSpecial;
@@ -67,10 +72,12 @@ public final class LegacyTextBlocks {
         }
         final StringBuilder text = new StringBuilder("Talentos:\n").append(SEPARATOR).append("\n");
         for (final Perk perk : perks) {
-            text.append(perk.getName().getSpanish()).append(": ").append(perkLongDescription(perk)).append("\n\n");
+            text.append(perk.getName().getSpanish()).append(": ")
+                    .append(perkLongDescription(character, perk)).append("\n\n");
         }
         for (final Perk weakness : weaknesses) {
-            text.append(weakness.getName().getSpanish()).append(": ").append(perkLongDescription(weakness))
+            text.append(weakness.getName().getSpanish()).append(": ")
+                    .append(perkLongDescription(character, weakness))
                     .append("\n\n");
         }
         return text + "\n\n";
@@ -82,7 +89,8 @@ public final class LegacyTextBlocks {
      * the legacy order: flat categories, flat skills, conditional categories, conditional skills)
      * followed by ". " and the free-text description.
      */
-    private static String perkLongDescription(Perk perk) throws InvalidXmlElementException {
+    private static String perkLongDescription(CharacterPlayer character, Perk perk)
+            throws InvalidXmlElementException {
         final List<PerkBonus> flatCategories = new ArrayList<>();
         final List<PerkBonus> flatSkills = new ArrayList<>();
         final List<PerkBonus> conditionalCategories = new ArrayList<>();
@@ -98,15 +106,50 @@ public final class LegacyTextBlocks {
                 (conditional ? conditionalSkills : flatSkills).add(bonus);
             }
         }
-        final String bonuses = perkBonusesBlock(flatCategories)
+        final String fixedBonuses = perkBonusesBlock(flatCategories)
                 + perkBonusesBlock(flatSkills)
                 + perkBonusesBlock(conditionalCategories)
                 + perkBonusesBlock(conditionalSkills);
+        final String choiceBonuses = perkChoiceBonuses(character, perk);
+        final String bonuses = fixedBonuses.isEmpty() ? choiceBonuses
+                : choiceBonuses.isEmpty() ? fixedBonuses : fixedBonuses + ", " + choiceBonuses;
         String description = name(perk.getDescription());
         if (!bonuses.isEmpty()) {
             description = bonuses + ". " + description;
         }
         return description;
+    }
+
+    private static String perkChoiceBonuses(CharacterPlayer character, Perk perk) {
+        final List<String> bonuses = new ArrayList<>();
+        final List<PerkChoiceGrant> grants = perk.getChoiceGrants();
+        for (int i = 0; i < grants.size(); i++) {
+            final PerkChoiceGrant grant = grants.get(i);
+            final DecisionKey key = DecisionKey.characterWide(DecisionKind.PERK_CHOICE, perk.getId(), i);
+            final Decision decision = character.getDecisions().get(key);
+            final List<String> selectedOptions;
+            if (decision != null) {
+                selectedOptions = decision.getSelectedOptions();
+            } else if (grant.getCategoryId() != null) {
+                selectedOptions = List.of(grant.getCategoryId());
+            } else if (grant.getSkillId() != null) {
+                selectedOptions = List.of(grant.getSkillId());
+            } else {
+                continue;
+            }
+            final boolean categoryTarget = grant.getCategoryId() != null
+                    || grant.getScope() == PerkChoiceScope.ANY_CATEGORY
+                    || grant.getScope() == PerkChoiceScope.ANY_WEAPON_CATEGORY;
+            final List<String> targets = selectedOptions.stream()
+                    .map(target -> elementSpanishName(target, categoryTarget)).toList();
+            final StringBuilder bonus = new StringBuilder("{").append(String.join(" | ", targets)).append("} (")
+                    .append(grant.getValue()).append(")");
+            if (grant.getOptionsToChoose() != null && grant.getOptionsToChoose() != 1) {
+                bonus.append('[').append(grant.getOptionsToChoose()).append(']');
+            }
+            bonuses.add(bonus.toString());
+        }
+        return String.join(", ", bonuses);
     }
 
     private static String perkBonusesBlock(List<PerkBonus> bonuses) {

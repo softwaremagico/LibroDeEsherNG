@@ -15,6 +15,7 @@ import com.softwaremagico.librodeesher.culture.CultureLanguageRank;
 import com.softwaremagico.librodeesher.decision.Decision;
 import com.softwaremagico.librodeesher.decision.DecisionKey;
 import com.softwaremagico.librodeesher.decision.DecisionKind;
+import com.softwaremagico.librodeesher.decision.InvalidDecisionException;
 import com.softwaremagico.librodeesher.decision.Decisions;
 import com.softwaremagico.librodeesher.dice.Roll;
 import com.softwaremagico.librodeesher.equipment.BonusType;
@@ -4463,7 +4464,7 @@ public class CharacterPlayer {
 	}
 
 	/**
-	 * Resolves one of a selected perk's "choose N" grants ({@link PerkChoiceGrant},
+	 * Resolves one target of a selected perk's "choose N" grants ({@link PerkChoiceGrant},
 	 * the {@code "{...}"} entries of its "bonuses" column): a grant that already
 	 * names a specific category ({@link PerkChoiceGrant#getCategoryId()}) or skill
 	 * ({@link PerkChoiceGrant#getSkillId()}) auto-resolves to it (there is nothing
@@ -4472,20 +4473,35 @@ public class CharacterPlayer {
 	 * category, or every weapon skill, per {@link PerkChoiceScope}).
 	 *
 	 * <p>{@link PerkChoiceGrant#getOptionsToChoose()} (how many distinct targets a
-	 * grant lets the player pick) is not enforced here: every choice grant in the
-	 * shipped data effectively resolves to a single target anyway (either the
-	 * grant already names one, or its one N&gt;1 case still only has that same
-	 * single, fixed category as its "pool"), so a single {@code selectedTargetId}
-	 * per grant covers every real perk; future work if a perk ever needs more.</p>
+	 * grant lets the player pick) is validated here. A grant with
+	 * {@code optionsToChoose == -1} accepts any non-empty number of distinct
+	 * options from its scope.
 	 *
 	 * <p>A perk's choices are character-wide and decided once, at the level the perk
 	 * is taken.</p>
 	 *
 	 * @param perkId    the selected perk this grant belongs to.
 	 * @param grantIndex the grant's index within {@link Perk#getChoiceGrants()}.
+	 * @param grant the selected perk grant.
+	 * @param selectedTargetId the single target selected from the grant's scope.
 	 */
 	public String applyPerkChoiceGrant(String perkId, int grantIndex, PerkChoiceGrant grant, String selectedTargetId)
 			throws InvalidXmlElementException {
+		final List<String> selectedTargetIds = selectedTargetId == null ? null : List.of(selectedTargetId);
+		return applyPerkChoiceGrant(perkId, grantIndex, grant, selectedTargetIds).get(0);
+	}
+
+	/**
+	 * Resolves a perk grant that may choose more than one target.
+	 *
+	 * @param perkId the selected perk this grant belongs to.
+	 * @param grantIndex the grant's index within {@link Perk#getChoiceGrants()}.
+	 * @param grant the selected perk grant.
+	 * @param selectedTargetIds the distinct targets selected from the grant's scope.
+	 * @return the selected targets in the order they were chosen.
+	 */
+	public List<String> applyPerkChoiceGrant(String perkId, int grantIndex, PerkChoiceGrant grant,
+			List<String> selectedTargetIds) throws InvalidXmlElementException {
 		final DecisionKey key = DecisionKey.characterWide(DecisionKind.PERK_CHOICE, perkId, grantIndex);
 		final Decision decision = this.decideOrReuse(key, () -> {
 			if (grant.getCategoryId() != null) {
@@ -4495,12 +4511,20 @@ public class CharacterPlayer {
 				return Decision.fixed(List.of(grant.getSkillId()));
 			}
 			try {
-				return Decision.select(this.getPerkChoiceScopeOptions(grant.getScope()), selectedTargetId);
+				final int choices = grant.getOptionsToChoose() == null ? 1 : grant.getOptionsToChoose();
+				if (choices == -1 && (selectedTargetIds == null || selectedTargetIds.isEmpty())) {
+					throw new InvalidDecisionException("At least one target must be selected from " + grant.getScope() + ".");
+				}
+				final int selectedCount = choices == -1
+						? selectedTargetIds.size()
+						: choices;
+				return Decision.selectMultiple(this.getPerkChoiceScopeOptions(grant.getScope()),
+						selectedTargetIds, selectedCount);
 			} catch (final InvalidXmlElementException e) {
 				throw new IllegalStateException(e);
 			}
 		});
-		return decision.getSelectedOption();
+		return decision.getSelectedOptions();
 	}
 
 	/** Every category/skill id {@link PerkChoiceScope#getScope()} lets the player pick from. */
@@ -4561,9 +4585,16 @@ public class CharacterPlayer {
 			final Perk perk = RulesCatalog.getInstance().getPerk(selectedPerk.getPerkId());
 			final List<PerkChoiceGrant> grants = perk.getChoiceGrants();
 			for (int i = 0; i < grants.size(); i++) {
+				final PerkChoiceGrant grant = grants.get(i);
 				final DecisionKey key = DecisionKey.characterWide(DecisionKind.PERK_CHOICE, perk.getId(), i);
 				if (this.decisions.isDecided(key)) {
-					resolved.add(Map.entry(grants.get(i), this.decisions.get(key).getSelectedOption()));
+					for (final String selectedOption : this.decisions.get(key).getSelectedOptions()) {
+						resolved.add(Map.entry(grant, selectedOption));
+					}
+				} else if (grant.getCategoryId() != null) {
+					resolved.add(Map.entry(grant, grant.getCategoryId()));
+				} else if (grant.getSkillId() != null) {
+					resolved.add(Map.entry(grant, grant.getSkillId()));
 				}
 			}
 		}

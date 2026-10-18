@@ -120,28 +120,33 @@ public final class PerkProbability {
     /**
      * Resolves the "choose N of..." grants of the already-selected {@link #perk} to random targets,
      * mirroring the legacy {@code PerkProbability#selectOptions()}: an explicit single category/
-     * skill is kept as-is; a whole scope is shuffled and a target the character is prepared for (an
-     * enabled category with ranks, or an interesting skill) is preferred. Every resolution lands in
-     * the decision layer, so it is reused on subsequent calls.
+     * skill is kept as-is; a whole scope is shuffled and targets the character is prepared for (an
+     * enabled category with ranks, or an interesting skill) are preferred. Every resolution lands
+     * in the decision layer, so it is reused on subsequent calls.
      */
     public void selectOptions() throws InvalidXmlElementException {
         final List<PerkChoiceGrant> grants = perk.getChoiceGrants();
         for (int i = 0; i < grants.size(); i++) {
             final PerkChoiceGrant grant = grants.get(i);
-            final String target;
+            final List<String> targets;
             if (grant.getCategoryId() != null) {
-                target = grant.getCategoryId();
+                targets = List.of(grant.getCategoryId());
             } else if (grant.getSkillId() != null) {
-                target = grant.getSkillId();
+                targets = List.of(grant.getSkillId());
             } else if (isCategoryScope(grant.getScope())) {
-                target = selectTarget(getScopeOptions(grant.getScope()),
-                        candidate -> isInterestingCategory(candidate));
+                targets = selectTargets(getScopeOptions(grant.getScope()), choiceCount(grant),
+                        this::isInterestingCategory);
             } else {
-                target = selectTarget(getScopeOptions(grant.getScope()),
-                        candidate -> isInterestingSkill(candidate));
+                targets = selectTargets(getScopeOptions(grant.getScope()), choiceCount(grant),
+                        this::isInterestingSkill);
             }
-            characterPlayer.applyPerkChoiceGrant(perk.getId(), i, grant, target);
+            characterPlayer.applyPerkChoiceGrant(perk.getId(), i, grant, targets);
         }
+    }
+
+    private static int choiceCount(PerkChoiceGrant grant) {
+        final Integer optionsToChoose = grant.getOptionsToChoose();
+        return optionsToChoose == null || optionsToChoose == -1 ? 1 : optionsToChoose;
     }
 
     /** A perk that would overflow the race-derived perk point budget scores the lowest possible value. */
@@ -286,14 +291,21 @@ public final class PerkProbability {
         }
     }
 
-    private static String selectTarget(List<String> options, Function<String, Boolean> isInteresting) {
+    private static List<String> selectTargets(List<String> options, int count,
+            Function<String, Boolean> isInteresting) {
         RandomValues.shuffle(options);
+        final List<String> selected = new ArrayList<>();
         for (final String option : options) {
-            if (isInteresting.apply(option)) {
-                return option;
+            if (selected.size() < count && isInteresting.apply(option)) {
+                selected.add(option);
             }
         }
-        return options.get(0);
+        for (final String option : options) {
+            if (selected.size() < count && !selected.contains(option)) {
+                selected.add(option);
+            }
+        }
+        return selected;
     }
 
     private static boolean isCategoryScope(PerkChoiceScope scope) {

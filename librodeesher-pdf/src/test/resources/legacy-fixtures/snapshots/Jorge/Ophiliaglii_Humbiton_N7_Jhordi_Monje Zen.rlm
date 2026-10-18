@@ -1,0 +1,2553 @@
+{
+  "version": "2.1.1",
+  "name": "Ophiliaglii Humbiton",
+  "sex": "MALE",
+  "characteristicsInitialTemporalValues": {
+    "Me": 47,
+    "Pr": 90,
+    "Ag": 85,
+    "Fu": 85,
+    "Ra": 85,
+    "Ad": 90,
+    "Co": 31,
+    "Rp": 85,
+    "In": 31,
+    "Em": 31
+  },
+  "characteristicsPotentialValues": {
+    "Me": 68,
+    "Pr": 94,
+    "Ag": 95,
+    "Fu": 99,
+    "Ra": 97,
+    "Ad": 96,
+    "Co": 80,
+    "Rp": 100,
+    "In": 76,
+    "Em": 59
+  },
+  "characteristicsTemporalUpdatesRolls": {
+    "Me": {
+      "rolls": [
+        {
+          "firstDice": 8,
+          "secondDice": 8,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "a70f54d9-2a09-4deb-90ba-a6bdd5bd892f"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 2,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "ff541d46-643f-4386-945f-9b83813d8c30"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 3,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "c2fecfcd-a97e-47c2-be7f-f5f378e582cd"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 3,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "79e226ce-dadc-4072-a51a-501698de4acd"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 7,
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "3b4b5b79-3dac-416f-99c9-c7f7c2d2b09d"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 4,
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "57e258ff-c05a-4698-b87c-921186c0a208"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 1,
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "a151587b-fa09-473a-8438-1b88f187ff85"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 2,
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "62fc1a9a-8483-4480-b888-1becf8807881"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 2,
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "38522b7d-84e6-4fae-ba06-4191f7b8fc7b"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 6,
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "0cc0d9d4-6982-4f7f-a4e8-e6f26f42128f"
+        }
+      ],
+      "characteristicAbbreviature": "Me",
+      "creationTime": "Aug 15, 2015 4:22:00 PM",
+      "updateTime": "Aug 15, 2015 4:22:00 PM",
+      "comparationId": "72274c04-21aa-42aa-9b13-d0a25979503c"
+    },
+    "Pr": {
+      "rolls": [
+        {
+          "firstDice": 7,
+          "secondDice": 5,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "7fc9f7e5-fe24-4bd6-bc3d-6e8827964e59"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 8,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "83403bb2-c80a-4119-a8c9-31f4de5691f5"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 8,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "96346039-9f5b-436d-8249-cc6a328f3763"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 9,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "c9ae1f91-fdcb-4242-9f77-9218179ea947"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 8,
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "8c4a7a02-0819-4d1b-b694-b1b785a7816f"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 5,
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "cba67fc0-9907-41f9-a235-959850dc6252"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 7,
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "ed0e11fa-95ee-4ae0-8dee-21b99f53c857"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 8,
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "2a82480c-efd8-422e-95c8-9188e38a6238"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 4,
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "767cb2c0-9cf0-40a0-99e6-21f31b2ade34"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 8,
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "689f4845-d0b7-42d7-bb29-2b98808fd55f"
+        }
+      ],
+      "characteristicAbbreviature": "Pr",
+      "creationTime": "Aug 15, 2015 4:22:00 PM",
+      "updateTime": "Aug 15, 2015 4:22:00 PM",
+      "comparationId": "9f360f0d-2e49-49c4-84ef-0ea2c36b56f6"
+    },
+    "Ag": {
+      "rolls": [
+        {
+          "firstDice": 3,
+          "secondDice": 3,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "9d6c94cf-63ba-4586-961d-9d48da856f8a"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 6,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "c8a03bbe-ac47-4f6d-833d-4435d04f9376"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 6,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "0f8f12f7-e45a-4891-b472-c2ee9c9b2815"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 5,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "b61e8863-3ea6-4b9b-8e95-69a793d465ad"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 7,
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "deb53942-24ea-4d86-8b14-f7bf7e2502ea"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 5,
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "9feb0aaa-c8d3-40e4-a12b-b82cc9273aee"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 7,
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "8ae087bc-bb50-49fd-aa04-d647bf1ede51"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 4,
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "aaa8ae6a-d7ee-49da-9bac-67754a7b0f76"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 3,
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "a2a230dc-03a3-413d-8ddf-4dd881c2347c"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 6,
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "7d4fb2a9-49bb-4f5f-afd3-c7ca3bbd489a"
+        }
+      ],
+      "characteristicAbbreviature": "Ag",
+      "creationTime": "Aug 15, 2015 4:22:00 PM",
+      "updateTime": "Aug 15, 2015 4:22:00 PM",
+      "comparationId": "552b206f-8021-47cf-bd5b-fe99c5d7e9b8"
+    },
+    "Fu": {
+      "rolls": [
+        {
+          "firstDice": 4,
+          "secondDice": 3,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "bb7d3157-f860-4765-aeb3-b3145275455d"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 1,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "91b97a33-6fd2-4cfd-9f96-72b2a6f9405e"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 5,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "d61a13d2-6f03-41b2-88d4-4c3079ebbe63"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 9,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "52de4f0f-340c-4e31-8936-eb7f2c39c098"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 10,
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "fce5de81-e0d9-4032-a0dc-393fa1c47016"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 8,
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "a1673e50-24ff-40ef-b37e-8c42aff2032e"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 6,
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "6c9199cc-c7f5-482a-a61f-d684aa74b038"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 5,
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "9d4bd448-b045-403e-b5df-24f55d05674c"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 3,
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "c317d860-fab4-4833-9a55-4ccf3a7c320f"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 6,
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "d9010794-b607-46ad-a697-26a79fd6fa30"
+        }
+      ],
+      "characteristicAbbreviature": "Fu",
+      "creationTime": "Aug 15, 2015 4:22:00 PM",
+      "updateTime": "Aug 15, 2015 4:22:00 PM",
+      "comparationId": "c22a307b-e9e5-4f09-8cb2-30c9eff18dec"
+    },
+    "Ra": {
+      "rolls": [
+        {
+          "firstDice": 10,
+          "secondDice": 2,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "91defbf6-41d9-408d-9954-0e66682ce8c3"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 1,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "f045e223-e22a-4047-8703-da1af12e7387"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 7,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "dd5117c3-4942-4406-8138-1e3e9647ec2f"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 5,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "a3d391d9-7e51-4819-b034-ccf38f8483ac"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 8,
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "0d7d4734-dfb9-4685-a5cd-1553f2647d94"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 9,
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "9bfe6789-a184-42ee-9883-3637ada2c43e"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 6,
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "27975751-dc66-4785-b8ba-c1d3224e1299"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 9,
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "76c9a684-52c1-46fd-b53a-6f2b112dcfab"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 8,
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "a2ac8494-10a2-4f2c-972c-68ab11889ecc"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 2,
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "8e6d64af-5fbd-4ee9-83cb-759504b7f7fb"
+        }
+      ],
+      "characteristicAbbreviature": "Ra",
+      "creationTime": "Aug 15, 2015 4:22:00 PM",
+      "updateTime": "Aug 15, 2015 4:22:00 PM",
+      "comparationId": "5ffd46eb-d61f-4a12-a302-60967c45b1b6"
+    },
+    "Ad": {
+      "rolls": [
+        {
+          "firstDice": 9,
+          "secondDice": 4,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "1a2bda11-d294-48a9-a982-315ba44bfd46"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 6,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "36982191-a9a8-48b6-a1ad-f8e07a853fa7"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 3,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "c3d24e26-5a61-4c05-9708-4196ece22f3f"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 9,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "5dd3e6dd-6d61-4219-9790-fbd21f82d74e"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 1,
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "e60b961e-2615-4f3d-935e-680e8abfb10b"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 5,
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "0ce8df5f-3e91-407d-b0b1-af3e66ae5d60"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 4,
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "89885522-068d-4505-acf2-f037bc480652"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 3,
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "5b35adf1-aabe-46b2-bff9-5dd62fd00178"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 10,
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "c31acb2c-8da5-42f0-bdd8-1a49398c2f08"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 3,
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "9a15f48f-2d0a-4848-b1a9-da314d5f9e25"
+        }
+      ],
+      "characteristicAbbreviature": "Ad",
+      "creationTime": "Aug 15, 2015 4:22:00 PM",
+      "updateTime": "Aug 15, 2015 4:22:00 PM",
+      "comparationId": "1bbf3365-3e9e-43be-b130-1f44c487ef0e"
+    },
+    "Co": {
+      "rolls": [
+        {
+          "firstDice": 4,
+          "secondDice": 3,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "cc3cbbaf-4b1e-4142-aeb9-301bffabf6be"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 5,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "7303502a-62d4-4749-96b3-66427be0ede8"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 9,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "c82d98f8-3af4-48a7-a285-3540a82896b6"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 6,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "d424cb83-adca-44b3-95bc-6e8859403aca"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 7,
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "13cbc114-a01e-4f59-884e-872b50d390bf"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 1,
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "19c88361-3686-440a-9f6a-22b3a6e1e4c4"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 7,
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "628ee1fb-300b-47ce-a7ac-16e99d96a385"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 10,
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "e7ea2a4e-2aa9-44c2-b24a-fcf20886ec71"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 2,
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "bb6d2de6-bff9-4927-892a-deb47d4ee004"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 3,
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "c715c5ff-3d6d-4569-b699-c536a6394978"
+        }
+      ],
+      "characteristicAbbreviature": "Co",
+      "creationTime": "Aug 15, 2015 4:22:00 PM",
+      "updateTime": "Aug 15, 2015 4:22:00 PM",
+      "comparationId": "a639d526-882a-4643-8fed-7bb820a6d0e4"
+    },
+    "Rp": {
+      "rolls": [
+        {
+          "firstDice": 9,
+          "secondDice": 1,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "025e064f-3660-4161-aa35-deaa0020dcaa"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 5,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "52a4e6f2-95da-468b-b458-c3ad3fa278cf"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 7,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "c4676dac-ca3a-425f-8cd7-61d9b9c5face"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 10,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "b9e6d5ad-2868-442f-9131-9f90876dbde4"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 3,
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "186ac0fd-0a40-46dd-b5bf-ade6478a839f"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 6,
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "f26f1b25-5f91-4fe8-8990-644512de9b6a"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 8,
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "bafed0d1-e1f2-4441-868b-c2490c72f20c"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 8,
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "9a14026e-16e7-4708-88c5-ecd526d9bf80"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 9,
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "f4aaead5-3b79-4246-bed0-22fca2f57043"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 5,
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "827d4732-9c50-4e22-bdb9-31a2af8a0d3d"
+        }
+      ],
+      "characteristicAbbreviature": "Rp",
+      "creationTime": "Aug 15, 2015 4:22:00 PM",
+      "updateTime": "Aug 15, 2015 4:22:00 PM",
+      "comparationId": "4f152aa9-e9f5-4402-8d94-5dae863ff3f8"
+    },
+    "In": {
+      "rolls": [
+        {
+          "firstDice": 2,
+          "secondDice": 3,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "5e14449a-4c21-4766-8bad-9baba46f6884"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 7,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "892d6688-c3e8-438d-9e1f-2bf6aa19fe38"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 8,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "11fa25c6-51e6-493b-b1a0-b33a31959a59"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 2,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "6a419e0f-b717-4596-8599-07fe9df10f19"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 7,
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "0404bcfb-a3d3-48c2-84d9-97b0b3415eb4"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 5,
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "83233316-bf4d-4484-83f2-497e00750cec"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 10,
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "907ddcc9-de94-4ee8-a3ac-845fe18c7bd2"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 2,
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "bf9091e7-3943-4fd6-9974-c17c94cb5a83"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 8,
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "3b7e3031-9956-4b04-b6f5-d4393d11c680"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 10,
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "792cdde6-9f33-4738-98ba-04d39667e129"
+        }
+      ],
+      "characteristicAbbreviature": "In",
+      "creationTime": "Aug 15, 2015 4:22:00 PM",
+      "updateTime": "Aug 15, 2015 4:22:00 PM",
+      "comparationId": "5514313a-26a4-4bbf-abbd-c57d071e0a1f"
+    },
+    "Em": {
+      "rolls": [
+        {
+          "firstDice": 7,
+          "secondDice": 3,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "ff44ef33-b624-4027-9f4d-0698919a8f4d"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 4,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "c11b0c7d-1729-47a9-ad7a-2cbdfeb62428"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 9,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "e2674493-e29e-4de8-8f7b-6001eda56eba"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 7,
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "78fe0c69-e662-42fb-b093-a1c6e0b76265"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 9,
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "7fb3a953-6a11-459d-bf62-829946ec52c7"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 3,
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "c407c3ed-f0bc-4855-a944-9c8985541ba2"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 7,
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "2eb448a4-c038-43ed-b7b1-83a7826149b2"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 7,
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "708c9930-01de-48d1-85df-6e214443bcc3"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 10,
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "c77e6a66-f58d-4e74-a5ad-be93eb467c29"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 6,
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "8b7e99f0-acc0-4e45-8325-e9335753707b"
+        }
+      ],
+      "characteristicAbbreviature": "Em",
+      "creationTime": "Aug 15, 2015 4:22:00 PM",
+      "updateTime": "Aug 15, 2015 4:22:00 PM",
+      "comparationId": "4feb6ad6-b31d-4734-95f4-0282959c3577"
+    }
+  },
+  "characteristicsConfirmed": true,
+  "raceName": "Jhordi",
+  "cultureName": "Llanuras",
+  "cultureDecisions": {
+    "skillRanks": {
+      "Lanza": 2,
+      "Daga Arrojadiza": 1,
+      "Espada": 1,
+      "Arco Compuesto": 2
+    },
+    "hobbyRanks": {
+      "Leer Huellas": 1,
+      "Cocinar": 1,
+      "Carrera de Fondo": 1,
+      "Acechar": 1,
+      "Trabajar la Madera": 1,
+      "Trabajar el Cuero": 1,
+      "Predicción del Clima": 1,
+      "Rastrear": 1,
+      "Observación": 1,
+      "Manejo de los Animales": 1,
+      "Manejo de Cuerdas": 1,
+      "Orientación Celeste": 1
+    },
+    "spellRanks": {},
+    "languageRanks": {
+      "Hablar Habla Común": 2,
+      "Hablar Habla de las Llanuras": 2,
+      "Hablar Habla Alta": 4,
+      "Escribir Habla Común": 1
+    },
+    "creationTime": "Aug 15, 2015 4:22:00 PM",
+    "updateTime": "Aug 15, 2015 4:22:00 PM",
+    "comparationId": "ff083408-d60c-4405-96bd-55a732161c2a"
+  },
+  "professionName": "Monje Zen",
+  "professionDecisions": {
+    "weaponsCost": {
+      "Armas·2manos": {
+        "rankCost": [
+          6
+        ],
+        "categoryCostId": "WEAPON1",
+        "creationTime": "Aug 16, 2015 10:35:18 AM",
+        "updateTime": "Aug 16, 2015 10:35:18 AM",
+        "comparationId": "ad081310-4d19-4189-8770-0c115fe9d534"
+      },
+      "Armas·Arrojadizas": {
+        "rankCost": [
+          8
+        ],
+        "categoryCostId": "WEAPON2",
+        "creationTime": "Aug 16, 2015 10:35:18 AM",
+        "updateTime": "Aug 16, 2015 10:35:18 AM",
+        "comparationId": "a8c2ac73-44a2-41f4-9436-c521fef06ac5"
+      },
+      "Armas·Artillería": {
+        "rankCost": [
+          8
+        ],
+        "categoryCostId": "WEAPON3",
+        "creationTime": "Aug 16, 2015 10:35:18 AM",
+        "updateTime": "Aug 16, 2015 10:35:18 AM",
+        "comparationId": "15a41f09-3345-4bea-aad7-5530eab882ad"
+      },
+      "Armas·Asta": {
+        "rankCost": [
+          8
+        ],
+        "categoryCostId": "WEAPON4",
+        "creationTime": "Aug 16, 2015 10:35:18 AM",
+        "updateTime": "Aug 16, 2015 10:35:18 AM",
+        "comparationId": "aecbbb78-07e6-4865-bc8c-283ba8ee353f"
+      },
+      "Armas·Contundentes": {
+        "rankCost": [
+          15
+        ],
+        "categoryCostId": "WEAPON5",
+        "creationTime": "Aug 16, 2015 10:35:19 AM",
+        "updateTime": "Aug 16, 2015 10:35:19 AM",
+        "comparationId": "4ff1370b-702a-493e-b574-afe31c7861bf"
+      },
+      "Armas·Filo": {
+        "rankCost": [
+          15
+        ],
+        "categoryCostId": "WEAPON6",
+        "creationTime": "Aug 16, 2015 10:35:19 AM",
+        "updateTime": "Aug 16, 2015 10:35:19 AM",
+        "comparationId": "daeabb66-6411-4386-9882-cf88d25a72b0"
+      },
+      "Armas·Proyectiles": {
+        "rankCost": [
+          15
+        ],
+        "categoryCostId": "WEAPON7",
+        "creationTime": "Aug 16, 2015 10:35:19 AM",
+        "updateTime": "Aug 16, 2015 10:35:19 AM",
+        "comparationId": "643a982a-e93a-48ad-a774-1e1e9889737b"
+      }
+    },
+    "commonSkillsChosen": [
+      "Estilo de las Ocho Hadas Borrachas"
+    ],
+    "restrictedSkillsChosen": [],
+    "professionalSkillsChosen": [],
+    "creationTime": "Aug 15, 2015 4:22:00 PM",
+    "updateTime": "Aug 15, 2015 4:22:00 PM",
+    "comparationId": "61d5d5fb-84b0-49e6-a76a-2dddfcf1e8a1"
+  },
+  "realmOfMagic": {
+    "magicRealmsAvailable": [
+      "Mentalismo"
+    ],
+    "creationTime": "Aug 16, 2015 10:48:54 AM",
+    "updateTime": "Aug 16, 2015 10:48:54 AM",
+    "comparationId": "75761112-3f8c-4db3-b2e6-8847bcc69b6a"
+  },
+  "historial": {
+    "categories": [
+      "Artes Marciales·Golpes",
+      "Artes Marciales·Maniobras de Combate",
+      "Autocontrol",
+      "Influencia"
+    ],
+    "skills": [],
+    "characteristicsUpdates": [],
+    "creationTime": "Aug 15, 2015 4:22:00 PM",
+    "updateTime": "Aug 15, 2015 4:22:00 PM",
+    "comparationId": "33c859bb-3df7-4fdb-baae-34d24b17ec80"
+  },
+  "selectedPerks": [
+    {
+      "name": "Adherencia",
+      "cost": 25,
+      "creationTime": "Aug 15, 2015 4:41:49 PM",
+      "updateTime": "Aug 15, 2015 4:41:49 PM",
+      "comparationId": "fb464a73-2cbe-4c18-b3ed-d03fffbd94ea"
+    },
+    {
+      "name": "Adicción Mínima",
+      "cost": -5,
+      "creationTime": "Aug 15, 2015 4:41:50 PM",
+      "updateTime": "Aug 15, 2015 4:41:50 PM",
+      "comparationId": "9d2ab1cf-5967-41f2-a132-dc2b5774fe86"
+    },
+    {
+      "name": "Adiestramiento en Artes Marciales (Máximo)",
+      "cost": 30,
+      "creationTime": "Aug 15, 2015 4:41:52 PM",
+      "updateTime": "Aug 15, 2015 4:41:52 PM",
+      "comparationId": "49ce2c07-be07-4c46-8140-1d0883c82b61"
+    },
+    {
+      "name": "Piel Sensible",
+      "cost": -10,
+      "creationTime": "Aug 15, 2015 4:42:30 PM",
+      "updateTime": "Aug 15, 2015 4:42:30 PM",
+      "comparationId": "45c45712-5cbd-4ba1-a2c4-55b50164cfeb"
+    },
+    {
+      "name": "Piel Gruesa (Mayor)",
+      "cost": 15,
+      "creationTime": "Aug 15, 2015 4:42:31 PM",
+      "updateTime": "Aug 15, 2015 4:42:31 PM",
+      "comparationId": "3a04089c-5f11-445b-8dd3-ce34355f70a6"
+    },
+    {
+      "name": "Promesa (Menor)",
+      "cost": -7,
+      "creationTime": "Aug 15, 2015 4:42:52 PM",
+      "updateTime": "Aug 15, 2015 4:42:52 PM",
+      "comparationId": "0be4f775-e9b9-4622-9d18-afaa9b27b30f"
+    },
+    {
+      "name": "Falta de Alcance",
+      "cost": -20,
+      "creationTime": "Aug 15, 2015 4:43:10 PM",
+      "updateTime": "Aug 15, 2015 4:43:10 PM",
+      "comparationId": "fbe311b2-bc7d-49b9-815e-2d09fd03088d"
+    },
+    {
+      "name": "Reflejos de Combate",
+      "cost": 7,
+      "creationTime": "Aug 15, 2015 4:43:17 PM",
+      "updateTime": "Aug 15, 2015 4:43:17 PM",
+      "comparationId": "418788f0-3c8a-4a51-9e27-6a5566a935b4"
+    },
+    {
+      "name": "Prototipo",
+      "cost": 18,
+      "creationTime": "Aug 15, 2015 4:43:23 PM",
+      "updateTime": "Aug 15, 2015 4:43:23 PM",
+      "comparationId": "4eb418bf-fd17-4c7f-a5f5-c375c5f11b5b"
+    },
+    {
+      "name": "Desaprovación de las Armas",
+      "cost": -20,
+      "creationTime": "Aug 15, 2015 4:43:40 PM",
+      "updateTime": "Aug 15, 2015 4:43:40 PM",
+      "comparationId": "bc602f20-1864-4eee-946b-2b2fc5f659c5"
+    },
+    {
+      "name": "Velocidad Deslumbrante",
+      "cost": 5,
+      "creationTime": "Aug 15, 2015 4:43:44 PM",
+      "updateTime": "Aug 15, 2015 4:43:44 PM",
+      "comparationId": "fe7c044c-12a5-4678-bd6d-9750acd50f0f"
+    },
+    {
+      "name": "Sentido de la Firmeza",
+      "cost": 10,
+      "creationTime": "Aug 15, 2015 4:43:48 PM",
+      "updateTime": "Aug 15, 2015 4:43:48 PM",
+      "comparationId": "adec2a3c-0f65-436c-b1b9-303144b28a66"
+    },
+    {
+      "name": "Fortaleza Corporal",
+      "cost": 8,
+      "creationTime": "Aug 15, 2015 4:44:21 PM",
+      "updateTime": "Aug 15, 2015 4:44:21 PM",
+      "comparationId": "739047c8-ea83-41ad-8d31-02117cacd12d"
+    },
+    {
+      "name": "Mirada Intensa",
+      "cost": 5,
+      "creationTime": "Aug 15, 2015 4:44:27 PM",
+      "updateTime": "Aug 15, 2015 4:44:27 PM",
+      "comparationId": "b19cb8f2-63d7-4b88-9ef8-0c22e2f83859"
+    },
+    {
+      "name": "Mal Genio",
+      "cost": -10,
+      "creationTime": "Aug 15, 2015 4:44:40 PM",
+      "updateTime": "Aug 15, 2015 4:44:40 PM",
+      "comparationId": "66ef96fa-4eb7-4f13-9835-773f102fca97"
+    },
+    {
+      "name": "Sutil",
+      "cost": 8,
+      "creationTime": "Aug 15, 2015 4:46:27 PM",
+      "updateTime": "Aug 15, 2015 4:46:27 PM",
+      "comparationId": "9b745b7b-0257-430b-973e-8e13d57a7033"
+    },
+    {
+      "name": "Secreto (Mínimo)",
+      "cost": -5,
+      "creationTime": "Aug 15, 2015 4:48:09 PM",
+      "updateTime": "Aug 15, 2015 4:48:09 PM",
+      "comparationId": "ad0f5cc8-793c-4bb6-b9e4-94a462242f58"
+    }
+  ],
+  "perkDecisions": {
+    "Adiestramiento en Artes Marciales (Máximo)": {
+      "categoriesBonusChosen": [],
+      "skillsBonusChosen": [],
+      "commonSkillsChosen": [
+        "Defensa Adrenal"
+      ],
+      "creationTime": "Aug 15, 2015 4:41:54 PM",
+      "updateTime": "Aug 15, 2015 4:41:54 PM",
+      "comparationId": "6518139c-7705-4fb7-807c-72799a811548"
+    }
+  },
+  "appearance": {
+    "dicesResult": 18,
+    "creationTime": "Aug 15, 2015 4:22:00 PM",
+    "updateTime": "Aug 15, 2015 4:22:00 PM",
+    "comparationId": "f49ac67b-6e79-4daf-968c-c54c006f6712"
+  },
+  "darkSpellsAsBasicListsAllowed": false,
+  "firearmsAllowed": false,
+  "chiPowersAllowed": true,
+  "otherRealmtrainingSpellsAllowed": false,
+  "levelUps": [
+    {
+      "categoriesRanks": {
+        "Subterfugio·Sigilo": 1,
+        "Percepción·Sentidos": 1,
+        "Percepción·Búsqueda": 1,
+        "Atletismo·Gimnasia": 1,
+        "Influencia": 1,
+        "Conocimiento·Oscuro": 1,
+        "Autocontrol": 1,
+        "Artes Marciales·Golpes": 1,
+        "Artes Marciales·Barridos": 1,
+        "Percepción de Poder": 1,
+        "Conocimiento·General": 1,
+        "Exteriores·Entorno": 1
+      },
+      "skillsRanks": {
+        "Desarrollo Físico": 1,
+        "Defensa Adrenal": 1,
+        "Meditación": 1,
+        "Estilo de las Ocho Hadas Borrachas": 1,
+        "Golpes de Artes Marciales": 1,
+        "Golpe Nervioso": 1
+      },
+      "generalizedSkills": [],
+      "spellsUpdated": [],
+      "trainings": [
+        "Sacerdote Guerrero"
+      ],
+      "skillSpecializations": [],
+      "trainingDecisions": {
+        "Sacerdote Guerrero": {
+          "categoriesSelected": {},
+          "skillsSelected": {
+            "0": {
+              "skillsRanks": {
+                "Cayado": 1
+              },
+              "creationTime": "Aug 15, 2015 4:28:28 PM",
+              "updateTime": "Aug 15, 2015 4:28:28 PM",
+              "comparationId": "24b113fa-4465-4ca8-a425-d03e78361079"
+            },
+            "1": {
+              "skillsRanks": {
+                "Inmovilizar": 2
+              },
+              "creationTime": "Aug 15, 2015 4:28:28 PM",
+              "updateTime": "Aug 15, 2015 4:28:28 PM",
+              "comparationId": "81dee3b3-0ba5-4cf5-820e-da9c3dd3c41a"
+            },
+            "2": {
+              "skillsRanks": {
+                "Golpes de Artes Marciales": 2
+              },
+              "creationTime": "Aug 15, 2015 4:28:28 PM",
+              "updateTime": "Aug 15, 2015 4:28:28 PM",
+              "comparationId": "213a4f04-9d9c-4047-a732-ced8d48e1a6a"
+            },
+            "3": {
+              "skillsRanks": {
+                "Estilo de las Ocho Hadas Borrachas": 2
+              },
+              "creationTime": "Aug 15, 2015 4:28:28 PM",
+              "updateTime": "Aug 15, 2015 4:28:28 PM",
+              "comparationId": "7d910a3d-fb4b-499a-a8f7-63348a590a02"
+            },
+            "4": {
+              "skillsRanks": {
+                "Superar Aturdimiento": 2
+              },
+              "creationTime": "Aug 15, 2015 4:28:28 PM",
+              "updateTime": "Aug 15, 2015 4:28:28 PM",
+              "comparationId": "de421791-590e-4dc0-b695-36e0b17cb066"
+            },
+            "5": {
+              "skillsRanks": {
+                "Filosofía": 1,
+                "Religión": 1
+              },
+              "creationTime": "Aug 15, 2015 4:28:28 PM",
+              "updateTime": "Aug 15, 2015 4:28:28 PM",
+              "comparationId": "f5423f67-a31f-4f55-a164-f4cfbb4d106f"
+            },
+            "6": {
+              "skillsRanks": {
+                "Conocimiento de las Hierbas": 1
+              },
+              "creationTime": "Aug 15, 2015 4:28:28 PM",
+              "updateTime": "Aug 15, 2015 4:28:28 PM",
+              "comparationId": "89d54782-f7f2-42f6-ac72-49b314ef3d98"
+            },
+            "7": {
+              "skillsRanks": {
+                "Desarrollo Físico": 1
+              },
+              "creationTime": "Aug 15, 2015 4:28:28 PM",
+              "updateTime": "Aug 15, 2015 4:28:28 PM",
+              "comparationId": "4999cab3-bb0e-4ba9-b97e-ef99afec4b73"
+            }
+          },
+          "characteristicsUpdates": [],
+          "commonSkillsChosen": [],
+          "professionalSkillsChosen": [],
+          "restrictedSkillsChosen": [],
+          "equipment": [
+            {
+              "name": "Reputación como guerrero sagrado",
+              "description": "",
+              "bonus": 0,
+              "type": "UNKNOWN",
+              "skill": "",
+              "probability": 100,
+              "creationTime": "Aug 15, 2015 4:28:28 PM",
+              "updateTime": "Aug 15, 2015 4:28:28 PM",
+              "comparationId": "51f94a7b-fd78-4c09-92d1-6f22a56b1158"
+            }
+          ],
+          "magicItems": [],
+          "creationTime": "Aug 15, 2015 4:27:05 PM",
+          "updateTime": "Aug 15, 2015 4:27:05 PM",
+          "comparationId": "f817ad40-0ee8-496c-b891-026670ea0c51"
+        }
+      },
+      "characteristicsUpdates": [
+        {
+          "characteristicAbbreviature": "Ag",
+          "characteristicPotentialValue": 99,
+          "characteristicTemporalValue": 85,
+          "roll": {
+            "firstDice": 9,
+            "secondDice": 3,
+            "creationTime": "Aug 15, 2015 4:22:00 PM",
+            "updateTime": "Aug 15, 2015 4:22:00 PM",
+            "comparationId": "9777215a-2f6b-4064-b6fe-a95d20880cd6"
+          },
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "a171e7eb-d07e-4ada-8565-1016b6a8b957"
+        },
+        {
+          "characteristicAbbreviature": "Co",
+          "characteristicPotentialValue": 67,
+          "characteristicTemporalValue": 31,
+          "roll": {
+            "firstDice": 6,
+            "secondDice": 1,
+            "creationTime": "Aug 15, 2015 4:22:00 PM",
+            "updateTime": "Aug 15, 2015 4:22:00 PM",
+            "comparationId": "1939583f-a2e1-4889-a139-4b397264cea9"
+          },
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "abaafa85-56ac-4cb0-b65a-36c8d4cc3c10"
+        },
+        {
+          "characteristicAbbreviature": "Me",
+          "characteristicPotentialValue": 68,
+          "characteristicTemporalValue": 47,
+          "roll": {
+            "firstDice": 10,
+            "secondDice": 8,
+            "creationTime": "Aug 15, 2015 4:22:00 PM",
+            "updateTime": "Aug 15, 2015 4:22:00 PM",
+            "comparationId": "cce238c3-c562-4418-a387-35bfdfb67b8f"
+          },
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "cd54037b-98ff-4ceb-b6d9-9e167ab0ee42"
+        },
+        {
+          "characteristicAbbreviature": "Ra",
+          "characteristicPotentialValue": 92,
+          "characteristicTemporalValue": 85,
+          "roll": {
+            "firstDice": 8,
+            "secondDice": 4,
+            "creationTime": "Aug 15, 2015 4:22:00 PM",
+            "updateTime": "Aug 15, 2015 4:22:00 PM",
+            "comparationId": "8e505aea-a8e8-41e7-be7d-d515b0a25201"
+          },
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "0a557840-6826-4057-89f6-d00911aa05ec"
+        },
+        {
+          "characteristicAbbreviature": "Ad",
+          "characteristicPotentialValue": 100,
+          "characteristicTemporalValue": 90,
+          "roll": {
+            "firstDice": 8,
+            "secondDice": 8,
+            "creationTime": "Aug 15, 2015 4:22:00 PM",
+            "updateTime": "Aug 15, 2015 4:22:00 PM",
+            "comparationId": "37db5ccd-8488-447b-80a7-fc6daaa19384"
+          },
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "b6ed7312-0154-41e0-a787-1d6dabd13e82"
+        },
+        {
+          "characteristicAbbreviature": "Em",
+          "characteristicPotentialValue": 65,
+          "characteristicTemporalValue": 31,
+          "roll": {
+            "firstDice": 10,
+            "secondDice": 9,
+            "creationTime": "Aug 15, 2015 4:22:00 PM",
+            "updateTime": "Aug 15, 2015 4:22:00 PM",
+            "comparationId": "f937e43e-c2d3-4a81-87b9-7f04c0adbcc0"
+          },
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "3b20babc-4edc-4c06-8e17-5ec7419850e6"
+        },
+        {
+          "characteristicAbbreviature": "In",
+          "characteristicPotentialValue": 66,
+          "characteristicTemporalValue": 31,
+          "roll": {
+            "firstDice": 3,
+            "secondDice": 8,
+            "creationTime": "Aug 15, 2015 4:22:00 PM",
+            "updateTime": "Aug 15, 2015 4:22:00 PM",
+            "comparationId": "2e5db7bc-95cc-4afe-896c-3c33289e68ad"
+          },
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "aa3f7bf3-879b-4557-9aa9-252a69c43055"
+        },
+        {
+          "characteristicAbbreviature": "Pr",
+          "characteristicPotentialValue": 100,
+          "characteristicTemporalValue": 90,
+          "roll": {
+            "firstDice": 3,
+            "secondDice": 8,
+            "creationTime": "Aug 15, 2015 4:22:00 PM",
+            "updateTime": "Aug 15, 2015 4:22:00 PM",
+            "comparationId": "e3a2e469-522e-4109-ad27-ebc312c66aea"
+          },
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "11857041-9a0e-4daa-b0b5-e7ccfedaae24"
+        },
+        {
+          "characteristicAbbreviature": "Rp",
+          "characteristicPotentialValue": 92,
+          "characteristicTemporalValue": 85,
+          "roll": {
+            "firstDice": 1,
+            "secondDice": 6,
+            "creationTime": "Aug 15, 2015 4:22:00 PM",
+            "updateTime": "Aug 15, 2015 4:22:00 PM",
+            "comparationId": "0afb4cd4-c64a-46bc-ac1d-1639f0940bb6"
+          },
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "91871456-462e-4d6f-a1fe-f403db518de6"
+        },
+        {
+          "characteristicAbbreviature": "Fu",
+          "characteristicPotentialValue": 93,
+          "characteristicTemporalValue": 85,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 3,
+            "creationTime": "Aug 15, 2015 4:22:00 PM",
+            "updateTime": "Aug 15, 2015 4:22:00 PM",
+            "comparationId": "fd589434-2d9d-4c9f-ba07-e1519a814d20"
+          },
+          "creationTime": "Aug 15, 2015 4:22:00 PM",
+          "updateTime": "Aug 15, 2015 4:22:00 PM",
+          "comparationId": "4393c010-7696-4470-b583-311983ff021d"
+        }
+      ],
+      "creationTime": "Aug 15, 2015 4:22:00 PM",
+      "updateTime": "Aug 15, 2015 4:22:00 PM",
+      "comparationId": "40a818b9-0d69-473d-b352-75ba7cce1451"
+    },
+    {
+      "categoriesRanks": {
+        "Conocimiento·Oscuro": 1,
+        "Atletismo·Gimnasia": 1,
+        "Conocimiento·General": 1,
+        "Artes Marciales·Golpes": 1,
+        "Autocontrol": 1,
+        "Conocimiento·Técnico": 1,
+        "Subterfugio·Sigilo": 1,
+        "Artes Marciales·Barridos": 1,
+        "Influencia": 1
+      },
+      "skillsRanks": {
+        "Acrobacias": 1,
+        "Embaucar": 1,
+        "Concentración Zen": 1,
+        "Evasiones": 1,
+        "Estilo de la Grulla": 1,
+        "Defensa Adrenal": 1,
+        "Sombra Mental": 1,
+        "Desarrollo de Puntos de Poder": 1,
+        "Renovación del Cuerpo": 1,
+        "Estilo de las Ocho Hadas Borrachas": 1,
+        "Golpes de Artes Marciales": 1,
+        "Control Corporal": 1,
+        "Estabilización Adrenal": 1,
+        "Caída Adrenal": 1
+      },
+      "generalizedSkills": [],
+      "spellsUpdated": [
+        "Concentración Zen",
+        "Control Corporal",
+        "Evasiones",
+        "Renovación del Cuerpo",
+        "Sombra Mental"
+      ],
+      "trainings": [],
+      "skillSpecializations": [],
+      "trainingDecisions": {},
+      "characteristicsUpdates": [
+        {
+          "characteristicAbbreviature": "Ag",
+          "characteristicPotentialValue": 95,
+          "characteristicTemporalValue": 94,
+          "roll": {
+            "firstDice": 3,
+            "secondDice": 8,
+            "creationTime": "Aug 15, 2015 4:54:46 PM",
+            "updateTime": "Aug 15, 2015 4:54:46 PM",
+            "comparationId": "4162a714-3eb7-4152-89a8-fbea612484e5"
+          },
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "bc9b8e0e-fdbe-47a4-b9f2-95a22769a63e"
+        },
+        {
+          "characteristicAbbreviature": "Co",
+          "characteristicPotentialValue": 80,
+          "characteristicTemporalValue": 38,
+          "roll": {
+            "firstDice": 1,
+            "secondDice": 5,
+            "creationTime": "Aug 15, 2015 4:54:46 PM",
+            "updateTime": "Aug 15, 2015 4:54:46 PM",
+            "comparationId": "d3080caa-f1c2-4f58-a71d-24a968e2d438"
+          },
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "8a4f8628-2574-4d50-9934-0a62f07b79cf"
+        },
+        {
+          "characteristicAbbreviature": "Me",
+          "characteristicPotentialValue": 68,
+          "characteristicTemporalValue": 65,
+          "roll": {
+            "firstDice": 6,
+            "secondDice": 7,
+            "creationTime": "Aug 15, 2015 4:54:46 PM",
+            "updateTime": "Aug 15, 2015 4:54:46 PM",
+            "comparationId": "31f60668-d8fa-43a6-b230-d17e2b17c133"
+          },
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "d98e58c3-c9c9-4704-99cd-20287c77a9ad"
+        },
+        {
+          "characteristicAbbreviature": "Ra",
+          "characteristicPotentialValue": 97,
+          "characteristicTemporalValue": 89,
+          "roll": {
+            "firstDice": 3,
+            "secondDice": 1,
+            "creationTime": "Aug 15, 2015 4:54:46 PM",
+            "updateTime": "Aug 15, 2015 4:54:46 PM",
+            "comparationId": "98cde62e-d6f6-4e16-a9d6-15321c9d7a6a"
+          },
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "96b80d9a-450b-45e8-8096-f8828666cb58"
+        },
+        {
+          "characteristicAbbreviature": "Ad",
+          "characteristicPotentialValue": 96,
+          "characteristicTemporalValue": 100,
+          "roll": {
+            "firstDice": 5,
+            "secondDice": 7,
+            "creationTime": "Aug 15, 2015 4:54:46 PM",
+            "updateTime": "Aug 15, 2015 4:54:46 PM",
+            "comparationId": "16a92f5f-47e3-43a7-8408-9cc718fdaeb8"
+          },
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "c4416d22-3510-4a88-ab32-41306d969781"
+        },
+        {
+          "characteristicAbbreviature": "Em",
+          "characteristicPotentialValue": 59,
+          "characteristicTemporalValue": 50,
+          "roll": {
+            "firstDice": 9,
+            "secondDice": 7,
+            "creationTime": "Aug 15, 2015 4:54:46 PM",
+            "updateTime": "Aug 15, 2015 4:54:46 PM",
+            "comparationId": "32943644-688e-47ea-8d75-a54ffc827db5"
+          },
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "e201b28d-fb25-4043-8e14-738deb4e0da2"
+        },
+        {
+          "characteristicAbbreviature": "In",
+          "characteristicPotentialValue": 76,
+          "characteristicTemporalValue": 42,
+          "roll": {
+            "firstDice": 4,
+            "secondDice": 2,
+            "creationTime": "Aug 15, 2015 4:54:46 PM",
+            "updateTime": "Aug 15, 2015 4:54:46 PM",
+            "comparationId": "c5af7703-a66c-43bd-893b-35f2d43dbe7c"
+          },
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "b229c372-5f16-46d9-83a0-e8bfdda6d7a8"
+        },
+        {
+          "characteristicAbbreviature": "Pr",
+          "characteristicPotentialValue": 94,
+          "characteristicTemporalValue": 93,
+          "roll": {
+            "firstDice": 9,
+            "secondDice": 5,
+            "creationTime": "Aug 15, 2015 4:54:46 PM",
+            "updateTime": "Aug 15, 2015 4:54:46 PM",
+            "comparationId": "efde03b3-9c9c-426c-b988-341b6a89060d"
+          },
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "62e13942-c80c-456b-8fa2-fe6a581dd190"
+        },
+        {
+          "characteristicAbbreviature": "Rp",
+          "characteristicPotentialValue": 100,
+          "characteristicTemporalValue": 86,
+          "roll": {
+            "firstDice": 4,
+            "secondDice": 10,
+            "creationTime": "Aug 15, 2015 4:54:46 PM",
+            "updateTime": "Aug 15, 2015 4:54:46 PM",
+            "comparationId": "c16c4251-dfe1-456c-961a-731ec88a0269"
+          },
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "520088b2-6287-477d-954f-e9868773252d"
+        },
+        {
+          "characteristicAbbreviature": "Fu",
+          "characteristicPotentialValue": 99,
+          "characteristicTemporalValue": 88,
+          "roll": {
+            "firstDice": 3,
+            "secondDice": 5,
+            "creationTime": "Aug 15, 2015 4:54:46 PM",
+            "updateTime": "Aug 15, 2015 4:54:46 PM",
+            "comparationId": "c214c0fd-277d-483f-9c53-9ba91ae5bdfe"
+          },
+          "creationTime": "Aug 15, 2015 4:54:46 PM",
+          "updateTime": "Aug 15, 2015 4:54:46 PM",
+          "comparationId": "ae1a2c0b-2278-46c6-82c7-8f8388be2804"
+        }
+      ],
+      "creationTime": "Aug 15, 2015 4:54:46 PM",
+      "updateTime": "Aug 15, 2015 4:54:46 PM",
+      "comparationId": "d589de7c-5d98-47e2-9aba-1c41220fef48"
+    },
+    {
+      "categoriesRanks": {
+        "Conocimiento·Oscuro": 1,
+        "Atletismo·Gimnasia": 1,
+        "Conocimiento·General": 1,
+        "Artes Marciales·Golpes": 1,
+        "Autocontrol": 1,
+        "Percepción·Sentidos": 1,
+        "Conocimiento·Técnico": 1,
+        "Subterfugio·Sigilo": 1,
+        "Artes Marciales·Barridos": 1,
+        "Influencia": 1
+      },
+      "skillsRanks": {
+        "Concentración Zen": 2,
+        "Estilo de la Grulla": 1,
+        "Defensa Adrenal": 1,
+        "Desarrollo de Puntos de Poder": 1,
+        "Conocimiento de los Puntos Vitales": 1,
+        "Golpes de Artes Marciales": 1,
+        "Control Corporal": 2,
+        "Salto Adrenal": 1,
+        "Velocidad Adrenal": 1,
+        "Fuerza Adrenal": 1,
+        "Trance Purificador": 1,
+        "Oído": 1,
+        "Esconderse": 1,
+        "Liderazgo": 1,
+        "Diplomacia": 1
+      },
+      "generalizedSkills": [],
+      "spellsUpdated": [
+        "Concentración Zen",
+        "Control Corporal"
+      ],
+      "trainings": [],
+      "skillSpecializations": [],
+      "trainingDecisions": {},
+      "characteristicsUpdates": [
+        {
+          "characteristicAbbreviature": "Ag",
+          "characteristicPotentialValue": 95,
+          "characteristicTemporalValue": 95,
+          "roll": {
+            "firstDice": 10,
+            "secondDice": 3,
+            "creationTime": "Aug 15, 2015 5:03:22 PM",
+            "updateTime": "Aug 15, 2015 5:03:22 PM",
+            "comparationId": "846caa26-1f3e-4823-b1aa-c9c6a64e84c0"
+          },
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "6beb097e-2ab8-4765-b8c0-45b71725c0dd"
+        },
+        {
+          "characteristicAbbreviature": "Co",
+          "characteristicPotentialValue": 80,
+          "characteristicTemporalValue": 44,
+          "roll": {
+            "firstDice": 8,
+            "secondDice": 5,
+            "creationTime": "Aug 15, 2015 5:03:22 PM",
+            "updateTime": "Aug 15, 2015 5:03:22 PM",
+            "comparationId": "dea6148a-ea1c-4297-acdd-f738aacff961"
+          },
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "ea6d861d-2475-4c3b-b021-3f0e1bb7a9f6"
+        },
+        {
+          "characteristicAbbreviature": "Me",
+          "characteristicPotentialValue": 68,
+          "characteristicTemporalValue": 68,
+          "roll": {
+            "firstDice": 2,
+            "secondDice": 5,
+            "creationTime": "Aug 15, 2015 5:03:22 PM",
+            "updateTime": "Aug 15, 2015 5:03:22 PM",
+            "comparationId": "68a1fd94-1da5-4fc6-beae-035e83eec6bc"
+          },
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "f2e7ee44-1869-4615-ad4e-868e6a43c18b"
+        },
+        {
+          "characteristicAbbreviature": "Ra",
+          "characteristicPotentialValue": 97,
+          "characteristicTemporalValue": 90,
+          "roll": {
+            "firstDice": 10,
+            "secondDice": 2,
+            "creationTime": "Aug 15, 2015 5:03:22 PM",
+            "updateTime": "Aug 15, 2015 5:03:22 PM",
+            "comparationId": "e0fec6ae-5366-4586-8b1a-28fa30dc121f"
+          },
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "1fdf8170-7ac7-454b-adb8-eee0528bfdfe"
+        },
+        {
+          "characteristicAbbreviature": "Ad",
+          "characteristicPotentialValue": 96,
+          "characteristicTemporalValue": 96,
+          "roll": {
+            "firstDice": 4,
+            "secondDice": 4,
+            "creationTime": "Aug 15, 2015 5:03:22 PM",
+            "updateTime": "Aug 15, 2015 5:03:22 PM",
+            "comparationId": "030565ae-4f3b-448d-9a32-79bececd57cd"
+          },
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "acf825d8-5d70-424c-9629-893bcf3b2f11"
+        },
+        {
+          "characteristicAbbreviature": "Em",
+          "characteristicPotentialValue": 59,
+          "characteristicTemporalValue": 57,
+          "roll": {
+            "firstDice": 8,
+            "secondDice": 5,
+            "creationTime": "Aug 15, 2015 5:03:22 PM",
+            "updateTime": "Aug 15, 2015 5:03:22 PM",
+            "comparationId": "744cd3a1-5a09-428f-bd46-e3b7e74e8653"
+          },
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "b8b3430b-c97f-4572-af6e-4423f2908f73"
+        },
+        {
+          "characteristicAbbreviature": "In",
+          "characteristicPotentialValue": 76,
+          "characteristicTemporalValue": 48,
+          "roll": {
+            "firstDice": 1,
+            "secondDice": 3,
+            "creationTime": "Aug 15, 2015 5:03:22 PM",
+            "updateTime": "Aug 15, 2015 5:03:22 PM",
+            "comparationId": "622f9e80-b895-4b50-a4ff-33e43914e604"
+          },
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "8fcb6903-16a6-4359-b708-c41a13c382e6"
+        },
+        {
+          "characteristicAbbreviature": "Pr",
+          "characteristicPotentialValue": 94,
+          "characteristicTemporalValue": 94,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 4,
+            "creationTime": "Aug 15, 2015 5:03:22 PM",
+            "updateTime": "Aug 15, 2015 5:03:22 PM",
+            "comparationId": "2f480121-18ba-470e-a150-dd9840d879c0"
+          },
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "a22a4740-b4eb-495b-b4d4-6239bf7b7eaa"
+        },
+        {
+          "characteristicAbbreviature": "Rp",
+          "characteristicPotentialValue": 100,
+          "characteristicTemporalValue": 96,
+          "roll": {
+            "firstDice": 4,
+            "secondDice": 7,
+            "creationTime": "Aug 15, 2015 5:03:22 PM",
+            "updateTime": "Aug 15, 2015 5:03:22 PM",
+            "comparationId": "eeaeb527-1d35-4a66-a7e9-74ef46084d0a"
+          },
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "1f9c8869-f776-42cc-a421-63bac3cb85ce"
+        },
+        {
+          "characteristicAbbreviature": "Fu",
+          "characteristicPotentialValue": 99,
+          "characteristicTemporalValue": 93,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 9,
+            "creationTime": "Aug 15, 2015 5:03:22 PM",
+            "updateTime": "Aug 15, 2015 5:03:22 PM",
+            "comparationId": "73e1d7ed-61f6-40a0-9e02-89689b90bdec"
+          },
+          "creationTime": "Aug 15, 2015 5:03:22 PM",
+          "updateTime": "Aug 15, 2015 5:03:22 PM",
+          "comparationId": "4f3484bf-3576-4e80-bd55-4bf595014816"
+        }
+      ],
+      "creationTime": "Aug 15, 2015 5:03:22 PM",
+      "updateTime": "Aug 15, 2015 5:03:22 PM",
+      "comparationId": "2b6b9418-c296-4efb-8081-a79fe9764fbc"
+    },
+    {
+      "categoriesRanks": {
+        "Conocimiento·Oscuro": 1,
+        "Atletismo·Gimnasia": 1,
+        "Conocimiento·General": 1,
+        "Artes Marciales·Golpes": 1,
+        "Autocontrol": 1,
+        "Percepción·Sentidos": 1,
+        "Conocimiento·Técnico": 1,
+        "Subterfugio·Sigilo": 1,
+        "Artes Marciales·Barridos": 1,
+        "Influencia": 1
+      },
+      "skillsRanks": {
+        "Desarrollo Físico": 1,
+        "Comerciar": 1,
+        "Barridos de Artes Marciales": 1,
+        "Conocimiento de los Poderes Chi": 1,
+        "Historia": 1,
+        "Concentración Zen": 1,
+        "Defensa Adrenal": 1,
+        "Estilo de la Grulla": 1,
+        "Caer": 1,
+        "Desarrollo de Puntos de Poder": 1,
+        "Golpes de Artes Marciales": 1,
+        "Control Corporal": 1,
+        "Olfato": 1,
+        "Trance Adormecedor": 1,
+        "Trance Purificador": 1,
+        "Trepar": 1,
+        "Conocimiento de los Venenos": 1,
+        "Percepción Zen": 1,
+        "Estilo de las Ocho Hadas Borrachas": 1
+      },
+      "generalizedSkills": [],
+      "spellsUpdated": [
+        "Concentración Zen",
+        "Control Corporal",
+        "Percepción Zen"
+      ],
+      "trainings": [],
+      "skillSpecializations": [],
+      "trainingDecisions": {},
+      "characteristicsUpdates": [
+        {
+          "characteristicAbbreviature": "Ag",
+          "characteristicPotentialValue": 95,
+          "characteristicTemporalValue": 95,
+          "roll": {
+            "firstDice": 6,
+            "secondDice": 4,
+            "creationTime": "Aug 15, 2015 5:09:52 PM",
+            "updateTime": "Aug 15, 2015 5:09:52 PM",
+            "comparationId": "ffb80998-7e3b-418d-a77e-048eb9c4cb36"
+          },
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "ab9b77a0-a8ad-47a6-823f-812e0f4157b1"
+        },
+        {
+          "characteristicAbbreviature": "Co",
+          "characteristicPotentialValue": 80,
+          "characteristicTemporalValue": 57,
+          "roll": {
+            "firstDice": 9,
+            "secondDice": 2,
+            "creationTime": "Aug 15, 2015 5:09:52 PM",
+            "updateTime": "Aug 15, 2015 5:09:52 PM",
+            "comparationId": "bccec130-8190-41c8-a906-8c4801051502"
+          },
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "2b86a0c3-8514-4f22-aa32-9a5240e82e92"
+        },
+        {
+          "characteristicAbbreviature": "Me",
+          "characteristicPotentialValue": 68,
+          "characteristicTemporalValue": 68,
+          "roll": {
+            "firstDice": 2,
+            "secondDice": 1,
+            "creationTime": "Aug 15, 2015 5:09:52 PM",
+            "updateTime": "Aug 15, 2015 5:09:52 PM",
+            "comparationId": "18b64803-ff4b-4564-a56e-92aa783b516a"
+          },
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "00ddd37a-cc34-4486-90b7-101d0a74fef0"
+        },
+        {
+          "characteristicAbbreviature": "Ra",
+          "characteristicPotentialValue": 97,
+          "characteristicTemporalValue": 92,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 3,
+            "creationTime": "Aug 15, 2015 5:09:52 PM",
+            "updateTime": "Aug 15, 2015 5:09:52 PM",
+            "comparationId": "234abeb7-b3cc-473e-b198-c0416fac51e9"
+          },
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "453248b6-b29a-4248-9688-16356021c4f3"
+        },
+        {
+          "characteristicAbbreviature": "Ad",
+          "characteristicPotentialValue": 96,
+          "characteristicTemporalValue": 92,
+          "roll": {
+            "firstDice": 3,
+            "secondDice": 3,
+            "creationTime": "Aug 15, 2015 5:09:52 PM",
+            "updateTime": "Aug 15, 2015 5:09:52 PM",
+            "comparationId": "a6bcad9e-45f9-4fa8-a33a-edc6d0d62e47"
+          },
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "ec35bd2b-46f4-4747-810a-805fbadc16b0"
+        },
+        {
+          "characteristicAbbreviature": "Em",
+          "characteristicPotentialValue": 59,
+          "characteristicTemporalValue": 59,
+          "roll": {
+            "firstDice": 1,
+            "secondDice": 4,
+            "creationTime": "Aug 15, 2015 5:09:52 PM",
+            "updateTime": "Aug 15, 2015 5:09:52 PM",
+            "comparationId": "0e036aa9-59cc-44d3-a756-1ce20f93f8bb"
+          },
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "8b496a43-8f2f-4911-845b-0877865d714b"
+        },
+        {
+          "characteristicAbbreviature": "In",
+          "characteristicPotentialValue": 76,
+          "characteristicTemporalValue": 52,
+          "roll": {
+            "firstDice": 9,
+            "secondDice": 6,
+            "creationTime": "Aug 15, 2015 5:09:52 PM",
+            "updateTime": "Aug 15, 2015 5:09:52 PM",
+            "comparationId": "ce52d0d5-8a15-485e-abf9-37257fb3caaf"
+          },
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "cbc9129e-f235-414f-8b02-91dbb88aa711"
+        },
+        {
+          "characteristicAbbreviature": "Pr",
+          "characteristicPotentialValue": 94,
+          "characteristicTemporalValue": 94,
+          "roll": {
+            "firstDice": 9,
+            "secondDice": 3,
+            "creationTime": "Aug 15, 2015 5:09:52 PM",
+            "updateTime": "Aug 15, 2015 5:09:52 PM",
+            "comparationId": "b821dcc3-c0cc-473e-8167-6c4e05dbe6ab"
+          },
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "012beb79-c1ff-471a-a4c0-753405df686d"
+        },
+        {
+          "characteristicAbbreviature": "Rp",
+          "characteristicPotentialValue": 100,
+          "characteristicTemporalValue": 100,
+          "roll": {
+            "firstDice": 3,
+            "secondDice": 7,
+            "creationTime": "Aug 15, 2015 5:09:52 PM",
+            "updateTime": "Aug 15, 2015 5:09:52 PM",
+            "comparationId": "9d418e47-a0dc-4ddb-915b-7b5731d438f8"
+          },
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "2687a10c-f885-4206-8c5e-c19d88a9c724"
+        },
+        {
+          "characteristicAbbreviature": "Fu",
+          "characteristicPotentialValue": 99,
+          "characteristicTemporalValue": 99,
+          "roll": {
+            "firstDice": 1,
+            "secondDice": 3,
+            "creationTime": "Aug 15, 2015 5:09:52 PM",
+            "updateTime": "Aug 15, 2015 5:09:52 PM",
+            "comparationId": "c2ab0635-6546-49e0-aa44-d8d5bdf9d2ea"
+          },
+          "creationTime": "Aug 15, 2015 5:09:52 PM",
+          "updateTime": "Aug 15, 2015 5:09:52 PM",
+          "comparationId": "a0608c8c-70b4-45a9-9a91-d5fce3fba268"
+        }
+      ],
+      "creationTime": "Aug 15, 2015 5:09:52 PM",
+      "updateTime": "Aug 15, 2015 5:09:52 PM",
+      "comparationId": "d9f97c16-06f8-4cce-b145-ce86c96eb1a2"
+    },
+    {
+      "categoriesRanks": {
+        "Atletismo·Gimnasia": 1,
+        "Conocimiento·General": 1,
+        "Exteriores·Entorno": 1,
+        "Artes Marciales·Golpes": 1,
+        "Autocontrol": 1,
+        "Percepción·Sentidos": 1,
+        "Artes Marciales·Barridos": 1,
+        "Influencia": 1
+      },
+      "skillsRanks": {
+        "Concentración Zen": 1,
+        "Trance Sanador": 1,
+        "Estilo de la Grulla": 1,
+        "Defensa Adrenal": 1,
+        "Desarrollo de Puntos de Poder": 1,
+        "Golpes de Artes Marciales": 1,
+        "Sobornar": 1,
+        "Evasiones": 3,
+        "Vista": 1,
+        "Interrogar": 1,
+        "Nadar": 1,
+        "Resistencia Adrenal": 1,
+        "Renovación del Cuerpo": 1,
+        "Sombra Mental": 1
+      },
+      "generalizedSkills": [],
+      "spellsUpdated": [
+        "Evasiones",
+        "Concentración Zen",
+        "Renovación del Cuerpo",
+        "Sombra Mental"
+      ],
+      "trainings": [],
+      "skillSpecializations": [],
+      "trainingDecisions": {},
+      "characteristicsUpdates": [
+        {
+          "characteristicAbbreviature": "Ag",
+          "characteristicPotentialValue": 95,
+          "characteristicTemporalValue": 95,
+          "roll": {
+            "firstDice": 3,
+            "secondDice": 5,
+            "creationTime": "Aug 15, 2015 5:23:20 PM",
+            "updateTime": "Aug 15, 2015 5:23:20 PM",
+            "comparationId": "a5a3d847-e04d-4670-8d30-88a670dfa92a"
+          },
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "c6ada757-436e-4a47-8b11-d73d565f9ed7"
+        },
+        {
+          "characteristicAbbreviature": "Co",
+          "characteristicPotentialValue": 80,
+          "characteristicTemporalValue": 68,
+          "roll": {
+            "firstDice": 3,
+            "secondDice": 8,
+            "creationTime": "Aug 15, 2015 5:23:20 PM",
+            "updateTime": "Aug 15, 2015 5:23:20 PM",
+            "comparationId": "57dad4c0-c6d1-4d15-9d07-eeb0f600ddb9"
+          },
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "894b69cc-d495-4819-8220-e7d35827748d"
+        },
+        {
+          "characteristicAbbreviature": "Me",
+          "characteristicPotentialValue": 68,
+          "characteristicTemporalValue": 68,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 9,
+            "creationTime": "Aug 15, 2015 5:23:20 PM",
+            "updateTime": "Aug 15, 2015 5:23:20 PM",
+            "comparationId": "a059814e-29ce-4ae9-a2c1-3cdf0d191ed8"
+          },
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "26c4e33e-39dc-4f01-8787-1c87b19dfdb7"
+        },
+        {
+          "characteristicAbbreviature": "Ra",
+          "characteristicPotentialValue": 97,
+          "characteristicTemporalValue": 95,
+          "roll": {
+            "firstDice": 5,
+            "secondDice": 3,
+            "creationTime": "Aug 15, 2015 5:23:20 PM",
+            "updateTime": "Aug 15, 2015 5:23:20 PM",
+            "comparationId": "3909210b-9580-4c4c-871c-ddd86477ee48"
+          },
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "320f0206-dccf-4d62-b9f7-1a37f7dbc20a"
+        },
+        {
+          "characteristicAbbreviature": "Ad",
+          "characteristicPotentialValue": 96,
+          "characteristicTemporalValue": 89,
+          "roll": {
+            "firstDice": 10,
+            "secondDice": 5,
+            "creationTime": "Aug 15, 2015 5:23:20 PM",
+            "updateTime": "Aug 15, 2015 5:23:20 PM",
+            "comparationId": "c2457176-becc-4495-bd51-1e782634bc2d"
+          },
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "dac6c78b-a2ba-4ed7-bf45-0d8563c3df94"
+        },
+        {
+          "characteristicAbbreviature": "Em",
+          "characteristicPotentialValue": 59,
+          "characteristicTemporalValue": 59,
+          "roll": {
+            "firstDice": 10,
+            "secondDice": 10,
+            "creationTime": "Aug 15, 2015 5:23:20 PM",
+            "updateTime": "Aug 15, 2015 5:23:20 PM",
+            "comparationId": "1c9f0409-5d79-4f89-ae76-9c76f539b30c"
+          },
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "1fd8af6d-a86f-4b84-9299-0060dea5cb4f"
+        },
+        {
+          "characteristicAbbreviature": "In",
+          "characteristicPotentialValue": 76,
+          "characteristicTemporalValue": 67,
+          "roll": {
+            "firstDice": 1,
+            "secondDice": 5,
+            "creationTime": "Aug 15, 2015 5:23:20 PM",
+            "updateTime": "Aug 15, 2015 5:23:20 PM",
+            "comparationId": "558134bd-470f-44e5-bb6d-03e3708b6934"
+          },
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "394e2a1b-d903-4679-854f-70e0d218d6a7"
+        },
+        {
+          "characteristicAbbreviature": "Pr",
+          "characteristicPotentialValue": 94,
+          "characteristicTemporalValue": 94,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 1,
+            "creationTime": "Aug 15, 2015 5:23:20 PM",
+            "updateTime": "Aug 15, 2015 5:23:20 PM",
+            "comparationId": "c6caed05-7aa3-48cf-b95d-f9a43f86c2af"
+          },
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "dc533352-a15c-4fdf-9d62-71c0afc865f4"
+        },
+        {
+          "characteristicAbbreviature": "Rp",
+          "characteristicPotentialValue": 100,
+          "characteristicTemporalValue": 100,
+          "roll": {
+            "firstDice": 10,
+            "secondDice": 7,
+            "creationTime": "Aug 15, 2015 5:23:20 PM",
+            "updateTime": "Aug 15, 2015 5:23:20 PM",
+            "comparationId": "d2fd0914-5599-46f4-b532-6d828cff847c"
+          },
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "7db8e684-afd5-4dda-ac3a-d891b187a340"
+        },
+        {
+          "characteristicAbbreviature": "Fu",
+          "characteristicPotentialValue": 99,
+          "characteristicTemporalValue": 99,
+          "roll": {
+            "firstDice": 3,
+            "secondDice": 1,
+            "creationTime": "Aug 15, 2015 5:23:20 PM",
+            "updateTime": "Aug 15, 2015 5:23:20 PM",
+            "comparationId": "8a651566-7228-4314-ab88-e8ec826cd1c1"
+          },
+          "creationTime": "Aug 15, 2015 5:23:20 PM",
+          "updateTime": "Aug 15, 2015 5:23:20 PM",
+          "comparationId": "f09e796a-fe0c-4818-a9b0-bda1e28d1ae7"
+        }
+      ],
+      "creationTime": "Aug 15, 2015 5:23:20 PM",
+      "updateTime": "Aug 15, 2015 5:23:20 PM",
+      "comparationId": "c52abd61-5de7-4b28-96d2-70faba7cd7c9"
+    },
+    {
+      "categoriesRanks": {
+        "Atletismo·Gimnasia": 1,
+        "Artes Marciales·Golpes": 1,
+        "Autocontrol": 1,
+        "Percepción·Sentidos": 1,
+        "Influencia": 1
+      },
+      "skillsRanks": {
+        "Caminar por la Cuerda Floja": 1,
+        "Estabilización Adrenal": 1,
+        "Estilo de la Grulla": 1,
+        "Defensa Adrenal": 1,
+        "Golpes de Artes Marciales": 1,
+        "Control Corporal": 1,
+        "Volteretas": 1,
+        "Sentido del Tiempo": 1,
+        "Evasiones": 2,
+        "Contorsionismo": 1,
+        "Sombra Mental": 3,
+        "Renovación del Cuerpo": 3,
+        "Estilo de las Ocho Hadas Borrachas": 1,
+        "Malabarismos": 1
+      },
+      "generalizedSkills": [],
+      "spellsUpdated": [
+        "Control Corporal",
+        "Evasiones",
+        "Renovación del Cuerpo",
+        "Sombra Mental"
+      ],
+      "trainings": [],
+      "skillSpecializations": [],
+      "trainingDecisions": {},
+      "characteristicsUpdates": [
+        {
+          "characteristicAbbreviature": "Ag",
+          "characteristicPotentialValue": 95,
+          "characteristicTemporalValue": 95,
+          "roll": {
+            "firstDice": 1,
+            "secondDice": 2,
+            "creationTime": "Aug 15, 2015 5:43:45 PM",
+            "updateTime": "Aug 15, 2015 5:43:45 PM",
+            "comparationId": "184ab995-a8d7-46d5-a890-dbbdf1993915"
+          },
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "ac0424df-408e-43e3-8456-397646673fc3"
+        },
+        {
+          "characteristicAbbreviature": "Co",
+          "characteristicPotentialValue": 80,
+          "characteristicTemporalValue": 76,
+          "roll": {
+            "firstDice": 8,
+            "secondDice": 4,
+            "creationTime": "Aug 15, 2015 5:43:45 PM",
+            "updateTime": "Aug 15, 2015 5:43:45 PM",
+            "comparationId": "eecd145a-0061-498f-8b55-48703c466a42"
+          },
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "5752710c-5f7a-41ab-b3ec-c6e23356d426"
+        },
+        {
+          "characteristicAbbreviature": "Me",
+          "characteristicPotentialValue": 68,
+          "characteristicTemporalValue": 68,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 1,
+            "creationTime": "Aug 15, 2015 5:43:45 PM",
+            "updateTime": "Aug 15, 2015 5:43:45 PM",
+            "comparationId": "8fadb96c-f42d-4f9c-a7d5-0a1703d3fd49"
+          },
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "34a064a7-545d-4472-a820-a505da9cee7d"
+        },
+        {
+          "characteristicAbbreviature": "Ra",
+          "characteristicPotentialValue": 97,
+          "characteristicTemporalValue": 97,
+          "roll": {
+            "firstDice": 5,
+            "secondDice": 7,
+            "creationTime": "Aug 15, 2015 5:43:45 PM",
+            "updateTime": "Aug 15, 2015 5:43:45 PM",
+            "comparationId": "aff0ca67-d35b-4b51-8021-67820d9f2aad"
+          },
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "1a1f1a9a-5b23-45fc-ad99-9626cff787dc"
+        },
+        {
+          "characteristicAbbreviature": "Ad",
+          "characteristicPotentialValue": 96,
+          "characteristicTemporalValue": 94,
+          "roll": {
+            "firstDice": 9,
+            "secondDice": 8,
+            "creationTime": "Aug 15, 2015 5:43:45 PM",
+            "updateTime": "Aug 15, 2015 5:43:45 PM",
+            "comparationId": "c884c286-6bbe-4859-9787-aa2d6a5edcbd"
+          },
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "33514d10-f5a8-4b7a-a689-ed19a9063515"
+        },
+        {
+          "characteristicAbbreviature": "Em",
+          "characteristicPotentialValue": 59,
+          "characteristicTemporalValue": 59,
+          "roll": {
+            "firstDice": 10,
+            "secondDice": 2,
+            "creationTime": "Aug 15, 2015 5:43:45 PM",
+            "updateTime": "Aug 15, 2015 5:43:45 PM",
+            "comparationId": "beb6dbd5-84f7-436c-a58b-cf2c520ec631"
+          },
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "ccfd9bcc-7ebb-4ba9-8753-98b6363560ea"
+        },
+        {
+          "characteristicAbbreviature": "In",
+          "characteristicPotentialValue": 76,
+          "characteristicTemporalValue": 68,
+          "roll": {
+            "firstDice": 9,
+            "secondDice": 8,
+            "creationTime": "Aug 15, 2015 5:43:45 PM",
+            "updateTime": "Aug 15, 2015 5:43:45 PM",
+            "comparationId": "acee0d23-97f8-42e3-bc33-f233edc61c8f"
+          },
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "e6a31815-0c96-4754-92d7-9d981920dd0d"
+        },
+        {
+          "characteristicAbbreviature": "Pr",
+          "characteristicPotentialValue": 94,
+          "characteristicTemporalValue": 94,
+          "roll": {
+            "firstDice": 6,
+            "secondDice": 4,
+            "creationTime": "Aug 15, 2015 5:43:45 PM",
+            "updateTime": "Aug 15, 2015 5:43:45 PM",
+            "comparationId": "fbafd5d6-1491-471a-a474-cabc43d698bf"
+          },
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "0758b585-80df-4c91-adcd-fd226979970c"
+        },
+        {
+          "characteristicAbbreviature": "Rp",
+          "characteristicPotentialValue": 100,
+          "characteristicTemporalValue": 100,
+          "roll": {
+            "firstDice": 5,
+            "secondDice": 4,
+            "creationTime": "Aug 15, 2015 5:43:45 PM",
+            "updateTime": "Aug 15, 2015 5:43:45 PM",
+            "comparationId": "052fab32-a2f7-43b4-90f5-489ed09f7b31"
+          },
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "c7127775-cba8-4f0b-a9cb-8d6ef9448959"
+        },
+        {
+          "characteristicAbbreviature": "Fu",
+          "characteristicPotentialValue": 99,
+          "characteristicTemporalValue": 99,
+          "roll": {
+            "firstDice": 8,
+            "secondDice": 8,
+            "creationTime": "Aug 15, 2015 5:43:45 PM",
+            "updateTime": "Aug 15, 2015 5:43:45 PM",
+            "comparationId": "bf8f689c-7fc2-4bf4-95aa-f5a2398b956f"
+          },
+          "creationTime": "Aug 15, 2015 5:43:45 PM",
+          "updateTime": "Aug 15, 2015 5:43:45 PM",
+          "comparationId": "9b67977b-5bd5-4364-8497-cf7fc7518f37"
+        }
+      ],
+      "creationTime": "Aug 15, 2015 5:43:45 PM",
+      "updateTime": "Aug 15, 2015 5:43:45 PM",
+      "comparationId": "323672b3-79f9-417c-bd0f-1cc6d2de885f"
+    },
+    {
+      "categoriesRanks": {
+        "Conocimiento·Oscuro": 1,
+        "Atletismo·Gimnasia": 1,
+        "Artes Marciales·Golpes": 1,
+        "Autocontrol": 1,
+        "Percepción·Sentidos": 1,
+        "Subterfugio·Sigilo": 1,
+        "Artes Marciales·Barridos": 1,
+        "Influencia": 1
+      },
+      "skillsRanks": {
+        "Desarrollo Físico": 1,
+        "Aguante Adrenal": 1,
+        "Sintonización": 1,
+        "Concentración Zen": 1,
+        "Lucha a Ciegas": 1,
+        "Defensa Adrenal": 1,
+        "Estilo de la Grulla": 1,
+        "Equilibrio Adrenal": 1,
+        "Seducción": 1,
+        "Desarrollo de Puntos de Poder": 1,
+        "Frenesí": 1,
+        "Golpes de Artes Marciales": 1,
+        "Demonología": 1,
+        "Maniobrar Aturdido": 1,
+        "Esprintar": 1,
+        "Sombra Mental": 2,
+        "Leer Runas": 1
+      },
+      "generalizedSkills": [],
+      "spellsUpdated": [
+        "Concentración Zen",
+        "Sombra Mental"
+      ],
+      "trainings": [],
+      "skillSpecializations": [],
+      "trainingDecisions": {},
+      "characteristicsUpdates": [
+        {
+          "characteristicAbbreviature": "Ag",
+          "characteristicPotentialValue": 95,
+          "characteristicTemporalValue": 95,
+          "roll": {
+            "firstDice": 4,
+            "secondDice": 7,
+            "creationTime": "Aug 16, 2015 10:34:42 AM",
+            "updateTime": "Aug 16, 2015 10:34:42 AM",
+            "comparationId": "1b5c25e4-12fe-422d-b7de-f93fa03fff2a"
+          },
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "fa080501-e84a-4783-a531-12e7bab0d728"
+        },
+        {
+          "characteristicAbbreviature": "Co",
+          "characteristicPotentialValue": 80,
+          "characteristicTemporalValue": 80,
+          "roll": {
+            "firstDice": 8,
+            "secondDice": 10,
+            "creationTime": "Aug 16, 2015 10:34:42 AM",
+            "updateTime": "Aug 16, 2015 10:34:42 AM",
+            "comparationId": "e409c753-1942-43f0-aacc-f060acb63046"
+          },
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "61651984-7fe6-4ac9-9d18-04948389d0b9"
+        },
+        {
+          "characteristicAbbreviature": "Me",
+          "characteristicPotentialValue": 68,
+          "characteristicTemporalValue": 68,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 5,
+            "creationTime": "Aug 16, 2015 10:34:42 AM",
+            "updateTime": "Aug 16, 2015 10:34:42 AM",
+            "comparationId": "aed0e552-cfb1-4b95-85af-fc610f9179ee"
+          },
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "bab5c90c-9e20-42d4-87ce-572fb4fe4e02"
+        },
+        {
+          "characteristicAbbreviature": "Ra",
+          "characteristicPotentialValue": 97,
+          "characteristicTemporalValue": 97,
+          "roll": {
+            "firstDice": 2,
+            "secondDice": 5,
+            "creationTime": "Aug 16, 2015 10:34:42 AM",
+            "updateTime": "Aug 16, 2015 10:34:42 AM",
+            "comparationId": "e7e7ae61-9721-4a55-b659-6be289ba0e37"
+          },
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "0f28472f-a6ae-4e22-9629-218fdbad78b7"
+        },
+        {
+          "characteristicAbbreviature": "Ad",
+          "characteristicPotentialValue": 96,
+          "characteristicTemporalValue": 96,
+          "roll": {
+            "firstDice": 8,
+            "secondDice": 7,
+            "creationTime": "Aug 16, 2015 10:34:42 AM",
+            "updateTime": "Aug 16, 2015 10:34:42 AM",
+            "comparationId": "f1f124a4-d6b5-4736-a08e-6dea01368e8e"
+          },
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "3e58ed93-68a8-40e7-b239-2c4fb444865f"
+        },
+        {
+          "characteristicAbbreviature": "Em",
+          "characteristicPotentialValue": 59,
+          "characteristicTemporalValue": 59,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 10,
+            "creationTime": "Aug 16, 2015 10:34:42 AM",
+            "updateTime": "Aug 16, 2015 10:34:42 AM",
+            "comparationId": "9ea9ccbc-4976-4c6e-9b50-56fe803b2828"
+          },
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "b0b4e35c-91f5-448c-8c59-05d962bce6cd"
+        },
+        {
+          "characteristicAbbreviature": "In",
+          "characteristicPotentialValue": 76,
+          "characteristicTemporalValue": 76,
+          "roll": {
+            "firstDice": 9,
+            "secondDice": 1,
+            "creationTime": "Aug 16, 2015 10:34:42 AM",
+            "updateTime": "Aug 16, 2015 10:34:42 AM",
+            "comparationId": "4aee1f9b-108c-40fd-9135-70c050230a53"
+          },
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "2bd3bb58-f7dc-47e6-a2a8-f1c95467abaa"
+        },
+        {
+          "characteristicAbbreviature": "Pr",
+          "characteristicPotentialValue": 94,
+          "characteristicTemporalValue": 94,
+          "roll": {
+            "firstDice": 4,
+            "secondDice": 3,
+            "creationTime": "Aug 16, 2015 10:34:42 AM",
+            "updateTime": "Aug 16, 2015 10:34:42 AM",
+            "comparationId": "48f8b0dd-6d8f-479c-a9c4-229a6bd926c9"
+          },
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "15e6a1fc-67b3-42cf-940d-693e2f424839"
+        },
+        {
+          "characteristicAbbreviature": "Rp",
+          "characteristicPotentialValue": 100,
+          "characteristicTemporalValue": 100,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 1,
+            "creationTime": "Aug 16, 2015 10:34:42 AM",
+            "updateTime": "Aug 16, 2015 10:34:42 AM",
+            "comparationId": "a2c2f245-8042-44df-8ae4-e2cc9665e5da"
+          },
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "52ef661a-07c6-419d-a70c-3d6fddeff6f7"
+        },
+        {
+          "characteristicAbbreviature": "Fu",
+          "characteristicPotentialValue": 99,
+          "characteristicTemporalValue": 99,
+          "roll": {
+            "firstDice": 3,
+            "secondDice": 8,
+            "creationTime": "Aug 16, 2015 10:34:42 AM",
+            "updateTime": "Aug 16, 2015 10:34:42 AM",
+            "comparationId": "a55c6927-6c1f-4aec-bf33-d2c07158a90a"
+          },
+          "creationTime": "Aug 16, 2015 10:34:42 AM",
+          "updateTime": "Aug 16, 2015 10:34:42 AM",
+          "comparationId": "2f8246cd-b800-41a3-9351-24e5140ddf54"
+        }
+      ],
+      "creationTime": "Aug 16, 2015 10:34:42 AM",
+      "updateTime": "Aug 16, 2015 10:34:42 AM",
+      "comparationId": "0011f806-f5c9-43c6-9138-63ec8f5a1844"
+    }
+  ],
+  "enabledSkill": {
+    "Estilo de la Grulla": "Poderes Chi: Golpes Contínuos"
+  },
+  "magicItems": [],
+  "insertedData": {
+    "createdAtLevel": 0,
+    "insertedLevels": 0,
+    "characteristicsTemporalValuesModification": {},
+    "characteristicsPotentialValuesModification": {},
+    "categoriesRanksModification": {},
+    "skillsRanksModification": {},
+    "generalizedSkillsAdded": [],
+    "trainingsAdded": [],
+    "skillSpecializationsAdded": [],
+    "trainingDecisions": {},
+    "creationTime": "Aug 15, 2015 4:22:00 PM",
+    "updateTime": "Aug 15, 2015 4:22:00 PM",
+    "comparationId": "b8a40a67-88ad-42ff-98b7-e62b4bda4eed"
+  },
+  "creationTime": "Aug 15, 2015 4:22:00 PM",
+  "updateTime": "Aug 15, 2015 4:22:00 PM",
+  "comparationId": "bc0cc39a-0bad-4663-bdac-87167cd57a0e"
+}

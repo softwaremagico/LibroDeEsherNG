@@ -1341,6 +1341,30 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void resolvedPerkChoiceGrantAppliesEverySelectedCategory() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.addPerk("weaponCurse");
+		final PerkChoiceGrant grant = RulesCatalog.getInstance().getPerk("weaponCurse").getChoiceGrants()
+				.get(0);
+		final List<String> selected = List.of("weaponsTwoHanded", "weaponsEdged");
+
+		Assert.assertEquals(character.applyPerkChoiceGrant("weaponCurse", 0, grant, selected), selected);
+		Assert.assertEquals(character.getPerkCategoryBonus("weaponsTwoHanded"), Integer.valueOf(-20));
+		Assert.assertEquals(character.getPerkCategoryBonus("weaponsEdged"), Integer.valueOf(-20));
+		Assert.assertEquals(character.getPerkCategoryBonus("weaponsMissile"), Integer.valueOf(0));
+	}
+
+	@Test
+	public void fixedPerkChoiceGrantAppliesWithoutARecordedDecision() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.addPerk("powerMinimum");
+		final PerkChoiceGrant fixedGrant = RulesCatalog.getInstance().getPerk("powerMinimum").getChoiceGrants()
+				.get(0);
+
+		Assert.assertEquals(character.getPerkCategoryRankBonus("listsBasicOfSpells"), fixedGrant.getValue());
+	}
+
+	@Test
 	public void selectedPerkAppliesItsPerRankSkillBonusMultipliedByRealRanks() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.addPerk("aura");

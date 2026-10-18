@@ -1,6 +1,7 @@
 package com.softwaremagico.librodeesher.language;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
@@ -14,6 +15,7 @@ import java.util.Objects;
  * migration tools (see {@code com.softwaremagico.librodeesher.language.Translations}) since the
  * legacy application never had one.</p>
  */
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class TranslatedText implements Comparable<TranslatedText> {
 
     @JsonProperty("es")

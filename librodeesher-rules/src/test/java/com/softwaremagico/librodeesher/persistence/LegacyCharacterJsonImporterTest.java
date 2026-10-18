@@ -29,6 +29,7 @@ public class LegacyCharacterJsonImporterTest {
 
     private static final String REFERENCE_SNAPSHOT = "/Nihal_level9_2_0_0.json";
     private static final String REFERENCE_SNAPSHOT_V211 = "/Ophiliaglii_Humbiton_N7_Jhordi_Monje_Zen.json";
+    private static final String MORTICIA_SNAPSHOT = "/Morticia_Innodan_N10_Ilourianos_Elementalista.json";
 
     @Test
     public void importsTheReferenceLevelSevenV211Snapshot() throws IOException, InvalidXmlElementException {
@@ -145,6 +146,34 @@ public class LegacyCharacterJsonImporterTest {
         Assert.assertTrue(data.isPerksCostBackgroundPoints());
         Assert.assertEquals(data.getCategoryMaxCost(), 50);
         Assert.assertTrue(data.isHandWritingFont());
+    }
+
+    @Test
+    public void importsEveryCategorySelectedForLegacyMultiChoicePerks()
+            throws IOException, InvalidXmlElementException {
+        final CharacterData data = LegacyCharacterJsonImporter.importLegacyJson(readFixture(MORTICIA_SNAPSHOT));
+        final DecisionKey curseKey = DecisionKey.characterWide(DecisionKind.PERK_CHOICE, "weaponCurse", 0);
+        final DecisionData curse = data.getDecisions().get(curseKey.toString());
+
+        Assert.assertNotNull(curse, "the weapon curse's selected categories must be imported");
+        Assert.assertEquals(curse.getSelectedOptions().size(), 8);
+        Assert.assertEquals(curse.getSelectedOptions().subList(0, 6), List.of("weaponsTwoHanded",
+                "weaponsThrown", "weaponsSiege", "weaponsPolearm", "weaponsBlunt", "weaponsEdged"));
+        Assert.assertTrue(curse.getOfferedOptions().contains("weaponsMissile"));
+        Assert.assertFalse(curse.getSelectedOptions().contains("weaponsMissile"));
+
+        final DecisionKey experiencedKey = DecisionKey.characterWide(DecisionKind.PERK_CHOICE,
+                "experiencedCatMaximum", 0);
+        final DecisionData experienced = data.getDecisions().get(experiencedKey.toString());
+        Assert.assertNotNull(experienced);
+        Assert.assertEquals(experienced.getSelectedOptions(), List.of("influence"));
+
+        final CharacterPlayer character = CharacterDataMapper.toCharacter(data);
+        for (final String categoryId : curse.getSelectedOptions()) {
+            Assert.assertEquals(character.getPerkCategoryBonus(categoryId), Integer.valueOf(-20), categoryId);
+        }
+        Assert.assertEquals(character.getPerkCategoryBonus("weaponsMissile"), Integer.valueOf(0));
+        Assert.assertEquals(character.getPerkCategoryBonus("influence"), Integer.valueOf(20));
     }
 
     /**
@@ -541,9 +570,10 @@ public class LegacyCharacterJsonImporterTest {
         // Reference totals recomputed from the snapshots' own "inserted" record and level-ups, with
         // the skill and category ranks of the level 10 "Mago del Aire" training added on top of the
         // recorded ones (legacy getPreviousRanks adds both getTrainingRanks(skill) and (category)).
-        assertMorticiaTotals(importMorticia(MORTICIA_N10), 10, 23, 90, 50, 216, 16, 187, 7, 17);
-        assertMorticiaTotals(importMorticia(MORTICIA_N11), 11, 23, 98, 58, 245, 16, 193, 7, 17);
-        assertMorticiaTotals(importMorticia(MORTICIA_N12), 12, 23, 100, 62, 251, 18, 211, 9, 19);
+        // Multi-target perk selections are now one decision per grant, not one decision per target.
+        assertMorticiaTotals(importMorticia(MORTICIA_N10), 10, 23, 90, 50, 216, 16, 187, 7, 10);
+        assertMorticiaTotals(importMorticia(MORTICIA_N11), 11, 23, 98, 58, 245, 16, 193, 7, 10);
+        assertMorticiaTotals(importMorticia(MORTICIA_N12), 12, 23, 100, 62, 251, 18, 211, 9, 12);
     }
 
     private static CharacterData importMorticia(String snapshot) throws IOException, InvalidXmlElementException {

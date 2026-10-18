@@ -1,0 +1,2059 @@
+{
+  "version": "2.3.0",
+  "name": "Fthagtli Milupa",
+  "sex": "MALE",
+  "characteristicsInitialTemporalValues": {
+    "Fu": 75,
+    "Pr": 31,
+    "Ad": 90,
+    "Em": 31,
+    "Ag": 85,
+    "Co": 77,
+    "In": 75,
+    "Rp": 90,
+    "Me": 75,
+    "Ra": 31
+  },
+  "characteristicsPotentialValues": {
+    "Fu": 90,
+    "Pr": 75,
+    "Ad": 98,
+    "Em": 74,
+    "Ag": 92,
+    "Co": 92,
+    "In": 87,
+    "Rp": 100,
+    "Me": 87,
+    "Ra": 73
+  },
+  "characteristicsTemporalUpdatesRolls": {
+    "Fu": {
+      "rolls": [
+        {
+          "firstDice": 9,
+          "secondDice": 6,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "56daeac9-92bb-4230-a4ff-cda400f7df77"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 8,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "a80889f5-de51-49fa-a887-3e7279fda17b"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 3,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "1d502854-4906-4c42-8f69-7cd16373c121"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 9,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "04fb9a66-e733-4500-9f90-d1813374dc7b"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 8,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "1e98e70b-3062-47db-83e7-8e92e293e034"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 9,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "2912fb56-548e-4027-b1e0-7cd40371f4ae"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 2,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "7ad38a8b-430e-4f34-9ad3-7ac03aba7d53"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 6,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "3a4b5736-af2e-40b7-a5e2-7c76986ef206"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 5,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "69df8f34-a4aa-48fb-b73f-66914440198f"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 2,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "fb8e9744-95e7-4126-b775-1c81de97c472"
+        }
+      ],
+      "characteristicAbbreviature": "Fu",
+      "creationTime": "Jun 5, 2016 7:15:02 PM",
+      "updateTime": "Jun 5, 2016 7:15:02 PM",
+      "comparationId": "3c24aba1-b95a-4f35-9923-bd7c62d4f05d"
+    },
+    "Pr": {
+      "rolls": [
+        {
+          "firstDice": 10,
+          "secondDice": 8,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "ccd49707-2b27-4350-ac2e-a2afc76351a1"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 4,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "779874ea-c04c-41c2-b760-dd1112e39d3b"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 8,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "bce2ea25-6073-4fce-8198-f879234a80d6"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 6,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "17247acb-79f2-4994-affc-5ea1e6efd15c"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 10,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "dd430cee-b754-4684-9927-fe84987e9861"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 5,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "5672b354-6e87-42de-880b-55cf2a4fb14f"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 5,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "0810772f-fb53-4a77-96f7-fe15eca0a3d4"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 10,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "4876d2fd-01a8-4a49-9479-caa0e83f3612"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 4,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "672f7852-8424-47dc-9fb5-c7f5b8129d13"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 6,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "c214d43d-2df1-4d01-8991-8019b4875d78"
+        }
+      ],
+      "characteristicAbbreviature": "Pr",
+      "creationTime": "Jun 5, 2016 7:15:02 PM",
+      "updateTime": "Jun 5, 2016 7:15:02 PM",
+      "comparationId": "bee5ae88-2bb1-49df-aacd-a0b6a7790cf5"
+    },
+    "Ad": {
+      "rolls": [
+        {
+          "firstDice": 1,
+          "secondDice": 10,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "bf96b315-b4e5-4ba1-8f59-83e64011b6d5"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 10,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "f332557b-ea81-4f42-8aeb-5b38a92023ab"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 7,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "42d139a2-a438-4a85-80e2-dc9054f62a5d"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 2,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "b12d65a2-3950-4ae8-9130-05dd937be398"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 4,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "11c75b2f-85ee-4c2b-8796-53e02138a613"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 4,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "532c2ddd-6c02-4c14-98ed-24d794dfad14"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 6,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "41987a17-3d41-4b4d-8b98-4de1c6965291"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 3,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "d0e722b4-7430-4805-b8a8-3cacd35a1cb5"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 9,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "843c8496-505a-4fc3-adaf-d11474f68100"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 2,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "5b334a1e-a862-4968-8091-a3fbdb33af60"
+        }
+      ],
+      "characteristicAbbreviature": "Ad",
+      "creationTime": "Jun 5, 2016 7:15:02 PM",
+      "updateTime": "Jun 5, 2016 7:15:02 PM",
+      "comparationId": "06df9c44-04a6-4fd8-a723-d9a593a436f6"
+    },
+    "Em": {
+      "rolls": [
+        {
+          "firstDice": 1,
+          "secondDice": 5,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "0d1856b0-263d-4aa9-9d29-ce33d1e17d28"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 2,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "c7b428bb-84d5-44c8-9867-10b24885e5b8"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 2,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "f23882f7-2437-44d7-8ffc-f3e1a5d2e16f"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 3,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "e795f3b0-42df-4229-8a04-2186b45969d0"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 6,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "b063cec5-c25a-485c-8edd-e7c921395986"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 5,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "acc2cdc3-dbd7-4311-bed7-d7c1408e5356"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 3,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "24743082-156b-4ab1-ac9e-0b29bb7ff00d"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 6,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "9eea6419-ecbf-46fa-b486-d59d50a1ea1a"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 1,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "3e91a2b3-9f46-44cf-ad69-730ae6615d95"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 7,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "599bb2e0-4ee0-4cf7-8158-17b39e9e9f25"
+        }
+      ],
+      "characteristicAbbreviature": "Em",
+      "creationTime": "Jun 5, 2016 7:15:02 PM",
+      "updateTime": "Jun 5, 2016 7:15:02 PM",
+      "comparationId": "f7621d58-7bb8-4c05-9aa6-23eb65774e6a"
+    },
+    "Ag": {
+      "rolls": [
+        {
+          "firstDice": 9,
+          "secondDice": 2,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "9f4d3106-8b81-41f4-836a-5e80d82c17fc"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 7,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "baa7cd98-6f86-418b-bdec-80c9304abe2f"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 9,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "b0f989a2-51e1-4c62-b2fd-25a03d9ecc9d"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 7,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "99148ab2-bb79-43c2-8118-2c03a49711e8"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 10,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "67496de6-72f4-4e5c-99d1-f902fc62d05c"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 3,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "8def0c26-1823-4366-81ee-3edce9188e28"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 5,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "38aa73a1-c86b-47bc-a847-2994db76362f"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 1,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "9a227f95-4585-4d4a-982f-b41aa3a6e69c"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 9,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "03f4a545-c6b7-4b85-aca2-2da2a9d7f035"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 4,
+          "creationTime": "Jun 5, 2016 8:14:30 PM",
+          "updateTime": "Jun 5, 2016 8:14:30 PM",
+          "comparationId": "b025c340-c5af-4696-be10-6b0f069060be"
+        }
+      ],
+      "characteristicAbbreviature": "Ag",
+      "creationTime": "Jun 5, 2016 7:15:02 PM",
+      "updateTime": "Jun 5, 2016 7:15:02 PM",
+      "comparationId": "c0bea343-b33d-44f0-9f5e-7e92701437aa"
+    },
+    "Co": {
+      "rolls": [
+        {
+          "firstDice": 3,
+          "secondDice": 7,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "3bb9e5a4-2bf1-4d8d-a294-f5f201ccc288"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 3,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "d9f8d686-b9db-4634-8a36-4b5e210140c3"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 6,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "889fe20b-dcfe-4964-b5c1-ad503502f4bc"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 4,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "8df837c9-c5ae-4b68-a742-22845a70f5f2"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 10,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "84e53a3d-e39f-431e-b2d8-b972549e3d34"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 4,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "ddc40fc3-20c5-4ee8-9a0c-b30f81dd7fab"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 7,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "4e85b604-06ff-4746-8657-b3edf216078d"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 10,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "1f508a02-bdf6-47b1-9c63-6e7a04ee1b94"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 6,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "9034ac21-9546-4822-b312-82f0822788ba"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 2,
+          "creationTime": "Jun 5, 2016 8:14:38 PM",
+          "updateTime": "Jun 5, 2016 8:14:38 PM",
+          "comparationId": "681b2f0a-a76a-4d6c-b65b-b02354c006ff"
+        }
+      ],
+      "characteristicAbbreviature": "Co",
+      "creationTime": "Jun 5, 2016 7:15:02 PM",
+      "updateTime": "Jun 5, 2016 7:15:02 PM",
+      "comparationId": "26e7c961-b39e-4e1a-aa3a-68018e7dccbd"
+    },
+    "In": {
+      "rolls": [
+        {
+          "firstDice": 4,
+          "secondDice": 3,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "bfa15f9b-04fb-4745-a9a9-845c6fa64d8c"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 2,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "1eaa8014-b989-4905-8c08-5c5349dc57c5"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 8,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "40461f28-5e14-4381-8e6c-fa32fb34387a"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 10,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "6c7a09ee-9c99-44fc-b389-429a38a5c956"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 1,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "17970f2d-c5a1-4e40-b09f-1c9d0b11a010"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 9,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "2e60a9ff-d6cb-462e-ac66-0c09edb069c6"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 2,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "cbd47e64-d7fa-4d80-9be2-4dca00da6c7d"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 10,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "3bb68359-b62e-44c2-864d-39942116f99e"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 9,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "3b52c334-41f2-4041-8d3f-de134bbdd0a8"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 7,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "c599a2b8-a00a-40ad-b10d-e4b949c5a06f"
+        }
+      ],
+      "characteristicAbbreviature": "In",
+      "creationTime": "Jun 5, 2016 7:15:02 PM",
+      "updateTime": "Jun 5, 2016 7:15:02 PM",
+      "comparationId": "d4a01c3b-fd96-4ea6-ba7d-6319edebe0e0"
+    },
+    "Rp": {
+      "rolls": [
+        {
+          "firstDice": 7,
+          "secondDice": 1,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "8b9f9df7-9bbc-4fa4-bc59-3ee61ff5061a"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 1,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "311f65a5-28e4-4feb-9ed0-2cba0dfc244b"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 2,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "c4456f1f-4800-4922-937c-f53ef682a4ad"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 5,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "c21e1f7b-058a-4233-9c42-238ee1b16ebf"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 6,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "c252a97f-6e8e-4af1-abcb-b59194aa8449"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 7,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "2560b317-c235-4acd-8275-a27d64340d17"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 2,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "bae0851e-e07d-4413-ab67-50d38648d388"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 1,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "634ad849-f063-417c-b9d2-353514db2da3"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 8,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "7d6fa8b2-5abd-42ff-bed4-7a03bbcd27f0"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 2,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "8f564d0b-ef2c-4c21-91e2-211ed1a9faf3"
+        }
+      ],
+      "characteristicAbbreviature": "Rp",
+      "creationTime": "Jun 5, 2016 7:15:02 PM",
+      "updateTime": "Jun 5, 2016 7:15:02 PM",
+      "comparationId": "3a38c29e-034e-43ce-88d9-452609281bee"
+    },
+    "Me": {
+      "rolls": [
+        {
+          "firstDice": 3,
+          "secondDice": 7,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "d35a49dd-56fb-4a61-9c2a-e6cc3cca2ca1"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 6,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "6da773c5-5a96-46e8-89ca-0278895fc154"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 8,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "782b1ce6-95fd-4239-934b-4256b6034ae7"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 9,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "e000c6f3-60bb-4a11-bf35-21c95aa03f3d"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 3,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "f0e817f3-f7ac-49aa-98e7-95252914c578"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 8,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "26118632-04ca-4e68-a8d0-41a4f6da5a1c"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 3,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "5967d07a-595c-44bb-abbc-d4b410edb254"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 1,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "c5825a6c-e2b8-476b-bef1-d32b1729841c"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 3,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "0d5d9e45-7556-4d78-aa79-3724786372d6"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 5,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "712949c3-6dc1-4c30-ae0c-992b167a561b"
+        }
+      ],
+      "characteristicAbbreviature": "Me",
+      "creationTime": "Jun 5, 2016 7:15:02 PM",
+      "updateTime": "Jun 5, 2016 7:15:02 PM",
+      "comparationId": "50911013-84d0-42dc-a73d-e8e85b53f245"
+    },
+    "Ra": {
+      "rolls": [
+        {
+          "firstDice": 10,
+          "secondDice": 4,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "37dde718-c814-4d2c-b117-49c7da451793"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 4,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "5bc0f924-f6f2-4e9d-b437-a813e7e4275d"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 9,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "62409e9b-5621-4f91-b6ff-b09dabeed313"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 9,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "26795718-2f05-44f2-b5f6-6d40e2f8d3c3"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 2,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "986b5f15-5699-437e-b6b0-77c59b222df9"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 4,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "f8ed8bd9-1e37-4c95-9eca-e1ba3fbe8bb6"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 9,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "612c24df-4a01-4acf-bc0c-480fec59394f"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 5,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "987bd106-e25d-4e6e-b6d2-ecbfc0ae3a78"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 7,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "7ab7e272-3db0-4e49-ba6d-e0791b3ef3d8"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 5,
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "0d2b8d55-1d8b-4cd8-a2db-b865c4389bbd"
+        }
+      ],
+      "characteristicAbbreviature": "Ra",
+      "creationTime": "Jun 5, 2016 7:15:02 PM",
+      "updateTime": "Jun 5, 2016 7:15:02 PM",
+      "comparationId": "3174cbac-db14-47b1-968f-e3bc0fcc6aab"
+    }
+  },
+  "characteristicsConfirmed": true,
+  "raceName": "Garks",
+  "cultureName": "Silvana Bárbara",
+  "cultureDecisions": {
+    "skillRanks": {
+      "Daga": 1,
+      "Cerbatana": 3
+    },
+    "hobbyRanks": {
+      "Esquiva Adrenal": 2,
+      "Rastrear": 2,
+      "Esconderse": 2,
+      "Alerta": 2,
+      "Sentido de la Realidad": 1,
+      "Camuflaje": 1
+    },
+    "spellRanks": {
+      "Sendas de la Conmoción": 1,
+      "Senda de la Luz": 1
+    },
+    "languageRanks": {
+      "Escribir Gark": 4,
+      "Hablar Habla Común": 2,
+      "Escribir Habla Común": 2,
+      "Hablar Élfico de los Bosques": 3
+    },
+    "creationTime": "Jun 5, 2016 7:15:02 PM",
+    "updateTime": "Jun 5, 2016 7:15:02 PM",
+    "comparationId": "1da68c5d-de3b-4f38-a941-8f5f0d6aec58"
+  },
+  "professionName": "Monje Guerrero",
+  "professionDecisions": {
+    "weaponsCost": {
+      "Armas·2manos": {
+        "rankCost": [
+          8
+        ],
+        "categoryCostId": "WEAPON3",
+        "creationTime": "Jun 5, 2016 8:15:19 PM",
+        "updateTime": "Jun 5, 2016 8:15:19 PM",
+        "comparationId": "300f46e9-6ae2-4516-a616-8d8702dd2972"
+      },
+      "Armas·Arrojadizas": {
+        "rankCost": [
+          8
+        ],
+        "categoryCostId": "WEAPON4",
+        "creationTime": "Jun 5, 2016 8:15:19 PM",
+        "updateTime": "Jun 5, 2016 8:15:19 PM",
+        "comparationId": "78aa2dcc-cca0-426c-ae17-2af5b62b3b18"
+      },
+      "Armas·Artillería": {
+        "rankCost": [
+          15
+        ],
+        "categoryCostId": "WEAPON7",
+        "creationTime": "Jun 5, 2016 8:15:19 PM",
+        "updateTime": "Jun 5, 2016 8:15:19 PM",
+        "comparationId": "7c33054b-21b1-4f7b-9431-72d6eee64847"
+      },
+      "Armas·Asta": {
+        "rankCost": [
+          15
+        ],
+        "categoryCostId": "WEAPON6",
+        "creationTime": "Jun 5, 2016 8:15:19 PM",
+        "updateTime": "Jun 5, 2016 8:15:19 PM",
+        "comparationId": "195c8956-d252-466d-a7ad-9eadc032debc"
+      },
+      "Armas·Contundentes": {
+        "rankCost": [
+          8
+        ],
+        "categoryCostId": "WEAPON5",
+        "creationTime": "Jun 5, 2016 8:15:20 PM",
+        "updateTime": "Jun 5, 2016 8:15:20 PM",
+        "comparationId": "130bceae-ec39-40a9-8773-535254c06123"
+      },
+      "Armas·Filo": {
+        "rankCost": [
+          4
+        ],
+        "categoryCostId": "WEAPON1",
+        "creationTime": "Jun 5, 2016 8:15:20 PM",
+        "updateTime": "Jun 5, 2016 8:15:20 PM",
+        "comparationId": "9a139c3f-a499-4a2f-b5bf-8e08ee50cbe0"
+      },
+      "Armas·Proyectiles": {
+        "rankCost": [
+          6
+        ],
+        "categoryCostId": "WEAPON2",
+        "creationTime": "Jun 5, 2016 8:15:20 PM",
+        "updateTime": "Jun 5, 2016 8:15:20 PM",
+        "comparationId": "860cb278-f93a-4f25-9ca1-5f25aa8360e7"
+      }
+    },
+    "commonSkillsChosen": [
+      "Esquiva Adrenal"
+    ],
+    "restrictedSkillsChosen": [],
+    "professionalSkillsChosen": [],
+    "creationTime": "Jun 5, 2016 7:15:02 PM",
+    "updateTime": "Jun 5, 2016 7:15:02 PM",
+    "comparationId": "b33f666f-e408-4070-bb41-c77c5ebfb5b7"
+  },
+  "realmOfMagic": {
+    "magicRealmsAvailable": [
+      "Canalizacion"
+    ],
+    "creationTime": "Jun 5, 2016 8:38:50 PM",
+    "updateTime": "Jun 5, 2016 8:38:50 PM",
+    "comparationId": "14fa85e5-c3df-4524-a386-8b49b459e603"
+  },
+  "background": {
+    "categories": [
+      "Artes Marciales·Maniobras de Combate",
+      "Subterfugio·Ataque",
+      "Subterfugio·Sigilo"
+    ],
+    "skills": [
+      "Espada",
+      "Golpes de Artes Marciales",
+      "Estilo Dragón"
+    ],
+    "characteristicsUpdates": [],
+    "creationTime": "Jun 5, 2016 7:15:02 PM",
+    "updateTime": "Jun 5, 2016 7:15:02 PM",
+    "comparationId": "c2f7975f-2d5f-4938-ad41-ed28467ddbb5"
+  },
+  "selectedPerks": [
+    {
+      "name": "Adiestramiento Mortal",
+      "cost": 15,
+      "creationTime": "Jun 5, 2016 8:27:58 PM",
+      "updateTime": "Jun 5, 2016 8:27:58 PM",
+      "comparationId": "e1964cd6-b7f8-4924-96c4-12f4f36f18b9"
+    },
+    {
+      "name": "Adiestramiento en Artes Marciales (Máximo)",
+      "cost": 30,
+      "creationTime": "Jun 5, 2016 8:28:07 PM",
+      "updateTime": "Jun 5, 2016 8:28:07 PM",
+      "comparationId": "01453c7a-ac23-4e11-a019-27231cbbeb03"
+    },
+    {
+      "name": "Intolerante",
+      "cost": -5,
+      "creationTime": "Jun 5, 2016 8:29:55 PM",
+      "updateTime": "Jun 5, 2016 8:29:55 PM",
+      "comparationId": "bbfd3f53-11ae-4a39-b8d8-0e219451b049"
+    },
+    {
+      "name": "Secreto (Menor)",
+      "cost": -10,
+      "creationTime": "Jun 5, 2016 8:30:38 PM",
+      "updateTime": "Jun 5, 2016 8:30:38 PM",
+      "comparationId": "ea47966e-a5eb-4809-8d21-714ae4970865"
+    },
+    {
+      "name": "Fortaleza Corporal",
+      "cost": 8,
+      "creationTime": "Jun 5, 2016 8:33:35 PM",
+      "updateTime": "Jun 5, 2016 8:33:35 PM",
+      "comparationId": "15318f66-123e-4f0f-95fe-befe028f8c7a"
+    },
+    {
+      "name": "Mente sobre Material",
+      "cost": 10,
+      "creationTime": "Jun 5, 2016 8:34:46 PM",
+      "updateTime": "Jun 5, 2016 8:34:46 PM",
+      "comparationId": "3acbbe0c-424a-49d1-a8e7-8368f328377e"
+    }
+  ],
+  "perkDecisions": {
+    "Adiestramiento en Artes Marciales (Máximo)": {
+      "categoriesBonusChosen": [],
+      "categoriesRanksChosen": [],
+      "skillsBonusChosen": [],
+      "skillsRanksChosen": [],
+      "commonSkillsChosen": [
+        "Defensa Adrenal"
+      ],
+      "creationTime": "Jun 5, 2016 8:28:14 PM",
+      "updateTime": "Jun 5, 2016 8:28:14 PM",
+      "comparationId": "b8544ded-b6e7-48a7-b742-37991e776fff"
+    }
+  },
+  "appearance": {
+    "dicesResult": 22,
+    "creationTime": "Jun 5, 2016 7:15:02 PM",
+    "updateTime": "Jun 5, 2016 7:15:02 PM",
+    "comparationId": "796a7e3d-c442-4d29-b320-7da620e74488"
+  },
+  "darkSpellsAsBasicListsAllowed": false,
+  "firearmsAllowed": false,
+  "chiPowersAllowed": false,
+  "otherRealmtrainingSpellsAllowed": false,
+  "perksCostHistoryPoints": false,
+  "handWrittingFont": false,
+  "sortPdfSkills": false,
+  "levelUps": [
+    {
+      "categoriesRanks": {
+        "Artes Marciales·Barridos": 1,
+        "Artes Marciales·Golpes": 1,
+        "Armas·Filo": 1,
+        "Atletismo·Gimnasia": 1,
+        "Autocontrol": 1
+      },
+      "skillsRanks": {
+        "Barridos de Artes Marciales": 1,
+        "Golpes de Artes Marciales": 1,
+        "Golpe Nervioso": 1,
+        "Estilo Dragón": 1,
+        "Esquiva Adrenal": 1,
+        "Estilo Simio": 1,
+        "Espada": 1,
+        "Volteretas": 1,
+        "Defensa Adrenal": 1,
+        "Poderes Chi: Resistir el Dolor": 1,
+        "Superar Aturdimiento": 1
+      },
+      "generalizedSkills": [],
+      "spellsUpdated": [],
+      "trainings": [
+        "Ninja"
+      ],
+      "skillSpecializations": [],
+      "trainingDecisions": {
+        "Ninja": {
+          "categoriesSelected": {},
+          "skillsSelected": {
+            "0": {
+              "skillsRanks": {
+                "Espada": 1
+              },
+              "creationTime": "Jun 5, 2016 8:14:30 PM",
+              "updateTime": "Jun 5, 2016 8:14:30 PM",
+              "comparationId": "8a911bac-dc50-4660-a769-fd06c96b1ed0"
+            },
+            "1": {
+              "skillsRanks": {
+                "Barridos de Artes Marciales": 1
+              },
+              "creationTime": "Jun 5, 2016 8:14:30 PM",
+              "updateTime": "Jun 5, 2016 8:14:30 PM",
+              "comparationId": "9f1b8edb-bf12-4943-b63c-530cb4f6dea1"
+            },
+            "2": {
+              "skillsRanks": {
+                "Golpes de Artes Marciales": 1
+              },
+              "creationTime": "Jun 5, 2016 8:14:30 PM",
+              "updateTime": "Jun 5, 2016 8:14:30 PM",
+              "comparationId": "a825d0fb-7520-4593-8c30-3004d6092cdd"
+            },
+            "3": {
+              "skillsRanks": {
+                "Estilo Dragón": 2
+              },
+              "creationTime": "Jun 5, 2016 8:14:30 PM",
+              "updateTime": "Jun 5, 2016 8:14:30 PM",
+              "comparationId": "52c1765c-c543-4317-abbc-54874391a0f5"
+            },
+            "4": {
+              "skillsRanks": {
+                "Acrobacias": 2,
+                "Trepar": 2
+              },
+              "creationTime": "Jun 5, 2016 8:14:30 PM",
+              "updateTime": "Jun 5, 2016 8:14:30 PM",
+              "comparationId": "19c6129a-9573-4563-a3af-2da9dbc5e802"
+            },
+            "5": {
+              "skillsRanks": {
+                "Velocidad Adrenal": 1,
+                "Poderes Chi: Resistir el Dolor": 1
+              },
+              "creationTime": "Jun 5, 2016 8:14:30 PM",
+              "updateTime": "Jun 5, 2016 8:14:30 PM",
+              "comparationId": "bd0f7573-28d9-489a-a86b-9f3f3cc1140b"
+            },
+            "6": {
+              "skillsRanks": {
+                "Desarrollo Físico": 1
+              },
+              "creationTime": "Jun 5, 2016 8:14:30 PM",
+              "updateTime": "Jun 5, 2016 8:14:30 PM",
+              "comparationId": "d6832e65-a4d2-4e18-97da-a9c57e7a44dd"
+            },
+            "7": {
+              "skillsRanks": {
+                "Esquiva Adrenal": 2
+              },
+              "creationTime": "Jun 5, 2016 8:14:30 PM",
+              "updateTime": "Jun 5, 2016 8:14:30 PM",
+              "comparationId": "5465cf1e-af4b-4fd5-92e1-913e073753b5"
+            },
+            "8": {
+              "skillsRanks": {
+                "Ataque Silencioso": 1,
+                "Emboscar": 1
+              },
+              "creationTime": "Jun 5, 2016 8:14:30 PM",
+              "updateTime": "Jun 5, 2016 8:14:30 PM",
+              "comparationId": "89f94efd-ea45-4c75-b2ab-58b54628ae45"
+            },
+            "9": {
+              "skillsRanks": {
+                "Esconderse": 2,
+                "Acechar": 2,
+                "Robar Bolsillos": 1
+              },
+              "creationTime": "Jun 5, 2016 8:14:30 PM",
+              "updateTime": "Jun 5, 2016 8:14:30 PM",
+              "comparationId": "83084276-2fe5-45f9-a76f-d8c75af9c7fc"
+            },
+            "10": {
+              "skillsRanks": {
+                "Disimulo": 1
+              },
+              "creationTime": "Jun 5, 2016 8:14:30 PM",
+              "updateTime": "Jun 5, 2016 8:14:30 PM",
+              "comparationId": "53793220-542f-4c28-85df-41cb4c71a6e5"
+            }
+          },
+          "characteristicsUpdates": [
+            {
+              "characteristicAbbreviature": "Ag",
+              "characteristicPotentialValue": 92,
+              "characteristicTemporalValue": 89,
+              "roll": {
+                "firstDice": 3,
+                "secondDice": 10,
+                "creationTime": "Jun 5, 2016 8:14:30 PM",
+                "updateTime": "Jun 5, 2016 8:14:30 PM",
+                "comparationId": "9ec88956-8392-4f37-a49d-dad0a7e66691"
+              },
+              "creationTime": "Jun 5, 2016 8:14:30 PM",
+              "updateTime": "Jun 5, 2016 8:14:30 PM",
+              "comparationId": "48d19e53-e1b9-468d-896e-cdd9304dd0b7"
+            },
+            {
+              "characteristicAbbreviature": "Co",
+              "characteristicPotentialValue": 92,
+              "characteristicTemporalValue": 86,
+              "roll": {
+                "firstDice": 4,
+                "secondDice": 9,
+                "creationTime": "Jun 5, 2016 8:14:38 PM",
+                "updateTime": "Jun 5, 2016 8:14:38 PM",
+                "comparationId": "4fe64eac-8bb0-4b5a-9a2b-d660f8b95184"
+              },
+              "creationTime": "Jun 5, 2016 8:14:38 PM",
+              "updateTime": "Jun 5, 2016 8:14:38 PM",
+              "comparationId": "7d9fd486-7e4a-451f-9110-4964842431db"
+            }
+          ],
+          "commonSkillsChosen": [],
+          "professionalSkillsChosen": [],
+          "restrictedSkillsChosen": [],
+          "equipment": [
+            {
+              "name": "Arma Disimulada",
+              "description": "",
+              "bonus": 0,
+              "type": "UNKNOWN",
+              "skill": "",
+              "probability": 60,
+              "creationTime": "Jun 5, 2016 8:14:30 PM",
+              "updateTime": "Jun 5, 2016 8:14:30 PM",
+              "comparationId": "7b6bc166-e3c2-4352-bc74-c3973576c7e6"
+            },
+            {
+              "name": "Identidad Secreta",
+              "description": "mercader",
+              "bonus": 0,
+              "type": "UNKNOWN",
+              "skill": "",
+              "probability": 50,
+              "creationTime": "Jun 5, 2016 8:14:30 PM",
+              "updateTime": "Jun 5, 2016 8:14:30 PM",
+              "comparationId": "20b3ce9e-77ab-4704-8a16-109df8f4331e"
+            }
+          ],
+          "magicItems": [],
+          "creationTime": "Jun 5, 2016 8:06:01 PM",
+          "updateTime": "Jun 5, 2016 8:06:01 PM",
+          "comparationId": "a8dcc3e0-703e-4620-aa6e-6dc4614a09a0"
+        }
+      },
+      "characteristicsUpdates": [
+        {
+          "characteristicAbbreviature": "Ag",
+          "characteristicPotentialValue": 92,
+          "characteristicTemporalValue": 85,
+          "roll": {
+            "firstDice": 4,
+            "secondDice": 8,
+            "creationTime": "Jun 5, 2016 7:15:02 PM",
+            "updateTime": "Jun 5, 2016 7:15:02 PM",
+            "comparationId": "ec0afdd0-d5ca-4590-8d6f-33a9878f45c3"
+          },
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "22303bae-efde-40cc-9d79-ec58df75fb1d"
+        },
+        {
+          "characteristicAbbreviature": "Co",
+          "characteristicPotentialValue": 92,
+          "characteristicTemporalValue": 77,
+          "roll": {
+            "firstDice": 9,
+            "secondDice": 1,
+            "creationTime": "Jun 5, 2016 7:15:02 PM",
+            "updateTime": "Jun 5, 2016 7:15:02 PM",
+            "comparationId": "6be9ff30-d209-4d22-8450-803e8ea48876"
+          },
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "9d1d68d3-551b-4e3f-8242-65e8aa7ff7db"
+        },
+        {
+          "characteristicAbbreviature": "Me",
+          "characteristicPotentialValue": 87,
+          "characteristicTemporalValue": 75,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 5,
+            "creationTime": "Jun 5, 2016 7:15:02 PM",
+            "updateTime": "Jun 5, 2016 7:15:02 PM",
+            "comparationId": "c2f91f92-fc67-4dfd-9d15-350b1719fd56"
+          },
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "6a4d4e11-5a97-490f-9e99-d03763e9ad10"
+        },
+        {
+          "characteristicAbbreviature": "Ra",
+          "characteristicPotentialValue": 73,
+          "characteristicTemporalValue": 31,
+          "roll": {
+            "firstDice": 10,
+            "secondDice": 6,
+            "creationTime": "Jun 5, 2016 7:15:02 PM",
+            "updateTime": "Jun 5, 2016 7:15:02 PM",
+            "comparationId": "3b139854-8965-4ce4-ad22-ee5a9cfbcee4"
+          },
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "e0ad2a0f-3887-4585-9e44-090b900cdf0d"
+        },
+        {
+          "characteristicAbbreviature": "Ad",
+          "characteristicPotentialValue": 98,
+          "characteristicTemporalValue": 90,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 7,
+            "creationTime": "Jun 5, 2016 7:15:02 PM",
+            "updateTime": "Jun 5, 2016 7:15:02 PM",
+            "comparationId": "ad217852-6dfe-43fe-89bc-8ed8eaa0dc6e"
+          },
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "1d67f502-493b-414c-808b-acbff48d5342"
+        },
+        {
+          "characteristicAbbreviature": "Em",
+          "characteristicPotentialValue": 74,
+          "characteristicTemporalValue": 31,
+          "roll": {
+            "firstDice": 4,
+            "secondDice": 10,
+            "creationTime": "Jun 5, 2016 7:15:02 PM",
+            "updateTime": "Jun 5, 2016 7:15:02 PM",
+            "comparationId": "e22b3349-5b52-4670-971d-da8eab3169b4"
+          },
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "671bd6f7-92d9-44f7-ba31-19b21c936a47"
+        },
+        {
+          "characteristicAbbreviature": "In",
+          "characteristicPotentialValue": 87,
+          "characteristicTemporalValue": 75,
+          "roll": {
+            "firstDice": 8,
+            "secondDice": 5,
+            "creationTime": "Jun 5, 2016 7:15:02 PM",
+            "updateTime": "Jun 5, 2016 7:15:02 PM",
+            "comparationId": "9d0b9969-870d-417a-9bf7-4412663e35aa"
+          },
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "0a8b45af-8fa0-4522-9e5c-4fea9237aea2"
+        },
+        {
+          "characteristicAbbreviature": "Pr",
+          "characteristicPotentialValue": 75,
+          "characteristicTemporalValue": 31,
+          "roll": {
+            "firstDice": 2,
+            "secondDice": 6,
+            "creationTime": "Jun 5, 2016 7:15:02 PM",
+            "updateTime": "Jun 5, 2016 7:15:02 PM",
+            "comparationId": "7a3e7ba2-a25b-4af7-a37b-87c0bc5b2280"
+          },
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "dcc435cb-f1b2-4d5d-aaeb-ad1276debb6f"
+        },
+        {
+          "characteristicAbbreviature": "Rp",
+          "characteristicPotentialValue": 100,
+          "characteristicTemporalValue": 90,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 6,
+            "creationTime": "Jun 5, 2016 7:15:02 PM",
+            "updateTime": "Jun 5, 2016 7:15:02 PM",
+            "comparationId": "ce2f0985-6b6f-45d6-a66b-83d722a485f9"
+          },
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "25c3c264-6174-4bdf-a627-76adac2466cd"
+        },
+        {
+          "characteristicAbbreviature": "Fu",
+          "characteristicPotentialValue": 90,
+          "characteristicTemporalValue": 75,
+          "roll": {
+            "firstDice": 5,
+            "secondDice": 8,
+            "creationTime": "Jun 5, 2016 7:15:02 PM",
+            "updateTime": "Jun 5, 2016 7:15:02 PM",
+            "comparationId": "21ee3323-d92d-425f-bb2a-a16881dc3de1"
+          },
+          "creationTime": "Jun 5, 2016 7:15:02 PM",
+          "updateTime": "Jun 5, 2016 7:15:02 PM",
+          "comparationId": "3337dcc3-0fae-4882-a2ba-712cdf71df71"
+        }
+      ],
+      "favouriteSkills": [],
+      "creationTime": "Jun 5, 2016 7:15:02 PM",
+      "updateTime": "Jun 5, 2016 7:15:02 PM",
+      "comparationId": "d5c5a001-f0c4-4113-af89-cef8c0ff0380"
+    }
+  ],
+  "enabledSkill": {
+    "Estilo Dragón": "Poderes Chi: Resistir el Dolor",
+    "Estilo Simio": "Poderes Chi: Golpe en Salto"
+  },
+  "magicItems": [],
+  "insertedData": {
+    "createdAtLevel": 0,
+    "insertedLevels": 0,
+    "characteristicsTemporalValuesModification": {},
+    "characteristicsPotentialValuesModification": {},
+    "categoriesRanksModification": {
+      "Listas Cerradas de Hechizos": 0,
+      "Percepción·Perspicacia": 0,
+      "Armas·Filo": 0,
+      "Subterfugio·Ataque": 0,
+      "Ciencia/Analítica·Especializada": 0,
+      "Oficios": 0,
+      "Listas Básicas de Otras Profesiones": 0,
+      "Percepción de Poder": 0,
+      "Armas·Fuego 1mano": 0,
+      "Arte·Pasivo": 0,
+      "Comunicación": 0,
+      "Listas Básicas de Otros Reinos": 0,
+      "Armas·Contundentes": 0,
+      "Atletismo·Gimnasia": 0,
+      "Arte·Activo": 0,
+      "Exteriores·Entorno": 0,
+      "Armas·Arrojadizas": 0,
+      "Defensas Especiales": 0,
+      "Armadura·Pesada": 0,
+      "Influencia": 0,
+      "Conocimiento·General": 0,
+      "Ataques Especiales": 0,
+      "Manipulación del Poder": 0,
+      "Subterfugio·Sigilo": 0,
+      "Listas Básicas Elementales Complementarias": 0,
+      "Subterfugio·Mecánica": 0,
+      "Desarrollo Físico": 0,
+      "Conocimiento·Técnico": 0,
+      "Listas Abiertas Arcanas": 0,
+      "Armas·Fuego 2manos": 0,
+      "Hechizos Dirigidos": 0,
+      "Armas·Artillería": 0,
+      "Listas Básicas de la Tríada": 0,
+      "Autocontrol": 0,
+      "Atletismo·Potencia": 0,
+      "Técnica/comercio·General": 0,
+      "Listas Cerradas de Otros Reinos": 0,
+      "Técnica/comercio·Vocacional": 0,
+      "Listas Abiertas de Hechizos": 0,
+      "Listas Abiertas de Otros Reinos": 0,
+      "Percepción·Sentidos": 0,
+      "Armadura·Ligera": 0,
+      "Ciencia/Analítica·Básica": 0,
+      "Maniobras de Combate": 0,
+      "Listas Hechizos de Adiestramiento": 0,
+      "Armas·Asta": 0,
+      "Listas Hechizos de Adiestramientos de Otros Reinos": 0,
+      "Artes Marciales·Golpes": 0,
+      "Atletismo·Resistencia": 0,
+      "Conocimiento·Mágico": 0,
+      "Urbana": 0,
+      "Técnica/comercio·Profesional": 0,
+      "Artes Marciales·Barridos": 0,
+      "Exteriores·Animales": 0,
+      "Armadura·Media": 0,
+      "Percepción·Búsqueda": 0,
+      "Armas·2manos": 0,
+      "Conocimiento·Oscuro": 0,
+      "Armas·Proyectiles": 0,
+      "Desarrollo de Puntos de Poder": 0,
+      "Artes Marciales·Maniobras de Combate": 0,
+      "Listas Básicas de Hechizos": 0
+    },
+    "skillsRanksModification": {
+      "Conocimiento de la Flora (Silvana Bárbara)": 0,
+      "Conocimiento de los No-Muertos": 0,
+      "Interrogar": 0,
+      "Conocimiento Cultural (Desierto Militarista)": 0,
+      "Conocimiento Regional (Llanuras)": 0,
+      "Conocimiento de la Flora (Silvana Nómada)": 0,
+      "Saltar": 0,
+      "Conocimiento de la Flora (Desierto Bandido)": 0,
+      "Pica": 0,
+      "Ataque Racial: Vómito": 0,
+      "Conocimiento Cultural (Aérea Bárbara)": 0,
+      "Diagnosis": 0,
+      "Investigación": 0,
+      "Conocimiento Cultural (Tierras Altas Militarista)": 0,
+      "Conocimiento de la Fauna (Desierto Militarista)": 0,
+      "Espada Larga": 0,
+      "Estilo de la Serpiente": 0,
+      "Hablar Dríade": 0,
+      "Conocimiento de la Flora (Desierto)": 0,
+      "Poderes Chi: Lanza de tela": 0,
+      "Hablar Lennai": 0,
+      "Conocimiento Cultural (Acuática Militarista)": 0,
+      "Escribir Hirazi": 0,
+      "Hablar Habla de las Colinas": 0,
+      "Combate Montado": 0,
+      "Conocimiento Regional (Ártica)": 0,
+      "Conocimiento de la Flora (Tierras Altas Bárbara)": 0,
+      "Aguante Adrenal": 0,
+      "Imitar Sonidos": 0,
+      "Pica de Guerra": 0,
+      "Cirugía": 0,
+      "Aklys": 0,
+      "Cimitarra": 0,
+      "Desarmar Enemigo (Desarmado)": 0,
+      "Poderes Chi: Invulnerabilidad - Contundentes": 0,
+      "Conocimiento Cultural": 0,
+      "Boxeo": 0,
+      "Conocimiento Cultural (Silvana Nómada)": 0,
+      "Embaucar": 0,
+      "Conocimiento de la Flora (Aérea Bárbara)": 0,
+      "Escribir Centauro Escorpión": 0,
+      "Salto con Pértiga": 0,
+      "Conocimiento Cultural (Subterránea)": 0,
+      "Conocimiento Regional (Ártica Nómada)": 0,
+      "Trabajar el Metal": 0,
+      "Hablar Gnómico": 0,
+      "Conocimiento Regional (Silvana)": 0,
+      "Emboscar": 0,
+      "Estilo de Arte Marcial (Avanzado)": 0,
+      "Pintura: Corporal": 0,
+      "Contorsionismo": 0,
+      "Evaluar Arma": 0,
+      "Martillo Lucerne": 0,
+      "Trascender Armadura": 0,
+      "Rayo de Agua": 0,
+      "Conocimiento Regional": 0,
+      "Música": 0,
+      "Agenciar": 0,
+      "Escribir Lydiano": 0,
+      "Jitte": 0,
+      "Sintonización": 0,
+      "Montar: Osos": 0,
+      "Poderes Chi: Resistir Elementos": 0,
+      "Escribir Élfico de los Bosques": 0,
+      "Narrar Historias": 0,
+      "Poderes Chi: Trepar de la Lagartija": 0,
+      "Disfrazarse": 0,
+      "Espada Corta": 0,
+      "Rayo de Vapor": 0,
+      "Volar/Planear": 0,
+      "Poderes Chi: Ataque Sin Sombra": 0,
+      "Arma de Asta": 0,
+      "Frenesí": 0,
+      "Trepar": 0,
+      "Conocimiento de la Fauna (Acuática Militarista)": 0,
+      "Alabarda": 0,
+      "Conocimiento Cultural (Rural Nómada)": 0,
+      "Estilo de Arma (Básico)": 0,
+      "Detectar Emboscadas": 0,
+      "Poderes Chi: Invulnerabilidad - Filo": 0,
+      "Comerciar": 0,
+      "Coraza": 0,
+      "Poderes Chi: Invulnerabilidad - Proyectiles": 0,
+      "Conocimiento de la Fauna (Minera)": 0,
+      "Montar": 0,
+      "Escribir Dyari": 0,
+      "Fintar (Armado)": 0,
+      "Pastoreo": 0,
+      "Sable": 0,
+      "Conocimiento de la Fauna": 0,
+      "Maestría de los Hechizos: Control del Aire": 0,
+      "Conocimiento de la Flora (Litoral Bandido)": 0,
+      "Nadar": 0,
+      "Juegos Atléticos (Potencia)": 0,
+      "Construir Trampas": 0,
+      "Placaje": 0,
+      "Robar Bolsillos": 0,
+      "Conocimiento de la Fauna (Tierras Altas Bárbara)": 0,
+      "Maestría de los Hechizos": 0,
+      "Evaluar Piedra": 0,
+      "Psicología": 0,
+      "Resistencia Adrenal": 0,
+      "Lanza de Caballería": 0,
+      "Conocimiento de los Puntos Vitales": 0,
+      "Rayo de Fuerza": 0,
+      "Usa/Curar Venenos": 0,
+      "Martillo de Guerra": 0,
+      "Táctica": 0,
+      "Control de la Licantropía": 0,
+      "Idiomas Mágicos": 0,
+      "Preparar Trampas": 0,
+      "Forrajear": 0,
+      "Hablar Ky\u0027taari": 0,
+      "Conocimiento Cultural (Ártica Militarista)": 0,
+      "Supervivencia (Desiertos)": 0,
+      "Preparar Venenos": 0,
+      "Tacto": 0,
+      "Cerbatana": 0,
+      "Abanico de Combate": 0,
+      "Caída Adrenal": 0,
+      "Equilibrio Adrenal": 0,
+      "Usar Hierbas": 0,
+      "Detectar Trampas": 0,
+      "Leer Huellas": 0,
+      "Conocimiento Cultural (Rural)": 0,
+      "Hablar Jameri": 0,
+      "Conocimiento Regional (Acuática Nómada)": 0,
+      "Primeros Auxilios": 0,
+      "Escribir Élfico Gris": 0,
+      "Salto Adrenal": 0,
+      "Montar: Lobos": 0,
+      "Ataque Racial: Otro": 0,
+      "Conocimiento de la Flora (Rural Militarista)": 0,
+      "Volteretas": 0,
+      "Esquiva Acrobática": 0,
+      "Mangual": 0,
+      "Manejo de Botes": 0,
+      "Imitación": 0,
+      "Conocimiento Regional (Minera Militarista)": 0,
+      "Cuero Endurecido": 0,
+      "Conocimiento de la Flora (Rural)": 0,
+      "Hablar Enano": 0,
+      "Trabajar la Madera": 0,
+      "Ranscur": 0,
+      "Historia": 0,
+      "Navegación": 0,
+      "Conocimiento de la Fauna (Litoral Bandido)": 0,
+      "Ocultar Objetos": 0,
+      "Espada Grande": 0,
+      "Escribir Habla de los Mares": 0,
+      "Relámpago": 0,
+      "Cayado": 0,
+      "Ballesta Pesada": 0,
+      "Antropología": 0,
+      "Ingeniería de Asedio": 0,
+      "Matemáticas Avanzadas": 0,
+      "Conocimiento Regional (Subterránea Militarista)": 0,
+      "Espadón": 0,
+      "Rayo de Éter": 0,
+      "Percepción del Entorno: Exploración": 0,
+      "Escribir Élfico": 0,
+      "Fauchard": 0,
+      "Poderes Chi: Resistir el Dolor": 0,
+      "Conocimiento de las Hadas": 0,
+      "Disimulo": 0,
+      "Hacha Bastarda": 0,
+      "Poderes Chi: Puño Envenenado": 0,
+      "Esquiar": 0,
+      "Hechizos": 0,
+      "Poderes Chi: Puño Elemental - Impacto": 0,
+      "Minería": 0,
+      "Filosofía": 0,
+      "Trampero": 0,
+      "Actuar": 0,
+      "Bordar": 0,
+      "Conocimiento del Comercio": 0,
+      "Espada Bastarda": 0,
+      "Poderes Chi: Postura Invencible": 0,
+      "Demonología": 0,
+      "Conocimiento de la Flora (Minera)": 0,
+      "Conocimiento Regional (Aérea Bárbara)": 0,
+      "Dardo": 0,
+      "Combate con 2 Armas": 0,
+      "Atrapa Hombres": 0,
+      "Caminar con Zancos": 0,
+      "Coser/Tejer": 0,
+      "Administración": 0,
+      "Ariete": 0,
+      "Leer Runas": 0,
+      "Ballesta de Mano": 0,
+      "Juegos Atléticos (Gimnasia)": 0,
+      "Ataque Racial: Extremidades": 0,
+      "Conocimiento de la Flora (Subterránea de las Profundidades)": 0,
+      "Conocimiento Cultural (Acuática)": 0,
+      "Naginata": 0,
+      "Rappelling": 0,
+      "Subyugar": 0,
+      "Trance de la Muerte": 0,
+      "Conocimiento Cultural (Minera Militarista)": 0,
+      "Conocimiento de la Piedra": 0,
+      "Montar: Elefantes": 0,
+      "Adormecerse": 0,
+      "Golpe Poderoso": 0,
+      "Conocimiento de la Flora (Acuática Nómada)": 0,
+      "Conocimiento de la Fauna (Rural)": 0,
+      "Sentido de la Realidad": 0,
+      "Artimañas": 0,
+      "Catapulta": 0,
+      "Luchar a Ciegas": 0,
+      "Red de Gladiador": 0,
+      "Acrobacias": 0,
+      "Poderes Chi: Mantener la Respiración": 0,
+      "Conocimiento de la Fauna (Ártica Militarista)": 0,
+      "Defensa Adrenal": 0,
+      "Espeleología": 0,
+      "Desenvainar Adrenal": 0,
+      "Malabarismos": 0,
+      "Conocimiento de los Símbolos": 0,
+      "Poderes Chi: Puño Elemental - Electricidad": 0,
+      "Trabajar el Cuero": 0,
+      "Rifle de Avancarga: Moroccan Snaphance": 0,
+      "Hablar Élfico Gris": 0,
+      "Conocimiento Regional (Acuática Militarista)": 0,
+      "Percepción del Poder": 0,
+      "Hablar Élfico": 0,
+      "Trance Sanador": 0,
+      "Conocimiento de la Flora (Subterránea Militarista)": 0,
+      "Leer los Labios": 0,
+      "Bisarma": 0,
+      "Conocimiento Cultural (Ártica)": 0,
+      "Cuidados Médicos": 0,
+      "Conocimiento Cultural (Desierto Bandido)": 0,
+      "Conocimiento Cultural (Ártica Nómada)": 0,
+      "Conocimiento de la Fauna (Tierras Altas Militarista)": 0,
+      "Estrella de la Mañana": 0,
+      "Navegar": 0,
+      "Manejo de Cuerdas": 0,
+      "Maquinaria": 0,
+      "Conocimiento de la Flora (Llanuras)": 0,
+      "Ataque de Revés": 0,
+      "Oratoria": 0,
+      "Conocimiento Cultural (Desierto)": 0,
+      "Poderes Chi: Mano de Buda": 0,
+      "Rayo de Frío": 0,
+      "Desactivar Trampas": 0,
+      "Escribir Habla del Sur": 0,
+      "Mímica": 0,
+      "Conocimiento de los Hechizos": 0,
+      "Escribir Enano": 0,
+      "Alquimia": 0,
+      "Conocimiento de la Fauna (Subterránea de las Profundidades)": 0,
+      "Kama": 0,
+      "Predicción del Clima": 0,
+      "Revolver: Colt Trooper": 0,
+      "Látigo Metálico": 0,
+      "Conocimiento de la Fauna (Llanuras)": 0,
+      "Esquiva Adrenal": 0,
+      "Caer": 0,
+      "Shuriken": 0,
+      "Supervivencia (Subterráneos)": 0,
+      "Montar: Caballos": 0,
+      "Bastón Honda": 0,
+      "Escribir": 0,
+      "Lucha a Ciegas": 0,
+      "Hacer Flechas": 0,
+      "Astronomía": 0,
+      "Rumorear": 0,
+      "Conocimiento Regional (Litoral)": 0,
+      "Cutlass": 0,
+      "Evaluar Armadura": 0,
+      "Conocimiento de los Venenos": 0,
+      "Levantar Pesos": 0,
+      "Hablar Habla del Sur": 0,
+      "Percepción del Entorno: Combate": 0,
+      "Tridente": 0,
+      "Hablar Élfico de los Bosques": 0,
+      "Sobornar": 0,
+      "Meditación": 0,
+      "Conocimiento de los Planos": 0,
+      "Escribir Habla de los Bosques": 0,
+      "Horca": 0,
+      "Abrir Cerraduras": 0,
+      "Escribir Lengua Negra": 0,
+      "Sentido del Tiempo": 0,
+      "Arco Compuesto": 0,
+      "Conocimiento Cultural (Tierras Altas)": 0,
+      "Conocimiento de la Flora (Minera Militarista)": 0,
+      "Montar: Camellos": 0,
+      "Látigo de Acero": 0,
+      "Conocimiento de la Fauna (Silvana Nómada)": 0,
+      "Juegos de Manos": 0,
+      "Kyotetsu-shoge": 0,
+      "Hablar Habla del Norte": 0,
+      "Conocimiento Regional (Llanuras Nómadas)": 0,
+      "Ninjato": 0,
+      "Rayo de Hielo": 0,
+      "Conocimiento Cultural (Subterránea Militarista)": 0,
+      "Maniobrar Aturdido": 0,
+      "Conocimiento de las Protecciones": 0,
+      "Hablar Habla Alta": 0,
+      "Conocimiento de la Fauna (Silvana)": 0,
+      "Cota de Mallas": 0,
+      "Pintura": 0,
+      "Estilo de Arma (Avanzado)": 0,
+      "Idiomas Mágicos: Espiritus": 0,
+      "Escribir Lennai": 0,
+      "Conocimiento de la Flora (Rural Nómada)": 0,
+      "Conocimiento de la Flora (Silvana)": 0,
+      "Supervivencia": 0,
+      "Poderes Chi: Golpes Contínuos": 0,
+      "Conocimiento de la Flora (Ártica)": 0,
+      "Conocimiento de los Metales": 0,
+      "Escribir Habla de las Colinas": 0,
+      "Callejeo": 0,
+      "Daga": 0,
+      "Escribir Dríade": 0,
+      "Florituras": 0,
+      "Peletería": 0,
+      "Poderes Chi: Contacto Contínuo": 0,
+      "Conocimiento de la Fauna (Ártica Nómada)": 0,
+      "Mnemotecnia": 0,
+      "Poderes Chi: Salto Fantástico": 0,
+      "Estilo de las Ocho Hadas Borrachas": 0,
+      "Cantar": 0,
+      "Carrera de Fondo": 0,
+      "Conocimiento Regional (Acuática)": 0,
+      "Sentido de la Dirección": 0,
+      "Poesía": 0,
+      "Caminar por la Cuerda Floja": 0,
+      "Percepción del Entorno: Durmiendo": 0,
+      "Buscar": 0,
+      "Supervivencia (Ártico)": 0,
+      "Florete": 0,
+      "Lanza": 0,
+      "Arco Largo": 0,
+      "Boomerang": 0,
+      "Bola de Fuego": 0,
+      "Escribir Centauro": 0,
+      "Seducción": 0,
+      "Manejo de los Animales": 0,
+      "Vara de Tres Secciones": 0,
+      "Hacha de Batalla": 0,
+      "Desarrollo Físico": 0,
+      "Rayo de Fuego": 0,
+      "Conocimiento Cultural (Litoral)": 0,
+      "Camuflaje": 0,
+      "Conocimiento de la Fauna (Acuática Nómada)": 0,
+      "Conocimiento de la Fauna (Rural Militarista)": 0,
+      "Lanza Pesada": 0,
+      "Golpes de Artes Marciales": 0,
+      "Tocar Instrumento": 0,
+      "Detectar Venenos": 0,
+      "Conocimiento Regional (Litoral Bandido)": 0,
+      "Conocimiento de la Fauna (Subterránea Militarista)": 0,
+      "Liderazgo": 0,
+      "Ataque Racial: Boca": 0,
+      "Hablar Centauro Escorpión": 0,
+      "Conocimiento de la Fauna (Minera Militarista)": 0,
+      "Bardiche": 0,
+      "Conocimiento Regional (Rural Militarista)": 0,
+      "Escultura": 0,
+      "Conocimiento de la Flora (Desierto Militarista)": 0,
+      "Documentación": 0,
+      "Religión": 0,
+      "Tallar el Hueso": 0,
+      "Nagamaki": 0,
+      "Garfio de Tigre": 0,
+      "Conocimiento de la Flora (Llanuras Nómadas)": 0,
+      "Pistola Automática: Samuel Coutty": 0,
+      "Gusto": 0,
+      "Detectar Mentiras": 0,
+      "Vista": 0,
+      "Fuego de Supresión": 0,
+      "Wakizashi": 0,
+      "Dibujar Mapas": 0,
+      "Juego": 0,
+      "Cañon": 0,
+      "Sentido del Espacio": 0,
+      "Conocimiento de la Fauna (Tierras Altas)": 0,
+      "Conocimiento de la Flora": 0,
+      "Dibujar": 0,
+      "Conocimiento Cultural (Tierras Altas Bárbara)": 0,
+      "Juegos Atléticos (Resistencia)": 0,
+      "Remar": 0,
+      "Supervivencia (Llanuras)": 0,
+      "Conocimiento Cultural (Llanuras Nómadas)": 0,
+      "Tatuar": 0,
+      "Ataque Racial: Aliento": 0,
+      "Fuerza Adrenal": 0,
+      "Cocinar": 0,
+      "Curación de Animales": 0,
+      "Rastrear": 0,
+      "Alfanje": 0,
+      "Conocimiento Regional (Desierto Bandido)": 0,
+      "Blocar": 0,
+      "Chigiriki": 0,
+      "Heráldica": 0,
+      "noimporta": 0,
+      "Conocimiento Cultural (Subterránea de las Profundidades)": 0,
+      "Conocimiento de la Fauna (Desierto)": 0,
+      "Estabilización Adrenal": 0,
+      "Estoque": 0,
+      "Maestría de Animales": 0,
+      "Supervivencia (Bosques)": 0,
+      "Fuego Rápido": 0,
+      "Conocimiento Cultural (Minera)": 0,
+      "Hablar Orco": 0,
+      "Conocimiento de la Fauna (Subterránea)": 0,
+      "Estallido Ciclónico": 0,
+      "Conocimiento de las Cerraduras": 0,
+      "Horticultura": 0,
+      "Escribir Jameri": 0,
+      "Main Gauche": 0,
+      "Ventriloquia": 0,
+      "Rayo de Vacío": 0,
+      "Conocimiento de la Flora (Tierras Altas)": 0,
+      "Poderes Chi: Puño Elemental - Frío": 0,
+      "Poderes Chi: Invulnerabilidad - Ataques sin Armas": 0,
+      "Esprintar": 0,
+      "Conocimiento de Estilos de Armas": 0,
+      "Conocimiento de la Flora (Acuática Militarista)": 0,
+      "Orientación": 0,
+      "Mendigar": 0,
+      "Poderes Chi: Invulnerabilidad - Dos Manos": 0,
+      "Hablar Élfico Alto": 0,
+      "Ritual Mágico": 0,
+      "Conocimiento de la Flora (Tierras Altas Militarista)": 0,
+      "Hablar Hirazi": 0,
+      "Honda": 0,
+      "Inmovilizar": 0,
+      "Conocimiento Regional (Rural)": 0,
+      "Tetsubo": 0,
+      "Justar": 0,
+      "Cuero Blando": 0,
+      "Improvisación Poética": 0,
+      "Nunchaku": 0,
+      "Lucha Libre": 0,
+      "Rayo de Descarga": 0,
+      "Zahorí": 0,
+      "Cimitarra Larga": 0,
+      "Poderes Chi: Puño Elemental - Calor": 0,
+      "Bec de Corbin": 0,
+      "Piedra": 0,
+      "Katana": 0,
+      "Cuchillo": 0,
+      "Falsificación": 0,
+      "Escribir Habla del Desierto": 0,
+      "Hablar Habla de las Llanuras": 0,
+      "Conocimiento de la Fauna (Llanuras Nómadas)": 0,
+      "Guja": 0,
+      "Juegos de Estrategia": 0,
+      "Poderes Chi: Caer de la Hoja": 0,
+      "Conocimiento de la Flora (Ártica Militarista)": 0,
+      "Conocimiento de la Flora (Ártica Nómada)": 0,
+      "Montar: Montura Elemental": 0,
+      "Trabajar la Piedra": 0,
+      "Desarrollo de Puntos de Poder": 0,
+      "Diplomacia": 0,
+      "Servicio": 0,
+      "Conocimiento Cultural (Acuática Nómada)": 0,
+      "Supervivencia (Montañas)": 0,
+      "Tasar": 0,
+      "Poderes Chi: Golpe en Salto": 0,
+      "Escribir Habla del Norte": 0,
+      "Maestría de los Hechizos: Ley de la Luz": 0,
+      "Conocimiento Regional (Tierras Altas Militarista)": 0,
+      "Desenvainar": 0,
+      "Olfato": 0,
+      "Conocimiento Regional (Minera)": 0,
+      "Estilo de Arte Marcial (Básico)": 0,
+      "Conocimiento de la Fauna (Rural Nómada)": 0,
+      "Xeno-Conocimientos": 0,
+      "Canalización": 0,
+      "Observación": 0,
+      "Patinar": 0,
+      "Poderes Chi: Puños de Hierro": 0,
+      "Bola de Éter": 0,
+      "Conocimiento de los Dragones": 0,
+      "Conocimiento Regional (Rural Nómada)": 0,
+      "Pistola Energética: Saukur": 0,
+      "Acechar": 0,
+      "No Dachi": 0,
+      "Escribir Habla de las Llanuras": 0,
+      "Domar": 0,
+      "Ocultación de Hechizos": 0,
+      "Hablar Habla Troll": 0,
+      "Desarmar Enemigo (Armado)": 0,
+      "Señales": 0,
+      "Conocimiento Regional (Silvana Bárbara)": 0,
+      "Ingeniería": 0,
+      "Conocimiento de los Poderes Chi": 0,
+      "Vigilancia": 0,
+      "Hablar Habla Común": 0,
+      "Cazar": 0,
+      "Conocimiento de los Artefactos": 0,
+      "Pistola Avancarga: Thomas French Contract Pistol": 0,
+      "Conocimiento Cultural (Silvana Bárbara)": 0,
+      "Conocimiento de la Fauna (Litoral)": 0,
+      "Dardo con Cuerda": 0,
+      "Percepción del Entorno: Ciudades": 0,
+      "Percepción del Entorno: Munición": 0,
+      "Conocimiento Regional (Tierras Altas Bárbara)": 0,
+      "Conocimiento de Estilos Marciales": 0,
+      "Conocimiento de la Flora (Litoral)": 0,
+      "Escribir Élfico Alto": 0,
+      "Pelea": 0,
+      "Trance Adormecedor": 0,
+      "Golpe Nervioso": 0,
+      "Conocimiento Regional (Desierto Militarista)": 0,
+      "Woomera": 0,
+      "Conocimiento de la Fauna (Ártica)": 0,
+      "Hablar Habla de los Bosques": 0,
+      "Conocimiento de la Flora (Subterránea)": 0,
+      "Conducir": 0,
+      "Conocimiento de las Hierbas": 0,
+      "Hablar Lydiano": 0,
+      "Bailar": 0,
+      "Conocimiento Cultural (Silvana)": 0,
+      "Poderes Chi: Invulnerabilidad - Arrojadizas": 0,
+      "Roca": 0,
+      "Conocimiento de la Fauna (Aérea)": 0,
+      "Conocimiento Regional (Tierras Altas)": 0,
+      "Conocimiento Regional (Subterránea)": 0,
+      "Cartografía": 0,
+      "Poderes Chi: Invulnerabilidad - Asta": 0,
+      "Escribir Ky\u0027taari": 0,
+      "Conocimiento de la Flora (Acuática)": 0,
+      "Idiomas Mágicos: Hechizos Elementales": 0,
+      "Rifle de Avancarga: Mosquete Francés de 1600": 0,
+      "Arco Corto": 0,
+      "Esconderse": 0,
+      "Escribir Habla Alta": 0,
+      "Arquitectura": 0,
+      "Hablar Lengua Negra": 0,
+      "Rayo de Aire": 0,
+      "Hacha Picuda": 0,
+      "Bola de Vacío": 0,
+      "Conocimiento Cultural (Litoral Bandido)": 0,
+      "Conocimiento de la Fauna (Acuática)": 0,
+      "Conocimiento de la Flora (Aérea)": 0,
+      "Anatomía": 0,
+      "Poderes Chi: Resurgir del Fénix": 0,
+      "Hablar Centauro": 0,
+      "Escribir Erlini": 0,
+      "Evaluar Metal": 0,
+      "Arpón": 0,
+      "Poderes Chi: Ataque a Distancia": 0,
+      "Estilo de la Grulla": 0,
+      "Evasión Adrenal": 0,
+      "Instinto Urbano": 0,
+      "Escribir Orco": 0,
+      "Matemáticas Básicas": 0,
+      "Organización Militar": 0,
+      "Escalar": 0,
+      "Fintar (Desarmado)": 0,
+      "Ballesta Ligera": 0,
+      "Partería": 0,
+      "Alerta": 0,
+      "Adivinación": 0,
+      "Conocimiento de la Fauna (Aérea Bárbara)": 0,
+      "Lazo": 0,
+      "Oído": 0,
+      "Conocimiento Regional (Silvana Nómada)": 0,
+      "Conocimiento Cultural (Aérea)": 0,
+      "Boleadoras": 0,
+      "Hablar Erlini": 0,
+      "Orientación Celeste": 0,
+      "Conocimiento de la Fauna (Silvana Bárbara)": 0,
+      "Escribir Gnómico": 0,
+      "Sai": 0,
+      "Espada": 0,
+      "Conocimiento Cultural (Rural Militarista)": 0,
+      "Hablar Faérico": 0,
+      "Maestría de los Hechizos: Maestría de los Espiritus": 0,
+      "Gato de Nueve Colas": 0,
+      "Martillo Cometa": 0,
+      "Hablar Habla del Desierto": 0,
+      "Hacha de Mano": 0,
+      "Superar Aturdimiento": 0,
+      "Conocimiento Regional (Ártica Militarista)": 0,
+      "Conocimiento de la Fauna (Desierto Bandido)": 0,
+      "Rifle Energético: Saukur": 0,
+      "Escribir Habla Común": 0,
+      "Jabalina": 0,
+      "Concentración Adrenal": 0,
+      "Conocimiento Regional (Subterránea de las Profundidades)": 0,
+      "Hablar Habla de los Mares": 0,
+      "Trance Purificador": 0,
+      "Escribir Faérico": 0,
+      "Partisan": 0,
+      "Poderes Chi: Pies Ligeros": 0,
+      "Velocidad Adrenal": 0,
+      "Hacer Surf": 0,
+      "Conocimiento Cultural (Llanuras)": 0,
+      "Bioquímica": 0,
+      "Ataque Silencioso": 0,
+      "Barridos de Artes Marciales": 0,
+      "Hablar Dyari": 0,
+      "Daga Arrojadiza": 0,
+      "Lanzamiento Poderoso": 0,
+      "Poderes Chi: Sentir Debilidad": 0,
+      "Conocimiento Regional (Aérea)": 0,
+      "Escribir Habla Troll": 0,
+      "Garrote": 0,
+      "Mecánica": 0,
+      "Conocimiento Regional (Desierto)": 0,
+      "Látigo": 0,
+      "Propaganda": 0,
+      "Bola de Frío": 0,
+      "Maza": 0,
+      "Preparar Hierbas": 0
+    },
+    "generalizedSkillsAdded": [],
+    "trainingsAdded": [],
+    "skillSpecializationsAdded": [],
+    "trainingDecisions": {},
+    "creationTime": "Jun 5, 2016 7:15:02 PM",
+    "updateTime": "Jun 5, 2016 7:15:02 PM",
+    "comparationId": "f445cfda-39bc-498e-b2b2-23ecc9ba89fc"
+  },
+  "creationTime": "Jun 5, 2016 7:15:02 PM",
+  "updateTime": "Jun 5, 2016 7:15:02 PM",
+  "comparationId": "6326ca87-5788-404a-939f-48a0e1d0f83c"
+}

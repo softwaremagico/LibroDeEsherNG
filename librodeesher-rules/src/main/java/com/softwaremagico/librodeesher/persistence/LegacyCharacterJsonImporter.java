@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.softwaremagico.librodeesher.language.Translations;
 import com.softwaremagico.librodeesher.Element;
 import com.softwaremagico.librodeesher.ObjectMapperFactory;
+import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.character.SexType;
 import com.softwaremagico.librodeesher.characteristic.Characteristic;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
@@ -20,6 +21,9 @@ import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.language.TranslatedText;
 import com.softwaremagico.librodeesher.magic.MagicSpellList;
 import com.softwaremagico.librodeesher.magic.RealmOfMagic;
+import com.softwaremagico.librodeesher.perk.Perk;
+import com.softwaremagico.librodeesher.perk.PerkChoiceGrant;
+import com.softwaremagico.librodeesher.perk.PerkChoiceScope;
 import com.softwaremagico.librodeesher.perk.SelectedPerk;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
@@ -29,6 +33,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -624,43 +629,106 @@ public final class LegacyCharacterJsonImporter {
      */
     private static void buildPerkChoiceDecisions(JsonNode perkDecisions, Map<String, String> perkIds,
                                                  Map<String, String> categoryIds, Map<String, String> skillIds,
-                                                 Map<String, DecisionData> decisions) {
-        perkDecisions.fields().forEachRemaining(entry -> {
+                                                 Map<String, DecisionData> decisions)
+            throws InvalidXmlElementException {
+        final Iterator<Map.Entry<String, JsonNode>> entries = perkDecisions.fields();
+        while (entries.hasNext()) {
+            final Map.Entry<String, JsonNode> entry = entries.next();
             final String perkId = perkIds.get(entry.getKey());
             if (perkId == null) {
-                return;
+                continue;
             }
+            final Perk perk = RulesCatalog.getInstance().getPerk(perkId);
             final JsonNode decision = entry.getValue();
-            int grantIndex = 0;
-            for (final JsonNode chosen : decision.path("categoriesBonusChosen")) {
-                final String categoryId = categoryIds.get(chosen.asText());
-                if (categoryId != null) {
-                    putPerkChoiceDecision(decisions, perkId, grantIndex, categoryId);
+            final List<String> categoryChoices = resolvedChoices(decision.path("categoriesBonusChosen"),
+                    categoryIds);
+            final List<String> skillChoices = new ArrayList<>(resolvedChoices(
+                    decision.path("skillsBonusChosen"), skillIds));
+            skillChoices.addAll(resolvedChoices(decision.path("commonSkillsChosen"), skillIds));
+            int categoryOffset = 0;
+            int skillOffset = 0;
+            final List<PerkChoiceGrant> grants = perk.getChoiceGrants();
+            for (int grantIndex = 0; grantIndex < grants.size(); grantIndex++) {
+                final PerkChoiceGrant grant = grants.get(grantIndex);
+                final boolean categoryGrant = isCategoryGrant(grant);
+                final boolean skillGrant = isSkillGrant(grant);
+                if (!categoryGrant && !skillGrant) {
+                    continue;
                 }
-                grantIndex++;
-            }
-            for (final JsonNode chosen : decision.path("skillsBonusChosen")) {
-                final String skillId = skillIds.get(chosen.asText());
-                if (skillId != null) {
-                    putPerkChoiceDecision(decisions, perkId, grantIndex, skillId);
+                final List<String> source = categoryGrant ? categoryChoices : skillChoices;
+                final int offset = categoryGrant ? categoryOffset : skillOffset;
+                final int requestedCount = grant.getOptionsToChoose() == null
+                        ? 1 : grant.getOptionsToChoose();
+                final int count = requestedCount == -1
+                        ? source.size() - offset : Math.min(requestedCount, source.size() - offset);
+                if (count <= 0) {
+                    continue;
                 }
-                grantIndex++;
-            }
-            for (final JsonNode chosen : decision.path("commonSkillsChosen")) {
-                final String skillId = skillIds.get(chosen.asText());
-                if (skillId != null) {
-                    putPerkChoiceDecision(decisions, perkId, grantIndex, skillId);
+                final List<String> selected = List.copyOf(source.subList(offset, offset + count));
+                putPerkChoiceDecision(decisions, perkId, grantIndex, offeredPerkChoiceOptions(grant), selected);
+                if (categoryGrant) {
+                    categoryOffset += count;
+                } else {
+                    skillOffset += count;
                 }
-                grantIndex++;
             }
-        });
+            // Preserve legacy common-skill selections that the migrated perk now models as a
+            // fixed category bonus instead of a choice grant; trailing keys keep them round-trippable.
+            int legacyGrantIndex = grants.size();
+            while (categoryOffset < categoryChoices.size()) {
+                final String target = categoryChoices.get(categoryOffset++);
+                putPerkChoiceDecision(decisions, perkId, legacyGrantIndex++, List.of(target), List.of(target));
+            }
+            while (skillOffset < skillChoices.size()) {
+                final String target = skillChoices.get(skillOffset++);
+                putPerkChoiceDecision(decisions, perkId, legacyGrantIndex++, List.of(target), List.of(target));
+            }
+        }
+    }
+
+    private static List<String> resolvedChoices(JsonNode choices, Map<String, String> ids) {
+        final List<String> resolved = new ArrayList<>();
+        for (final JsonNode choice : choices) {
+            resolved.add(requireResolved(choice.asText(), ids));
+        }
+        return resolved;
+    }
+
+    private static boolean isCategoryGrant(PerkChoiceGrant grant) {
+        return grant.getCategoryId() != null || grant.getScope() == PerkChoiceScope.ANY_CATEGORY
+                || grant.getScope() == PerkChoiceScope.ANY_WEAPON_CATEGORY;
+    }
+
+    private static boolean isSkillGrant(PerkChoiceGrant grant) {
+        return grant.getSkillId() != null || grant.getScope() == PerkChoiceScope.ANY_SKILL
+                || grant.getScope() == PerkChoiceScope.ANY_WEAPON_SKILL;
+    }
+
+    private static List<String> offeredPerkChoiceOptions(PerkChoiceGrant grant) throws InvalidXmlElementException {
+        if (grant.getCategoryId() != null) {
+            return List.of(grant.getCategoryId());
+        }
+        if (grant.getSkillId() != null) {
+            return List.of(grant.getSkillId());
+        }
+        return switch (grant.getScope()) {
+            case ANY_CATEGORY -> RulesCatalog.getInstance().getCategories().stream()
+                    .map(category -> category.getId()).toList();
+            case ANY_WEAPON_CATEGORY -> RulesCatalog.getInstance().getCategories().stream()
+                    .map(category -> category.getId()).filter(CharacterPlayer::isWeaponCategoryId).toList();
+            case ANY_SKILL -> RulesCatalog.getInstance().getSkills().stream()
+                    .map(skill -> skill.getId()).toList();
+            case ANY_WEAPON_SKILL -> RulesCatalog.getInstance().getSkills().stream()
+                    .filter(skill -> skill.getCategoryId() != null && skill.getCategoryId().startsWith("weapons"))
+                    .map(skill -> skill.getId()).toList();
+        };
     }
 
     private static void putPerkChoiceDecision(Map<String, DecisionData> decisions, String perkId, int grantIndex,
-                                              String targetId) {
+                                              List<String> offeredIds, List<String> targetIds) {
         final DecisionKey key = DecisionKey.characterWide(DecisionKind.PERK_CHOICE, perkId, grantIndex);
         decisions.put(key.toString(), new DecisionData(new DecisionKeyData(key), 1,
-                List.of(targetId), List.of(targetId)));
+                offeredIds, targetIds));
     }
 
     /**

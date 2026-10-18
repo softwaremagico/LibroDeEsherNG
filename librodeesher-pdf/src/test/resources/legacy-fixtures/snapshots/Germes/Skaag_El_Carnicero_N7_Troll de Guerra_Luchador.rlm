@@ -1,0 +1,1643 @@
+{
+  "version": "2.0.1",
+  "name": "Skaag El Carnicero",
+  "sex": "MALE",
+  "characteristicsInitialTemporalValues": {
+    "Ad": 31,
+    "Ag": 91,
+    "Fu": 90,
+    "Rp": 31,
+    "Pr": 31,
+    "In": 31,
+    "Me": 93,
+    "Em": 31,
+    "Ra": 54,
+    "Co": 99
+  },
+  "characteristicsPotentialValues": {
+    "Ad": 58,
+    "Ag": 100,
+    "Fu": 99,
+    "Rp": 63,
+    "Pr": 66,
+    "In": 71,
+    "Me": 93,
+    "Em": 79,
+    "Ra": 80,
+    "Co": 100
+  },
+  "characteristicsTemporalUpdatesRolls": {
+    "Ad": {
+      "rolls": [
+        {
+          "firstDice": 7,
+          "secondDice": 6,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "238f7bf3-0639-4e41-a29f-cfe5019cf880"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 4,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "2499cfc2-e5e6-4f19-bb7e-682767e82611"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 4,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "1b56378d-205e-43d7-995f-e6ce19ae796d"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 10,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "eeb90b25-87a4-471c-a66f-fed3dbc5cb7c"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 3,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "0f0f2d14-96f3-4caa-9516-04f4281b11db"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 2,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "f2a3f8bb-3a87-4888-9482-1b96d7f2b824"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 9,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "61f9efe0-7f4b-4e95-9f49-2159c85eee16"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 1,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "80110808-c397-4181-b9ec-5c92469ed1ae"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 4,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "ba1cab23-76b6-48ae-80fe-f3539f0cb951"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 9,
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "2cf35eea-366c-400e-9ccf-2f391f061a92"
+        }
+      ],
+      "characteristicAbbreviature": "Ad",
+      "creationTime": "Mar 7, 2015 9:07:52 AM",
+      "updateTime": "Mar 7, 2015 9:07:52 AM",
+      "comparationId": "2de0f2af-ae36-4e01-9754-635d87d6dec4"
+    },
+    "Ag": {
+      "rolls": [
+        {
+          "firstDice": 10,
+          "secondDice": 2,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "bc7b5eea-8a5d-4839-b8ff-0c8137cc98ed"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 2,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "c87f4c63-42bc-4fbf-8dd6-fdece2f72c35"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 2,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "7c2d1c7b-42fd-4725-91f2-6e6023661986"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 3,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "cdd933cd-05a3-46dc-a2c3-e6f049e1d931"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 9,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "3d49a26c-ed40-4e35-ab03-7d76011bb2b6"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 1,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "c28194dd-a2f7-4372-8fd9-20ac8cc8830d"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 8,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "103ba9ac-2af6-4fdb-9fbf-647f07762369"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 3,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "d4f8b7ce-e05e-47d8-a6bf-3974e3d0bc37"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 9,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "5f42b7a1-fc0f-4b65-bda8-e1c36a5dc1b3"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 5,
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "0194a639-abe2-458f-9ea5-f67f6ea0fb60"
+        }
+      ],
+      "characteristicAbbreviature": "Ag",
+      "creationTime": "Mar 7, 2015 9:07:52 AM",
+      "updateTime": "Mar 7, 2015 9:07:52 AM",
+      "comparationId": "72a346fa-0422-4497-81d7-074b5b531184"
+    },
+    "Fu": {
+      "rolls": [
+        {
+          "firstDice": 6,
+          "secondDice": 8,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "feeeeab9-b8b0-4e98-acfd-1917e57e1252"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 5,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "84aae5c5-7b67-42d1-990b-5b2493bd37d5"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 7,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "104a7fca-9840-46b7-ac48-dbc5341612f9"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 5,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "41dc5fe8-70a2-4999-b88c-7cfd7e77ddc2"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 5,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "a90cc4cb-8f9f-444e-8085-3ce029587bbe"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 4,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "51636855-451a-40f5-9802-2ac00d17262a"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 10,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "ac262ac7-cac6-4116-847f-31e2f64cb867"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 9,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "58153447-e1b9-4aa2-b3fe-f756d25bef63"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 8,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "c7b2bdd7-f6f9-4875-a696-b9102982b32a"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 7,
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "26754796-8edf-4f32-8465-df70ae27722b"
+        }
+      ],
+      "characteristicAbbreviature": "Fu",
+      "creationTime": "Mar 7, 2015 9:07:52 AM",
+      "updateTime": "Mar 7, 2015 9:07:52 AM",
+      "comparationId": "2930006b-52c4-4cc6-a116-86910256b3bd"
+    },
+    "Rp": {
+      "rolls": [
+        {
+          "firstDice": 4,
+          "secondDice": 8,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "cb8c6d5d-156c-4ee3-b5a1-8fe79213182f"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 4,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "dc0c51bf-daec-436e-8d0d-43d891ffd61e"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 1,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "5b1c6d84-87fe-4308-bb74-812721fe645d"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 3,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "fe04a825-5414-4244-8e4f-4fe521d56b7a"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 8,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "27ff2f0e-3d3d-4050-9d38-6ecb5d499c65"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 10,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "46363af8-76e5-4fc3-a6c2-0a580a8cfffb"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 4,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "005bfb90-3f8f-49e6-9765-62c84a43b89a"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 2,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "6a4fab5a-3f33-4359-810c-c8d388e81d5a"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 7,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "5b6e8076-d149-489d-a02a-771ac50c28fa"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 8,
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "25c3c5da-2825-4ebe-8d8e-f44ef6289264"
+        }
+      ],
+      "characteristicAbbreviature": "Rp",
+      "creationTime": "Mar 7, 2015 9:07:52 AM",
+      "updateTime": "Mar 7, 2015 9:07:52 AM",
+      "comparationId": "b73a9d0e-c262-498c-b676-4aa72c4a58d6"
+    },
+    "Pr": {
+      "rolls": [
+        {
+          "firstDice": 10,
+          "secondDice": 2,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "9f33d07c-7221-4dc7-9aa5-b834113b2a39"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 2,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "e0db68ce-5dcf-4c47-9344-8088e40e194e"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 9,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "ddf0d169-9175-40a5-83af-9d23f7000677"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 6,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "66f8518a-301b-49cd-a4d9-f898e3a1792b"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 7,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "46a4c82b-7c58-483e-99a7-c0c4dd429c8e"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 8,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "c99938b6-6b14-4d7a-a2d9-ac40cbe3a7f6"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 3,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "7c5c1dbd-23c6-43cd-99f0-4bd16d42e2a6"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 6,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "3d1177da-967a-4de3-ab17-8f98e8f8f692"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 3,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "a5258b2a-921c-4187-8e5f-5d5a7ea6df1b"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 6,
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "a8a64bc7-fabd-4a1a-983c-c87a62912bea"
+        }
+      ],
+      "characteristicAbbreviature": "Pr",
+      "creationTime": "Mar 7, 2015 9:07:52 AM",
+      "updateTime": "Mar 7, 2015 9:07:52 AM",
+      "comparationId": "89dec400-b8dc-45d4-a038-0b72c1e7a12c"
+    },
+    "In": {
+      "rolls": [
+        {
+          "firstDice": 2,
+          "secondDice": 4,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "77a4330d-078a-49d3-96e6-48b7081d6fd1"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 4,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "46439b86-350c-4cd1-a737-36f5fc7086d3"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 10,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "6330eb88-1c90-4b69-995f-a788b8e9a583"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 5,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "bfcf7f1f-bf04-4a84-8e82-e91c0d5deda9"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 4,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "12bc6e50-9fe8-4931-b7a4-f7903a69edf2"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 6,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "2269853c-fe23-4aac-ba3a-6b0e9664313f"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 4,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "d94ca021-0f72-4fd5-96cc-2050bbeb73a0"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 5,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "51b8cb64-c232-42e3-aacf-db62ceb06ff2"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 7,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "8967eefb-70f8-4a6b-80db-a5713f5927a9"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 10,
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "ccd69860-a83f-4c5a-b2c3-23b495d10831"
+        }
+      ],
+      "characteristicAbbreviature": "In",
+      "creationTime": "Mar 7, 2015 9:07:52 AM",
+      "updateTime": "Mar 7, 2015 9:07:52 AM",
+      "comparationId": "259333c0-3c0b-4d0b-bbc1-b4ae2f2d8498"
+    },
+    "Me": {
+      "rolls": [
+        {
+          "firstDice": 7,
+          "secondDice": 5,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "7957ff32-ea99-46e2-8f14-cf9f95e6a9de"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 4,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "5f71aaa5-aaff-44a4-8998-4d28500890f6"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 7,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "080ac4e1-85b1-4098-a372-7a5a36adc6e5"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 2,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "97b41e95-57d2-416f-989e-a47eca7640db"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 3,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "09334e2c-676a-4c03-ba09-315bb9381609"
+        },
+        {
+          "firstDice": 3,
+          "secondDice": 6,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "766abbc9-1a84-4486-abef-14ecca3e28bc"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 1,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "feb1f35d-7d65-400d-aae5-c9ab5da06811"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 7,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "74842669-7263-413a-b188-a95939ee0747"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 5,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "a34bf0f4-195c-4d83-9fb5-d0f042724354"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 6,
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "610d3da9-6e9b-40a6-9519-28941253cd0f"
+        }
+      ],
+      "characteristicAbbreviature": "Me",
+      "creationTime": "Mar 7, 2015 9:07:52 AM",
+      "updateTime": "Mar 7, 2015 9:07:52 AM",
+      "comparationId": "eef196dc-0c66-4fff-ada5-e9667455a64a"
+    },
+    "Em": {
+      "rolls": [
+        {
+          "firstDice": 3,
+          "secondDice": 1,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "6804e19c-fe71-4fcd-bfb9-372a24b68a37"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 2,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "117f8c06-3f70-4df5-a1d3-9895bf4958a7"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 2,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "652e3c6e-0c65-47bc-b572-8e501a98025f"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 2,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "b1d0bc52-4e4c-4087-be75-de27132b87d5"
+        },
+        {
+          "firstDice": 9,
+          "secondDice": 10,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "18e4e7db-097d-4d4c-a972-d5ddd91a394f"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 3,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "daa7f816-f236-43f9-b5bc-f92a16a09e5d"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 1,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "6471a370-ed99-423a-bb5d-2f9e94399659"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 10,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "33151528-97a1-49d5-a58c-b39636fcd624"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 2,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "9873565f-7714-4924-bf79-3ea268207a7c"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 4,
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "024856cd-610e-4612-b29b-165dae803971"
+        }
+      ],
+      "characteristicAbbreviature": "Em",
+      "creationTime": "Mar 7, 2015 9:07:52 AM",
+      "updateTime": "Mar 7, 2015 9:07:52 AM",
+      "comparationId": "f790e1a7-5df7-486b-b596-b8ee6e0870be"
+    },
+    "Ra": {
+      "rolls": [
+        {
+          "firstDice": 2,
+          "secondDice": 10,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "caba26be-5dfe-4c8b-9212-342096852261"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 4,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "481e3ef3-5f2f-45c1-8760-b9b8c2cc531e"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 7,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "d5bfd45d-cf85-482c-9f5c-1696d1fae6bb"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 3,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "9f63d9a0-0e05-410d-aeda-c86990bca7fc"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 1,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "2e749fb3-9cad-463e-aa2c-37807f068075"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 2,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "2ba013f5-37c9-4fd7-8561-4bd28b770240"
+        },
+        {
+          "firstDice": 6,
+          "secondDice": 8,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "70e99ed3-4766-4b87-9bc5-8026efe4d6d0"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 7,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "a53c22ae-fb63-44e8-bd94-3b335ea85fcc"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 4,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "b68f7a43-d456-4426-b376-040df614313c"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 2,
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "5b735e84-b540-48fb-b175-09e75fab1c7c"
+        }
+      ],
+      "characteristicAbbreviature": "Ra",
+      "creationTime": "Mar 7, 2015 9:07:52 AM",
+      "updateTime": "Mar 7, 2015 9:07:52 AM",
+      "comparationId": "eab00370-1da0-4722-9292-64d3656d65a0"
+    },
+    "Co": {
+      "rolls": [
+        {
+          "firstDice": 1,
+          "secondDice": 1,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "ce71caba-28aa-4965-b85f-7eaabb23d479"
+        },
+        {
+          "firstDice": 7,
+          "secondDice": 3,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "f2d08b21-4a31-4164-bd8a-4b151c9b6239"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 5,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "fc67e2b5-ad60-4594-8545-67e45b900a03"
+        },
+        {
+          "firstDice": 10,
+          "secondDice": 9,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "19788f6a-b10d-4ece-aa44-ae7e76b4c199"
+        },
+        {
+          "firstDice": 2,
+          "secondDice": 1,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "042e5103-f81b-4cc0-b876-15dc6d8197a2"
+        },
+        {
+          "firstDice": 1,
+          "secondDice": 10,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "696710ae-3dc5-4f1b-8dbf-cf688ce02fd5"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 6,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "30900876-8431-4fbb-893b-bd5e1661bc7a"
+        },
+        {
+          "firstDice": 4,
+          "secondDice": 4,
+          "creationTime": "Mar 7, 2015 9:07:52 AM",
+          "updateTime": "Mar 7, 2015 9:07:52 AM",
+          "comparationId": "6dbcf7e9-f344-4941-805d-62dabdfc83f8"
+        },
+        {
+          "firstDice": 8,
+          "secondDice": 7,
+          "creationTime": "Mar 7, 2015 9:09:34 AM",
+          "updateTime": "Mar 7, 2015 9:09:34 AM",
+          "comparationId": "ec42b965-4b89-4587-bf84-f76f6a18d46a"
+        },
+        {
+          "firstDice": 5,
+          "secondDice": 9,
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "928fda20-0a02-4256-9166-0e4278a98494"
+        }
+      ],
+      "characteristicAbbreviature": "Co",
+      "creationTime": "Mar 7, 2015 9:07:52 AM",
+      "updateTime": "Mar 7, 2015 9:07:52 AM",
+      "comparationId": "236fc42b-40bc-4b1b-94bd-f9a3eb9d9f71"
+    }
+  },
+  "characteristicsConfirmed": true,
+  "raceName": "Troll de Guerra",
+  "cultureName": "Subterránea",
+  "cultureDecisions": {
+    "skillRanks": {},
+    "hobbyRanks": {},
+    "spellRanks": {},
+    "languageRanks": {},
+    "creationTime": "Mar 7, 2015 9:07:52 AM",
+    "updateTime": "Mar 7, 2015 9:07:52 AM",
+    "comparationId": "3b6a0bd8-be7c-408e-9216-9aaa84872c00"
+  },
+  "professionName": "Luchador",
+  "professionDecisions": {
+    "weaponsCost": {
+      "Armas·Proyectiles": {
+        "rankCost": [
+          5
+        ],
+        "categoryCostId": "WEAPON6",
+        "creationTime": "Jan 2, 2016 4:57:47 PM",
+        "updateTime": "Jan 2, 2016 4:57:47 PM",
+        "comparationId": "d962375d-bd02-4cda-9902-c74eefea5ce0"
+      },
+      "Armas·Filo": {
+        "rankCost": [
+          2,
+          7
+        ],
+        "categoryCostId": "WEAPON4",
+        "creationTime": "Jan 2, 2016 4:57:47 PM",
+        "updateTime": "Jan 2, 2016 4:57:47 PM",
+        "comparationId": "9edae41a-2597-42ec-bcec-638607d23338"
+      },
+      "Armas·Fuego 2manos": {
+        "rankCost": [
+          5
+        ],
+        "categoryCostId": "WEAPON8",
+        "creationTime": "Jan 2, 2016 4:57:47 PM",
+        "updateTime": "Jan 2, 2016 4:57:47 PM",
+        "comparationId": "a6581d86-f712-4d23-af84-1f0e4be807ab"
+      },
+      "Armas·Fuego 1mano": {
+        "rankCost": [
+          5
+        ],
+        "categoryCostId": "WEAPON9",
+        "creationTime": "Jan 2, 2016 4:57:47 PM",
+        "updateTime": "Jan 2, 2016 4:57:47 PM",
+        "comparationId": "448b11c0-88fd-4908-9770-fb1526f1ea45"
+      },
+      "Armas·Contundentes": {
+        "rankCost": [
+          2,
+          7
+        ],
+        "categoryCostId": "WEAPON3",
+        "creationTime": "Jan 2, 2016 4:57:47 PM",
+        "updateTime": "Jan 2, 2016 4:57:47 PM",
+        "comparationId": "e8eb2d4b-51dd-47ac-b83f-cfc0d1b8b614"
+      },
+      "Armas·2manos": {
+        "rankCost": [
+          1,
+          5
+        ],
+        "categoryCostId": "WEAPON1",
+        "creationTime": "Jan 2, 2016 4:57:46 PM",
+        "updateTime": "Jan 2, 2016 4:57:46 PM",
+        "comparationId": "31358643-516d-4ba5-9282-7cec62c5f199"
+      },
+      "Armas·Arrojadizas": {
+        "rankCost": [
+          2,
+          5
+        ],
+        "categoryCostId": "WEAPON2",
+        "creationTime": "Jan 2, 2016 4:57:47 PM",
+        "updateTime": "Jan 2, 2016 4:57:47 PM",
+        "comparationId": "7d9186be-0753-4875-8236-c2a79841df94"
+      },
+      "Armas·Asta": {
+        "rankCost": [
+          5
+        ],
+        "categoryCostId": "WEAPON7",
+        "creationTime": "Jan 2, 2016 4:57:47 PM",
+        "updateTime": "Jan 2, 2016 4:57:47 PM",
+        "comparationId": "ba2edd4c-cc69-46c8-8e3c-b07b26fb9b58"
+      },
+      "Armas·Artillería": {
+        "rankCost": [
+          2,
+          7
+        ],
+        "categoryCostId": "WEAPON5",
+        "creationTime": "Jan 2, 2016 4:57:47 PM",
+        "updateTime": "Jan 2, 2016 4:57:47 PM",
+        "comparationId": "e99c0c09-c3d0-4584-888a-11994cbcf1c9"
+      }
+    },
+    "commonSkillsChosen": [
+      "Subyugar"
+    ],
+    "restrictedSkillsChosen": [],
+    "professionalSkillsChosen": [],
+    "creationTime": "Mar 7, 2015 9:07:52 AM",
+    "updateTime": "Mar 7, 2015 9:07:52 AM",
+    "comparationId": "ea5764e7-ef85-42f8-ab1c-90909f64c1b7"
+  },
+  "realmOfMagic": {
+    "magicRealmsAvailable": [
+      "Esencia"
+    ],
+    "creationTime": "Jan 2, 2016 4:56:25 PM",
+    "updateTime": "Jan 2, 2016 4:56:25 PM",
+    "comparationId": "d2af68ae-5d68-4e25-8e77-9bb19702759c"
+  },
+  "background": {
+    "categories": [
+      "Exteriores·Animales",
+      "Percepción·Sentidos",
+      "Técnica/comercio·Vocacional"
+    ],
+    "skills": [
+      "Hacha de Batalla",
+      "Trabajar el Metal",
+      "Coraza"
+    ],
+    "characteristicsUpdates": [],
+    "creationTime": "Mar 7, 2015 9:07:52 AM",
+    "updateTime": "Mar 7, 2015 9:07:52 AM",
+    "comparationId": "1df3ba26-da94-45d2-bbc7-8dbe2e393e6d"
+  },
+  "selectedPerks": [
+    {
+      "name": "Reserva de Veneno",
+      "cost": 10,
+      "creationTime": "Mar 8, 2015 10:08:51 AM",
+      "updateTime": "Mar 8, 2015 10:08:51 AM",
+      "comparationId": "d2ddd3bb-90ca-4b16-8078-31bf995b3ce1"
+    },
+    {
+      "name": "Fuerza Incontrolable",
+      "cost": -10,
+      "creationTime": "Mar 8, 2015 10:08:56 AM",
+      "updateTime": "Mar 8, 2015 10:08:56 AM",
+      "comparationId": "08c3d982-3420-4653-bd53-9ba9c2009b31"
+    },
+    {
+      "name": "Grito de Guerra",
+      "cost": 7,
+      "creationTime": "Mar 8, 2015 10:08:59 AM",
+      "updateTime": "Mar 8, 2015 10:08:59 AM",
+      "comparationId": "af9353ee-461c-4d15-91a0-743bbac2b0a8"
+    },
+    {
+      "name": "Mal Genio",
+      "cost": -10,
+      "creationTime": "Mar 8, 2015 10:09:04 AM",
+      "updateTime": "Mar 8, 2015 10:09:04 AM",
+      "comparationId": "a0636567-98bb-4677-83b4-4180d97e6973"
+    },
+    {
+      "name": "Reflejos de Combate",
+      "cost": 7,
+      "creationTime": "Mar 8, 2015 10:09:09 AM",
+      "updateTime": "Mar 8, 2015 10:09:09 AM",
+      "comparationId": "11c1a53a-3a3f-49d9-b6b0-209ca1147b29"
+    },
+    {
+      "name": "Fortaleza Corporal",
+      "cost": 8,
+      "creationTime": "Mar 8, 2015 10:09:20 AM",
+      "updateTime": "Mar 8, 2015 10:09:20 AM",
+      "comparationId": "a09ddab7-42d4-4c71-a8f7-a355939af08c"
+    }
+  ],
+  "perkDecisions": {},
+  "appearance": {
+    "dicesResult": 35,
+    "creationTime": "Mar 7, 2015 9:07:52 AM",
+    "updateTime": "Mar 7, 2015 9:07:52 AM",
+    "comparationId": "51622533-5c8e-4e46-8d7d-68a7efd3c481"
+  },
+  "darkSpellsAsBasicListsAllowed": false,
+  "firearmsAllowed": true,
+  "chiPowersAllowed": false,
+  "otherRealmtrainingSpellsAllowed": false,
+  "levelUps": [
+    {
+      "categoriesRanks": {},
+      "skillsRanks": {},
+      "generalizedSkills": [],
+      "spellsUpdated": [],
+      "trainings": [
+        "Mercenario"
+      ],
+      "skillSpecializations": [],
+      "trainingDecisions": {
+        "Mercenario": {
+          "categoriesSelected": {},
+          "skillsSelected": {},
+          "characteristicsUpdates": [],
+          "commonSkillsChosen": [],
+          "professionalSkillsChosen": [],
+          "restrictedSkillsChosen": [],
+          "equipment": [],
+          "magicItems": [],
+          "creationTime": "Mar 7, 2015 9:09:30 AM",
+          "updateTime": "Mar 7, 2015 9:09:30 AM",
+          "comparationId": "da0fe123-3d7f-4631-8359-04f2d877a61d"
+        }
+      },
+      "characteristicsUpdates": [],
+      "creationTime": "Mar 7, 2015 9:07:52 AM",
+      "updateTime": "Mar 7, 2015 9:07:52 AM",
+      "comparationId": "77700e10-9a2e-41f2-ac6a-806c66657f29"
+    },
+    {
+      "categoriesRanks": {
+        "Atletismo·Gimnasia": 1,
+        "Armas·2manos": 2,
+        "Conocimiento·Técnico": 1,
+        "Atletismo·Resistencia": 1,
+        "Atletismo·Potencia": 1,
+        "Conocimiento·General": 1,
+        "Exteriores·Entorno": 1,
+        "Técnica/comercio·General": 1,
+        "Autocontrol": 1,
+        "Percepción·Sentidos": 1,
+        "Exteriores·Animales": 1,
+        "Subterfugio·Sigilo": 1,
+        "Percepción·Búsqueda": 1
+      },
+      "skillsRanks": {
+        "Desarrollo Físico": 2,
+        "Golpe Poderoso": 1,
+        "Luchar a Ciegas": 1,
+        "Hacha de Batalla": 2,
+        "Desarmar Enemigo (Armado)": 1,
+        "Percepción del Entorno: Combate": 1,
+        "Frenesí": 2,
+        "Desarmar Enemigo (Desarmado)": 1,
+        "Superar Aturdimiento": 1,
+        "Orientación": 1,
+        "Rastrear": 1,
+        "Ataque Racial: Vómito": 2,
+        "Sentido de la Dirección": 1,
+        "Supervivencia (Desiertos)": 1,
+        "Maniobrar Aturdido": 1,
+        "Lanzamiento Poderoso": 1,
+        "Desenvainar": 1,
+        "Supervivencia (Montañas)": 1,
+        "Conocimiento de los Metales": 1,
+        "Religión": 1,
+        "Montar: Elefantes": 1,
+        "Buscar": 1
+      },
+      "generalizedSkills": [],
+      "spellsUpdated": [],
+      "trainings": [],
+      "skillSpecializations": [],
+      "trainingDecisions": {},
+      "characteristicsUpdates": [
+        {
+          "characteristicAbbreviature": "Ag",
+          "characteristicPotentialValue": 91,
+          "characteristicTemporalValue": 91,
+          "roll": {
+            "firstDice": 10,
+            "secondDice": 8,
+            "creationTime": "Mar 7, 2015 9:07:52 AM",
+            "updateTime": "Mar 7, 2015 9:07:52 AM",
+            "comparationId": "41c5e434-89de-479c-a566-8e7a4a19efca"
+          },
+          "creationTime": "Mar 21, 2015 9:46:12 PM",
+          "updateTime": "Mar 21, 2015 9:46:12 PM",
+          "comparationId": "c4594553-4077-42af-9a74-2d26a776c05f"
+        },
+        {
+          "characteristicAbbreviature": "Co",
+          "characteristicPotentialValue": 99,
+          "characteristicTemporalValue": 99,
+          "roll": {
+            "firstDice": 8,
+            "secondDice": 2,
+            "creationTime": "Mar 7, 2015 9:07:52 AM",
+            "updateTime": "Mar 7, 2015 9:07:52 AM",
+            "comparationId": "a8e60f18-31ef-48f7-a7e5-d98793aa89e2"
+          },
+          "creationTime": "Mar 21, 2015 9:46:12 PM",
+          "updateTime": "Mar 21, 2015 9:46:12 PM",
+          "comparationId": "b68c0743-aaca-4fb8-b0e8-9a0fc2f6e961"
+        },
+        {
+          "characteristicAbbreviature": "Me",
+          "characteristicPotentialValue": 97,
+          "characteristicTemporalValue": 97,
+          "roll": {
+            "firstDice": 6,
+            "secondDice": 2,
+            "creationTime": "Mar 7, 2015 9:07:52 AM",
+            "updateTime": "Mar 7, 2015 9:07:52 AM",
+            "comparationId": "80c4626c-832e-4d9b-a8b4-e73a64fa5a92"
+          },
+          "creationTime": "Mar 21, 2015 9:46:12 PM",
+          "updateTime": "Mar 21, 2015 9:46:12 PM",
+          "comparationId": "e607a725-23f2-439a-8eb1-5962281e8926"
+        },
+        {
+          "characteristicAbbreviature": "Ra",
+          "characteristicPotentialValue": 91,
+          "characteristicTemporalValue": 91,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 7,
+            "creationTime": "Mar 7, 2015 9:07:52 AM",
+            "updateTime": "Mar 7, 2015 9:07:52 AM",
+            "comparationId": "6733cb90-aefc-4660-bda8-6f997a22b1f3"
+          },
+          "creationTime": "Mar 21, 2015 9:46:12 PM",
+          "updateTime": "Mar 21, 2015 9:46:12 PM",
+          "comparationId": "8df502fb-2946-4840-ae15-bcdacd2819bc"
+        },
+        {
+          "characteristicAbbreviature": "Ad",
+          "characteristicPotentialValue": 98,
+          "characteristicTemporalValue": 98,
+          "roll": {
+            "firstDice": 6,
+            "secondDice": 4,
+            "creationTime": "Mar 7, 2015 9:07:52 AM",
+            "updateTime": "Mar 7, 2015 9:07:52 AM",
+            "comparationId": "421911fe-e10c-452f-8d5e-2cacce2f501d"
+          },
+          "creationTime": "Mar 21, 2015 9:46:12 PM",
+          "updateTime": "Mar 21, 2015 9:46:12 PM",
+          "comparationId": "629a4d74-4142-4ade-8936-bfb93e8195a6"
+        },
+        {
+          "characteristicAbbreviature": "Em",
+          "characteristicPotentialValue": 81,
+          "characteristicTemporalValue": 53,
+          "roll": {
+            "firstDice": 6,
+            "secondDice": 1,
+            "creationTime": "Mar 7, 2015 9:07:52 AM",
+            "updateTime": "Mar 7, 2015 9:07:52 AM",
+            "comparationId": "51c021d4-2ace-49b6-baee-58c46335163c"
+          },
+          "creationTime": "Mar 21, 2015 9:46:12 PM",
+          "updateTime": "Mar 21, 2015 9:46:12 PM",
+          "comparationId": "8cd46b1c-7470-428c-b39f-1c83995fe047"
+        },
+        {
+          "characteristicAbbreviature": "In",
+          "characteristicPotentialValue": 75,
+          "characteristicTemporalValue": 75,
+          "roll": {
+            "firstDice": 1,
+            "secondDice": 10,
+            "creationTime": "Mar 7, 2015 9:07:52 AM",
+            "updateTime": "Mar 7, 2015 9:07:52 AM",
+            "comparationId": "8b0489a4-ea5f-4d44-939b-eee944891257"
+          },
+          "creationTime": "Mar 21, 2015 9:46:12 PM",
+          "updateTime": "Mar 21, 2015 9:46:12 PM",
+          "comparationId": "b4e9b581-e597-40a7-aa54-e27ff9dd1d78"
+        },
+        {
+          "characteristicAbbreviature": "Pr",
+          "characteristicPotentialValue": 58,
+          "characteristicTemporalValue": 58,
+          "roll": {
+            "firstDice": 3,
+            "secondDice": 1,
+            "creationTime": "Mar 7, 2015 9:07:52 AM",
+            "updateTime": "Mar 7, 2015 9:07:52 AM",
+            "comparationId": "2c879a36-3626-40ee-a80e-c3f4bbe190a9"
+          },
+          "creationTime": "Mar 21, 2015 9:46:12 PM",
+          "updateTime": "Mar 21, 2015 9:46:12 PM",
+          "comparationId": "6143a5af-8792-4766-b81e-2675808fe499"
+        },
+        {
+          "characteristicAbbreviature": "Rp",
+          "characteristicPotentialValue": 87,
+          "characteristicTemporalValue": 83,
+          "roll": {
+            "firstDice": 6,
+            "secondDice": 1,
+            "creationTime": "Mar 7, 2015 9:07:52 AM",
+            "updateTime": "Mar 7, 2015 9:07:52 AM",
+            "comparationId": "ac2a6852-ca65-4961-a48e-168e920125c7"
+          },
+          "creationTime": "Mar 21, 2015 9:46:12 PM",
+          "updateTime": "Mar 21, 2015 9:46:12 PM",
+          "comparationId": "d2025558-6adc-423d-b63f-c18e83461002"
+        },
+        {
+          "characteristicAbbreviature": "Fu",
+          "characteristicPotentialValue": 99,
+          "characteristicTemporalValue": 99,
+          "roll": {
+            "firstDice": 8,
+            "secondDice": 3,
+            "creationTime": "Mar 7, 2015 9:07:52 AM",
+            "updateTime": "Mar 7, 2015 9:07:52 AM",
+            "comparationId": "e1c10e09-2853-4ba8-8196-846f0021bc90"
+          },
+          "creationTime": "Mar 21, 2015 9:46:12 PM",
+          "updateTime": "Mar 21, 2015 9:46:12 PM",
+          "comparationId": "f16d10e5-f2fd-4a62-a721-77b8d0a41eff"
+        }
+      ],
+      "creationTime": "Mar 21, 2015 9:46:12 PM",
+      "updateTime": "Mar 21, 2015 9:46:12 PM",
+      "comparationId": "d83c541a-e27c-44a9-8559-a95be186d26f"
+    },
+    {
+      "categoriesRanks": {
+        "Atletismo·Gimnasia": 1,
+        "Comunicación": 1,
+        "Armas·2manos": 1,
+        "Armas·Arrojadizas": 1,
+        "Conocimiento·Técnico": 1,
+        "Atletismo·Potencia": 1,
+        "Atletismo·Resistencia": 1,
+        "Conocimiento·General": 1,
+        "Exteriores·Entorno": 1,
+        "Técnica/comercio·General": 1,
+        "Autocontrol": 1,
+        "Percepción·Sentidos": 1,
+        "Exteriores·Animales": 1,
+        "Percepción·Búsqueda": 1
+      },
+      "skillsRanks": {
+        "Desarrollo Físico": 1,
+        "Espadón": 1,
+        "Supervivencia (Subterráneos)": 1,
+        "Supervivencia (Ártico)": 1,
+        "Orientación Celeste": 1,
+        "Desarmar Enemigo (Armado)": 1,
+        "Trabajar el Metal": 1,
+        "Supervivencia (Llanuras)": 1,
+        "Supervivencia (Montañas)": 1,
+        "Conocimiento de la Piedra": 1,
+        "Combate Montado": 1,
+        "Religión": 1,
+        "Montar: Elefantes": 1,
+        "Buscar": 1,
+        "Hacha de Batalla": 1,
+        "Roca": 1,
+        "Supervivencia (Bosques)": 1,
+        "Usar Hierbas": 1,
+        "Observación": 1,
+        "Superar Aturdimiento": 1,
+        "Desarmar Enemigo (Desarmado)": 1,
+        "Trabajar la Piedra": 1,
+        "Rastrear": 1,
+        "Percepción del Entorno: Durmiendo": 1,
+        "Ataque Racial: Vómito": 1,
+        "Florituras": 1,
+        "Maniobrar Aturdido": 1,
+        "Ataque de Revés": 1,
+        "Conocimiento de las Hierbas": 1,
+        "Hablar Habla Común": 1,
+        "Domar": 1,
+        "Conocimiento de los Metales": 1
+      },
+      "generalizedSkills": [],
+      "spellsUpdated": [],
+      "trainings": [],
+      "skillSpecializations": [],
+      "trainingDecisions": {},
+      "characteristicsUpdates": [
+        {
+          "characteristicAbbreviature": "Ag",
+          "characteristicPotentialValue": 91,
+          "characteristicTemporalValue": 91,
+          "roll": {
+            "firstDice": 10,
+            "secondDice": 8,
+            "creationTime": "Jan 2, 2016 4:38:24 PM",
+            "updateTime": "Jan 2, 2016 4:38:24 PM",
+            "comparationId": "65976e9f-993e-41de-94f5-6f48edce63e1"
+          },
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "0205d42b-ebe2-42c1-9f69-c97bb7b674fc"
+        },
+        {
+          "characteristicAbbreviature": "Co",
+          "characteristicPotentialValue": 99,
+          "characteristicTemporalValue": 99,
+          "roll": {
+            "firstDice": 8,
+            "secondDice": 2,
+            "creationTime": "Jan 2, 2016 4:38:24 PM",
+            "updateTime": "Jan 2, 2016 4:38:24 PM",
+            "comparationId": "dc8ad144-6f2e-4ef9-b2e3-d80c4d8d98a8"
+          },
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "fd90be3f-4932-4be4-98ec-7d499cd29c7b"
+        },
+        {
+          "characteristicAbbreviature": "Me",
+          "characteristicPotentialValue": 97,
+          "characteristicTemporalValue": 97,
+          "roll": {
+            "firstDice": 6,
+            "secondDice": 2,
+            "creationTime": "Jan 2, 2016 4:38:24 PM",
+            "updateTime": "Jan 2, 2016 4:38:24 PM",
+            "comparationId": "d1704873-b73b-4ffe-a676-1c5e48f8a18c"
+          },
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "a8ccb4c3-06e7-4269-a338-0f342633ebe3"
+        },
+        {
+          "characteristicAbbreviature": "Ra",
+          "characteristicPotentialValue": 91,
+          "characteristicTemporalValue": 91,
+          "roll": {
+            "firstDice": 7,
+            "secondDice": 7,
+            "creationTime": "Jan 2, 2016 4:38:24 PM",
+            "updateTime": "Jan 2, 2016 4:38:24 PM",
+            "comparationId": "9dcc9f0a-d5e4-4023-b6b2-13de1d5ff41c"
+          },
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "71af6f4a-7257-45e4-b069-0c0f8749b88c"
+        },
+        {
+          "characteristicAbbreviature": "Ad",
+          "characteristicPotentialValue": 98,
+          "characteristicTemporalValue": 98,
+          "roll": {
+            "firstDice": 6,
+            "secondDice": 4,
+            "creationTime": "Jan 2, 2016 4:38:24 PM",
+            "updateTime": "Jan 2, 2016 4:38:24 PM",
+            "comparationId": "749f81fe-964c-469d-8464-b0d2b68cedba"
+          },
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "8c5fd972-8ba6-4b48-be43-c2430a69767d"
+        },
+        {
+          "characteristicAbbreviature": "Em",
+          "characteristicPotentialValue": 81,
+          "characteristicTemporalValue": 60,
+          "roll": {
+            "firstDice": 6,
+            "secondDice": 1,
+            "creationTime": "Jan 2, 2016 4:38:24 PM",
+            "updateTime": "Jan 2, 2016 4:38:24 PM",
+            "comparationId": "362cd041-92f4-4952-80d9-11d7a3999223"
+          },
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "2313822f-b7a9-41c1-8f92-0d89ed394c3d"
+        },
+        {
+          "characteristicAbbreviature": "In",
+          "characteristicPotentialValue": 75,
+          "characteristicTemporalValue": 75,
+          "roll": {
+            "firstDice": 1,
+            "secondDice": 10,
+            "creationTime": "Jan 2, 2016 4:38:24 PM",
+            "updateTime": "Jan 2, 2016 4:38:24 PM",
+            "comparationId": "b317d7a3-8868-4fbc-aeef-1f0f89813838"
+          },
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "168d566e-caa0-422b-b0d9-ed268e9f3360"
+        },
+        {
+          "characteristicAbbreviature": "Pr",
+          "characteristicPotentialValue": 58,
+          "characteristicTemporalValue": 58,
+          "roll": {
+            "firstDice": 3,
+            "secondDice": 1,
+            "creationTime": "Jan 2, 2016 4:38:24 PM",
+            "updateTime": "Jan 2, 2016 4:38:24 PM",
+            "comparationId": "5c9c47b7-22c0-49d8-b761-d31b1ff27cbd"
+          },
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "02ae1b95-bf5d-47c1-8391-8b01fa7f63f8"
+        },
+        {
+          "characteristicAbbreviature": "Rp",
+          "characteristicPotentialValue": 87,
+          "characteristicTemporalValue": 84,
+          "roll": {
+            "firstDice": 6,
+            "secondDice": 1,
+            "creationTime": "Jan 2, 2016 4:38:24 PM",
+            "updateTime": "Jan 2, 2016 4:38:24 PM",
+            "comparationId": "e9bda5cd-07f7-4e8f-b0d4-bf54abbd078f"
+          },
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "31b78a75-18c7-4a44-acc9-ba340a51bfc8"
+        },
+        {
+          "characteristicAbbreviature": "Fu",
+          "characteristicPotentialValue": 99,
+          "characteristicTemporalValue": 99,
+          "roll": {
+            "firstDice": 8,
+            "secondDice": 3,
+            "creationTime": "Jan 2, 2016 4:38:24 PM",
+            "updateTime": "Jan 2, 2016 4:38:24 PM",
+            "comparationId": "901c5a1b-2ce2-4a09-930f-e22d61d02dfd"
+          },
+          "creationTime": "Jan 2, 2016 4:38:24 PM",
+          "updateTime": "Jan 2, 2016 4:38:24 PM",
+          "comparationId": "1fe80531-a5c7-4c13-a36e-db06875fec73"
+        }
+      ],
+      "creationTime": "Jan 2, 2016 4:38:24 PM",
+      "updateTime": "Jan 2, 2016 4:38:24 PM",
+      "comparationId": "10771907-b7e3-4a7f-9424-e8fdf2c572f7"
+    }
+  ],
+  "enabledSkill": {},
+  "magicItems": [
+    {
+      "name": "Hacha de Batalla",
+      "description": "no mágico",
+      "bonus": [
+        {
+          "bonus": 10,
+          "bonusName": "Hacha de Batalla",
+          "type": "SKILL",
+          "creationTime": "Mar 8, 2015 11:19:17 AM",
+          "updateTime": "Mar 8, 2015 11:19:17 AM",
+          "comparationId": "4504dd35-9b44-4e1b-8256-13bffa06a5c4"
+        }
+      ],
+      "creationTime": "Mar 8, 2015 11:19:00 AM",
+      "updateTime": "Mar 8, 2015 11:19:00 AM",
+      "comparationId": "4ba611cc-ebea-49ca-b9fe-2777cde008df"
+    },
+    {
+      "name": "Coraza",
+      "description": "",
+      "bonus": [
+        {
+          "bonus": 10,
+          "bonusName": "Bonificación Defensiva",
+          "type": "DEFENSIVE_BONUS",
+          "creationTime": "Mar 8, 2015 11:51:59 AM",
+          "updateTime": "Mar 8, 2015 11:51:59 AM",
+          "comparationId": "bca9ece7-5344-43e2-b9e1-fcd747d2be56"
+        }
+      ],
+      "creationTime": "Mar 8, 2015 11:51:53 AM",
+      "updateTime": "Mar 8, 2015 11:51:53 AM",
+      "comparationId": "cc0cbb93-4992-4a02-bb04-11c7abac5f3f"
+    }
+  ],
+  "insertedData": {
+    "createdAtLevel": 1,
+    "insertedLevels": 4,
+    "characteristicsTemporalValuesModification": {
+      "Ad": 98,
+      "Ag": 91,
+      "Fu": 99,
+      "Rp": 83,
+      "Pr": 58,
+      "In": 75,
+      "Me": 97,
+      "Em": 53,
+      "Ra": 91,
+      "Co": 99
+    },
+    "characteristicsPotentialValuesModification": {
+      "Ad": 98,
+      "Ag": 91,
+      "Fu": 99,
+      "Rp": 87,
+      "Pr": 58,
+      "In": 75,
+      "Me": 97,
+      "Em": 81,
+      "Ra": 91,
+      "Co": 99
+    },
+    "categoriesRanksModification": {
+      "Conocimiento·Oscuro": 0,
+      "Desarrollo Físico": 0,
+      "Comunicación": 3,
+      "Subterfugio·Ataque": 0,
+      "Listas Abiertas de Hechizos": 0,
+      "Conocimiento·Técnico": 2,
+      "Artes Marciales·Barridos": 0,
+      "Armadura·Ligera": 0,
+      "Atletismo·Potencia": 4,
+      "Listas Abiertas Arcanas": 0,
+      "Ciencia/Analítica·Especializada": 0,
+      "Urbana": 0,
+      "Conocimiento·Mágico": 0,
+      "Listas Cerradas de Hechizos": 0,
+      "Exteriores·Entorno": 3,
+      "Técnica/comercio·General": 0,
+      "Maniobras de Combate": 0,
+      "Autocontrol": 5,
+      "Subterfugio·Sigilo": 0,
+      "Exteriores·Animales": 5,
+      "Percepción·Búsqueda": 3,
+      "Influencia": 0,
+      "Listas Básicas Elementales Complementarias": 0,
+      "Listas Abiertas de Otros Reinos": 0,
+      "Armas·Arrojadizas": 4,
+      "Armas·Asta": 0,
+      "Manipulación del Poder": 0,
+      "Defensas Especiales": 0,
+      "Armas·Fuego 2manos": 0,
+      "Armadura·Pesada": 1,
+      "Listas Básicas de Otras Profesiones": 0,
+      "Armas·Fuego 1mano": 0,
+      "Percepción·Sentidos": 5,
+      "Percepción·Perspicacia": 0,
+      "Armas·Proyectiles": 0,
+      "Atletismo·Gimnasia": 4,
+      "Armas·2manos": 7,
+      "Listas Básicas de la Tríada": 0,
+      "Listas Hechizos de Adiestramiento": 0,
+      "Desarrollo de Puntos de Poder": 0,
+      "Ciencia/Analítica·Básica": 0,
+      "Artes Marciales·Maniobras de Combate": 0,
+      "Subterfugio·Mecánica": 0,
+      "Atletismo·Resistencia": 4,
+      "Arte·Pasivo": 1,
+      "Conocimiento·General": 4,
+      "Técnica/comercio·Profesional": 0,
+      "Armas·Filo": 0,
+      "Ataques Especiales": 0,
+      "Arte·Activo": 1,
+      "Armadura·Media": 0,
+      "Artes Marciales·Golpes": 0,
+      "Armas·Contundentes": 0,
+      "Listas Básicas de Hechizos": 0,
+      "Listas Cerradas de Otros Reinos": 0,
+      "Oficios": 0,
+      "Técnica/comercio·Vocacional": 0,
+      "Armas·Artillería": 0,
+      "Hechizos Dirigidos": 0,
+      "Listas Hechizos de Adiestramientos de Otros Reinos": 0,
+      "Percepción de Poder": 0,
+      "Listas Básicas de Otros Reinos": 0
+    },
+    "skillsRanksModification": {
+      "Orientación": 1,
+      "Golpe Poderoso": 4,
+      "Narrar Historias": 1,
+      "Montar: Elefantes": 5,
+      "Evaluar Armadura": 3,
+      "Saltar": 1,
+      "Escalar": 3,
+      "Caer": 3,
+      "Olfato": 1,
+      "Subyugar": 5,
+      "Coraza": 14,
+      "Domar": 5,
+      "Maestría de Animales": 5,
+      "Pica de Guerra": 1,
+      "Desenvainar": 5,
+      "Religión": 5,
+      "Oído": 4,
+      "Luchar a Ciegas": 3,
+      "Nadar": 1,
+      "Remar": 1,
+      "Organización Militar": 1,
+      "Esprintar": 3,
+      "Cayado": 2,
+      "Carrera de Fondo": 3,
+      "Ataque de Revés": 5,
+      "Conocimiento de los Metales": 2,
+      "Gusto": 1,
+      "Evaluar Metal": 4,
+      "Manejo de los Animales": 4,
+      "Trabajar el Metal": 5,
+      "Sentido de la Dirección": 1,
+      "Buscar": 3,
+      "Frenesí": 6,
+      "Maniobrar Aturdido": 1,
+      "Conocimiento Cultural": 2,
+      "Alerta": 2,
+      "Tacto": 1,
+      "Lanzamiento Poderoso": 5,
+      "Hacha de Batalla": 7,
+      "Desarrollo Físico": 7,
+      "Detectar Venenos": 1,
+      "Escultura": 1,
+      "Mangual": 1,
+      "Ataque Racial: Vómito": 6,
+      "Espadón": 1,
+      "Percepción del Entorno: Combate": 5,
+      "Trepar": 3,
+      "Vista": 3,
+      "Supervivencia (Montañas)": 4,
+      "Roca": 5,
+      "Sintonización": 1,
+      "Desarrollo de Puntos de Poder": 1
+    },
+    "generalizedSkillsAdded": [],
+    "trainingsAdded": [],
+    "skillSpecializationsAdded": [],
+    "trainingDecisions": {},
+    "creationTime": "Mar 7, 2015 9:07:52 AM",
+    "updateTime": "Mar 7, 2015 9:07:52 AM",
+    "comparationId": "c6d57b07-8866-44ff-9045-d81982504a01"
+  },
+  "favouriteSkills": [
+    "Hacha de Batalla",
+    "Ataque Racial: Vómito",
+    "Roca"
+  ],
+  "creationTime": "Mar 7, 2015 9:07:52 AM",
+  "updateTime": "Jan 2, 2016 4:56:32 PM",
+  "comparationId": "974d03ce-b030-4914-b9cd-c069b60696a6"
+}
