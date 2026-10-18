@@ -1522,19 +1522,27 @@ public class CharacterPlayer {
 			List<String> selectedSkillIds, Map<String, Integer> additionalSkillRanks,
 			List<String> selectedSpellListIds, Map<String, Integer> additionalSpellListRanks)
 			throws InvalidXmlElementException {
+		final boolean trainingGrant = categoryKey.getKind() == DecisionKind.TRAINING_CATEGORY;
+		final boolean cultureGrant = categoryKey.getKind() == DecisionKind.CULTURE_ADOLESCENCE_CATEGORY;
 		final List<String> offeredCategories = this.expandCategoryWildcards(grant.getCategoryOptions());
 		final Decision categoryDecision = this.decideOrReuse(categoryKey,
 				() -> offeredCategories.size() > 1
 						? Decision.select(offeredCategories, selectedCategoryId)
 						: Decision.fixed(offeredCategories));
 		final String categoryId = categoryDecision.getSelectedOption();
-		this.getCurrentLevel().addCategoryRanks(categoryId, grant.getRanksGranted());
+		if (!trainingGrant) {
+			this.getCurrentLevel().addCategoryRanks(categoryId, grant.getRanksGranted());
+			if (cultureGrant) {
+				this.getCurrentLevel().addDevelopmentPointExemptCategoryRanks(categoryId, grant.getRanksGranted());
+			}
+		}
 		// A grant that develops a spell list counts as list ranks for the
 		// many-lists-per-level multiplier and the list rank totals (the legacy
 		// CategoryGroup.SPELL auto-detection); see LevelUp#setSpellListRanks.
 		try {
 			if (RulesCatalog.getInstance().getSpellList(categoryId) != null) {
 				this.getCurrentLevel().addSpellListRanks(categoryId, grant.getRanksGranted());
+				this.markGrantedSpellListRanks(categoryKey.getKind(), categoryId, grant.getRanksGranted());
 			}
 		} catch (final InvalidXmlElementException e) {
 			// Not a spell list category; nothing else to track.
@@ -1554,6 +1562,8 @@ public class CharacterPlayer {
 			namedRanks += skillGrant.getRanksToDistribute();
 			this.getCurrentLevel().addSkillRanks(skillDecision.getSelectedOption(), skillGrant.getRanksToDistribute(),
 					this.isSpellSkill(skillDecision.getSelectedOption()));
+			this.markGrantedSkillRanks(categoryKey.getKind(), skillDecision.getSelectedOption(),
+					skillGrant.getRanksToDistribute());
 		}
 
 		final List<TrainingSpellListGrant> spellLists = grant.getSpellLists();
@@ -1573,6 +1583,8 @@ public class CharacterPlayer {
 			namedSpellListRanks += spellListGrant.getRanksToDistribute();
 			this.getCurrentLevel().addSpellListRanks(spellListDecision.getSelectedOption(),
 					spellListGrant.getRanksToDistribute());
+			this.markGrantedSpellListRanks(categoryKey.getKind(), spellListDecision.getSelectedOption(),
+					spellListGrant.getRanksToDistribute());
 		}
 
 		// A grant develops either skills or spell lists, never both, so only one of the two remaining-rank
@@ -1582,14 +1594,30 @@ public class CharacterPlayer {
 			final int remainingSpellListRanks = budget - namedSpellListRanks;
 			if (remainingSpellListRanks > 0) {
 				this.applyAdditionalCategorySpellListRanks(grant, namedSpellListIds, remainingSpellListRanks,
-						additionalSpellListRanks == null ? Map.of() : additionalSpellListRanks);
+						additionalSpellListRanks == null ? Map.of() : additionalSpellListRanks, categoryKey.getKind());
 			}
 		} else {
 			final int remainingSkillRanks = budget - namedRanks;
 			if (remainingSkillRanks > 0) {
 				this.applyAdditionalCategorySkillRanks(grant, categoryId, namedSkillIds, remainingSkillRanks,
-						additionalSkillRanks == null ? Map.of() : additionalSkillRanks);
+						additionalSkillRanks == null ? Map.of() : additionalSkillRanks, categoryKey.getKind());
 			}
+		}
+	}
+
+	private void markGrantedSkillRanks(DecisionKind kind, String skillId, Integer ranks) {
+		if (kind == DecisionKind.TRAINING_CATEGORY) {
+			this.getCurrentLevel().addTrainingSkillRanks(skillId, ranks);
+		} else if (kind == DecisionKind.CULTURE_ADOLESCENCE_CATEGORY) {
+			this.getCurrentLevel().addDevelopmentPointExemptSkillRanks(skillId, ranks);
+		}
+	}
+
+	private void markGrantedSpellListRanks(DecisionKind kind, String spellListId, Integer ranks) {
+		if (kind == DecisionKind.TRAINING_CATEGORY) {
+			this.getCurrentLevel().addTrainingSpellListRanks(spellListId, ranks);
+		} else if (kind == DecisionKind.CULTURE_ADOLESCENCE_CATEGORY) {
+			this.getCurrentLevel().addDevelopmentPointExemptSpellListRanks(spellListId, ranks);
 		}
 	}
 
@@ -1598,7 +1626,8 @@ public class CharacterPlayer {
 	 * {@link #applyCategoryGrant}'s {@code additionalSpellListRanks} parameter).
 	 */
 	private void applyAdditionalCategorySpellListRanks(TrainingCategoryGrant grant, Set<String> namedSpellListIds,
-			int remainingRanks, Map<String, Integer> additionalSpellListRanks) throws InvalidXmlElementException {
+			int remainingRanks, Map<String, Integer> additionalSpellListRanks, DecisionKind kind)
+			throws InvalidXmlElementException {
 		// The grant's own options are the pool: a "Listas Básicas de Hechizos" category is a wrapper with
 		// no skills of its own, so unlike the skill path there is no catalog list to validate against.
 		final List<String> optionIds = new ArrayList<>();
@@ -1627,6 +1656,7 @@ public class CharacterPlayer {
 		}
 		for (final Map.Entry<String, Integer> entry : additionalSpellListRanks.entrySet()) {
 			this.getCurrentLevel().addSpellListRanks(entry.getKey(), entry.getValue());
+			this.markGrantedSpellListRanks(kind, entry.getKey(), entry.getValue());
 		}
 	}
 
@@ -1636,7 +1666,7 @@ public class CharacterPlayer {
 	 * parameter).
 	 */
 	private void applyAdditionalCategorySkillRanks(TrainingCategoryGrant grant, String categoryId,
-			Set<String> namedSkillIds, int remainingRanks, Map<String, Integer> additionalSkillRanks)
+			Set<String> namedSkillIds, int remainingRanks, Map<String, Integer> additionalSkillRanks, DecisionKind kind)
 			throws InvalidXmlElementException {
 		final int minAdditionalSkills = Math.max(0, grant.getMinSkills() - namedSkillIds.size());
 		final int maxAdditionalSkills = grant.getMaxSkills() - namedSkillIds.size();
@@ -1661,6 +1691,7 @@ public class CharacterPlayer {
 		}
 		for (final Map.Entry<String, Integer> entry : additionalSkillRanks.entrySet()) {
 			this.getCurrentLevel().addSkillRanks(entry.getKey(), entry.getValue(), this.isSpellSkill(entry.getKey()));
+			this.markGrantedSkillRanks(kind, entry.getKey(), entry.getValue());
 		}
 	}
 
@@ -2921,7 +2952,8 @@ public class CharacterPlayer {
 		final LevelUp levelUp = this.levels.get(level - 1);
 		int total = 0;
 		for (final String categoryId : levelUp.getCategoriesWithRanks()) {
-			final int ranksThisLevel = levelUp.getCategoryRanks(categoryId);
+			final int ranksThisLevel = Math.max(0, levelUp.getCategoryRanks(categoryId)
+					- levelUp.getDevelopmentPointExemptCategoryRanks(categoryId));
 			for (int i = 0; i < ranksThisLevel; i++) {
 				final Integer cost = this.getCategoryDevelopmentCost(categoryId, i);
 				if (cost != null) {
@@ -2939,7 +2971,9 @@ public class CharacterPlayer {
 				continue;
 			}
 			final String categoryId = skill.getCategoryId();
-			final int ranksThisLevel = levelUp.getSkillRanks(skillId);
+			final int ranksThisLevel = Math.max(0, levelUp.getSkillRanks(skillId)
+					- levelUp.getTrainingSkillRanks(skillId)
+					- levelUp.getDevelopmentPointExemptSkillRanks(skillId));
 			for (int i = 0; i < ranksThisLevel; i++) {
 				final Integer cost = this.getCategoryDevelopmentCost(categoryId, i);
 				if (cost != null) {
@@ -2948,7 +2982,9 @@ public class CharacterPlayer {
 			}
 		}
 		for (final String spellListId : levelUp.getSpellListsWithRanks()) {
-			final int ranksThisLevel = levelUp.getSpellListRanks(spellListId);
+			final int ranksThisLevel = Math.max(0, levelUp.getSpellListRanks(spellListId)
+					- levelUp.getTrainingSpellListRanks(spellListId)
+					- levelUp.getDevelopmentPointExemptSpellListRanks(spellListId));
 			// The list's ranks bought before this level (level 1 has only hobby ranks
 			// to count), matching how {@link getSpentDevelopmentPoints} priced its
 			// current level via the total minus what this level itself bought.

@@ -29,8 +29,12 @@ public class LevelUp {
 
     @JsonProperty("categoryRanks")
     private Map<String, Integer> categoryRanks = new HashMap<>();
+    @JsonProperty("developmentPointExemptCategoryRanks")
+    private Map<String, Integer> developmentPointExemptCategoryRanks = new HashMap<>();
     @JsonProperty("skillRanks")
     private Map<String, Integer> skillRanks = new HashMap<>();
+    @JsonProperty("developmentPointExemptSkillRanks")
+    private Map<String, Integer> developmentPointExemptSkillRanks = new HashMap<>();
     /**
      * The subset of {@link #skillRanks} granted by the level's trainings (rather than bought with
      * development points). The legacy sheet keeps these in its "previous ranks" column, never in the
@@ -40,6 +44,10 @@ public class LevelUp {
     private Map<String, Integer> trainingSkillRanks = new HashMap<>();
     @JsonProperty("spellListRanks")
     private Map<String, Integer> spellListRanks = new HashMap<>();
+    @JsonProperty("developmentPointExemptSpellListRanks")
+    private Map<String, Integer> developmentPointExemptSpellListRanks = new HashMap<>();
+    @JsonProperty("trainingSpellListRanks")
+    private Map<String, Integer> trainingSpellListRanks = new HashMap<>();
     @JsonProperty("generalizedSkills")
     private Set<String> generalizedSkills = new HashSet<>();
     /** Spell skill ids leveled up this level, in the order they were first touched (see {@link #getSpellRankMultiplier}). */
@@ -75,6 +83,24 @@ public class LevelUp {
             categoryRanks.remove(categoryId);
         } else {
             categoryRanks.put(categoryId, ranks);
+        }
+    }
+
+    public Integer getDevelopmentPointExemptCategoryRanks(String categoryId) {
+        return developmentPointExemptCategoryRanks.getOrDefault(categoryId, 0);
+    }
+
+    public Map<String, Integer> getDevelopmentPointExemptCategoryRanks() {
+        return developmentPointExemptCategoryRanks;
+    }
+
+    public void setDevelopmentPointExemptCategoryRanks(Map<String, Integer> ranks) {
+        developmentPointExemptCategoryRanks = ranks;
+    }
+
+    public void addDevelopmentPointExemptCategoryRanks(String categoryId, Integer ranks) {
+        if (ranks > 0) {
+            developmentPointExemptCategoryRanks.merge(categoryId, ranks, Integer::sum);
         }
     }
 
@@ -118,6 +144,24 @@ public class LevelUp {
         }
     }
 
+    public Integer getDevelopmentPointExemptSkillRanks(String skillId) {
+        return developmentPointExemptSkillRanks.getOrDefault(skillId, 0);
+    }
+
+    public Map<String, Integer> getDevelopmentPointExemptSkillRanks() {
+        return developmentPointExemptSkillRanks;
+    }
+
+    public void setDevelopmentPointExemptSkillRanks(Map<String, Integer> ranks) {
+        developmentPointExemptSkillRanks = ranks;
+    }
+
+    public void addDevelopmentPointExemptSkillRanks(String skillId, Integer ranks) {
+        if (ranks > 0) {
+            developmentPointExemptSkillRanks.merge(skillId, ranks, Integer::sum);
+        }
+    }
+
     /** Adds {@code ranks} to whatever ranks in {@code skillId} were already bought this level. */
     public void addSkillRanks(String skillId, Integer ranks, boolean isSpellSkill) {
         setSkillRanks(skillId, getSkillRanks(skillId) + ranks, isSpellSkill);
@@ -148,6 +192,12 @@ public class LevelUp {
         this.trainingSkillRanks = trainingSkillRanks;
     }
 
+    public void addTrainingSkillRanks(String skillId, Integer ranks) {
+        if (ranks > 0) {
+            trainingSkillRanks.merge(skillId, ranks, Integer::sum);
+        }
+    }
+
     /** Ranks bought this level in a spell list, kept apart from ordinary skills. */
     public Integer getSpellListRanks(String spellListId) {
         return spellListRanks.getOrDefault(spellListId, 0);
@@ -162,6 +212,42 @@ public class LevelUp {
             if (!spellsUpdated.contains(spellListId)) {
                 spellsUpdated.add(spellListId);
             }
+        }
+    }
+
+    public Integer getDevelopmentPointExemptSpellListRanks(String spellListId) {
+        return developmentPointExemptSpellListRanks.getOrDefault(spellListId, 0);
+    }
+
+    public Map<String, Integer> getDevelopmentPointExemptSpellListRanks() {
+        return developmentPointExemptSpellListRanks;
+    }
+
+    public void setDevelopmentPointExemptSpellListRanks(Map<String, Integer> ranks) {
+        developmentPointExemptSpellListRanks = ranks;
+    }
+
+    public void addDevelopmentPointExemptSpellListRanks(String spellListId, Integer ranks) {
+        if (ranks > 0) {
+            developmentPointExemptSpellListRanks.merge(spellListId, ranks, Integer::sum);
+        }
+    }
+
+    public Integer getTrainingSpellListRanks(String spellListId) {
+        return trainingSpellListRanks.getOrDefault(spellListId, 0);
+    }
+
+    public Map<String, Integer> getTrainingSpellListRanks() {
+        return trainingSpellListRanks;
+    }
+
+    public void setTrainingSpellListRanks(Map<String, Integer> ranks) {
+        trainingSpellListRanks = ranks;
+    }
+
+    public void addTrainingSpellListRanks(String spellListId, Integer ranks) {
+        if (ranks > 0) {
+            trainingSpellListRanks.merge(spellListId, ranks, Integer::sum);
         }
     }
 

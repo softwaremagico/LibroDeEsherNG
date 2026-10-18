@@ -134,9 +134,15 @@ public final class CharacterDataMapper {
     private static LevelData toLevelData(LevelUp levelUp) {
         final LevelData levelData = new LevelData();
         levelData.setCategoryRanks(new TreeMap<>(levelUp.getCategoryRanks()));
+        levelData.setDevelopmentPointExemptCategoryRanks(
+                new TreeMap<>(levelUp.getDevelopmentPointExemptCategoryRanks()));
         levelData.setSkillRanks(new TreeMap<>(levelUp.getSkillRanks()));
+        levelData.setDevelopmentPointExemptSkillRanks(new TreeMap<>(levelUp.getDevelopmentPointExemptSkillRanks()));
         levelData.setTrainingSkillRanks(new TreeMap<>(levelUp.getTrainingSkillRanks()));
         levelData.setSpellListRanks(new TreeMap<>(levelUp.getSpellListRanks()));
+        levelData.setDevelopmentPointExemptSpellListRanks(
+                new TreeMap<>(levelUp.getDevelopmentPointExemptSpellListRanks()));
+        levelData.setTrainingSpellListRanks(new TreeMap<>(levelUp.getTrainingSpellListRanks()));
         levelData.setGeneralizedSkills(sorted(levelUp.getGeneralizedSkills()));
         levelData.setSpellsUpdated(new ArrayList<>(levelUp.getSpellsUpdated()));
         levelData.setTrainings(new ArrayList<>(levelUp.getTrainings()));
@@ -252,9 +258,15 @@ public final class CharacterDataMapper {
     public static LevelUp toLevelUp(LevelData levelData) {
         final LevelUp levelUp = new LevelUp();
         levelUp.setCategoryRanks(new HashMap<>(levelData.getCategoryRanks()));
+        levelUp.setDevelopmentPointExemptCategoryRanks(
+                new HashMap<>(levelData.getDevelopmentPointExemptCategoryRanks()));
         levelUp.setSkillRanks(new HashMap<>(levelData.getSkillRanks()));
+        levelUp.setDevelopmentPointExemptSkillRanks(new HashMap<>(levelData.getDevelopmentPointExemptSkillRanks()));
         levelUp.setTrainingSkillRanks(new HashMap<>(levelData.getTrainingSkillRanks()));
         levelUp.setSpellListRanks(new HashMap<>(levelData.getSpellListRanks()));
+        levelUp.setDevelopmentPointExemptSpellListRanks(
+                new HashMap<>(levelData.getDevelopmentPointExemptSpellListRanks()));
+        levelUp.setTrainingSpellListRanks(new HashMap<>(levelData.getTrainingSpellListRanks()));
         levelUp.setTrainings(new ArrayList<>(levelData.getTrainings()));
         levelUp.setSpellsUpdated(new ArrayList<>(levelData.getSpellsUpdated()));
         levelUp.setGeneralizedSkills(new HashSet<>(levelData.getGeneralizedSkills()));

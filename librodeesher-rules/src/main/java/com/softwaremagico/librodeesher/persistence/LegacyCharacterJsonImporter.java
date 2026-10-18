@@ -458,7 +458,9 @@ public final class LegacyCharacterJsonImporter {
             }
         }
         level.setCategoryRanks(categoryRanks);
+        level.setDevelopmentPointExemptCategoryRanks(new TreeMap<>(categoryRanks));
         level.setSkillRanks(skillRanks);
+        level.setDevelopmentPointExemptSkillRanks(new TreeMap<>(skillRanks));
     }
 
     /** The ranks accumulated by the legacy "inserted" development (old levels merged into the
@@ -469,11 +471,14 @@ public final class LegacyCharacterJsonImporter {
         final LevelData level = emptyLevel(age);
         final JsonNode inserted = required(root, "insertedData");
         level.setCategoryRanks(resolveRankedNames(inserted.path("categoriesRanksModification"), categoryIds));
+        level.setDevelopmentPointExemptCategoryRanks(new TreeMap<>(level.getCategoryRanks()));
         final Map<String, Integer> skillRanks = new TreeMap<>();
         final Map<String, Integer> spellListRanks = new TreeMap<>();
         splitSkillsAndLists(inserted.path("skillsRanksModification"), skillIds, spellListIds, skillRanks, spellListRanks);
         level.setSkillRanks(skillRanks);
+        level.setDevelopmentPointExemptSkillRanks(new TreeMap<>(skillRanks));
         level.setSpellListRanks(spellListRanks);
+        level.setDevelopmentPointExemptSpellListRanks(new TreeMap<>(spellListRanks));
         return level;
     }
 

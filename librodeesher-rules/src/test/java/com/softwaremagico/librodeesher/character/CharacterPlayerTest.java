@@ -544,6 +544,7 @@ public class CharacterPlayerTest {
 		final Culture culture = RulesCatalog.getInstance().getCulture("industrializedUrbanClassHigh");
 		final CharacterPlayer character = new CharacterPlayer();
 		character.setRaceId("modernMan");
+		character.setProfessionId("fighter");
 
 		final Map<Integer, String> categorySelections = new HashMap<>();
 		final Map<Integer, Map<String, Integer>> additionalSkillRanksSelections = new HashMap<>();
@@ -566,6 +567,27 @@ public class CharacterPlayerTest {
 		character.applyCultureAdolescenceRanks(culture, categorySelections, null, additionalSkillRanksSelections);
 
 		Assert.assertEquals(character.getCategoryTotalRanks("perceptionSearching"), Integer.valueOf(1));
+		Assert.assertEquals(character.getSpentDevelopmentPoints(), Integer.valueOf(0));
+	}
+
+	@Test
+	public void trainingGrantedRanksCountOnceAndAreNotChargedAsPurchasedRanks() throws InvalidXmlElementException {
+		final Training training = RulesCatalog.getInstance().getTraining("traveler");
+		final TrainingCategoryGrant grant = training.getCategories().get(0);
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setProfessionId("fighter");
+		character.getCurrentLevel().addTraining(training.getId());
+		final int trainingCost = character.getSpentDevelopmentPoints();
+
+		character.applyCategoryGrant(
+				DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, training.getId(), 0, character.getLevel()),
+				grant, null, null, null);
+
+		Assert.assertEquals(character.getCategoryTotalRanks("athleticsGymnastics"),
+				Integer.valueOf(grant.getRanksGranted()));
+		Assert.assertEquals(character.getSkillTotalRanks("climbing"), Integer.valueOf(1));
+		Assert.assertEquals(character.getCurrentLevel().getTrainingSkillRanks("climbing"), Integer.valueOf(1));
+		Assert.assertEquals(character.getSpentDevelopmentPoints(), Integer.valueOf(trainingCost));
 	}
 
 	@Test

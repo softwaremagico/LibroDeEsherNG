@@ -747,15 +747,7 @@ public class RandomCharacterPlayer {
         characterPlayer.setRandomRollSupplier(RandomCharacterPlayer::randomRoll);
         final List<TrainingCategoryGrant> grants = training.getCategories();
         if (grants != null && !grants.isEmpty()) {
-            // The granted category/skill ranks count against the current level's development budget
-            // exactly like every other rank (see {@code CharacterPlayer#getSpentDevelopmentPoints}),
-            // so a training whose grants would drive the budget below zero is rolled back untouched:
-            // its own cost alone is never enough to tell.
             final GrantPicks picks = buildGrantPicks(characterPlayer, grants);
-            if (characterPlayer.getRemainingDevelopmentPoints() - picks.estimatedGrantCost < 0) {
-                characterPlayer.removeCurrentLevelTraining(trainingId);
-                return;
-            }
             characterPlayer.applyTrainingCategories(training, picks.categorySelections, picks.skillSelections,
                     picks.additionalSkillRanks);
         }
@@ -822,19 +814,13 @@ public class RandomCharacterPlayer {
         private final Map<Integer, String> categorySelections = new HashMap<>();
         private final Map<Integer, List<String>> skillSelections = new HashMap<>();
         private final Map<Integer, Map<String, Integer>> additionalSkillRanks = new HashMap<>();
-        private int estimatedGrantCost;
     }
 
-    // Computes the decision picks together with the exact development cost the granted ranks will
-    // consume once applied, mirroring {@code CharacterPlayer#getSpentDevelopmentPoints} rank-per-rank.
+    // Selects the grants; their ranks are supplied by the training and do not consume rank-buying
+    // points separately from the training's own cost.
     private static GrantPicks buildGrantPicks(CharacterPlayer characterPlayer, List<TrainingCategoryGrant> grants)
             throws InvalidXmlElementException {
         final GrantPicks picks = new GrantPicks();
-        // Projected per-category and per-skill rank counts for the cost tables (mirroring how
-        // {@code getSpentDevelopmentPoints} indexes them rank-per-rank; the character itself is not
-        // mutated until {@code applyTrainingCategories} runs, which the estimate mirrors exactly).
-        final Map<String, Integer> categoryRanks = new HashMap<>(characterPlayer.getCurrentLevel().getCategoryRanks());
-        final Map<String, Integer> skillRanks = new HashMap<>(characterPlayer.getCurrentLevel().getSkillRanks());
         for (int i = 0; i < grants.size(); i++) {
             final TrainingCategoryGrant grant = grants.get(i);
             final List<String> offeredCategories = characterPlayer.expandCategoryWildcards(grant.getCategoryOptions());
@@ -851,18 +837,6 @@ public class RandomCharacterPlayer {
                 picks.categorySelections.put(i, categoryId);
             } else {
                 categoryId = offeredCategories.get(0);
-            }
-
-            final int ranksGranted = grant.getRanksGranted() == null ? 0 : grant.getRanksGranted();
-            if (ranksGranted > 0) {
-                int start = categoryRanks.getOrDefault(categoryId, 0);
-                for (int rank = start; rank < start + ranksGranted; rank++) {
-                    final Integer cost = characterPlayer.getCategoryDevelopmentCost(categoryId, rank);
-                    if (cost != null) {
-                        picks.estimatedGrantCost += cost;
-                    }
-                }
-                categoryRanks.put(categoryId, start + ranksGranted);
             }
 
             final Set<String> namedSkillIds = new HashSet<>();
@@ -885,11 +859,6 @@ public class RandomCharacterPlayer {
                     final String picked = options.get(RandomValues.nextInt(options.size()));
                     selectedSkills.add(picked);
                     namedSkillIds.add(picked);
-                    final int namedRanks = skillGrant.getRanksToDistribute() == null ? 0
-                            : skillGrant.getRanksToDistribute();
-                    if (namedRanks > 0) {
-                        estimateRankCost(characterPlayer, skillRanks, picked, namedRanks, picks);
-                    }
                 }
             }
             if (!selectedSkills.isEmpty()) {
@@ -919,9 +888,6 @@ public class RandomCharacterPlayer {
                         final int count = low + RandomValues.nextInt(limit - low + 1);
                         final List<String> picked = RandomValues.shuffle(pool).subList(0, count);
                         picks.additionalSkillRanks.put(i, distributeRanks(picked, remainingRanks));
-                        for (final Map.Entry<String, Integer> entry : picks.additionalSkillRanks.get(i).entrySet()) {
-                            estimateRankCost(characterPlayer, skillRanks, entry.getKey(), entry.getValue(), picks);
-                        }
                     }
                 }
             }
@@ -937,19 +903,6 @@ public class RandomCharacterPlayer {
             }
         }
         return namedRanks;
-    }
-
-    private static void estimateRankCost(CharacterPlayer characterPlayer, Map<String, Integer> skillRanks,
-            String skillId, int ranksToAdd, GrantPicks picks) throws InvalidXmlElementException {
-        final String categoryId = RulesCatalog.getInstance().getSkill(skillId).getCategoryId();
-        int start = skillRanks.getOrDefault(skillId, 0);
-        for (int rank = start; rank < start + ranksToAdd; rank++) {
-            final Integer cost = characterPlayer.getCategoryDevelopmentCost(categoryId, rank);
-            if (cost != null) {
-                picks.estimatedGrantCost += cost;
-            }
-        }
-        skillRanks.put(skillId, start + ranksToAdd);
     }
 
     private static void addRandomTrainingSkillChoices(CharacterPlayer characterPlayer, Training training) {

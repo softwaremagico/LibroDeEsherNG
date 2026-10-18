@@ -19,8 +19,14 @@ public final class LevelData {
     @JsonProperty("categoryRanks")
     private Map<String, Integer> categoryRanks = new LinkedHashMap<>();
 
+    @JsonProperty("developmentPointExemptCategoryRanks")
+    private Map<String, Integer> developmentPointExemptCategoryRanks = new LinkedHashMap<>();
+
     @JsonProperty("skillRanks")
     private Map<String, Integer> skillRanks = new LinkedHashMap<>();
+
+    @JsonProperty("developmentPointExemptSkillRanks")
+    private Map<String, Integer> developmentPointExemptSkillRanks = new LinkedHashMap<>();
 
     /** The subset of {@link #skillRanks} granted by this level's trainings (see
      *  {@link com.softwaremagico.librodeesher.level.LevelUp#getTrainingSkillRanks(String)}). */
@@ -29,6 +35,12 @@ public final class LevelData {
 
     @JsonProperty("spellListRanks")
     private Map<String, Integer> spellListRanks = new LinkedHashMap<>();
+
+    @JsonProperty("developmentPointExemptSpellListRanks")
+    private Map<String, Integer> developmentPointExemptSpellListRanks = new LinkedHashMap<>();
+
+    @JsonProperty("trainingSpellListRanks")
+    private Map<String, Integer> trainingSpellListRanks = new LinkedHashMap<>();
 
     @JsonProperty("generalizedSkills")
     private List<String> generalizedSkills = new ArrayList<>();
@@ -69,12 +81,28 @@ public final class LevelData {
         this.categoryRanks = categoryRanks;
     }
 
+    public Map<String, Integer> getDevelopmentPointExemptCategoryRanks() {
+        return developmentPointExemptCategoryRanks;
+    }
+
+    public void setDevelopmentPointExemptCategoryRanks(Map<String, Integer> ranks) {
+        developmentPointExemptCategoryRanks = ranks;
+    }
+
     public Map<String, Integer> getSkillRanks() {
         return skillRanks;
     }
 
     public void setSkillRanks(Map<String, Integer> skillRanks) {
         this.skillRanks = skillRanks;
+    }
+
+    public Map<String, Integer> getDevelopmentPointExemptSkillRanks() {
+        return developmentPointExemptSkillRanks;
+    }
+
+    public void setDevelopmentPointExemptSkillRanks(Map<String, Integer> ranks) {
+        developmentPointExemptSkillRanks = ranks;
     }
 
     public Map<String, Integer> getTrainingSkillRanks() {
@@ -91,6 +119,22 @@ public final class LevelData {
 
     public void setSpellListRanks(Map<String, Integer> spellListRanks) {
         this.spellListRanks = spellListRanks;
+    }
+
+    public Map<String, Integer> getDevelopmentPointExemptSpellListRanks() {
+        return developmentPointExemptSpellListRanks;
+    }
+
+    public void setDevelopmentPointExemptSpellListRanks(Map<String, Integer> ranks) {
+        developmentPointExemptSpellListRanks = ranks;
+    }
+
+    public Map<String, Integer> getTrainingSpellListRanks() {
+        return trainingSpellListRanks;
+    }
+
+    public void setTrainingSpellListRanks(Map<String, Integer> ranks) {
+        trainingSpellListRanks = ranks;
     }
 
     public List<String> getGeneralizedSkills() {
