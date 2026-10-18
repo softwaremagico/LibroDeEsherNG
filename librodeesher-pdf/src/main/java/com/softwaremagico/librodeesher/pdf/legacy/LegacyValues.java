@@ -10,6 +10,7 @@ import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.category.CategoryFactory;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
+import com.softwaremagico.librodeesher.file.ModuleManager;
 import com.softwaremagico.librodeesher.language.LanguageSlot;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import com.softwaremagico.librodeesher.magic.MagicListType;
@@ -40,6 +41,10 @@ final class LegacyValues {
     private static final String COMMUNICATION_CATEGORY_ID = "communication";
 
     private static List<Category> availableCategories;
+
+    static {
+        ModuleManager.registerResettable(() -> availableCategories = null);
+    }
 
     private LegacyValues() {
         // Utility class.

@@ -5,6 +5,7 @@ import com.lowagie.text.pdf.parser.PdfTextExtractor;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
+import com.softwaremagico.librodeesher.file.ModuleManager;
 import com.softwaremagico.librodeesher.persistence.CharacterData;
 import com.softwaremagico.librodeesher.persistence.CharacterDataMapper;
 import com.softwaremagico.librodeesher.persistence.LegacyCharacterJsonImporter;
@@ -87,6 +88,31 @@ public class LegacyCategoriesSheetTest {
     @Test
     public void keepsTheLegacyPageCount() {
         Assert.assertEquals(pageCount, LEGACY_PAGE_COUNT, "the sheet grew a page");
+    }
+
+    @Test
+    public void refreshesAvailableCategoriesAfterModuleReset() throws Exception {
+        final boolean pulpWasEnabled = ModuleManager.getEnabledModules().contains(ModuleManager.PULP);
+        ModuleManager.enableModule(ModuleManager.PULP);
+        ModuleManager.resetModules();
+        try {
+            Assert.assertTrue(LegacyValues.availableCategories().stream()
+                    .anyMatch(category -> "scienceAnalyticMedical".equals(category.getId())));
+
+            ModuleManager.disableModule(ModuleManager.PULP);
+            ModuleManager.resetModules();
+
+            Assert.assertFalse(LegacyValues.availableCategories().stream()
+                    .anyMatch(category -> "scienceAnalyticMedical".equals(category.getId())),
+                    "disabled module categories should not survive the reset");
+        } finally {
+            if (pulpWasEnabled) {
+                ModuleManager.enableModule(ModuleManager.PULP);
+            } else {
+                ModuleManager.disableModule(ModuleManager.PULP);
+            }
+            ModuleManager.resetModules();
+        }
     }
 
     private List<Category> enabledCategories() throws InvalidXmlElementException {

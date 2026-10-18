@@ -49,6 +49,25 @@ public class CategoryProbabilityTest {
 	}
 
 	@Test
+	public void categoryCooldownStartsAboveTenRanks() throws InvalidXmlElementException {
+		// outdoorEnvironment has cost bonus 42 and preferred-category bonus 30 at 10 ranks.
+		// The threshold itself is not cooled down.
+		Assert.assertEquals(rankProbabilityAtTotalRanks("outdoorEnvironment", 10), 72);
+		// At 11 ranks the cooldown subtracts (11 - 8) * 10 = 30.
+		Assert.assertEquals(rankProbabilityAtTotalRanks("outdoorEnvironment", 11), 42);
+	}
+
+	@Test
+	public void categoryCooldownStrengthensAsRanksIncrease() throws InvalidXmlElementException {
+		final int probabilityAtElevenRanks = rankProbabilityAtTotalRanks("outdoorEnvironment", 11);
+		final int probabilityAtTwelveRanks = rankProbabilityAtTotalRanks("outdoorEnvironment", 12);
+
+		Assert.assertEquals(probabilityAtElevenRanks, 42);
+		Assert.assertEquals(probabilityAtTwelveRanks, 32);
+		Assert.assertTrue(probabilityAtTwelveRanks < probabilityAtElevenRanks);
+	}
+
+	@Test
 	public void unaffordableCategoryIsNotSelected() throws InvalidXmlElementException {
 		final CharacterPlayer poor = freshFighter();
 		for (final CharacteristicAbbreviation abbreviation : new CharacteristicAbbreviation[] {
@@ -100,6 +119,16 @@ public class CategoryProbabilityTest {
 			throws InvalidXmlElementException {
 		final Category category = RulesCatalog.getInstance().getCategory(categoryId);
 		return new CategoryProbability(character, category, suggested, 1, 1).rankProbability();
+	}
+
+	private static int rankProbabilityAtTotalRanks(String categoryId, int totalRanks)
+			throws InvalidXmlElementException {
+		final CharacterPlayer character = freshFighter();
+		for (int rank = 0; rank < totalRanks; rank++) {
+			Assert.assertTrue(character.setCurrentLevelCategoryRanks(categoryId, 1));
+			character.increaseLevel();
+		}
+		return rankProbability(categoryId, null, character);
 	}
 
 	private static CharacterPlayer freshFighter() {

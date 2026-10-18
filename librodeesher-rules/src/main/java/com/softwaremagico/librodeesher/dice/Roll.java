@@ -26,6 +26,11 @@ public class Roll {
         secondDice = Dice.getRoll(faces);
     }
 
+    private Roll(int firstDice, int secondDice) {
+        this.firstDice = firstDice;
+        this.secondDice = secondDice;
+    }
+
     /** Copies an already-rolled result (e.g. when reading it back from storage). */
     public Roll(Roll roll) {
         this.firstDice = roll.getFirstDice();
@@ -37,10 +42,7 @@ public class Roll {
      * draws without touching the unseeded {@link Dice} stream.
      */
     public static Roll of(int firstDice, int secondDice) {
-        final Roll roll = new Roll();
-        roll.setFirstDice(firstDice);
-        roll.setSecondDice(secondDice);
-        return roll;
+        return new Roll(firstDice, secondDice);
     }
 
     public Integer getFirstDice() {

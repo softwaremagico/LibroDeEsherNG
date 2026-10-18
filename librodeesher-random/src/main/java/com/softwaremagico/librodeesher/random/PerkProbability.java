@@ -105,7 +105,7 @@ public final class PerkProbability {
                 probability += getProbabilityByMovement();
             }
             // No bonus, no malus. A standard perk. Add it if it has not perk chosen.
-            if (probabilityBySkills == 0 && probability < 0) {
+            if (probabilityBySkills == 0 && probability < 0 && probability != VETO_PROBABILITY) {
                 probability = 2 - characterPlayer.getSelectedPerks().size() + specializationLevel;
             }
             final int smartRandomness = smartRandomness();

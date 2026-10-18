@@ -539,8 +539,10 @@ public class CharacterPlayer {
 		while (this.currentAge < this.finalAge) {
 			if (AgeRules.hasCharacteristicDecrease(this.currentAge, race.getExpectedLifeYears(),
 					this.getCharacteristicTotalBonus(CharacteristicAbbreviation.CONSTITUTION),
-					this.getCharacteristicTotalBonus(CharacteristicAbbreviation.SELF_DISCIPLINE))) {
-				final AgeModification ageModification = new AgeModification(this.currentAge, race.getRaceType());
+					this.getCharacteristicTotalBonus(CharacteristicAbbreviation.SELF_DISCIPLINE),
+					this.randomRollSupplier)) {
+				final AgeModification ageModification = new AgeModification(this.currentAge, race.getRaceType(),
+						this.randomRollSupplier);
 				this.getCurrentLevel().addAgeModification(ageModification);
 
 				final CharacteristicAbbreviation abbreviation = ageModification.getCharacteristicAbbreviation();
@@ -1953,9 +1955,9 @@ public class CharacterPlayer {
 	}
 
 	/**
-	 * Overrides where {@link #applyCharacteristicUpgrade} takes its 2d10 roll from (defaulting to a
-	 * fresh unseeded {@link Roll}), so the seeded random generator can replay the very same dice it
-	 * drew for the rest of the character.
+	 * Overrides where characteristic upgrades and age effects take their random rolls from
+	 * (defaulting to fresh unseeded {@link Roll}s), so a seeded random generator can replay those
+	 * decisions as well.
 	 */
 	public void setRandomRollSupplier(Supplier<Roll> randomRollSupplier) {
 		this.randomRollSupplier = randomRollSupplier == null ? Roll::new : randomRollSupplier;

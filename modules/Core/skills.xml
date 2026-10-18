@@ -260,6 +260,19 @@
     <allEnabled>false</allEnabled>
     <categoryId>martialArtsSweeps</categoryId>
     <enabledByDefault>true</enabledByDefault>
+    <id>inmovilizaciones</id>
+    <name>
+      <en>Immobilizations</en>
+      <es>Inmovilizaciones</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>martialArtsSweeps</categoryId>
+    <enabledByDefault>true</enabledByDefault>
     <id>blocar</id>
     <name>
       <en>Blocar</en>
@@ -1170,6 +1183,32 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
+    <id>loreOfFaunaAquatic</id>
+    <name>
+      <en>Lore of Fauna (Aquatic)</en>
+      <es>Conocimiento de la Fauna (Acuática)</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>loreGeneral</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>loreOfFaunaArctic</id>
+    <name>
+      <en>Lore of Fauna (Arctic)</en>
+      <es>Conocimiento de la Fauna (Ártico)</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>loreGeneral</categoryId>
+    <enabledByDefault>true</enabledByDefault>
     <id>loreOfFlora</id>
     <name>
       <en>Lore of Flora</en>
@@ -1183,10 +1222,36 @@
     <allEnabled>false</allEnabled>
     <categoryId>loreGeneral</categoryId>
     <enabledByDefault>true</enabledByDefault>
+    <id>loreOfFloraAquatic</id>
+    <name>
+      <en>Lore of Flora (Aquatic)</en>
+      <es>Conocimiento de la Flora (Acuática)</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>loreGeneral</categoryId>
+    <enabledByDefault>true</enabledByDefault>
     <id>loreCultural</id>
     <name>
       <en>Lore Cultural</en>
       <es>Conocimiento Cultural</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>loreGeneral</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>loreRegionalArctic</id>
+    <name>
+      <en>Lore Regional (Arctic)</en>
+      <es>Conocimiento Regional (Ártico)</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>
@@ -1716,6 +1781,19 @@
     <allEnabled>false</allEnabled>
     <categoryId>outdoorEnvironment</categoryId>
     <enabledByDefault>true</enabledByDefault>
+    <id>supervivenciaAquatic</id>
+    <name>
+      <en>Survival (Aquatic)</en>
+      <es>Supervivencia (Acuática)</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>outdoorEnvironment</categoryId>
+    <enabledByDefault>true</enabledByDefault>
     <id>speleology</id>
     <name>
       <en>Speleology</en>
@@ -2214,6 +2292,19 @@
     <name>
       <en>Cocinar</en>
       <es>Cocinar</es>
+    </name>
+    <rare>false</rare>
+    <skillGroup>STANDARD</skillGroup>
+    <skillType>STANDARD</skillType>
+  </skill>
+  <skill>
+    <allEnabled>false</allEnabled>
+    <categoryId>crafts</categoryId>
+    <enabledByDefault>true</enabledByDefault>
+    <id>coser</id>
+    <name>
+      <en>Sewing</en>
+      <es>Coser</es>
     </name>
     <rare>false</rare>
     <skillGroup>STANDARD</skillGroup>

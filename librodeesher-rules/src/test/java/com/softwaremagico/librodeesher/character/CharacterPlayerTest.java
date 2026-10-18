@@ -44,7 +44,9 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
+import java.util.function.Supplier;
 
 /**
  * Verifies {@link CharacterPlayer}'s identity, characteristic and level
@@ -1581,6 +1583,37 @@ public class CharacterPlayerTest {
 			Assert.assertNotEquals(character.getCharacteristicTemporalValue(affected),
 					Characteristics.INITIAL_CHARACTERISTIC_VALUE);
 		}
+	}
+
+	@Test
+	public void ageAdvancementIsReproducibleWithTheSameInjectedRollSeed() throws InvalidXmlElementException {
+		Assert.assertEquals(getAgeAdvancementResults(12345L), getAgeAdvancementResults(12345L));
+	}
+
+	private static List<String> getAgeAdvancementResults(long seed) throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("lionCentaur");
+		for (final CharacteristicAbbreviation abbreviation : Characteristics.PHYSICAL_CHARACTERISTICS) {
+			character.setCharacteristicTemporalValue(abbreviation, 100);
+			character.setCharacteristicPotentialValue(abbreviation, 100);
+		}
+		for (final CharacteristicAbbreviation abbreviation : Characteristics.MENTAL_CHARACTERISTICS) {
+			character.setCharacteristicTemporalValue(abbreviation, 100);
+			character.setCharacteristicPotentialValue(abbreviation, 100);
+		}
+		final Random random = new Random(seed);
+		final Supplier<Roll> rollSupplier = () -> Roll.of(random.nextInt(10) + 1, random.nextInt(10) + 1);
+		character.setRandomRollSupplier(rollSupplier);
+		character.setCurrentAge(100);
+		character.setFinalAge(105);
+		character.increaseAge();
+
+		final List<String> results = new ArrayList<>();
+		for (final AgeModification modification : character.getCurrentLevel().getAgeModifications()) {
+			results.add(modification.getAge() + ":" + modification.getCharacteristicAbbreviation() + ":"
+					+ modification.getCharacteristicModification());
+		}
+		return results;
 	}
 
 	@Test

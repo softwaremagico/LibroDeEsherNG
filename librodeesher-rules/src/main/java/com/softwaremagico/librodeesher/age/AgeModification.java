@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.dice.Roll;
 
+import java.util.function.Supplier;
+
 /**
  * One year's worth of age-related characteristic decrease, rolled by {@link AgeRules} whenever a
  * character grows old enough for their body/mind to start declining.
@@ -26,10 +28,15 @@ public class AgeModification {
     }
 
     public AgeModification(int age, int raceType) {
-        this.roll = new Roll();
+        this(age, raceType, Roll::new);
+    }
+
+    /** Creates the age effect using the supplied source for both its 2d10 roll and its target choice. */
+    public AgeModification(int age, int raceType, Supplier<Roll> rollSupplier) {
+        this.roll = rollSupplier.get();
         this.raceType = raceType;
         this.age = age;
-        this.characteristicAbbreviation = AgeRules.getRandomAgeSelectedCharacteristic();
+        this.characteristicAbbreviation = AgeRules.getRandomAgeSelectedCharacteristic(rollSupplier);
     }
 
     /**

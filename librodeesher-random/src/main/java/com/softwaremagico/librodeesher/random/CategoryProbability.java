@@ -190,7 +190,7 @@ public class CategoryProbability {
         }
         final int totalRanks = characterPlayer.getCategoryTotalRanks(category.getId());
         if (totalRanks > 10) {
-            bonus -= (8 - totalRanks) * 10;
+            bonus -= (totalRanks - 8) * 10;
         }
         return bonus;
     }

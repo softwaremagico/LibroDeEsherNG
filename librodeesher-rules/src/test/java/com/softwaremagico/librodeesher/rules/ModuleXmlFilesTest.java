@@ -225,7 +225,7 @@ public class ModuleXmlFilesTest {
         final List<String> danglingSkills = new ArrayList<>();
         skillReferences.forEach((file, referenced) -> {
             for (final String id : referenced) {
-                if (!skillIds.contains(id) && !KNOWN_LEGACY_TRAINING_SKILL_TOKENS.contains(id)) {
+                if (!skillIds.contains(id)) {
                     danglingSkills.add(file.substring(modulesFolder.getPath().length() + 1) + " -> " + id);
                 }
             }
@@ -243,14 +243,6 @@ public class ModuleXmlFilesTest {
         Assert.assertEquals(danglingSpellLists, List.of(),
                 "training spell list references no module's spells.xml defines");
     }
-
-    /**
-     * Training skill references that resolve to nothing on purpose: the martial-arts grant of
-     * "ManualPersonajes" names two skills the legacy application auto-created at runtime
-     * ({@code SkillFactory}) without ever adding them to a {@code categorias.txt} file.
-     */
-    private static final Set<String> KNOWN_LEGACY_TRAINING_SKILL_TOKENS = Set.of(
-            "inmovilizaciones", "strikesNerviosos");
 
     /**
      * A culture hobby may legally name either a skill ("Cantar") or a weapon/armour type category
@@ -301,7 +293,7 @@ public class ModuleXmlFilesTest {
         final List<String> dangling = new ArrayList<>();
         hobbiesByFile.forEach((file, hobbies) -> {
             for (final String id : hobbies) {
-                if (!resolvable.contains(id) && !KNOWN_LEGACY_CULTURE_TOKENS.contains(id)) {
+                if (!resolvable.contains(id) && !NON_SKILL_CULTURE_SCOPE_MARKERS.contains(id)) {
                     dangling.add(file.substring(modulesFolder.getPath().length() + 1) + " -> " + id);
                 }
             }
@@ -309,17 +301,53 @@ public class ModuleXmlFilesTest {
         Assert.assertEquals(dangling, List.of(), "culture hobbies that are neither a skill nor a gear category");
     }
 
-    /**
-     * Culture hobbies that resolve to nothing on purpose. {@code all}/{@code weapon}/{@code armor} are
-     * the legacy "any hobby"/"any weapon"/"any armour" markers and {@code listOfSpells} is the
-     * "Lista de Hechizos" slot. The rest are hobby skills the legacy {@code SkillFactory} silently
-     * auto-created at runtime and that were never added to any {@code categorias.txt}, so no catalog
-     * entry exists for them yet.
-     */
-    private static final Set<String> KNOWN_LEGACY_CULTURE_TOKENS = Set.of(
-            "all", "weapon", "armor", "listOfSpells",
-            "coser", "loreOfFaunaAquatic", "loreOfFaunaArctic", "loreOfFloraAquatic",
-            "loreRegionalArctic", "supervivenciaAquatic");
+    /** Culture scope markers, not skills: any hobby, any weapon/armour, and the spell-list slot. */
+    private static final Set<String> NON_SKILL_CULTURE_SCOPE_MARKERS = Set.of(
+            "all", "weapon", "armor", "listOfSpells");
+
+    @Test
+    public void legacyTrainingAndCultureSkillOptionsResolveToNamedCatalogSkills() throws Exception {
+        final String corePath = classpathFileOrNull(PathManager.getModulePath(ModuleManager.CORE));
+        Assert.assertNotNull(corePath, "the core module is not on the classpath");
+        final File modulesFolder = new File(corePath).getParentFile();
+        final Map<String, SkillDefinition> expected = Map.ofEntries(
+                Map.entry("inmovilizaciones", new SkillDefinition("Inmovilizaciones", "martialArtsSweeps")),
+                Map.entry("strikesNerviosos", new SkillDefinition("Golpes Nerviosos", "martialArtsStrikes")),
+                Map.entry("coser", new SkillDefinition("Coser", "crafts")),
+                Map.entry("loreOfFaunaAquatic",
+                        new SkillDefinition("Conocimiento de la Fauna (Acuática)", "loreGeneral")),
+                Map.entry("loreOfFloraAquatic",
+                        new SkillDefinition("Conocimiento de la Flora (Acuática)", "loreGeneral")),
+                Map.entry("supervivenciaAquatic",
+                        new SkillDefinition("Supervivencia (Acuática)", "outdoorEnvironment")),
+                Map.entry("loreRegionalArctic",
+                        new SkillDefinition("Conocimiento Regional (Ártico)", "loreGeneral")),
+                Map.entry("loreOfFaunaArctic",
+                        new SkillDefinition("Conocimiento de la Fauna (Ártico)", "loreGeneral")));
+
+        final Map<String, Skill> skills = new TreeMap<>();
+        for (final String module : ModuleManager.getAllModules()) {
+            final File moduleFolder = new File(modulesFolder, module);
+            final File skillFile = new File(moduleFolder, "skills.xml");
+            if (skillFile.isFile()) {
+                final List<Skill> moduleSkills = strictMapper().readerForListOf(Skill.class).readValue(skillFile);
+                for (final Skill skill : moduleSkills) {
+                    skills.put(skill.getId(), skill);
+                }
+            }
+        }
+
+        expected.forEach((id, definition) -> {
+            final Skill skill = skills.get(id);
+            Assert.assertNotNull(skill, "missing skill catalog entity: " + id);
+            Assert.assertNotNull(skill.getName(), "missing display name for skill: " + id);
+            Assert.assertEquals(skill.getName().getSpanish(), definition.spanish(), "Spanish name for " + id);
+            Assert.assertEquals(skill.getCategoryId(), definition.categoryId(), "category for " + id);
+        });
+    }
+
+    private record SkillDefinition(String spanish, String categoryId) {
+    }
 
     /** Collects the text of every {@code tag} element of {@code document} into {@code into}. */
     private static void collect(Document document, String tag, Set<String> into) {

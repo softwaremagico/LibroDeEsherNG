@@ -67,13 +67,17 @@ public class PerkProbabilityTest {
 	}
 
 	@Test
-	public void unaffordablePerksFallBackToTheStandardValue() throws InvalidXmlElementException {
+	public void unaffordablePerksRemainVetoedInsteadOfFallingBackToTheStandardValue()
+			throws InvalidXmlElementException {
 		final CharacterPlayer character = freshFighter();
 		character.setRaceId("commonMen");
-		// acrobat exceeds commonMen's race-derived perk budget and athleticsGymnastics is not
-		// interesting for a fresh fighter, so the cost veto is replaced by the "standard perk"
-		// fallback 2 - 0 + 0 = 2.
-		Assert.assertEquals(probability("acrobat", null, character), 2);
+		character.addPerk("trainingInArtesMarcialesMaximum");
+		character.addPerk("bonusToAgilityMaximum");
+		final Perk perk = RulesCatalog.getInstance().getPerk("acrobat");
+		Assert.assertTrue(character.getSpentPerksPoints() + perk.getCost() > character.getRacePerksPoints());
+		// With two perks selected, the ordinary fallback would be positive at specialization level 3.
+		Assert.assertEquals(new PerkProbability(character, perk, 3, null).getProbability(),
+				PerkProbability.VETO_PROBABILITY);
 	}
 
 	@Test

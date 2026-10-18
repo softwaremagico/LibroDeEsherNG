@@ -2,10 +2,11 @@ package com.softwaremagico.librodeesher.age;
 
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
-import com.softwaremagico.librodeesher.dice.Dice;
+import com.softwaremagico.librodeesher.dice.Roll;
 import com.softwaremagico.librodeesher.level.LevelUp;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 /**
  * Age-related characteristic decline rules.
@@ -15,7 +16,7 @@ import java.util.List;
  * orchestration that loops from the character's current age to its final age, mutating the
  * character's current level, lives in {@link com.softwaremagico.librodeesher.character.CharacterPlayer
  * #increaseAge()}, which drives them year by year through
- * {@link #hasCharacteristicDecrease(int, int, java.util.Random)}.</p>
+ * {@link #hasCharacteristicDecrease(int, int, int, int, Supplier)}.</p>
  */
 public final class AgeRules {
 
@@ -32,7 +33,17 @@ public final class AgeRules {
      */
     public static boolean hasCharacteristicDecrease(int currentAge, int expectedLifeYears, int constitutionTotalBonus,
                                                      int selfDisciplineTotalBonus) {
-        final int value = (int) (Math.random() * 100 + 1) + constitutionTotalBonus * 2 + selfDisciplineTotalBonus
+        return hasCharacteristicDecrease(currentAge, expectedLifeYears, constitutionTotalBonus,
+                selfDisciplineTotalBonus, Roll::new);
+    }
+
+    /**
+     * Same age check using the caller's roll source. A 2d10 result maps to each integer from 1 to 100
+     * exactly once, preserving the legacy percentile-roll distribution.
+     */
+    public static boolean hasCharacteristicDecrease(int currentAge, int expectedLifeYears, int constitutionTotalBonus,
+                                                     int selfDisciplineTotalBonus, Supplier<Roll> rollSupplier) {
+        final int value = getPercentileRoll(rollSupplier) + constitutionTotalBonus * 2 + selfDisciplineTotalBonus
                 + getAgeModification(currentAge, expectedLifeYears);
         return value < 100;
     }
@@ -61,10 +72,31 @@ public final class AgeRules {
 
     /** Picks a random characteristic to decrease this year (physical characteristics are more likely). */
     public static CharacteristicAbbreviation getRandomAgeSelectedCharacteristic() {
-        if ((int) (Math.random() * 100 + 1) < PROBABILITY_PHYSICAL_CHARACTERISTIC) {
-            return Characteristics.PHYSICAL_CHARACTERISTICS.get(Dice.getRoll(Characteristics.PHYSICAL_CHARACTERISTICS.size()) - 1);
+        return getRandomAgeSelectedCharacteristic(Roll::new);
+    }
+
+    /** Picks the age-decreased characteristic using the caller's roll source. */
+    public static CharacteristicAbbreviation getRandomAgeSelectedCharacteristic(Supplier<Roll> rollSupplier) {
+        if (getPercentileRoll(rollSupplier) < PROBABILITY_PHYSICAL_CHARACTERISTIC) {
+            return Characteristics.PHYSICAL_CHARACTERISTICS.get(getUniformIndex(
+                    Characteristics.PHYSICAL_CHARACTERISTICS.size(), rollSupplier));
         }
-        return Characteristics.MENTAL_CHARACTERISTICS.get(Dice.getRoll(Characteristics.MENTAL_CHARACTERISTICS.size()) - 1);
+        return Characteristics.MENTAL_CHARACTERISTICS.get(getUniformIndex(
+                Characteristics.MENTAL_CHARACTERISTICS.size(), rollSupplier));
+    }
+
+    private static int getPercentileRoll(Supplier<Roll> rollSupplier) {
+        final Roll roll = rollSupplier.get();
+        return (roll.getFirstDice() - 1) * 10 + roll.getSecondDice();
+    }
+
+    private static int getUniformIndex(int size, Supplier<Roll> rollSupplier) {
+        final int acceptedValues = 100 - 100 % size;
+        int value;
+        do {
+            value = getPercentileRoll(rollSupplier) - 1;
+        } while (value >= acceptedValues);
+        return value % size;
     }
 
     /** Sum, across every level, of the age-related temporal value change for one characteristic. */

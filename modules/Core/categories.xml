@@ -258,9 +258,10 @@
       <skill>sweepsOfArtesMarciales</skill>
       <skill>blocar</skill>
       <skill>luchaLibre</skill>
+      <skill>inmovilizaciones</skill>
       <skill>inmovilizar</skill>
     </skills>
-    <skillsRaw>Barridos de Artes Marciales, Blocar, Lucha Libre, Inmovilizar</skillsRaw>
+    <skillsRaw>Barridos de Artes Marciales, Blocar, Lucha Libre, Inmovilizaciones, Inmovilizar</skillsRaw>
     <type>STANDARD</type>
   </category>
   <category>
@@ -280,8 +281,9 @@
       <skill>placaje</skill>
       <skill>strikesOfArtesMarciales</skill>
       <skill>nerveStrike</skill>
+      <skill>strikesNerviosos</skill>
     </skills>
-    <skillsRaw>Boxeo, Placaje, Golpes de Artes Marciales, Golpe Nervioso</skillsRaw>
+    <skillsRaw>Boxeo, Placaje, Golpes de Artes Marciales, Golpe Nervioso, Golpes Nerviosos</skillsRaw>
     <type>STANDARD</type>
   </category>
   <category>
@@ -780,16 +782,20 @@
     </name>
     <skills>
       <skill>loreOfFauna</skill>
+      <skill>loreOfFaunaAquatic</skill>
+      <skill>loreOfFaunaArctic</skill>
       <skill>loreOfFlora</skill>
+      <skill>loreOfFloraAquatic</skill>
       <skill>loreCultural</skill>
       <skill>loreRegional</skill>
+      <skill>loreRegionalArctic</skill>
       <skill>heraldry</skill>
       <skill>history</skill>
       <skill>religion</skill>
       <skill>loreOfStylesMarciales</skill>
       <skill>loreOfStylesOfWeapons</skill>
     </skills>
-    <skillsRaw>Conocimiento de la Fauna, Conocimiento de la Flora, Conocimiento Cultural, Conocimiento Regional, Heráldica, Historia, Religión, Conocimiento de Estilos Marciales, Conocimiento de Estilos de Armas</skillsRaw>
+    <skillsRaw>Conocimiento de la Fauna, Conocimiento de la Fauna (Acuática), Conocimiento de la Fauna (Ártico), Conocimiento de la Flora, Conocimiento de la Flora (Acuática), Conocimiento Cultural, Conocimiento Regional, Conocimiento Regional (Ártico), Heráldica, Historia, Religión, Conocimiento de Estilos Marciales, Conocimiento de Estilos de Armas</skillsRaw>
     <type>STANDARD</type>
   </category>
   <category>
@@ -974,8 +980,9 @@
       <skill>supervivenciaPlains</skill>
       <skill>supervivenciaUnderground</skill>
       <skill>supervivenciaArctic</skill>
+      <skill>supervivenciaAquatic</skill>
     </skills>
-    <skillsRaw>Cazar, Espeleología, Forrajear, Orientación Celeste, Predicción del Clima, Supervivencia, Supervivencia (Montañas), Supervivencia (Bosques), Supervivencia (Desiertos), Supervivencia (Llanuras), Supervivencia (Subterráneos), Supervivencia (Ártico)</skillsRaw>
+    <skillsRaw>Cazar, Espeleología, Forrajear, Orientación Celeste, Predicción del Clima, Supervivencia, Supervivencia (Montañas), Supervivencia (Bosques), Supervivencia (Desiertos), Supervivencia (Llanuras), Supervivencia (Subterráneos), Supervivencia (Ártico), Supervivencia (Acuática)</skillsRaw>
     <type>STANDARD</type>
   </category>
   <category>
@@ -1322,9 +1329,10 @@
       <skill>barrer</skill>
       <skill>tatuar</skill>
       <skill>bordar</skill>
+      <skill>coser</skill>
       <skill>tallarTheHueso</skill>
     </skills>
-    <skillsRaw>Cocinar, Manejo de Cuerdas, Trabajar el Cuero, Trabajar el Metal, Trabajar la Madera, Trabajar la Piedra, Coser/Tejer, Dibujar, Escribir, Hacer Flechas, Horticultura, Peletería, Servicio, Trampero, Barrer, Tatuar, Bordar, Tallar el Hueso</skillsRaw>
+    <skillsRaw>Cocinar, Manejo de Cuerdas, Trabajar el Cuero, Trabajar el Metal, Trabajar la Madera, Trabajar la Piedra, Coser/Tejer, Dibujar, Escribir, Hacer Flechas, Horticultura, Peletería, Servicio, Trampero, Barrer, Tatuar, Bordar, Coser, Tallar el Hueso</skillsRaw>
     <type>COMBINED</type>
   </category>
   <category>

@@ -24,4 +24,8 @@ public final class Dice {
     public static int getRoll(int faces) {
         return GENERATOR.nextInt(faces) + 1;
     }
+
+    static void setRandomSeed(long seed) {
+        GENERATOR.setSeed(seed);
+    }
 }

@@ -2,11 +2,14 @@ package com.softwaremagico.librodeesher.age;
 
 import com.softwaremagico.librodeesher.characteristic.CharacteristicAbbreviation;
 import com.softwaremagico.librodeesher.characteristic.Characteristics;
+import com.softwaremagico.librodeesher.dice.Roll;
 import com.softwaremagico.librodeesher.level.LevelUp;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.Random;
+import java.util.function.Supplier;
 
 /** Verifies {@link AgeRules}. */
 @Test(groups = "age")
@@ -19,6 +22,11 @@ public class AgeRulesTest {
             Assert.assertTrue(Characteristics.PHYSICAL_CHARACTERISTICS.contains(abbreviation)
                     || Characteristics.MENTAL_CHARACTERISTICS.contains(abbreviation));
         }
+    }
+
+    @Test
+    public void ageEffectsAreReproducibleFromAnInjectedSeededRollSource() {
+        Assert.assertEquals(getAgeEffects(27L), getAgeEffects(27L));
     }
 
     @Test
@@ -70,5 +78,19 @@ public class AgeRulesTest {
             modification = new AgeModification(age, raceType);
         } while (modification.getCharacteristicAbbreviation() != abbreviation);
         return modification;
+    }
+
+    private static List<String> getAgeEffects(long seed) {
+        final Random random = new Random(seed);
+        final Supplier<Roll> rollSupplier = () -> Roll.of(random.nextInt(10) + 1, random.nextInt(10) + 1);
+        final List<String> results = new java.util.ArrayList<>();
+        for (int age = 100; age < 125; age++) {
+            if (AgeRules.hasCharacteristicDecrease(age, 100, 0, 0, rollSupplier)) {
+                final AgeModification modification = new AgeModification(age, 3, rollSupplier);
+                results.add(age + ":" + modification.getCharacteristicAbbreviation() + ":"
+                        + modification.getCharacteristicModification());
+            }
+        }
+        return results;
     }
 }
