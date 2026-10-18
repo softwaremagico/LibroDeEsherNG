@@ -16,9 +16,8 @@ import java.util.stream.Stream;
  * The library has to stay usable on Android, where the desktop-only parts of {@code java.awt} and
  * Swing are missing, so no source file of any module may import them.
  *
- * <p>{@link com.softwaremagico.librodeesher.pdf.elements.BaseElement} used to import
- * {@code java.awt.Color} to grey out its table headers; it now uses OpenPDF's own {@code RGBColor},
- * which is why this test exists to stop the dependency from creeping back in.</p>
+ * <p>Imports and fully qualified usages are both rejected, so desktop APIs cannot creep back in
+ * through source edits that omit imports.</p>
  */
 @Test(groups = "pdf")
 public class DesktopIndependenceTest {

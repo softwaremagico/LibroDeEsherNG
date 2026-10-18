@@ -4,6 +4,7 @@ import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -51,5 +52,29 @@ public class CharacterSheetTest {
         final byte[] pdf = new CharacterSheet().generate(new CharacterPlayer());
 
         Assert.assertTrue(pdf.length > 500);
+    }
+
+    @Test
+    public void writesToACallerOwnedStreamAndSupportsACharacterBoundSheet() throws Exception {
+        final CharacterPlayer character = new CharacterPlayer();
+        character.setName("Gandalf");
+        final CloseTrackingOutputStream output = new CloseTrackingOutputStream();
+
+        new CharacterSheet(character).generateTo(output);
+
+        Assert.assertFalse(output.closed, "The PDF generator must not close a caller-owned stream.");
+        Assert.assertTrue(output.size() > 500);
+        Assert.assertEquals(new String(output.toByteArray(), 0, 5,
+                java.nio.charset.StandardCharsets.US_ASCII), "%PDF-");
+    }
+
+    private static final class CloseTrackingOutputStream extends ByteArrayOutputStream {
+        private boolean closed;
+
+        @Override
+        public void close() throws IOException {
+            closed = true;
+            super.close();
+        }
     }
 }

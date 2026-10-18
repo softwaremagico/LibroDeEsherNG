@@ -5,8 +5,7 @@
     <packaging>jar</packaging>
     <name>Libro de Esher (PDF)</name>
     <description>
-        Character sheet PDF rendering, built with OpenPDF. Desktop-only module: it is intentionally kept
-        isolated from librodeesher-rules/librodeesher-random so those two stay reusable on Android.
+        Android-compatible character sheet PDF rendering with OpenPDF, isolated from the rules/random modules.
     </description>
 
     <parent>

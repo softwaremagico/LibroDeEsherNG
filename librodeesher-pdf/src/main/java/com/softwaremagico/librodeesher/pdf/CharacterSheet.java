@@ -8,6 +8,10 @@ import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.pdf.legacy.LegacyCharacterSheet;
 import com.softwaremagico.librodeesher.pdf.legacy.LegacySheetAssets;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.Path;
+
 /**
  * The character sheet: the hand-drawn Rolemaster layout of the legacy application.
  *
@@ -23,14 +27,43 @@ import com.softwaremagico.librodeesher.pdf.legacy.LegacySheetAssets;
 public class CharacterSheet extends PdfDocument {
 
     private final boolean alphabeticallySortedSkills;
+    private final CharacterPlayer characterPlayer;
 
     public CharacterSheet() {
-        this(false);
+        this(null, false);
     }
 
     /** @param alphabeticallySortedSkills whether to list skills globally by name instead of by category. */
     public CharacterSheet(boolean alphabeticallySortedSkills) {
+        this(null, alphabeticallySortedSkills);
+    }
+
+    /** Creates a sheet bound to a character, allowing the ThinkMachine-style no-argument export API. */
+    public CharacterSheet(CharacterPlayer characterPlayer) {
+        this(characterPlayer, false);
+    }
+
+    public CharacterSheet(CharacterPlayer characterPlayer, boolean alphabeticallySortedSkills) {
+        this.characterPlayer = characterPlayer;
         this.alphabeticallySortedSkills = alphabeticallySortedSkills;
+    }
+
+    /** Generates this instance's bound character, or a blank sheet when none was supplied. */
+    public byte[] generate() throws DocumentException, InvalidXmlElementException {
+        return super.generate(characterPlayer);
+    }
+
+    /** Writes this instance's bound character, or a blank sheet when none was supplied. */
+    public void generateTo(OutputStream outputStream) throws DocumentException, InvalidXmlElementException {
+        super.generateTo(outputStream, characterPlayer);
+    }
+
+    public void createFile(String path) throws DocumentException, InvalidXmlElementException, IOException {
+        super.createFile(path, characterPlayer);
+    }
+
+    public void createFile(Path path) throws DocumentException, InvalidXmlElementException, IOException {
+        super.createFile(characterPlayer, path);
     }
 
     @Override

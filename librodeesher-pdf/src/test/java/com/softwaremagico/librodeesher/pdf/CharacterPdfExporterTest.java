@@ -11,6 +11,7 @@ import com.softwaremagico.librodeesher.persistence.CharacterJsonManager;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.ByteArrayOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -31,6 +32,17 @@ public class CharacterPdfExporterTest {
 
         Assert.assertTrue(pdf.length > 3000, "Expected a complete PDF sheet, got " + pdf.length + " bytes.");
         Assert.assertEquals(new String(pdf, 0, 5, StandardCharsets.US_ASCII), "%PDF-");
+    }
+
+    @Test
+    public void exportsAJSONSavedCharacterDirectlyToAStream() throws Exception {
+        final String json = CharacterJsonManager.toJson(CharacterDataMapper.toData(savedWizard()));
+        final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+        CharacterPdfExporter.exportToStreamFromJSON(json, new CharacterSheet(), outputStream);
+
+        Assert.assertTrue(outputStream.size() > 1000);
+        Assert.assertEquals(new String(outputStream.toByteArray(), 0, 5, StandardCharsets.US_ASCII), "%PDF-");
     }
 
     @Test

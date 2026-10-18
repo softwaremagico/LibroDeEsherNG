@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -22,16 +21,13 @@ import java.util.stream.Stream;
  *
  * <p>{@link DesktopIndependenceTest} only reads the sources, which a {@code import} removal could
  * satisfy while the reference survives in the bytecode (a fully qualified name, a static import of a
- * nested type, or a type that leaks through a third-party signature). This test reads the
- * constant pool of every compiled class instead, so the guarantee covers what is actually shipped.
+ * nested type, or a type that leaks through a third-party signature). This test scans class names
+ * and descriptors in the constant pool of every compiled class, so the guarantee covers what is
+ * actually shipped.
  * </p>
  *
- * <p>Exactly one reference is unavoidable and therefore allowed: OpenPDF's
- * {@code Rectangle#setBackgroundColor(java.awt.Color)} forces {@link
- * com.softwaremagico.librodeesher.pdf.elements.BaseElement} to name {@code java.awt.Color} in its
- * constant pool, even though the value it passes is OpenPDF's own {@code RGBColor}. The colour type
- * is provided by Android, and no other desktop class is referenced.
- * </p>
+ * <p>No exception is allowed: OpenPDF's background colour API leaks an AWT type into callers'
+ * bytecode, so table fills use the gray-scale API instead.</p>
  */
 @Test(groups = "pdf")
 public class DesktopBytecodeIndependenceTest {
@@ -40,11 +36,8 @@ public class DesktopBytecodeIndependenceTest {
     private static final List<String> FORBIDDEN = List.of(
             "java/awt/", "javax/swing/", "java/beans/", "javax/imageio/");
 
-    /** The single reference OpenPDF's API forces, and the only desktop type Android provides. */
-    private static final String ALLOWED_REFERENCE = "java/awt/Color";
-
     @Test
-    public void noCompiledClassReferencesADesktopOnlyPackageOtherThanTheUnavoidableColour() throws IOException {
+    public void noCompiledClassReferencesADesktopOnlyPackage() throws IOException {
         final Path root = aggregatorRoot();
         final List<String> offenders = new ArrayList<>();
         int scanned = 0;
@@ -59,9 +52,6 @@ public class DesktopBytecodeIndependenceTest {
                     scanned++;
                     final String className = root.relativize(file).toString();
                     for (final String referenced : desktopReferencesIn(file)) {
-                        if (referenced.equals(ALLOWED_REFERENCE) && className.equals(allowedClassPath())) {
-                            continue;
-                        }
                         offenders.add(className + " references " + referenced.replace('/', '.'));
                     }
                 }
@@ -70,13 +60,6 @@ public class DesktopBytecodeIndependenceTest {
 
         Assert.assertTrue(scanned > 100, "only " + scanned + " compiled classes were scanned");
         Assert.assertTrue(offenders.isEmpty(), "desktop only references found in the bytecode: " + offenders);
-    }
-
-    private static String allowedClassPath() {
-        return "librodeesher-pdf" + File.separator + "target" + File.separator + "classes"
-                + File.separator + "com" + File.separator + "softwaremagico"
-                + File.separator + "librodeesher" + File.separator + "pdf"
-                + File.separator + "elements" + File.separator + "BaseElement.class";
     }
 
     /**
@@ -125,7 +108,12 @@ public class DesktopBytecodeIndependenceTest {
                 if (name == null) {
                     continue;
                 }
-                if (FORBIDDEN.stream().anyMatch(name::startsWith) && !name.startsWith(ALLOWED_REFERENCE)) {
+                if (FORBIDDEN.stream().anyMatch(name::startsWith)) {
+                    references.add(name);
+                }
+            }
+            for (final String name : utf8) {
+                if (name != null && FORBIDDEN.stream().anyMatch(name::contains) && !references.contains(name)) {
                     references.add(name);
                 }
             }

@@ -1,6 +1,5 @@
 package com.softwaremagico.librodeesher.pdf;
 
-import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.lowagie.text.DocumentException;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
@@ -9,6 +8,7 @@ import com.softwaremagico.librodeesher.persistence.CharacterDataMapper;
 import com.softwaremagico.librodeesher.persistence.CharacterJsonManager;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.nio.file.Path;
 
 /**
@@ -32,10 +32,22 @@ public final class CharacterPdfExporter {
         return sheet.generate(toCharacter(characterJSON));
     }
 
+    /** Writes the PDF directly to a caller-owned stream, suitable for Android storage providers. */
+    public static void exportToStreamFromJSON(String characterJSON, PdfDocument sheet, OutputStream outputStream)
+            throws DocumentException, InvalidXmlElementException {
+        sheet.generateTo(outputStream, toCharacter(characterJSON));
+    }
+
     /** Writes the PDF sheet for {@code characterJSON} to {@code path} (a ".pdf" extension is appended if missing). */
     public static void exportToFileFromJSON(String characterJSON, PdfDocument sheet, Path path)
             throws DocumentException, InvalidXmlElementException, IOException {
         sheet.createFile(toCharacter(characterJSON), path);
+    }
+
+    /** Writes the PDF sheet for {@code characterJSON} to a path, without requiring {@link Path} on Android. */
+    public static void exportToFileFromJSON(String characterJSON, PdfDocument sheet, String path)
+            throws DocumentException, InvalidXmlElementException, IOException {
+        sheet.createFile(path, toCharacter(characterJSON));
     }
 
     private static CharacterPlayer toCharacter(String characterJSON) throws InvalidXmlElementException {

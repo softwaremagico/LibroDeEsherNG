@@ -125,15 +125,15 @@ standalone end-user application.
 Two additional modules are included:
 
 - `librodeesher-random`: random character generation, reusable from Android with `librodeesher-rules`.
-- `librodeesher-pdf`: printable character sheet export; this module is desktop-only and should not
-  be added to an Android app.
+- `librodeesher-pdf`: printable character sheet export using OpenPDF 1.4.2, with byte-array and
+  `OutputStream` APIs suitable for Android storage providers. No AWT/Swing APIs are used.
 
 ## Architecture
 
 - Multi-module Maven build (`librodeesher-rules`, `librodeesher-random`, `librodeesher-pdf`).
-- Library-first: `librodeesher-rules` and `librodeesher-random` have no AWT/Swing/JPA dependency and
-  can be embedded in an Android application; the PDF exporter is isolated because it uses a
-  desktop-oriented rendering dependency. This repository does not include an Android UI or APK.
+- Library-first: all three modules avoid AWT/Swing/JPA dependencies and can be embedded in an
+  Android application. The PDF module uses OpenPDF and includes the legacy sheet images and font as
+  classpath resources. This repository does not include an Android UI or APK.
 - The reusable modules are built for Java 17. Android consumers need a Java-17-capable Android
   Gradle Plugin/toolchain and should package the XML rule resources from `modules/` on the classpath.
 - Rule data lives outside the compiled jar's `src/main/resources`, under a sibling `modules/` folder,

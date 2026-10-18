@@ -6,7 +6,6 @@ import java.util.List;
 import com.lowagie.text.BadElementException;
 import com.lowagie.text.Font;
 import com.lowagie.text.pdf.PdfPCell;
-import com.lowagie.text.pdf.RGBColor;
 import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.character.CharacterPlayer;
 import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
@@ -103,7 +102,7 @@ public class LegacyCombinedOneColumnSheet extends LegacyCombinedSheet {
 
 	@Override
 	protected void applyTitleBackground(PdfPCell cell) {
-		cell.setBackgroundColor(new RGBColor(0, 0, 0));
+		cell.setGrayFill(0f);
 	}
 
 	/**

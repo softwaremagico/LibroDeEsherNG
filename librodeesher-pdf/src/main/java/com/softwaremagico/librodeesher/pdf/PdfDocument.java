@@ -10,27 +10,31 @@ import com.softwaremagico.librodeesher.exceptions.InvalidXmlElementException;
 import com.softwaremagico.librodeesher.pdf.events.FooterEvent;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
+import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Locale;
 
 /**
  * Base class for every PDF sheet this module can render, built with OpenPDF (the {@code
  * com.lowagie.text} package), matching the shape of {@code think-machine-pdf}'s own {@code
  * PdfDocument}/{@code CharacterSheet} pair (a sibling Rolemaster-unrelated project by the same
  * author, itself already migrated off iText onto OpenPDF): a document is built once (see {@link
- * #generate()}/{@link #createFile(Path)}), delegating the actual content to {@link
+ * #generate(CharacterPlayer)}/{@link #generateTo(OutputStream, CharacterPlayer)}/{@link
+ * #createFile(String, CharacterPlayer)}), delegating the actual content to {@link
  * #createContent(Document, CharacterPlayer)}, which concrete subclasses (currently just {@link
  * com.softwaremagico.librodeesher.pdf.CharacterSheet}) implement by adding one {@link
  * com.lowagie.text.pdf.PdfPTable} per section (see {@code
  * com.softwaremagico.librodeesher.pdf.elements.BaseElement}).
  *
-* <p>Subclasses can still use the plain flow layout (one {@link
-     * com.lowagie.text.pdf.PdfPTable} per section) or, like {@link
-     * com.softwaremagico.librodeesher.pdf.legacy.LegacyCharacterSheet}, the legacy layout that overlays
-     * its tables on top of the hand-drawn background images now bundled as resources (see {@link
-     * com.softwaremagico.librodeesher.pdf.legacy.LegacySheetAssets}).</p>
+ * <p>Subclasses can still use the plain flow layout (one {@link
+ * com.lowagie.text.pdf.PdfPTable} per section) or, like {@link
+ * com.softwaremagico.librodeesher.pdf.legacy.LegacyCharacterSheet}, the legacy layout that overlays
+ * its tables on top of the hand-drawn background images now bundled as resources (see {@link
+ * com.softwaremagico.librodeesher.pdf.legacy.LegacySheetAssets}).</p>
  */
 public abstract class PdfDocument {
 
@@ -85,29 +89,61 @@ public abstract class PdfDocument {
 
     /** The character sheet as a byte array. Be careful with very large PDFs. */
     public final byte[] generate(CharacterPlayer characterPlayer) throws DocumentException, InvalidXmlElementException {
+        final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        this.generateTo(outputStream, characterPlayer);
+        return outputStream.toByteArray();
+    }
+
+    /**
+     * Renders directly to a caller-provided stream, suitable for Android destinations such as a
+     * {@code ContentResolver} output stream. The stream is flushed but remains owned by the caller.
+     */
+    public final void generateTo(OutputStream outputStream, CharacterPlayer characterPlayer)
+            throws DocumentException, InvalidXmlElementException {
+        if (outputStream == null) {
+            throw new IllegalArgumentException("The PDF output stream cannot be null.");
+        }
         final float margin = this.getMargin();
         final Document document = new Document(this.getPageSize(), margin, margin, margin, margin);
-        final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        final PdfWriter writer = PdfWriter.getInstance(document, outputStream);
+        final PdfWriter writer = PdfWriter.getInstance(document, new NonClosingOutputStream(outputStream));
         if (this.useFooterEvent()) {
             writer.setPageEvent(new FooterEvent());
         }
         this.generatePdf(document, writer, characterPlayer);
-        return outputStream.toByteArray();
     }
 
     /** Writes the character sheet to {@code path} (a ".pdf" extension is appended if missing). */
     public final void createFile(CharacterPlayer characterPlayer, Path path)
             throws DocumentException, InvalidXmlElementException, IOException {
         final Path target = path.toString().endsWith(".pdf") ? path : Path.of(path + ".pdf");
-        final float margin = this.getMargin();
-        final Document document = new Document(this.getPageSize(), margin, margin, margin, margin);
         try (OutputStream outputStream = Files.newOutputStream(target)) {
-            final PdfWriter writer = PdfWriter.getInstance(document, outputStream);
-            if (this.useFooterEvent()) {
-                writer.setPageEvent(new FooterEvent());
-            }
-            this.generatePdf(document, writer, characterPlayer);
+            this.generateTo(outputStream, characterPlayer);
+        }
+    }
+
+    /**
+     * Writes the character sheet to a file path, appending ".pdf" when the extension is missing.
+     * This overload avoids requiring {@link Path} at Android call sites.
+     */
+    public final void createFile(String path, CharacterPlayer characterPlayer)
+            throws DocumentException, InvalidXmlElementException, IOException {
+        if (path == null || path.isBlank()) {
+            throw new IllegalArgumentException("The PDF output path cannot be null or blank.");
+        }
+        final String target = path.toLowerCase(Locale.ROOT).endsWith(".pdf") ? path : path + ".pdf";
+        try (OutputStream outputStream = new FileOutputStream(target)) {
+            this.generateTo(outputStream, characterPlayer);
+        }
+    }
+
+    private static final class NonClosingOutputStream extends FilterOutputStream {
+        private NonClosingOutputStream(OutputStream outputStream) {
+            super(outputStream);
+        }
+
+        @Override
+        public void close() throws IOException {
+            flush();
         }
     }
 }

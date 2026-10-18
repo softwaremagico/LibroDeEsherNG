@@ -88,16 +88,16 @@ public final class LegacySheetAssets {
      * through the class loader: passing the bare path instead would make OpenPDF look for a file
      * relative to the working directory.
      */
-    private static URL resourceUrl(String resource) {
-        return LegacySheetAssets.class.getResource(resource);
-    }
-
-    private static Image getBackground(String resource) throws MalformedURLException, IOException {
-        final URL url = resourceUrl(resource);
+    private static URL resourceUrl(String resource) throws FileNotFoundException {
+        final URL url = LegacySheetAssets.class.getResource(resource);
         if (url == null) {
             throw new FileNotFoundException("Missing sheet asset on the classpath: " + resource);
         }
-        final Image image = Image.getInstance(url);
+        return url;
+    }
+
+    private static Image getBackground(String resource) throws MalformedURLException, IOException {
+        final Image image = Image.getInstance(resourceUrl(resource));
         // Same scaling as the legacy createBackgroundImage: fit within 760x760 so the full-page
         // drawing keeps its proportions inside the A4 frame.
         image.scaleToFit(760, 760);

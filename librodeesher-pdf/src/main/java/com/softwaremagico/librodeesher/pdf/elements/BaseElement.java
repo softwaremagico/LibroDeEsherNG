@@ -6,18 +6,11 @@ import com.lowagie.text.FontFactory;
 import com.lowagie.text.Phrase;
 import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
-import com.lowagie.text.pdf.RGBColor;
 import com.softwaremagico.librodeesher.language.TranslatedText;
 
 /**
- * Small table/cell building helpers shared by every table factory, matching the shape of {@code
- * think-machine-pdf}'s own {@code BaseElement} (see {@link com.softwaremagico.librodeesher.pdf.PdfDocument}'s
- * own javadoc).
- *
- * <p>Colours come from OpenPDF's own {@link RGBColor} rather than {@code java.awt.Color}, so no
- * source file here needs {@code java.awt}: the library stays usable on Android, where only a small
- * subset of the desktop {@code java.awt} packages is available. The remaining {@code java.awt} types
- * in {@code PdfPCell}'s API live inside OpenPDF itself, not here.</p>
+ * Small table/cell building helpers shared by every table factory. Gray fills avoid OpenPDF's
+ * background colour API because its signature introduces an AWT type into the compiled bytecode.
  */
 public class BaseElement {
 
@@ -43,7 +36,7 @@ public class BaseElement {
         final PdfPCell cell = new PdfPCell(phrase);
         cell.setColspan(columnSpan);
         cell.setBorder(Element.ALIGN_TOP + Element.ALIGN_BOTTOM);
-        cell.setBackgroundColor(new RGBColor(220, 220, 220));
+        cell.setGrayFill(220f / 255f);
         cell.setHorizontalAlignment(Element.ALIGN_CENTER);
         cell.setPadding(4);
         return cell;

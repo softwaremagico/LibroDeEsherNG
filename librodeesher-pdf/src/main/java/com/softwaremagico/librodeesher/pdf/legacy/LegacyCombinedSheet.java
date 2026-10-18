@@ -16,7 +16,6 @@ import com.lowagie.text.Paragraph;
 import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
-import com.lowagie.text.pdf.RGBColor;
 import com.softwaremagico.librodeesher.category.Category;
 import com.softwaremagico.librodeesher.magic.MagicListType;
 import com.softwaremagico.librodeesher.category.CategoryType;
@@ -56,7 +55,7 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 
 	private final static int DEFAULT_FONT_SIZE = 6;
 
-	private static final RGBColor VERY_LIGHT_GRAY = new RGBColor(215, 215, 215);
+	private static final float VERY_LIGHT_GRAY = 215f / 255f;
 
 	private final CharacterPlayer characterPlayer;
 	private int page = 0;
@@ -435,7 +434,7 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		cell.setColspan(1);
 		cell.setMinimumHeight(30);
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
-		cell.setBackgroundColor(VERY_LIGHT_GRAY);
+		cell.setGrayFill(VERY_LIGHT_GRAY);
 
 		return cell;
 	}
@@ -639,7 +638,7 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		cell.setMinimumHeight(10);
 		cell.setBorderWidth(BORDER);
 		// The legacy sheet painted every skill cell opaque white over the RMHPComb.png drawing.
-		cell.setBackgroundColor(new RGBColor(255, 255, 255));
+		cell.setGrayFill(1f);
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 		cell.setPaddingLeft(5f);
 
@@ -650,7 +649,7 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		PdfPCell cell = new PdfPCell(content);
 		cell.setMinimumHeight(10);
 		cell.setBorderWidth(BORDER);
-		cell.setBackgroundColor(new RGBColor(255, 255, 255));
+		cell.setGrayFill(1f);
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 		cell.setPaddingLeft(5f);
 
@@ -661,7 +660,7 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		PdfPCell cell = new PdfPCell(content);
 		cell.setMinimumHeight(15);
 		cell.setBorderWidth(0);
-		cell.setBackgroundColor(VERY_LIGHT_GRAY);
+		cell.setGrayFill(VERY_LIGHT_GRAY);
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 		cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 		cell.setPaddingLeft(5f);
@@ -673,7 +672,7 @@ public class LegacyCombinedSheet extends LegacyCharacterSheet {
 		PdfPCell cell = new PdfPCell(content);
 		cell.setMinimumHeight(15);
 		cell.setBorderWidth(0);
-		cell.setBackgroundColor(VERY_LIGHT_GRAY);
+		cell.setGrayFill(VERY_LIGHT_GRAY);
 		cell.setHorizontalAlignment(Element.ALIGN_CENTER);
 		cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 		cell.setPaddingLeft(5f);
