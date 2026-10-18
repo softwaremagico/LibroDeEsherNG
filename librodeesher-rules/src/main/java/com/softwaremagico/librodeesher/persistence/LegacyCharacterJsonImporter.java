@@ -224,8 +224,10 @@ public final class LegacyCharacterJsonImporter {
         data.setOtherRealmTrainingSpellsAllowed(required(root, "otherRealmtrainingSpellsAllowed").asBoolean(false));
         data.setDarkSpellsAsBasicListsAllowed(required(root, "darkSpellsAsBasicListsAllowed").asBoolean(false));
         data.setRecommendedFavouriteSkillsIncluded(root.path("recommendedFavouriteSkillsIncluded").asBoolean(false));
-        data.setHandWritingFont(root.path("handWritingFont").asBoolean(false));
+        data.setHandWritingFont(root.path("handWritingFont").asBoolean(true));
         data.setSortPdfSkills(root.path("sortPdfSkills").asBoolean(false));
+        data.setPerksCostBackgroundPoints(root.path("perksCostHistoryPoints").asBoolean(true));
+        data.setCategoryMaxCost(root.path("categoryMaxCost").asInt(50));
         data.setMagicAllowed(true);
         return data;
     }
@@ -733,8 +735,10 @@ public final class LegacyCharacterJsonImporter {
         data.setOtherRealmTrainingSpellsAllowed(node.path("otherRealmsTrainingSpells").asBoolean(false));
         data.setMagicAllowed(node.path("magicAllowed").asBoolean(true));
         data.setDarkSpellsAsBasicListsAllowed(node.path("darkSpellsAsBasic").asBoolean(false));
-        data.setHandWritingFont(node.path("handWrittingFont").asBoolean(false));
+        data.setHandWritingFont(node.path("handWrittingFont").asBoolean(true));
         data.setSortPdfSkills(node.path("sortPdfSkills").asBoolean(false));
+        data.setPerksCostBackgroundPoints(node.path("perksCostHistoryPoints").asBoolean(true));
+        data.setCategoryMaxCost(node.path("categoryMaxCost").asInt(50));
     }
 
     private static LevelData emptyLevel(int age) {

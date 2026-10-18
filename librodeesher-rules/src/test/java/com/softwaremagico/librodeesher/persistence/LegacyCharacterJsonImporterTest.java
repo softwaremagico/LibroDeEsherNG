@@ -142,6 +142,9 @@ public class LegacyCharacterJsonImporterTest {
         Assert.assertFalse(data.isOtherRealmTrainingSpellsAllowed());
         Assert.assertFalse(data.isDarkSpellsAsBasicListsAllowed());
         Assert.assertFalse(data.isRecommendedFavouriteSkillsIncluded());
+        Assert.assertTrue(data.isPerksCostBackgroundPoints());
+        Assert.assertEquals(data.getCategoryMaxCost(), 50);
+        Assert.assertTrue(data.isHandWritingFont());
     }
 
     /**

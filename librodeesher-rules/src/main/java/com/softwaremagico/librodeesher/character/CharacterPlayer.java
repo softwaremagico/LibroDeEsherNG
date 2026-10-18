@@ -44,6 +44,7 @@ import com.softwaremagico.librodeesher.profession.ProfessionWeaponCostTier;
 import com.softwaremagico.librodeesher.profession.RealmOfMagicGrant;
 import com.softwaremagico.librodeesher.race.Race;
 import com.softwaremagico.librodeesher.race.RaceLanguage;
+import com.softwaremagico.librodeesher.race.RacePerkPointsCalculator;
 import com.softwaremagico.librodeesher.resistance.ResistanceType;
 import com.softwaremagico.librodeesher.rules.RulesCatalog;
 import com.softwaremagico.librodeesher.skill.Skill;
@@ -79,14 +80,10 @@ import java.util.function.Supplier;
  * A player character in progress.
  *
  * <p>
- * This is a first, minimal cut of the character model: identity,
- * race/culture/profession selection (by id, resolved on demand through
- * {@link RulesCatalog}) and characteristic values, with the
- * level-up/background/age bookkeeping already ported ({@link LevelUp},
- * {@link Background}, {@link com.softwaremagico.librodeesher.age.AgeRules})
- * wired in. Skills, training decisions, magic, perks and equipment are future
- * work, layered on top of this once their own character-state equivalents (e.g.
- * a {@code CharacterSkill} tracking bought ranks) are designed.
+ * This model keeps character identity and development state by rule ids, resolving the
+ * corresponding data on demand through {@link RulesCatalog}. It covers characteristics,
+ * background, age, level development, skills, training decisions, magic, perks and equipment
+ * without depending on a desktop UI or persistence framework.
  * </p>
  */
 public class CharacterPlayer {
@@ -138,7 +135,8 @@ public class CharacterPlayer {
 	 * {@link #isOtherRealmTrainingSpellsAllowed()} gates {@link
 	 * com.softwaremagico.librodeesher.magic.MagicListType#OTHER_REALM_TRAINING} (see {@link
 	 * #classifySpellList(String)}); {@link #isMagicAllowed()} gates every spell list (see {@link
-	 * #getRealmsOfMagic()}). Every default here matches the legacy global {@code Config}'s own
+	 * #getRealmsOfMagic()}); {@link #isPerksCostBackgroundPoints()} controls whether perk costs
+	 * reduce the separate history-point pool. Every default here matches the legacy global {@code Config}'s own
 	 * hardcoded default (firearms/chi powers/other-realm-training-spells off, magic on); there is no
 	 * NG equivalent of the legacy global, persisted default (no single-user desktop app), so every new
 	 * character simply starts with these same hardcoded defaults instead of a snapshot of one.
@@ -163,10 +161,15 @@ public class CharacterPlayer {
 	/**
 	 * Whether the generated PDF writes the player's values in the handwritten
 	 * {@code ArchitectsDaughter} font instead of Helvetica, matching the legacy
-	 * {@code CharacterConfiguration#handWrittingFont} (which defaulted to {@code false}, i.e. printed
-	 * values in Helvetica).
+	 * {@code CharacterConfiguration#handWrittingFont} (which defaults to {@code true}).
 	 */
-	private boolean handWritingFont = false;
+	private boolean handWritingFont = true;
+
+	/**
+	 * Whether selected perks spend background points, matching the legacy per-character option
+	 * {@code CharacterConfiguration#perksCostHistoryPoints} (enabled by default).
+	 */
+	private boolean perksCostBackgroundPoints = true;
 
 	/**
 	 * Whether the generated PDF lists the skills globally sorted by name instead of grouped by
@@ -187,6 +190,8 @@ public class CharacterPlayer {
 	 * more than this is not worth developing, so it is hidden (see {@link #isCategoryEnabledByOptions}).
 	 */
 	public static final int CATEGORY_MAX_COST = 50;
+
+	private int categoryMaxCost = CATEGORY_MAX_COST;
 
 	/**
 	 * The legacy {@code CharacterPlayer#INVALID_COST} sentinel (200): what the legacy
@@ -2336,6 +2341,31 @@ public class CharacterPlayer {
 		this.sortPdfSkills = sortPdfSkills;
 	}
 
+	public boolean isPerksCostBackgroundPoints() {
+		return this.perksCostBackgroundPoints;
+	}
+
+	public void setPerksCostBackgroundPoints(boolean perksCostBackgroundPoints) {
+		this.perksCostBackgroundPoints = perksCostBackgroundPoints;
+	}
+
+	public int getCategoryMaxCost() {
+		return this.categoryMaxCost;
+	}
+
+	/**
+	 * Sets the maximum category development cost that remains visible/eligible, matching the legacy
+	 * options range.
+	 *
+	 * @throws IllegalArgumentException when outside the legacy range of 5 through 999
+	 */
+	public void setCategoryMaxCost(int categoryMaxCost) {
+		if (categoryMaxCost < 5 || categoryMaxCost > 999) {
+			throw new IllegalArgumentException("Category max cost must be between 5 and 999: " + categoryMaxCost);
+		}
+		this.categoryMaxCost = categoryMaxCost;
+	}
+
 	/**
 	 * Whether {@code skill} is hidden by one of the character's own option toggles (see this class'
 	 * fields' own javadoc), matching the legacy {@code CharacterPlayer#isSkillDisabled} (the "some
@@ -2468,8 +2498,8 @@ public class CharacterPlayer {
 
 	/**
 	 * Every perk the character may currently select, ordered by id. The list excludes already selected
-	 * perks, race/profession-restricted perks, and perks that would exceed the remaining background
-	 * point budget. Weaknesses remain selectable because they cost no background points directly.
+	 * perks, race/profession-restricted perks, and perks that would exceed either remaining point
+	 * budget. Weaknesses remain selectable because they cost no points directly.
 	 */
 	public List<String> getAvailablePerkIds() throws InvalidXmlElementException {
 		final List<String> available = new ArrayList<>();
@@ -2485,8 +2515,9 @@ public class CharacterPlayer {
 
 	/**
 	 * Selects a perk only when it is currently present in {@link #getAvailablePerkIds()}, including
-	 * the remaining background-point budget. The lower-level {@link #addAllowedPerk(String)} remains
-	 * useful when a caller deliberately manages that budget independently.
+	 * the remaining race perk-point and (when enabled) background-point budgets. The lower-level
+	 * {@link #addAllowedPerk(String)} remains useful when a caller deliberately manages those budgets
+	 * independently.
 	 */
 	public boolean addAvailablePerk(String perkId) throws InvalidXmlElementException {
 		if (!this.getAvailablePerkIds().contains(perkId)) {
@@ -2497,7 +2528,15 @@ public class CharacterPlayer {
 	}
 
 	private boolean canAffordPerk(Perk perk) throws InvalidXmlElementException {
-		return perk.isWeakness() || perk.getGrade().getBackgroundCost(null, false) <= this.getRemainingBackgroundPoints();
+		if (perk.isWeakness()) {
+			return true;
+		}
+		final Integer remainingPerksPoints = this.getRemainingPerksPoints();
+		if (remainingPerksPoints == null || (perk.getCost() != null && perk.getCost() > remainingPerksPoints)) {
+			return false;
+		}
+		return !this.perksCostBackgroundPoints
+				|| perk.getGrade().getBackgroundCost(null, false) <= this.getRemainingBackgroundPoints();
 	}
 
 	/**
@@ -2509,14 +2548,18 @@ public class CharacterPlayer {
 	}
 
 	/**
-	 * Total background points the race assigns to perk selection ({@code null} without a race). The
-	 * NG race catalog ships one combined {@link Race#getBackgroundPoints()} pool, so this mirrors the
-	 * legacy {@code Race#getPerksPoints()} budget check with that pool standing in for the legacy
-	 * computed perk points (see {@code PerkProbability}).
+	 * Total race-derived perk points ({@code null} without a race), matching the legacy
+	 * {@code Race#getPerksPoints()} calculation.
 	 */
 	public Integer getRacePerksPoints() throws InvalidXmlElementException {
 		final Race race = this.getRace();
-		return race == null ? null : race.getBackgroundPoints();
+		return race == null ? null : new RacePerkPointsCalculator(race).getPerkPoints();
+	}
+
+	/** Perk points left after subtracting the raw costs of all selected perks and weaknesses. */
+	public Integer getRemainingPerksPoints() throws InvalidXmlElementException {
+		final Integer racePerksPoints = this.getRacePerksPoints();
+		return racePerksPoints == null ? null : racePerksPoints - this.getSpentPerksPoints();
 	}
 
 	/**
@@ -2608,9 +2651,9 @@ public class CharacterPlayer {
 	 * {@link #isFirearmsAllowed()} (weapons are allowed even when their cost is not set, so the
 	 * remaining rules are not applied to them), a category of other-realm training lists needs {@link
 	 * #isOtherRealmTrainingSpellsAllowed()}, a category whose first rank would cost more than {@link
-	 * #CATEGORY_MAX_COST} is useless, and a spell list needs {@link #isMagicAllowed()}. The legacy
-	 * read that cost limit from its global {@code Config}, whose default NG keeps as a constant (there
-	 * is no user configuration to read here).
+	 * #getCategoryMaxCost()} is useless, and a spell list needs {@link #isMagicAllowed()}. The legacy
+	 * read that cost limit from its global {@code Config}; NG stores it with the character for an
+	 * Android front-end to configure and persists it with the character.
 	 */
 	public boolean isCategoryEnabledByOptions(Category category) throws InvalidXmlElementException {
 		return isCategoryEnabledByOptions(category, this.isMagicAllowed());
@@ -2636,14 +2679,14 @@ public class CharacterPlayer {
 		// are synthetic categories in the legacy model (one per MagicListType, see
 		// MagicListType#getCategoryId), where the same per-rank rules applied: an other-realm training
 		// list needs that option, a list type without a cost row for the profession (e.g. the Triad
-		// for a Lord del Caos) or with a first rank costing more than CATEGORY_MAX_COST (the 80-point
+		// for a Lord del Caos) or with a first rank costing more than this.categoryMaxCost (the 80-point
 		// "Listas Básicas de Otros Reinos") is not bought, and a magic-user option gates them all.
 		final MagicListType listType = MagicListType.fromCategoryId(category.getId());
 		if (listType != null) {
 			if (listType == MagicListType.OTHER_REALM_TRAINING && !this.isOtherRealmTrainingSpellsAllowed()) {
 				return false;
 			}
-			if (this.firstRankListCost(listType) > CATEGORY_MAX_COST) {
+			if (this.firstRankListCost(listType) > this.categoryMaxCost) {
 				return false;
 			}
 			return magicAllowed;
@@ -2653,7 +2696,7 @@ public class CharacterPlayer {
 			return false;
 		}
 		final Integer cost = this.getCategoryDevelopmentCost(category.getId(), 0);
-		if (cost != null && cost > CATEGORY_MAX_COST) {
+		if (cost != null && cost > this.categoryMaxCost) {
 			return false;
 		}
 		return !isSpellListCategory(category.getId()) || magicAllowed;
@@ -2783,9 +2826,12 @@ public class CharacterPlayer {
 	 * any weakness paired with each one and by whether it was chosen at random (see
 	 * {@link PerkGrade#getBackgroundCost}). A perk that is itself a weakness
 	 * ({@link Perk#isWeakness()}) costs nothing here, matching the legacy rule (its
-	 * points are refunded some other way, not modeled yet).
+	 * raw negative cost is accounted for in the separate race-derived perk-point budget).
 	 */
 	public int getPerksBackgroundPointsCost() throws InvalidXmlElementException {
+		if (!this.perksCostBackgroundPoints) {
+			return 0;
+		}
 		int cost = 0;
 		for (final SelectedPerk selectedPerk : this.selectedPerks) {
 			final Perk perk = RulesCatalog.getInstance().getPerk(selectedPerk.getPerkId());
@@ -4599,12 +4645,6 @@ public class CharacterPlayer {
 		return 15 + this.getCharacteristicTotalBonus(CharacteristicAbbreviation.QUICKNESS) + this.getPerkMovementBonus();
 	}
 
-	/**
-	 * The character's own defensive bonus (3 times {@link CharacteristicAbbreviation#QUICKNESS}'s
-	 * total bonus), matching the legacy {@code CharacterPlayer#getDefensiveBonus()} - minus its own
-	 * {@code getItemBonus(BonusType.DEFENSIVE_BONUS)} term, an equipment-system bonus that is future
-	 * work, same as every other item/equipment concern.
-	 */
 	/**
 	 * The character's own defensive bonus (3 times {@link CharacteristicAbbreviation#QUICKNESS}'s
 	 * total bonus, plus {@link #getItemBonus(BonusType, String)} for {@link BonusType#DEFENSIVE_BONUS}),

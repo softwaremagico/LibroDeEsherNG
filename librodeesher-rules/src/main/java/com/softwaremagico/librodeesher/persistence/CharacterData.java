@@ -96,11 +96,17 @@ public final class CharacterData {
 
     /** Whether the generated PDF writes the values in the handwriting font (legacy {@code handWrittingFont}). */
     @JsonProperty("handWritingFont")
-    private boolean handWritingFont;
+    private boolean handWritingFont = true;
 
     /** Whether the PDF lists the skills globally sorted by name (legacy {@code sortPdfSkills}). */
     @JsonProperty("sortPdfSkills")
     private boolean sortPdfSkills;
+
+    @JsonProperty("perksCostBackgroundPoints")
+    private boolean perksCostBackgroundPoints = true;
+
+    @JsonProperty("categoryMaxCost")
+    private int categoryMaxCost = 50;
 
     private boolean recommendedFavouriteSkillsIncluded;
 
@@ -330,5 +336,21 @@ public final class CharacterData {
 
     public void setSortPdfSkills(boolean sortPdfSkills) {
         this.sortPdfSkills = sortPdfSkills;
+    }
+
+    public boolean isPerksCostBackgroundPoints() {
+        return perksCostBackgroundPoints;
+    }
+
+    public void setPerksCostBackgroundPoints(boolean perksCostBackgroundPoints) {
+        this.perksCostBackgroundPoints = perksCostBackgroundPoints;
+    }
+
+    public int getCategoryMaxCost() {
+        return categoryMaxCost;
+    }
+
+    public void setCategoryMaxCost(int categoryMaxCost) {
+        this.categoryMaxCost = categoryMaxCost;
     }
 }

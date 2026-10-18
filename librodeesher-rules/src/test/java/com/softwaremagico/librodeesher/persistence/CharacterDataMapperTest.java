@@ -65,6 +65,37 @@ public class CharacterDataMapperTest {
 	}
 
 	@Test
+	public void perkHistoryPointOptionSurvivesTheJsonRoundTrip() throws InvalidXmlElementException {
+		final CharacterPlayer original = new CharacterPlayer();
+		Assert.assertTrue(original.isPerksCostBackgroundPoints());
+
+		original.setPerksCostBackgroundPoints(false);
+		final CharacterData data = CharacterDataMapper.toData(original);
+		Assert.assertFalse(data.isPerksCostBackgroundPoints());
+		Assert.assertFalse(CharacterDataMapper.toCharacter(data).isPerksCostBackgroundPoints());
+		Assert.assertFalse(CharacterJsonManager.fromJson(CharacterJsonManager.toJson(data))
+				.isPerksCostBackgroundPoints());
+	}
+
+	@Test
+	public void categoryCostLimitAndHandwritingDefaultSurviveTheJsonRoundTrip() throws InvalidXmlElementException {
+		final CharacterPlayer original = new CharacterPlayer();
+		Assert.assertEquals(original.getCategoryMaxCost(), 50);
+		Assert.assertTrue(original.isHandWritingFont());
+
+		original.setCategoryMaxCost(75);
+		original.setHandWritingFont(false);
+		final CharacterData data = CharacterDataMapper.toData(original);
+		final CharacterPlayer restored = CharacterDataMapper.toCharacter(
+				CharacterJsonManager.fromJson(CharacterJsonManager.toJson(data)));
+
+		Assert.assertEquals(restored.getCategoryMaxCost(), 75);
+		Assert.assertFalse(restored.isHandWritingFont());
+		Assert.assertThrows(IllegalArgumentException.class, () -> original.setCategoryMaxCost(4));
+		Assert.assertThrows(IllegalArgumentException.class, () -> original.setCategoryMaxCost(1000));
+	}
+
+	@Test
 	public void snapshotMapsAreKeySortedForStableOutput() throws InvalidXmlElementException {
 		final CharacterData data = CharacterDataMapper.toData(newFullyPopulatedCharacter());
 		Assert.assertTrue(isSorted(new ArrayList<>(data.getCharacteristicTemporalValues().keySet())));

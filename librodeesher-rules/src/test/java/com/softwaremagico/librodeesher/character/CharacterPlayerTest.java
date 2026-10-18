@@ -900,6 +900,23 @@ public class CharacterPlayerTest {
 	}
 
 	@Test
+	public void disablingPerkHistoryCostsPreservesBackgroundPoints() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		character.setRaceId("grayOrc");
+		character.addPerk("acrobat");
+		character.getBackground().setCategoryPoint("outdoorEnvironment", true);
+
+		final int raceBackgroundPoints = character.getRace().getBackgroundPoints();
+		Assert.assertTrue(character.isPerksCostBackgroundPoints());
+		Assert.assertEquals(character.getRemainingBackgroundPoints(), raceBackgroundPoints - 1 - 3);
+
+		character.setPerksCostBackgroundPoints(false);
+		Assert.assertFalse(character.isPerksCostBackgroundPoints());
+		Assert.assertEquals(character.getPerksBackgroundPointsCost(), 0);
+		Assert.assertEquals(character.getRemainingBackgroundPoints(), raceBackgroundPoints - 1);
+	}
+
+	@Test
 	public void pairingAWeaknessDiscountsThePerksBackgroundCost() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.addPerk("acrobat");
@@ -938,6 +955,19 @@ public class CharacterPlayerTest {
 
 		final int raceBackgroundPoints = character.getRace().getBackgroundPoints();
 		Assert.assertEquals(character.getRemainingBackgroundPoints(), raceBackgroundPoints - 1 - 3);
+	}
+
+	@Test
+	public void perkPointBudgetUsesTheLegacyRaceCalculation() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		Assert.assertNull(character.getRacePerksPoints());
+		Assert.assertNull(character.getRemainingPerksPoints());
+
+		character.setRaceId("jhordi");
+		character.addPerk("acrobat");
+		Assert.assertEquals(character.getRacePerksPoints(), Integer.valueOf(55));
+		Assert.assertEquals(character.getRemainingPerksPoints(),
+				Integer.valueOf(55 - RulesCatalog.getInstance().getPerk("acrobat").getCost()));
 	}
 
 	@Test
@@ -1796,26 +1826,28 @@ public class CharacterPlayerTest {
 	@Test
 	public void availablePerksRespectRestrictionsSelectionsAndBackgroundPoints() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
-		character.setRaceId("grayOrc");
-		Assert.assertTrue(character.getAvailablePerkIds().contains("anxious"));
+		character.setRaceId("jhordi");
 		Assert.assertTrue(character.getAvailablePerkIds().contains("acrobat"));
 
 		character.addPerk("acrobat");
 		Assert.assertFalse(character.getAvailablePerkIds().contains("acrobat"));
 
+		Assert.assertFalse(character.getAvailablePerkIds().contains("speedDeslumbrante"));
 		character.getBackground().setCategoryPoint("outdoorEnvironment", true);
-		Assert.assertFalse(character.getAvailablePerkIds().contains("anxious"));
+		character.setPerksCostBackgroundPoints(false);
+		Assert.assertTrue(character.getAvailablePerkIds().contains("speedDeslumbrante"));
 	}
 
 	@Test
 	public void addAvailablePerkEnforcesTheCurrentBackgroundPointBudget() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
-		character.setRaceId("grayOrc");
+		character.setRaceId("jhordi");
 		Assert.assertTrue(character.addAvailablePerk("acrobat"));
 		Assert.assertFalse(character.addAvailablePerk("acrobat"));
 
 		character.getBackground().setCategoryPoint("outdoorEnvironment", true);
-		Assert.assertFalse(character.addAvailablePerk("anxious"));
+		character.setPerksCostBackgroundPoints(false);
+		Assert.assertTrue(character.addAvailablePerk("speedDeslumbrante"));
 	}
 
 	@Test

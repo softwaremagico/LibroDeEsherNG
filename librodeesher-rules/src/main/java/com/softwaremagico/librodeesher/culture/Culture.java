@@ -87,12 +87,12 @@ public class Culture extends Element {
      * those two markers the same way (see {@code CharacterPlayer#getRealSkills(String)}), since
      * every weapon/armor is also migrated as a skill (see {@code SkillMigrationTool}).
      *
-     * <p>The {@code "listOfSpells"} marker (legacy {@code Spanish.CULTURE_SPELLS}) is preserved in
-     * {@link #getHobbyIds()} but not resolved here yet: the legacy application expanded it to every
-     * open spell list plus the character's race lists, which this library does not model yet (no
-     * magic package exists). A bare {@code "Idiomas"} token is dropped during migration instead of
-     * becoming a marker, since the legacy application recognized but never actually implemented
-     * spending hobby points on a language.</p>
+     * <p>The {@code "listOfSpells"} marker (legacy {@code Spanish.CULTURE_SPELLS}) is retained in
+     * {@link #getHobbyIds()}; because its expansion depends on the selected race, resolve spell-list
+     * eligibility through {@code CharacterPlayer#isHobbySpellListAllowed(String)}. A bare
+     * {@code "Idiomas"} token is dropped during migration instead of becoming a marker, since the
+     * legacy application recognized but never actually implemented spending hobby points on a
+     * language.</p>
      */
     public boolean isHobbySkillAllowed(String skillId) {
         if (getExcludedHobbyIds().contains(skillId)) {

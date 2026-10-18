@@ -16,9 +16,8 @@ import com.softwaremagico.librodeesher.rules.RulesCatalog;
  * dead {@code -0} case).
  *
  * <p>This is a completely separate mechanic from the normal, profession-driven background point
- * budget ({@code CharacterPlayer#getTotalBackgroundPoints}): it only existed as an optional,
- * off-by-default toggle in the legacy application, but is still exercised by real tests against real
- * race data (see the legacy {@code PerksTests}), so it is ported here for parity.</p>
+ * budget ({@code CharacterPlayer#getRemainingBackgroundPoints}). The legacy character editor and
+ * random generator enforce both budgets independently.</p>
  *
  * <p><strong>Known pre-existing data quirk (not a migration bug):</strong> "grayOrc"'s own source
  * file lists 6 numbers for its Psionic power point progression ({@code "0/6/5/4/3/2"}) instead of

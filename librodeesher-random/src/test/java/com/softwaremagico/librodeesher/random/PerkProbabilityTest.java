@@ -15,9 +15,9 @@ import java.util.List;
  * computed sum of the legacy bonus expressions, so a regression in any single term changes the
  * asserted value.
  *
- * <p>The characters use the {@code commonMen} race, whose NG background-point pool is 6 (the legacy
- * {@code Race#getPerksPoints()} is not shipped, see {@code PerkProbability}'s javadoc): a selected
- * weakness widens that pool the same way the legacy generator paired perks with weaknesses.</p>
+ * <p>The characters use the {@code commonMen} race and its legacy race-derived perk point budget;
+ * a selected weakness widens that pool the same way the legacy generator paired perks with
+ * weaknesses.</p>
  */
 @Test(groups = "perkProbability")
 public class PerkProbabilityTest {
@@ -70,9 +70,9 @@ public class PerkProbabilityTest {
 	public void unaffordablePerksFallBackToTheStandardValue() throws InvalidXmlElementException {
 		final CharacterPlayer character = freshFighter();
 		character.setRaceId("commonMen");
-		// acrobat costs 7 but the commonMen pool is 6 and athleticsGymnastics is not interesting
-		// for a fresh fighter, so the cost veto is replaced by the "standard perk" fallback
-		// 2 - 0 + 0 = 2.
+		// acrobat exceeds commonMen's race-derived perk budget and athleticsGymnastics is not
+		// interesting for a fresh fighter, so the cost veto is replaced by the "standard perk"
+		// fallback 2 - 0 + 0 = 2.
 		Assert.assertEquals(probability("acrobat", null, character), 2);
 	}
 

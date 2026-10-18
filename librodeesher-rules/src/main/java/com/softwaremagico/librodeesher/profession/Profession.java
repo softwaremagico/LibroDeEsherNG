@@ -279,8 +279,7 @@ public class Profession extends Element {
     /**
      * This profession's explicit background point cost/preference (favourite/forbidden) for
      * {@code trainingId} (the "ADIESTRAMIENTO" section), or {@code null} if it does not mention that
-     * training at all (its cost then falls back to {@link
-     * com.softwaremagico.librodeesher.training.Training}'s own base cost, not modeled yet).
+     * training at all; the character model then checks the training's own profession-cost override.
      */
     public ProfessionTrainingCost getTrainingCost(String trainingId) {
         for (final ProfessionTrainingCost cost : getTrainingCosts()) {

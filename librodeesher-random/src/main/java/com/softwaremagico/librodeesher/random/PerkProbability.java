@@ -144,7 +144,7 @@ public final class PerkProbability {
         }
     }
 
-    /** A perk that would overflow the background point budget scores the lowest possible value. */
+    /** A perk that would overflow the race-derived perk point budget scores the lowest possible value. */
     private int getProbabilityByCost() {
         try {
             final Integer racePoints = characterPlayer.getRacePerksPoints();

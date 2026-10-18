@@ -6,8 +6,8 @@
     <name>Libro de Esher (Rules)</name>
     <description>
         Domain model and XML factories for the Rolemaster character creation rules (races, cultures, professions,
-        trainings, weapons, spell lists, skills, categories and perks). No AWT/Swing/JPA dependencies so that this
-        module stays reusable from an Android front-end in the future.
+        trainings, weapons, spell lists, skills, categories and perks). No AWT/Swing/JPA dependencies; reusable
+        from an Android front-end.
     </description>
 
     <parent>

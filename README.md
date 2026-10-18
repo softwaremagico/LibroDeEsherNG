@@ -122,17 +122,20 @@ character-creation model built on top of it.
 This repository contains the core rules library and character-creation model. It is **not** a
 standalone end-user application.
 
-Two additional modules are scaffolded for future work:
+Two additional modules are included:
 
-- `librodeesher-random`: random character generation.
-- `librodeesher-pdf`: printable character sheet export.
+- `librodeesher-random`: random character generation, reusable from Android with `librodeesher-rules`.
+- `librodeesher-pdf`: printable character sheet export; this module is desktop-only and should not
+  be added to an Android app.
 
 ## Architecture
 
 - Multi-module Maven build (`librodeesher-rules`, `librodeesher-random`, `librodeesher-pdf`).
-- Library-first: no UI dependency, no AWT/Swing/JPA. Designed to be embedded into an external
-  application or service, including an Android app, instead of shipping its own UI (Jackson XML is
-  used instead of JAXB/DOM/SAX, and no reflection-heavy frameworks are required).
+- Library-first: `librodeesher-rules` and `librodeesher-random` have no AWT/Swing/JPA dependency and
+  can be embedded in an Android application; the PDF exporter is isolated because it uses a
+  desktop-oriented rendering dependency. This repository does not include an Android UI or APK.
+- The reusable modules are built for Java 17. Android consumers need a Java-17-capable Android
+  Gradle Plugin/toolchain and should package the XML rule resources from `modules/` on the classpath.
 - Rule data lives outside the compiled jar's `src/main/resources`, under a sibling `modules/` folder,
   one directory per rulebook/supplement, so it can be edited without recompiling.
 

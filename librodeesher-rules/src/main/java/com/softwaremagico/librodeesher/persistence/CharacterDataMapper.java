@@ -125,6 +125,8 @@ public final class CharacterDataMapper {
         data.setRecommendedFavouriteSkillsIncluded(character.isRecommendedFavouriteSkillsIncluded());
         data.setHandWritingFont(character.isHandWritingFont());
         data.setSortPdfSkills(character.isSortPdfSkills());
+        data.setPerksCostBackgroundPoints(character.isPerksCostBackgroundPoints());
+        data.setCategoryMaxCost(character.getCategoryMaxCost());
         return data;
     }
 
@@ -167,6 +169,8 @@ public final class CharacterDataMapper {
         character.setRecommendedFavouriteSkillsIncluded(data.isRecommendedFavouriteSkillsIncluded());
         character.setHandWritingFont(data.isHandWritingFont());
         character.setSortPdfSkills(data.isSortPdfSkills());
+        character.setPerksCostBackgroundPoints(data.isPerksCostBackgroundPoints());
+        character.setCategoryMaxCost(data.getCategoryMaxCost());
 
         for (final Map.Entry<String, Integer> entry : data.getCharacteristicTemporalValues().entrySet()) {
             character.setCharacteristicTemporalValue(CharacteristicAbbreviation.valueOf(entry.getKey()),

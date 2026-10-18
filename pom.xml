@@ -32,11 +32,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!--
-            Java level kept compatible with Android (no language features requiring heavy desugaring)
-            so that "librodeesher-rules" and "librodeesher-random" can be reused by an Android
-            front-end in the future without modification.
-        -->
+        <!-- Android-consumable rules/random modules use Java 17; PDF stays isolated as desktop-only. -->
         <java.version>17</java.version>
 
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>

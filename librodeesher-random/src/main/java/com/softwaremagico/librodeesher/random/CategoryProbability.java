@@ -25,9 +25,8 @@ import java.util.Map;
  * exceed 90, so selecting among the positive-probability candidates by weight reproduces the legacy
  * behaviour.</p>
  *
- * <p>Two configurable knobs are hardcoded to the legacy defaults because there is no NG equivalent of
- * the legacy single-user persisted {@code Config}: {@link #CATEGORY_MAX_COST} mirrors the default of
- * {@code Config.getCategoryMaxCost()} and the armour-tag threshold values (10/20/30) remain fixed as
+ * <p>The category development-cost threshold is character-configurable (default 50, matching the
+ * legacy {@code Config.getCategoryMaxCost()}); armour-tag threshold values (10/20/30) remain fixed as
  * in the legacy source.</p>
  */
 public class CategoryProbability {
@@ -43,9 +42,6 @@ public class CategoryProbability {
 
     /** The smart bonus awarded for a category the character is already expected to master. */
     private static final int COMMON_OR_PROFESSIONAL_SKILL_BONUS = 50;
-
-    /** Development cost ceiling below which the probability calculation applies (legacy {@code Config} default). */
-    private static final int CATEGORY_MAX_COST = 50;
 
     /** Legacy cap for the final probability. */
     private static final int MAX_PROBABILITY = 90;
@@ -117,7 +113,7 @@ public class CategoryProbability {
             }
         }
 
-        if (cost <= CATEGORY_MAX_COST
+        if (cost <= characterPlayer.getCategoryMaxCost()
                 && characterPlayer.getRemainingDevelopmentPoints() >= cost
                 && category.getType() == CategoryType.STANDARD) {
             int probability = characterPlayer.getCategoryCharacteristicBonus(category);
