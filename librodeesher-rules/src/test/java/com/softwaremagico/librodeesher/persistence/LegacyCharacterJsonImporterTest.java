@@ -245,7 +245,9 @@ public class LegacyCharacterJsonImporterTest {
             }
         }
         Assert.assertEquals(skillsWithRanks, 83);
-        Assert.assertEquals(skillRanks, 136);
+        // The culture language ranks are added on top of the larger of the race's initial ranks and
+        // the culture's own grant (see CharacterPlayer#getLanguageTotalRanks), as the legacy sheet.
+        Assert.assertEquals(skillRanks, 148);
 
         int listsWithRanks = 0;
         int listRanks = 0;

@@ -793,7 +793,7 @@ public class CharacterPlayer {
 		}
 		final int raceRanks = this.getLanguageRaceInitialRanks(skillId);
 		final int cultureRanks = this.getLanguageCultureRanks(skillId);
-		return Math.max(raceRanks, cultureRanks);
+		return cultureRanks + Math.max(raceRanks, cultureRanks);
 	}
 
 	/**
