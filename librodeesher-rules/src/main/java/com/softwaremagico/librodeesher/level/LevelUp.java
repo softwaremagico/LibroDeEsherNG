@@ -31,6 +31,13 @@ public class LevelUp {
     private Map<String, Integer> categoryRanks = new HashMap<>();
     @JsonProperty("developmentPointExemptCategoryRanks")
     private Map<String, Integer> developmentPointExemptCategoryRanks = new HashMap<>();
+    /**
+     * The subset of {@link #categoryRanks} granted by the level's trainings rather than bought with
+     * development points. Kept apart so the granted ranks are counted once and stay out of the
+     * development point cost, exactly like {@link #trainingSkillRanks} does for skills.
+     */
+    @JsonProperty("trainingCategoryRanks")
+    private Map<String, Integer> trainingCategoryRanks = new HashMap<>();
     @JsonProperty("skillRanks")
     private Map<String, Integer> skillRanks = new HashMap<>();
     @JsonProperty("developmentPointExemptSkillRanks")
@@ -101,6 +108,24 @@ public class LevelUp {
     public void addDevelopmentPointExemptCategoryRanks(String categoryId, Integer ranks) {
         if (ranks > 0) {
             developmentPointExemptCategoryRanks.merge(categoryId, ranks, Integer::sum);
+        }
+    }
+
+    public Integer getTrainingCategoryRanks(String categoryId) {
+        return trainingCategoryRanks.getOrDefault(categoryId, 0);
+    }
+
+    public Map<String, Integer> getTrainingCategoryRanks() {
+        return trainingCategoryRanks;
+    }
+
+    public void setTrainingCategoryRanks(Map<String, Integer> ranks) {
+        trainingCategoryRanks = ranks;
+    }
+
+    public void addTrainingCategoryRanks(String categoryId, Integer ranks) {
+        if (ranks > 0) {
+            trainingCategoryRanks.merge(categoryId, ranks, Integer::sum);
         }
     }
 

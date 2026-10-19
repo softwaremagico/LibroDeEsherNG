@@ -649,10 +649,24 @@ public class CharacterPlayer {
 	 * {@code CharacterPlayer#getTrainingRanks(Category)}), so the rebuilt totals and sheets match.
 	 * A grant naming a single category always applies; one offering a choice applies only when the
 	 * matching {@link DecisionKind#TRAINING_CATEGORY} decision selected this category.</p>
+	 *
+	 * <p>A level developed here already carries the granted ranks in its own training-category track
+	 * (see {@link LevelUp#getTrainingCategoryRanks(String)}), so those take precedence; the
+	 * on-the-fly reconstruction only fills in for imported levels, which keep the legacy ranks
+	 * separate until queried.</p>
 	 */
 	private int getTrainingCategoryRanks(String categoryId, int levelCount) {
 		int total = 0;
 		for (int i = 0; i < levelCount; i++) {
+			// A level developed in this application records the granted ranks in its own track when
+			// the grant is applied (see applyCategoryGrant), so use it directly. An imported level
+			// carries no such track: its granted ranks are rebuilt on the fly from the recorded
+			// trainings and the rebuilt TRAINING_CATEGORY decisions.
+			final int booked = this.levels.get(i).getTrainingCategoryRanks(categoryId);
+			if (booked > 0) {
+				total += booked;
+				continue;
+			}
 			for (final String trainingId : this.levels.get(i).getTrainings()) {
 				final Training training;
 				try {
@@ -1530,7 +1544,11 @@ public class CharacterPlayer {
 						? Decision.select(offeredCategories, selectedCategoryId)
 						: Decision.fixed(offeredCategories));
 		final String categoryId = categoryDecision.getSelectedOption();
-		if (!trainingGrant) {
+		if (trainingGrant) {
+			// Booked in the level's own training track (not categoryRanks) so the granted ranks are
+			// counted once and never charged as bought ranks; see getCategoryTotalRanks.
+			this.getCurrentLevel().addTrainingCategoryRanks(categoryId, grant.getRanksGranted());
+		} else {
 			this.getCurrentLevel().addCategoryRanks(categoryId, grant.getRanksGranted());
 			if (cultureGrant) {
 				this.getCurrentLevel().addDevelopmentPointExemptCategoryRanks(categoryId, grant.getRanksGranted());

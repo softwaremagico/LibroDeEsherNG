@@ -22,6 +22,11 @@ public final class LevelData {
     @JsonProperty("developmentPointExemptCategoryRanks")
     private Map<String, Integer> developmentPointExemptCategoryRanks = new LinkedHashMap<>();
 
+    /** The subset of {@link #categoryRanks} granted by this level's trainings (see
+     *  {@link com.softwaremagico.librodeesher.level.LevelUp#getTrainingCategoryRanks(String)}). */
+    @JsonProperty("trainingCategoryRanks")
+    private Map<String, Integer> trainingCategoryRanks = new LinkedHashMap<>();
+
     @JsonProperty("skillRanks")
     private Map<String, Integer> skillRanks = new LinkedHashMap<>();
 
@@ -87,6 +92,14 @@ public final class LevelData {
 
     public void setDevelopmentPointExemptCategoryRanks(Map<String, Integer> ranks) {
         developmentPointExemptCategoryRanks = ranks;
+    }
+
+    public Map<String, Integer> getTrainingCategoryRanks() {
+        return trainingCategoryRanks;
+    }
+
+    public void setTrainingCategoryRanks(Map<String, Integer> ranks) {
+        trainingCategoryRanks = ranks;
     }
 
     public Map<String, Integer> getSkillRanks() {

@@ -136,6 +136,7 @@ public final class CharacterDataMapper {
         levelData.setCategoryRanks(new TreeMap<>(levelUp.getCategoryRanks()));
         levelData.setDevelopmentPointExemptCategoryRanks(
                 new TreeMap<>(levelUp.getDevelopmentPointExemptCategoryRanks()));
+        levelData.setTrainingCategoryRanks(new TreeMap<>(levelUp.getTrainingCategoryRanks()));
         levelData.setSkillRanks(new TreeMap<>(levelUp.getSkillRanks()));
         levelData.setDevelopmentPointExemptSkillRanks(new TreeMap<>(levelUp.getDevelopmentPointExemptSkillRanks()));
         levelData.setTrainingSkillRanks(new TreeMap<>(levelUp.getTrainingSkillRanks()));
@@ -260,6 +261,7 @@ public final class CharacterDataMapper {
         levelUp.setCategoryRanks(new HashMap<>(levelData.getCategoryRanks()));
         levelUp.setDevelopmentPointExemptCategoryRanks(
                 new HashMap<>(levelData.getDevelopmentPointExemptCategoryRanks()));
+        levelUp.setTrainingCategoryRanks(new HashMap<>(levelData.getTrainingCategoryRanks()));
         levelUp.setSkillRanks(new HashMap<>(levelData.getSkillRanks()));
         levelUp.setDevelopmentPointExemptSkillRanks(new HashMap<>(levelData.getDevelopmentPointExemptSkillRanks()));
         levelUp.setTrainingSkillRanks(new HashMap<>(levelData.getTrainingSkillRanks()));
