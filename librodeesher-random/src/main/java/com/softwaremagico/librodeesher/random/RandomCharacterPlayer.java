@@ -334,22 +334,20 @@ public class RandomCharacterPlayer {
     }
 
     /**
-     * The culture adolescence grants, only when the whole set stays within the current level's
-     * development budget (they count like any other grant, see {@code applyCultureAdolescenceRanks}).
+     * The culture adolescence grants, applied through the very same grant machinery a training uses
+     * (see {@code applyCultureAdolescenceRanks}). Their ranks are development-point exempt (see
+     * {@code CharacterPlayer#markGrantedSkillRanks}/{@code markGrantedSpellListRanks}), so no budget
+     * check is needed.
      */
     private void setRandomCultureAdolescenceRanks(Culture culture) throws InvalidXmlElementException {
         // The rules side expands the "weapon"/"armor" markers of the migrated data into the
         // culture's typical weapons/armors (see {@code CharacterPlayer#getResolvedAdolescenceRanks}),
-        // both here for the cost estimate and in {@code applyCultureAdolescenceRanks}; both sides
-        // must see the very same concrete options for the estimate to stay exact.
+        // so buildGrantPicks and applyCultureAdolescenceRanks both see the same concrete options.
         final List<TrainingCategoryGrant> grants = characterPlayer.getResolvedAdolescenceRanks(culture);
         if (grants.isEmpty()) {
             return;
         }
         final GrantPicks picks = buildGrantPicks(characterPlayer, grants);
-        if (characterPlayer.getRemainingDevelopmentPoints() - picks.estimatedGrantCost < 0) {
-            return;
-        }
         characterPlayer.applyCultureAdolescenceRanks(culture, picks.categorySelections, picks.skillSelections,
                 picks.additionalSkillRanks);
     }
