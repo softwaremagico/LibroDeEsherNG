@@ -414,6 +414,25 @@ public class RandomCharacterPlayerCreationTest {
 		return String.join(";", entries);
 	}
 
+	/**
+	 * An elementalist's random development must not fail on the FireAndIce "Listas Básicas de
+	 * Hechizos" grants: the migrated data lists six single-option spell-list entries under a grant
+	 * that allows only one to three lists, so the generator picks a subset instead of treating all
+	 * six as mandatory.
+	 */
+	@Test
+	public void elementalistReachesLevelTenWithThePooledSpellListGrants() throws InvalidXmlElementException {
+		for (int seed = 1; seed <= 5; seed++) {
+			final CharacterPlayer character = newCharacter("elementalist");
+			character.setRaceId("ilourianos");
+			character.setCultureId("woodland");
+			RandomValues.setRandomSeed(seed);
+			new RandomCharacterPlayer(character, 10).createRandomValues();
+			Assert.assertEquals(character.getLevel(), 10, "Seed " + seed + " must reach level ten");
+			Assert.assertFalse(character.getLevels().isEmpty());
+		}
+	}
+
 	private static CharacterPlayer newCharacter(String professionId) throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();
 		character.setRaceId("commonMen");

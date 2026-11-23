@@ -442,6 +442,35 @@ public class CharacterPlayerTest {
 		Assert.assertEquals(character.getSpellListTotalRanks("essenceLawOfFire"), Integer.valueOf(0));
 	}
 
+	/**
+	 * The migrated FireAndIce wizard trainings list six single-option spell-list entries under a
+	 * grant that allows only one to three lists. Those entries are a pool of candidates: only the
+	 * chosen lists receive ranks and the others stay untouched, instead of every entry becoming a
+	 * mandatory grant.
+	 */
+	@Test
+	public void applyingAPooledSpellListGrantChoosesOnlyTheAllowedLists() throws InvalidXmlElementException {
+		final CharacterPlayer character = new CharacterPlayer();
+		final TrainingCategoryGrant grant = new TrainingCategoryGrant();
+		grant.setCategoryOptions(List.of("listsBasicOfSpells"));
+		grant.setRanksGranted(0);
+		grant.setMinSkills(1);
+		grant.setMaxSkills(3);
+		grant.setRanksToDistribute(3);
+		for (final String spellList : List.of("essenceMasteryOfOscuridad", "essenceMasteryOfLight",
+				"essenceDefensesElementales", "essenceDeflectionsElementales", "essenceSummoningsElementales",
+				"essenceLawOfLight")) {
+			grant.getSpellLists().add(new TrainingSpellListGrant(List.of(spellList), 0));
+		}
+
+		character.applyCategoryGrant(DecisionKey.atLevel(DecisionKind.TRAINING_CATEGORY, "lightWizard", 0, 1), grant,
+				null, null, null, null, Map.of("essenceMasteryOfLight", 2, "essenceLawOfLight", 1));
+
+		Assert.assertEquals(character.getSpellListTotalRanks("essenceMasteryOfLight"), Integer.valueOf(2));
+		Assert.assertEquals(character.getSpellListTotalRanks("essenceLawOfLight"), Integer.valueOf(1));
+		Assert.assertEquals(character.getSpellListTotalRanks("essenceMasteryOfOscuridad"), Integer.valueOf(0));
+	}
+
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void applyingASpellListGrantWithAListOutsideTheGrantFails() throws InvalidXmlElementException {
 		final CharacterPlayer character = new CharacterPlayer();

@@ -24,6 +24,7 @@ import com.softwaremagico.librodeesher.training.ChoiceGroup;
 import com.softwaremagico.librodeesher.training.Training;
 import com.softwaremagico.librodeesher.training.TrainingCategoryGrant;
 import com.softwaremagico.librodeesher.training.TrainingSkillGrant;
+import com.softwaremagico.librodeesher.training.TrainingSpellListGrant;
 import com.softwaremagico.librodeesher.training.TrainingSpecialItem;
 import com.softwaremagico.librodeesher.weapon.Weapon;
 
@@ -747,7 +748,7 @@ public class RandomCharacterPlayer {
         if (grants != null && !grants.isEmpty()) {
             final GrantPicks picks = buildGrantPicks(characterPlayer, grants);
             characterPlayer.applyTrainingCategories(training, picks.categorySelections, picks.skillSelections,
-                    picks.additionalSkillRanks);
+                    picks.additionalSkillRanks, picks.spellListSelections, picks.additionalSpellListRanks);
         }
         addRandomTrainingSkillChoices(characterPlayer, training);
         addRandomTrainingSpecialItems(characterPlayer, training);
@@ -812,6 +813,8 @@ public class RandomCharacterPlayer {
         private final Map<Integer, String> categorySelections = new HashMap<>();
         private final Map<Integer, List<String>> skillSelections = new HashMap<>();
         private final Map<Integer, Map<String, Integer>> additionalSkillRanks = new HashMap<>();
+        private final Map<Integer, List<String>> spellListSelections = new HashMap<>();
+        private final Map<Integer, Map<String, Integer>> additionalSpellListRanks = new HashMap<>();
     }
 
     // Selects the grants; their ranks are supplied by the training and do not consume rank-buying
@@ -889,8 +892,63 @@ public class RandomCharacterPlayer {
                     }
                 }
             }
+
+            addRandomSpellListPicks(grant, i, picks);
         }
         return picks;
+    }
+
+    /**
+     * Picks the spell lists of a grant that offers more candidates than it allows (see
+     * {@link CharacterPlayer#applyCategoryGrant}): between {@code minSkills} and {@code maxSkills}
+     * lists receive the grant's {@code ranksToDistribute} ranks, the same "choose N of the offered
+     * lists" semantics the legacy rulebook gives a "Listas Básicas de Hechizos" grant.
+     */
+    private static void addRandomSpellListPicks(TrainingCategoryGrant grant, int grantIndex, GrantPicks picks)
+            throws InvalidXmlElementException {
+        final List<TrainingSpellListGrant> spellListGrants = grant.getSpellLists();
+        if (spellListGrants == null || spellListGrants.isEmpty()) {
+            return;
+        }
+        final int maxLists = grant.getMaxSkills() == null ? 0 : grant.getMaxSkills();
+        if (spellListGrants.size() <= maxLists) {
+            // Named/guaranteed grants: {@code applyCategoryGrant} resolves them without random picks.
+            return;
+        }
+        final int budget = grant.getRanksToDistribute() == null ? 0 : grant.getRanksToDistribute();
+        if (budget <= 0) {
+            return;
+        }
+        final List<String> pool = new ArrayList<>();
+        for (final TrainingSpellListGrant spellListGrant : spellListGrants) {
+            for (final String option : spellListGrant.getSpellListOptions()) {
+                if (!pool.contains(option) && isResolvableSpellList(option)) {
+                    pool.add(option);
+                }
+            }
+        }
+        if (pool.isEmpty()) {
+            return;
+        }
+        final int minLists = grant.getMinSkills() == null ? 0 : grant.getMinSkills();
+        final int low = Math.max(1, minLists);
+        final int limit = Math.min(maxLists, Math.min(pool.size(), budget));
+        if (low > limit) {
+            return;
+        }
+        final int count = low + RandomValues.nextInt(limit - low + 1);
+        final List<String> picked = RandomValues.shuffle(pool).subList(0, count);
+        picks.additionalSpellListRanks.put(grantIndex, distributeRanks(picked, budget));
+    }
+
+    /** Whether {@code spellListId} resolves in the current {@link RulesCatalog}. */
+    private static boolean isResolvableSpellList(String spellListId) {
+        try {
+            RulesCatalog.getInstance().getSpellList(spellListId);
+            return true;
+        } catch (final InvalidXmlElementException e) {
+            return false;
+        }
     }
 
     private static int grantRanksOf(List<TrainingSkillGrant> skillGrants) {

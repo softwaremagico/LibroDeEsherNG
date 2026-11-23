@@ -1587,22 +1587,31 @@ public class CharacterPlayer {
 		final List<TrainingSpellListGrant> spellLists = grant.getSpellLists();
 		final Set<String> namedSpellListIds = new HashSet<>();
 		int namedSpellListRanks = 0;
-		for (int i = 0; i < spellLists.size(); i++) {
-			final TrainingSpellListGrant spellListGrant = spellLists.get(i);
-			// Key the spell list decisions apart from the skill ones (see DecisionKey#nested), so a
-			// grant naming both keeps the two decision chains independent.
-			final DecisionKey spellListKey = categoryKey.nestedSpellList(i);
-			final String selectedSpellListId = selectedSpellListIds != null && i < selectedSpellListIds.size()
-					? selectedSpellListIds.get(i)
-					: null;
-			final Decision spellListDecision = this.decideOrReuse(spellListKey,
-					() -> spellListGrant.resolve(selectedSpellListId));
-			namedSpellListIds.add(spellListDecision.getSelectedOption());
-			namedSpellListRanks += spellListGrant.getRanksToDistribute();
-			this.getCurrentLevel().addSpellListRanks(spellListDecision.getSelectedOption(),
-					spellListGrant.getRanksToDistribute());
-			this.markGrantedSpellListRanks(categoryKey.getKind(), spellListDecision.getSelectedOption(),
-					spellListGrant.getRanksToDistribute());
+		// The migrated data sometimes lists more fixed spell-list entries than the grant allows
+		// (e.g. a FireAndIce "Listas Básicas de Hechizos" grant with six single-option entries,
+		// min 1 and max 3): those entries are a pool of candidates, not six mandatory grants, so
+		// the player picks between minSkills and maxSkills of them. Named/guaranteed grants (at
+		// most maxSkills of them) keep the original behaviour.
+		final int maxSpellLists = grant.getMaxSkills() == null ? 0 : grant.getMaxSkills();
+		final boolean spellListsAreAPool = spellLists.size() > maxSpellLists;
+		if (!spellListsAreAPool) {
+			for (int i = 0; i < spellLists.size(); i++) {
+				final TrainingSpellListGrant spellListGrant = spellLists.get(i);
+				// Key the spell list decisions apart from the skill ones (see DecisionKey#nested), so a
+				// grant naming both keeps the two decision chains independent.
+				final DecisionKey spellListKey = categoryKey.nestedSpellList(i);
+				final String selectedSpellListId = selectedSpellListIds != null && i < selectedSpellListIds.size()
+						? selectedSpellListIds.get(i)
+						: null;
+				final Decision spellListDecision = this.decideOrReuse(spellListKey,
+						() -> spellListGrant.resolve(selectedSpellListId));
+				namedSpellListIds.add(spellListDecision.getSelectedOption());
+				namedSpellListRanks += spellListGrant.getRanksToDistribute();
+				this.getCurrentLevel().addSpellListRanks(spellListDecision.getSelectedOption(),
+						spellListGrant.getRanksToDistribute());
+				this.markGrantedSpellListRanks(categoryKey.getKind(), spellListDecision.getSelectedOption(),
+						spellListGrant.getRanksToDistribute());
+			}
 		}
 
 		// A grant develops either skills or spell lists, never both, so only one of the two remaining-rank
