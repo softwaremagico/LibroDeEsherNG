@@ -73,13 +73,17 @@ public class RandomCharacterPlayerTest {
 	@Test
 	public void anAffordableSuggestedTrainingIsSelectedForItsWholeCost() throws InvalidXmlElementException {
 		final CharacterPlayer character = freshFighter();
-		// Fighter prices soldier at 15 out of the 31 fresh points. Its granted ranks are included
-		// in the character totals but do not cost development points a second time.
+		// The fighter's base price for soldier is 15 points, discounted by the aquatic-militarista
+		// culture to 12. Its granted ranks are included in the character totals but must not cost
+		// development points a second time.
 		final int remainingBefore = character.getRemainingDevelopmentPoints();
+		final Integer expectedCost = character.getTrainingDevelopmentCost("soldier");
+		Assert.assertNotNull(expectedCost);
+		Assert.assertEquals(expectedCost.intValue(), 12);
 		RandomCharacterPlayer.setRandomTraining(character, "soldier", 0);
 		Assert.assertTrue(character.getSelectedTrainingIds().contains("soldier"));
-		Assert.assertEquals(remainingBefore - character.getRemainingDevelopmentPoints(), 15,
-				"only the training's own cost should be charged");
+		Assert.assertEquals(remainingBefore - character.getRemainingDevelopmentPoints(), expectedCost.intValue(),
+				"only the training's own (culture-discounted) cost should be charged");
 		Assert.assertTrue(character.getRemainingDevelopmentPoints() >= 0);
 	}
 
