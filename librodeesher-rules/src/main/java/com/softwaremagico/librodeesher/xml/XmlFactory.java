@@ -33,6 +33,10 @@ import java.util.Objects;
  * {@code ProtectionDomain} inspection or AWT/Swing dependency is used, unlike the legacy
  * implementation.</p>
  *
+ * <p>The merged elements are cached after the first read. Every {@code getElements()} call receives
+ * a fresh list (so callers may sort it safely), but the elements themselves are shared until
+ * {@link ModuleManager#resetModules()} invalidates the cache after a module set change.</p>
+ *
  * @param <T> concrete element type handled by this factory.
  */
 public abstract class XmlFactory<T extends Element> {
@@ -53,7 +57,7 @@ public abstract class XmlFactory<T extends Element> {
     public abstract List<T> getElements() throws InvalidXmlElementException;
 
     /** Drops the cached elements, forcing the next {@link #getElements()} call to read the XML again. */
-    public void reset() {
+    public synchronized void reset() {
         elementsById = null;
     }
 
@@ -91,7 +95,10 @@ public abstract class XmlFactory<T extends Element> {
      * since not every module has every element type (e.g. only "RazasYCulturas" defines
      * {@code culturas.xml}).</p>
      */
-    protected List<T> readXml(Class<T> entityClass) throws InvalidXmlElementException {
+    protected synchronized List<T> readXml(Class<T> entityClass) throws InvalidXmlElementException {
+        if (elementsById != null) {
+            return new ArrayList<>(elementsById.values());
+        }
         final Map<String, T> combined = new LinkedHashMap<>();
         for (final String module : ModuleManager.getEnabledModules()) {
             try {

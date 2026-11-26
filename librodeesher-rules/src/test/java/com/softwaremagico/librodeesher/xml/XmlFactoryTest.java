@@ -62,6 +62,19 @@ public class XmlFactoryTest {
     }
 
     @Test
+    public void repeatedGetElementsReusesTheCachedElements() throws InvalidXmlElementException {
+        ModuleManager.enableModule(MODULE_A);
+        final SampleElementFactory factory = SampleElementFactory.getInstance();
+
+        final List<SampleElement> first = factory.getElements();
+        final List<SampleElement> second = factory.getElements();
+
+        Assert.assertNotSame(first, second, "each caller gets its own list");
+        Assert.assertSame(first.get(0), second.get(0), "the parsed elements are cached");
+        Assert.assertEquals(second.size(), 2);
+    }
+
+    @Test
     public void resetForcesElementsToBeReReadOnNextAccess() throws InvalidXmlElementException {
         ModuleManager.enableModule(MODULE_A);
         Assert.assertEquals(SampleElementFactory.getInstance().getElements().size(), 2);
