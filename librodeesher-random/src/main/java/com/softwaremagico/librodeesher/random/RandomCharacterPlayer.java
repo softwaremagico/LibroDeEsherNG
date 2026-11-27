@@ -39,20 +39,17 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Randomly spends a character's development points into category ranks, skill ranks and trainings,
- * and levels it up, matching the legacy {@code RandomCharacterPlayer} exactly for the development
- * core of the generator: every iteration picks random trainings through {@link TrainingProbability},
- * then random category/skill ranks through {@link CategoryProbability}/{@link SkillProbability},
- * until the available development points (or the maximum number of tries) run out.
+ * Builds a random character up to {@code finalLevel}, mirroring the legacy
+ * {@code RandomCharacterPlayer}: every level picks random trainings through
+ * {@link TrainingProbability} and category/skill ranks through
+ * {@link CategoryProbability}/{@link SkillProbability} until the development
+ * points (or {@link #MAX_TRIES}) run out.
  *
  * <p>
- * The wrapped character must already have its race, culture and profession selected (typically by a
- * caller building an archetype, or by {@code CharacterPlayer}'s own setters); this class does not
- * roll those, nor the culture ranks or the history points yet (those creation steps belong to the
- * coming generation slices). It does skip no creation step upstream of the development points: the
- * sex, the name, the spell-casting realm with the highest characteristic bonus (a deterministic
- * choice, as in the legacy {@code setMagicRealm}) and the initial temporal values of the
- * profession's preferred characteristics (the legacy {@code setCharacteristics}) are all filled in.
+ * The wrapped character must already have its race, culture and profession selected. All downstream
+ * creation steps are implemented here (see {@link #createRandomValues()}): sex and name, deterministic
+ * magic realm, temporal characteristics, culture adolescence/hobby ranks and optional languages,
+ * perks with paired weaknesses, and leftover background points, followed by level development.
  * </p>
  *
  * <p>
@@ -141,8 +138,8 @@ public class RandomCharacterPlayer {
     /**
      * Sets the desired total ranks for {@code skillId} (a value {@code <= 0} forgets the
      * suggestion), recycled by {@link SkillProbability#getRankProbability()} instead of the generic
-     * heuristics. Keep in mind only the skill map is actually consumed by the development-core
-     * roll; the category map is reserved for the upcoming creation slices.
+     * heuristics. Only the skill map is consumed by the development-core roll; the category map
+     * remains caller-facing metadata and is not read by the creation steps either.
      */
     public void setSuggestedSkillRanks(String skillId, int ranks) {
         if (ranks <= 0) {
@@ -654,10 +651,9 @@ public class RandomCharacterPlayer {
      * Fills every still-unassigned optional language slot — the race's ({@code Race#getOptionalRaceLanguages()})
      * and the culture's ({@code Culture#getOptionalLanguages()}) — with a random unused language,
      * mirroring the legacy {@code selectOptionalLanguages}. The per-language rank levels are fixed
-     * by the slot's own starting/max ranks, so assigning the slot is the whole move: the legacy
-     * point-by-point distribution that used to follow had no corresponding NG model (the culture's
-     * parsed-down {@code idiomas} adolescence grant feeds the language step instead, which this
-     * class covers through these slots).
+     * by the slot's own starting/max ranks; the legacy point-by-point distribution was replaced by
+     * the culture's parsed-down {@code idiomas} adolescence grant feeding the language step through
+     * these slots.
      */
     private void setRandomCultureLanguages() throws InvalidXmlElementException {
         final List<String> available = unusedKnownLanguageIds();

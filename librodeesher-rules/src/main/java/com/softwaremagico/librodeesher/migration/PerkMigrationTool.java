@@ -238,8 +238,9 @@ public final class PerkMigrationTool {
             if (resistanceType != null) {
                 bonus.setResistanceType(resistanceType);
             } else {
-                // E.g. "TR Reino": resistance to the character's own realm of magic, which requires
-                // knowing that realm at runtime; not modeled yet (see PerkBonus#getUnresolvedTargetId()).
+                // E.g. "TR Reino": kept in the XML as unresolvedTargetId="realm"; CharacterPlayer
+                // resolves it at runtime against the character's own realms in
+                // getPerkOwnRealmResistanceBonus (see getResistanceTotalBonus).
                 bonus.setUnresolvedTargetId(Translations.toEnglishId(realmOrType));
             }
         } else {

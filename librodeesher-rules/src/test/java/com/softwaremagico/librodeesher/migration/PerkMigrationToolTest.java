@@ -139,7 +139,9 @@ public class PerkMigrationToolTest {
             Assert.assertEquals(bonuses.get(8).getKind(), PerkBonusKind.PER_RANK);
             Assert.assertEquals(bonuses.get(8).getValue(), Integer.valueOf(4));
 
-            // "TR Reino" is a dynamic, per-character resistance not modeled yet.
+            // "TR Reino" stays an unresolved target id in the migrated XML; the runtime resolves it
+            // against the character's own realm in CharacterPlayer#getPerkOwnRealmResistanceBonus
+            // (pinned by CharacterPlayerTest.magicalAbilityPerkBonusesApplyToOwnRealmResistanceAndSpellListTypes).
             Assert.assertNull(bonuses.get(9).getResistanceType());
             Assert.assertEquals(bonuses.get(9).getUnresolvedTargetId(), "realm");
             Assert.assertEquals(bonuses.get(9).getValue(), Integer.valueOf(50));

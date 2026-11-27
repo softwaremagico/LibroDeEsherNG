@@ -1747,8 +1747,9 @@ public class CharacterPlayerTest {
 		Assert.assertEquals(fighter.getCategoryDevelopmentCost("artPerforming", 1), Integer.valueOf(5));
 		Assert.assertNull(fighter.getCategoryDevelopmentCost("artPerforming", 2));
 
-		// A weapon category is not in a profession's plain categoryCosts table (see
-		// getWeaponCategoryCostTiers, future work).
+		// A weapon category is deliberately outside a profession's plain categoryCosts table:
+		// its costs come from the freely assigned tiers asserted in the next test
+		// (weaponCategoryCostTiersAreFreelyAssignedByThePlayer).
 		Assert.assertNull(fighter.getProfessionCategoryCost("weaponsEdged"));
 	}
 
